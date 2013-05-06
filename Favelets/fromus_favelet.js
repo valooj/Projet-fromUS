@@ -94,16 +94,15 @@ switch(fromus_site)
 			
 		case "www.beallsflorida.com":
 			{
-				if(document.getElementsById("productImage")!=undefined)
+				if(document.getElementById("productImage")!=undefined)
 					{
-						fromus_objectname		=	document.getElementById("quick-order-section").getelementsByTagName("h2")[0].innerText;
+						fromus_objectname		=	document.getElementById("quick-order-section").getElementsByTagName("h2")[0].innerText;
 
 						fromus_img				=	document.getElementById("productImage").src;	
 
 						fromus_pricemin			=	document.getElementsByClassName("offer-price")[0].innerText;
 
-						fromus_desc				=	fromus_objectname;						
-						
+						fromus_desc				=	fromus_objectname;							
 					}
 				else
 					{
@@ -119,78 +118,98 @@ switch(fromus_site)
 			
 		case "www.rakuten.com":
 			{
-			if(/(www\.rakuten\.com)/.test(fromus_offre))
+			if(!(/(www\.rakuten\.com)/.test(fromus_offre)))
 				{
-					if(document.getElementById("StorePromo_title") != undefined)
-					{
-						fromus_objectnametmp	=	document.getElementById("StorePromo_title").title;
-						fromus_objectname		=	fromus_objectnametmp.replace("Show me more info about ","").replace(/:.*/g,"");
-						if(fromus_objectname == '')
-							{
-								fromus_objectname=	document.getElementById("StorePromo_title").innerText;
-							}
-					}
-					else
-						{
-							fromus_objectname	=	document.getElementById("AuthorArtistTitle_productTitle").innerText;
-						}
-					if(document.getElementById("StorePromo_imgPromo")!=undefined)
-						{
-							fromus_img			=	document.getElementById("StorePromo_imgPromo").src;
-						}
-					else
-						{
-							fromus_imgtmp		=	document.getElementsByClassName("holder-image")[0].innerHTML;
-							fromus_imgtmp		= 	fromus_imgtmp+'';
-							fromus_imgtmp		= 	/(http)(.*)(\.jpg|\.png)/gi.exec(fromus_imgtmp)[0];		
-							fromus_img			=	fromus_imgtmp.replace(/(&quot)(.*)/,"");
-						}
-					if(document.getElementById("StorePromo_PriceText") != undefined)
-						{
-							fromus_pricemintmp	=	document.getElementById("StorePromo_PriceText").innerText;
-						}
-					else
-						{
-							fromus_pricemintmp	=	document.getElementById("spanMainTotalPrice").innerText;
-						}
-					fromus_pricemintmp			+=	'';
-					fromus_pricemin				=	fromus_pricemintmp;				
+					fromus_productname					=	document.getElementsByClassName("bwcProductTitle")[0].innerText;
+
+					fromus_pricemin						=	document.getElementsByClassName("mpsTotalPriceMoney")[0].innerText;
+					
+					fromus_img							=	document.getElementsByClassName("item image")[0].getElementsByTagName("a")[0].getElementsByTagName("img")[0].src;
+
+					fromus_desc							=	document.getElementById("ctl00_TemplateContentPlaceHolder_ctlProductSummary_divDescription").innerText;
 				}
 			else
 				{
-					fromus_objectname	=	document.getElementsByClassName("bwcProductTitleHolder")[0].innerText;	
-					
-					fromus_imgtmp				=	document.getElementsByClassName("holder-image")[0].innerHTML;
-					fromus_imgtmp				+= '';
-					fromus_imgtmp				= 	/(http)(.*)(\.jpg|\.png)/gi.exec(fromus_imgtmp)[0];		
-					fromus_img					=	fromus_imgtmp.replace(/(&quot)(.*)/,"");
+					if(document.getElementById("AuthorArtistTitle_productTitle")!=undefined)
+						{
+							fromus_objectname			=	document.getElementById("AuthorArtistTitle_productTitle").innerText;
+						}
+					else
+						{
+							fromus_objectname			=	document.getElementById("StorePromo_title").innerText;
+						}
 
-					fromus_pricemintmp			=	document.getElementsByClassName("mpsTotalPriceMoney")[0].innerHTML;
-					fromus_pricemintmp			+=	'';
-					fromus_pricemin				=	fromus_pricemintmp;	
+					if(document.getElementById("ImageVideo_ImageRepeater_ctl00_Image")!=undefined)
+						{
+							fromus_img					=	document.getElementById("ImageVideo_ImageRepeater_ctl00_Image").src;
+						}
+					else
+						{
+							fromus_img					=	document.getElementById("StorePromo_imgPromo").src;
+						}
+
+					if(document.getElementById("spanMainTotalPrice")!=undefined)
+						{
+							fromus_pricemin				=	document.getElementById("spanMainTotalPrice").innerText;
+						}
+					else
+						{
+							fromus_pricemin				=	document.getElementById("StorePromo_PriceText").innerText;
+						}
+					
+					if(document.getElementById("divDescription")!=undefined)
+						{
+							fromus_desc					=	document.getElementById("divDescription").innerText;
+						}
+					else
+						{
+							fromus_desc					=	document.getElementById("StorePromo_spnDescription1").innerText;
+						}	
 				}
 			}break;
 			
 		case "www.disneystore.com":
 			{
-				fromus_objectname 	=	document.getElementsByTagName("h1")[0].innerText;
-
-				fromus_imgtmp					=	document.getElementsByClassName("viewerMain")[0].innerHTML;
-				fromus_imgtmp					= 	fromus_imgtmp+'';
-				fromus_img						= 	/(http)(.*)(\?)/gi.exec(fromus_imgtmp)[0].replace("?","");	
-	
-				if(document.getElementsByClassName("price sale")[0] != undefined)
+			
+				if(document.getElementsByClassName("quickLook")[0]!=undefined)
 					{
-						fromus_pricemintmp		=	document.getElementsByClassName("price sale")[0].innerHTML;
-						fromus_pricemintmp		= 	fromus_pricemintmp+'';
-						fromus_pricemin			= 	/(\$)[0-9\.]{1,}/gi.exec(fromus_pricemintmp)[0];
-					}	
+						fromus_objectname 				=	document.getElementsByClassName("quickLook")[0].getElementsByTagName("h1")[0].innerText;
+						
+						fromus_img		 				=	document.getElementsByClassName("thumbs")[0].getElementsByTagName("img")[0].src;					
+						
+						if(document.getElementsByClassName("price regular largePrice")[0]!=undefined)
+							{
+								fromus_pricemin					=	document.getElementsByClassName("price regular largePrice")[0].innerText;
+							}
+						else
+							{
+								fromus_pricemin					=	fromus_reg.exec(document.getElementsByClassName("price sale")[0].innerText)[0];
+							}
+							
+						fromus_desc						=	fromus_objectname;
+					}
 				else
 					{
-						fromus_pricemintmp			=	document.getElementsByClassName("price")[0].innerHTML;
-						fromus_pricemintmp			+=	'';
-						fromus_pricemin				=	/(\$)[0-9,]{1,}(\.)[0-9]{2}/gi.exec(fromus_pricemintmp)[0];
-					}						
+						fromus_objectname 	=	document.getElementsByTagName("h1")[0].innerText;
+
+						fromus_imgtmp					=	document.getElementsByClassName("viewerMain")[0].innerHTML;
+						fromus_imgtmp					= 	fromus_imgtmp+'';
+						fromus_img						= 	/(http)(.*)(\?)/gi.exec(fromus_imgtmp)[0].replace("?","");	
+			
+						if(document.getElementsByClassName("price sale")[0] != undefined)
+							{
+								fromus_pricemintmp		=	document.getElementsByClassName("price sale")[0].innerHTML;
+								fromus_pricemintmp		= 	fromus_pricemintmp+'';
+								fromus_pricemin			= 	/(\$)[0-9\.]{1,}/gi.exec(fromus_pricemintmp)[0];
+							}	
+						else
+							{
+								fromus_pricemintmp		=	document.getElementsByClassName("price")[0].innerText;
+								fromus_pricemin			=	/(\$)[0-9,]{1,}(\.)[0-9]{2}/gi.exec(fromus_pricemintmp)[0];
+							}						
+					
+						fromus_desc      				=	document.getElementsByClassName("productShortDescription")[0].innerText;
+					}
 			}break;
 		
 		case "www.walmart.com":
@@ -199,10 +218,11 @@ switch(fromus_site)
 				fromus_objectname				=	fromus_objectnametmp[0].innerHTML;
 				
 				fromus_img						= 	document.getElementById('Zoomer').href;
-							
-				var fromus_walmart_$price		=	document.getElementsByClassName("bigPriceText1");
-				var fromus_walmart_centsprice	=	document.getElementsByClassName("smallPriceText1");
-				fromus_pricemin					=	fromus_walmart_$price[0].innerHTML + fromus_walmart_centsprice[0].innerHTML;
+
+				fromus_pricemintmp				=	document.getElementsByClassName("clearfix camelPrice")[document.getElementsByClassName("clearfix camelPrice").length-2].innerText;
+			
+				fromus_desc						=	document.getElementsByClassName("ql-details-short-desc")[0].innerText;
+		
 			}break;
 		
 		case "www.dogfunk.com":
