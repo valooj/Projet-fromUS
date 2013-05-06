@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+	
+    <title>Test buddy</title>
+	<style>
+      
+	  <!-- form_col {
+        display: inline-block;
+        margin-right: 15px;
+        padding: 3px 0px;
+        width: 200px;
+        min-height: 1px;
+        text-align: right;
+      } -->
+	    
+	  body {
+        width: 500px;
+        height: 200px;
+      }
+
+      <!-- img {
+        margin: 5px;
+        border: 2px solid black;
+        vertical-align: middle;
+        width: 75px;
+        height: 75px;
+      } -->
+    </style>
+	
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
+     -->
+    <script src="popup.js"></script>
+
+	
+  </head>
+  <body>
+  <h1>From-US.com</h1>
+  <!-- <input type="button" id="bton" value="activer" /> -->
+  <!-- <input type="button" id="btonoff" value="desactiver" /> -->
+  <form id="myForm">
+	<h2>Formulaire</h2>
+	<label for="store">Marchand : </label>
+	<input type="textbox" id="store" disabled="true"/>
+	<input type="button" id="addstore" value="ajouter le marchand" /></br>
+	<label for="name">Nom du produit : </label>
+	<input type="textbox" id="name" disabled="true"/>
+	<input type="checkbox" id="checkname" checked>desactive </input>
+	<input type="button" id="addname" value="ajouter le nom" /></br>
+	<label for="price">Prix du produit : </label> 
+	<input type="textbox" id="price" disabled="true"/>
+	<input type="checkbox" id="checkprice" checked="checked">desactive </input>
+	<input type="button" id="addprice" value="ajouter le prix" /></br>
+	<input type="submit" id="confirm" value="valider" />
+	<input type="reset" id="reset" value="reset" />
+   </form>
+   
+  <script src="script.js"></script>
+  </body>
+   
+</html>
+
