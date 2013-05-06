@@ -82,7 +82,7 @@
 //																								//
 //																								//	
 
-javascript:	// Permet l'exécution comme favelet, à supprimer du code pour toute autre utilisation.
+//javascript:	// Permet l'exécution comme favelet, à supprimer du code pour toute autre utilisation.
 
 /////	Définition des variables	/////
 
@@ -124,8 +124,7 @@ var fromus_reg = /(\$[0-9\,]{0,}[\.0-9]{0,3})/;
 		}
 			
 	}
-	alert(fromus_site);
-	
+
 // regex pour supprimmer www.         
 var regStore = fromus_site.replace(/www\./,'');
 
@@ -1537,5 +1536,5 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 // stockage du prix dans local storage
 localStorage["regPrice"] = fromus_pricemin;		
 	
-window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname 
-			+ "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n" + fromus_pricemin);	// Affichage des informations récupérées
+//window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname 
+//			+ "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n" + fromus_pricemin);	// Affichage des informations récupérées

@@ -121,11 +121,8 @@ switch(fromus_site)
 			if(!(/(www\.rakuten\.com)/.test(fromus_offre)))
 				{
 					fromus_productname					=	document.getElementsByClassName("bwcProductTitle")[0].innerText;
-
-					fromus_pricemin						=	document.getElementsByClassName("mpsTotalPriceMoney")[0].innerText;
-					
+					fromus_pricemin						=	document.getElementsByClassName("mpsTotalPriceMoney")[0].innerText;					
 					fromus_img							=	document.getElementsByClassName("item image")[0].getElementsByTagName("a")[0].getElementsByTagName("img")[0].src;
-
 					fromus_desc							=	document.getElementById("ctl00_TemplateContentPlaceHolder_ctlProductSummary_divDescription").innerText;
 				}
 			else
@@ -138,7 +135,6 @@ switch(fromus_site)
 						{
 							fromus_objectname			=	document.getElementById("StorePromo_title").innerText;
 						}
-
 					if(document.getElementById("ImageVideo_ImageRepeater_ctl00_Image")!=undefined)
 						{
 							fromus_img					=	document.getElementById("ImageVideo_ImageRepeater_ctl00_Image").src;
@@ -147,7 +143,6 @@ switch(fromus_site)
 						{
 							fromus_img					=	document.getElementById("StorePromo_imgPromo").src;
 						}
-
 					if(document.getElementById("spanMainTotalPrice")!=undefined)
 						{
 							fromus_pricemin				=	document.getElementById("spanMainTotalPrice").innerText;
@@ -155,8 +150,7 @@ switch(fromus_site)
 					else
 						{
 							fromus_pricemin				=	document.getElementById("StorePromo_PriceText").innerText;
-						}
-					
+						}					
 					if(document.getElementById("divDescription")!=undefined)
 						{
 							fromus_desc					=	document.getElementById("divDescription").innerText;
@@ -213,15 +207,30 @@ switch(fromus_site)
 			}break;
 		
 		case "www.walmart.com":
-			{
-				fromus_objectnametmp			=	document.getElementsByClassName("productTitle");
-				fromus_objectname				=	fromus_objectnametmp[0].innerHTML;
-				
-				fromus_img						= 	document.getElementById('Zoomer').href;
+			{alert("ok");
+				if(document.getElementById("mainImage")==undefined)
+					{alert("preview");
+						fromus_objectname				=	document.getElementsByClassName("soi Body3XL")[0].innerText;
+					alert(fromus_objectname);	
+						fromus_img						= 	document.getElementById('mainImage').src;
+					alert(fromus_img);
+						fromus_pricemin					=	document.getElementsByClassName("clearfix camelPrice")[0].innerText;
+					alert(fromus_pricemin);
+						fromus_desc						=	document.getElementsByClassName("ql-details-short-desc")[0].innerText;	
+					}
+				else
+					{alert("full view");
+						fromus_objectnametmp			=	document.getElementsByClassName("productTitle");
+						fromus_objectname				=	fromus_objectnametmp[0].innerHTML;
+						
+						fromus_img						= 	document.getElementById('Zoomer').href;
 
-				fromus_pricemintmp				=	document.getElementsByClassName("clearfix camelPrice")[document.getElementsByClassName("clearfix camelPrice").length-2].innerText;
+						fromus_pricemin					=	document.getElementsByClassName("clearfix camelPrice")[document.getElementsByClassName("clearfix camelPrice").length-1].innerText;
+					
+						fromus_desc						=	document.getElementsByClassName("ql-details-short-desc")[0].innerText;		
+					}
 			
-				fromus_desc						=	document.getElementsByClassName("ql-details-short-desc")[0].innerText;
+				
 		
 			}break;
 		
