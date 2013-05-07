@@ -6,7 +6,7 @@ console.log( "Variable from Content Script: "+localStorage["regPrice"] );
 
 
 // creation de la dialog box
-var newDialog = $('<div id="dialogBox"><p>Formulaire</p><form id="myForm"><label for="store">Marchand : </label><input type="textbox" id="store" disabled="true"/></br><label for="name">Nom du produit : </label><input type="textbox" id="name" disabled="true"/></br><label for="price">Prix du produit : </label><input type="textbox" id="price" disabled="true"/></form></div>');
+var newDialog = $('<div id="dialogBox"><p>Formulaire</p><form id="myForm"><label for="store">Marchand : </label><input type="textbox" id="store" disabled="true"/></br><label for="name">Nom du produit : </label><input type="textbox" id="name" disabled="true"/></br><label for="price">Prix du produit : </label><input type="textbox" id="price" disabled="true"/></br><label for="quantite">Quantite : </label><input id="spinner"></form></div>');
 
 // variable qui permet de savoir si la dialog box est ouverte
 var isOpen = $("#dialogBox").dialog("isOpen");
@@ -23,18 +23,18 @@ if (isOpen != true) {
 			my: "left top", 
 			at: "left top"
 		},
-	width: 400,
-	height: 300,
-	maxHeight: 300,
-	maxWidth: 400,
-	closeOnEscape: false,
-	buttons: [
-		{text: "Submit", click: function() {}},
+		width: 400,
+		height: 300,
+		maxHeight: 300,
+		maxWidth: 400,
+		closeOnEscape: false,
+		buttons: [
+			{text: "Submit", click: function() {}},
 	
-		// bouton cancel, mettre destroy au lieu de close pour supprimer completement la dialog box
-		{text: "Cancel", click: function() {
-		$(this).dialog('destroy');
-		}},
+			// bouton cancel, mettre destroy au lieu de close pour supprimer completement la dialog box
+			{text: "Cancel", click: function() {
+				$(this).dialog('destroy');
+			}},
 		
 		/*
 		// bouton ajouter le marchand
@@ -62,23 +62,28 @@ if (isOpen != true) {
 			textbox.value = content;
 		}}
 	*/
-	]
+		]
 	});
 
-// ajout du marchand automatiquement
-var regStore = localStorage["regStore"];
-$('#store').attr('value',regStore);
+	// creation du spinner pour la quantite
+	var newSpinner = $( "#spinner" ).spinner({
+		min: 1
+	});	
 
-// ajout du nom automatiquement
-var regName = localStorage["regName"];
-$('#name').attr('value',regName);
+	// ajout du marchand automatiquement
+	var regStore = localStorage["regStore"];
+	$('#store').attr('value',regStore);
 
-// ajout du prix automatiquement
-var regPrice = localStorage["regPrice"];
-$('#price').attr('value',regPrice);
+	// ajout du nom automatiquement
+	var regName = localStorage["regName"];
+	$('#name').attr('value',regName);
 
-// ouverture de la dialog box
-newDialog.dialog("open");
+	// ajout du prix automatiquement
+	var regPrice = localStorage["regPrice"];
+	$('#price').attr('value',regPrice);
+
+	// ouverture de la dialog box
+	newDialog.dialog("open");
 
 }
 });
