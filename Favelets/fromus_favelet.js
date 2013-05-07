@@ -207,31 +207,15 @@ switch(fromus_site)
 			}break;
 		
 		case "www.walmart.com":
-			{alert("ok");
-				if(document.getElementById("mainImage")==undefined)
-					{alert("preview");
-						fromus_objectname				=	document.getElementsByClassName("soi Body3XL")[0].innerText;
-					alert(fromus_objectname);	
-						fromus_img						= 	document.getElementById('mainImage').src;
-					alert(fromus_img);
-						fromus_pricemin					=	document.getElementsByClassName("clearfix camelPrice")[0].innerText;
-					alert(fromus_pricemin);
-						fromus_desc						=	document.getElementsByClassName("ql-details-short-desc")[0].innerText;	
-					}
-				else
-					{alert("full view");
-						fromus_objectnametmp			=	document.getElementsByClassName("productTitle");
-						fromus_objectname				=	fromus_objectnametmp[0].innerHTML;
-						
-						fromus_img						= 	document.getElementById('Zoomer').href;
-
-						fromus_pricemin					=	document.getElementsByClassName("clearfix camelPrice")[document.getElementsByClassName("clearfix camelPrice").length-1].innerText;
-					
-						fromus_desc						=	document.getElementsByClassName("ql-details-short-desc")[0].innerText;		
-					}
-			
+			{
+				fromus_objectnametmp			=	document.getElementsByClassName("productTitle");
+				fromus_objectname				=	fromus_objectnametmp[0].innerHTML;
 				
-		
+				fromus_img						= 	document.getElementById('Zoomer').href;
+
+				fromus_pricemin					=	document.getElementsByClassName("clearfix camelPrice")[document.getElementsByClassName("clearfix camelPrice").length-1].innerText;
+			
+				fromus_desc						=	document.getElementsByClassName("ql-details-short-desc")[0].innerText;		
 			}break;
 		
 		case "www.dogfunk.com":
@@ -1426,7 +1410,11 @@ switch(fromus_site)
 				fromus_img								= 	"non trouve";
 			}
 	}
-	
+if(fromus_desc==undefined)
+		{
+			fromus_desc									=	fromus_objectname;
+		}
+localStorage["regName"] = fromus_objectname;		
 localStorage["regPrice"] = fromus_pricemin;	
 	
 window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname 

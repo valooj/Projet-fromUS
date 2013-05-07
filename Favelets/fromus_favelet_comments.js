@@ -19,6 +19,13 @@
 //																								//
 // Actuellement, les offre "Kindle" du site amazon.com ne sont pas supportées:					//
 // chaque produit de la gamme a une page web utilisant une structure qui lui est propre.		//
+// 																								//
+// Walmart n'a pas le support des previews.														//
+// 																								//
+// 																								//
+// 																								//
+// 																								//
+// 																								//
 // shop 11 http://www.ebay.com reporté.															//
 // shop 13 endless a été racheté par amazon														//
 // 																								//
@@ -308,13 +315,12 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_objectname				=	fromus_objectnametmp[0].innerHTML;
 				
 				fromus_img						= 	document.getElementById('Zoomer').href;
-							
-				var fromus_walmart_$price		=	document.getElementsByClassName("bigPriceText1");
-				var fromus_walmart_centsprice	=	document.getElementsByClassName("smallPriceText1");
-				fromus_pricemin					=	fromus_walmart_$price[0].innerHTML + fromus_walmart_centsprice[0].innerHTML;
-				
-				fromus_desc						=	document.getElementsByClassName("ql-details-short-desc")[0].innerText;			
+
+				fromus_pricemin					=	document.getElementsByClassName("clearfix camelPrice")[document.getElementsByClassName("clearfix camelPrice").length-1].innerText;
+			
+				fromus_desc						=	document.getElementsByClassName("ql-details-short-desc")[0].innerText;		
 			}break;
+		
 		
 		case "www.dogfunk.com":
 			{
@@ -1532,7 +1538,8 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_img						= 	"non trouve";
 			}
 	}
-
+// stockage du nom dans local storage
+localStorage["regName"] = fromus_objectname;
 // stockage du prix dans local storage
 localStorage["regPrice"] = fromus_pricemin;		
 	
