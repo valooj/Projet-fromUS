@@ -7,7 +7,7 @@ $name = (isset($_GET["Name"])) ? $_GET["Name"] : NULL;
 $price = (isset($_GET["Price"])) ? $_GET["Price"] : NULL;
  
 if ($store && $name && $price) {
-     echo "Store " . $store . " ! Name " . $name. " ! Price " . $price;
+     echo "Store " . $store . " ! Name " . $name. " ! Price " . $price; 
 } else {
     echo "FAILURE";
 }
