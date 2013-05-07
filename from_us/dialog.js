@@ -42,6 +42,9 @@ function request() {
 
 };
 
+
+
+
 $(document).ready(function() {
 
 console.log( "Variable from Content Script: "+localStorage["regStore"] );
@@ -57,6 +60,7 @@ var isOpen = $("#dialogBox").dialog("isOpen");
 
 // si il n'y a pas de la dialog box alors on l'a crée
 if (isOpen != true) {
+	
 	newDialog.dialog({
 		modal: false,
 		title: "From-us.com",
@@ -73,44 +77,38 @@ if (isOpen != true) {
 		maxWidth: 400,
 		closeOnEscape: false,
 		buttons: [
-			{text: "Submit", click: function() {
+			// bouton submit qui permet de commander un produit (ne marche pas pour l'instant)
+			{
+				text: "Submit", 
+				title: "Permet de commander", 
+				click: function() {
 				request();
-			}},
+				}
+			},
 	
 			// bouton cancel, mettre destroy au lieu de close pour supprimer completement la dialog box
-			{text: "Cancel", click: function() {
-				$(this).dialog('destroy');
-			}},
+			{
+				text: "Cancel", 
+				title: "Fermer la pop up",
+				click: function() {
+					$(this).dialog('destroy');
+				}
+			},
+			
+			// bouton ajouter qui permet d'ajouter un produit dans la base de données 
+			// à ne pas confondre avec le bouton submit (marche pas pour l'instant)
+			{ 
+				text: "Soumettre un produit", 
+				title: "Ajouter un produit dans la base de données",
+				click: function() {}
+			},
+				
 		
-		/*
-		// bouton ajouter le marchand
-		{text: "Ajouter le marchand", click: function() {
-			var content = localStorage["regStore"];
-			//alert(content);
-			$('#store').attr('value',content);
-	
-			//$('#store').attr('value',content);
-			//var textbox = document.getElementById('store');
-			//textbox.value = content;
-		}},
-	
-		// bouton ajouter le nom
-		{text: "Ajouter le nom", click: function() {
-			var content = localStorage["regName"];
-			var textbox = document.getElementById('name');
-			textbox.value = content;
-		}},
-	
-		// bouton ajouter le prix
-		{text: "Ajouter le prix", click: function() {
-			var content = localStorage["regPrice"];
-			var textbox = document.getElementById('price');
-			textbox.value = content;
-		}}
-	*/
+		
 		]
 	});
-
+	
+	
 	// creation du spinner pour la quantite
 	var newSpinner = $( "#spinner" ).spinner({
 		min: 1
