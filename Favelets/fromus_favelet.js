@@ -245,9 +245,9 @@ switch(fromus_site)
 				fromus_img						=	fromus_imgtmp.src;
 
 				fromus_pricemin					=	document.getElementById("priceSelected").innerText;
-			}break;
+			}break; 
 				
-		case "www.gap.com":
+		case "www.gap.com": 
 			{
 				if(document.getElementById("quickLookPriceText")!=undefined)
 					{

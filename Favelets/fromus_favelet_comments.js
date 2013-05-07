@@ -1423,7 +1423,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		case "www.indianmotorcycle.com":
 			{
 			if(document.getElementById("indian-model-overview-image")!=undefined)
-				{	//S'il s'agit d'une page présentant une moto
+				{	//S'il s'agit d'une page presentant une moto
 					fromus_objectname				=	document.getElementById("indian-model-navigation").getElementsByTagName('div')[0].getElementsByTagName('h2')[0].innerText;
 
 					fromus_pricemintmp				=	document.getElementsByClassName('price')[0].innerText;		
@@ -1520,7 +1520,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			}break;
 			
 		case "www.gilttaste.com":
-			{
+			{  
 				fromus_objectname		=	document.getElementsByClassName("product_name")[0].innerText;
 				
 				fromus_pricemin			=	fromus_reg.exec(document.getElementsByClassName("price")[0].innerText)[0];
@@ -1531,7 +1531,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 
 				
-		default :	//Cas par défaut, si le code est appelé sur une page non gérée.
+		default :	//Cas par defaut, si le code est appele sur une page non geree.
 			{
 				fromus_objectname				=	"non trouve";
 				fromus_pricemin					=	"non trouve";
@@ -1544,4 +1544,4 @@ localStorage["regName"] = fromus_objectname;
 localStorage["regPrice"] = fromus_pricemin;		
 	
 //window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname 
-//			+ "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n" + fromus_pricemin);	// Affichage des informations récupérées
+//			+ "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n" + fromus_pricemin);	// Affichage des informations recuperees
