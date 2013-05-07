@@ -215,7 +215,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{
 			if(!(/(www\.rakuten\.com)/.test(fromus_offre)))	// Si l'offre se trouve sur www.quelquechose.rakuten.com et non pas www.rakuten.com
 				{	// qqc.rakuten.com
-					fromus_productname					=	document.getElementsByClassName("bwcProductTitle")[0].innerText;
+					fromus_objectname					=	document.getElementsByClassName("bwcProductTitle")[0].innerText;
 
 					fromus_pricemin						=	document.getElementsByClassName("mpsTotalPriceMoney")[0].innerText;
 					
@@ -1543,5 +1543,4 @@ localStorage["regName"] = fromus_objectname;
 // stockage du prix dans local storage
 localStorage["regPrice"] = fromus_pricemin;		
 	
-//window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname 
-//			+ "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n" + fromus_pricemin);	// Affichage des informations recuperees
+//window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n" + fromus_pricemin);	// Affichage des informations recuperees

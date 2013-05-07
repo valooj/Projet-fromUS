@@ -120,7 +120,7 @@ switch(fromus_site)
 			{
 			if(!(/(www\.rakuten\.com)/.test(fromus_offre)))
 				{
-					fromus_productname					=	document.getElementsByClassName("bwcProductTitle")[0].innerText;
+					fromus_objectname					=	document.getElementsByClassName("bwcProductTitle")[0].innerText;
 					fromus_pricemin						=	document.getElementsByClassName("mpsTotalPriceMoney")[0].innerText;					
 					fromus_img							=	document.getElementsByClassName("item image")[0].getElementsByTagName("a")[0].getElementsByTagName("img")[0].src;
 					fromus_desc							=	document.getElementById("ctl00_TemplateContentPlaceHolder_ctlProductSummary_divDescription").innerText;
@@ -128,8 +128,8 @@ switch(fromus_site)
 			else
 				{
 					if(document.getElementById("AuthorArtistTitle_productTitle")!=undefined)
-						{
-							fromus_objectname			=	document.getElementById("AuthorArtistTitle_productTitle").innerText;
+						{	
+							fromus_objectname			=	document.getElementById("AuthorArtistTitle_productTitle").innerTex						
 						}
 					else
 						{
@@ -1417,5 +1417,4 @@ if(fromus_desc==undefined)
 localStorage["regName"] = fromus_objectname;		
 localStorage["regPrice"] = fromus_pricemin;	
 	
-window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname 
-			+ "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);
+window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);
