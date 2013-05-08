@@ -1,46 +1,23 @@
-var xhr = null;
-     
-function getXMLHttpRequest() {
-    if (window.XMLHttpRequest || window.ActiveXObject) {
-        if (window.ActiveXObject) {
-            try {
-                xhr = new ActiveXObject("Msxml2.XMLHTTP");
-            } catch(e) {
-                xhr = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-        } else {
-            xhr = new XMLHttpRequest(); 
+var _url = 'http://localhost/projetFU/Communication/cible.php';
+var objectJSON = {};
 
-        }
-    } else {
-        alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
-        return null;
-    }
-    return xhr;
-};
-
-function request() {
-    xhr = getXMLHttpRequest();
-
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-            alert(xhr.responseText);
-        }
-    };
-    
-    var var_store = encodeURIComponent(localStorage["regStore"]);
-    var var_name = encodeURIComponent(localStorage["regName"]);
-    var var_price = encodeURIComponent(localStorage["regPrice"]);
-
-
- 	var data ="Store="+var_store+"&Name="+var_name+"&Price="+var_price;
-
-	xhr.open("GET", "http://localhost/projetFU/Communication/cible.php?"+data, true);
-
- 	xhr.send(null);
- 	alert("fin send");
-
-};
+function sendToServer() {
+	alert('debut 1er post');
+	$.post(_url, objectJSON, function(datas) {
+		alert(datas);
+	});
+	alert('1er post');
+	$.post({
+		url: _url,
+		datas: objectJSON,
+		success: function(datas) {
+			alert(datas);
+		},
+		error: function(datas) {
+			alert(datas);
+		}
+	});
+}
 
 
 
@@ -82,7 +59,7 @@ if (isOpen != true) {
 				text: "Submit", 
 				title: "Permet de commander", 
 				click: function() {
-				request();
+				//request();
 				}
 			},
 	
@@ -100,7 +77,21 @@ if (isOpen != true) {
 			{ 
 				text: "Soumettre un produit", 
 				title: "Ajouter un produit dans la base de données",
-				click: function() {}
+				click: function() {
+
+					//objectJSON.products=[];
+					//objectJSON.products[0]={'prd_libelle':localStorage['regPrice'] ,'prd_site': localStorage['regPrice'],'prd_prix':localStorage['regPrice']};
+					//objectJSON.products[0]={"prd_libelle": "libelloo" ,"prd_site": "siteoo"};
+					
+					var jsonObj = {prd_libelle: 'libellodf' ,prd_site: 'siteoddo'};
+					var postData = JSON.stringify(jsonObj);
+					objectJSON = {json:postData};
+
+					alert('debut fct');
+					sendToServer();
+					alert('fin fct');
+	
+				}
 			},
 				
 		
