@@ -678,12 +678,18 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						
 						fromus_objectname				=	fromus_objectname.substring(0,fromus_objectname.length-1).replace(/([a-z])([A-Z])/g, '$1 $2');
 					}
+
 				fromus_pricemintmp				=	document.getElementsByClassName("price")[0].innerText.replace(/\n/g,"").replace(/\s/g,"").replace(/[^0-9\$\.]/g,'');
-				fromus_pricemin					=	/(\$[0-9,]{0,}[\.0-9]{0,32})/gi.exec(fromus_pricemintmp)[0];
+				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 
 				fromus_imgtmp					=	document.getElementsByClassName("main-img")[0].innerHTML;
 				fromus_imgtmp					+=	'';				
 				fromus_img						= 	(/\"(http\:\/\/.*)(\.jpg|\.jpeg|\.tif|\.bmp|\.png|\.gif)\" /gi.exec(fromus_imgtmp)[0] + '').replace(/alt.*/,'').replace("\"","").replace("\"","");
+
+				if(document.getElementById("productDetails")!=undefined)
+					{
+						fromus_desc				=	document.getElementById("productDetails").innerText;
+					}
 			}break;
 
 		case "www.nike.com":
@@ -697,7 +703,12 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 				fromus_imgtmp					=	document.getElementsByClassName("product-image-wrap")[0].innerHTML;
 				fromus_imgtmp					= 	fromus_imgtmp+'';
-				fromus_img						= 	/(http.*)(\.jpg|\.jpeg|\.png|\.bmp|\.tif|\.gif)/gi.exec(fromus_imgtmp)[0].replace("?","");					
+				fromus_img						= 	/(http.*)(\.jpg|\.jpeg|\.png|\.bmp|\.tif|\.gif)/gi.exec(fromus_imgtmp)[0].replace("?","");	
+
+				if(document.getElementById('pi-main-headline')!=undefined)
+					{
+						fromus_desc						=	document.getElementById('pi-main-headline').innerText;	
+					}
 			}break;
 			
 		case "www.overstock.com":
@@ -727,7 +738,12 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				
 					fromus_pricemintmp				=	document.getElementsByClassName("Ovalue main-price-red")[0];
 					fromus_pricemin					=	fromus_pricemintmp.innerText + '';	
-					fromus_pricemin					=	/(\$[0-9]{0,}[\.0-9]{0,3})/g.exec(fromus_pricemin)[0];					
+					fromus_pricemin					=	/(\$[0-9]{0,}[\.0-9]{0,3})/g.exec(fromus_pricemin)[0];		
+
+				if(document.getElementById('details_descFull')!=undefined)
+					{
+						fromus_desc						=	document.getElementById('details_descFull').innerText;	
+					}					
 			}break;
 				
 		case "www.ralphlauren.com":
@@ -742,6 +758,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_imgtmp					=	document.getElementsByClassName("s7flyoutFlyoutView")[0].innerHTML;
 				fromus_imgtmp					= 	fromus_imgtmp+'';
 				fromus_img						= 	/(http.*\?)/gi.exec(fromus_imgtmp)[0].replace("?","");	
+			
+				if(document.getElementById('longDescDiv')!=undefined)
+					{
+						fromus_desc						=	document.getElementById('longDescDiv').innerText;	
+					}					
 			}break;
 
 		case "www.qvc.com":
@@ -753,6 +774,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				
 				fromus_pricemintmp				=	document.getElementById("parProductDetailPrice").innerText;
 				fromus_pricemin					=	/(\$[0-9]{0,})(\.)([0-9]{2})/gi.exec(fromus_pricemintmp)[0].replace(/\s/g,'');				
+			
+				if(document.getElementById('divProductDetailDescriptionAreaDisplay1')!=undefined)
+					{
+						fromus_desc						=	document.getElementById('divProductDetailDescriptionAreaDisplay1').innerText;	
+					}					
 			}break;
 
 		case "www.rei.com":
