@@ -1,18 +1,18 @@
-var _url = 'http://localhost/projetFU/Communication/cible.php';
-var objectJSON = {};
+var _url = 'http://localhost/projetFU/Communication/cible2.php?action=MAJ';
+var productJSON = {};
 var pseudo = 'monPseudo';
 var mdp = 'monMDP';
 var userJSON = {};
 
 function sendToServer() {
 	alert('debut 1er post');
-	$.post(_url, objectJSON, function(datas) {
+	$.post(_url, productJSON, function(datas) {
 		alert(datas);
 	});
 	alert('1er post');
 	$.post({
 		url: _url,
-		datas: objectJSON,
+		datas: productJSON,
 		success: function(datas) {
 			alert(datas);
 		},
@@ -105,10 +105,10 @@ if (isOpen != true) {
 					//objectJSON.products[0]={'prd_libelle':localStorage['regPrice'] ,'prd_site': localStorage['regPrice'],'prd_prix':localStorage['regPrice']};
 					//objectJSON.products[0]={"prd_libelle": "libelloo" ,"prd_site": "siteoo"};
 
-					var jsonObj = {prd_libelle: localStorage['regName'] ,prd_site: localStorage['regStore'],prd_prix: localStorage['regPrice']};
+					var jsonProduct = {prd_libelle: localStorage['regName'] ,prd_site: localStorage['regStore'],prd_prix: localStorage['regPrice']};
 					//var jsonObj = {prd_libelle: 'libellodf' ,prd_site: 'siteoddo'};
-					var postData = JSON.stringify(jsonObj);
-					objectJSON = {json:postData};
+					var postData = JSON.stringify(jsonProduct);
+					productJSON = {product:postData};
 
 					alert('debut fct');
 					sendToServer();
