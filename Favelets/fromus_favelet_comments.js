@@ -1,23 +1,23 @@
-// Code JavaScript √©crit par BERGS Guillaume (Contact: guillaume.robert.bergs@gmail.com)		//
+// Code JavaScript Ècrit par BERGS Guillaume (Contact: guillaume.robert.bergs@gmail.com)		//
 // Dans le cadre de son stage du 15/04/13 au 24/06/13											//
 //																								//
-// Objectif du script: R√©cup√©rer les informations de nom, site, page, image et prix de l'offre.	//
+// Objectif du script: RÈcupÈrer les informations de nom, site, page, image et prix de l'offre.	//
 //																								//
 // NB: Utiliser le fichier favelet.js comme favelet. N'utiliser le code suivant que				//
-// dans une application, un plugin ou autre page web. La pr√©sence de commentaires				//
-// emp√™che l'utilisation de ce code comme favelet.												//
+// dans une application, un plugin ou autre page web. La prÈsence de commentaires				//
+// empÍche l'utilisation de ce code comme favelet.												//
 //																								//
-// Ajouter des sites est simple: il suffit d'ajouter des "case" suppl√©mentaires tout en 		//
-// suivant la structure d√©j√† existante.															//
+// Ajouter des sites est simple: il suffit d'ajouter des "case" supplÈmentaires tout en 		//
+// suivant la structure dÈj‡ existante.															//
 // NB: En cas de site dont l'url est de type domaine1.site.com , domaine2.site.com ,			//
-//  , domaine3.site.com, avec domaine le secteur d'activit√© (babies.site.com et 				//
+//  , domaine3.site.com, avec domaine le secteur d'activitÈ (babies.site.com et 				//
 //	outdoor.site.com par exemple) il est IMPERATIF de rajouter une ligne dans la section		//	
-//	"Normalisation des sites du type quelquechose.nomdusite.com", suivant le mod√®le				//
-//	existant. Cela permet de n'√©crire qu'un "case" pour tout le site au lieu d'un "case"		//
-//	par secteur d'activit√©. En plus de diminuer le temps n√©cessaire √† √©crire le code,			//
-//	cela r√©duit le temps n√©cessaire au chargement du script.									//
+//	"Normalisation des sites du type quelquechose.nomdusite.com", suivant le modËle				//
+//	existant. Cela permet de n'Ècrire qu'un "case" pour tout le site au lieu d'un "case"		//
+//	par secteur d'activitÈ. En plus de diminuer le temps nÈcessaire ‡ Ècrire le code,			//
+//	cela rÈduit le temps nÈcessaire au chargement du script.									//
 //																								//
-// Actuellement, les offre "Kindle" du site amazon.com ne sont pas support√©es:					//
+// Actuellement, les offre "Kindle" du site amazon.com ne sont pas supportÈes:					//
 // chaque produit de la gamme a une page web utilisant une structure qui lui est propre.		//
 // 																								//
 // Walmart n'a pas le support des previews.														//
@@ -26,48 +26,48 @@
 // 																								//
 // 																								//
 // 																								//
-// shop 11 http://www.ebay.com report√©.															//
-// shop 13 endless a √©t√© rachet√© par amazon														//
+// shop 11 http://www.ebay.com reportÈ.															//
+// shop 13 endless a ÈtÈ rachetÈ par amazon														//
 // 																								//
-// shop 16 http://www.guess.eu ne correspond pas √† from-us										//	
-// shop 29 www.nike.com : les pages de customisation produit ne sont pas trait√©es, car			//
+// shop 16 http://www.guess.eu ne correspond pas ‡ from-us										//	
+// shop 29 www.nike.com : les pages de customisation produit ne sont pas traitÈes, car			//
 // 			elles sont en flash.																//
 // shop 30 inaccessible (24 avril 2013)															//	
-// shop 32 = gap, qui est d√©j√† fait.															//
-// shop 36 = ralphlauren.com qui est d√©j√† fait													//
+// shop 32 = gap, qui est dÈj‡ fait.															//
+// shop 36 = ralphlauren.com qui est dÈj‡ fait													//
 // shop 38 http://www.saksfifthavenue.com utilise flash pour ses images							//
 // shop 39 inaccessible (25 avril 2013)															//
-// shop 41 www.sierratradingpost.com n'a pas de r√©cup√©ration dans les previews					//
-// shop 52 www.altrec.com ne marche pas si pr√©sence de vid√©o comme image						//
-// shop 84 www.anthropologie.eu ne correspond pas √† from_us										//
-// shop 86 www.bestbuy.com n'a pas le support des pages offres sp√©ciales DELL					//
-// shop 88 http://www.maccosmetics.com report√©													//
+// shop 41 www.sierratradingpost.com n'a pas de rÈcupÈration dans les previews					//
+// shop 52 www.altrec.com ne marche pas si prÈsence de vidÈo comme image						//
+// shop 84 www.anthropologie.eu ne correspond pas ‡ from_us										//
+// shop 86 www.bestbuy.com n'a pas le support des pages offres spÈciales DELL					//
+// shop 88 http://www.maccosmetics.com reportÈ													//
 // shop 89 www.toofaced.com : les previews ne fonctionnent pas									//
 // shop 91 www.covergirl.com : ne fait que rediriger (ex: vers walmart) sans indiquer de prix	//																				//
 // shop 97 = shop 98 (www.victoriassecret.com)													//
 // shop 100 http://www.chinaglaze.com/ ne vend rien en ligne?									//
-// shop 103 www.dell.com report√©																//
-// shop 104 www.ford.com report√©																//
-// shop 105 www.chevrolet.com : support des pages de type pr√©sentation et "build your own"		//
-// shop 111 www.lincoln.com "build your own" en flash et images des pages de pr√©sentation g√©r√©es//
-//			de la m√™me fa√ßon.																	//
-// shop 113 www.shelby.com report√©																//
+// shop 103 www.dell.com reportÈ																//
+// shop 104 www.ford.com reportÈ																//
+// shop 105 www.chevrolet.com : support des pages de type prÈsentation et "build your own"		//
+// shop 111 www.lincoln.com "build your own" en flash et images des pages de prÈsentation gÈrÈes//
+//			de la mÍme faÁon.																	//
+// shop 113 www.shelby.com reportÈ																//
 // shop 115 www.hummer.com ne permet pas l'achat et redirige vers general motors				//
 // shop 116 www.pontiac.com ne permet pas l'achat et redirige vers general motors				//
 // shop 118 www.saturn.com ne permet pas l'achat et redirige vers general motors				//
-// shop 119 www.harley-davidson.com report√©														//
+// shop 119 www.harley-davidson.com reportÈ														//
 // shop 120 www.shercousa.com ne vends rien. Le plus proche est une liste de petites annonces.	//
 // shop 121 www.atkmotorcyclesusa.com est en flash												//
 // shop 122 www.buell.com ne vend rien, mais redirige vers des tiers.							//
-// shop 123 www.indianmotorcycle.com les previews ne sont pas support√©es, aucune raison 		//
-//			rationnelle apparente. Un id pr√©sent sur la page est consid√©r√© comme ind√©fini.		//
-// shop 124 √† 127 = www. fossil.com																//
-// shop 128 √† 132 http://www.michaelkors.com/ report√©											//
-// shop 134-135 www.converse.com enti√®rement en flash											//
-// shop 137 √† 139 = www.bebe.com																//
-// shop 140 √† 143 = www.shopblackjack.com														//
-// shop 143 √† 145 = www.hottopic.com															//
-// shop 146 √† 153 www.shopkitson.com report√©													//
+// shop 123 www.indianmotorcycle.com les previews ne sont pas supportÈes, aucune raison 		//
+//			rationnelle apparente. Un id prÈsent sur la page est considÈrÈ comme indÈfini.		//
+// shop 124 ‡ 127 = www. fossil.com																//
+// shop 128 ‡ 132 http://www.michaelkors.com/ reportÈ											//
+// shop 134-135 www.converse.com entiËrement en flash											//
+// shop 137 ‡ 139 = www.bebe.com																//
+// shop 140 ‡ 143 = www.shopblackjack.com														//
+// shop 143 ‡ 145 = www.hottopic.com															//
+// shop 146 ‡ 153 www.shopkitson.com reportÈ													//
 //																								//
 //																								//
 //																								//
@@ -76,28 +76,28 @@
 //																								//
 //																								//
 //																								//
-// Les outfits de gymboree.com ne sont pas support√©s, ils sont  compos√©s de produits			//
-//	individuels accessibles s√©par√©ment au m√™me prix.											//
+// Les outfits de gymboree.com ne sont pas supportÈs, ils sont  composÈs de produits			//
+//	individuels accessibles sÈparÈment au mÍme prix.											//
 //																								//
-//	Les shops report√©s sont majoritairement ceux qui pr√©sentent une structure complexe au 		//
-//	premier abord et sembleraient n√©cessiter beaucoup de temps pour leur support.				//
+//	Les shops reportÈs sont majoritairement ceux qui prÈsentent une structure complexe au 		//
+//	premier abord et sembleraient nÈcessiter beaucoup de temps pour leur support.				//
 //	Ex: Ford a un mix de flash et de html pour certaines pages, que du flash pour d'autres.		//
-//		Le support partiel est donc possible, mais n√©cessite beaucoup de code compar√© √† d'autres//
+//		Le support partiel est donc possible, mais nÈcessite beaucoup de code comparÈ ‡ d'autres//
 //																								//
 //																								//
 //																								//
 //																								//
 //																								//	
 
-//javascript:	// Permet l'ex√©cution comme favelet, √† supprimer du code pour toute autre utilisation.
+//javascript:	// Permet l'exÈcution comme favelet, ‡ supprimer du code pour toute autre utilisation.
 
-/////	D√©finition des variables	/////
+/////	DÈfinition des variables	/////
 
-var fromus_offre = document.location.href;		//r√©cup√©ration de l'adresse du l'offre
-var fromus_site = /http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_offre)[1];	//stockage du site web o√π se trouve l'offre
+var fromus_offre = document.location.href;		//rÈcupÈration de l'adresse du l'offre
+var fromus_site = /http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_offre)[1];	//stockage du site web o˘ se trouve l'offre
 var fromus_objectname,
-	fromus_objectnametmp,		// Les variables tmp sont des variables temporaires requises pour le traitement d'un nombre consid√©rable de sites
-	fromus_pricemin,			// Le "fromus_" permet d'emp√™cher les conflits lors de l'utilisation du code dans une application, une extension ou un plugin
+	fromus_objectnametmp,		// Les variables tmp sont des variables temporaires requises pour le traitement d'un nombre considÈrable de sites
+	fromus_pricemin,			// Le "fromus_" permet d'empÍcher les conflits lors de l'utilisation du code dans une application, une extension ou un plugin
 	fromus_pricemintmp,	
 	fromus_imgtmp,
 	fromus_img;
@@ -138,10 +138,10 @@ var regStore = fromus_site.replace(/www\./,'');
 // stockage du marchand dans local storage 
 localStorage["regStore"] = regStore;	
 
-/////	R√©cup√©ration des donn√©es	/////
-//	NB: Les sites dont le code n'est compos√© que de getElement(s) ById, TagName, ClassName, ou autre, ne seront pas d√©taill√©s.	//
+/////	RÈcupÈration des donnÈes	/////
+//	NB: Les sites dont le code n'est composÈ que de getElement(s) ById, TagName, ClassName, ou autre, ne seront pas dÈtaillÈs.	//
 	
-switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
+switch(fromus_site)	//Permet de sÈlectionner le code relatif au site consultÈ
 	{
 		case "www.6pm.com":
 			{
@@ -225,7 +225,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 				}
 			else
 				{	//rakuten.com
-				// Le site varie entre l'utilisation de deux mod√®le pour chaque info r√©cup√©r√©e c'est pourquoi cette section contient beaucoup de if/else 
+				// Le site varie entre l'utilisation de deux modËle pour chaque info rÈcupÈrÈe c'est pourquoi cette section contient beaucoup de if/else 
 				// se basant sur l'existence de noeuds.
 					if(document.getElementById("AuthorArtistTitle_productTitle")!=undefined)
 						{
@@ -275,7 +275,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 						fromus_img		 				=	document.getElementsByClassName("thumbs")[0].getElementsByTagName("img")[0].src;						
 						
 						if(document.getElementsByClassName("price regular largePrice")[0]!=undefined)
-							{	// Si le produit est √† son prix habituel
+							{	// Si le produit est ‡ son prix habituel
 								fromus_pricemin					=	document.getElementsByClassName("price regular largePrice")[0].innerText;
 							}
 						else
@@ -300,7 +300,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 								fromus_pricemin			= 	/(\$)[0-9\.]{1,}/gi.exec(fromus_pricemintmp)[0];
 							}	
 						else
-							{	// Si le produit est √† son prix habituel
+							{	// Si le produit est ‡ son prix habituel
 								fromus_pricemintmp		=	document.getElementsByClassName("price")[0].innerText;
 								fromus_pricemin			=	/(\$)[0-9,]{1,}(\.)[0-9]{2}/gi.exec(fromus_pricemintmp)[0];
 							}						
@@ -335,7 +335,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 		case "www.dsw.com":
 			{
 				if(document.getElementById("productPageContent")!=undefined)
-					{	// Seul le noeud du nom change entre l'aper√ßu rapide et la page de l'article
+					{	// Seul le noeud du nom change entre l'aperÁu rapide et la page de l'article
 						fromus_objectnametmp			=	document.getElementsByClassName("productInfoBlock");
 						fromus_objectnametmp			=	fromus_objectnametmp[0].innerText;
 						fromus_objectname				=	/(.*)(\n\$)/.exec(fromus_objectnametmp)[1];
@@ -354,7 +354,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 		
 		case "www.gap.com":
 			{
-				if(document.getElementById("quickLookPriceText")!=undefined)	// Les noeuds changent entre l'aper√ßu et la page d√©di√©e
+				if(document.getElementById("quickLookPriceText")!=undefined)	// Les noeuds changent entre l'aperÁu et la page dÈdiÈe
 					{
 						fromus_objectname				=	document.getElementById("quickLookProductName").innerText;
 			
@@ -386,7 +386,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemin)[0];
 				
 				if(document.getElementById("wrap")!=undefined)
-					{	//Le noeud change entre l'aper√ßu et la page d√©di√©e
+					{	//Le noeud change entre l'aperÁu et la page dÈdiÈe
 				
 						fromus_imgtmp					=	document.getElementById("wrap").innerHTML;
 						fromus_imgtmp					+=	'';		
@@ -458,7 +458,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 				fromus_pricemintmp				=	document.getElementById("priceDetails").innerText;				
 				fromus_pricemintmp					=	/(\$[0-9]{0,}[\.]{0,1}[0-9]{0,2})$/gi.exec(fromus_pricemintmp);
 				
-				//La ligne suivante prend en charge les pages ayant un prix "original" et un prix "sale", celle d'apr√®s prend en charge toutes les autres pages
+				//La ligne suivante prend en charge les pages ayant un prix "original" et un prix "sale", celle d'aprËs prend en charge toutes les autres pages
 				
 				if(fromus_pricemintmp==null)
 					{
@@ -499,7 +499,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 						fromus_imgtmp					= 	/(http)(.*)(\?)/gi.exec(fromus_imgtmp)[0];		
 						fromus_img						=	fromus_imgtmp.replace(/(&quot)(.*)/,"");				
 					}	
-				else		// S'il s'agit d'une page d√©di√©e
+				else		// S'il s'agit d'une page dÈdiÈe
 					{
 						fromus_objectnametmp			=	document.getElementsByClassName("title");
 						fromus_objectname				=	fromus_objectnametmp[0].innerText.replace("\n","");			
@@ -510,16 +510,16 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 						fromus_img						=	fromus_imgtmp.replace(/(&quot)(.*)/,"");							
 					}
 				
-				// Partie commune aux previews et pages d√©di√©es
+				// Partie commune aux previews et pages dÈdiÈes
 				
-				if(/(.*)(?:sale \$|now \$|original \$)/.test(fromus_objectname))	// Si le "nom" contient plus que le nom, tronquer l'exc√©dent
+				if(/(.*)(?:sale \$|now \$|original \$)/.test(fromus_objectname))	// Si le "nom" contient plus que le nom, tronquer l'excÈdent
 					{
 						fromus_objectname						=	/(.*)(?:sale \$|now \$|original \$)/.exec(fromus_objectname)[1];
 					}
 			
-			// Ce site utilise deux noeuds, l'un pour les prix normaux et/ou originaux et l'autre pour les offres sp√©ciales, "sales"
-			// quelle que soit l'√©tat de l'offre, les deux sont pr√©sents sur la page. Le code ci-dessous va donc en premier voir si
-			// la partie "sale" est vide. Si elle ne l'est pas, il r√©cup√®re le contenu, sinon, il r√©cup√®re le contenu de la partie "original"
+			// Ce site utilise deux noeuds, l'un pour les prix normaux et/ou originaux et l'autre pour les offres spÈciales, "sales"
+			// quelle que soit l'Ètat de l'offre, les deux sont prÈsents sur la page. Le code ci-dessous va donc en premier voir si
+			// la partie "sale" est vide. Si elle ne l'est pas, il rÈcupËre le contenu, sinon, il rÈcupËre le contenu de la partie "original"
 			
 				fromus_pricemintmp						=	document.getElementsByClassName("sale")[0].innerText;
 				fromus_pricemintmp						=	fromus_pricemintmp.replace("\n","");
@@ -548,7 +548,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 		
 		case "www.llbean.com":
 			{
-				if(document.getElementById("ppHeader")!=undefined)		//Si la page est propre √† l'objet
+				if(document.getElementById("ppHeader")!=undefined)		//Si la page est propre ‡ l'objet
 					{
 						fromus_objectname				=	document.getElementById("ppHeader").innerText;
 					}
@@ -580,7 +580,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 						fromus_img						=	document.getElementById("mainView_1").src;
 						fromus_img						= 	/(http)(.*)(\?)/gi.exec(fromus_img)[0].replace("?","");	
 
-						//La ligne suivante r√©cup√®re le dernier prix de l'√©l√©ment, qui est le prix avec discount le cas √©ch√©ant
+						//La ligne suivante rÈcupËre le dernier prix de l'ÈlÈment, qui est le prix avec discount le cas ÈchÈant
 
 						fromus_pricemintmp				=	document.getElementById("priceInfo").innerText.replace(/\n/g,"").replace(/\s/g,"").replace(/[^0-9\$\.]/g,'');
 						fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/gi.exec(fromus_pricemintmp)[0];	
@@ -591,7 +591,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 				
 						fromus_img						=	document.getElementById("mapImageSjElement4_img").src;	
 
-						//La ligne suivante r√©cup√®re le dernier prix de l'√©l√©ment, qui est le prix avec discount le cas √©ch√©ant
+						//La ligne suivante rÈcupËre le dernier prix de l'ÈlÈment, qui est le prix avec discount le cas ÈchÈant
 
 						fromus_pricemintmp				=	document.getElementById("quickViewPrices").innerText.replace(/\n/g,"").replace(/\s/g,"").replace(/[^0-9\$\.]/g,'');
 						fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/gi.exec(fromus_pricemintmp)[0];
@@ -622,7 +622,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 						fromus_objectnametmp			=	document.getElementsByClassName("lineItemInfo")[0].innerText.replace(/\s/g,'');
 						fromus_objectname				=	/(.*\$)/.exec(fromus_objectnametmp)[0];	
 				
-						//La ligne suivante coupe le nom et ins√®re un espace ainsi: aaaBbb => aaa Bbb
+						//La ligne suivante coupe le nom et insËre un espace ainsi: aaaBbb => aaa Bbb
 						
 						fromus_objectname				=	fromus_objectname.substring(0,fromus_objectname.length-1).replace(/([a-z])([A-Z])/g, '$1 $2');
 					}
@@ -750,13 +750,13 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 						fromus_pricemin					=	/(\$[0-9]{0,})(\.)([0-9]{2})/gi.exec(fromus_pricemintmp)[0].replace(/\s/g,'');						 
 					}
 				else
-					{	// Si le produit est √† son prix normal
+					{	// Si le produit est ‡ son prix normal
 						fromus_pricemintmp				=	document.getElementsByClassName("product-price")[0].innerText;
 						fromus_pricemin					=	/(\$[0-9]{0,})(\.)([0-9]{2})$/gi.exec(fromus_pricemintmp.replace(/\s/g,'').replace(/[^0-9\$\.]/g,''))[0];						 
 					}
 					
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////		ATTENTION		Les images sont g√©r√©es en flash, elles ne sont donc pas r√©cup√©r√©es!!		ATTENTION		//////////
+//////////		ATTENTION		Les images sont gÈrÈes en flash, elles ne sont donc pas rÈcupÈrÈes!!		ATTENTION		//////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				
 				fromus_img = "Recuperation manuelle necessaire";
@@ -776,7 +776,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 			{
 				if(document.getElementById("addToCartForm")==undefined)	// S'il s'agit d'une preview
 					{			
-						alert("La recuperation sur preview ne fonctionne pas ici.");	// Derni√®re v√©rification : 25 avril 2013
+						alert("La recuperation sur preview ne fonctionne pas ici.");	// DerniËre vÈrification : 25 avril 2013
 					}
 				else	// S'il s'agit d'une fiche
 					{
@@ -947,7 +947,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 			
 		case "www.bestbuy.com":
 			{
-				//Le site est bas√© sur la dualit√© de deux structures qui se m√©langent, d'o√π la succession de if/else suivante.
+				//Le site est basÈ sur la dualitÈ de deux structures qui se mÈlangent, d'o˘ la succession de if/else suivante.
 				if(document.getElementById("sku-title")!=undefined)
 					{
 						fromus_objectname		=	document.getElementById("sku-title").innerText;
@@ -978,8 +978,8 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 					}
 				fromus_img						=	/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
 		
-				if(/;/.test(fromus_img))	// Certaines src n'ont pas d'extension, elles sont coup√©es au ; et cette v√©rification tronque
-					{						// ce qui d√©passe
+				if(/;/.test(fromus_img))	// Certaines src n'ont pas d'extension, elles sont coupÈes au ; et cette vÈrification tronque
+					{						// ce qui dÈpasse
 						fromus_img				=	fromus_img.replace(/;.*/g,'');
 					}	
 			}break;
@@ -1009,7 +1009,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 			{
 				fromus_objectnametmp			=	document.getElementsByClassName("product-info")[0].innerText;
 				if(/\S/.test(/(.*)\n(.*)\n(.*)/g.exec(fromus_objectnametmp)[2]))
-					{	// Si le nom est en premi√®re ligne...
+					{	// Si le nom est en premiËre ligne...
 						fromus_objectname		=	/(.*)\n(.*)\n(.*)/g.exec(fromus_objectnametmp)[2];
 						if(fromus_objectname == 'New')
 							{	// ...Mais qu'en fait, ce n'est pas le nom
@@ -1191,7 +1191,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 						fromus_img						=	document.getElementById("img_ext").src;						
 					}
 				else
-					{	// S'il s'agit d'une page pr√©sentant un v√©hicule
+					{	// S'il s'agit d'une page prÈsentant un vÈhicule
 						fromus_objectnametmp			=	fromus_offre;
 						fromus_objectname				=	/chevrolet.com\/(.*)\.html/.exec(fromus_objectnametmp)[1].replace(/-/g,' ');
 
@@ -1216,7 +1216,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 						fromus_img						=	document.getElementById("img_ext").src;						
 					}
 				else
-					{	// S'il s'agit d'une page pr√©sentant un v√©hicule
+					{	// S'il s'agit d'une page prÈsentant un vÈhicule
 						fromus_objectnametmp			=	fromus_offre;
 						fromus_objectname				=	/cadillac.com\/(.*)\.html/.exec(fromus_objectnametmp)[1].replace(/-/g,' ');
 
@@ -1242,7 +1242,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 						fromus_img						=	/\<img.*src=\"(.*(\.jpg|\.gif|\.png)).*\>/.exec(fromus_imgtmp)[1];						
 					}
 				else
-					{	// S'il s'agit d'une page pr√©sentant un v√©hicule
+					{	// S'il s'agit d'une page prÈsentant un vÈhicule
 						fromus_objectnametmp			=	fromus_offre;
 						fromus_objectname				=	/dodge\.com.*(\/.*\/)$/.exec(fromus_objectnametmp)[1].replace(/\//g,' ');
 
@@ -1267,14 +1267,14 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 						fromus_img						=	/\<img.*src=\"(.*(\.jpg|\.gif|\.png)).*\>/.exec(fromus_imgtmp)[1];						
 					}
 				else
-					{	// S'il s'agit d'une page pr√©sentant un v√©hicule
+					{	// S'il s'agit d'une page prÈsentant un vÈhicule
 						fromus_objectname				=	"CHRYSLER "+/\n(.*)\n/.exec(document.getElementById('configurator').innerText)[1];
 
 						fromus_pricemintmp				=	document.getElementsByClassName('price')[0].innerText;
 						fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(fromus_pricemintmp)[0];
 						
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////// ATTENTION		Il n'y a pas d'image unique √† r√©cup√©rer!! Le chassis et les roues sont s√©par√©s!!    	ATTENTION ////////
+////////// ATTENTION		Il n'y a pas d'image unique ‡ rÈcupÈrer!! Le chassis et les roues sont sÈparÈs!!    	ATTENTION ////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 						fromus_img						=	"Recuperation automatique impossible";
@@ -1294,7 +1294,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 						fromus_img						=	document.getElementById("img_ext").src;						
 					}
 				else
-					{	// S'il s'agit d'une page pr√©sentant un v√©hicule
+					{	// S'il s'agit d'une page prÈsentant un vÈhicule
 						fromus_objectnametmp			=	fromus_offre;
 						fromus_objectname				=	/buick.com\/(.*)\.html/.exec(fromus_objectnametmp)[1].replace(/-/g,' ');
 
@@ -1314,7 +1314,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 				fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(fromus_pricemintmp)[0];
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////		ATTENTION		Les images sont g√©r√©es en flash, elles ne sont donc pas r√©cup√©r√©es!!		ATTENTION		//////////
+//////////		ATTENTION		Les images sont gÈrÈes en flash, elles ne sont donc pas rÈcupÈrÈes!!		ATTENTION		//////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////				
 				
 				fromus_img						=	"Recuperation automatique impossible";
@@ -1332,7 +1332,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 						fromus_img						=	document.getElementById("img_ext").src;						
 					}
 				else
-					{	// S'il s'agit d'une page pr√©sentant un v√©hicule
+					{	// S'il s'agit d'une page prÈsentant un vÈhicule
 						fromus_objectnametmp			=	fromus_offre;
 						fromus_objectname				=	/gmc.com\/(.*)\.html/.exec(fromus_objectnametmp)[1].replace(/-/g,' ');
 
@@ -1373,13 +1373,13 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 						fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(document.getElementById("summary-total").innerText)[0];
 						
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////		ATTENTION		Les images sont g√©r√©es en flash, elles ne sont donc pas r√©cup√©r√©es!!		ATTENTION		//////////
+//////////		ATTENTION		Les images sont gÈrÈes en flash, elles ne sont donc pas rÈcupÈrÈes!!		ATTENTION		//////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				
 						fromus_img						=	"Pas de recuperation automatique possible";						
 					}
 				else
-					{	// S'il s'agit d'une page pr√©sentant un v√©hicule
+					{	// S'il s'agit d'une page prÈsentant un vÈhicule
 						fromus_objectname				=	document.getElementsByClassName('h1 model')[0].innerText;
 
 						fromus_pricemintmp				=	document.getElementsByClassName('model-price-block')[0].innerText;
@@ -1432,7 +1432,7 @@ switch(fromus_site)	//Permet de s√©lectionner le code relatif au site consult√©
 					fromus_img						=	document.getElementById("indian-model-overview-image").getElementsByTagName('img')[0].src;
 				}
 			else
-				{	// S'il s'agit d'une page produit et THEORIQUEMENT d'une preview, mais le code ne fonctionne pas dans ce cas (chrome, 03/05/13)
+				{	// S'il s'agit d'une page produit et thÈoriquement d'une preview, mais le code ne fonctionne pas dans ce cas (chrome, 03/05/13)
 					fromus_objectname				=	document.getElementById("indian-ecomm-product-listing-container").getElementsByTagName('div')[0].getElementsByTagName('h3')[0].innerText;
 
 					fromus_pricemintmp				=	document.getElementsByClassName('section')[0].getElementsByTagName('h3')[0].innerText;		
