@@ -1,7 +1,6 @@
 var _url = 'http://localhost/projetFU/Communication/cible2.php?action=MAJ';
 var productJSON = {};
-var pseudo = 'monPseudo';
-var mdp = 'monMDP';
+var userID = 2;
 var userJSON = {};
 
 function sendToServer() {
@@ -23,11 +22,11 @@ function sendToServer() {
 }
 
 function sendDataUser() {
-	alert('debut 1er post');
+	//alert('debut 1er post');
 	$.post(_url, userJSON, function(datas) {
 		alert(datas);
 	});
-	alert('1er post');
+	//alert('1er post');
 	$.post({
 		url: _url,
 		datas: userJSON,
@@ -115,7 +114,7 @@ if (isOpen != true) {
 					alert('fin fct');
 
 					alert('Début envoi données client');
-					var jsonUser = {pseud : pseudo ,mot : mdp};
+					var jsonUser = { id : userID};
 					var postData2 = JSON.stringify(jsonUser);
 					userJSON = {user:postData};
 					

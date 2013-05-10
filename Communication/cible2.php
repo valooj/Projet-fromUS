@@ -16,23 +16,24 @@ try
 	{
 		case 'MAJ':
 			// variables
-			//$get_user = isset($_REQUEST['user']) ? htmlspecialchars($_REQUEST['user']) : null;
+			$get_user = isset($_POST['user']) ? json_decode(stripslashes($_POST['user']),TRUE) : null;
 			$get_product = isset($_POST['product']) ? json_decode(stripslashes($_POST['product']),TRUE) : null;
 
 			$var_libelle=$get_product['prd_libelle'];
 			$var_site=$get_product['prd_site'];
 			$var_prix=str_replace ( '$', '', $get_product['prd_prix']);
 
+			$user_id = $get_user['id'];
 
 			// variables tests
-			//if ( !$get_user )
-			//	throw new Exception('MAJ :: User not specified');
+			if ( !$get_user )
+				throw new Exception('MAJ :: User not specified');
 			if ( !$get_product )
 				throw new Exception('MAJ :: Product not specified');
 			if (!is_numeric($var_prix))
 				throw new Exception('MAJ :: Price invalid');
 			// code
-			/*
+			
 			$req = $bdd->prepare('SELECT user_id FROM users WHERE  user_id = :user_id');
 			$req->execute(array('user_id' => $get_user));
 			if( $req->rowCount() != 1 )
@@ -42,7 +43,7 @@ try
 			$req->bindParam('user_id', $get_user, PDO::PARAM_INT);
 			$req->execute();
 			$response['for_user_id'] = $get_user;
-			*/
+			
 
 
 			//execution de la requete de l'ajout
