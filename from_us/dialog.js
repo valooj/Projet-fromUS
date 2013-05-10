@@ -1,5 +1,8 @@
 var _url = 'http://localhost/projetFU/Communication/cible.php';
 var objectJSON = {};
+var pseudo = 'monPseudo';
+var mdp = 'monMDP';
+var userJSON = {};
 
 function sendToServer() {
 	alert('debut 1er post');
@@ -10,6 +13,24 @@ function sendToServer() {
 	$.post({
 		url: _url,
 		datas: objectJSON,
+		success: function(datas) {
+			alert(datas);
+		},
+		error: function(datas) {
+			alert(datas);
+		}
+	});
+}
+
+function sendDataUser() {
+	alert('debut 1er post');
+	$.post(_url, userJSON, function(datas) {
+		alert(datas);
+	});
+	alert('1er post');
+	$.post({
+		url: _url,
+		datas: userJSON,
 		success: function(datas) {
 			alert(datas);
 		},
@@ -91,7 +112,14 @@ if (isOpen != true) {
 					alert('debut fct');
 					sendToServer();
 					alert('fin fct');
-	
+
+					alert('Début envoi données client');
+					var jsonUser = {pseud : pseudo ,mot : mdp};
+					var postData2 = JSON.stringify(jsonUser);
+					userJSON = {user:postData};
+					
+					sendDataUser();
+					alert('Fin envoi des données');
 				}
 			},
 				

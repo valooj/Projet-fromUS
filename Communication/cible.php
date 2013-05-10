@@ -25,6 +25,13 @@ if(isset($_POST["json"])){
 	$var_prix=str_replace ( '$', '', $output['prd_prix']);
 }
 
+if (isset($_POST['user'])) {
+    $user = stripslashes($_POST['user']);
+    $userOP = json_decode($_POST['user'],true);
+    $pseudo = $userOP['pseud'];
+    $mdp = $userOP['mot'];
+}
+
 /*$jsonData = '{ "user":"John", "age":22, "country":"United States" }';
 $phpArray = json_decode($jsonData);
 print_r($phpArray);
@@ -35,7 +42,9 @@ echo json_encode($jsonData);
 //Connection base de données 
 try
 {
-    $bdd = new PDO('mysql:host=localhost;dbname=demo_fromus', 'root', '');
+    $options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
+    $options[PDO::MYSQL_ATTR_INIT_COMMAND] = 'SET NAMES UTF8;';
+    $bdd = new PDO('mysql:host=localhost;dbname=demo_fromus', 'root', '', $options);
 }
 catch(Exception $e)
 {
@@ -52,5 +61,8 @@ $req->execute(array(
     '_prix' => $var_prix,
     '_vis' => 1
     ));
+
+$req1 = $bdd->exec('UPDATE users SET user_point = 100 WHERE  user_id = 1');
+
 
 ?>
