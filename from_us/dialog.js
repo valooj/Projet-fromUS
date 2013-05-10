@@ -1,5 +1,5 @@
-var _urlProduct = 'http://localhost/projetFU/Communication/cible2.php?action=MAJ-product';
-var _urlUser = 'http://localhost/projetFU/Communication/cible2.php?action=MAJ-user';
+var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product';
+var _urlUser = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-user';
 var productJSON = {};
 var userID = 2;
 var userJSON = {};
@@ -105,7 +105,7 @@ if (isOpen != true) {
 					//objectJSON.products[0]={"prd_libelle": "libelloo" ,"prd_site": "siteoo"};
 
 					//var jsonProduct = {prd_libelle: localStorage["regName"] ,prd_site: localStorage["regStore"],prd_prix: localStorage["regPrice"]};
-					var jsonProduct = {prd_libelle: 'liazza' ,prd_site: 'siazzza',prd_prix: 66};
+					var jsonProduct = {prd_libelle: 'asedrr' ,prd_site: 'bjkitgh',prd_prix: 69};
 					
 					//var jsonObj = {prd_libelle: 'libellodf' ,prd_site: 'siteoddo'};
 					var postData = JSON.stringify(jsonProduct);

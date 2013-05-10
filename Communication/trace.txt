@@ -13,3 +13,87 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_prix":6}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"liaznzade","prd_site":"siazzzaden","prd_prix":6}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"asedrr","prd_site":"bjkitgh","prd_prix":69}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"liaznzade","prd_site":"siazzzaden","prd_prix":6}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"liaznzade","prd_site":"siazzzaden","prd_prix":6}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"liaznzade","prd_site":"siazzzaden","prd_prix":6}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"liaznzade","prd_site":"siazzzaden","prd_prix":6}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"liaznzade","prd_site":"siazzzaden","prd_prix":6}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"liaznzade","prd_site":"siazzzaden","prd_prix":6}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"liaznzade","prd_site":"siazzzaden","prd_prix":6}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"liaznzade","prd_site":"siazzzaden","prd_prix":6}
+)
+
+===========================================

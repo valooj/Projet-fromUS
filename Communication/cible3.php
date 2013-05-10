@@ -56,9 +56,9 @@ try
 
             $req->bindValue('_libelle' , $get_product['prd_libelle'], PDO::PARAM_STR);
             $req->bindValue('_site' ,    $get_product['prd_site'], PDO::PARAM_STR);
-            $req->bindValue('_desc' ,    'dscnico', PDO::PARAM_STR);
-            $req->bindValue('_cat' ,     99, PDO::PARAM_INT);
-            $req->bindValue('_visu' ,    'visunico', PDO::PARAM_STR);
+            $req->bindValue('_desc' ,    'dscnico',                PDO::PARAM_STR);
+            $req->bindValue('_cat' ,     99,                       PDO::PARAM_INT);
+            $req->bindValue('_visu' ,    'visunico',               PDO::PARAM_STR);
             $req->bindValue('_prix' ,    $get_product['prd_prix'], PDO::PARAM_STR);
             $req->bindValue('_vis' ,     1,                        PDO::PARAM_INT);
             $req->execute();
@@ -66,6 +66,18 @@ try
 
             // retourne le moins chere de la même catégorie
             // $response['product'] <<<< SELECT * from products WHRE name like '%iphone%' LIMIT 1 ORDER BY price DESC
+            $req = $bdd->prepare('SELECT * FROM produits WHERE prd_libelle LIKE ? ORDER BY prd_prix DESC LIMIT 1');
+			$req->execute(array( "%$get_product[prd_libelle]%"));
+			$response['product'] = $req->fetch();
+			$req->closeCursor();
+
+			break;
+
+		case 'MAJ-panier':
+
+			break;
+
+		case 'MAJ-user':
 
 			break;
 
