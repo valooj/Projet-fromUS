@@ -51,8 +51,17 @@ catch(Exception $e)
         die('Erreur : '.$e->getMessage());
 }
 
-$req = $bdd->prepare('INSERT INTO produits(prd_libelle, prd_site, prd_desc, prd_cat, prd_visu, prd_prix, prd_vis) VALUES(:_libelle, :_site, :_desc, :_cat, :_visu, :_prix, :_vis)');
-$req->execute(array(
+
+// requete pour tester la présence dans la BD
+$reqIn = $bdd->prepare('SELECT prd_id, prd_prix FROM produits where prd_libelle= :_libelle');
+$reqIn->execute(array(
+    '_libelle' => $var_libelle));
+$arr = $reqIn->fetch();
+if($arr == false)
+{
+    //execution de la requete de l'ajout
+    $reqAdd = $bdd->prepare('INSERT INTO produits(prd_libelle, prd_site, prd_desc, prd_cat, prd_visu, prd_prix, prd_vis) VALUES(:_libelle, :_site, :_desc, :_cat, :_visu, :_prix, :_vis)');
+    $reqAdd->execute(array(
     '_libelle' => $var_libelle,
     '_site' => $var_site,
     '_desc' => 'dscnico',
@@ -61,6 +70,24 @@ $req->execute(array(
     '_prix' => $var_prix,
     '_vis' => 1
     ));
+}
+else
+{
+    //Update du porduit si le prix est inférieur
+    
+        $reqUp = $bdd->prepare('UPDATE produits SET prd_libelle= :_libelle, prd_site= :_site, prd_desc= :_desc, prd_cat= :_cat, prd_visu= :_visu, prd_prix= :_prix, prd_vis= :_vis where prd_id= :_id)');
+        $reqUp->execute(array(
+        '_libelle' => $var_libelle,
+        '_site' => $var_site,
+        '_desc' => 'dscnico',
+        '_cat' => 99,
+        '_visu' => 'visunico',
+        '_prix' => $var_prix,
+        '_vis' => 1,
+        '_id' => 21
+        ));
+    
+}
 
 $req1 = $bdd->exec('UPDATE users SET user_point = 100 WHERE  user_id = 1');
 
