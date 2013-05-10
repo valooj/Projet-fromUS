@@ -117,3 +117,24 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-log
+    [log] => {"login": "log" , "password": "pass"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-log
+    [log] => {"login": "monPseudo" ,"password": "monMDP"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-log
+    [log] => {"login": "monPseudo" ,"password": "monMDP"}
+)
+
+===========================================

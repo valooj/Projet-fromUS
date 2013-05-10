@@ -83,7 +83,7 @@ try
 			if( !isset($get_log['login'] , $get_log['password'] ) )
 				throw new Exception('MAJ :: Bad parameter into Log Entity');
 
-			$req = $bdd->prepare('SELECT prd_id, prd_prix FROM users where user_pseudo= :_pseudo and user_password = :_password ');
+			$req = $bdd->prepare('SELECT * FROM users where user_pseudo= :_pseudo and user_password = :_password ');
 			$req->execute(array(
 			    '_pseudo' => $get_log['login'],
 			    '_password' => $get_log['password']));
