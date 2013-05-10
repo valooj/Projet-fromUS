@@ -97,3 +97,23 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-log
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_prix":6}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-log
+    [log] => {"login": "log" , "password": "pass"}
+)
+
+===========================================

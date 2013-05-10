@@ -73,8 +73,30 @@ try
 
 			break;
 
-		case 'MAJ-panier':
+		case 'MAJ-log':
+			$get_log = isset($_REQUEST['log']) ? json_decode($_REQUEST['log'], TRUE) : null;
 
+			// variables tests
+			if ( !$get_log )
+				throw new Exception('MAJ :: Log not specified');
+
+			if( !isset($get_log['login'] , $get_log['password'] ) )
+				throw new Exception('MAJ :: Bad parameter into Log Entity');
+
+			$req = $bdd->prepare('SELECT prd_id, prd_prix FROM users where user_pseudo= :_pseudo and user_password = :_password ');
+			$req->execute(array(
+			    '_pseudo' => $get_log['login'],
+			    '_password' => $get_log['password']));
+			$arr = $req->fetch();
+			$req->closeCursor();
+
+			if($arr == false)
+				throw new Exception('MAJ :: Users or Password invalid');
+
+			//action a définir si ds la base 
+
+
+			$response['Log'] = 'password';
 			break;
 
 		case 'MAJ-user':
@@ -86,7 +108,7 @@ try
 			break;
 	}
 
-	$response['status'] = 1;
+	//$response['status'] = 1;
 }
 catch( Exception $error )
 {
