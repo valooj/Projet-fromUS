@@ -1,93 +1,93 @@
 // Code JavaScript écrit par BERGS Guillaume (Contact: guillaume.robert.bergs@gmail.com)		//
-// Dans le cadre de son stage du 15/04/13 au 24/06/13											//
-//																								//
-// Objectif du script: Récupérer les informations de nom, site, page, image et prix de l'offre.	//
-//																								//
-// NB: Utiliser le fichier favelet.js comme favelet. N'utiliser le code suivant que				//
-// dans une application, un plugin ou autre page web. La présence de commentaires				//
-// empêche l'utilisation de ce code comme favelet.												//
-//																								//
-// Ajouter des sites est simple: il suffit d'ajouter des "case" supplémentaires tout en 		//
-// suivant la structure déjà existante.															//
-// NB: En cas de site dont l'url est de type domaine1.site.com , domaine2.site.com ,			//
-//  , domaine3.site.com, avec domaine le secteur d'activité (babies.site.com et 				//
-//	outdoor.site.com par exemple) il est IMPERATIF de rajouter une ligne dans la section		//	
+// Dans le cadre de son stage du 15/04/13 au 24/06/13																//
+//																																			//
+// Objectif du script: Récupérer les informations de nom, site, page, image et prix de l'offre.			//
+//																																			//
+// NB: Utiliser le fichier favelet.js comme favelet. N'utiliser le code suivant que								//
+// dans une application, un plugin ou autre page web. La présence de commentaires					//
+// empêche l'utilisation de ce code comme favelet.																	//
+//																																			//
+// Ajouter des sites est simple: il suffit d'ajouter des "case" supplémentaires tout en 					//
+// suivant la structure déjà existante.																						//
+// NB: En cas de site dont l'url est de type domaine1.site.com , domaine2.site.com ,					//
+//  , domaine3.site.com, avec domaine le secteur d'activité (babies.site.com et 							//
+//	outdoor.site.com par exemple) il est IMPERATIF de rajouter une ligne dans la section				//	
 //	"Normalisation des sites du type quelquechose.nomdusite.com", suivant le modèle				//
-//	existant. Cela permet de n'écrire qu'un "case" pour tout le site au lieu d'un "case"		//
-//	par secteur d'activité. En plus de diminuer le temps nécessaire à écrire le code,			//
-//	cela réduit le temps nécessaire au chargement du script.									//
-//																								//
-// Actuellement, les offre "Kindle" du site amazon.com ne sont pas supportées:					//
-// chaque produit de la gamme a une page web utilisant une structure qui lui est propre.		//
-// 																								//
-// Walmart n'a pas le support des previews.														//
-// 																								//
-// 																								//
-// 																								//
-// 																								//
-// 																								//
-// shop 11 http://www.ebay.com reporté.															//
-// shop 13 endless a été racheté par amazon														//
-// 																								//
-// shop 16 http://www.guess.eu ne correspond pas à from-us										//	
-// shop 29 www.nike.com : les pages de customisation produit ne sont pas traitées, car			//
-// 			elles sont en flash.																//
-// shop 30 inaccessible (24 avril 2013)															//	
-// shop 32 = gap, qui est déjà fait.															//
-// shop 36 = ralphlauren.com qui est déjà fait													//
-// shop 38 http://www.saksfifthavenue.com utilise flash pour ses images							//
-// shop 39 inaccessible (25 avril 2013)															//
-// shop 41 www.sierratradingpost.com n'a pas de récupération dans les previews					//
-// shop 52 www.altrec.com ne marche pas si présence de vidéo comme image						//
-// shop 84 www.anthropologie.eu ne correspond pas à from_us										//
-// shop 86 www.bestbuy.com n'a pas le support des pages offres spéciales DELL					//
-// shop 88 http://www.maccosmetics.com reporté													//
-// shop 89 www.toofaced.com : les previews ne fonctionnent pas									//
-// shop 91 www.covergirl.com : ne fait que rediriger (ex: vers walmart) sans indiquer de prix	//																				//
-// shop 97 = shop 98 (www.victoriassecret.com)													//
-// shop 100 http://www.chinaglaze.com/ ne vend rien en ligne?									//
-// shop 103 www.dell.com reporté																//
-// shop 104 www.ford.com reporté																//
+//	existant. Cela permet de n'écrire qu'un "case" pour tout le site au lieu d'un "case"					//
+//	par secteur d'activité. En plus de diminuer le temps nécessaire à écrire le code,						//
+//	cela réduit le temps nécessaire au chargement du script.														//
+//																																			//
+// Actuellement, les offre "Kindle" du site amazon.com ne sont pas supportées:							//
+// chaque produit de la gamme a une page web utilisant une structure qui lui est propre.				//
+// 																																			//
+// Walmart n'a pas le support des previews.																				//
+// 																																			//
+// 																																			//
+// 																																			//
+// 																																			//
+// 																																			//
+// shop 11 http://www.ebay.com reporté.																					//
+// shop 13 endless a été racheté par amazon																			//
+// 																																			//
+// shop 16 http://www.guess.eu ne correspond pas à from-us														//	
+// shop 29 www.nike.com : les pages de customisation produit ne sont pas traitées, car				//
+// 			elles sont en flash.																										//
+// shop 30 inaccessible (24 avril 2013)																						//	
+// shop 32 = gap, qui est déjà fait.																							//
+// shop 36 = ralphlauren.com qui est déjà fait																			//
+// shop 38 http://www.saksfifthavenue.com utilise flash pour ses images										//
+// shop 39 inaccessible (25 avril 2013)																						//
+// shop 41 www.sierratradingpost.com n'a pas de récupération dans les previews						//
+// shop 52 www.altrec.com ne marche pas si présence de vidéo comme image							//
+// shop 84 www.anthropologie.eu ne correspond pas à from_us													//
+// shop 86 www.bestbuy.com n'a pas le support des pages offres spéciales DELL						//
+// shop 88 http://www.maccosmetics.com reporté																		//
+// shop 89 www.toofaced.com : les previews ne fonctionnent pas												//
+// shop 91 www.covergirl.com : ne fait que rediriger (ex: vers walmart) sans indiquer de prix			//
+// shop 97 = shop 98 (www.victoriassecret.com)																		//
+// shop 100 http://www.chinaglaze.com/ ne vend rien en ligne?													//
+// shop 103 www.dell.com reporté																							//
+// shop 104 www.ford.com reporté																							//
 // shop 105 www.chevrolet.com : support des pages de type présentation et "build your own"		//
-// shop 111 www.lincoln.com "build your own" en flash et images des pages de présentation gérées//
-//			de la même façon.																	//
-// shop 113 www.shelby.com reporté																//
-// shop 115 www.hummer.com ne permet pas l'achat et redirige vers general motors				//
-// shop 116 www.pontiac.com ne permet pas l'achat et redirige vers general motors				//
-// shop 118 www.saturn.com ne permet pas l'achat et redirige vers general motors				//
-// shop 119 www.harley-davidson.com reporté														//
-// shop 120 www.shercousa.com ne vends rien. Le plus proche est une liste de petites annonces.	//
-// shop 121 www.atkmotorcyclesusa.com est en flash												//
-// shop 122 www.buell.com ne vend rien, mais redirige vers des tiers.							//
+// shop 111 www.lincoln.com "build your own" en flash et images des pages de présentation 		//
+//			gérées de la même façon.																							//
+// shop 113 www.shelby.com reporté																						//
+// shop 115 www.hummer.com ne permet pas l'achat et redirige vers general motors					//
+// shop 116 www.pontiac.com ne permet pas l'achat et redirige vers general motors						//
+// shop 118 www.saturn.com ne permet pas l'achat et redirige vers general motors						//
+// shop 119 www.harley-davidson.com reporté																			//
+// shop 120 www.shercousa.com ne vends rien. Le plus proche est une liste de petites annonces.//
+// shop 121 www.atkmotorcyclesusa.com est en flash																//
+// shop 122 www.buell.com ne vend rien, mais redirige vers des tiers.											//
 // shop 123 www.indianmotorcycle.com les previews ne sont pas supportées, aucune raison 		//
-//			rationnelle apparente. Un id présent sur la page est considéré comme indéfini.		//
-// shop 124 à 127 = www. fossil.com																//
-// shop 128 à 132 http://www.michaelkors.com/ reporté											//
-// shop 134-135 www.converse.com entièrement en flash											//
-// shop 137 à 139 = www.bebe.com																//
-// shop 140 à 143 = www.shopblackjack.com														//
-// shop 143 à 145 = www.hottopic.com															//
-// shop 146 à 153 www.shopkitson.com reporté													//
-//																								//
-//																								//
-//																								//
-//																								//
-//																								//
-//																								//
-//																								//
-//																								//
-// Les outfits de gymboree.com ne sont pas supportés, ils sont  composés de produits			//
-//	individuels accessibles séparément au même prix.											//
-//																								//
+//			rationnelle apparente. Un id présent sur la page est considéré comme indéfini.				//
+// shop 124 à 127 = www. fossil.com																						//
+// shop 128 à 132 http://www.michaelkors.com/ reporté																//
+// shop 134-135 www.converse.com entièrement en flash															//
+// shop 137 à 139 = www.bebe.com																							//
+// shop 140 à 143 = www.shopblackjack.com																			//
+// shop 143 à 145 = www.hottopic.com																					//
+// shop 146 à 153 www.shopkitson.com reporté																		//
+//																																			//
+//																																			//
+//																																			//
+//																																			//
+//																																			//
+//																																			//
+//																																			//
+//																																			//
+// Les outfits de gymboree.com ne sont pas supportés, ils sont  composés de produits				//
+//	individuels accessibles séparément au même prix.																//
+//																																			//
 //	Les shops reportés sont majoritairement ceux qui présentent une structure complexe au 		//
-//	premier abord et sembleraient nécessiter beaucoup de temps pour leur support.				//
-//	Ex: Ford a un mix de flash et de html pour certaines pages, que du flash pour d'autres.		//
+//	premier abord et sembleraient nécessiter beaucoup de temps pour leur support.						//
+//	Ex: Ford a un mix de flash et de html pour certaines pages, que du flash pour d'autres.			//
 //		Le support partiel est donc possible, mais nécessite beaucoup de code comparé à d'autres//
-//																								//
-//																								//
-//																								//
-//																								//
-//																								//	
+//																																			//
+//																																			//
+//																																			//
+//																																			//
+//																																			//	
 
 //javascript:	// Permet l'exécution comme favelet, à supprimer du code pour toute autre utilisation.
 
@@ -100,7 +100,9 @@ var fromus_objectname,
 	fromus_pricemin,			// Le "fromus_" permet d'empêcher les conflits lors de l'utilisation du code dans une application, une extension ou un plugin
 	fromus_pricemintmp,	
 	fromus_imgtmp,
-	fromus_img;
+	fromus_img,
+	fromus_desc,
+	fromus_desctmp;
 var fromus_reg = /(\$[0-9\,]{0,}[\.0-9]{0,3})/;
 
 /////	Normalisation des sites du type quelquechose.nomdusite.com	/////	
@@ -330,18 +332,22 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			
 				fromus_pricemintmp				=	document.getElementById("sales_price").innerText;
 				fromus_pricemin					=	/(\$[0-9]{0,})(\.)([0-9]{2})/gi.exec(fromus_pricemintmp)[0];
+				
+				fromus_desc						=	document.getElementById("desc_and_bottom_line").innerText;
 			}break;
 		
 		case "www.dsw.com":
 			{
 				if(document.getElementById("productPageContent")!=undefined)
-					{	// Seul le noeud du nom change entre l'aperçu rapide et la page de l'article
+					{	//Page
 						fromus_objectnametmp			=	document.getElementsByClassName("productInfoBlock");
 						fromus_objectnametmp			=	fromus_objectnametmp[0].innerText;
 						fromus_objectname				=	/(.*)(\n\$)/.exec(fromus_objectnametmp)[1];
+						
+						fromus_desc							=	document.getElementById("productDesc").innerText;
 					}
 				else
-					{
+					{	//Preview
 						fromus_objectnametmp			=	document.getElementsByClassName("productTitle");
 						fromus_objectname				=	fromus_objectnametmp[0].innerHTML;
 					}
@@ -355,7 +361,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		case "www.gap.com":
 			{
 				if(document.getElementById("quickLookPriceText")!=undefined)	// Les noeuds changent entre l'aperçu et la page dédiée
-					{
+					{	// Preview
 						fromus_objectname				=	document.getElementById("quickLookProductName").innerText;
 			
 						fromus_img						=	document.getElementById("quicklook_product_image").src;
@@ -364,13 +370,18 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_pricemin					=	/(\$[0-9]{0,})(\.)([0-9]{2})/gi.exec(fromus_pricemintmp)[0];
 					}
 				else
-					{			
+					{	// Page	
 						fromus_objectname				=	document.getElementById("productNameText").innerText;
 						
 						fromus_img						=	document.getElementById("product_image").src;	
 						
 						fromus_pricemintmp				=	document.getElementById("priceText").innerText;
 						fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/gi.exec(fromus_pricemintmp)[0];
+						
+						if(document.getElementsByClassName("description")[0]!=undefined)
+							{	// Si la description existe, la prendre
+								fromus_desc					=	document.getElementsByClassName("description")[0].innerText;
+							}
 					}
 			}break;
 				
@@ -384,6 +395,8 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemintmp				=	document.getElementsByClassName("descript-price");
 				fromus_pricemin					=	fromus_pricemintmp[0].innerText + '';	
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemin)[0];
+				
+				fromus_desc							=	document.getElementsByClassName("short-description")[0].innerText;
 				
 				if(document.getElementById("wrap")!=undefined)
 					{	//Le noeud change entre l'aperçu et la page dédiée
@@ -408,8 +421,17 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			
 			fromus_img						=	document.getElementById("p-picture").src;
 			
-			fromus_pricemintmp				=	document.getElementById("b-price-s").innerText;
+			if(document.getElementsByClassName("reg-price-dollars")[0]!=undefined)
+				{	//En cas de promo
+					fromus_pricemintmp				=	document.getElementsByClassName("reg-price-dollars")[1].innerText;
+				}
+			else
+				{	//Sinon
+					fromus_pricemintmp				=	document.getElementById("b-price-s").innerText;
+				}	
 			fromus_pricemin					=	/(\$[0-9]{0,})(\.)([0-9]{2})/gi.exec(fromus_pricemintmp)[0];
+			
+			fromus_desc							=	document.getElementById("p-desc").innerText;
 			}break;
 		
 		case "www.hautelook.com":
@@ -421,7 +443,9 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemin					=	fromus_pricemintmp[0].innerText + '';	
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemin)[0];
 
-				fromus_img						=	document.getElementById("imgModMediumImg").src;
+				fromus_img							=	document.getElementById("imgModMediumImg").src;
+				
+				fromus_desc							=	document.getElementById("moduleProductInfo").innerText;
 		}break;
 		
 		case "www.swimoutlet.com":
@@ -1538,9 +1562,19 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_img						= 	"non trouve";
 			}
 	}
+if(fromus_desc==undefined)//En cas d'abscence de description, utiliser le nom du produit.
+		{
+			fromus_desc									=	fromus_objectname;
+		}
+
+	//Début de la section "limitation de la longueur des données".
+			fromus_desc									=	fromus_desc.substring(0,200);
+			fromus_objectname						=	fromus_objectname.substring(0,100);
+			fromus_pricemin							=	parseFloat(/[0-9\.]{1,}/g.exec(fromus_pricemin)[0]);
+	
 // stockage du nom dans local storage
 localStorage["regName"] = fromus_objectname;
 // stockage du prix dans local storage
 localStorage["regPrice"] = fromus_pricemin;		
 	
-//window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n" + fromus_pricemin);	// Affichage des informations recuperees
+//window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n$" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
