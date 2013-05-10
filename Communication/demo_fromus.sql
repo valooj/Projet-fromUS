@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Serveur: localhost
--- Généré le : Mer 08 Mai 2013 à 19:43
+-- Généré le : Ven 10 Mai 2013 à 07:26
 -- Version du serveur: 5.5.8
 -- Version de PHP: 5.3.5
 
@@ -62,17 +62,15 @@ CREATE TABLE IF NOT EXISTS `produits` (
   `prd_desc` varchar(200) NOT NULL,
   `prd_cat` int(16) NOT NULL,
   `prd_visu` varchar(100) NOT NULL,
-  `prd_prix` decimal(10,0) NOT NULL,
+  `prd_prix` decimal(10,2) NOT NULL,
   `prd_vis` int(1) NOT NULL,
   PRIMARY KEY (`prd_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Contenu de la table `produits`
 --
 
 INSERT INTO `produits` (`prd_id`, `prd_libelle`, `prd_site`, `prd_desc`, `prd_cat`, `prd_visu`, `prd_prix`, `prd_vis`) VALUES
-(1, 'nico', 'sitenico', 'dscnico', 99, 'visunico', '34', 1),
-(2, 'libelle', 'site', 'dscnico', 99, 'visunico', '3', 1),
-(3, 'libelloo', 'siteoo', 'dscnico', 99, 'visunico', '3', 1),
-(4, 'libellodf', 'siteoddo', 'dscnico', 99, 'visunico', '3', 1);
+(11, 'English Laundry Floral Cuff Plaid Mens Dress Shirt Black Size S', 'rakuten.com', 'dscnico', 99, 'visunico', '29.99', 1),
+(12, 'Asics GT 2160 Women''s Running Shoes Sneakers Wide Width T156N-7401 Size 6.5', 'rakuten.com', 'dscnico', 99, 'visunico', '54.99', 1);

@@ -82,8 +82,9 @@ if (isOpen != true) {
 					//objectJSON.products=[];
 					//objectJSON.products[0]={'prd_libelle':localStorage['regPrice'] ,'prd_site': localStorage['regPrice'],'prd_prix':localStorage['regPrice']};
 					//objectJSON.products[0]={"prd_libelle": "libelloo" ,"prd_site": "siteoo"};
-					
-					var jsonObj = {prd_libelle: 'libellodf' ,prd_site: 'siteoddo'};
+
+					var jsonObj = {prd_libelle: localStorage['regName'] ,prd_site: localStorage['regStore'],prd_prix: localStorage['regPrice']};
+					//var jsonObj = {prd_libelle: 'libellodf' ,prd_site: 'siteoddo'};
 					var postData = JSON.stringify(jsonObj);
 					objectJSON = {json:postData};
 

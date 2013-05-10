@@ -22,7 +22,8 @@ if(isset($_POST["json"])){
     $output = json_decode($_POST["json"],TRUE);
 	$var_libelle=$output['prd_libelle'];
 	$var_site=$output['prd_site'];
-	$var_prix=3.4;}
+	$var_prix=str_replace ( '$', '', $output['prd_prix']);
+}
 
 /*$jsonData = '{ "user":"John", "age":22, "country":"United States" }';
 $phpArray = json_decode($jsonData);
