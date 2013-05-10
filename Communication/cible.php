@@ -17,9 +17,9 @@ if($post_product){
 	$var_prix=3.4;
 } 
 */
-if(isset($_POST["json"])){
-    $json = stripslashes($_POST["json"]);
-    $output = json_decode($_POST["json"],TRUE);
+if(isset($_POST["product"])){
+    $json = stripslashes($_POST["product"]);
+    $output = json_decode($_POST["product"],TRUE);
 	$var_libelle=$output['prd_libelle'];
 	$var_site=$output['prd_site'];
 	$var_prix=str_replace ( '$', '', $output['prd_prix']);
@@ -93,3 +93,7 @@ $req1 = $bdd->exec('UPDATE users SET user_point = 100 WHERE  user_id = 1');
 
 
 ?>
+
+
+
+

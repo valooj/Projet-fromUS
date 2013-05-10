@@ -1,0 +1,15 @@
+
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"liazz","prd_site":"siazzz","prd_prix":66}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"liazza","prd_site":"siazzza","prd_prix":66}
+)
+
+===========================================
