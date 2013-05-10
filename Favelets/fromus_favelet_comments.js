@@ -503,14 +503,13 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			
 		case "www.juicycouture.com":
 			{
-				fromus_objectname			=	document.getElementsByClassName("product-name").innerText;		
-			
+				fromus_objectname			=	document.getElementsByClassName("product-name")[0].innerText;		
+
 				fromus_pricemintmp				=	document.getElementsByClassName("product-price")[0].innerText;
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemintmp)[0];
-			
-				fromus_img							=	document.getElementById("product-primary-image").src;				
-				fromus_img							=	fromus_img.replace(/(\$.*\$)/,"");
-				
+
+				fromus_img							=	document.getElementsByClassName("product-primary-image")[0].getElementsByTagName("a")[0].href;				
+
 				fromus_desc							=	document.getElementsByClassName('cnt product-description')[0].innerText;
 			}break;
 			
@@ -555,22 +554,31 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					{	
 						fromus_pricemintmp				=	document.getElementsByClassName("original");
 						fromus_pricemintmp					=	fromus_pricemintmp[0].innerHTML;
-						alert(fromus_pricemin);
 					}	
-				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/.exec(fromus_pricemintmp)[0];				
+				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/.exec(fromus_pricemintmp)[0];	
+
+			if(document.getElementsByClassName("prod_description")[0]!=undefined)
+				{
+					fromus_desc						=	document.getElementsByClassName("prod_description")[0].innerText;
+				}
 			}break;			
 			
 		case "www.landsend.com":
 			{
 				fromus_objectnametmp			=	document.getElementsByClassName("pp-product-name");
 				fromus_objectname				=	fromus_objectnametmp[0].innerHTML;		
-		
+
 				fromus_pricemintmp				=	document.getElementsByClassName("pp-summary-price");
 				fromus_pricemin					=	fromus_pricemintmp[0].innerText + '';	
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemin)[0];
-				
+
 				fromus_img						=	document.getElementById("backImageSjElement5_img").src;
 				fromus_img						=	fromus_img.replace(/(\?.*)/,'');
+
+				if(document.getElementsByClassName("pp-product-description")[0]!=undefined)
+					{
+						fromus_desc				=	document.getElementsByClassName("pp-product-description")[0].innerText;
+					}
 			}break;
 		
 		case "www.llbean.com":
@@ -595,12 +603,18 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemin					=	/(\$[0-9]{0,}[\.0-9]{0,3})/gi.exec(fromus_pricemin)[0];				
 							
 				fromus_img						=	document.getElementById("backImageSjElement4_img").src;
-				fromus_img						=	fromus_img.replace(/(\?.*)/,'');				
+				fromus_img						=	fromus_img.replace(/(\?.*)/,'');			
+				
+			if(document.getElementById("ppLongDesc")!=undefined)
+					{
+						fromus_desc				=	document.getElementById("ppLongDesc").innerText;
+					}
+			
 			}break;
 				
 		case "www1.macys.com":
 			{
-				if(document.getElementById("productTitle")!=undefined)	//Si on est la page du produit
+				if(document.getElementById("productTitle")!=undefined)	//Page du produit
 					{
 						fromus_objectname				=	document.getElementById("productTitle").innerText;
 
@@ -609,21 +623,27 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 						//La ligne suivante récupère le dernier prix de l'élément, qui est le prix avec discount le cas échéant
 
-						fromus_pricemintmp				=	document.getElementById("priceInfo").innerText.replace(/\n/g,"").replace(/\s/g,"").replace(/[^0-9\$\.]/g,'');
+						fromus_pricemintmp				=	document.getElementsByClassName("productPrice")[0].innerText.replace(/\n/g,"").replace(/\s/g,"").replace(/[^0-9\$\.]/g,'');
 						fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/gi.exec(fromus_pricemintmp)[0];	
+
 					}
-				else	//Si on regarde une preview
+				else	//Preview
 					{				
 						fromus_objectname				=	document.getElementById("quickViewProductName").innerText.replace(/Web ID(.*)/,'');
-				
+
 						fromus_img						=	document.getElementById("mapImageSjElement4_img").src;	
 
 						//La ligne suivante récupère le dernier prix de l'élément, qui est le prix avec discount le cas échéant
 
 						fromus_pricemintmp				=	document.getElementById("quickViewPrices").innerText.replace(/\n/g,"").replace(/\s/g,"").replace(/[^0-9\$\.]/g,'');
-						fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/gi.exec(fromus_pricemintmp)[0];
+						fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
+
 					}
-		
+					
+				if(document.getElementById("longDescription")!=undefined)
+					{
+						fromus_desc							=	document.getElementById("longDescription").innerText;
+					}
 			}break;
 			
 		case "www.moosejaw.com":
@@ -634,7 +654,12 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemintmp				=	document.getElementById("product-price").innerText.replace(/\n/g,"").replace(/\s/g,"").replace(/[^0-9\$\.]/g,'');
 				fromus_pricemin					=	/(\$[0-9]{0,})(\.)([0-9]{2})/gi.exec(fromus_pricemintmp)[0];
 		
-				fromus_img						=	document.getElementById("main-image-link").href;				
+				fromus_img						=	document.getElementById("main-image-link").href;		
+
+				if(document.getElementsByClassName("description-left")[0]!=undefined)
+					{
+						fromus_desc				=	document.getElementsByClassName("description-left")[0].innertext;
+					}
 			}break;
 
 		case "www.neimanmarcus.com":
@@ -803,7 +828,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{
 				if(document.getElementById("addToCartForm")==undefined)	// S'il s'agit d'une preview
 					{			
-						alert("La recuperation sur preview ne fonctionne pas ici.");	// Dernière vérification : 25 avril 2013
+						fromus_objectname				=	"Nom";	//La recuperation sur preview ne fonctionne pas ici. Dernière vérification : 25 avril 2013
 					}
 				else	// S'il s'agit d'une fiche
 					{
@@ -1565,7 +1590,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_img						= 	"non trouve";
 			}
 	}
-if(fromus_desc==undefined)//En cas d'abscence de description, utiliser le nom du produit.
+if(fromus_desc===undefined)//En cas d'absence de description, utiliser le nom du produit.
 		{
 			fromus_desc									=	fromus_objectname;
 		}
