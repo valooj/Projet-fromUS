@@ -453,11 +453,13 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_objectnametmp			=	document.getElementsByClassName("ProductNameColorLARGE");
 				fromus_objectname				=	fromus_objectnametmp[0].innerHTML;		
 		
-				fromus_pricemintmp				=	document.getElementsByClassName("pricecolor");
+				fromus_pricemintmp				=	document.getElementById("ProductPrice");
 				fromus_pricemin					=	fromus_pricemintmp[0].innerText + '';	
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemin)[0];		
 				
-				fromus_img						=	document.getElementById("product_photo").src;		
+				fromus_img						=	document.getElementById("product_photo").src;
+
+				
 		}break;
 		
 		case "www.jcrew.com":
