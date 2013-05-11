@@ -104,8 +104,8 @@ if (isOpen != true) {
 					//objectJSON.products[0]={'prd_libelle':localStorage['regPrice'] ,'prd_site': localStorage['regPrice'],'prd_prix':localStorage['regPrice']};
 					//objectJSON.products[0]={"prd_libelle": "libelloo" ,"prd_site": "siteoo"};
 
-					//var jsonProduct = {prd_libelle: localStorage["regName"] ,prd_site: localStorage["regStore"],prd_prix: localStorage["regPrice"]};
-					var jsonProduct = {prd_libelle: 'asedrr' ,prd_site: 'bjkitgh',prd_prix: 69};
+					var jsonProduct = {prd_libelle: localStorage["regName"] ,prd_site: localStorage["regStore"],prd_prix: localStorage["regPrice"]};
+					//var jsonProduct = {prd_libelle: 'asedrr' ,prd_site: 'bjkitgh',prd_prix: 69};
 					
 					//var jsonObj = {prd_libelle: 'libellodf' ,prd_site: 'siteoddo'};
 					var postData = JSON.stringify(jsonProduct);

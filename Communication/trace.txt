@@ -138,3 +138,157 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Zmodo 4CH Security Surveillance System for Home with 4 Day Night Weatherproof Bullet Cameras","prd_site":"rakuten.com","prd_prix":"107.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Zmodo 4CH Security Surveillance System for Home with 4 Day Night Weatherproof Bullet Cameras","prd_site":"rakuten.com","prd_prix":"107.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Zmodo 4CH Security Surveillance System for Home with 4 Day Night Weatherproof Bullet Cameras","prd_site":"rakuten.com","prd_prix":"107.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Zmodo 4CH Security Surveillance System for Home with 4 Day Night Weatherproof Bullet Cameras","prd_site":"rakuten.com","prd_prix":"107.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Zmodo 4CH Security Surveillance System for Home with 4 Day Night Weatherproof Bullet Cameras","prd_site":"rakuten.com","prd_prix":"107.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Zmodo 4CH Security Surveillance System for Home with 4 Day Night Weatherproof Bullet Cameras","prd_site":"rakuten.com","prd_prix":"107.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Zmodo 4CH Security Surveillance System for Home with 4 Day Night Weatherproof Bullet Cameras","prd_site":"rakuten.com","prd_prix":"107.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Zmodo 4CH Security Surveillance System for Home with 4 Day Night Weatherproof Bullet Cameras","prd_site":"rakuten.com","prd_prix":"107.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Zmodo 4CH Security Surveillance System for Home with 4 Day Night Weatherproof Bullet Cameras","prd_site":"rakuten.com","prd_prix":"107.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Zmodo 4CH Security Surveillance System for Home with 4 Day Night Weatherproof Bullet Cameras","prd_site":"rakuten.com","prd_prix":"107.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Zmodo 4CH Security Surveillance System for Home with 4 Day Night Weatherproof Bullet Cameras","prd_site":"rakuten.com","prd_prix":"107.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================

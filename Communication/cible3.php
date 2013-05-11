@@ -7,13 +7,10 @@ file_put_contents('./trace.txt', print_r($_REQUEST, 1) . PHP_EOL . '============
 // un champ unique, ici : l'URI = URL + page_vers_le_produit
 // OU un couple unique (URL, article)
 $sql_prepared_update_product = <<<SQL
-
 INSERT INTO produits(prd_libelle, prd_site, prd_desc, prd_cat, prd_visu, prd_prix, prd_vis)
 	VALUES (:_libelle, :_site, :_desc, :_cat, :_visu, :_prix, :_vis)
-	
 	ON DUPLICATE KEY UPDATE
-		prd_libelle= :_libelle, prd_desc= :_desc, prd_cat= :_cat, prd_visu= :_visu, prd_prix= :_prix, prd_vis= :_vis
-
+		prd_desc= :_desc, prd_cat= :_cat, prd_visu= :_visu, prd_prix= :_prix, prd_vis= :_vis
 SQL;
 
 
