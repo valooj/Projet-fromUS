@@ -5,11 +5,11 @@ ressources :
  http://www.xul.fr/xml-ajax.html
  
  pour construire une serveur rest :
-  -http://www.lornajane.net/posts/2012/building-a-restful-php-server-understanding-the-request
-  -https://github.com/frapi/frapi
-  -http://www.siteduzero.com/forum/sujet/rest-json-web-service-88929
-  -https://github.com/marcj/php-rest-service
+    -http://www.lornajane.net/posts/2012/building-a-restful-php-server-understanding-the-request
+    -https://github.com/frapi/frapi
+    -http://www.siteduzero.com/forum/sujet/rest-json-web-service-88929
+    -https://github.com/marcj/php-rest-service
   
  pour utiliser AJAX:
-  -http://www.siteduzero.com/informatique/tutoriels/ajax-et-l-echange-de-donnees-en-javascript
+    -http://www.siteduzero.com/informatique/tutoriels/ajax-et-l-echange-de-donnees-en-javascript
 Projet-fromUS
