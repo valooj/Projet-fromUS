@@ -348,3 +348,115 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Kguard All-in-One Surveillance Combo Kit - 8CH H.264 DVR with 8 CMOS Cameras - 8 x Camera, Digital V","prd_site":"rakuten.com","prd_prix":"517.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Kguard All-in-One Surveillance Combo Kit - 8CH H.264 DVR with 8 CMOS Cameras - 8 x Camera, Digital V","prd_site":"rakuten.com","prd_prix":"517.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Zmodo 4CH H.264 Video CCTV Real-time Surveillance Security DVR - iPhone & Android Network - No Hard ","prd_site":"rakuten.com","prd_prix":"85.5"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Zmodo 4CH H.264 Video CCTV Real-time Surveillance Security DVR - iPhone & Android Network - No Hard ","prd_site":"rakuten.com","prd_prix":"85.5"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Kensington ClickSafe K64663US On Demand Cable Lock - Master Keyed Lock - Steel","prd_prix":"35.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Kensington ClickSafe K64663US On Demand Cable Lock - Master Keyed Lock - Steel","prd_prix":"35.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Kensington Promixo Starter Kit","prd_prix":"49.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Kensington Promixo Starter Kit","prd_site":"rakuten.com","prd_prix":"49.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================

@@ -58,8 +58,11 @@ try
             $req->bindValue('_visu' ,    'visunico',               PDO::PARAM_STR);
             $req->bindValue('_prix' ,    $get_product['prd_prix'], PDO::PARAM_STR);
             $req->bindValue('_vis' ,     1,                        PDO::PARAM_INT);
-            $req->execute();
+            $rep = $req->execute();
             $req->closeCursor();
+
+            if($rep == false)
+				throw new Exception('MAJ :: Insert invalid');
 
 			break;
 
