@@ -562,3 +562,17 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Directed 516U Universal Voice Module","prd_site":"rakuten.com/prod/directed-516u-universal-voice-module/90148203.html","prd_prix":"30.1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
