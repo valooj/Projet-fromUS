@@ -61,6 +61,37 @@ try
             $req->execute();
             $req->closeCursor();
 
+			break;
+
+		case 'MAJ-panier':
+		// variables
+			$get_product = isset($_REQUEST['product']) ? json_decode($_REQUEST['product'], TRUE) : null;
+
+			// variables tests
+			if ( !$get_product )
+				throw new Exception('MAJ :: Product not specified');
+
+			if( !isset($get_product['prd_prix'], $get_product['prd_libelle'], $get_product['prd_site']) )
+				throw new Exception('MAJ :: Bad parameters into Product Entity');
+
+			$get_product['prd_prix'] = str_replace('$', null, $get_product['prd_prix']);
+
+			if ( !is_numeric($get_product['prd_prix']) )
+				throw new Exception('MAJ :: Price invalid');
+			
+			// code MAJ du produit visité
+			$req = $bdd->prepare($sql_prepared_update_product);
+
+            $req->bindValue('_libelle' , $get_product['prd_libelle'], PDO::PARAM_STR);
+            $req->bindValue('_site' ,    $get_product['prd_site'], PDO::PARAM_STR);
+            $req->bindValue('_desc' ,    'dscnico',                PDO::PARAM_STR);
+            $req->bindValue('_cat' ,     99,                       PDO::PARAM_INT);
+            $req->bindValue('_visu' ,    'visunico',               PDO::PARAM_STR);
+            $req->bindValue('_prix' ,    $get_product['prd_prix'], PDO::PARAM_STR);
+            $req->bindValue('_vis' ,     1,                        PDO::PARAM_INT);
+            $req->execute();
+            $req->closeCursor();
+
             // retourne le moins chere de la même catégorie
             // $response['product'] <<<< SELECT * from products WHRE name like '%iphone%' LIMIT 1 ORDER BY price DESC
             $req = $bdd->prepare('SELECT * FROM produits WHERE prd_libelle LIKE ? ORDER BY prd_prix DESC LIMIT 1');
@@ -68,6 +99,7 @@ try
 			$response['product'] = $req->fetch();
 			$req->closeCursor();
 
+			
 			break;
 
 		case 'MAJ-log':

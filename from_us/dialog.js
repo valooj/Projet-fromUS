@@ -1,17 +1,18 @@
 var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product';
 var _urlUser = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-user';
+var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier';
 var productJSON = {};
 var userID = 2;
 var userJSON = {};
 
-function sendToServer() {
+function sendToServer(urlSelected) {
 	alert('debut 1er post');
-	$.post(_urlProduct, productJSON, function(datas) {
+	$.post(urlSelected, productJSON, function(datas) {
 		alert(datas);
 	});
 	alert('1er post');
 	$.post({
-		url: _urlProduct,
+		url: urlSelected,
 		datas: productJSON,
 		success: function(datas) {
 			alert(datas);
@@ -112,7 +113,7 @@ if (isOpen != true) {
 					productJSON = {product:postData};
 
 					alert('debut fct');
-					sendToServer();
+					sendToServer(_urlProduct);
 					alert('fin fct');
 
 					alert('Début envoi données client');
