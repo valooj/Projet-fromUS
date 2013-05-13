@@ -12,3 +12,17 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Acer Aspire One AOD270-1492 10.1\" Netbook - Intel Atom N2600 - 1GB RAM - 320GB HDD - Intel Graphics ","prd_site":"rakuten.com/prod/acer-aspire-one-aod270-1492-10-1-netbook-intel-atom-n2600-1gb-ram/228248268.html","prd_prix":"248.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
