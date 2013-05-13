@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2
+-- version 3.3.9
 -- http://www.phpmyadmin.net
 --
--- Client: localhost
--- Généré le: Lun 13 Mai 2013 à 13:58
--- Version du serveur: 5.5.24-log
--- Version de PHP: 5.3.13
+-- Serveur: localhost
+-- Généré le : Lun 13 Mai 2013 à 14:39
+-- Version du serveur: 5.5.8
+-- Version de PHP: 5.3.5
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -293,6 +292,11 @@ CREATE TABLE IF NOT EXISTS `code_reduc_u` (
   `crv_date` int(11) NOT NULL,
   PRIMARY KEY (`crv_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `code_reduc_u`
+--
+
 
 -- --------------------------------------------------------
 
@@ -581,6 +585,11 @@ CREATE TABLE IF NOT EXISTS `dem_fra` (
   `df_com` text NOT NULL,
   PRIMARY KEY (`df_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `dem_fra`
+--
+
 
 -- --------------------------------------------------------
 
@@ -1172,6 +1181,11 @@ CREATE TABLE IF NOT EXISTS `newsletter` (
   PRIMARY KEY (`newsletter_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `newsletter`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -1211,6 +1225,11 @@ CREATE TABLE IF NOT EXISTS `parrain` (
   PRIMARY KEY (`parrain_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `parrain`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -1223,6 +1242,11 @@ CREATE TABLE IF NOT EXISTS `parrain_util` (
   `parrainu_util` int(1) NOT NULL,
   PRIMARY KEY (`parrainu_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `parrain_util`
+--
+
 
 -- --------------------------------------------------------
 
@@ -1286,8 +1310,9 @@ CREATE TABLE IF NOT EXISTS `produits` (
   `prd_visu` varchar(100) NOT NULL,
   `prd_prix` decimal(10,2) NOT NULL,
   `prd_vis` int(1) NOT NULL,
-  PRIMARY KEY (`prd_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+  PRIMARY KEY (`prd_id`),
+  UNIQUE KEY `prd_site` (`prd_site`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Contenu de la table `produits`
@@ -1295,7 +1320,8 @@ CREATE TABLE IF NOT EXISTS `produits` (
 
 INSERT INTO `produits` (`prd_id`, `prd_libelle`, `prd_site`, `prd_desc`, `prd_cat`, `prd_visu`, `prd_prix`, `prd_vis`) VALUES
 (1, 'IPAD 2.0 Wifi 32GO', 'http://www.apple.com', '<p>Ipad from Apple.com</p>', 9, 'prd_ipad.png', '399.99', 1),
-(5, 'Kindle Fire', 'http://www.amazon.com', '<p>New kindle fire from Amazon.com</p>', 9, 'kindle.jpg', '159.00', 1);
+(5, 'Kindle Fire', 'http://www.amazon.com', '<p>New kindle fire from Amazon.com</p>', 9, 'kindle.jpg', '159.00', 1),
+(6, 'eBags Packing Cubes - 3pc Set', 'rakuten.com/prod/ebags-packing-cubes-3pc-set/203422651.html', 'dscnico', 99, 'visunico', '21.99', 1);
 
 -- --------------------------------------------------------
 
@@ -1817,6 +1843,11 @@ CREATE TABLE IF NOT EXISTS `ps_accessory` (
   KEY `accessory_product` (`id_product_1`,`id_product_2`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `ps_accessory`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -2166,6 +2197,11 @@ CREATE TABLE IF NOT EXISTS `ps_attachment` (
   PRIMARY KEY (`id_attachment`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_attachment`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -2179,6 +2215,11 @@ CREATE TABLE IF NOT EXISTS `ps_attachment_lang` (
   `description` text,
   PRIMARY KEY (`id_attachment`,`id_lang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `ps_attachment_lang`
+--
+
 
 -- --------------------------------------------------------
 
@@ -2319,6 +2360,11 @@ CREATE TABLE IF NOT EXISTS `ps_attribute_impact` (
   PRIMARY KEY (`id_attribute_impact`),
   UNIQUE KEY `id_product` (`id_product`,`id_attribute`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `ps_attribute_impact`
+--
+
 
 -- --------------------------------------------------------
 
@@ -2717,6 +2763,11 @@ CREATE TABLE IF NOT EXISTS `ps_cart_cart_rule` (
   KEY `id_cart_rule` (`id_cart_rule`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `ps_cart_cart_rule`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -2785,6 +2836,11 @@ CREATE TABLE IF NOT EXISTS `ps_cart_rule` (
   PRIMARY KEY (`id_cart_rule`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_cart_rule`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -2796,6 +2852,11 @@ CREATE TABLE IF NOT EXISTS `ps_cart_rule_carrier` (
   `id_carrier` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id_cart_rule`,`id_carrier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_cart_rule_carrier`
+--
+
 
 -- --------------------------------------------------------
 
@@ -2809,6 +2870,11 @@ CREATE TABLE IF NOT EXISTS `ps_cart_rule_combination` (
   PRIMARY KEY (`id_cart_rule_1`,`id_cart_rule_2`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `ps_cart_rule_combination`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -2821,6 +2887,11 @@ CREATE TABLE IF NOT EXISTS `ps_cart_rule_country` (
   PRIMARY KEY (`id_cart_rule`,`id_country`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `ps_cart_rule_country`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -2832,6 +2903,11 @@ CREATE TABLE IF NOT EXISTS `ps_cart_rule_group` (
   `id_group` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id_cart_rule`,`id_group`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_cart_rule_group`
+--
+
 
 -- --------------------------------------------------------
 
@@ -2846,6 +2922,11 @@ CREATE TABLE IF NOT EXISTS `ps_cart_rule_lang` (
   PRIMARY KEY (`id_cart_rule`,`id_lang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `ps_cart_rule_lang`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -2858,6 +2939,11 @@ CREATE TABLE IF NOT EXISTS `ps_cart_rule_product_rule` (
   `type` enum('products','categories','attributes','manufacturers','suppliers') NOT NULL,
   PRIMARY KEY (`id_product_rule`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `ps_cart_rule_product_rule`
+--
+
 
 -- --------------------------------------------------------
 
@@ -2872,6 +2958,11 @@ CREATE TABLE IF NOT EXISTS `ps_cart_rule_product_rule_group` (
   PRIMARY KEY (`id_product_rule_group`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_cart_rule_product_rule_group`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -2884,6 +2975,11 @@ CREATE TABLE IF NOT EXISTS `ps_cart_rule_product_rule_value` (
   PRIMARY KEY (`id_product_rule`,`id_item`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `ps_cart_rule_product_rule_value`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -2895,6 +2991,11 @@ CREATE TABLE IF NOT EXISTS `ps_cart_rule_shop` (
   `id_shop` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id_cart_rule`,`id_shop`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_cart_rule_shop`
+--
+
 
 -- --------------------------------------------------------
 
@@ -3353,6 +3454,11 @@ CREATE TABLE IF NOT EXISTS `ps_compare` (
   PRIMARY KEY (`id_compare`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_compare`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -3366,6 +3472,11 @@ CREATE TABLE IF NOT EXISTS `ps_compare_product` (
   `date_upd` datetime NOT NULL,
   PRIMARY KEY (`id_compare`,`id_product`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_compare_product`
+--
+
 
 -- --------------------------------------------------------
 
@@ -3805,6 +3916,11 @@ CREATE TABLE IF NOT EXISTS `ps_connections_page` (
   `time_end` datetime DEFAULT NULL,
   PRIMARY KEY (`id_connections`,`id_page`,`time_start`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_connections_page`
+--
+
 
 -- --------------------------------------------------------
 
@@ -6040,7 +6156,7 @@ CREATE TABLE IF NOT EXISTS `ps_customer` (
 --
 
 INSERT INTO `ps_customer` (`id_customer`, `id_shop_group`, `id_shop`, `id_gender`, `id_default_group`, `id_risk`, `company`, `siret`, `ape`, `firstname`, `lastname`, `email`, `passwd`, `last_passwd_gen`, `birthday`, `newsletter`, `ip_registration_newsletter`, `newsletter_date_add`, `optin`, `website`, `outstanding_allow_amount`, `show_public_prices`, `max_payment_days`, `secure_key`, `note`, `active`, `is_guest`, `deleted`, `date_add`, `date_upd`) VALUES
-(2, 1, 1, 1, 3, 0, NULL, NULL, NULL, 'Sebastien', 'CAREME', 'sebastien.careme@from-us.com', 'bfd12a52059c932504152fdd28721b5a', '2013-02-14 07:23:14', '1981-06-02', 0, NULL, '0000-00-00 00:00:00', 0, NULL, '0.000000', 0, 0, '87c91d56416a91572fd480ecdc7033f1', NULL, 1, 0, 0, '2013-02-14 14:23:14', '2013-02-14 14:23:14');
+(2, 1, 1, 1, 3, 0, NULL, NULL, NULL, 'Sebastien', 'CAREME', 'sebastien.careme@from-us.com', 'bfd12a52059c932504152fdd28721b5a', '2013-02-14 08:23:14', '1981-06-02', 0, NULL, '0000-00-00 00:00:00', 0, NULL, '0.000000', 0, 0, '87c91d56416a91572fd480ecdc7033f1', NULL, 1, 0, 0, '2013-02-14 14:23:14', '2013-02-14 14:23:14');
 
 -- --------------------------------------------------------
 
@@ -6077,6 +6193,11 @@ CREATE TABLE IF NOT EXISTS `ps_customer_ip` (
   KEY `idx_id_customer` (`id_customer`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_customer_ip`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -6099,6 +6220,11 @@ CREATE TABLE IF NOT EXISTS `ps_customer_message` (
   KEY `id_employee` (`id_employee`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_customer_message`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -6109,6 +6235,11 @@ CREATE TABLE IF NOT EXISTS `ps_customer_message_sync_imap` (
   `md5_header` varbinary(32) NOT NULL,
   KEY `md5_header_index` (`md5_header`(4))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_customer_message_sync_imap`
+--
+
 
 -- --------------------------------------------------------
 
@@ -6138,6 +6269,11 @@ CREATE TABLE IF NOT EXISTS `ps_customer_thread` (
   KEY `id_product` (`id_product`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_customer_thread`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -6158,6 +6294,11 @@ CREATE TABLE IF NOT EXISTS `ps_customization` (
   KEY `id_product_attribute` (`id_product_attribute`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_customization`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -6173,6 +6314,11 @@ CREATE TABLE IF NOT EXISTS `ps_customization_field` (
   KEY `id_product` (`id_product`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_customization_field`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -6185,6 +6331,11 @@ CREATE TABLE IF NOT EXISTS `ps_customization_field_lang` (
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id_customization_field`,`id_lang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_customization_field_lang`
+--
+
 
 -- --------------------------------------------------------
 
@@ -6200,6 +6351,11 @@ CREATE TABLE IF NOT EXISTS `ps_customized_data` (
   PRIMARY KEY (`id_customization`,`type`,`index`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `ps_customized_data`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -6212,6 +6368,11 @@ CREATE TABLE IF NOT EXISTS `ps_date_range` (
   `time_end` datetime NOT NULL,
   PRIMARY KEY (`id_date_range`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `ps_date_range`
+--
+
 
 -- --------------------------------------------------------
 
@@ -6286,7 +6447,7 @@ CREATE TABLE IF NOT EXISTS `ps_employee` (
 --
 
 INSERT INTO `ps_employee` (`id_employee`, `id_profile`, `id_lang`, `lastname`, `firstname`, `email`, `passwd`, `last_passwd_gen`, `stats_date_from`, `stats_date_to`, `bo_color`, `bo_theme`, `default_tab`, `bo_width`, `bo_show_screencast`, `active`, `id_last_order`, `id_last_customer_message`, `id_last_customer`) VALUES
-(1, 1, 5, 'Fromus', 'Fromus', 'sebastien.careme@from-us.com', '6d3299ae28c2d1c0dbeb0c9fffcf7333', '2013-02-14 06:47:05', '2013-02-14', '2013-02-14', '', 'default', 0, 0, 0, 1, 1, 0, 2);
+(1, 1, 5, 'Fromus', 'Fromus', 'sebastien.careme@from-us.com', '6d3299ae28c2d1c0dbeb0c9fffcf7333', '2013-02-14 07:47:05', '2013-02-14', '2013-02-14', '', 'default', 0, 0, 0, 1, 1, 0, 2);
 
 -- --------------------------------------------------------
 
@@ -6323,6 +6484,11 @@ CREATE TABLE IF NOT EXISTS `ps_favorite_product` (
   `date_upd` datetime NOT NULL,
   PRIMARY KEY (`id_favorite_product`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `ps_favorite_product`
+--
+
 
 -- --------------------------------------------------------
 
@@ -6411,6 +6577,11 @@ CREATE TABLE IF NOT EXISTS `ps_feature_product` (
   KEY `id_feature_value` (`id_feature_value`),
   KEY `id_product` (`id_product`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_feature_product`
+--
+
 
 -- --------------------------------------------------------
 
@@ -6708,6 +6879,11 @@ CREATE TABLE IF NOT EXISTS `ps_group_reduction` (
   PRIMARY KEY (`id_group_reduction`),
   UNIQUE KEY `id_group` (`id_group`,`id_category`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `ps_group_reduction`
+--
+
 
 -- --------------------------------------------------------
 
@@ -7273,6 +7449,11 @@ CREATE TABLE IF NOT EXISTS `ps_hook_module_exceptions` (
   KEY `id_hook` (`id_hook`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_hook_module_exceptions`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -7393,6 +7574,11 @@ CREATE TABLE IF NOT EXISTS `ps_import_match` (
   PRIMARY KEY (`id_import_match`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_import_match`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -7463,6 +7649,11 @@ CREATE TABLE IF NOT EXISTS `ps_linksmenutop` (
   KEY `id_shop` (`id_shop`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_linksmenutop`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -7477,6 +7668,11 @@ CREATE TABLE IF NOT EXISTS `ps_linksmenutop_lang` (
   `link` varchar(128) NOT NULL,
   KEY `id_linksmenutop` (`id_linksmenutop`,`id_lang`,`id_shop`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_linksmenutop_lang`
+--
+
 
 -- --------------------------------------------------------
 
@@ -7496,6 +7692,11 @@ CREATE TABLE IF NOT EXISTS `ps_log` (
   PRIMARY KEY (`id_log`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_log`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -7510,6 +7711,11 @@ CREATE TABLE IF NOT EXISTS `ps_manufacturer` (
   `active` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_manufacturer`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `ps_manufacturer`
+--
+
 
 -- --------------------------------------------------------
 
@@ -7528,6 +7734,11 @@ CREATE TABLE IF NOT EXISTS `ps_manufacturer_lang` (
   PRIMARY KEY (`id_manufacturer`,`id_lang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `ps_manufacturer_lang`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -7540,6 +7751,11 @@ CREATE TABLE IF NOT EXISTS `ps_manufacturer_shop` (
   PRIMARY KEY (`id_manufacturer`,`id_shop`),
   KEY `id_shop` (`id_shop`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_manufacturer_shop`
+--
+
 
 -- --------------------------------------------------------
 
@@ -7554,6 +7770,11 @@ CREATE TABLE IF NOT EXISTS `ps_memcached_servers` (
   `weight` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id_memcached_server`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `ps_memcached_servers`
+--
+
 
 -- --------------------------------------------------------
 
@@ -7577,6 +7798,11 @@ CREATE TABLE IF NOT EXISTS `ps_message` (
   KEY `id_employee` (`id_employee`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_message`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -7589,6 +7815,11 @@ CREATE TABLE IF NOT EXISTS `ps_message_readed` (
   `date_add` datetime NOT NULL,
   PRIMARY KEY (`id_message`,`id_employee`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_message_readed`
+--
+
 
 -- --------------------------------------------------------
 
@@ -8432,6 +8663,11 @@ CREATE TABLE IF NOT EXISTS `ps_module_preference` (
   UNIQUE KEY `employee_module` (`id_employee`,`module`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_module_preference`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -8527,6 +8763,11 @@ CREATE TABLE IF NOT EXISTS `ps_newsletter` (
   `active` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `ps_newsletter`
+--
+
 
 -- --------------------------------------------------------
 
@@ -8672,6 +8913,11 @@ CREATE TABLE IF NOT EXISTS `ps_order_cart_rule` (
   KEY `id_cart_rule` (`id_cart_rule`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_order_cart_rule`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -8749,6 +8995,11 @@ CREATE TABLE IF NOT EXISTS `ps_order_detail_tax` (
   `total_amount` decimal(16,6) NOT NULL DEFAULT '0.000000'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `ps_order_detail_tax`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -8804,6 +9055,11 @@ CREATE TABLE IF NOT EXISTS `ps_order_invoice` (
   KEY `id_order` (`id_order`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_order_invoice`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -8819,6 +9075,11 @@ CREATE TABLE IF NOT EXISTS `ps_order_invoice_payment` (
   KEY `id_order` (`id_order`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `ps_order_invoice_payment`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -8831,6 +9092,11 @@ CREATE TABLE IF NOT EXISTS `ps_order_invoice_tax` (
   `id_tax` int(11) NOT NULL,
   `amount` decimal(10,6) NOT NULL DEFAULT '0.000000'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_order_invoice_tax`
+--
+
 
 -- --------------------------------------------------------
 
@@ -8900,6 +9166,11 @@ CREATE TABLE IF NOT EXISTS `ps_order_payment` (
   KEY `order_reference` (`order_reference`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_order_payment`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -8919,6 +9190,11 @@ CREATE TABLE IF NOT EXISTS `ps_order_return` (
   KEY `id_order` (`id_order`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_order_return`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -8932,6 +9208,11 @@ CREATE TABLE IF NOT EXISTS `ps_order_return_detail` (
   `product_quantity` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_order_return`,`id_order_detail`,`id_customization`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_order_return_detail`
+--
+
 
 -- --------------------------------------------------------
 
@@ -9027,6 +9308,11 @@ CREATE TABLE IF NOT EXISTS `ps_order_slip` (
   KEY `id_order` (`id_order`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_order_slip`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -9041,6 +9327,11 @@ CREATE TABLE IF NOT EXISTS `ps_order_slip_detail` (
   `amount_tax_incl` decimal(10,2) DEFAULT NULL,
   PRIMARY KEY (`id_order_slip`,`id_order_detail`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_order_slip_detail`
+--
+
 
 -- --------------------------------------------------------
 
@@ -9188,6 +9479,11 @@ CREATE TABLE IF NOT EXISTS `ps_pack` (
   PRIMARY KEY (`id_product_pack`,`id_product_item`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `ps_pack`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -9245,6 +9541,11 @@ CREATE TABLE IF NOT EXISTS `ps_pagenotfound` (
   KEY `date_add` (`date_add`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_pagenotfound`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -9289,6 +9590,11 @@ CREATE TABLE IF NOT EXISTS `ps_page_viewed` (
   `counter` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id_page`,`id_date_range`,`id_shop`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_page_viewed`
+--
+
 
 -- --------------------------------------------------------
 
@@ -9370,6 +9676,11 @@ CREATE TABLE IF NOT EXISTS `ps_product_attachment` (
   PRIMARY KEY (`id_product`,`id_attachment`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `ps_product_attachment`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -9401,6 +9712,11 @@ CREATE TABLE IF NOT EXISTS `ps_product_attribute` (
   KEY `id_product_id_product_attribute` (`id_product_attribute`,`id_product`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_product_attribute`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -9413,6 +9729,11 @@ CREATE TABLE IF NOT EXISTS `ps_product_attribute_combination` (
   PRIMARY KEY (`id_attribute`,`id_product_attribute`),
   KEY `id_product_attribute` (`id_product_attribute`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_product_attribute_combination`
+--
+
 
 -- --------------------------------------------------------
 
@@ -9460,6 +9781,11 @@ CREATE TABLE IF NOT EXISTS `ps_product_attribute_shop` (
   PRIMARY KEY (`id_product_attribute`,`id_shop`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `ps_product_attribute_shop`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -9473,6 +9799,11 @@ CREATE TABLE IF NOT EXISTS `ps_product_carrier` (
   PRIMARY KEY (`id_product`,`id_carrier_reference`,`id_shop`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `ps_product_carrier`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -9485,6 +9816,11 @@ CREATE TABLE IF NOT EXISTS `ps_product_country_tax` (
   `id_tax` int(11) NOT NULL,
   PRIMARY KEY (`id_product`,`id_country`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_product_country_tax`
+--
+
 
 -- --------------------------------------------------------
 
@@ -9507,6 +9843,11 @@ CREATE TABLE IF NOT EXISTS `ps_product_download` (
   KEY `product_active` (`id_product`,`active`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_product_download`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -9519,6 +9860,11 @@ CREATE TABLE IF NOT EXISTS `ps_product_group_reduction_cache` (
   `reduction` decimal(4,3) NOT NULL,
   PRIMARY KEY (`id_product`,`id_group`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_product_group_reduction_cache`
+--
+
 
 -- --------------------------------------------------------
 
@@ -9569,6 +9915,11 @@ CREATE TABLE IF NOT EXISTS `ps_product_sale` (
   `date_upd` date NOT NULL,
   PRIMARY KEY (`id_product`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_product_sale`
+--
+
 
 -- --------------------------------------------------------
 
@@ -9635,6 +9986,11 @@ CREATE TABLE IF NOT EXISTS `ps_product_supplier` (
   PRIMARY KEY (`id_product_supplier`),
   UNIQUE KEY `id_product` (`id_product`,`id_product_attribute`,`id_supplier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `ps_product_supplier`
+--
+
 
 -- --------------------------------------------------------
 
@@ -9869,6 +10225,11 @@ CREATE TABLE IF NOT EXISTS `ps_referrer` (
   PRIMARY KEY (`id_referrer`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_referrer`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -9880,6 +10241,11 @@ CREATE TABLE IF NOT EXISTS `ps_referrer_cache` (
   `id_referrer` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id_connections_source`,`id_referrer`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_referrer_cache`
+--
+
 
 -- --------------------------------------------------------
 
@@ -9900,6 +10266,11 @@ CREATE TABLE IF NOT EXISTS `ps_referrer_shop` (
   `cache_order_rate` decimal(5,4) DEFAULT NULL,
   PRIMARY KEY (`id_referrer`,`id_shop`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `ps_referrer_shop`
+--
+
 
 -- --------------------------------------------------------
 
@@ -9987,6 +10358,11 @@ CREATE TABLE IF NOT EXISTS `ps_request_sql` (
   PRIMARY KEY (`id_request_sql`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_request_sql`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -10000,6 +10376,11 @@ CREATE TABLE IF NOT EXISTS `ps_required_field` (
   PRIMARY KEY (`id_required_field`),
   KEY `object_name` (`object_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `ps_required_field`
+--
+
 
 -- --------------------------------------------------------
 
@@ -10080,6 +10461,11 @@ CREATE TABLE IF NOT EXISTS `ps_scene` (
   PRIMARY KEY (`id_scene`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_scene`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -10091,6 +10477,11 @@ CREATE TABLE IF NOT EXISTS `ps_scene_category` (
   `id_category` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id_scene`,`id_category`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_scene_category`
+--
+
 
 -- --------------------------------------------------------
 
@@ -10104,6 +10495,11 @@ CREATE TABLE IF NOT EXISTS `ps_scene_lang` (
   `name` varchar(100) NOT NULL,
   PRIMARY KEY (`id_scene`,`id_lang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_scene_lang`
+--
+
 
 -- --------------------------------------------------------
 
@@ -10121,6 +10517,11 @@ CREATE TABLE IF NOT EXISTS `ps_scene_products` (
   PRIMARY KEY (`id_scene`,`id_product`,`x_axis`,`y_axis`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `ps_scene_products`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -10133,6 +10534,11 @@ CREATE TABLE IF NOT EXISTS `ps_scene_shop` (
   PRIMARY KEY (`id_scene`,`id_shop`),
   KEY `id_shop` (`id_shop`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_scene_shop`
+--
+
 
 -- --------------------------------------------------------
 
@@ -10375,6 +10781,11 @@ CREATE TABLE IF NOT EXISTS `ps_sekeyword` (
   PRIMARY KEY (`id_sekeyword`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_sekeyword`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -10485,6 +10896,11 @@ CREATE TABLE IF NOT EXISTS `ps_specific_price` (
   KEY `id_cart` (`id_cart`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_specific_price`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -10529,6 +10945,11 @@ CREATE TABLE IF NOT EXISTS `ps_specific_price_rule` (
   KEY `id_product` (`id_shop`,`id_currency`,`id_country`,`id_group`,`from_quantity`,`from`,`to`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_specific_price_rule`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -10544,6 +10965,11 @@ CREATE TABLE IF NOT EXISTS `ps_specific_price_rule_condition` (
   KEY `id_specific_price_rule_condition_group` (`id_specific_price_rule_condition_group`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_specific_price_rule_condition`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -10555,6 +10981,11 @@ CREATE TABLE IF NOT EXISTS `ps_specific_price_rule_condition_group` (
   `id_specific_price_rule` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id_specific_price_rule_condition_group`,`id_specific_price_rule`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `ps_specific_price_rule_condition_group`
+--
+
 
 -- --------------------------------------------------------
 
@@ -10910,6 +11341,11 @@ CREATE TABLE IF NOT EXISTS `ps_statssearch` (
   PRIMARY KEY (`id_statssearch`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_statssearch`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -10932,6 +11368,11 @@ CREATE TABLE IF NOT EXISTS `ps_stock` (
   KEY `id_product` (`id_product`),
   KEY `id_product_attribute` (`id_product_attribute`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `ps_stock`
+--
+
 
 -- --------------------------------------------------------
 
@@ -10989,6 +11430,11 @@ CREATE TABLE IF NOT EXISTS `ps_stock_mvt` (
   KEY `id_stock` (`id_stock`),
   KEY `id_stock_mvt_reason` (`id_stock_mvt_reason`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `ps_stock_mvt`
+--
+
 
 -- --------------------------------------------------------
 
@@ -11164,6 +11610,11 @@ CREATE TABLE IF NOT EXISTS `ps_supplier` (
   PRIMARY KEY (`id_supplier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_supplier`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -11180,6 +11631,11 @@ CREATE TABLE IF NOT EXISTS `ps_supplier_lang` (
   PRIMARY KEY (`id_supplier`,`id_lang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `ps_supplier_lang`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -11192,6 +11648,11 @@ CREATE TABLE IF NOT EXISTS `ps_supplier_shop` (
   PRIMARY KEY (`id_supplier`,`id_shop`),
   KEY `id_shop` (`id_shop`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_supplier_shop`
+--
+
 
 -- --------------------------------------------------------
 
@@ -11224,6 +11685,11 @@ CREATE TABLE IF NOT EXISTS `ps_supply_order` (
   KEY `id_warehouse` (`id_warehouse`),
   KEY `reference` (`reference`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `ps_supply_order`
+--
+
 
 -- --------------------------------------------------------
 
@@ -11262,6 +11728,11 @@ CREATE TABLE IF NOT EXISTS `ps_supply_order_detail` (
   KEY `id_product_product_attribute` (`id_product`,`id_product_attribute`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_supply_order_detail`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -11282,6 +11753,11 @@ CREATE TABLE IF NOT EXISTS `ps_supply_order_history` (
   KEY `id_state` (`id_state`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_supply_order_history`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -11301,6 +11777,11 @@ CREATE TABLE IF NOT EXISTS `ps_supply_order_receipt_history` (
   KEY `id_supply_order_detail` (`id_supply_order_detail`),
   KEY `id_supply_order_state` (`id_supply_order_state`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `ps_supply_order_receipt_history`
+--
+
 
 -- --------------------------------------------------------
 
@@ -13078,6 +13559,11 @@ CREATE TABLE IF NOT EXISTS `ps_theme_specific` (
   PRIMARY KEY (`id_theme`,`id_shop`,`entity`,`id_object`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `ps_theme_specific`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -13674,6 +14160,11 @@ CREATE TABLE IF NOT EXISTS `ps_warehouse` (
   PRIMARY KEY (`id_warehouse`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_warehouse`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -13687,6 +14178,11 @@ CREATE TABLE IF NOT EXISTS `ps_warehouse_carrier` (
   KEY `id_warehouse` (`id_warehouse`),
   KEY `id_carrier` (`id_carrier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_warehouse_carrier`
+--
+
 
 -- --------------------------------------------------------
 
@@ -13704,6 +14200,11 @@ CREATE TABLE IF NOT EXISTS `ps_warehouse_product_location` (
   UNIQUE KEY `id_product` (`id_product`,`id_product_attribute`,`id_warehouse`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_warehouse_product_location`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -13717,6 +14218,11 @@ CREATE TABLE IF NOT EXISTS `ps_warehouse_shop` (
   KEY `id_warehouse` (`id_warehouse`),
   KEY `id_shop` (`id_shop`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_warehouse_shop`
+--
+
 
 -- --------------------------------------------------------
 
@@ -13736,6 +14242,11 @@ CREATE TABLE IF NOT EXISTS `ps_webservice_account` (
   KEY `key` (`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Contenu de la table `ps_webservice_account`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -13748,6 +14259,11 @@ CREATE TABLE IF NOT EXISTS `ps_webservice_account_shop` (
   PRIMARY KEY (`id_webservice_account`,`id_shop`),
   KEY `id_shop` (`id_shop`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `ps_webservice_account_shop`
+--
+
 
 -- --------------------------------------------------------
 
@@ -13766,6 +14282,11 @@ CREATE TABLE IF NOT EXISTS `ps_webservice_permission` (
   KEY `method` (`method`),
   KEY `id_webservice_account` (`id_webservice_account`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `ps_webservice_permission`
+--
+
 
 -- --------------------------------------------------------
 
@@ -14267,6 +14788,11 @@ CREATE TABLE IF NOT EXISTS `service_client` (
   `sc_com` text NOT NULL,
   PRIMARY KEY (`sc_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `service_client`
+--
+
 
 -- --------------------------------------------------------
 
@@ -26902,7 +27428,3 @@ INSERT INTO `villes` (`id_ville`, `nom_ville`, `id_pays`) VALUES
 (2, 'Poitier', 1),
 (3, 'Palerme', 2),
 (4, 'Rome', 2);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
