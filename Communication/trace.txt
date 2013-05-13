@@ -40,3 +40,31 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"eBags Packing Cubes - 3pc Set","prd_site":"rakuten.com/prod/ebags-packing-cubes-3pc-set/203422651.html","prd_prix":"21.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"eBags Packing Cubes - 3pc Set","prd_site":"rakuten.com/prod/ebags-packing-cubes-3pc-set/203422651.html","prd_prix":"21.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
