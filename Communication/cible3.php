@@ -112,27 +112,39 @@ try
 			if ( !$get_log )
 				throw new Exception('MAJ :: Log not specified');
 
-			if( !isset($get_log['login'] , $get_log['password'] ) )
+			if( !isset($get_log['login'], $get_log['password'] ) )
 				throw new Exception('MAJ :: Bad parameter into Log Entity');
 
-			$req = $bdd->prepare('SELECT * FROM users where user_pseudo= :_pseudo and user_password = :_password ');
+			// get_log
+			//get_log.login = ...
+			// get_log.password = ...
+			// log={"login":"liaznzade", "password":"password"}
+
+			$req = $bdd->prepare('SELECT user_id FROM users where user_pseudo= :_pseudo and user_password = :_password ');
 			$req->execute(array(
 			    '_pseudo' => $get_log['login'],
 			    '_password' => $get_log['password']));
 			$arr = $req->fetch();
 			$req->closeCursor();
 
-			if($arr == false)
+			if(!$arr)
 				throw new Exception('MAJ :: Users or Password invalid');
 
+			$response['user'] = $arr['user_id'];
 			//action a définir si ds la base 
-
-
-			$response['Log'] = 'password';
 			break;
 
 		case 'MAJ-user':
 
+			$get_user = isset($_REQUEST['user']) ? json_decode($_REQUEST['user'], TRUE) : null;
+
+			//variables tests
+			if (!$get_user)
+				throw new Exception('MAJ :: User not specified');
+
+			$req = $bdd->prepare('SELECT user_point FROM users WHERE user_id= :_id ');
+			$req->execute(array('_id' => $get_user['id']));
+				
 			break;
 
 		default:
