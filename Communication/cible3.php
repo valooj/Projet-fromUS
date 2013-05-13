@@ -13,6 +13,13 @@ INSERT INTO produits(prd_libelle, prd_site, prd_desc, prd_cat, prd_visu, prd_pri
 		prd_desc= :_desc, prd_cat= :_cat, prd_visu= :_visu, prd_prix= :_prix, prd_vis= :_vis
 SQL;
 
+$sql_prepared_update_bonus = <<<SQL
+INSERT INTO pts_bonus(pts_cli, pts_nb)
+	VALUES (:_client, :_nb)
+	ON DUPLICATE KEY UPDATE
+		pts_nb= pts_nb + :_nb
+SQL;
+
 
 try
 {
@@ -27,7 +34,11 @@ try
 
 	// externals datas
 	$get_action = isset($_GET['action']) ? htmlspecialchars($_GET['action']) : null;
+	$get_token = isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
 
+	// variables tests
+	if ( !$get_token )
+		throw new Exception('MAJ :: Token not specified');
 
 	// actions
 	switch($get_action)
@@ -50,7 +61,6 @@ try
 			
 			// code MAJ du produit visité
 			$req = $bdd->prepare($sql_prepared_update_product);
-
             $req->bindValue('_libelle' , $get_product['prd_libelle'], PDO::PARAM_STR);
             $req->bindValue('_site' ,    $get_product['prd_site'], PDO::PARAM_STR);
             $req->bindValue('_desc' ,    'dscnico',                PDO::PARAM_STR);
@@ -59,10 +69,20 @@ try
             $req->bindValue('_prix' ,    $get_product['prd_prix'], PDO::PARAM_STR);
             $req->bindValue('_vis' ,     1,                        PDO::PARAM_INT);
             $rep = $req->execute();
-            $req->closeCursor();
-
+            
             if($rep == false)
 				throw new Exception('MAJ :: Insert invalid');
+			$bonus = ($req->rowCount() == 1) ? 100 : 50 ;
+			$req->closeCursor(); 
+
+            // code MAJ ajout bonus
+			$req = $bdd->prepare($sql_prepared_update_bonus);
+            $req->bindValue('_client' ,  $get_token,     PDO::PARAM_INT);
+            $req->bindValue('_nb'     ,  $bonus,         PDO::PARAM_INT);
+            $rep = $req->execute();
+            $req->closeCursor();
+
+            
 
 			break;
 

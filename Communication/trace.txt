@@ -96,3 +96,403 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"HCG Diet Drops with Amino Acids and Vitamin B12","prd_site":"rakuten.com/prod/hcg-diet-drops-with-amino-acids-and-vitamin-b12/234632502.html","prd_prix":"32.95"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"HCG Diet Drops with Amino Acids and Vitamin B12","prd_site":"rakuten.com/prod/hcg-diet-drops-with-amino-acids-and-vitamin-b12/234632502.html","prd_prix":"32.95"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"HCG Diet Drops with Amino Acids and Vitamin B12","prd_site":"rakuten.com/prod/hcg-diet-drops-with-amino-acids-and-vitamin-b12/234632502.html","prd_prix":"32.95"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"HCG Diet Drops with Amino Acids and Vitamin B12","prd_site":"rakuten.com/prod/hcg-diet-drops-with-amino-acids-and-vitamin-b12/234632502.html","prd_prix":"32.95"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Nikon D3100 SLR Camera Body + 18-55mm & 55300mm VR Lens + 16GB + 3pcs Filter kit + Extra Battery + S","prd_site":"rakuten.com/prod/nikon-d3100-slr-camera-body-18-55mm-55300mm-vr-lens-16gb-3pcs-filter/246463048.html","prd_prix":"788.88"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
