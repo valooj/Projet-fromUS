@@ -1,62 +1,27 @@
-// import the modules we need
-var data = require('self').data;
-var {Cc, Ci} = require('chrome');
-var mediator = Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator);
-var tabs = require("sdk/tabs");
+var data = require("self").data;
+var tabs = require("tabs");
 
-// Import the page-mod API
-var pageMod = require("sdk/page-mod");
- 
-// exports.main is called when extension is installed or re-enabled
-exports.main = function(options, callbacks) {
-	addToolbarButton();
-	// do other stuff
+exports.main = function(options) {
+    var btn = require("toolbarbutton").ToolbarButton({
+        id: 'from-us_button',
+        label: 'from-us.com',
+        image: data.url('img/on.png'),
+        onCommand: function() {
+            if (typeof(tabs.activeTab._worker) == 'undefined') {
+                let worker = tabs.activeTab.attach({
+                    contentScript: 'self.port.on("sayhello", function() { alert("Hello world!"); })'
+                });
+                tabs.activeTab._worker = worker;
+            }
+            tabs.activeTab._worker.port.emit("sayhello");
+        }
+    });
+
+    if (options.loadReason === "install") {
+    btn.moveTo({
+      toolbarID: "nav-bar",
+      insertbefore: "home-button",
+      forceMove: false // only move from palette
+    });
+  }
 };
- 
-// exports.onUnload is called when Firefox starts and when the extension is disabled or uninstalled
-exports.onUnload = function(reason) {
-	removeToolbarButton();
-	// do other stuff
-};
- 
-// add our button
-function addToolbarButton() {
-	// this document is an XUL document
-	var document = mediator.getMostRecentWindow('navigator:browser').document;		
-	var navBar = document.getElementById('nav-bar');
-	if (!navBar) {
-		return;
-	}
-	var btn = document.createElement('toolbarbutton');	
-	btn.setAttribute('id', 'mybutton-id');
-	btn.setAttribute('type', 'button');
-	// the toolbarbutton-1 class makes it look like a traditional button
-	btn.setAttribute('class', 'toolbarbutton-1');
-	// the data.url is relative to the data folder
-	btn.setAttribute('image', data.url('img/on.png'));
-	btn.setAttribute('orient', 'horizontal');
-	// this text will be shown when the toolbar is set to text or text and iconss
-	btn.setAttribute('label', 'My Button');
-	btn.addEventListener('click', function() {
-		// do stuff, for example with tabs or pageMod
-		addTest();
-	}, false)
-	navBar.appendChild(btn);
-}
- 
-function removeToolbarButton() {
-	// this document is an XUL document
-	var document = mediator.getMostRecentWindow('navigator:browser').document;		
-	var navBar = document.getElementById('nav-bar');
-	var btn = document.getElementById('mybutton-id');
-	if (navBar && btn) {
-		navBar.removeChild(btn);
-	}
-}
-
-function addTest() {
-
-	console.log("left-click");
-	alert("hello");
-
-}
