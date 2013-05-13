@@ -1584,6 +1584,8 @@ localStorage["regPrice"] = fromus_pricemin;
 localStorage["regDesc"] = fromus_desc;			
 
 // stockage de la page du site dans local storage
-localStorage["regOffer"] = fromus_offre;	
+var wwwOffre = fromus_offre.replace(/www\./,'');
+localStorage["regOffer"] = /http[s]{0,1}\:\/\/(.*)/gi.exec(wwwOffre)[1];	
+//localStorage["regOffer"] = fromus_offre;	
 	
 //window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n$" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
