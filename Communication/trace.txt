@@ -1,0 +1,14 @@
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"Samsung UN40EH6000 40\" LED HDTV 1080p 120Hz","prd_site":"rakuten.com/prod/samsung-un40eh6000-40-led-hdtv-1080p-120hz/228474864.html","prd_prix":"638.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [user] => {"id":2}
+)
+
+===========================================
