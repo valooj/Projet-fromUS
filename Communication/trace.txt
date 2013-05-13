@@ -496,3 +496,83 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_prix":"151.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_prix":"151.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_prix":"151.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_prix":"151.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_prix":"151.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-user
+    [token] => 1
+    [user] => {"id":2}
+)
+
+===========================================

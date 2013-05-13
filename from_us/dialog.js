@@ -82,7 +82,20 @@ if (isOpen != true) {
 				text: "Submit", 
 				title: "Permet de commander", 
 				click: function() {
-				//request();
+					var jsonProduct = {prd_libelle: localStorage["regName"] ,prd_site: localStorage["regOffer"],prd_prix: localStorage["regPrice"]};
+					var postData = JSON.stringify(jsonProduct);
+					productJSON = {product:postData};
+					alert('debut fct product');
+					sendToServer(_urlProduct);
+					alert('fin fct product');
+
+					//a compléter
+					var jsonProduct = {libelle: localStorage["regName"] ,url: localStorage["regOffer"] ,desc: localStorage["regPrice"], qte: localStorage["regName"] ,montant: localStorage["regOffer"] ,categ: localStorage["regPrice"]};
+					var postData = JSON.stringify(jsonProduct);
+					productJSON = {product:postData};
+					alert('debut fct panier');
+					sendToServer(_urlPanier);
+					alert('fin fct panier');
 				}
 			},
 	

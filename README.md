@@ -12,4 +12,7 @@ ressources :
   
  pour utiliser AJAX:
     -http://www.siteduzero.com/informatique/tutoriels/ajax-et-l-echange-de-donnees-en-javascript
+
+ pour utiliser zip 
+ 	-http://www.developpez.net/forums/d368749/php/bibliotheques-frameworks/zip-petit-soucis-variable-zip-lib-php-resolu/
 Projet-fromUS

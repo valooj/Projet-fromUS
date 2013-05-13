@@ -20,6 +20,13 @@ INSERT INTO pts_bonus(pts_cli, pts_nb)
 		pts_nb= pts_nb + :_nb
 SQL;
 
+$sql_prepared_update_panier = <<<SQL
+INSERT INTO commande_detail(cmdd_libelle, cmdd_url, cmdd_desc, cmdd_qte, cmdd_montant, cmdd_categ, cmdd_poids, cmdd_unitep, cmdd_larg, cmdd_long, cmdd_haut, cmdd_united, cmdd_proforma, cmdd_ent)
+	VALUES (:_libelle, :_url, :_desc, :_qte, :_montant, :_categ, :_poids, :_unitep, :_larg, :_long, :_haut, :_united, :_proforma, :_ent)
+	ON DUPLICATE KEY UPDATE
+		cmdd_libelle= :_libelle, cmdd_url= :_url, cmdd_desc= :_desc, cmdd_qte= :_qte, cmdd_montant= :_montant, cmdd_categ= :_categ, cmdd_poids= :_poids, cmdd_unitep= :_unitep, cmdd_larg= :_larg, cmdd_long= :_long, cmdd_haut= :_haut, cmdd_united= :_united, cmdd_proforma= :_proforma, cmdd_ent= :_ent
+SQL;
+
 
 try
 {
@@ -61,18 +68,18 @@ try
 			
 			// code MAJ du produit visité
 			$req = $bdd->prepare($sql_prepared_update_product);
-            $req->bindValue('_libelle' , $get_product['prd_libelle'], PDO::PARAM_STR);
-            $req->bindValue('_site' ,    $get_product['prd_site'], PDO::PARAM_STR);
-            $req->bindValue('_desc' ,    'dscnico',                PDO::PARAM_STR);
-            $req->bindValue('_cat' ,     99,                       PDO::PARAM_INT);
-            $req->bindValue('_visu' ,    'visunico',               PDO::PARAM_STR);
-            $req->bindValue('_prix' ,    $get_product['prd_prix'], PDO::PARAM_STR);
-            $req->bindValue('_vis' ,     1,                        PDO::PARAM_INT);
+            $req->bindValue('_libelle' , $get_product['prd_libelle'],   PDO::PARAM_STR);
+            $req->bindValue('_site' ,    $get_product['prd_site'], 		PDO::PARAM_STR);
+            $req->bindValue('_desc' ,    'dscnico',                		PDO::PARAM_STR);
+            $req->bindValue('_cat' ,     99,                      		PDO::PARAM_INT);
+            $req->bindValue('_visu' ,    'visunico',               		PDO::PARAM_STR);
+            $req->bindValue('_prix' ,    $get_product['prd_prix'], 		PDO::PARAM_STR);
+            $req->bindValue('_vis' ,     1,                        		PDO::PARAM_INT);
             $rep = $req->execute();
             
             if($rep == false)
 				throw new Exception('MAJ :: Insert invalid');
-			$bonus = ($req->rowCount() == 1) ? 100 : 50 ;
+			$bonus = ($req->rowCount() == 1) ? 100 : ( ($req->rowCount() == 0) ? 0 : 50 );
 			$req->closeCursor(); 
 
             // code MAJ ajout bonus
@@ -81,8 +88,6 @@ try
             $req->bindValue('_nb'     ,  $bonus,         PDO::PARAM_INT);
             $rep = $req->execute();
             $req->closeCursor();
-
-            
 
 			break;
 
@@ -103,16 +108,34 @@ try
 				throw new Exception('MAJ :: Price invalid');
 			
 			// code MAJ du produit visité
-			$req = $bdd->prepare($sql_prepared_update_product);
+			$req = $bdd->prepare($sql_prepared_update_panier);
 
-            $req->bindValue('_libelle' , $get_product['prd_libelle'], PDO::PARAM_STR);
-            $req->bindValue('_site' ,    $get_product['prd_site'], PDO::PARAM_STR);
-            $req->bindValue('_desc' ,    'dscnico',                PDO::PARAM_STR);
-            $req->bindValue('_cat' ,     99,                       PDO::PARAM_INT);
-            $req->bindValue('_visu' ,    'visunico',               PDO::PARAM_STR);
-            $req->bindValue('_prix' ,    $get_product['prd_prix'], PDO::PARAM_STR);
-            $req->bindValue('_vis' ,     1,                        PDO::PARAM_INT);
-            $req->execute();
+            $req->bindValue('_libelle' , 	$get_product['prd_libelle'],		PDO::PARAM_STR);
+            $req->bindValue('_url' ,     	$get_product['prd_site'], 			PDO::PARAM_STR);
+            $req->bindValue('_desc' ,    	'dscnico',                			PDO::PARAM_STR);
+            $req->bindValue('_qte' ,     	99,                      			PDO::PARAM_INT);
+            $req->bindValue('_montant' ,    'visunico',               			PDO::PARAM_STR); //decimal
+            $req->bindValue('_categ' ,    	$get_product['prd_prix'], 			PDO::PARAM_INT);
+            $req->bindValue('_poids' ,    	 1,                        			PDO::PARAM_STR); //decimal
+            $req->bindValue('_unitep' , 	$get_product['prd_libelle'], 		PDO::PARAM_STR);
+            $req->bindValue('_larg' ,    	$get_product['prd_site'], 			PDO::PARAM_STR); //decimal
+            $req->bindValue('_long' ,    	'dscnico',                			PDO::PARAM_STR); //decimal
+            $req->bindValue('_haut' ,        99,                       			PDO::PARAM_INT); //decimal
+            $req->bindValue('_united' ,     'visunico',              		    PDO::PARAM_STR);
+            $req->bindValue('_proforma' ,    $get_product['prd_prix'], 			PDO::PARAM_STR);
+            $req->bindValue('_ent' ,     	 $get_token,                        PDO::PARAM_INT);
+            $rep = $req->execute();
+            
+            if($rep == false)
+				throw new Exception('MAJ :: Insert invalid');
+			$bonus = ($req->rowCount() == 1) ? 100 : 50 ;
+			$req->closeCursor(); 
+
+            // code MAJ ajout bonus
+			$req = $bdd->prepare($sql_prepared_update_bonus);
+            $req->bindValue('_client' ,  $get_token,     PDO::PARAM_INT);
+            $req->bindValue('_nb'     ,  $bonus,         PDO::PARAM_INT);
+            $rep = $req->execute();
             $req->closeCursor();
 
             // retourne le moins chere de la même catégorie
