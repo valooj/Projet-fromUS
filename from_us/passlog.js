@@ -22,7 +22,7 @@ function check() {
 $(document).ready(function() {
 
 // creation de la dialog box
-var newDialog = $('<div id="dialogBox"><p> Identification </p><form id="myForm"></br></br><label for="login">Login : </label><input type="text" id="login" /></br></br><label for="password">Password : </label><input type="text" id="password" /></br></form></div>');
+var newDialog = $('<div id="dialogBox"><p>      Identification </p><form id="myForm"></br></br><label for="login">  Login : </label><input type="text" id="login" /></br></br><label for="password">  Password : </label><input type="text" id="password" /></br></form></div>');
 
 // variable qui permet de savoir si la dialog box est ouverte
 var isOpen = $("#dialogBox").dialog("isOpen");
@@ -56,7 +56,7 @@ if (isOpen != true) {
 					var log = login.value;
 					var pass = password.value;
 					if (log && pass)
-						var jsonLog = {login: 'log' ,password: 'pass'};
+						var jsonLog = {login: log ,password: pass};
 						var postLog = JSON.stringify(jsonLog);
 						logJSON = {log:postLog};
 						check();
