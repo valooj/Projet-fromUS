@@ -1,3 +1,3 @@
-window.addEventListener('click', function(event) {
-  alert('hello');
-}, true);
+console.log('test');
+
+alert('hello');
