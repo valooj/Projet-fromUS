@@ -24,7 +24,7 @@ $sql_prepared_update_panier = <<<SQL
 INSERT INTO commande_detail(cmdd_libelle, cmdd_url, cmdd_desc, cmdd_qte, cmdd_montant, cmdd_categ, cmdd_poids, cmdd_unitep, cmdd_larg, cmdd_long, cmdd_haut, cmdd_united, cmdd_proforma, cmdd_ent)
 	VALUES (:_libelle, :_url, :_desc, :_qte, :_montant, :_categ, :_poids, :_unitep, :_larg, :_long, :_haut, :_united, :_proforma, :_ent)
 	ON DUPLICATE KEY UPDATE
-		cmdd_libelle= :_libelle, cmdd_url= :_url, cmdd_desc= :_desc, cmdd_qte= :_qte, cmdd_montant= :_montant, cmdd_categ= :_categ, cmdd_poids= :_poids, cmdd_unitep= :_unitep, cmdd_larg= :_larg, cmdd_long= :_long, cmdd_haut= :_haut, cmdd_united= :_united, cmdd_proforma= :_proforma, cmdd_ent= :_ent
+		cmdd_libelle= :_libelle, cmdd_url= :_url, cmdd_desc= :_desc, cmdd_qte= cmdd_qte + :_qte, cmdd_montant= :_montant, cmdd_categ= :_categ, cmdd_poids= :_poids, cmdd_unitep= :_unitep, cmdd_larg= :_larg, cmdd_long= :_long, cmdd_haut= :_haut, cmdd_united= :_united, cmdd_proforma= :_proforma, cmdd_ent= :_ent
 SQL;
 
 
@@ -71,7 +71,7 @@ try
             $req->bindValue('_libelle' , $get_product['prd_libelle'],   PDO::PARAM_STR);
             $req->bindValue('_site' ,    $get_product['prd_site'], 		PDO::PARAM_STR);
             $req->bindValue('_desc' ,    'dscnico',                		PDO::PARAM_STR);
-            $req->bindValue('_cat' ,     99,                      		PDO::PARAM_INT);
+            $req->bindValue('_cat' ,     0,                      		PDO::PARAM_INT);
             $req->bindValue('_visu' ,    'visunico',               		PDO::PARAM_STR);
             $req->bindValue('_prix' ,    $get_product['prd_prix'], 		PDO::PARAM_STR);
             $req->bindValue('_vis' ,     0,                        		PDO::PARAM_INT);
