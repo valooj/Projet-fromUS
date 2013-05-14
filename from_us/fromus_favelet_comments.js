@@ -1854,7 +1854,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					fromus_img								=	document.getElementsByClassName("img_prd_detail")[0].src;
 				
 				
-					fromus_desc								=	"The one and only, superb and fabulous "fromus_objectname;
+					fromus_desc								=	"The one and only, superb and fabulous " +fromus_objectname;
 			}break;
 
 		case "www.gilt.com":
