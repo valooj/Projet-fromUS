@@ -107,7 +107,7 @@ try
 			if( $get_product['qte'] == 0)
 				throw new Exception('MAJ :: Bad Quantity parameter');
 
-			$get_product['cmdd_montant'] = str_replace('$', null, $get_product['cmdd_montant']);
+			//$get_product['montant'] = str_replace('$', null, $get_product['montant']);
 
 			if ( !is_numeric($get_product['montant']) )
 				throw new Exception('MAJ :: Price invalid');
@@ -132,7 +132,7 @@ try
             $rep = $req->execute();
             $req->closeCursor();
 
-            if($rep == false)
+            if(!$rep)
 				throw new Exception('MAJ :: Insert panier invalid');
 
 			$response['Message'] = 'Add to cart';

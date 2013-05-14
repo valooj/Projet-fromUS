@@ -10,10 +10,12 @@ function sendToServer(urlSelected) {
 	$.post(urlSelected, productJSON)
 	.done(function(datas) { 
 		if(datas['Message'] !== undefined)
-			alert(datas['Message']); 
+			alert(datas['Message']);
+		if(datas['error'] !== undefined)
+			alert(datas['error']);  
 		})
 	.fail(function(datas) { 
-		alert(datas['fail']); 
+		alert(datas['error']); 
 		})
 	;}
 
