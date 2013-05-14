@@ -1,10 +1,13 @@
 // Code JavaScript écrit par BERGS Guillaume (Contact: guillaume.robert.bergs@gmail.com)		//
 // Dans le cadre de son stage du 15/04/13 au 24/06/13																//
 //																																			//
-// Objectif du script: Récupérer les informations de nom, site, page, image et prix de l'offre.			//
+// Objectif du script: 	Récupérer les informations de nom, site, page, image, description 			//
+//								et prix de l'offre.																						//
 //																																			//
 // NB: Utiliser le fichier favelet.js comme favelet. N'utiliser le code suivant que								//
 // dans une application, un plugin ou autre page web. 																//
+//	(Le code n'étant pas compressé et riche en espaces et commentaires, il est fortement 			//
+//	déconseillé de l'utiliser en l'état pour autre chose que du debbuging.)										//																							//
 //																																			//
 // Ajouter des sites est simple: il suffit d'ajouter des "case" supplémentaires tout en 					//
 // suivant la structure déjà existante.																						//
@@ -852,7 +855,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 //////////		ATTENTION		Les images sont gérées en flash, elles ne sont donc pas récupérées!!		ATTENTION		//////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				
-				fromus_img = "Recuperation manuelle necessaire";
+			//	fromus_img = "Recuperation manuelle necessaire";
 				
 				if(document.getElementsByClassName("productCopy-container")[0]!=undefined)
 					{
@@ -1544,7 +1547,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 ////////// ATTENTION		Il n'y a pas d'image unique à récupérer!! Le chassis et les roues sont séparés!!    	ATTENTION ////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
-						fromus_img						=	"Recuperation automatique impossible";
+						//fromus_img						=	"Recuperation automatique impossible";
 					}
 			
 //Pas de véritable description		
@@ -1596,7 +1599,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 //////////		ATTENTION		Les images sont gérées en flash, elles ne sont donc pas récupérées!!		ATTENTION		//////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////				
 				
-				fromus_img						=	"Recuperation automatique impossible";
+				//fromus_img						=	"Recuperation automatique impossible";
 				
 				if(document.getElementById("overviewTitle")!=undefined)
 					{
@@ -1666,7 +1669,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 //////////		ATTENTION		Les images sont gérées en flash, elles ne sont donc pas récupérées!!		ATTENTION		//////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				
-						fromus_img						=	"Pas de recuperation automatique possible";						
+						//fromus_img						=	"Pas de recuperation automatique possible";						
 					}
 				else
 					{	// S'il s'agit d'une page présentant un véhicule
@@ -1691,11 +1694,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				if(fromus_harleypage=="shop")
 					{//alert("shop");
 						fromus_pricemin			=	document.getElementById("productPrice").innerText;
-				alert(fromus_pricemin);		
+				//alert(fromus_pricemin);		
 						fromus_objectname		=	document.getElementById("detailsContent").innerText;
-				alert(fromus_objectname);						
+				//alert(fromus_objectname);						
 						fromus_img				=	"Image en flash";
-				alert(fromus_img);	
+				//alert(fromus_img);	
 					}
 				
 				if(fromus_harleypage=="store")
