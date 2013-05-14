@@ -12,7 +12,7 @@ var self = require("sdk/self");
 pageMod.PageMod({
   include: "http://*",
   contentScriptFile: [self.data.url("jquery.min.js"),
-                      self.data.url("script.js")],
+                      self.data.url("fromus_favelet_comments.js")],
   contentScriptWhen: "end"
 });
 
