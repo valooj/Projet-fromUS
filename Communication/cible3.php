@@ -169,19 +169,6 @@ try
 			//action a définir si ds la base 
 			break;
 
-		case 'MAJ-user':
-
-			$get_user = isset($_REQUEST['user']) ? json_decode($_REQUEST['user'], TRUE) : null;
-
-			//variables tests
-			if (!$get_user)
-				throw new Exception('MAJ :: User not specified');
-
-			$req = $bdd->prepare('SELECT user_point FROM users WHERE user_id= :_id ');
-			$req->execute(array('_id' => $get_user['id']));
-				
-			break;
-
 		default:
 			throw new Exception('No action specified');
 			break;

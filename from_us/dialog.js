@@ -17,27 +17,6 @@ function sendToServer(urlSelected) {
 		})
 	;}
 
-function sendDataUser() {
-	//alert('debut 1er post');
-	$.post(_urlUser, userJSON, function(datas) {
-		alert(datas);
-	});
-	//alert('1er post');
-	$.post({
-		url: _urlUser,
-		datas: userJSON,
-		success: function(datas) {
-			alert(datas);
-		},
-		error: function(datas) {
-			alert(datas);
-		}
-	});
-}
-
-
-
-
 $(document).ready(function() {
 
 console.log( "Variable from Content Script: "+localStorage["regStore"] );
@@ -109,6 +88,7 @@ if (isOpen != true) {
 					productJSON = {product:postData};
 					sendToServer(_urlProduct);
 
+<<<<<<< HEAD
 					/*
 					//var jsonProduct = {prd_libelle: 'asedrr' ,prd_site: 'bjkitgh',prd_prix: 69};
 					var jsonUser = { id : userID};
@@ -116,6 +96,9 @@ if (isOpen != true) {
 					userJSON = {user:postData2};
 					sendDataUser();
 					*/
+=======
+					
+>>>>>>> supression code inutile
 				}
 			},
 				
