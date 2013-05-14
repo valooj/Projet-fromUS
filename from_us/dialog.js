@@ -59,11 +59,19 @@ if (isOpen != true) {
 					productJSON = {product:postData};
 					sendToServer(_urlProduct);
 
-					var jsonProduct = {libelle: localStorage["regName"] ,url: localStorage["regOffer"] ,desc: localStorage["regDesc"], qte: document.getElementById("QteSpinner") ,montant: 333 ,categ: document.getElementById("category")};
+					alert("debut panier");
+					var qteSpinner = document.getElementById("QteSpinner");
+					var qteVal = qteSpinner.value;
+					alert(qteVal);
+					var categSelect = document.getElementById("category");
+					var categVal = categSelect.value;
+					alert(categVal);
+
+					var jsonProduct = {libelle: localStorage["regName"] ,url: localStorage["regOffer"] ,desc: localStorage["regDesc"], qte: qteVal ,montant: '333' ,categ: categVal};
 					var postData = JSON.stringify(jsonProduct);
 					productJSON = {product:postData};
 					sendToServer(_urlPanier);
-					alert('fin');
+					alert("fin panier");
 				}
 			},
 	
