@@ -98,53 +98,48 @@ try
 			// variables tests
 			if ( !$get_product )
 				throw new Exception('MAJ :: Product not specified');
-
-			if( !isset($get_product['prd_prix'], $get_product['prd_libelle'], $get_product['prd_site']) )
+/*
+			if( !isset($get_product['cmdd_libelle'], $get_product['cmdd_url'], $get_product['cmdd_montant']) )
 				throw new Exception('MAJ :: Bad parameters into Product Entity');
 
-			$get_product['prd_prix'] = str_replace('$', null, $get_product['prd_prix']);
+			$get_product['cmdd_montant'] = str_replace('$', null, $get_product['cmdd_montant']);
 
 			if ( !is_numeric($get_product['prd_prix']) )
 				throw new Exception('MAJ :: Price invalid');
-			
+*/	
 			// code MAJ du produit visité
 			$req = $bdd->prepare($sql_prepared_update_panier);
 
-            $req->bindValue('_libelle' , 	$get_product['prd_libelle'],		PDO::PARAM_STR);
-            $req->bindValue('_url' ,     	$get_product['prd_site'], 			PDO::PARAM_STR);
+            $req->bindValue('_libelle' , 	'libellenico',		PDO::PARAM_STR);
+            $req->bindValue('_url' ,     	'urlnico', 			PDO::PARAM_STR);
             $req->bindValue('_desc' ,    	'dscnico',                			PDO::PARAM_STR);
             $req->bindValue('_qte' ,     	99,                      			PDO::PARAM_INT);
-            $req->bindValue('_montant' ,    'visunico',               			PDO::PARAM_STR); //decimal
-            $req->bindValue('_categ' ,    	$get_product['prd_prix'], 			PDO::PARAM_INT);
-            $req->bindValue('_poids' ,    	 1,                        			PDO::PARAM_STR); //decimal
-            $req->bindValue('_unitep' , 	$get_product['prd_libelle'], 		PDO::PARAM_STR);
-            $req->bindValue('_larg' ,    	$get_product['prd_site'], 			PDO::PARAM_STR); //decimal
-            $req->bindValue('_long' ,    	'dscnico',                			PDO::PARAM_STR); //decimal
-            $req->bindValue('_haut' ,        99,                       			PDO::PARAM_INT); //decimal
-            $req->bindValue('_united' ,     'visunico',              		    PDO::PARAM_STR);
-            $req->bindValue('_proforma' ,    $get_product['prd_prix'], 			PDO::PARAM_STR);
+            $req->bindValue('_montant' ,    'montantnico',               			PDO::PARAM_STR); //decimal
+            $req->bindValue('_categ' ,    	5   , 			PDO::PARAM_INT);
+            $req->bindValue('_poids' ,    	 2,                        			PDO::PARAM_STR); //decimal
+            $req->bindValue('_unitep' , 	22, 		PDO::PARAM_STR);
+            $req->bindValue('_larg' ,    	22, 			PDO::PARAM_STR); //decimal
+            $req->bindValue('_long' ,    	22,                			PDO::PARAM_STR); //decimal
+            $req->bindValue('_haut' ,        99,                       			PDO::PARAM_STR); //decimal
+            $req->bindValue('_united' ,     'UNITEDnico',              		    PDO::PARAM_STR);
+            $req->bindValue('_proforma' ,    'proformanico', 			PDO::PARAM_STR);
             $req->bindValue('_ent' ,     	 $get_token,                        PDO::PARAM_INT);
-            $rep = $req->execute();
-            
-            if($rep == false)
-				throw new Exception('MAJ :: Insert invalid');
-			$bonus = ($req->rowCount() == 1) ? 100 : 50 ;
-			$req->closeCursor(); 
-
-            // code MAJ ajout bonus
-			$req = $bdd->prepare($sql_prepared_update_bonus);
-            $req->bindValue('_client' ,  $get_token,     PDO::PARAM_INT);
-            $req->bindValue('_nb'     ,  $bonus,         PDO::PARAM_INT);
             $rep = $req->execute();
             $req->closeCursor();
 
+            if($rep == false)
+				throw new Exception('MAJ :: Insert panier invalid');
+
+			//$response= array( 'message' => $get_token );
+			$response['Message'] = 'Add to cart';
+
             // retourne le moins chere de la même catégorie
             // $response['product'] <<<< SELECT * from products WHRE name like '%iphone%' LIMIT 1 ORDER BY price DESC
-            $req = $bdd->prepare('SELECT * FROM produits WHERE prd_libelle LIKE ? ORDER BY prd_prix DESC LIMIT 1');
+            /*$req = $bdd->prepare('SELECT * FROM produits WHERE prd_libelle LIKE ? ORDER BY prd_prix DESC LIMIT 1');
 			$req->execute(array( "%$get_product[prd_libelle]%"));
 			$response['product'] = $req->fetch();
 			$req->closeCursor();
-
+			*/
 			
 			break;
 
@@ -170,7 +165,7 @@ try
 			if(!$arr)
 				throw new Exception('MAJ :: Users or Password invalid');
 
-			$response['user'] = $arr['user_id'];
+			$response['Message'] = $arr['user_id'];
 			//action a définir si ds la base 
 			break;
 
@@ -192,7 +187,7 @@ try
 			break;
 	}
 
-	//$response['status'] = 1;
+	$response['status'] = 1;
 }
 catch( Exception $error )
 {

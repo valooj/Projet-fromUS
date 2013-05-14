@@ -8,21 +8,15 @@ var userJSON = {};
 
 function sendToServer(urlSelected) {
 	alert('debut 1er post');
-	$.post(urlSelected, productJSON, function(datas) {
-		alert(datas);
-	});
-	alert('1er post');
-	$.post({
-		url: urlSelected,
-		datas: productJSON,
-		success: function(datas) {
-			alert(datas);
-		},
-		error: function(datas) {
-			alert(datas);
-		}
-	});
-}
+	$.post(urlSelected, productJSON)
+	.done(function(datas) { 
+		if(datas['Message'] !== undefined)
+			alert(datas['Message']); 
+		})
+	.fail(function(datas) { 
+		alert(datas['fail']); 
+		})
+	;}
 
 function sendDataUser() {
 	//alert('debut 1er post');
