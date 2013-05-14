@@ -74,7 +74,7 @@ try
             $req->bindValue('_cat' ,     99,                      		PDO::PARAM_INT);
             $req->bindValue('_visu' ,    'visunico',               		PDO::PARAM_STR);
             $req->bindValue('_prix' ,    $get_product['prd_prix'], 		PDO::PARAM_STR);
-            $req->bindValue('_vis' ,     1,                        		PDO::PARAM_INT);
+            $req->bindValue('_vis' ,     0,                        		PDO::PARAM_INT);
             $rep = $req->execute();
             
             if(!$rep)

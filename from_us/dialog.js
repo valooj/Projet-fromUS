@@ -95,18 +95,6 @@ if (isOpen != true) {
 					var postData = JSON.stringify(jsonProduct);
 					productJSON = {product:postData};
 					sendToServer(_urlProduct);
-
-<<<<<<< HEAD
-					/*
-					//var jsonProduct = {prd_libelle: 'asedrr' ,prd_site: 'bjkitgh',prd_prix: 69};
-					var jsonUser = { id : userID};
-					var postData2 = JSON.stringify(jsonUser);
-					userJSON = {user:postData2};
-					sendDataUser();
-					*/
-=======
-					
->>>>>>> supression code inutile
 				}
 			},
 				
