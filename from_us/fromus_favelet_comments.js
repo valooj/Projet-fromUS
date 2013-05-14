@@ -1852,9 +1852,8 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					fromus_pricemin						=	document.getElementById("textMultiPrice").innerText;
 
 					fromus_img								=	document.getElementsByClassName("img_prd_detail")[0].src;
-				
-				
-					fromus_desc								=	"The one and only, superb and fabulous " +fromus_objectname;
+						
+					fromus_desc								=	"The one and only, superb and fabulous " + fromus_objectname;
 			}break;
 
 		case "www.gilt.com":
@@ -1865,7 +1864,10 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				
 				fromus_img					=	document.getElementsByClassName("image-switcher-container")[0].getElementsByTagName("img")[0].src;
 			
-			
+				if(document.getElementsByClassName("content-container")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("content-container")[0].innerText;
+					}			
 			}break;
 			
 		case "www.gilttaste.com":
@@ -1875,11 +1877,13 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemin			=	fromus_reg.exec(document.getElementsByClassName("price")[0].innerText)[0];
 				
 				fromus_img				=	document.getElementsByClassName("product main")[0].src;
+
+				if(document.getElementsByClassName("summary")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("summary")[0].innerText;
+					}						
 			}break;
-				
-
-
-				
+						
 		default :	//Cas par defaut, si le code est appele sur une page non geree.
 			{
 				fromus_objectname				=	"non trouve";
@@ -1905,8 +1909,6 @@ localStorage["regPrice"] = fromus_pricemin;
 
 // stockage de la description dans local storage
 localStorage["regDesc"] = fromus_desc;
-
-
 
 // stockage de la page du site dans local storage
 var wwwOffre = fromus_offre.replace(/www\./,'');
