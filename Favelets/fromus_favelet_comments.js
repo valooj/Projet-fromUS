@@ -1186,7 +1186,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		case "www.toofaced.com":
 			{
 				fromus_objectname				=	document.getElementsByClassName("productName")[0].innerText;
-alert(
+
 				fromus_pricemintmp				=	document.getElementsByClassName("variantprice")[0].innerText;
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 
@@ -1209,7 +1209,7 @@ alert(
 				if(/\S/.test(/(.*)\n(.*)\n(.*)/g.exec(fromus_objectnametmp)[2]))
 					{	// Si le nom est en première ligne...
 						fromus_objectname		=	/(.*)\n(.*)\n(.*)/g.exec(fromus_objectnametmp)[2];
-						if(fromus_objectname == 'New')
+						if( (fromus_objectname == 'New' )|| (fromus_objectname == 'Limited Edition') )
 							{	// ...Mais qu'en fait, ce n'est pas le nom
 								fromus_objectname		=	/(.*)\n(.*)\n(.*)/g.exec(fromus_objectnametmp)[3];
 							}
@@ -1219,6 +1219,13 @@ alert(
 						fromus_objectname		=	/(.*)\n(.*)\n(.*)/g.exec(fromus_objectnametmp)[3];
 					}
 					
+				if(document.getElementsByClassName("product-info")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("product-info")[0].innerText;
+					}
+					
+
+				
 				fromus_pricemintmp				=	document.getElementsByClassName("purchase-row")[0].innerText;
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 
@@ -1234,6 +1241,11 @@ alert(
 				fromus_pricemin					=	fromus_reg.exec(fromus_objectnametmp)[0];
 
 				fromus_img						=	document.getElementById("productImg").src;
+				
+				if(document.getElementById("item_description")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("item_description").innerText;
+					}				
 			}break;
 
 		case "www.nyxcosmetics.com":
@@ -1283,6 +1295,16 @@ alert(
 						fromus_imgtmp					=	document.getElementsByClassName("product-img")[0].innerHTML;
 						fromus_img						=	/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];							
 					}
+				if(document.getElementsByClassName("description")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("description")[0].innerText;
+					}
+				if(document.getElementById("description-content")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("description-content").innerText;
+					}				
+				
+					
 				fromus_objectname				=	fromus_objectname.toLowerCase();	// Personne n'aime lire du texte en CAPSLOCK		
 			}break;
 			
@@ -1733,7 +1755,7 @@ alert(
 			{
 				fromus_objectname				=	"non trouve";
 				fromus_pricemin					=	"non trouve";
-				fromus_img						= 	"non trouve";
+				fromus_img							= 	"non trouve";
 			}
 	}
 if(fromus_desc===undefined)//En cas d'absence de description, utiliser le nom du produit.
@@ -1748,7 +1770,16 @@ if(fromus_desc===undefined)//En cas d'absence de description, utiliser le nom du
 	
 // stockage du nom dans local storage
 localStorage["regName"] = fromus_objectname;
+
 // stockage du prix dans local storage
-localStorage["regPrice"] = fromus_pricemin;		
-	
+localStorage["regPrice"] = fromus_pricemin;
+
+// stockage de la description dans local storage
+localStorage["regDesc"] = fromus_desc;			
+
+// stockage de la page du site dans local storage
+var wwwOffre = fromus_offre.replace(/www\./,'');
+localStorage["regOffer"] = /http[s]{0,1}\:\/\/(.*)/gi.exec(wwwOffre)[1];	
+//localStorage["regOffer"] = fromus_offre;	
+
 //window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n$" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
