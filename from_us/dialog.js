@@ -62,10 +62,8 @@ if (isOpen != true) {
 					alert("debut panier");
 					var qteSpinner = document.getElementById("QteSpinner");
 					var qteVal = qteSpinner.value;
-					alert(qteVal);
 					var categSelect = document.getElementById("category");
 					var categVal = categSelect.value;
-					alert(categVal);
 
 					var jsonProduct = {libelle: localStorage["regName"] ,url: localStorage["regOffer"] ,desc: localStorage["regDesc"], qte: qteVal ,montant: '333' ,categ: categVal};
 					var postData = JSON.stringify(jsonProduct);

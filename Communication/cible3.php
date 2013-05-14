@@ -100,15 +100,18 @@ try
 			// variables tests
 			if ( !$get_product )
 				throw new Exception('MAJ :: Product not specified');
-/*
-			if( !isset($get_product['cmdd_libelle'], $get_product['cmdd_url'], $get_product['cmdd_montant']) )
-				throw new Exception('MAJ :: Bad parameters into Product Entity');
+
+			if( !isset($get_product['libelle'], $get_product['qte'], $get_product['montant'] , $get_product['url']) )
+				throw new Exception('MAJ :: Bad parameters into this order');
+
+			if( $get_product['qte'] == 0)
+				throw new Exception('MAJ :: Bad Quantity parameter');
 
 			$get_product['cmdd_montant'] = str_replace('$', null, $get_product['cmdd_montant']);
 
-			if ( !is_numeric($get_product['prd_prix']) )
+			if ( !is_numeric($get_product['montant']) )
 				throw new Exception('MAJ :: Price invalid');
-*/	
+	
 			// code MAJ du produit visité
 			$req = $bdd->prepare($sql_prepared_update_panier);
 
@@ -132,7 +135,6 @@ try
             if($rep == false)
 				throw new Exception('MAJ :: Insert panier invalid');
 
-			//$response= array( 'message' => $get_token );
 			$response['Message'] = 'Add to cart';
 
             // retourne le moins chere de la même catégorie
