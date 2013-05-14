@@ -4,8 +4,7 @@
 // Objectif du script: Récupérer les informations de nom, site, page, image et prix de l'offre.			//
 //																																			//
 // NB: Utiliser le fichier favelet.js comme favelet. N'utiliser le code suivant que								//
-// dans une application, un plugin ou autre page web. La présence de commentaires					//
-// empêche l'utilisation de ce code comme favelet.																	//
+// dans une application, un plugin ou autre page web. 																//
 //																																			//
 // Ajouter des sites est simple: il suffit d'ajouter des "case" supplémentaires tout en 					//
 // suivant la structure déjà existante.																						//
@@ -69,7 +68,7 @@
 // shop 143 à 145 = www.hottopic.com																					//
 // shop 146 à 153 www.shopkitson.com reporté																		//
 //																																			//
-//																																			//
+//	Infinityusa.com aurait changé de design?																				//
 //																																			//
 //																																			//
 //																																			//
@@ -88,8 +87,6 @@
 //																																			//
 //																																			//
 //																																			//	
-
-//javascript:	// Permet l'exécution comme favelet, à supprimer du code pour toute autre utilisation.
 
 /////	Définition des variables	/////
 
@@ -1325,6 +1322,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 				fromus_imgtmp					=	document.getElementsByClassName("spp_image")[0].innerHTML;
 				fromus_img						=	'http://www.smashbox.com'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
+
+				if(document.getElementsByClassName("description")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("description")[0].innerText;
+					}
 				
 				fromus_objectname				=	fromus_objectname.toLowerCase();	// Personne n'aime lire du texte en CAPSLOCK
 			}break;	
@@ -1333,11 +1335,16 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{
 				fromus_objectnametmp			=	document.getElementById("product-meta").innerText;
 				fromus_objectname				=	/(.*)\n/.exec(fromus_objectnametmp)[0];
-
+				
 				fromus_pricemin					=	document.getElementsByClassName("product-price")[0].innerText;
 
 				fromus_imgtmp					=	document.getElementById("product-image-large").innerHTML;
 				fromus_img						=	'http://www.smashbox.com/'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
+				
+				if(document.getElementById("product-meta")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("product-meta").innerText;
+					}
 			}break;			
 
 		case "www.victoriassecret.com":
@@ -1378,7 +1385,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_img						=	/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
 					}			
 						fromus_pricemintmp				= 	document.getElementsByClassName("pricing")[0].innerText;
-						fromus_pricemin					=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/.exec(fromus_pricemintmp)[0];		
+						fromus_pricemin					=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/.exec(fromus_pricemintmp)[0];	
+				if(document.getElementsByClassName("full trunc-on")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("full trunc-on")[0].innerText;
+					}						
 			}break;
 	
 		case "www.staples.com":
@@ -1396,6 +1407,16 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					{	// Fiche
 						fromus_img						=	document.getElementById("largeProductImage").src;						
 					}
+			
+				if(document.getElementById("subdesc_content")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("subdesc_content").innerText;
+					}
+
+				if(document.getElementById("subdesc_content").getElementsByTagName('div')[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementById("subdesc_content").getElementsByTagName('div')[0].innerText;
+					}				
 			}break;
 	
 		case "www.chevrolet.com":
@@ -1418,9 +1439,17 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_pricemintmp				=	document.getElementsByClassName('parbase ts_attr_c1 section')[0].innerText;
 						fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(fromus_pricemintmp)[0];
 
-						fromus_imgtmp					=	document.getElementsByClassName("modMh_item_1 colorizer_view mm_colorizer_c1 ui-helper-visible")[0].innerHTML;
-						fromus_img						=	'http://www.chevrolet.com/'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png)).*\>/.exec(fromus_imgtmp)[1];
+						if(document.getElementsByClassName("modMh_item_1 colorizer_view mm_colorizer_c1 ui-helper-visible")[0]!=undefined)
+							{	
+								fromus_imgtmp					=	document.getElementsByClassName("modMh_item_1 colorizer_view mm_colorizer_c1 ui-helper-visible")[0].innerHTML;
+								fromus_img						=	'http://www.chevrolet.com/'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png)).*\>/.exec(fromus_imgtmp)[1];
+							}
 					}
+			
+				if(document.getElementsByClassName("mod modCnt_well_1 mds-cmp-content20")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("mod modCnt_well_1 mds-cmp-content20")[0].innerText;
+					}			
 			}break;	
 	
 		case "www.cadillac.com":
@@ -1445,6 +1474,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 						fromus_imgtmp					=	document.getElementsByClassName("color-slides")[0].innerHTML;
 						fromus_img						=	'http://www.cadillac.com'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png))\"\>/.exec(fromus_imgtmp)[1];
+						
+				if(document.getElementsByClassName("fck_authorsinput tx")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("fck_authorsinput tx")[0].innerText;
+					}
 					}
 			}break;
 		
@@ -1466,16 +1500,29 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_objectnametmp			=	fromus_offre;
 						fromus_objectname				=	/dodge\.com.*(\/.*\/)$/.exec(fromus_objectnametmp)[1].replace(/\//g,' ');
 
-						fromus_pricemintmp				=	document.getElementById('msrp').innerText;
-						fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(fromus_pricemintmp)[0];
-
-						fromus_img					=	document.getElementsByClassName("background")[0].src;
+						if(document.getElementsByClassName("background")[0]!=undefined)
+							{
+								fromus_img					=	document.getElementsByClassName("background")[0].src;
+							}
+						if(document.getElementById("msrp")!=undefined)
+							{
+								fromus_pricemintmp				=	document.getElementById('msrp').innerText;
+								fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(fromus_pricemintmp)[0];
+							}						
 					}
-			}break;
+
+				if(document.getElementsByClassName("specs_content")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("specs_content")[0].innerText;
+					}
+				if(document.getElementById("detail")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("detail").innerText;
+					}
+					}break;
 			
 		case "www.chrysler.com":
-			{
-			
+			{		
 				if( /hostc\/bmo/.test(fromus_offre))
 					{	// S'il s'agit d'une page "buid your own vehicule"
 						fromus_objectname				=	document.getElementsByClassName("bmo-vehicleName")[0].innerText;
@@ -1499,11 +1546,12 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		
 						fromus_img						=	"Recuperation automatique impossible";
 					}
+			
+//Pas de véritable description		
 			}break;
 		
 		case "www.buick.com":
-			{
-			
+			{	
 				if( /build-your-own/.test(fromus_offre))
 					{	// S'il s'agit d'une page "buid your own vehicule"
 						fromus_objectname				=	document.getElementById("totalPriceContainer").innerText;
@@ -1518,17 +1566,28 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_objectnametmp			=	fromus_offre;
 						fromus_objectname				=	/buick.com\/(.*)\.html/.exec(fromus_objectnametmp)[1].replace(/-/g,' ');
 
-						fromus_pricemintmp				=	document.getElementsByClassName('txt3')[0].innerText;
-						fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(fromus_pricemintmp)[0];
+						if(document.getElementsByClassName("txt3")[0]!=undefined)
+							{
+								fromus_pricemintmp				=	document.getElementsByClassName('txt3')[0].innerText;
+								fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(fromus_pricemintmp)[0];
+							}
 
-						fromus_imgtmp					=	document.getElementsByClassName("mod modMh_item_1 colorizer_view mm_colorizer_c1 ui-helper-visible")[0].innerHTML;
-						fromus_img						=	'http://www.chevrolet.com/'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png)).*\>/.exec(fromus_imgtmp)[1];
+						if(document.getElementsByClassName("mod modMh_item_1 colorizer_view mm_colorizer_c1 ui-helper-visible")[0]!=undefined)
+							{
+								fromus_imgtmp					=	document.getElementsByClassName("mod modMh_item_1 colorizer_view mm_colorizer_c1 ui-helper-visible")[0].innerHTML;
+								fromus_img						=	'http://www.chevrolet.com/'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png)).*\>/.exec(fromus_imgtmp)[1];
+							}
 					}
+			
+				if(document.getElementsByClassName("fck_authorsinput tx")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("fck_authorsinput tx")[0].innerText;
+					}			
 			}break;
 	
 		case "www.lincoln.com":
 			{
-				fromus_objectname				=	document.getElementById("overviewTitle").innerText.replace(/\n.*/,"");
+				fromus_objectname				=	document.getElementsByClassName("nameplate-titlename")[0].innerText;
 
 				fromus_pricemintmp				=	document.getElementById('starting-price-vehicle').innerText;
 				fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(fromus_pricemintmp)[0];
@@ -1538,6 +1597,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////				
 				
 				fromus_img						=	"Recuperation automatique impossible";
+				
+				if(document.getElementById("overviewTitle")!=undefined)
+					{
+						fromus_desc					=	document.getElementById("overviewTitle").innerText;
+					}				
 			}break;	
 
 		case "www.gmc.com":
@@ -1560,6 +1624,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(fromus_pricemintmp)[0];
 
 						fromus_img					=	document.getElementById("threesixty-image").src;
+						
+						if(document.getElementsByClassName("mds-area-pn1")[0]!=undefined)
+							{
+								fromus_desc					=	document.getElementsByClassName("mds-area-pn1")[0].innerText;
+							}						
 					}
 			}break;
 
@@ -1582,6 +1651,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 						fromus_img						=	"Pas d'image sur cette page";	
 					}
+					
 			}break;	
 
 		case "www.scion.com":
@@ -1607,14 +1677,19 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 						fromus_img						=	"http://www.scion.com"+document.getElementsByClassName("model-detail-background")[0].getAttribute('backstretch');	
 					}
+			
+				if(document.getElementsByClassName("model-detail-block")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("model-detail-block")[0].innerText;
+					}			
 			}break;
 
 			case "www.harley-davidson.com":
-			{alert("harley-davidson");
+			{//alert("harley-davidson");
 				fromus_harleypage						=	/harley-davidson\.com\/(.*)\//.exec(fromus_offre)[1];
 		
 				if(fromus_harleypage=="shop")
-					{alert("shop");
+					{//alert("shop");
 						fromus_pricemin			=	document.getElementById("productPrice").innerText;
 				alert(fromus_pricemin);		
 						fromus_objectname		=	document.getElementById("detailsContent").innerText;
@@ -1624,17 +1699,17 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}
 				
 				if(fromus_harleypage=="store")
-					{alert("store");
+					{//alert("store");
 						
 					}
 					
 				if(fromus_harleypage=="en_US/Motorcycles")
-					{alert("motor");
+					{//alert("motor");
 		
 					};
 					
 				if(fromus_harleypage=="used_bikes")
-					{alert("used");
+					{//alert("used");
 						
 					}
 
@@ -1660,6 +1735,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 					fromus_img						=	document.getElementById("product-detail-image").getElementsByTagName('img')[0].src;
 				}
+			
+				if(document.getElementsByClassName("product-description selected")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("product-description selected")[0].innerText;
+					}			
 			}break;
 			
 		case "www.fossil.com":
@@ -1669,6 +1749,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					fromus_pricemin						=	/(\$[0-9]{0,}[\.0-9]{0,3})$/.exec(document.getElementById("productPrice").innerText.replace(/\s/g,''))[0];
 
 					fromus_img							=	document.getElementById("mainImage").getElementsByTagName("img")[0].src;
+			
+				if(document.getElementsByClassName("descText")[0]!=undefined)
+					{
+						fromus_desc					=	document.getElementsByClassName("descText")[0].innerText;
+					}			
 			}break;
 			
 		case "www.collectiblestampsgallery.com":
@@ -1678,6 +1763,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					fromus_pricemin						=	document.getElementById("pricediv0").innerText;
 
 					fromus_img							=	document.getElementById("prodimage0").src;
+					
+					if(document.getElementsByClassName("detaildescription")[0]!=undefined)
+						{
+							fromus_desc					=	document.getElementsByClassName("detaildescription")[0].innerText;
+						}
 			}break;			
 				
 		case "www.bebe.com":
@@ -1758,7 +1848,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_img							= 	"non trouve";
 			}
 	}
-if(fromus_desc===undefined)//En cas d'absence de description, utiliser le nom du produit.
+if((fromus_desc===undefined) ||(fromus_desc==undefined)||(fromus_desc=='undefined'))//En cas d'absence de description, utiliser le nom du produit.
 		{
 			fromus_desc									=	fromus_objectname;
 		}
@@ -1766,7 +1856,7 @@ if(fromus_desc===undefined)//En cas d'absence de description, utiliser le nom du
 	//Début de la section "limitation de la longueur des données".
 			fromus_desc									=	fromus_desc.substring(0,195)+"[...]";
 			fromus_objectname						=	fromus_objectname.substring(0,100);
-			fromus_pricemin							=	parseFloat(/[0-9\.]{1,}/g.exec(fromus_pricemin)[0]);
+			fromus_pricemin							=	parseFloat(/[0-9\.]{1,}/g.exec(fromus_pricemin.replace(',',''))[0]);
 	
 // stockage du nom dans local storage
 localStorage["regName"] = fromus_objectname;
@@ -1781,5 +1871,3 @@ localStorage["regDesc"] = fromus_desc;
 var wwwOffre = fromus_offre.replace(/www\./,'');
 localStorage["regOffer"] = /http[s]{0,1}\:\/\/(.*)/gi.exec(wwwOffre)[1];	
 //localStorage["regOffer"] = fromus_offre;	
-
-//window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n$" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
