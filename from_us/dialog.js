@@ -7,7 +7,6 @@ var userID = 2;
 var userJSON = {};
 
 function sendToServer(urlSelected) {
-	alert('debut 1er post');
 	$.post(urlSelected, productJSON)
 	.done(function(datas) { 
 		if(datas['Message'] !== undefined)
@@ -47,7 +46,7 @@ console.log( "Variable from Content Script: "+localStorage["regPrice"] );
 console.log( "Variable from Content Script: "+localStorage["regDesc"] );
 
 // creation de la dialog box
-var newDialog = $('<div id="dialogBox"><p>Formulaire</p><form id="myForm"><label for="store">Marchand : </label><input type="textbox" id="store" disabled="true"/></br><label for="name">Nom du produit : </label><input type="textbox" id="name" disabled="true"/></br><label for="price">Prix du produit : </label><input type="textbox" id="price" disabled="true"/></br><label for="category">Catégorie:</label><select id="category"><option value="default" selected="selected">Choisir une catégorie</option><option value="antique_art">Antiques, Art & Collectibles</option><option value="auto_moto">Auto & Moto</option><option value="bijoux_montres">Bijoux & Montres</option><option value="chaussures">Chaussures</option><option value="entreprises_industries">Entreprises & Industries</option><option value="habits_enfants">Habits pour enfants</option><option value="habits_femmes">Habits pour femmes</option><option value="habits_hommes">Habits pour hommes</option><option value="instrument_musique">Instrument de musique</option><option value="jeux_jouets">Jeux & Jouets</option><option value="jeux_informatique">Jeux vidéos & Informatique</option><option value="livres_films_musiques">Livres, Films & Musiques</option><option value="maison_jardin">Maison & Jardin</option><option value="ordinateurs_bureau">Ordinateurs & Bureau</option><option value="pieces_bricolage_outillage">Pièces, Bricolage & Outillage</option><option value="puericulture">Puericulture</option><option value="sacs_accessoires">Sacs & Accessoires</option><option value="sante_beaute">Santé & Beauté</option><option value="sports_loisirs">Sports & Loisirs</option></select></br><label for="quantite">Quantite : </label><input id="spinner"></form></div>');
+var newDialog = $('<div id="dialogBox"><p>Formulaire</p><form id="myForm"><label for="store">Marchand : </label><input type="textbox" id="store" disabled="true"/></br><label for="name">Nom du produit : </label><input type="textbox" id="name" disabled="true"/></br><label for="price">Prix du produit : </label><input type="textbox" id="price" disabled="true"/></br><label for="category">Catégorie:</label><select id="category"><option value="default" selected="selected">Choisir une catégorie</option><option value="antique_art">Antiques, Art & Collectibles</option><option value="auto_moto">Auto & Moto</option><option value="bijoux_montres">Bijoux & Montres</option><option value="chaussures">Chaussures</option><option value="entreprises_industries">Entreprises & Industries</option><option value="habits_enfants">Habits pour enfants</option><option value="habits_femmes">Habits pour femmes</option><option value="habits_hommes">Habits pour hommes</option><option value="instrument_musique">Instrument de musique</option><option value="jeux_jouets">Jeux & Jouets</option><option value="jeux_informatique">Jeux vidéos & Informatique</option><option value="livres_films_musiques">Livres, Films & Musiques</option><option value="maison_jardin">Maison & Jardin</option><option value="ordinateurs_bureau">Ordinateurs & Bureau</option><option value="pieces_bricolage_outillage">Pièces, Bricolage & Outillage</option><option value="puericulture">Puericulture</option><option value="sacs_accessoires">Sacs & Accessoires</option><option value="sante_beaute">Santé & Beauté</option><option value="sports_loisirs">Sports & Loisirs</option></select></br><label for="quantite">Quantite : </label><input id="QteSpinner"></form></div>');
 
 // variable qui permet de savoir si la dialog box est ouverte
 var isOpen = $("#dialogBox").dialog("isOpen");
@@ -79,17 +78,13 @@ if (isOpen != true) {
 					var jsonProduct = {prd_libelle: localStorage["regName"] ,prd_site: localStorage["regOffer"],prd_prix: localStorage["regPrice"]};
 					var postData = JSON.stringify(jsonProduct);
 					productJSON = {product:postData};
-					alert('debut fct product');
 					sendToServer(_urlProduct);
-					alert('fin fct product');
 
-					//a compléter
-					var jsonProduct = {libelle: localStorage["regName"] ,url: localStorage["regOffer"] ,desc: localStorage["regPrice"], qte: localStorage["regName"] ,montant: localStorage["regOffer"] ,categ: localStorage["regPrice"]};
+					var jsonProduct = {libelle: localStorage["regName"] ,url: localStorage["regOffer"] ,desc: localStorage["regDesc"], qte: document.getElementById("QteSpinner") ,montant: 333 ,categ: document.getElementById("category")};
 					var postData = JSON.stringify(jsonProduct);
 					productJSON = {product:postData};
-					alert('debut fct panier');
 					sendToServer(_urlPanier);
-					alert('fin fct panier');
+					alert('fin');
 				}
 			},
 	
@@ -109,28 +104,18 @@ if (isOpen != true) {
 				title: "Ajouter un produit dans la base de données",
 				click: function() {
 
-					//objectJSON.products=[];
-					//objectJSON.products[0]={'prd_libelle':localStorage['regPrice'] ,'prd_site': localStorage['regPrice'],'prd_prix':localStorage['regPrice']};
-					//objectJSON.products[0]={"prd_libelle": "libelloo" ,"prd_site": "siteoo"};
-
 					var jsonProduct = {prd_libelle: localStorage["regName"] ,prd_site: localStorage["regOffer"],prd_prix: localStorage["regPrice"]};
-					//var jsonProduct = {prd_libelle: 'asedrr' ,prd_site: 'bjkitgh',prd_prix: 69};
-					
-					//var jsonObj = {prd_libelle: 'libellodf' ,prd_site: 'siteoddo'};
 					var postData = JSON.stringify(jsonProduct);
 					productJSON = {product:postData};
-
-					alert('debut fct');
 					sendToServer(_urlProduct);
-					alert('fin fct');
 
-					alert('Début envoi données client');
+					/*
+					//var jsonProduct = {prd_libelle: 'asedrr' ,prd_site: 'bjkitgh',prd_prix: 69};
 					var jsonUser = { id : userID};
 					var postData2 = JSON.stringify(jsonUser);
 					userJSON = {user:postData2};
-					
 					sendDataUser();
-					alert('Fin envoi des données');
+					*/
 				}
 			},
 				

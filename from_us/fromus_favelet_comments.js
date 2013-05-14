@@ -1865,7 +1865,9 @@ localStorage["regName"] = fromus_objectname;
 localStorage["regPrice"] = fromus_pricemin;
 
 // stockage de la description dans local storage
-localStorage["regDesc"] = fromus_desc;			
+localStorage["regDesc"] = fromus_desc;
+
+
 
 // stockage de la page du site dans local storage
 var wwwOffre = fromus_offre.replace(/www\./,'');

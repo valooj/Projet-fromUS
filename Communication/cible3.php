@@ -4,8 +4,8 @@ header('Content-type: application/json');
 file_put_contents('./trace.txt', print_r($_REQUEST, 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
 
 
-// un champ unique, ici : l'URI = URL + page_vers_le_produit
-// OU un couple unique (URL, article)
+// Requete insert to .... on duplicate key
+//Permet d'insérer un element , si il existe déja, il est mit à jour. 
 $sql_prepared_update_product = <<<SQL
 INSERT INTO produits(prd_libelle, prd_site, prd_desc, prd_cat, prd_visu, prd_prix, prd_vis)
 	VALUES (:_libelle, :_site, :_desc, :_cat, :_visu, :_prix, :_vis)
@@ -77,7 +77,7 @@ try
             $req->bindValue('_vis' ,     1,                        		PDO::PARAM_INT);
             $rep = $req->execute();
             
-            if($rep == false)
+            if(!$rep)
 				throw new Exception('MAJ :: Insert invalid');
 			$bonus = ($req->rowCount() == 1) ? 100 : ( ($req->rowCount() == 0) ? 0 : 50 );
 			$req->closeCursor(); 
@@ -88,6 +88,8 @@ try
             $req->bindValue('_nb'     ,  $bonus,         PDO::PARAM_INT);
             $rep = $req->execute();
             $req->closeCursor();
+
+            $response['Message'] = 'Vous avez gagné '.$bonus.' pts';
 
 			break;
 
@@ -110,19 +112,19 @@ try
 			// code MAJ du produit visité
 			$req = $bdd->prepare($sql_prepared_update_panier);
 
-            $req->bindValue('_libelle' , 	'libellenico',		PDO::PARAM_STR);
-            $req->bindValue('_url' ,     	'urlnico', 			PDO::PARAM_STR);
-            $req->bindValue('_desc' ,    	'dscnico',                			PDO::PARAM_STR);
-            $req->bindValue('_qte' ,     	99,                      			PDO::PARAM_INT);
-            $req->bindValue('_montant' ,    'montantnico',               			PDO::PARAM_STR); //decimal
-            $req->bindValue('_categ' ,    	5   , 			PDO::PARAM_INT);
+            $req->bindValue('_libelle' , 	$get_product['libelle'],		PDO::PARAM_STR);
+            $req->bindValue('_url' ,     	$get_product['url'], 			PDO::PARAM_STR);
+            $req->bindValue('_desc' ,    	$get_product['desc'],                			PDO::PARAM_STR);
+            $req->bindValue('_qte' ,     	$get_product['qte'],                      			PDO::PARAM_INT);
+            $req->bindValue('_montant' ,    $get_product['montant'],               			PDO::PARAM_STR); //decimal
+            $req->bindValue('_categ' ,    	$get_product['categ']   , 			PDO::PARAM_INT);
             $req->bindValue('_poids' ,    	 2,                        			PDO::PARAM_STR); //decimal
-            $req->bindValue('_unitep' , 	22, 		PDO::PARAM_STR);
-            $req->bindValue('_larg' ,    	22, 			PDO::PARAM_STR); //decimal
-            $req->bindValue('_long' ,    	22,                			PDO::PARAM_STR); //decimal
-            $req->bindValue('_haut' ,        99,                       			PDO::PARAM_STR); //decimal
-            $req->bindValue('_united' ,     'UNITEDnico',              		    PDO::PARAM_STR);
-            $req->bindValue('_proforma' ,    'proformanico', 			PDO::PARAM_STR);
+            $req->bindValue('_unitep' , 	 2, 		PDO::PARAM_STR);
+            $req->bindValue('_larg' ,    	 2, 			PDO::PARAM_STR); //decimal
+            $req->bindValue('_long' ,    	 2,                			PDO::PARAM_STR); //decimal
+            $req->bindValue('_haut' ,        2,                       			PDO::PARAM_STR); //decimal
+            $req->bindValue('_united' ,     'united',              		    PDO::PARAM_STR);
+            $req->bindValue('_proforma' ,   'proforma', 			PDO::PARAM_STR);
             $req->bindValue('_ent' ,     	 $get_token,                        PDO::PARAM_INT);
             $rep = $req->execute();
             $req->closeCursor();
@@ -164,8 +166,6 @@ try
 
 			if(!$arr)
 				throw new Exception('MAJ :: Users or Password invalid');
-
-			$response['Message'] = $arr['user_id'];
 			//action a définir si ds la base 
 			break;
 
@@ -187,7 +187,7 @@ try
 			break;
 	}
 
-	$response['status'] = 1;
+	//$response['status'] = 1;
 }
 catch( Exception $error )
 {
