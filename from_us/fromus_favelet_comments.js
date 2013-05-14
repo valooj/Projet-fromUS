@@ -1778,7 +1778,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 	
 							fromus_pricemin				=	fromus_reg.exec(document.getElementsByClassName("price-container")[0].innerHTML)[0];
 		
-							fromus_img					=	document.getElementsByClassName("img-main")[0].getElementsByTagName("div")[0].getElementsByTagName("a")[0].getElementsByTagName("img")[0].src;
+							fromus_img						=	document.getElementsByClassName("img-main")[0].getElementsByTagName("div")[0].getElementsByTagName("a")[0].getElementsByTagName("img")[0].src;
 						}
 					else	
 						{	// S'il s'agit d'une page normale
@@ -1787,8 +1787,13 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		
 							fromus_pricemin				=	fromus_reg.exec(document.getElementsByClassName("priceDisplay")[0].innerHTML)[0];
 	
-							fromus_img					=	document.getElementsByClassName("entity-image")[0].getElementsByTagName("div")[0].getElementsByTagName("img")[0].src;
+							fromus_img						=	document.getElementsByClassName("entity-image")[0].getElementsByTagName("div")[0].getElementsByTagName("img")[0].src;
 						}
+						
+				if(document.getElementsByClassName("description")[0]!=undefined)
+					{
+						fromus_desc							=	document.getElementsByClassName("description")[0].innerText;
+					}
 			}break;		
 
 		case "www.shopblackjack.com":
@@ -1797,16 +1802,47 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 					fromus_pricemin						=	fromus_reg.exec(document.getElementsByClassName("pricecolor colors_productprice")[0].innerText)[0];
 
-					fromus_img							=	document.getElementById("product_photo").src;
+					fromus_img								=	document.getElementById("product_photo").src;
+					
+				if(document.getElementsByClassName("colors_descriptionbox")[0]!=undefined)
+					{
+						fromus_desc							=	document.getElementsByClassName("colors_descriptionbox")[0].innerText;
+					}					
 			}break;
 		
 		case "www.hottopic.com":
 			{
-					fromus_objectname					=	document.getElementById("product-title").innerText;
-
-					fromus_pricemin						=	/(\$[0-9\,]{0,}\.[0-9]{0,})$/.exec(document.getElementById("product-price").innerText.replace(/\s/g,''))[0];
-
-					fromus_img							=	document.getElementById("product-image").getElementsByTagName("a")[0].getElementsByTagName("img")[0].src;
+				if(document.getElementsByClassName("pTitle")[0]!=undefined)
+					{
+						fromus_objectname							=	document.getElementsByClassName("pTitle")[0].innerText;
+					}
+				if(document.getElementById("product-title")!=undefined)
+					{
+						fromus_objectname							=	document.getElementById("product-title").innerText;
+					}
+					
+				if(document.getElementsByClassName("pPrice")[0]!=undefined)
+					{
+						fromus_pricemin								=	document.getElementsByClassName("pPrice")[0].innerText;
+					}
+				if(document.getElementById("product-price")!=undefined)
+					{
+						fromus_pricemin								=	/(\$[0-9\,]{0,}\.[0-9]{0,})$/.exec(document.getElementById("product-price").innerText.replace(/\s/g,''))[0];
+					}		
+					
+				if(document.getElementsByClassName("pPrice")[0]!=undefined)
+					{
+						fromus_img										=	document.getElementsByClassName("bigimage")[0].src;
+					}
+				if(document.getElementById("product-price")!=undefined)
+					{
+						fromus_img										=	document.getElementById("product-image").getElementsByTagName("a")[0].getElementsByTagName("img")[0].src;
+					}							
+					
+				if(document.getElementById("productDesc")!=undefined)
+					{
+						fromus_desc							=	document.getElementById("productDesc").innerText;
+					}					
 			}break;
 	
 		case "www.shopangl.com":
@@ -1815,9 +1851,10 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 					fromus_pricemin						=	document.getElementById("textMultiPrice").innerText;
 
-					fromus_img							=	document.getElementsByClassName("img_prd_detail")[0].src;
+					fromus_img								=	document.getElementsByClassName("img_prd_detail")[0].src;
 				
 				
+					fromus_desc								=	"The one and only, superb and fabulous "fromus_objectname;
 			}break;
 
 		case "www.gilt.com":
@@ -1826,7 +1863,9 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				
 				fromus_pricemin			=	document.getElementsByClassName("price-emphasis")[0].innerText;
 				
-				fromus_img				=	document.getElementsByClassName("image-switcher-container")[0].getElementsByTagName("img")[0].src;
+				fromus_img					=	document.getElementsByClassName("image-switcher-container")[0].getElementsByTagName("img")[0].src;
+			
+			
 			}break;
 			
 		case "www.gilttaste.com":
