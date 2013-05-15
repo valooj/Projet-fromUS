@@ -43,9 +43,18 @@ try
 	$get_action = isset($_GET['action']) ? htmlspecialchars($_GET['action']) : null;
 	$get_token = isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
 
+	//Recupere l'id 
+	$req = $bdd->prepare('SELECT tok_user FROM token where tok_token= :_token');
+	$req->execute(array('_token' =>$get_token));
+	$tokId = $req->fetch();
+	$tokId = $tokId[0];
+	$req->closeCursor();
+
 	// variables tests
 	if ( !$get_token )
 		throw new Exception('MAJ :: Token not specified');
+	if(!$tokId)
+		throw new Exception('Token non valide');
 
 	// actions
 	switch($get_action)
@@ -84,7 +93,7 @@ try
 
             // code MAJ ajout bonus
 			$req = $bdd->prepare($sql_prepared_update_bonus);
-            $req->bindValue('_client' ,  $get_token,     PDO::PARAM_INT);
+            $req->bindValue('_client' ,  $tokId,     PDO::PARAM_INT);
             $req->bindValue('_nb'     ,  $bonus,         PDO::PARAM_INT);
             $rep = $req->execute();
             $req->closeCursor();
@@ -100,15 +109,13 @@ try
 
 			// variables tests
 			if ( !$get_panier )
-				throw new Exception('MAJ :: Product not specified');
+				throw new Exception('MAJ :: Panier not specified');
 
 			if( !isset($get_panier['libelle'], $get_panier['qte'], $get_panier['montant'] , $get_panier['url']) )
 				throw new Exception('MAJ :: Bad parameters into this order');
 
 			if( $get_panier['qte'] == 0)
 				throw new Exception('MAJ :: Bad Quantity parameter');
-
-			//$get_product['montant'] = str_replace('$', null, $get_product['montant']);
 
 			if ( !is_numeric($get_panier['montant']) )
 				throw new Exception('MAJ :: Price invalid');
@@ -129,7 +136,7 @@ try
             $req->bindValue('_haut' ,        2,                       			PDO::PARAM_STR); //decimal
             $req->bindValue('_united' ,     'united',              		    PDO::PARAM_STR);
             $req->bindValue('_proforma' ,   'proforma', 			PDO::PARAM_STR);
-            $req->bindValue('_ent' ,     	 $get_token,                        PDO::PARAM_INT);
+            $req->bindValue('_ent' ,     	 $tokId,                        PDO::PARAM_INT);
             $rep = $req->execute();
             $req->closeCursor();
 
@@ -151,21 +158,19 @@ try
 
 		case 'MAJ-calcul':
 
-			$get_product = isset($_REQUEST['product']) ? json_decode($_REQUEST['product'], TRUE) : null;
+			$get_calcul = isset($_REQUEST['calcul']) ? json_decode($_REQUEST['calcul'], TRUE) : null;
 
 			// variables tests
-			if ( !$get_product )
-				throw new Exception('MAJ :: Product not specified');
+			if ( !$get_calcul )
+				throw new Exception('MAJ ::Calcul not specified');
 
-			if( !isset($get_product['libelle'], $get_product['qte'], $get_product['montant'] , $get_product['url']) )
+			if( !isset($get_calcul['libelle'], $get_calcul['qte'], $get_calcul['montant'] ) )
 				throw new Exception('MAJ :: Bad parameters into this order');
 
-			if( $get_product['qte'] == 0)
+			if( $get_calcul['qte'] == 0)
 				throw new Exception('MAJ :: Bad Quantity parameter');
 
-			//$get_product['montant'] = str_replace('$', null, $get_product['montant']);
-
-			if ( !is_numeric($get_product['montant']) )
+			if ( !is_numeric($get_calcul['montant']) )
 				throw new Exception('MAJ :: Price invalid');
 	
 			$apv=0;
@@ -175,7 +180,7 @@ try
 			$url = "http://www.dutycalculator.com/api2.1/".$api_code."/calculation?from=usa";
 
 			$req = $bdd->prepare('SELECT user_pays FROM users WHERE  user_id = :user_id');
-			$req->execute(array('user_id' => $get_token));
+			$req->execute(array('user_id' => $tokId));
 			$arr = $req->fetch();
 
 			switch ($arr['user_pays'])
@@ -230,10 +235,11 @@ try
 				}
 			}
 
-			$url .= "&to=".$code_pays;
+			//$url .= "&to=".$code_pays;
+			$url .= "&to=bel";
 			$url .= "&classify_by=cat";
 			
-			$url .= "&cat[0]=".$get_product['categ']."&desc[0]=".$get_product['libelle']."&qty[0]=".$get_product['qte']."&value[0]=".$get_product['montant'];
+			$url .= "&cat[0]=".$get_calcul['categ']."&desc[0]=".$get_calcul['libelle']."&qty[0]=".$get_calcul['qte']."&value[0]=".$get_calcul['montant'];
 			
 			//code a mettre pour le ship si le poidt supérireur a 70,5, $ship=250
 			$ship = 0;
@@ -273,7 +279,7 @@ try
 				}
 					
 			//recuperation de l'outil de calcul des douanes/taxe:
-			$tot = $get_product['qte']*$get_product['montant'];
+			$tot = $get_calcul['qte']*$get_calcul['montant'];
 			$prix = $tot;
 			$frais_liv = $ship;
 			$base_calcul = $prix+$frais_liv;

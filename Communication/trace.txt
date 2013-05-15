@@ -2810,3 +2810,1651 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Penguin Kids' Backpack","prd_site":"ebags.store.rakuten.com/p/penguin-kids-backpack/245170625.html","prd_desc":"Kids Hardside backpack with fabric back","prd_visu":"http://img.rakuten.com/PIC/51345720/0/1/350/51345720.jpg","prd_prix":"30","prd_cat":"18"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Penguin Kids' Backpack","prd_site":"ebags.store.rakuten.com/p/penguin-kids-backpack/245170625.html","prd_desc":"Kids Hardside backpack with fabric back","prd_visu":"http://img.rakuten.com/PIC/51345720/0/1/350/51345720.jpg","prd_prix":"30","prd_cat":"26"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [product] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_prix":6}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_prix":6}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_desc":6, "prd_visu":6,"prd_prix":1,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_desc":6, "prd_visu":6,"prd_prix":1,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_desc":6, "prd_visu":6,"prd_prix":1,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_desc":6, "prd_visu":6,"prd_prix":1,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_desc":6, "prd_visu":6,"prd_prix":1,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_prix":"60","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","qte":"","montant":"60","categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_prix":"60","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","qte":"1","montant":"60","categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 1 ,"montant": 67 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 1 ,"montant": 67 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_prix":"60"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","qte":"1","montant":"60","categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_desc":6, "prd_visu":6,"prd_prix":1,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","qte":"1","montant":"60","categ":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [calcul] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_desc":6,"prd_prix":1,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [calcul] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_desc":6,"prd_prix":1,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [calcul] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_desc":6,"prd_visu":6,"prd_prix":1,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [calcul] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_desc":6,"prd_visu":6,"prd_prix":1,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_desc":6,"prd_visu":6,"prd_prix":1,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_desc":6,"prd_prix":1,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_desc":6,"prd_visu":6"prd_prix":1,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_desc":6,"prd_visu":6,"prd_prix":1,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_desc":6,"prd_visu":6,"prd_prix":1,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","qte":"1","montant":"60","categ":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","qte":"1","montant":"60","categ":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","qte":"1","montant":"60","categ":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 1 ,"montant": 67 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [panier] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_desc":6,"prd_visu":6,"prd_prix":1,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"liazzade","url":"siazzzade","desc":6,"qte":6,"montant":1,"categ":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"23"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"23"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","qte":"1","montant":"60","categ":"27"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"liazzade","url":"siazzzade","desc":6,"qte":6,"montant":1,"categ":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"liazzade","url":"siazzzade","desc":6,"qte":6,"montant":1,"categ":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"liazzade","url":"siazzzade","desc":6,"qte":6,"montant":1,"categ":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"liazzade","url":"siazzzade","desc":6,"qte":6,"montant":1,"categ":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"liazzade","url":"siazzzade","desc":6,"qte":6,"montant":1,"categ":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"liazzade","url":"siazzzade","desc":6,"qte":6,"montant":1,"categ":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"liazzade","url":"siazzzade","desc":6,"qte":6,"montant":1,"categ":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"liazzade","url":"siazzzade","desc":6,"qte":6,"montant":1,"categ":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"liazzade","url":"siazzzade","desc":6,"qte":6,"montant":1,"categ":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"liazzade","url":"siazzzade","desc":6,"qte":6,"montant":1,"categ":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"libelle":"liazzade","url":"siazzzade","desc":6,"qte":6,"montant":1,"categ":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","qte":"1","montant":"60","categ":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","qte":"1","montant":"60","categ":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","qte":"1","montant":"60","categ":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"liazzade","url":"siazzzade","desc":6,"qte":6,"montant":1,"categ":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","qte":"2","montant":"60","categ":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60"}
+)
+
+===========================================
+======
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","qte":"1","montant":"60","categ":"19"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","qte":"2","montant":"60","categ":"26"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"26"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","qte":"2","montant":"60","categ":"26"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"26"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","qte":"2","montant":"60","categ":"26"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","qte":"2","montant":"60","categ":"26"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","qte":"3","montant":"60","categ":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","qte":"5","montant":"60","categ":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"BYU Cougars Heart Watch","url":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","desc":"Designed for Ladies","qte":"5","montant":"60","categ":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"liazzade","url":"siazzzade","desc":6,"qte":6,"montant":1,"categ":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"libelle":"liazzade","url":"siazzzade","desc":6,"qte":6,"montant":1,"categ":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"liazzade","url":"siazzzade","desc":6,"qte":6,"montant":1,"categ":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"BYU Cougars Heart Watch","prd_site":"ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html","prd_desc":"Designed for Ladies","prd_visu":"http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg","prd_prix":"60","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_prix":"18.99","prd_cat":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"PlayStation 3D Glasses","url":"rakuten.com/prod/playstation-3d-glasses/224928388.html","desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","qte":"2","montant":"18.99","categ":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_prix":"18.99","prd_cat":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"PlayStation 3D Glasses","url":"rakuten.com/prod/playstation-3d-glasses/224928388.html","desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","qte":"2","montant":"18.99","categ":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_prix":"18.99","prd_cat":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_prix":"18.99","prd_cat":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 1 ,"montant": 67 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_desc":6,"prd_visu":6,"prd_prix":6,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_prix":"18.99","prd_cat":"default"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_prix":"18.99","prd_cat":"23"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_visu":"regVisu","prd_prix":"18.99","prd_cat":"18"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_prix":"18.99","prd_cat":"23"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_prix":"18.99","prd_cat":"3"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_prix":"18.99","prd_cat":"28"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_prix":"18.99","prd_cat":"28"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"PlayStation 3D Glasses","url":"rakuten.com/prod/playstation-3d-glasses/224928388.html","desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","qte":"","montant":"18.99","categ":"28"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_prix":"18.99","prd_cat":"28"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_visu":"sexe","prd_prix":"18.99","prd_cat":"28"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_desc":6,"prd_visu":6,"prd_prix":6,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_visu":"sexe","prd_prix":"18.99","prd_cat":"default"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_visu":"2","prd_prix":"18.99","prd_cat":"3"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_visu":"2","prd_prix":"18.99","prd_cat":"3"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"PlayStation 3D Glasses","url":"rakuten.com/prod/playstation-3d-glasses/224928388.html","desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","qte":"","montant":"18.99","categ":"3"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_visu":"2","prd_prix":"18.99","prd_cat":"3"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"PlayStation 3D Glasses","url":"rakuten.com/prod/playstation-3d-glasses/224928388.html","desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","qte":"1","montant":"18.99","categ":"3"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_visu":"2","prd_prix":"18.99","prd_cat":"3"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"PlayStation 3D Glasses","url":"rakuten.com/prod/playstation-3d-glasses/224928388.html","desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","qte":"1","montant":"18.99","categ":"3"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_visu":"2","prd_prix":"18.99","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"PlayStation 3D Glasses","url":"rakuten.com/prod/playstation-3d-glasses/224928388.html","desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","qte":"1","montant":"18.99","categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_visu":"2","prd_prix":"18.99","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"PlayStation 3D Glasses","url":"rakuten.com/prod/playstation-3d-glasses/224928388.html","desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","qte":"1","montant":"18.99","categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_visu":"2","prd_prix":"18.99","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_visu":"2","prd_prix":"18.99","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"PlayStation 3D Glasses","url":"rakuten.com/prod/playstation-3d-glasses/224928388.html","desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","qte":"1","montant":"18.99","categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"PlayStation 3D Glasses","url":"rakuten.com/prod/playstation-3d-glasses/224928388.html","desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","qte":"2","montant":"18.99","categ":"26"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_visu":"2","prd_prix":"18.99","prd_cat":"26"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_visu":"2","prd_prix":"18.99","prd_cat":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"PlayStation 3D Glasses","url":"rakuten.com/prod/playstation-3d-glasses/224928388.html","desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","qte":"2","montant":"18.99","categ":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_visu":"2","prd_prix":"18.99","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"PlayStation 3D Glasses","url":"rakuten.com/prod/playstation-3d-glasses/224928388.html","desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","qte":"3","montant":"18.99","categ":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_visu":"2","prd_prix":"18.99","prd_cat":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"PlayStation 3D Glasses","url":"rakuten.com/prod/playstation-3d-glasses/224928388.html","desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","qte":"2","montant":"18.99","categ":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"PlayStation 3D Glasses","url":"rakuten.com/prod/playstation-3d-glasses/224928388.html","desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","qte":"3","montant":"18.99","categ":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_visu":"2","prd_prix":"18.99","prd_cat":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","prd_visu":"2","prd_prix":"18.99","prd_cat":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"PlayStation 3D Glasses","url":"rakuten.com/prod/playstation-3d-glasses/224928388.html","desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","qte":"2","montant":"18.99","categ":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"PlayStation 3D Glasses","url":"rakuten.com/prod/playstation-3d-glasses/224928388.html","desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","qte":"2","montant":49.218,"categ":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"default"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","url":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","qte":"2","montant":"185","categ":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","url":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","qte":"2","montant":"185","categ":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"14"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"14"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","url":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","qte":"1","montant":"185","categ":"14"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","url":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","qte":"1","montant":"185","categ":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","url":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","qte":"2","montant":"185","categ":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","url":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","qte":"5","montant":"185","categ":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","url":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","qte":"4","montant":"185","categ":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"liazzade","url":"siazzzade","prd_desc":6,"prd_visu":6,"prd_prix":6,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"liazzade","prd_site":"siazzzade","prd_desc":6,"prd_visu":6,"prd_prix":6,"prd_cat":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"liazzade","site":"siazzzade","desc":6,"qte":6,"montant":6,"categ":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"liazzade","url":"siazzzade","desc":6,"qte":6,"montant":6,"categ":1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"30"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"regName","url":"regOffer","desc":"regDesc","qte":"qteVal","montant":"regPrice","categ":"categVal"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"30"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"regName","url":"regOffer","desc":"regDesc","qte":"qteVal","montant":"regPrice","categ":"categVal"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"18"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","url":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","qte":"3","montant":"185","categ":"18"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"28"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","url":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","qte":"2","montant":"185","categ":"28"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"28"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","url":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","qte":"3","montant":"185","categ":"28"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"28"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","url":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","qte":"2","montant":"185","categ":"28"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"30"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","url":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","qte":"1","montant":"185","categ":"30"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"3"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"3"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","qte":"3","montant":"185","categ":"3"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","prd_site":"rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html","prd_desc":"Stunning and elegant this dazzling heart pendant speaks volumes with it's exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]","prd_visu":"2","prd_prix":"185","prd_cat":"3"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium","qte":"3","montant":"185","categ":"3"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Side Slit Capri Jean","prd_site":"bebe.com/Bottoms/View-All/Side-Slit-Capri-Jean/pc/218/c/0/sc/219/52820.pro","prd_desc":"With a slit at the hemline, comfy fit and cropped cut, this pair of colorful bebe jeans is sure to wake up any top. Try it with a neutral top and a pair of wedge sandals. ","prd_visu":"2","prd_prix":"79","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"Side Slit Capri Jean","qte":"2","montant":"79","categ":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"Side Slit Capri Jean","url":"bebe.com/Bottoms/View-All/Side-Slit-Capri-Jean/pc/218/c/0/sc/219/52820.pro","desc":"With a slit at the hemline, comfy fit and cropped cut, this pair of colorful bebe jeans is sure to wake up any top. Try it with a neutral top and a pair of wedge sandals. ","qte":"2","montant":206.98,"categ":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Side Slit Capri Jean","prd_site":"bebe.com/Bottoms/View-All/Side-Slit-Capri-Jean/pc/218/c/0/sc/219/52820.pro","prd_desc":"With a slit at the hemline, comfy fit and cropped cut, this pair of colorful bebe jeans is sure to wake up any top. Try it with a neutral top and a pair of wedge sandals. ","prd_visu":"2","prd_prix":"79","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"Side Slit Capri Jean","qte":"3","montant":"79","categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Side Slit Capri Jean","prd_site":"bebe.com/Bottoms/View-All/Side-Slit-Capri-Jean/pc/218/c/0/sc/219/52820.pro","prd_desc":"With a slit at the hemline, comfy fit and cropped cut, this pair of colorful bebe jeans is sure to wake up any top. Try it with a neutral top and a pair of wedge sandals. ","prd_visu":"2","prd_prix":"79","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"Side Slit Capri Jean","qte":"3","montant":"79","categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"Side Slit Capri Jean","url":"bebe.com/Bottoms/View-All/Side-Slit-Capri-Jean/pc/218/c/0/sc/219/52820.pro","desc":"With a slit at the hemline, comfy fit and cropped cut, this pair of colorful bebe jeans is sure to wake up any top. Try it with a neutral top and a pair of wedge sandals. ","qte":"3","montant":344.88,"categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Side Slit Capri Jean","prd_site":"bebe.com/Bottoms/View-All/Side-Slit-Capri-Jean/pc/218/c/0/sc/219/52820.pro","prd_desc":"With a slit at the hemline, comfy fit and cropped cut, this pair of colorful bebe jeans is sure to wake up any top. Try it with a neutral top and a pair of wedge sandals. ","prd_visu":"2","prd_prix":"79","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"Side Slit Capri Jean","qte":"3","montant":"79","categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"Side Slit Capri Jean","url":"bebe.com/Bottoms/View-All/Side-Slit-Capri-Jean/pc/218/c/0/sc/219/52820.pro","desc":"With a slit at the hemline, comfy fit and cropped cut, this pair of colorful bebe jeans is sure to wake up any top. Try it with a neutral top and a pair of wedge sandals. ","qte":"3","montant":344.88,"categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Side Slit Capri Jean","prd_site":"bebe.com/Bottoms/View-All/Side-Slit-Capri-Jean/pc/218/c/0/sc/219/52820.pro","prd_desc":"With a slit at the hemline, comfy fit and cropped cut, this pair of colorful bebe jeans is sure to wake up any top. Try it with a neutral top and a pair of wedge sandals. ","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-217245-fpl-i1?$Detail$","prd_prix":"79","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"Side Slit Capri Jean","qte":"2","montant":"79","categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"Side Slit Capri Jean","url":"bebe.com/Bottoms/View-All/Side-Slit-Capri-Jean/pc/218/c/0/sc/219/52820.pro","desc":"With a slit at the hemline, comfy fit and cropped cut, this pair of colorful bebe jeans is sure to wake up any top. Try it with a neutral top and a pair of wedge sandals. ","qte":"2","montant":206.98,"categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","prd_site":"bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro","prd_desc":"With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-211226-fpl-i1?$Detail$","prd_prix":"110","prd_cat":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","prd_site":"bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro","prd_desc":"With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-211226-fpl-i1?$Detail$","prd_prix":"110","prd_cat":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","qte":"5","montant":"110","categ":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","url":"bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro","desc":"With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.","qte":"5","montant":800.36,"categ":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","prd_site":"bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro","prd_desc":"With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-211226-fpl-i1?$Detail$","prd_prix":"110","prd_cat":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","qte":"5","montant":"110","categ":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","prd_site":"bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro","prd_desc":"With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-211226-fpl-i1?$Detail$","prd_prix":"110","prd_cat":"26"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","prd_site":"bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro","prd_desc":"With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-211226-fpl-i1?$Detail$","prd_prix":"110","prd_cat":"26"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","qte":"1","montant":"110","categ":"26"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","url":"bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro","desc":"With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.","qte":"1","montant":144.1,"categ":"26"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","prd_site":"bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro","prd_desc":"With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-211226-fpl-i1?$Detail$","prd_prix":"110","prd_cat":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","qte":"2","montant":"110","categ":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","url":"bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro","desc":"With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.","qte":"2","montant":320.14,"categ":"13"}
+)
+
+===========================================
