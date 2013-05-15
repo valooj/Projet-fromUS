@@ -168,6 +168,13 @@ if (isOpen != true) {
 
 	// ouverture de la dialog box
 	newDialog.dialog("open");
+	
+	// suppression des key dans le localstorage
+	localStorage.removeItem('regDesc');
+	localStorage.removeItem('regName');
+	localStorage.removeItem('regPrice');
+	localStorage.removeItem('regStore');
+	localStorage.removeItem('regOffer');
 
 }
 });
