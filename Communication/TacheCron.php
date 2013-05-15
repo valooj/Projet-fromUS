@@ -8,7 +8,7 @@ try{
     $bdd = new PDO('mysql:host=localhost;dbname=fromus', 'root', '', $options);
 
     //Requete a faire
-    $req = $bdd->prepare('SELECT prd_id ,prd_site FROM produits');
+    $req = $bdd->prepare('SELECT prd_id ,prd_site, prd_prix FROM produits');
 	$rep = $req->execute();
 	$donnees = $req->fetchAll();
 
@@ -36,7 +36,16 @@ try{
 				}
 			}
 		}
-		//Code pour vérifier le prix
+		//ne marche pas, trop aléatoire 
+		$result = strpos($file,$row['prd_prix']);
+		if(!$result){
+			$req = $bdd->prepare('UPDATE produits SET prd_vis = 0 WHERE  prd_id = :_id');
+			$req->bindParam('_id', $row['prd_id'], PDO::PARAM_INT);
+			$rep =$req->execute();
+			$req->closeCursor();
+
+			file_put_contents('./traceTacheCron.txt', print_r($row['prd_id'], 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
+		}
 
 	}
 }
