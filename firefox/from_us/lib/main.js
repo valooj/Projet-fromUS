@@ -11,9 +11,11 @@ var tbb = require('toolbarbutton').ToolbarButton({
       onCommand: function () {
         //tbb.destroy(); 
         tabs.activeTab.attach ({
-        	contentScript:
+        	/*contentScript:
         		'var fromus_offre = document.location.href;' +
-        		'window.alert(fromus_offre);'
+        		'window.alert(fromus_offre);'*/
+        	contentScriptFile: self.data.url('fromus_favelet_comments.js'),
+        	contentScriptWhen: 'end'
 		});
       }
     });
