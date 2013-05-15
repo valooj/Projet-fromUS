@@ -390,11 +390,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				
 				if(document.getElementById("wrap")!=undefined)
 					{	//Page
-						fromus_img					=	document.getElementsById("wrap").getElementsByTagName("a")[0].href;
+						fromus_img					=	document.getElementById("wrap").getElementsByTagName("a")[0].href;
 					}
 				else
 					{	// Preview
-						fromus_img					=	document.getElementsById("productimage QuickViewproductimage").getElementsByTagName("img")[0].src;
+						fromus_img					=	document.getElementsByClassName("productimage QuickViewproductimage")[0].getElementsByTagName("img")[0].src;
 					}
 			}break;
 		
@@ -419,8 +419,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		
 		case "www.hautelook.com":
 			{
-				fromus_objectnametmp			=	document.getElementsByClassName("product_title");
-				fromus_objectname				=	fromus_objectnametmp[0].innerHTML;		
+				fromus_objectname				=	document.getElementsByClassName("product_title")[0].textContent;
 		
 				fromus_pricemintmp				=	document.getElementsByClassName("sale_price");
 				fromus_pricemin					=	fromus_pricemintmp[0].textContent + '';	
@@ -446,16 +445,13 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		case "www.jcrew.com":
 			{	
 				fromus_objectname				=	document.getElementById("pdp-title").textContent;		
-
+alert(fromus_objectname);
 				fromus_pricemintmp				=	document.getElementsByClassName("pdp-single")[0].textContent;
-				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/g.exec(fromus_pricemin)[0];				
-
-				fromus_imgtmp					=	document.getElementsByClassName("prod_main_img")[0].innerHTML;
-				fromus_imgtmp					+=	'';				
-				fromus_img						= 	/(http\:\/\/.*)(\?\$pdp)/gi.exec(fromus_imgtmp)[0] + '';
-				fromus_img						=	fromus_img.substring(0,fromus_img.length-5);	
-
-				fromus_desc						=	document.getElementsByClassName('descmore_text')[1].textContent;
+				fromus_pricemin					=	fromus_reg.exec(fromus_pricemin)[0];				
+alert(fromus_pricemin);
+				fromus_img							=	document.getElementById("mainImg").src;
+alert(fromus_img);
+				fromus_desc							=	document.getElementsByClassName('descmore_text')[1].textContent;
 			}break;
 		
 		case "www.jcpenney.com":
