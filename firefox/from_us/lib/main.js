@@ -14,7 +14,7 @@ var tbb = require('toolbarbutton').ToolbarButton({
         	/*contentScript:
         		'var fromus_offre = document.location.href;' +
         		'window.alert(fromus_offre);'*/
-        	contentStyleFile: self.data.url('jquery/jquery-ui.css'),
+        	contentStyleFile: self.data.url('jquery/style.css'),
         	contentScriptFile: [self.data.url('jquery/jquery.min.js'),
         						self.data.url('jquery/jquery-ui.js'),
                       			self.data.url('fromus_favelet_comments.js'),
