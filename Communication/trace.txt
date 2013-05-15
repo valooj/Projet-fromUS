@@ -1795,3 +1795,91 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"PlayStation 3D Glasses","prd_site":"rakuten.com/prod/playstation-3d-glasses/224928388.html","prd_prix":"18.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 1
+    [product] => {"libelle":"PlayStation 3D Glasses","url":"rakuten.com/prod/playstation-3d-glasses/224928388.html","desc":"Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]","qte":"","montant":"333","categ":"default"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Skyway Retreat 36\" Extra Large Duffel (Stone)","prd_site":"ebags.store.rakuten.com/p/skyway-retreat-36-extra-large-duffel-stone/221383220.html","prd_prix":"36.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 1
+    [product] => {"libelle":"Skyway Retreat 36\" Extra Large Duffel (Stone)","url":"ebags.store.rakuten.com/p/skyway-retreat-36-extra-large-duffel-stone/221383220.html","desc":"Constructed of water and tear resistant rip-stop polyester.[...]","qte":"","montant":"333","categ":"default"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Skyway Retreat 36\" Extra Large Duffel (Stone)","prd_site":"ebags.store.rakuten.com/p/skyway-retreat-36-extra-large-duffel-stone/221383220.html","prd_prix":"36.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 1
+    [product] => {"libelle":"Skyway Retreat 36\" Extra Large Duffel (Stone)","url":"ebags.store.rakuten.com/p/skyway-retreat-36-extra-large-duffel-stone/221383220.html","desc":"Constructed of water and tear resistant rip-stop polyester.[...]","qte":"23","montant":"333","categ":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Samsonite Mobile Office Wheeled Notebook Case","prd_site":"ebags.store.rakuten.com/p/samsonite-mobile-office-wheeled-notebook-case/210977461.html","prd_prix":"94.97"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Samsonite Mobile Office Wheeled Notebook Case","prd_site":"ebags.store.rakuten.com/p/samsonite-mobile-office-wheeled-notebook-case/210977461.html","prd_prix":"94.97"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 1
+    [product] => {"libelle":"Samsonite Mobile Office Wheeled Notebook Case","url":"ebags.store.rakuten.com/p/samsonite-mobile-office-wheeled-notebook-case/210977461.html","desc":"Foam padded laptop compartment on side keeps notebook safe. Fully lined with two large interior accessory pockets and accordion letter/legal size file holder. Padded handles, retractable, push-bu[...]","qte":"3","montant":"333","categ":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Samsonite Mobile Office Wheeled Notebook Case","prd_site":"ebags.store.rakuten.com/p/samsonite-mobile-office-wheeled-notebook-case/210977461.html","prd_prix":"94.97"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 1
+    [product] => {"libelle":"Samsonite Mobile Office Wheeled Notebook Case","url":"ebags.store.rakuten.com/p/samsonite-mobile-office-wheeled-notebook-case/210977461.html","desc":"Foam padded laptop compartment on side keeps notebook safe. Fully lined with two large interior accessory pockets and accordion letter/legal size file holder. Padded handles, retractable, push-bu[...]","qte":"","montant":"333","categ":"default"}
+)
+
+===========================================

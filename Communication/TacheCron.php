@@ -36,6 +36,7 @@ try{
 				}
 			}
 		}
+		//Code pour vérifier le prix
 
 	}
 }

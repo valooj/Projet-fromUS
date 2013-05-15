@@ -1,16 +1,18 @@
 var token = '1';
 var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&token='+token;
-var _urlUser = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-user&token='+token;
+var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&token='+token;
 var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&token='+token;
 var productJSON = {};
 var userID = 2;
 var userJSON = {};
+
 
 function sendToServer(urlSelected) {
 	$.post(urlSelected, productJSON)
 	.done(function(datas) { 
 		if(datas['Message'] !== undefined)
 			alert(datas['Message']);
+
 		if(datas['error'] !== undefined)
 			alert(datas['error']);  
 		})
@@ -18,6 +20,7 @@ function sendToServer(urlSelected) {
 		alert(datas['error']); 
 		})
 	;}
+
 
 $(document).ready(function() {
 
@@ -27,7 +30,7 @@ console.log( "Variable from Content Script: "+localStorage["regPrice"] );
 console.log( "Variable from Content Script: "+localStorage["regDesc"] );
 
 // creation de la dialog box
-var newDialog = $('<div id="dialogBox"><p>Formulaire</p><form id="myForm"><label for="store">Marchand : </label><input type="textbox" id="store" disabled="true"/></br><label for="name">Nom du produit : </label><input type="textbox" id="name" disabled="true"/></br><label for="price">Prix du produit : </label><input type="textbox" id="price" disabled="true"/></br><label for="category">Catégorie:</label><select id="category"><option value="default" selected="selected">Choisir une catégorie</option><option value="antique_art">Antiques, Art & Collectibles</option><option value="auto_moto">Auto & Moto</option><option value="bijoux_montres">Bijoux & Montres</option><option value="chaussures">Chaussures</option><option value="entreprises_industries">Entreprises & Industries</option><option value="habits_enfants">Habits pour enfants</option><option value="habits_femmes">Habits pour femmes</option><option value="habits_hommes">Habits pour hommes</option><option value="instrument_musique">Instrument de musique</option><option value="jeux_jouets">Jeux & Jouets</option><option value="jeux_informatique">Jeux vidéos & Informatique</option><option value="livres_films_musiques">Livres, Films & Musiques</option><option value="maison_jardin">Maison & Jardin</option><option value="ordinateurs_bureau">Ordinateurs & Bureau</option><option value="pieces_bricolage_outillage">Pièces, Bricolage & Outillage</option><option value="puericulture">Puericulture</option><option value="sacs_accessoires">Sacs & Accessoires</option><option value="sante_beaute">Santé & Beauté</option><option value="sports_loisirs">Sports & Loisirs</option></select></br><label for="quantite">Quantite : </label><input id="QteSpinner"></form></div>');
+var newDialog = $('<div id="dialogBox"><p>Formulaire</p><form id="myForm"><label for="store">Marchand : </label><input type="textbox" id="store" disabled="true"/></br><label for="name">Nom du produit : </label><input type="textbox" id="name" disabled="true"/></br><label for="price">Prix du produit : </label><input type="textbox" id="price" disabled="true"/></br><label for="category">Catégorie:</label><select id="category"><option value="default" selected="selected">Choisir une catégorie</option><option value="1">Antiques, Art & Collectibles</option><option value="24">Auto & Moto</option><option value="15">Bijoux & Montres</option><option value="16">Chaussures</option><option value="13">Entreprises & Industries</option><option value="19">Habits pour enfants</option><option value="26">Habits pour femmes</option><option value="25">Habits pour hommes</option><option value="14">Instrument de musique</option><option value="17">Jeux & Jouets</option><option value="28">Jeux vidéos & Informatique</option><option value="3">Livres, Films & Musiques</option><option value="30">Maison & Jardin</option><option value="27">Ordinateurs & Bureau</option><option value="23">Pièces, Bricolage & Outillage</option><option value="18">Puericulture</option><option value="21">Sacs & Accessoires</option><option value="29">Santé & Beauté</option><option value="12">Sports & Loisirs</option></select></br><label for="quantite">Quantite : </label><input id="QteSpinner"></form></div>');
 
 // variable qui permet de savoir si la dialog box est ouverte
 var isOpen = $("#dialogBox").dialog("isOpen");
@@ -67,11 +70,22 @@ if (isOpen != true) {
 					var categSelect = document.getElementById("category");
 					var categVal = categSelect.value;
 
+/*
 					var jsonProduct = {libelle: localStorage["regName"] ,url: localStorage["regOffer"] ,desc: localStorage["regDesc"], qte: qteVal ,montant: '333' ,categ: categVal};
 					var postData = JSON.stringify(jsonProduct);
 					productJSON = {product:postData};
-					sendToServer(_urlPanier);
-					alert("fin panier");
+					sendToServer(_urlCalcul);
+*/
+					if(confirm('L\'estimation du prix est de 40euro ')) {
+						var jsonProduct = {libelle: localStorage["regName"] ,url: localStorage["regOffer"] ,desc: localStorage["regDesc"], qte: qteVal ,montant: '333' ,categ: categVal};
+						var postData = JSON.stringify(jsonProduct);
+						productJSON = {product:postData};
+						sendToServer(_urlPanier);
+						alert("fin panier");
+					}
+					else 
+						alert('sorry');
+
 				}
 			},
 	
