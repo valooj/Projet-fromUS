@@ -17,42 +17,26 @@ try{
     	//echo $row['prd_id'];
     	//echo $row['prd_site'];
     	$file = @file_get_contents($row['prd_site']);
-		if ($file) 
-		{
-			echo 'URL valide !';
-		} 
-		else 
+		if (!$file) 
 		{
 			$file = @file_get_contents('www.'.$row['prd_site']);
-			if ($file) 
-			{
-				echo 'URL valide !';
-			} 
-			else 
+			if (!$file) 
 			{
 				$file = @file_get_contents('http://www.'.$row['prd_site']);
-				if ($file) 
-				{
-					echo 'URL valide !';
-				} 
-				else 
+				if (!$file) 
 				{
 					$file = @file_get_contents('https://www.'.$row['prd_site']);
-					if ($file) 
-					{
-						echo 'URL valide !';
-					} 
-					else 
+					if (!$file) 
 					{
 						echo 'URL non valide !';
 						$req = $bdd->prepare('DELETE FROM produits WHERE prd_id= :_id');
 						$req->bindParam('_id', $row['prd_id'], PDO::PARAM_INT);
 						$req->execute();
 					}
+				}
 			}
-		} 
+		}
 
-	}
 	}
 }
 
