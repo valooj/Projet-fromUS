@@ -1050,11 +1050,9 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{
 				fromus_objectname				=	document.getElementsByClassName("product-name")[0].textContent.replace("\n"," ");
 
-				fromus_pricemintmp				=	document.getElementsByClassName("price")[0].textContent;
-				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
+				fromus_pricemin				=	document.getElementsByClassName("price")[0].textContent;
 
-				fromus_imgtmp					=	document.getElementsByClassName("product-image image-zoom")[0].innerHTML;
-				fromus_img						=	/\<img src=\"(.*\.jpg)/.exec(fromus_imgtmp)[1];
+				fromus_img						=	document.getElementById("main-image").href;
 				
 				if(document.getElementsByClassName("description")[0]!=undefined)
 					{
