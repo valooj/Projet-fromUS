@@ -14,8 +14,12 @@ var tbb = require('toolbarbutton').ToolbarButton({
         	/*contentScript:
         		'var fromus_offre = document.location.href;' +
         		'window.alert(fromus_offre);'*/
-        	contentScriptFile: self.data.url('fromus_favelet_comments.js'),
-        	contentScriptWhen: 'end'
+        	contentStyleFile: self.data.url('jquery/jquery-ui.css'),
+        	contentScriptFile: [self.data.url('jquery/jquery.min.js'),
+        						self.data.url('jquery/jquery-ui.js'),
+                      			self.data.url('fromus_favelet_comments.js'),
+                      			self.data.url('dialog.js')],
+            contentScriptWhen: 'end'
 		});
       }
     });

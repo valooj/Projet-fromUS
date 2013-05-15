@@ -1586,4 +1586,4 @@ localStorage["regDesc"] = fromus_desc;
 // stockage de la page du site dans local storage
 localStorage["regOffer"] = fromus_offre;	
 	
-window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n$" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
+//window.alert("Vendeur: \n" + fromus_site + "\n\nOffre: \n" + fromus_offre + "\n\nNom: \n" + fromus_objectname + "\n\nImage: \n" + fromus_img + " \n\nPrix minimal: \n$" + fromus_pricemin + " \n\nDescription: \n" + fromus_desc);	// Affichage des informations recuperees
