@@ -2794,3 +2794,19 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Prezzo Acrylic Photo Mini Bag","prd_site":"ebags.store.rakuten.com/p/prezzo-acrylic-photo-mini-bag/211249130.html","prd_desc":"Zipper colsure","prd_visu":"http://img.rakuten.com/PIC/41923129/0/1/350/41923129.jpg","prd_prix":"25.49","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Penguin Kids' Backpack","prd_site":"ebags.store.rakuten.com/p/penguin-kids-backpack/245170625.html","prd_desc":"Kids Hardside backpack with fabric back","prd_visu":"http://img.rakuten.com/PIC/51345720/0/1/350/51345720.jpg","prd_prix":"30","prd_cat":"15"}
+)
+
+===========================================
