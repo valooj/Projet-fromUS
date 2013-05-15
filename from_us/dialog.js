@@ -3,9 +3,7 @@ var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ
 var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&token='+token;
 var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&token='+token;
 var productJSON = {};
-var userID = 2;
 var panierJSON = {};
-var totalPrice = 0;
 var qteVal;
 var categVal;
 
@@ -19,10 +17,10 @@ function sendToServer(urlSelected) {
 
 		if(datas['status'] == 3){
 			if(datas['Prix'] !== undefined){
-				totalPrice = datas['Prix'];
+				var totalPrice = datas['Prix'];
 
 				if(totalPrice !== 0){
-					if(confirm('L\'estimation du prix est de '+totalPrice+' euro ')) {
+					if(confirm('L\'estimation du prix est de $'+totalPrice+' ')) {
 						var jsonPanier = {libelle: localStorage["regName"] ,url: localStorage["regOffer"] ,desc: localStorage["regDesc"], qte: qteVal ,montant: totalPrice ,categ: categVal};
 						var postDataPanier = JSON.stringify(jsonPanier);
 						panierJSON = {panier:postDataPanier};
@@ -93,7 +91,7 @@ if (isOpen != true) {
 				text: "Submit", 
 				title: "Permet de commander", 
 				click: function() {
-					var jsonProduct = {prd_libelle: localStorage["regName"] ,prd_site: localStorage["regOffer"],prd_prix: localStorage["regPrice"]};
+					var jsonProduct = {prd_libelle: localStorage["regName"] ,prd_site: localStorage["regOffer"],prd_desc: localStorage["regDesc"] ,prd_prix: localStorage["regPrice"], prd_cat: categVal};
 					var postData = JSON.stringify(jsonProduct);
 					productJSON = {product:postData};
 					sendToServer(_urlProduct);
@@ -104,22 +102,10 @@ if (isOpen != true) {
 					var categSelect = document.getElementById("category");
 					categVal = categSelect.value;
 
-					var jsonProduct = {libelle: localStorage["regName"] ,url: localStorage["regOffer"] ,desc: localStorage["regDesc"], qte: qteVal ,montant: localStorage["regPrice"] ,categ: categVal};
+					var jsonProduct = {libelle: localStorage["regName"] ,url: localStorage["regOffer"] ,desc: localStorage["regDesc"], prd_visu: localStorage["regVisu"], qte: qteVal ,montant: localStorage["regPrice"] ,categ: categVal};
 					var postData = JSON.stringify(jsonProduct);
 					productJSON = {product:postData};
 					sendToServer(_urlCalcul);
-					/*
-					if(totalPrice !== 0){
-					if(confirm('L\'estimation du prix est de '+totalPrice+' euro ')) {
-						var jsonProduct = {libelle: localStorage["regName"] ,url: localStorage["regOffer"] ,desc: localStorage["regDesc"], qte: qteVal ,montant: '333' ,categ: categVal};
-						var postData = JSON.stringify(jsonProduct);
-						productJSON = {product:postData};
-						sendToServer(_urlPanier);
-						alert("fin panier");
-					}
-					else 
-						alert('sorry');
-					} */
 				}
 			},
 	
@@ -139,7 +125,12 @@ if (isOpen != true) {
 				title: "Ajouter un produit dans la base de données",
 				click: function() {
 
-					var jsonProduct = {prd_libelle: localStorage["regName"] ,prd_site: localStorage["regOffer"],prd_prix: localStorage["regPrice"]};
+					var qteSpinner = document.getElementById("QteSpinner");
+					qteVal = qteSpinner.value;
+					var categSelect = document.getElementById("category");
+					categVal = categSelect.value;
+
+					var jsonProduct = {prd_libelle: localStorage["regName"] ,prd_site: localStorage["regOffer"], prd_desc: localStorage["regDesc"], prd_visu: localStorage["regVisu"], prd_prix: localStorage["regPrice"], prd_cat: categVal};
 					var postData = JSON.stringify(jsonProduct);
 					productJSON = {product:postData};
 					sendToServer(_urlProduct);

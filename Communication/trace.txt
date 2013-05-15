@@ -2578,3 +2578,219 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Deuter Kid Comfort III","prd_site":"ebags.store.rakuten.com/p/deuter-kid-comfort-iii/227828231.html","prd_prix":"299"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"Deuter Kid Comfort III","url":"ebags.store.rakuten.com/p/deuter-kid-comfort-iii/227828231.html","desc":"integrated sun roof[...]","qte":"1","montant":"299","categ":"18"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 1
+    [panier] => {"libelle":"Deuter Kid Comfort III","url":"ebags.store.rakuten.com/p/deuter-kid-comfort-iii/227828231.html","desc":"integrated sun roof[...]","qte":"1","montant":430.42,"categ":"18"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"Deuter Kid Comfort III","url":"ebags.store.rakuten.com/p/deuter-kid-comfort-iii/227828231.html","desc":"integrated sun roof[...]","qte":"","montant":"299","categ":"default"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Deuter Kid Comfort III","prd_site":"ebags.store.rakuten.com/p/deuter-kid-comfort-iii/227828231.html","prd_prix":"299"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Deuter Kid Comfort III","prd_site":"ebags.store.rakuten.com/p/deuter-kid-comfort-iii/227828231.html","prd_prix":"299"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"Deuter Kid Comfort III","url":"ebags.store.rakuten.com/p/deuter-kid-comfort-iii/227828231.html","desc":"integrated sun roof[...]","qte":"1","montant":"299","categ":"18"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 1
+    [panier] => {"libelle":"Deuter Kid Comfort III","url":"ebags.store.rakuten.com/p/deuter-kid-comfort-iii/227828231.html","desc":"integrated sun roof[...]","qte":"1","montant":430.42,"categ":"18"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"Puma Pro Performance Sport-Bud + Mic","url":"ebags.store.rakuten.com/p/puma-pro-performance-sport-bud-mic/243698023.html","desc":"Sport Ear-Bud Earphone[...]","qte":"1","montant":"79.99","categ":"12"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Puma Pro Performance Sport-Bud + Mic","prd_site":"ebags.store.rakuten.com/p/puma-pro-performance-sport-bud-mic/243698023.html","prd_prix":"79.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 1
+    [panier] => {"libelle":"Puma Pro Performance Sport-Bud + Mic","url":"ebags.store.rakuten.com/p/puma-pro-performance-sport-bud-mic/243698023.html","desc":"Sport Ear-Bud Earphone[...]","qte":"1","montant":103.669,"categ":"12"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"Puma Pro Performance Sport-Bud + Mic","url":"ebags.store.rakuten.com/p/puma-pro-performance-sport-bud-mic/243698024.html","desc":"Sport Ear-Bud Earphone[...]","qte":"2","montant":"79.99","categ":"12"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Puma Pro Performance Sport-Bud + Mic","prd_site":"ebags.store.rakuten.com/p/puma-pro-performance-sport-bud-mic/243698024.html","prd_prix":"79.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 1
+    [panier] => {"libelle":"Puma Pro Performance Sport-Bud + Mic","url":"ebags.store.rakuten.com/p/puma-pro-performance-sport-bud-mic/243698024.html","desc":"Sport Ear-Bud Earphone[...]","qte":"2","montant":207.338,"categ":"12"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Samsonite Travel Accessories Medium Horizontal Camera Case","prd_site":"ebags.store.rakuten.com/p/samsonite-travel-accessories-medium-horizontal-camera-case/245457725.html","prd_prix":"29.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"Samsonite Travel Accessories Medium Horizontal Camera Case","url":"ebags.store.rakuten.com/p/samsonite-travel-accessories-medium-horizontal-camera-case/245457725.html","desc":"1 compartment shoulder bag with front and side pockets[...]","qte":"1","montant":"29.99","categ":"12"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Samsonite Travel Accessories Medium Horizontal Camera Case","prd_site":"ebags.store.rakuten.com/p/samsonite-travel-accessories-medium-horizontal-camera-case/245457725.html","prd_prix":"29.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"Samsonite Travel Accessories Medium Horizontal Camera Case","url":"ebags.store.rakuten.com/p/samsonite-travel-accessories-medium-horizontal-camera-case/245457725.html","desc":"1 compartment shoulder bag with front and side pockets[...]","qte":"1","montant":"29.99","categ":"12"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"Incipio NGP for iPad mini - Translucent Pink IPAD-304","url":"ebags.store.rakuten.com/p/incipio-ngp-for-ipad-mini-translucent-pink-ipad-304/243743928.html","desc":"NGP, short for Next Generation Polymer, is an impact protective case for the new iPad mini.  Comprised of semi-rigid soft shell NGP material, the malleable design makes the NGP easy to slip aroun[...]","qte":"1","montant":"24.99","categ":"12"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Incipio NGP for iPad mini - Translucent Pink IPAD-304","prd_site":"ebags.store.rakuten.com/p/incipio-ngp-for-ipad-mini-translucent-pink-ipad-304/243743928.html","prd_prix":"24.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 1
+    [panier] => {"libelle":"Incipio NGP for iPad mini - Translucent Pink IPAD-304","url":"ebags.store.rakuten.com/p/incipio-ngp-for-ipad-mini-translucent-pink-ipad-304/243743928.html","desc":"NGP, short for Next Generation Polymer, is an impact protective case for the new iPad mini.  Comprised of semi-rigid soft shell NGP material, the malleable design makes the NGP easy to slip aroun[...]","qte":"1","montant":27.489,"categ":"12"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Incipio Premium IPAD-200 Carrying Case (Folio) for iPad - Black","prd_site":"ebags.store.rakuten.com/p/incipio-premium-ipad-200-carrying-case-folio-for-ipad-black/223014731.html","prd_prix":"39.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"Incipio Premium IPAD-200 Carrying Case (Folio) for iPad - Black","url":"ebags.store.rakuten.com/p/incipio-premium-ipad-200-carrying-case-folio-for-ipad-black/223014731.html","desc":"Watch videos and FaceTime hands-free with the Premium Kickstand Nylon Case for iPad 2. With three adjustable viewing angles, and one additional typing mode, the versatile Premium Kickstand ensure[...]","qte":"1","montant":"39.99","categ":"27"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 1
+    [panier] => {"libelle":"Incipio Premium IPAD-200 Carrying Case (Folio) for iPad - Black","url":"ebags.store.rakuten.com/p/incipio-premium-ipad-200-carrying-case-folio-for-ipad-black/223014731.html","desc":"Watch videos and FaceTime hands-free with the Premium Kickstand Nylon Case for iPad 2. With three adjustable viewing angles, and one additional typing mode, the versatile Premium Kickstand ensure[...]","qte":"1","montant":51.829,"categ":"27"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Incipio Premium IPAD-200 Carrying Case (Folio) for iPad - Black","prd_site":"ebags.store.rakuten.com/p/incipio-premium-ipad-200-carrying-case-folio-for-ipad-black/223014731.html","prd_prix":"39.99","prd_cat":"27"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"iPad Sleeve","prd_site":"ebags.store.rakuten.com/p/ipad-sleeve/245446349.html","prd_prix":"34.95","prd_cat":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"Designer Sleeves Designer Sleeve for 17 MacBook Pro","prd_site":"ebags.store.rakuten.com/p/designer-sleeves-designer-sleeve-for-17-macbook-pro/211031951.html","prd_desc":"Thick, durable neoprene cushions your laptop for maximum moisture, shock and scratch protection[...]","prd_visu":"http://img.rakuten.com/PIC/41918861/0/1/350/41918861.jpg","prd_prix":"40.99","prd_cat":"21"}
+)
+
+===========================================

@@ -58,7 +58,7 @@ try
 			if ( !$get_product )
 				throw new Exception('MAJ :: Product not specified');
 
-			if( !isset($get_product['prd_prix'], $get_product['prd_libelle'], $get_product['prd_site']) )
+			if( !isset($get_product['prd_prix'], $get_product['prd_libelle'], $get_product['prd_site'], $get_product['prd_cat']) )
 				throw new Exception('MAJ :: Bad parameters into Product Entity');
 
 			$get_product['prd_prix'] = str_replace('$', null, $get_product['prd_prix']);
@@ -70,9 +70,9 @@ try
 			$req = $bdd->prepare($sql_prepared_update_product);
             $req->bindValue('_libelle' , $get_product['prd_libelle'],   PDO::PARAM_STR);
             $req->bindValue('_site' ,    $get_product['prd_site'], 		PDO::PARAM_STR);
-            $req->bindValue('_desc' ,    'dscnico',                		PDO::PARAM_STR);
-            $req->bindValue('_cat' ,     0,                      		PDO::PARAM_INT);
-            $req->bindValue('_visu' ,    'visunico',               		PDO::PARAM_STR);
+            $req->bindValue('_desc' ,    $get_product['prd_desc'],  	PDO::PARAM_STR);
+            $req->bindValue('_cat' ,     $get_product['prd_cat'], 		PDO::PARAM_INT);
+            $req->bindValue('_visu' ,    $get_product['prd_visu'],  		PDO::PARAM_STR);
             $req->bindValue('_prix' ,    $get_product['prd_prix'], 		PDO::PARAM_STR);
             $req->bindValue('_vis' ,     0,                        		PDO::PARAM_INT);
             $rep = $req->execute();
@@ -322,9 +322,8 @@ try
 			throw new Exception('No action specified');
 			break;
 	}
-
-	//$response['status'] = 1;
 }
+
 catch( Exception $error )
 {
 	$response['error'] = $error->getMessage();

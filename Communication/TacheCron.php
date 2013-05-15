@@ -7,6 +7,8 @@ try{
     $options[PDO::MYSQL_ATTR_INIT_COMMAND] = 'SET NAMES UTF8;';
     $bdd = new PDO('mysql:host=localhost;dbname=fromus', 'root', '', $options);
 
+    unlink ("./traceTacheCron.txt");
+
     //Requete a faire
     $req = $bdd->prepare('SELECT prd_id ,prd_site, prd_prix FROM produits');
 	$rep = $req->execute();
@@ -29,9 +31,17 @@ try{
 					if (!$file) 
 					{
 						echo 'URL non valide !';
+						/*
 						$req = $bdd->prepare('DELETE FROM produits WHERE prd_id= :_id');
 						$req->bindParam('_id', $row['prd_id'], PDO::PARAM_INT);
 						$req->execute();
+						*/
+						$req = $bdd->prepare('UPDATE produits SET prd_vis = 0 WHERE  prd_id = :_id');
+						$req->bindParam('_id', $row['prd_id'], PDO::PARAM_INT);
+						$rep =$req->execute();
+						$req->closeCursor();
+
+						file_put_contents('./traceTacheCron.txt', print_r($row['prd_id'], 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
 					}
 				}
 			}
