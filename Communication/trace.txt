@@ -1883,3 +1883,554 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 2 ,"montant": 333 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 2 ,"montant": 333 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 2 ,"montant": 333 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 2 ,"montant": 333 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 2 ,"montant": 333 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 2 ,"montant": 333 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 2 ,"montant": 333 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 2 ,"montant": 333 , "categ": 24}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 2 ,"montant": 333 , "categ": 24}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 2 ,"montant": 333 , "categ": 24}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 1 ,"montant": 333 , "categ": 24}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 1 ,"montant": 67 , "categ": 24}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 1 ,"montant": 67 , "categ": 1}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 1 ,"montant": 67 , "categ": 13}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 1 ,"montant": 67 , "categ": 13}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 1 ,"montant": 67 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 1 ,"montant": 67 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 1 ,"montant": 67 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 3 ,"montant": 67 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 1 ,"montant": 67 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 1 ,"montant": 67 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 1 ,"montant": 67 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 1 ,"montant": 67 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"sac" , "url":"http://ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html" , "desc": "descrip", "qte": 1 ,"montant": 67 , "categ": 2}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"3","montant":"333","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"333","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"","montant":"67.99","categ":"default"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"67.99","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"2","montant":"67.99","categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"2","montant":"67.99","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"67.99","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"67.99","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"333","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"67.99","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"333","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"67.99","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"333","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"67.99","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"333","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"67.99","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"67.99","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"67.99","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"67.99","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"67.99","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"67.99","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"67.99","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"67.99","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"67.99","categ":"21"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 1
+    [product] => {"prd_libelle":"SwissGear Travel Gear ScanSmart Backpack","prd_site":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","prd_prix":"67.99"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 1
+    [product] => {"libelle":"SwissGear Travel Gear ScanSmart Backpack","url":"ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html","desc":"Comfort shoulder straps[...]","qte":"1","montant":"67.99","categ":"21"}
+)
+
+===========================================

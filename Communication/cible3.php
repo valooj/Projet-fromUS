@@ -89,13 +89,14 @@ try
             $rep = $req->execute();
             $req->closeCursor();
 
+            $response['status'] = '1';
             $response['Message'] = 'Vous avez gagné '.$bonus.' pts';
 
 			break;
 
 		case 'MAJ-panier':
 		// variables
-			$get_product = isset($_REQUEST['product']) ? json_decode($_REQUEST['product'], TRUE) : null;
+			$get_product = isset($_REQUEST['panier']) ? json_decode($_REQUEST['panier'], TRUE) : null;
 
 			// variables tests
 			if ( !$get_product )
@@ -135,6 +136,7 @@ try
             if(!$rep)
 				throw new Exception('MAJ :: Insert panier invalid');
 
+			$response['status'] = '2';
 			$response['Message'] = 'Add to cart';
 
             // retourne le moins chere de la même catégorie
@@ -145,6 +147,148 @@ try
 			$req->closeCursor();
 			*/
 			
+			break;
+
+		case 'MAJ-calcul':
+
+			$get_product = isset($_REQUEST['product']) ? json_decode($_REQUEST['product'], TRUE) : null;
+
+			// variables tests
+			if ( !$get_product )
+				throw new Exception('MAJ :: Product not specified');
+
+			if( !isset($get_product['libelle'], $get_product['qte'], $get_product['montant'] , $get_product['url']) )
+				throw new Exception('MAJ :: Bad parameters into this order');
+
+			if( $get_product['qte'] == 0)
+				throw new Exception('MAJ :: Bad Quantity parameter');
+
+			//$get_product['montant'] = str_replace('$', null, $get_product['montant']);
+
+			if ( !is_numeric($get_product['montant']) )
+				throw new Exception('MAJ :: Price invalid');
+	
+			$apv=0;
+			$frais_liv = 0;		
+			//estimation des taxe :
+			$api_code = "dea6303fcaa6a888";
+			$url = "http://www.dutycalculator.com/api2.1/".$api_code."/calculation?from=usa";
+
+			$req = $bdd->prepare('SELECT user_pays FROM users WHERE  user_id = :user_id');
+			$req->execute(array('user_id' => $get_token));
+			$arr = $req->fetch();
+
+			switch ($arr['user_pays'])
+			{
+				case "fr" :
+				{
+					$code_pays = "fra";break;
+				}
+				case "en" :
+				{
+					$code_pays = "gbr";break;
+				}
+				case "it" :
+				{
+					$code_pays = "ita";break;
+				}
+				case "es" :
+				{
+					$code_pays = "esp";break;
+				}
+				case "nl" :
+				{
+					$code_pays = "nld";break;
+				}
+				case "da" :
+				{
+					$code_pays = "dnk";break;
+				}
+				case "sv" :
+				{
+					$code_pays = "swe";break;
+				}
+				case "no" :
+				{
+					$code_pays = "nor";break;
+				}
+				case "pt" :
+				{
+					$code_pays = "prt";break;
+				}
+				case "ch" :
+				{
+					$code_pays = "che";break;
+				}
+				case "au" :
+				{
+					$code_pays = "aut";break;
+				}
+				case "be" :
+				{
+					$code_pays = "bel";break;
+				}
+			}
+
+			$url .= "&to=".$code_pays;
+			$url .= "&classify_by=cat";
+			
+			$url .= "&cat[0]=".$get_product['categ']."&desc[0]=".$get_product['libelle']."&qty[0]=".$get_product['qte']."&value[0]=".$get_product['montant'];
+			$ship = 0;
+			$url .= "&shipping=".$ship."&insurance=0";
+			$url .= htmlentities("&currency");
+			$url .="=usd&output_currency=usd";
+			
+			$url = html_entity_decode($url);
+			
+			//recupere le flux xml :
+			$homepage = file_get_contents($url);
+			//traitement du fichier XML :
+			
+			$categorie = new SimpleXMLElement($homepage);
+			$tab_duty =array();
+			$i=0;
+			//recupere le duty 
+			foreach ($categorie->{'total-charges'} as $famille) 
+			  foreach ($famille->duty as $atome)
+		    	foreach ($atome->amount as $item)
+				{
+						$tab_duty[$i]["duty"] = ((string) $item);	
+						$i++;
+				}
+			
+			//recupere le VAT :
+			$tab_VAT =array();
+			$j=0;
+			//recupere le duty 
+			foreach ($categorie->{'total-charges'} as $famille) 
+			  foreach ($famille->{'sales-tax'} as $atome)
+		    	foreach ($atome->amount as $item)
+				{
+						$tab_VAT[$j]["VAT"] = ((string) $item);	
+						$j++;
+				}
+					
+			//recuperation de l'outil de calcul des douanes/taxe:
+			$tot = $get_product['qte']*$get_product['montant'];
+			$prix = $tot;
+			$frais_liv = $ship;
+			$base_calcul = $prix+$frais_liv;
+			
+			//Prix from US 
+			$marge_fus = $tot*(10/100);
+			
+			//calcul du total :
+			$prix_total = $base_calcul+$tab_duty[0]["duty"]+$tab_VAT[0]["VAT"]+$marge_fus;
+			$tpaie = "";
+			$tax = $tab_duty[0]["duty"]+$tab_VAT[0]["VAT"];
+			$mod_livr="e";
+			$stat = "10";
+			
+			$response['status'] = '3';
+			$response['Prix'] = $prix_total;
+	
+
 			break;
 
 		case 'MAJ-log':

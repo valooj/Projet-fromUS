@@ -4,11 +4,49 @@ var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-
 var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&token='+token;
 var productJSON = {};
 var userID = 2;
-var userJSON = {};
-
+var panierJSON = {};
+var totalPrice = 0;
 
 function sendToServer(urlSelected) {
 	$.post(urlSelected, productJSON)
+	.done(function(datas) { 
+		if(datas['status'] == 1){
+			if(datas['Message'] !== undefined)
+				alert(datas['Message']);
+		}
+
+		if(datas['status'] == 3){
+			if(datas['Prix'] !== undefined){
+				totalPrice = datas['Prix'];
+
+				if(totalPrice !== 0){
+					if(confirm('L\'estimation du prix est de '+totalPrice+' euro ')) {
+						alert('jsonProduct');
+						var jsonPanier = {libelle: localStorage["regName"] ,url: localStorage["regOffer"] ,desc: localStorage["regDesc"], qte: qteVal ,montant: totalPrice ,categ: categVal};
+						alert('postData');
+						var postDataPanier = JSON.stringify(jsonPanier);
+						alert('productJSON');
+						panierJSON = {panier:postDataPanier};
+						alert('panier');
+						sendAjoutPanier();
+						aler('fin panier');
+					}
+					else 
+						alert('Erreur lors du calcul du prix');
+				}
+			}
+		}
+
+		if(datas['error'] !== undefined)
+			alert(datas['error']);  
+		})
+	.fail(function(datas) { 
+		alert(datas['error']); 
+		})
+	;}
+
+function sendAjoutPanier() {
+	$.post(_urlPanier, panierJSON)
 	.done(function(datas) { 
 		if(datas['Message'] !== undefined)
 			alert(datas['Message']);
@@ -64,19 +102,19 @@ if (isOpen != true) {
 					productJSON = {product:postData};
 					sendToServer(_urlProduct);
 
-					alert("debut panier");
+					
 					var qteSpinner = document.getElementById("QteSpinner");
 					var qteVal = qteSpinner.value;
 					var categSelect = document.getElementById("category");
 					var categVal = categSelect.value;
 
-/*
-					var jsonProduct = {libelle: localStorage["regName"] ,url: localStorage["regOffer"] ,desc: localStorage["regDesc"], qte: qteVal ,montant: '333' ,categ: categVal};
+					var jsonProduct = {libelle: localStorage["regName"] ,url: localStorage["regOffer"] ,desc: localStorage["regDesc"], qte: qteVal ,montant: localStorage["regPrice"] ,categ: categVal};
 					var postData = JSON.stringify(jsonProduct);
 					productJSON = {product:postData};
 					sendToServer(_urlCalcul);
-*/
-					if(confirm('L\'estimation du prix est de 40euro ')) {
+					/*
+					if(totalPrice !== 0){
+					if(confirm('L\'estimation du prix est de '+totalPrice+' euro ')) {
 						var jsonProduct = {libelle: localStorage["regName"] ,url: localStorage["regOffer"] ,desc: localStorage["regDesc"], qte: qteVal ,montant: '333' ,categ: categVal};
 						var postData = JSON.stringify(jsonProduct);
 						productJSON = {product:postData};
@@ -85,7 +123,7 @@ if (isOpen != true) {
 					}
 					else 
 						alert('sorry');
-
+					} */
 				}
 			},
 	
