@@ -1873,7 +1873,7 @@ localStorage["regPrice"] = fromus_pricemin;
 localStorage["regDesc"] = fromus_desc;
 
 // stockage du visuel dans local storage
-localStorage["regVisu"] = fromus_img;
+localStorage["regImg"] = fromus_img;
 
 // stockage de la page du site dans local storage
 var wwwOffre = fromus_offre.replace(/www\./,'');
