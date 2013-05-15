@@ -96,32 +96,32 @@ try
 
 		case 'MAJ-panier':
 		// variables
-			$get_product = isset($_REQUEST['panier']) ? json_decode($_REQUEST['panier'], TRUE) : null;
+			$get_panier = isset($_REQUEST['panier']) ? json_decode($_REQUEST['panier'], TRUE) : null;
 
 			// variables tests
-			if ( !$get_product )
+			if ( !$get_panier )
 				throw new Exception('MAJ :: Product not specified');
 
-			if( !isset($get_product['libelle'], $get_product['qte'], $get_product['montant'] , $get_product['url']) )
+			if( !isset($get_panier['libelle'], $get_panier['qte'], $get_panier['montant'] , $get_panier['url']) )
 				throw new Exception('MAJ :: Bad parameters into this order');
 
-			if( $get_product['qte'] == 0)
+			if( $get_panier['qte'] == 0)
 				throw new Exception('MAJ :: Bad Quantity parameter');
 
 			//$get_product['montant'] = str_replace('$', null, $get_product['montant']);
 
-			if ( !is_numeric($get_product['montant']) )
+			if ( !is_numeric($get_panier['montant']) )
 				throw new Exception('MAJ :: Price invalid');
 	
 			// code MAJ du produit visité
 			$req = $bdd->prepare($sql_prepared_update_panier);
 
-            $req->bindValue('_libelle' , 	$get_product['libelle'],		PDO::PARAM_STR);
-            $req->bindValue('_url' ,     	$get_product['url'], 			PDO::PARAM_STR);
-            $req->bindValue('_desc' ,    	$get_product['desc'],                			PDO::PARAM_STR);
-            $req->bindValue('_qte' ,     	$get_product['qte'],                      			PDO::PARAM_INT);
-            $req->bindValue('_montant' ,    $get_product['montant'],               			PDO::PARAM_STR); //decimal
-            $req->bindValue('_categ' ,    	$get_product['categ']   , 			PDO::PARAM_INT);
+            $req->bindValue('_libelle' , 	$get_panier['libelle'],		PDO::PARAM_STR);
+            $req->bindValue('_url' ,     	$get_panier['url'], 			PDO::PARAM_STR);
+            $req->bindValue('_desc' ,    	$get_panier['desc'],                			PDO::PARAM_STR);
+            $req->bindValue('_qte' ,     	$get_panier['qte'],                      			PDO::PARAM_INT);
+            $req->bindValue('_montant' ,    $get_panier['montant'],               			PDO::PARAM_STR); //decimal
+            $req->bindValue('_categ' ,    	$get_panier['categ']   , 			PDO::PARAM_INT);
             $req->bindValue('_poids' ,    	 2,                        			PDO::PARAM_STR); //decimal
             $req->bindValue('_unitep' , 	 2, 		PDO::PARAM_STR);
             $req->bindValue('_larg' ,    	 2, 			PDO::PARAM_STR); //decimal
@@ -137,7 +137,7 @@ try
 				throw new Exception('MAJ :: Insert panier invalid');
 
 			$response['status'] = '2';
-			$response['Message'] = 'Add to cart';
+			$response['Message'] = 'Votre produit a bien été inséré';
 
             // retourne le moins chere de la même catégorie
             // $response['product'] <<<< SELECT * from products WHRE name like '%iphone%' LIMIT 1 ORDER BY price DESC
@@ -234,7 +234,10 @@ try
 			$url .= "&classify_by=cat";
 			
 			$url .= "&cat[0]=".$get_product['categ']."&desc[0]=".$get_product['libelle']."&qty[0]=".$get_product['qte']."&value[0]=".$get_product['montant'];
+			
+			//code a mettre pour le ship si le poidt supérireur a 70,5, $ship=250
 			$ship = 0;
+			
 			$url .= "&shipping=".$ship."&insurance=0";
 			$url .= htmlentities("&currency");
 			$url .="=usd&output_currency=usd";

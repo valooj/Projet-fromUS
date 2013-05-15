@@ -6,6 +6,8 @@ var productJSON = {};
 var userID = 2;
 var panierJSON = {};
 var totalPrice = 0;
+var qteVal;
+var categVal;
 
 function sendToServer(urlSelected) {
 	$.post(urlSelected, productJSON)
@@ -21,19 +23,13 @@ function sendToServer(urlSelected) {
 
 				if(totalPrice !== 0){
 					if(confirm('L\'estimation du prix est de '+totalPrice+' euro ')) {
-						alert('jsonProduct');
 						var jsonPanier = {libelle: localStorage["regName"] ,url: localStorage["regOffer"] ,desc: localStorage["regDesc"], qte: qteVal ,montant: totalPrice ,categ: categVal};
-						alert('postData');
 						var postDataPanier = JSON.stringify(jsonPanier);
-						alert('productJSON');
 						panierJSON = {panier:postDataPanier};
-						alert('panier');
 						sendAjoutPanier();
-						aler('fin panier');
 					}
-					else 
-						alert('Erreur lors du calcul du prix');
 				}
+				
 			}
 		}
 
@@ -104,9 +100,9 @@ if (isOpen != true) {
 
 					
 					var qteSpinner = document.getElementById("QteSpinner");
-					var qteVal = qteSpinner.value;
+					qteVal = qteSpinner.value;
 					var categSelect = document.getElementById("category");
-					var categVal = categSelect.value;
+					categVal = categSelect.value;
 
 					var jsonProduct = {libelle: localStorage["regName"] ,url: localStorage["regOffer"] ,desc: localStorage["regDesc"], qte: qteVal ,montant: localStorage["regPrice"] ,categ: categVal};
 					var postData = JSON.stringify(jsonProduct);
