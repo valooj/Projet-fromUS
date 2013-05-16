@@ -103,7 +103,7 @@ var fromus_objectname,
 	fromus_img,
 	fromus_desc,
 	fromus_desctmp;
-var fromus_reg = /(\$[0-9\,]{0,}[\.0-9]{0,3})/;
+var fromus_reg = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g;
 
 /////	Normalisation des sites du type quelquechose.nomdusite.com	/////	
 	
@@ -445,19 +445,18 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 		case "www.jcrew.com":
 			{	
 				fromus_objectname				=	document.getElementById("pdp-title").textContent;		
-alert(fromus_objectname);
-				fromus_pricemintmp				=	document.getElementsByClassName("pdp-single")[0].textContent;
-				fromus_pricemin					=	fromus_reg.exec(fromus_pricemin)[0];				
-alert(fromus_pricemin);
+
+				fromus_pricemintmp				=	document.getElementsByClassName("pdp-single")[0].textContent.replace(/\s/g,'');
+				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];				
+
 				fromus_img							=	document.getElementById("mainImg").src;
-alert(fromus_img);
+
 				fromus_desc							=	document.getElementsByClassName('descmore_text')[1].textContent;
 			}break;
 		
 		case "www.jcpenney.com":
 			{	
-				fromus_objectnametmp			=	document.getElementsByClassName("def_cur pdp_title");
-				fromus_objectname				=	fromus_objectnametmp[0].innerHTML.replace("\n","");		
+				fromus_objectname				=	document.getElementsByClassName("def_cur pdp_title")[0].textContent.replace("\n","");		
 		
 				fromus_pricemintmp				=	document.getElementById("priceDetails").textContent;				
 				fromus_pricemintmp					=	/(\$[0-9]{0,}[\.]{0,1}[0-9]{0,2})$/gi.exec(fromus_pricemintmp);
@@ -497,13 +496,9 @@ alert(fromus_img);
 			{
 				if(/(\/catalog\/)/.test(fromus_offre))		//S'il s'agit d'une preview
 					{
-						fromus_objectnametmp			=	document.getElementsByClassName("overlay_right");
-						fromus_objectname				=	fromus_objectnametmp[0].textContent.replace("\n","");			
-
-						fromus_imgtmp					=	document.getElementsByClassName("quickViewProductImage")[0].innerHTML;
-						fromus_imgtmp					+= 	'';
-						fromus_imgtmp					= 	/(http)(.*)(\?)/gi.exec(fromus_imgtmp)[0];		
-						fromus_img						=	fromus_imgtmp.replace(/(&quot)(.*)/,"");				
+						fromus_objectname			=	document.getElementsByClassName("overlay_right")[0].textContent;
+						
+						fromus_img						=	document.getElementsByClassName("quickViewProductImage")[0].getElementsByTagName("a")[0].href;			
 					}	
 				else		// S'il s'agit d'une page dédiée
 					{
@@ -532,7 +527,7 @@ alert(fromus_img);
 
 				if(fromus_pricemintmp=='')
 					{	
-						fromus_pricemintmp				=	document.getElementsByClassName("original");
+						fromus_pricemintmp					=	document.getElementsByClassName("original");
 						fromus_pricemintmp					=	fromus_pricemintmp[0].innerHTML;
 					}	
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/.exec(fromus_pricemintmp)[0];	
