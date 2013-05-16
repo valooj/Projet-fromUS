@@ -4924,3 +4924,66 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
