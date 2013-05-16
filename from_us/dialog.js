@@ -284,7 +284,7 @@ $( ".ZebraDialog" ).draggable();
 			
 		if ( in_out.value == "login" ){
 	    	in_out.value = "logout";
-	    	window.open ('file:/passlog.js','Authentification','menubar=no, scrollbars=no, top=100, left=100, width=300, height=200');
+	    	//chrome.tabs.executeScript( null, {file: 'passlog.js', allFrames:false});
 	    }
 	    else{
 	        in_out.value = "login";
