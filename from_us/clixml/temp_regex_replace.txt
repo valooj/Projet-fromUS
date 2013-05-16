@@ -1,12 +1,12 @@
 
 Remplacer les ID
 
-(.*getElementById\([\'\"])([A-Za-z][-A-Za-z0-9_:.]*)([\'\"]\).*)
+(.*[^\( ]document.getElementById\([\'\"])([A-Za-z][-A-Za-z0-9_:.]*)([\'\"]\).*)
 
 if\(document\.getElementById\(\"\2\"\)!=undefined\)\n\t\{\n\t\t\1\2\3\n\t\}
 
 Remplacer les classes
 
-(.*getElementsByClassName\([\'\"])([A-Za-z][-A-Za-z0-9_:.]*)([\'\"]\)\[)([0-9]{0,})(\].*)
+(.*[^\( ]document.getElementsByClassName\([\'\"])([A-Za-z][-A-Za-z0-9_:.]*)([\'\"]\)\[)([0-9]{0,})(\].*)
 
 if\(document\.getElementsByClassName\(\"\2\"\)\[\4\]!=undefined\)\n\t\{\n\t\t\1\2\3\4\5\n\t\}

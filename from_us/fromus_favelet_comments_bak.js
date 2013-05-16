@@ -44,7 +44,6 @@
 // shop 84 www.anthropologie.eu ne correspond pas à from_us													//
 // shop 86 www.bestbuy.com n'a pas le support des pages offres spéciales DELL						//
 // shop 88 http://www.maccosmetics.com reporté																		//
-// shop 89 www.toofaced.com : les previews ne fonctionnent pas												//
 // shop 91 www.covergirl.com : ne fait que rediriger (ex: vers walmart) sans indiquer de prix			//
 // shop 97 = shop 98 (www.victoriassecret.com)																		//
 // shop 100 http://www.chinaglaze.com/ ne vend rien en ligne?													//

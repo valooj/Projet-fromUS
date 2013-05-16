@@ -44,7 +44,6 @@
 // shop 84 www.anthropologie.eu ne correspond pas à from_us													//
 // shop 86 www.bestbuy.com n'a pas le support des pages offres spéciales DELL						//
 // shop 88 http://www.maccosmetics.com reporté																		//
-// shop 89 www.toofaced.com : les previews ne fonctionnent pas												//
 // shop 91 www.covergirl.com : ne fait que rediriger (ex: vers walmart) sans indiquer de prix			//
 // shop 97 = shop 98 (www.victoriassecret.com)																		//
 // shop 100 http://www.chinaglaze.com/ ne vend rien en ligne?													//
@@ -176,10 +175,7 @@ if(document.getElementById("btAsinTitle")!=undefined)
 						fromus_objectname				=	document.getElementById("btAsinTitle").textContent;
 	}
 				
-if(document.getElementById("main-image")!=undefined)
-	{
-						if(document.getElementById("main-image") != undefined)
-	}
+				if(document.getElementById("main-image") != undefined)
 				{
 if(document.getElementById("main-image")!=undefined)
 	{
@@ -194,20 +190,14 @@ if(document.getElementById("prodImage")!=undefined)
 	}
 					}
 					
-if(document.getElementsByClassName("priceLarge")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("priceLarge")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("priceLarge")[0]!=undefined)
 					{
 if(document.getElementsByClassName("priceLarge")[0]!=undefined)
 	{
 								fromus_pricemin					=	document.getElementsByClassName("priceLarge")[0].innerText;
 	}
 					}
-if(document.getElementById("listPriceValue")!=undefined)
-	{
-						if(document.getElementById("listPriceValue")!=undefined)
-	}
+				if(document.getElementById("listPriceValue")!=undefined)
 					{
 if(document.getElementById("listPriceValue")!=undefined)
 	{
@@ -215,10 +205,7 @@ if(document.getElementById("listPriceValue")!=undefined)
 	}
 					}				
 		
-if(document.getElementById("productDescription")!=undefined)
-	{
-						if(document.getElementById("productDescription")!=undefined)
-	}
+				if(document.getElementById("productDescription")!=undefined)
 					{
 if(document.getElementById("productDescription")!=undefined)
 	{
@@ -233,10 +220,7 @@ if(document.getElementById("productDescription")!=undefined)
 			
 		case "www.beallsflorida.com":
 			{
-if(document.getElementById("productImage")!=undefined)
-	{
-						if(document.getElementById("productImage")!=undefined)
-	}
+				if(document.getElementById("productImage")!=undefined)
 					{	// S'il s'agit d'une preview
 if(document.getElementById("quick-order-section")!=undefined)
 	{
@@ -304,10 +288,7 @@ if(document.getElementById("ctl00_TemplateContentPlaceHolder_ctlProductSummary_d
 				{	//rakuten.com
 				// Le site varie entre l'utilisation de deux modèle pour chaque info récupérée c'est pourquoi cette section contient beaucoup de if/else 
 				// se basant sur l'existence de noeuds.
-if(document.getElementById("AuthorArtistTitle_productTitle")!=undefined)
-	{
-							if(document.getElementById("AuthorArtistTitle_productTitle")!=undefined)
-	}
+					if(document.getElementById("AuthorArtistTitle_productTitle")!=undefined)
 						{
 if(document.getElementById("AuthorArtistTitle_productTitle")!=undefined)
 	{
@@ -322,10 +303,7 @@ if(document.getElementById("StorePromo_title")!=undefined)
 	}
 						}
 
-if(document.getElementById("ImageVideo_ImageRepeater_ctl00_Image")!=undefined)
-	{
-							if(document.getElementById("ImageVideo_ImageRepeater_ctl00_Image")!=undefined)
-	}
+					if(document.getElementById("ImageVideo_ImageRepeater_ctl00_Image")!=undefined)
 						{
 if(document.getElementById("ImageVideo_ImageRepeater_ctl00_Image")!=undefined)
 	{
@@ -340,10 +318,7 @@ if(document.getElementById("StorePromo_imgPromo")!=undefined)
 	}
 						}
 
-if(document.getElementById("spanMainTotalPrice")!=undefined)
-	{
-							if(document.getElementById("spanMainTotalPrice")!=undefined)
-	}
+					if(document.getElementById("spanMainTotalPrice")!=undefined)
 						{
 if(document.getElementById("spanMainTotalPrice")!=undefined)
 	{
@@ -358,10 +333,7 @@ if(document.getElementById("StorePromo_PriceText")!=undefined)
 	}
 						}
 					
-if(document.getElementById("divDescription")!=undefined)
-	{
-							if(document.getElementById("divDescription")!=undefined)
-	}
+					if(document.getElementById("divDescription")!=undefined)
 						{
 if(document.getElementById("divDescription")!=undefined)
 	{
@@ -381,10 +353,7 @@ if(document.getElementById("StorePromo_spnDescription1")!=undefined)
 		case "www.disneystore.com":
 			{
 			
-if(document.getElementsByClassName("quickLook")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("quickLook")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("quickLook")[0]!=undefined)
 					{	// S'il s'agit d'une preview
 if(document.getElementsByClassName("quickLook")[0]!=undefined)
 	{
@@ -482,10 +451,7 @@ if(document.getElementById("desc_and_bottom_line")!=undefined)
 		
 		case "www.dsw.com":
 			{
-if(document.getElementById("productPageContent")!=undefined)
-	{
-						if(document.getElementById("productPageContent")!=undefined)
-	}
+				if(document.getElementById("productPageContent")!=undefined)
 					{	//Page
 if(document.getElementsByClassName("title")[0]!=undefined)
 	{
@@ -519,10 +485,7 @@ if(document.getElementById("priceSelected")!=undefined)
 		
 		case "www.gap.com":
 			{
-if(document.getElementById("quickLookPriceText")!=undefined)
-	{
-						if(document.getElementById("quickLookPriceText")!=undefined)	// Les noeuds changent entre l'aperçu et la page dédiée
-	}
+				if(document.getElementById("quickLookPriceText")!=undefined)	// Les noeuds changent entre l'aperçu et la page dédiée
 					{	// Preview
 if(document.getElementById("quickLookProductName")!=undefined)
 	{
@@ -558,10 +521,7 @@ if(document.getElementById("priceText")!=undefined)
 	}
 						fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/gi.exec(fromus_pricemintmp)[0];
 						
-if(document.getElementsByClassName("description")[0]!=undefined)
-	{
-								if(document.getElementsByClassName("description")[0]!=undefined)
-	}
+						if(document.getElementsByClassName("description")[0]!=undefined)
 							{	// Si la description existe, la prendre
 if(document.getElementsByClassName("description")[0]!=undefined)
 	{
@@ -589,10 +549,7 @@ if(document.getElementsByClassName("short-description")[0]!=undefined)
 						fromus_desc							=	document.getElementsByClassName("short-description")[0].textContent;
 	}
 				
-if(document.getElementById("wrap")!=undefined)
-	{
-						if(document.getElementById("wrap")!=undefined)
-	}
+				if(document.getElementById("wrap")!=undefined)
 					{	//Page
 if(document.getElementById("wrap")!=undefined)
 	{
@@ -617,10 +574,7 @@ if(document.getElementById("p-picture")!=undefined)
 					fromus_img						=	document.getElementById("p-picture").src;
 	}
 			
-if(document.getElementsByClassName("reg-price-dollars")[0]!=undefined)
-	{
-					if(document.getElementsByClassName("reg-price-dollars")[0]!=undefined)
-	}
+			if(document.getElementsByClassName("reg-price-dollars")[0]!=undefined)
 				{	//En cas de promo
 if(document.getElementsByClassName("reg-price-dollars")[1]!=undefined)
 	{
@@ -682,10 +636,7 @@ if(document.getElementById("product_photo")!=undefined)
 						fromus_img							=	document.getElementById("product_photo").src;
 	}
 				
-if(document.getElementsByClassName("so-product-description")[0]!=undefined)
-	{
-						fromus_desc							= document.getElementsByClassName("so-product-description")[0].textContent;	
-	}
+				fromus_desc							= document.getElementsByClassName("so-product-description")[0].textContent;	
 		}break;
 		
 		case "www.jcrew.com":
@@ -738,10 +689,7 @@ if(document.getElementById("mapImageSjElement4_img")!=undefined)
 						fromus_img						=	document.getElementById("mapImageSjElement4_img").src;
 	}
 
-if(document.getElementsByClassName("pdp_brand_desc_info")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("pdp_brand_desc_info")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("pdp_brand_desc_info")[0]!=undefined)
 					{
 if(document.getElementsByClassName("pdp_brand_desc_info")[0]!=undefined)
 	{
@@ -818,10 +766,7 @@ if(document.getElementsByClassName("original")[0]!=undefined)
 					}	
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/.exec(fromus_pricemintmp)[0];	
 
-if(document.getElementById("maincopy")!=undefined)
-	{
-					if(document.getElementById("maincopy")!=undefined)
-	}
+			if(document.getElementById("maincopy")!=undefined)
 				{
 if(document.getElementById("maincopy")!=undefined)
 	{
@@ -849,10 +794,7 @@ if(document.getElementById("backImageSjElement5_img")!=undefined)
 	}
 				fromus_img						=	fromus_img.replace(/(\?.*)/,'');
 
-if(document.getElementsByClassName("pp-product-description")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("pp-product-description")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("pp-product-description")[0]!=undefined)
 					{
 if(document.getElementsByClassName("pp-product-description")[0]!=undefined)
 	{
@@ -863,10 +805,7 @@ if(document.getElementsByClassName("pp-product-description")[0]!=undefined)
 		
 		case "www.llbean.com":
 			{
-if(document.getElementById("ppHeader")!=undefined)
-	{
-						if(document.getElementById("ppHeader")!=undefined)		//Si la page est propre à l'objet
-	}
+				if(document.getElementById("ppHeader")!=undefined)		//Si la page est propre à l'objet
 					{
 if(document.getElementById("ppHeader")!=undefined)
 	{
@@ -897,10 +836,7 @@ if(document.getElementById("backImageSjElement4_img")!=undefined)
 	}
 				fromus_img						=	fromus_img.replace(/(\?.*)/,'');			
 				
-if(document.getElementById("ppLongDesc")!=undefined)
-	{
-					if(document.getElementById("ppLongDesc")!=undefined)
-	}
+			if(document.getElementById("ppLongDesc")!=undefined)
 					{
 if(document.getElementById("ppLongDesc")!=undefined)
 	{
@@ -912,10 +848,7 @@ if(document.getElementById("ppLongDesc")!=undefined)
 				
 		case "www1.macys.com":
 			{
-if(document.getElementById("productTitle")!=undefined)
-	{
-						if(document.getElementById("productTitle")!=undefined)	//Page du produit
-	}
+				if(document.getElementById("productTitle")!=undefined)	//Page du produit
 					{
 if(document.getElementById("productTitle")!=undefined)
 	{
@@ -959,10 +892,7 @@ if(document.getElementById("quickViewPrices")!=undefined)
 
 					}
 					
-if(document.getElementById("longDescription")!=undefined)
-	{
-						if(document.getElementById("longDescription")!=undefined)
-	}
+				if(document.getElementById("longDescription")!=undefined)
 					{
 if(document.getElementById("longDescription")!=undefined)
 	{
@@ -987,10 +917,7 @@ if(document.getElementById("main-image-link")!=undefined)
 						fromus_img						=	document.getElementById("main-image-link").href;		
 	}
 
-if(document.getElementsByClassName("description-left")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("description-left")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("description-left")[0]!=undefined)
 					{
 if(document.getElementsByClassName("description-left")[0]!=undefined)
 	{
@@ -1001,10 +928,7 @@ if(document.getElementsByClassName("description-left")[0]!=undefined)
 
 		case "www.neimanmarcus.com":
 			{
-if(document.getElementById("productName")!=undefined)
-	{
-						if(document.getElementById("productName")!=undefined) // S'il s'agit d'une preview
-	}
+				if(document.getElementById("productName")!=undefined) // S'il s'agit d'une preview
 					{
 if(document.getElementById("productName")!=undefined)
 	{
@@ -1036,20 +960,14 @@ if(document.getElementsByClassName("zoom-available")[0]!=undefined)
 						fromus_img					=	document.getElementsByClassName("zoom-available")[0].src;
 	}
 
-if(document.getElementsByClassName("productCutline")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("productCutline")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("productCutline")[0]!=undefined)
 					{
 if(document.getElementsByClassName("productCutline")[0]!=undefined)
 	{
 								fromus_desc				=	document.getElementsByClassName("productCutline")[0].textContent;
 	}
 					}
-if(document.getElementById("qvDescription")!=undefined)
-	{
-						if(document.getElementById("qvDescription")!=undefined)
-	}
+				if(document.getElementById("qvDescription")!=undefined)
 					{
 if(document.getElementById("qvDescription")!=undefined)
 	{
@@ -1077,20 +995,14 @@ if(document.getElementsByClassName("primary-product-image")[0]!=undefined)
 						fromus_img						=	document.getElementsByClassName("primary-product-image")[0].src;
 	}
 
-if(document.getElementById("pi-main-headline")!=undefined)
-	{
-						if(document.getElementById('pi-main-headline')!=undefined)
-	}
+				if(document.getElementById('pi-main-headline')!=undefined)
 					{
 if(document.getElementById("pi-main-headline")!=undefined)
 	{
 								fromus_desc						=	document.getElementById('pi-main-headline').textContent;	
 	}
 					}
-if(document.getElementsByClassName("pi-sub-title")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("pi-sub-title")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("pi-sub-title")[0]!=undefined)
 				{
 if(document.getElementsByClassName("pi-sub-title")[0]!=undefined)
 	{
@@ -1103,10 +1015,7 @@ if(document.getElementsByClassName("pi-sub-title")[0]!=undefined)
 			
 		case "www.overstock.com":
 			{
-if(document.getElementById("qv-hero-img")!=undefined)
-	{
-						if(document.getElementById("qv-hero-img")!=undefined)	//S'il s'agit d'une preview
-	}
+				if(document.getElementById("qv-hero-img")!=undefined)	//S'il s'agit d'une preview
 					{
 if(document.getElementsByClassName("qv-hd")[0]!=undefined)
 	{
@@ -1125,10 +1034,7 @@ if(document.getElementById("prod_mainCenter")!=undefined)
 								fromus_objectname			=	document.getElementById("prod_mainCenter").getElementsByTagName("div")[0].getElementsByTagName("div")[0].textContent;
 	}
 									
-if(document.getElementById("activeImage")!=undefined)
-	{
-								if(document.getElementById("activeImage")==undefined)	//Si l'image est zoomable
-	}
+						if(document.getElementById("activeImage")==undefined)	//Si l'image est zoomable
 							{
 if(document.getElementsByClassName("proImageCenter")[0]!=undefined)
 	{
@@ -1147,10 +1053,7 @@ if(document.getElementById("activeImage")!=undefined)
 					fromus_pricemintmp				=	document.getElementsByClassName("Ovalue main-price-red")[0].textContent;
 					fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];		
 
-if(document.getElementById("details_descFull")!=undefined)
-	{
-						if(document.getElementById('details_descFull')!=undefined)
-	}
+				if(document.getElementById('details_descFull')!=undefined)
 					{
 if(document.getElementById("details_descFull")!=undefined)
 	{
@@ -1178,10 +1081,7 @@ if(document.getElementsByClassName("s7flyoutFlyoutView")[0]!=undefined)
 						fromus_img					=	document.getElementsByClassName("s7flyoutFlyoutView")[0].getElementsByTagName("div")[0].getElementsByTagName("div")[0].getElementsByTagName("img")[0].src;
 	}
 
-if(document.getElementById("padDescDiv")!=undefined)
-	{
-						if(document.getElementById('padDescDiv')!=undefined)
-	}
+				if(document.getElementById('padDescDiv')!=undefined)
 					{
 if(document.getElementById("padDescDiv")!=undefined)
 	{
@@ -1206,10 +1106,7 @@ if(document.getElementById("parProductDetailPrice")!=undefined)
 	}
 				fromus_pricemin					=	/(\$[0-9]{0,})(\.)([0-9]{2})/gi.exec(fromus_pricemintmp)[0].replace(/\s/g,'');				
 			
-if(document.getElementById("divProductDetailDescriptionAreaDisplay1")!=undefined)
-	{
-						if(document.getElementById('divProductDetailDescriptionAreaDisplay1')!=undefined)
-	}
+				if(document.getElementById('divProductDetailDescriptionAreaDisplay1')!=undefined)
 					{
 if(document.getElementById("divProductDetailDescriptionAreaDisplay1")!=undefined)
 	{
@@ -1239,10 +1136,7 @@ if(document.getElementById("zoomLink")!=undefined)
 					{
 						fromus_desc					=	document.getElementsByClassName("tab-content description cf")[0].textContent;
 					}
-if(document.getElementById("videoDescription")!=undefined)
-	{
-						if(document.getElementById("videoDescription")!=undefined)
-	}
+				if(document.getElementById("videoDescription")!=undefined)
 					{
 if(document.getElementById("videoDescription")!=undefined)
 	{
@@ -1268,20 +1162,14 @@ if(document.getElementById("imgZoom")!=undefined)
 						fromus_img						=	document.getElementById("imgZoom").src;	
 	}
 
-if(document.getElementById("info")!=undefined)
-	{
-						if(document.getElementById("info")!=undefined)
-	}
+				if(document.getElementById("info")!=undefined)
 					{
 if(document.getElementById("info")!=undefined)
 	{
 								fromus_desc					=	document.getElementById("info").textContent;
 	}
 					}
-if(document.getElementById("details")!=undefined)
-	{
-						if(document.getElementById("details")!=undefined)
-	}
+				if(document.getElementById("details")!=undefined)
 					{
 if(document.getElementById("details")!=undefined)
 	{
@@ -1309,10 +1197,7 @@ if(document.getElementById("details")!=undefined)
 					
 				// Que ce soit un produit ou une preview
 				
-if(document.getElementsByClassName("product-sale-price")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("product-sale-price")[0] != undefined)
-	}
+				if(document.getElementsByClassName("product-sale-price")[0] != undefined)
 					{	// Si le produit est en "sale"
 if(document.getElementsByClassName("product-sale-price")[0]!=undefined)
 	{
@@ -1335,20 +1220,14 @@ if(document.getElementsByClassName("product-price")[0]!=undefined)
 				
 			//	fromus_img = "Recuperation manuelle necessaire";
 				
-if(document.getElementsByClassName("productCopy-container")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("productCopy-container")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("productCopy-container")[0]!=undefined)
 					{
 if(document.getElementsByClassName("productCopy-container")[0]!=undefined)
 	{
 								fromus_desc					=	document.getElementsByClassName("productCopy-container")[0].textContent;
 	}
 					}
-if(document.getElementById("product-description")!=undefined)
-	{
-						if(document.getElementById("product-description")!=undefined)
-	}
+				if(document.getElementById("product-description")!=undefined)
 					{
 if(document.getElementById("product-description")!=undefined)
 	{
@@ -1375,10 +1254,7 @@ if(document.getElementById("ctl00_cphPageMain_BrandAndPrice1_ProductPrice")!=und
 	}
 				fromus_pricemin					=	/(\$[0-9]{0,})(\.)([0-9]{2})/gi.exec(fromus_pricemintmp)[0];
 				
-if(document.getElementById("ProductDescription")!=undefined)
-	{
-						if(document.getElementById("ProductDescription")!=undefined)
-	}
+				if(document.getElementById("ProductDescription")!=undefined)
 					{
 if(document.getElementById("ProductDescription")!=undefined)
 	{
@@ -1390,10 +1266,7 @@ if(document.getElementById("ProductDescription")!=undefined)
 		
 		case "www.sierratradingpost.com":
 			{
-if(document.getElementById("addToCartForm")!=undefined)
-	{
-						if(document.getElementById("addToCartForm")==undefined)	// S'il s'agit d'une preview
-	}
+				if(document.getElementById("addToCartForm")==undefined)	// S'il s'agit d'une preview
 					{			
 						fromus_objectname				=	"Nom";	//La recuperation sur preview ne fonctionne pas ici. Dernière vérification : 25 avril 2013
 					}
@@ -1412,10 +1285,7 @@ if(document.getElementById("largeImage")!=undefined)
 						fromus_img									=	document.getElementById("largeImage").src;	
 	}
 
-if(document.getElementById("overview")!=undefined)
-	{
-						if(document.getElementById("overview")!=undefined)
-	}
+				if(document.getElementById("overview")!=undefined)
 					{
 if(document.getElementById("overview")!=undefined)
 	{
@@ -1426,10 +1296,7 @@ if(document.getElementById("overview")!=undefined)
 			
 		case "www.target.com":
 			{
-if(document.getElementsByClassName("priceSection")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("priceSection")[0]!=undefined)	// Si on est dans une preview
-	}
+				if(document.getElementsByClassName("priceSection")[0]!=undefined)	// Si on est dans une preview
 					{
 						fromus_objectnametmp			=	document.getElementsByClassName("productName");
 						fromus_objectname				=	fromus_objectnametmp[0].textContent;	
@@ -1462,30 +1329,18 @@ if(document.getElementById("heroImage")!=undefined)
 
 		case "www.toysrus.com":
 			{
-if(document.getElementById("priceReviewAge")!=undefined)
-	{
-						fromus_objectname				=	/(.*)\n/.exec(document.getElementById("priceReviewAge").textContent)[1];			
-	}
+				fromus_objectname				=	/(.*)\n/.exec(document.getElementById("priceReviewAge").textContent)[1];			
 	
-if(document.getElementById("price")!=undefined)
-	{
-						fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/.exec(document.getElementById("price").textContent.replace(/\n/g,''))[0];			
-	}
+				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/.exec(document.getElementById("price").textContent.replace(/\n/g,''))[0];			
 
 if(document.getElementById("curImageZoom")!=undefined)
 	{
 						fromus_img						=	document.getElementById("curImageZoom").src;	
 	}
 
-if(document.getElementById("tabset_productPage")!=undefined)
-	{
-						if(document.getElementById("tabset_productPage")!=undefined)
-	}
+				if(document.getElementById("tabset_productPage")!=undefined)
 					{
-if(document.getElementById("tabset_productPage")!=undefined)
-	{
-								fromus_desc					=	/description(.*)/gi.exec(document.getElementById("tabset_productPage").textContent.replace(/\n/g,''))[1];
-	}
+						fromus_desc					=	/description(.*)/gi.exec(document.getElementById("tabset_productPage").textContent.replace(/\n/g,''))[1];
 					}			
 			}break;
 			
@@ -1497,10 +1352,7 @@ if(document.getElementById("prodTitle")!=undefined)
 	{
 								fromus_objectname				=	document.getElementById("prodTitle").textContent;			
 	}
-if(document.getElementsByClassName("promo-price")[0]!=undefined)
-	{
-								if(document.getElementsByClassName("promo-price")[0]!=undefined)
-	}
+						if(document.getElementsByClassName("promo-price")[0]!=undefined)
 							{	// S'il s'agit d'une promo
 if(document.getElementsByClassName("promo-price")[0]!=undefined)
 	{
@@ -1509,10 +1361,7 @@ if(document.getElementsByClassName("promo-price")[0]!=undefined)
 							}			
 						else
 							{	// S'il s'agit d'une offre normale
-if(document.getElementsByClassName("price")[0]!=undefined)
-	{
-										fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/.exec(document.getElementsByClassName("price")[0].textContent.replace(/\n/g,''))[0];
-	}
+								fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/.exec(document.getElementsByClassName("price")[0].textContent.replace(/\n/g,''))[0];
 							}			
 							
 if(document.getElementById("prodMainImg")!=undefined)
@@ -1528,10 +1377,7 @@ if(document.getElementById("snapTitle")!=undefined)
 								fromus_objectname				=	document.getElementById("snapTitle").textContent;			
 	}
 	
-if(document.getElementsByClassName("promo-price")[0]!=undefined)
-	{
-								if(document.getElementsByClassName("promo-price")[0]!=undefined)
-	}
+						if(document.getElementsByClassName("promo-price")[0]!=undefined)
 							{	// S'il s'agit d'une promo
 if(document.getElementsByClassName("promo-price")[0]!=undefined)
 	{
@@ -1540,10 +1386,7 @@ if(document.getElementsByClassName("promo-price")[0]!=undefined)
 							}			
 						else		
 							{	// S'il s'agit d'une offre normale
-if(document.getElementById("snapPrice")!=undefined)
-	{
-										fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/.exec(document.getElementById("snapPrice").textContent.replace(/\n/g,''))[0];
-	}
+								fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/.exec(document.getElementById("snapPrice").textContent.replace(/\n/g,''))[0];
 							}			
 if(document.getElementById("detailMain")!=undefined)
 	{
@@ -1556,20 +1399,14 @@ if(document.getElementById("detailMain")!=undefined)
 			
 		case "www.afloral.com":
 			{			
-if(document.getElementById("quickview")!=undefined)
-	{
-						if(document.getElementById("quickview")!=undefined)
-	}
+				if(document.getElementById("quickview")!=undefined)
 					{	// Si c'est une preview
 if(document.getElementById("quickview")!=undefined)
 	{
 								fromus_objectname		=	document.getElementById("quickview").getElementsByTagName("p")[0].textContent;
 	}
 						
-if(document.getElementById("quickview")!=undefined)
-	{
-								fromus_pricemin			=	fromus_reg.exec(document.getElementById("quickview").getElementsByTagName("div")[1].textContent.replace(/s/g,''))[0];
-	}
+						fromus_pricemin			=	fromus_reg.exec(document.getElementById("quickview").getElementsByTagName("div")[1].textContent.replace(/s/g,''))[0];
 						
 if(document.getElementById("quickview")!=undefined)
 	{
@@ -1593,20 +1430,14 @@ if(document.getElementsByClassName("current-price")[0]!=undefined)
 								fromus_pricemin			=	document.getElementsByClassName("current-price")[0].textContent;	
 	}
 					}		
-if(document.getElementsByClassName("desc")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("desc")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("desc")[0]!=undefined)
 					{
 if(document.getElementById("quickview")!=undefined)
 	{
 								fromus_desc					=	document.getElementById("quickview").getElementsByTagName("div")[1].getElementsByTagName("div")[0].textContent;
 	}
 					}
-if(document.getElementById("item-description")!=undefined)
-	{
-						if(document.getElementById("item-description")!=undefined)
-	}
+				if(document.getElementById("item-description")!=undefined)
 					{
 if(document.getElementById("item-description")!=undefined)
 	{
@@ -1650,10 +1481,7 @@ if(document.getElementsByClassName("photo")[0]!=undefined)
 						fromus_img							=	document.getElementsByClassName("photo")[0].src;
 	}
 
-if(document.getElementsByClassName("product-content")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("product-content")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("product-content")[0]!=undefined)
 					{
 if(document.getElementsByClassName("product-content")[0]!=undefined)
 	{
@@ -1680,10 +1508,7 @@ if(document.getElementById("main-image")!=undefined)
 						fromus_img						=	document.getElementById("main-image").href;
 	}
 				
-if(document.getElementsByClassName("description")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("description")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("description")[0]!=undefined)
 					{
 if(document.getElementsByClassName("description")[0]!=undefined)
 	{
@@ -1710,10 +1535,7 @@ if(document.getElementById("mainpic")!=undefined)
 						fromus_img							=	document.getElementById("mainpic").src;
 	}
 				
-if(document.getElementById("item-info")!=undefined)
-	{
-						if(document.getElementById("item-info")!=undefined)
-	}
+				if(document.getElementById("item-info")!=undefined)
 					{
 if(document.getElementById("item-info")!=undefined)
 	{
@@ -1740,10 +1562,7 @@ if(document.getElementById("swatchImage")!=undefined)
 						fromus_img						=	document.getElementById("swatchImage").src;
 	}
 				
-if(document.getElementById("detailReviewsLeft")!=undefined)
-	{
-						if(document.getElementById("detailReviewsLeft")!=undefined)
-	}
+				if(document.getElementById("detailReviewsLeft")!=undefined)
 					{
 if(document.getElementById("detailReviewsLeft")!=undefined)
 	{
@@ -1766,10 +1585,7 @@ if(document.getElementById("imgHolder")!=undefined)
 						fromus_img							=	document.getElementById("imgHolder").getElementsByTagName("img")[0].src;
 	}
 				
-if(document.getElementsByClassName("addlEquity")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("addlEquity")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("addlEquity")[0]!=undefined)
 					{
 if(document.getElementsByClassName("addlEquity")[0]!=undefined)
 	{
@@ -1805,10 +1621,7 @@ if(document.getElementById("mainImage")!=undefined)
 		case "www.bestbuy.com":
 			{
 				//Le site est basé sur la dualité de deux structures qui se mélangent, d'où la succession de if/else suivante.
-if(document.getElementById("sku-title")!=undefined)
-	{
-						if(document.getElementById("sku-title")!=undefined)
-	}
+				if(document.getElementById("sku-title")!=undefined)
 					{
 if(document.getElementById("sku-title")!=undefined)
 	{
@@ -1823,10 +1636,7 @@ if(document.getElementById("productsummary")!=undefined)
 	}
 					}
 
-if(document.getElementById("saleprice")!=undefined)
-	{
-						if(document.getElementById("saleprice")!=undefined)
-	}
+				if(document.getElementById("saleprice")!=undefined)
 					{
 if(document.getElementById("saleprice")!=undefined)
 	{
@@ -1842,10 +1652,7 @@ if(document.getElementsByClassName("item-price")[0]!=undefined)
 					}			
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];	
 
-if(document.getElementById("postcard-thumbnail")!=undefined)
-	{
-						if(document.getElementById("postcard-thumbnail")!=undefined)
-	}
+				if(document.getElementById("postcard-thumbnail")!=undefined)
 					{
 if(document.getElementById("postcard-thumbnail")!=undefined)
 	{
@@ -1860,10 +1667,7 @@ if(document.getElementById("imagepreview")!=undefined)
 	}
 					}
 
-if(document.getElementById("tabbed-bundle-overview")!=undefined)
-	{
-						if(document.getElementById("tabbed-bundle-overview")!=undefined)
-	}
+				if(document.getElementById("tabbed-bundle-overview")!=undefined)
 					{
 if(document.getElementById("tabbed-bundle-overview")!=undefined)
 	{
@@ -1874,10 +1678,7 @@ if(document.getElementById("tabbed-bundle-overview")!=undefined)
 					{
 						fromus_desc					=	document.getElementsByClassName("csc-medium-column csc-last-column")[0].textContent;
 					}					
-if(document.getElementById("features")!=undefined)
-	{
-						if(document.getElementById("features")!=undefined)
-	}
+				if(document.getElementById("features")!=undefined)
 					{
 if(document.getElementById("features")!=undefined)
 	{
@@ -1905,10 +1706,7 @@ if(document.getElementsByClassName("product-imageMain")[0]!=undefined)
 						fromus_img			=	document.getElementsByClassName("product-imageMain")[0].src;
 	}
 				
-if(document.getElementsByClassName("mainattributes")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("mainattributes")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("mainattributes")[0]!=undefined)
 					{
 if(document.getElementsByClassName("mainattributes")[0]!=undefined)
 	{
@@ -1924,10 +1722,7 @@ if(document.getElementsByClassName("product-info")[0]!=undefined)
 						fromus_objectname				=	document.getElementsByClassName("product-info")[0].getElementsByTagName('h1')[0].textContent;
 	}
 
-if(document.getElementsByClassName("product-info")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("product-info")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("product-info")[0]!=undefined)
 					{
 if(document.getElementsByClassName("product-info")[0]!=undefined)
 	{
@@ -1962,10 +1757,7 @@ if(document.getElementById("productImg")!=undefined)
 						fromus_img						=	document.getElementById("productImg").src;
 	}
 				
-if(document.getElementById("item_description")!=undefined)
-	{
-						if(document.getElementById("item_description")!=undefined)
-	}
+				if(document.getElementById("item_description")!=undefined)
 					{
 if(document.getElementById("item_description")!=undefined)
 	{
@@ -1976,10 +1768,7 @@ if(document.getElementById("item_description")!=undefined)
 
 		case "www.nyxcosmetics.com":
 			{
-if(document.getElementById("product-description")!=undefined)
-	{
-						if(document.getElementById("product-description")!=undefined)
-	}
+				if(document.getElementById("product-description")!=undefined)
 					{	// Fiche		
 if(document.getElementById("product-description")!=undefined)
 	{
@@ -2015,20 +1804,14 @@ if(document.getElementsByClassName("product-img")[0]!=undefined)
 								fromus_img							=	document.getElementsByClassName("product-img")[0].getElementsByTagName("img")[0].src;						
 	}
 					}
-if(document.getElementsByClassName("description")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("description")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("description")[0]!=undefined)
 					{
 if(document.getElementsByClassName("product-meta")[0]!=undefined)
 	{
 								fromus_desc					=	document.getElementsByClassName("product-meta")[0].getElementsByTagName("p")[1].textContent;
 	}
 					}
-if(document.getElementById("description-content")!=undefined)
-	{
-						if(document.getElementById("description-content")!=undefined)
-	}
+				if(document.getElementById("description-content")!=undefined)
 					{
 if(document.getElementById("description-content")!=undefined)
 	{
@@ -2042,10 +1825,7 @@ if(document.getElementById("description-content")!=undefined)
 			
 		case "www.smashbox.com":
 			{
-if(document.getElementsByClassName("spp-left-col")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("spp-left-col")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("spp-left-col")[0]!=undefined)
 					{	// Fiche
 if(document.getElementsByClassName("spp-left-col")[0]!=undefined)
 	{
@@ -2070,10 +1850,7 @@ if(document.getElementsByClassName("spp_image")[0]!=undefined)
 						fromus_img							=	document.getElementsByClassName("spp_image")[0].getElementsByTagName("img")[0].src;
 	}
 
-if(document.getElementsByClassName("description")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("description")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("description")[0]!=undefined)
 					{
 if(document.getElementsByClassName("description")[0]!=undefined)
 	{
@@ -2101,10 +1878,7 @@ if(document.getElementById("product-image-large")!=undefined)
 						fromus_img							=	document.getElementById("product-image-large").getElementsByTagName("img")[0].src;
 	}
 				
-if(document.getElementById("product-meta")!=undefined)
-	{
-						if(document.getElementById("product-meta")!=undefined)
-	}
+				if(document.getElementById("product-meta")!=undefined)
 					{
 if(document.getElementById("product-meta")!=undefined)
 	{
@@ -2115,10 +1889,7 @@ if(document.getElementById("product-meta")!=undefined)
 
 		case "www.victoriassecret.com":
 			{
-if(document.getElementById("vsImage")!=undefined)
-	{
-						if(document.getElementById("vsImage")!=undefined)
-	}
+				if(document.getElementById("vsImage")!=undefined)
 					{ 	// Fiche
 						fromus_objectname				=	document.getElementsByClassName("short x-large cufon-replaced")[0].textContent;								
 
@@ -2149,15 +1920,9 @@ if(document.getElementsByClassName("pricing")[0]!=undefined)
 				fromus_objectnametmp			=	document.getElementsByClassName("gridWidth04 productDetails")[0].textContent;
 				fromus_objectname				=	/(.*)\n/.exec(fromus_objectnametmp)[0];
 	
-if(document.getElementsByClassName("finalPrice")[0]!=undefined)
-	{
-						fromus_pricemin					=	fromus_reg.exec(document.getElementsByClassName("finalPrice")[0].textContent)[0];
-	}
+				fromus_pricemin					=	fromus_reg.exec(document.getElementsByClassName("finalPrice")[0].textContent)[0];
 	
-if(document.getElementById("largeProductImageQv")!=undefined)
-	{
-						if(document.getElementById("largeProductImageQv")!=undefined)
-	}
+				if(document.getElementById("largeProductImageQv")!=undefined)
 					{	// Preview
 if(document.getElementById("largeProductImageQv")!=undefined)
 	{
@@ -2172,10 +1937,7 @@ if(document.getElementById("largeProductImage")!=undefined)
 	}
 					}
 			
-if(document.getElementById("subdesc_content")!=undefined)
-	{
-						if(document.getElementById("subdesc_content")!=undefined)
-	}
+				if(document.getElementById("subdesc_content")!=undefined)
 					{
 if(document.getElementById("subdesc_content")!=undefined)
 	{
@@ -2183,10 +1945,7 @@ if(document.getElementById("subdesc_content")!=undefined)
 	}
 					}
 
-if(document.getElementById("subdesc_content")!=undefined)
-	{
-						if(document.getElementById("subdesc_content").getElementsByTagName('div')[0]!=undefined)
-	}
+				if(document.getElementById("subdesc_content").getElementsByTagName('div')[0]!=undefined)
 					{
 if(document.getElementById("subdesc_content")!=undefined)
 	{
@@ -2303,20 +2062,14 @@ if(document.getElementById("bmo-vehicleImg-wrap")!=undefined)
 						fromus_objectnametmp			=	fromus_offre;
 						fromus_objectname				=	/dodge\.com.*(\/.*\/)$/.exec(fromus_objectnametmp)[1].replace(/\//g,' ');
 
-if(document.getElementsByClassName("background")[0]!=undefined)
-	{
-								if(document.getElementsByClassName("background")[0]!=undefined)
-	}
+						if(document.getElementsByClassName("background")[0]!=undefined)
 							{
 if(document.getElementsByClassName("background")[0]!=undefined)
 	{
 										fromus_img					=	document.getElementsByClassName("background")[0].src;
 	}
 							}
-if(document.getElementById("msrp")!=undefined)
-	{
-								if(document.getElementById("msrp")!=undefined)
-	}
+						if(document.getElementById("msrp")!=undefined)
 							{
 if(document.getElementById("msrp")!=undefined)
 	{
@@ -2326,20 +2079,14 @@ if(document.getElementById("msrp")!=undefined)
 							}						
 					}
 
-if(document.getElementsByClassName("specs_content")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("specs_content")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("specs_content")[0]!=undefined)
 					{
 if(document.getElementsByClassName("specs_content")[0]!=undefined)
 	{
 								fromus_desc					=	document.getElementsByClassName("specs_content")[0].textContent;
 	}
 					}
-if(document.getElementById("detail")!=undefined)
-	{
-						if(document.getElementById("detail")!=undefined)
-	}
+				if(document.getElementById("detail")!=undefined)
 					{
 if(document.getElementById("detail")!=undefined)
 	{
@@ -2367,10 +2114,7 @@ if(document.getElementById("bmo-vehicleImg-wrap")!=undefined)
 					}
 				else
 					{	// S'il s'agit d'une page présentant un véhicule
-if(document.getElementById("configurator")!=undefined)
-	{
-								fromus_objectname				=	"CHRYSLER "+/\n(.*)\n/.exec(document.getElementById('configurator').textContent)[1];
-	}
+						fromus_objectname				=	"CHRYSLER "+/\n(.*)\n/.exec(document.getElementById('configurator').textContent)[1];
 
 if(document.getElementsByClassName("price")[0]!=undefined)
 	{
@@ -2413,10 +2157,7 @@ if(document.getElementById("img_ext")!=undefined)
 						fromus_objectnametmp			=	fromus_offre;
 						fromus_objectname				=	/buick.com\/(.*)\.html/.exec(fromus_objectnametmp)[1].replace(/-/g,' ');
 
-if(document.getElementsByClassName("txt3")[0]!=undefined)
-	{
-								if(document.getElementsByClassName("txt3")[0]!=undefined)
-	}
+						if(document.getElementsByClassName("txt3")[0]!=undefined)
 							{
 if(document.getElementsByClassName("txt3")[0]!=undefined)
 	{
@@ -2456,10 +2197,7 @@ if(document.getElementById("starting-price-vehicle")!=undefined)
 				
 				//fromus_img						=	"Recuperation automatique impossible";
 				
-if(document.getElementById("overviewTitle")!=undefined)
-	{
-						if(document.getElementById("overviewTitle")!=undefined)
-	}
+				if(document.getElementById("overviewTitle")!=undefined)
 					{
 if(document.getElementById("overviewTitle")!=undefined)
 	{
@@ -2504,10 +2242,7 @@ if(document.getElementById("threesixty-image")!=undefined)
 								fromus_img					=	document.getElementById("threesixty-image").src;
 	}
 						
-if(document.getElementsByClassName("mds-area-pn1")[0]!=undefined)
-	{
-								if(document.getElementsByClassName("mds-area-pn1")[0]!=undefined)
-	}
+						if(document.getElementsByClassName("mds-area-pn1")[0]!=undefined)
 							{
 if(document.getElementsByClassName("mds-area-pn1")[0]!=undefined)
 	{
@@ -2526,10 +2261,7 @@ if(document.getElementsByClassName("model")[0]!=undefined)
 								fromus_objectname				=	document.getElementsByClassName("model")[0].textContent;
 	}
 
-if(document.getElementsByClassName("price")[0]!=undefined)
-	{
-								fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(document.getElementsByClassName("price")[0].textContent)[0];
-	}
+						fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(document.getElementsByClassName("price")[0].textContent)[0];
 
 if(document.getElementsByClassName("vehicle")[0]!=undefined)
 	{
@@ -2555,15 +2287,9 @@ if(document.getElementsByClassName("model")[0]!=undefined)
 			{
 				if( /buildyourscion/.test(fromus_offre))
 					{	// S'il s'agit d'une page "buid your own vehicule"
-if(document.getElementById("vehicle-cost-summary")!=undefined)
-	{
-								fromus_objectname				=	/(.*)SUMMARY/.exec(document.getElementById("vehicle-cost-summary").textContent)[1];
-	}
+						fromus_objectname				=	/(.*)SUMMARY/.exec(document.getElementById("vehicle-cost-summary").textContent)[1];
 
-if(document.getElementById("summary-total")!=undefined)
-	{
-								fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(document.getElementById("summary-total").textContent)[0];
-	}
+						fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(document.getElementById("summary-total").textContent)[0];
 						
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////		ATTENTION		Les images sont gérées en flash, elles ne sont donc pas récupérées!!		ATTENTION		//////////
@@ -2587,10 +2313,7 @@ if(document.getElementsByClassName("model-detail-background")[0]!=undefined)
 	}
 					}
 			
-if(document.getElementsByClassName("model-detail-block")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("model-detail-block")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("model-detail-block")[0]!=undefined)
 					{
 if(document.getElementsByClassName("model-detail-block")[0]!=undefined)
 	{
@@ -2638,10 +2361,7 @@ if(document.getElementById("detailsContent")!=undefined)
 
 		case "www.indianmotorcycle.com":
 			{
-if(document.getElementById("indian-model-overview-image")!=undefined)
-	{
-					if(document.getElementById("indian-model-overview-image")!=undefined)
-	}
+			if(document.getElementById("indian-model-overview-image")!=undefined)
 				{	//S'il s'agit d'une page presentant une moto
 if(document.getElementById("indian-model-navigation")!=undefined)
 	{
@@ -2691,20 +2411,14 @@ if(document.getElementById("productName")!=undefined)
 							fromus_objectname					=	document.getElementById("productName").textContent;
 	}
 	
-if(document.getElementById("productPrice")!=undefined)
-	{
-							fromus_pricemin						=	/(\$[0-9]{0,}[\.0-9]{0,3})$/.exec(document.getElementById("productPrice").textContent.replace(/\s/g,''))[0];
-	}
+					fromus_pricemin						=	/(\$[0-9]{0,}[\.0-9]{0,3})$/.exec(document.getElementById("productPrice").textContent.replace(/\s/g,''))[0];
 
 if(document.getElementById("mainImage")!=undefined)
 	{
 							fromus_img							=	document.getElementById("mainImage").getElementsByTagName("img")[0].src;
 	}
 			
-if(document.getElementsByClassName("descText")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("descText")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("descText")[0]!=undefined)
 					{
 if(document.getElementsByClassName("descText")[0]!=undefined)
 	{
@@ -2730,10 +2444,7 @@ if(document.getElementById("prodimage0")!=undefined)
 							fromus_img							=	document.getElementById("prodimage0").src;
 	}
 					
-if(document.getElementsByClassName("detaildescription")[0]!=undefined)
-	{
-							if(document.getElementsByClassName("detaildescription")[0]!=undefined)
-	}
+					if(document.getElementsByClassName("detaildescription")[0]!=undefined)
 						{
 if(document.getElementsByClassName("detaildescription")[0]!=undefined)
 	{
@@ -2744,17 +2455,11 @@ if(document.getElementsByClassName("detaildescription")[0]!=undefined)
 				
 		case "www.bebe.com":
 			{
-if(document.getElementsByClassName("img-main")[0]!=undefined)
-	{
-							if(document.getElementsByClassName("img-main")[0]!=undefined)
-	}
+					if(document.getElementsByClassName("img-main")[0]!=undefined)
 						{	// S'il s'agit d'une preview
 							fromus_objectname			=	document.getElementsByClassName("product-information jsDescriptionWrap")[0].getElementsByTagName("h1")[0].getElementsByTagName("a")[0].textContent;
 	
-if(document.getElementsByClassName("price-container")[0]!=undefined)
-	{
-									fromus_pricemin				=	fromus_reg.exec(document.getElementsByClassName("price-container")[0].textContent)[0];
-	}
+							fromus_pricemin				=	fromus_reg.exec(document.getElementsByClassName("price-container")[0].textContent)[0];
 		
 if(document.getElementsByClassName("img-main")[0]!=undefined)
 	{
@@ -2766,10 +2471,7 @@ if(document.getElementsByClassName("img-main")[0]!=undefined)
 							fromus_objectnametmp		=	/bebe.com\/[a-zA-Z\-\_0-9]{0,}\/[a-zA-Z\-\_0-9]{0,}\/(.*)\//.exec(fromus_offre)[1];									
 							fromus_objectname			=	fromus_objectnametmp.replace(/\/.*/,'').replace(/\-/g,' ');
 		
-if(document.getElementsByClassName("priceDisplay")[0]!=undefined)
-	{
-									fromus_pricemin				=	fromus_reg.exec(document.getElementsByClassName("priceDisplay")[0].textContent)[0];
-	}
+							fromus_pricemin				=	fromus_reg.exec(document.getElementsByClassName("priceDisplay")[0].textContent)[0];
 	
 if(document.getElementsByClassName("entity-image")[0]!=undefined)
 	{
@@ -2777,10 +2479,7 @@ if(document.getElementsByClassName("entity-image")[0]!=undefined)
 	}
 						}
 						
-if(document.getElementsByClassName("description")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("description")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("description")[0]!=undefined)
 					{
 if(document.getElementsByClassName("description")[0]!=undefined)
 	{
@@ -2800,10 +2499,7 @@ if(document.getElementById("product_photo")!=undefined)
 							fromus_img								=	document.getElementById("product_photo").src;
 	}
 					
-if(document.getElementsByClassName("colors_descriptionbox")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("colors_descriptionbox")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("colors_descriptionbox")[0]!=undefined)
 					{
 if(document.getElementsByClassName("colors_descriptionbox")[0]!=undefined)
 	{
@@ -2814,20 +2510,14 @@ if(document.getElementsByClassName("colors_descriptionbox")[0]!=undefined)
 		
 		case "www.hottopic.com":
 			{
-if(document.getElementsByClassName("pTitle")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("pTitle")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("pTitle")[0]!=undefined)
 					{
 if(document.getElementsByClassName("pTitle")[0]!=undefined)
 	{
 								fromus_objectname							=	document.getElementsByClassName("pTitle")[0].textContent;
 	}
 					}
-if(document.getElementById("product-title")!=undefined)
-	{
-						if(document.getElementById("product-title")!=undefined)
-	}
+				if(document.getElementById("product-title")!=undefined)
 					{
 if(document.getElementById("product-title")!=undefined)
 	{
@@ -2835,41 +2525,26 @@ if(document.getElementById("product-title")!=undefined)
 	}
 					}
 					
-if(document.getElementsByClassName("pPrice")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("pPrice")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("pPrice")[0]!=undefined)
 					{
 if(document.getElementsByClassName("pPrice")[0]!=undefined)
 	{
 								fromus_pricemin								=	document.getElementsByClassName("pPrice")[0].textContent;
 	}
 					}
-if(document.getElementById("product-price")!=undefined)
-	{
-						if(document.getElementById("product-price")!=undefined)
-	}
+				if(document.getElementById("product-price")!=undefined)
 					{
-if(document.getElementById("product-price")!=undefined)
-	{
-								fromus_pricemin								=	/(\$[0-9\,]{0,}\.[0-9]{0,})$/.exec(document.getElementById("product-price").textContent.replace(/\s/g,''))[0];
-	}
+						fromus_pricemin								=	/(\$[0-9\,]{0,}\.[0-9]{0,})$/.exec(document.getElementById("product-price").textContent.replace(/\s/g,''))[0];
 					}		
 					
-if(document.getElementsByClassName("pPrice")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("pPrice")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("pPrice")[0]!=undefined)
 					{
 if(document.getElementsByClassName("bigimage")[0]!=undefined)
 	{
 								fromus_img										=	document.getElementsByClassName("bigimage")[0].src;
 	}
 					}
-if(document.getElementById("product-price")!=undefined)
-	{
-						if(document.getElementById("product-price")!=undefined)
-	}
+				if(document.getElementById("product-price")!=undefined)
 					{
 if(document.getElementById("product-image")!=undefined)
 	{
@@ -2877,10 +2552,7 @@ if(document.getElementById("product-image")!=undefined)
 	}
 					}							
 					
-if(document.getElementById("productDesc")!=undefined)
-	{
-						if(document.getElementById("productDesc")!=undefined)
-	}
+				if(document.getElementById("productDesc")!=undefined)
 					{
 if(document.getElementById("productDesc")!=undefined)
 	{
@@ -2926,10 +2598,7 @@ if(document.getElementsByClassName("image-switcher-container")[0]!=undefined)
 						fromus_img					=	document.getElementsByClassName("image-switcher-container")[0].getElementsByTagName("img")[0].src;
 	}
 			
-if(document.getElementsByClassName("content-container")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("content-container")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("content-container")[0]!=undefined)
 					{
 if(document.getElementsByClassName("content-container")[0]!=undefined)
 	{
@@ -2945,17 +2614,11 @@ if(document.getElementsByClassName("product_name")[0]!=undefined)
 						fromus_objectname		=	document.getElementsByClassName("product_name")[0].textContent;
 	}
 				
-if(document.getElementsByClassName("price")[0]!=undefined)
-	{
-						fromus_pricemin			=	fromus_reg.exec(document.getElementsByClassName("price")[0].textContent)[0];
-	}
+				fromus_pricemin			=	fromus_reg.exec(document.getElementsByClassName("price")[0].textContent)[0];
 				
 				fromus_img				=	document.getElementsByClassName("product main")[0].src;
 
-if(document.getElementsByClassName("summary")[0]!=undefined)
-	{
-						if(document.getElementsByClassName("summary")[0]!=undefined)
-	}
+				if(document.getElementsByClassName("summary")[0]!=undefined)
 					{
 if(document.getElementsByClassName("summary")[0]!=undefined)
 	{
