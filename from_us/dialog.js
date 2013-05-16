@@ -1,12 +1,13 @@
-<<<<<<< HEAD
-=======
-var token = 'a12344v234577zee';
+var token_ext = 'ezgrzgrzg463663';
+//var token = 'a12344v234577zee';
+var token;
+var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&token=';
+var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&token=';
+var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&token=';
 
->>>>>>> ajout bouton
+var _urlConnect = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-connect&token_ext='+token_ext;
+var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&token_ext='+token_ext;
 
-var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&token='+token;
-var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&token='+token;
-var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&token='+token;
 var productJSON = {};
 var calculJSON = {};
 var panierJSON = {};
@@ -19,9 +20,21 @@ var regOffer;
 var regDesc;
 var regVisu;
 
+function connect(urlSelected) {
+	$.get(urlSelected)
+	.done(function(datas) { 
+		if(datas['Token'] !== undefined)
+			token = datas['Token'];
+		if(datas['error'] !== undefined)
+			alert(datas['error']);  
+		})
+	.fail(function(datas) { 
+		alert(datas['error']); 
+		})
+;}
 
 function sendToServer(urlSelected, jsonSelected) {
-	$.post(urlSelected, jsonSelected)
+	$.post(urlSelected+token, jsonSelected)
 	.done(function(datas) { 
 		if(datas['status'] == 1){
 			if(datas['Message'] !== undefined)
@@ -50,10 +63,10 @@ function sendToServer(urlSelected, jsonSelected) {
 	.fail(function(datas) { 
 		alert(datas['error']); 
 		})
-	;}
+;}
 
 function sendAjoutPanier() {
-	$.post(_urlPanier, panierJSON)
+	$.post(_urlPanier+token, panierJSON)
 	.done(function(datas) { 
 		if(datas['Message'] !== undefined)
 			alert(datas['Message']);
@@ -64,7 +77,7 @@ function sendAjoutPanier() {
 	.fail(function(datas) { 
 		alert(datas['error']); 
 		})
-	;}
+;}
 
 
 $(document).ready(function() {
@@ -190,7 +203,8 @@ if (isOpen != true) {
 			
 		if ( in_out.value == "login" ){
 	        in_out.value = "logout";
-	    	token = false;
+	    	connect(_urlLogout);
+	    	alert("fin logout");
 	    }
 	    else
 	        in_out.value = "login";
@@ -199,6 +213,7 @@ if (isOpen != true) {
 
 	// ouverture de la dialog box
 	newDialog.dialog("open");
+	connect(_urlConnect);
 	
 	// suppression des key dans le localstorage
 	localStorage.removeItem('regDesc');

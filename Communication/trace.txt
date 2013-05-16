@@ -4610,3 +4610,317 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => undefined
+    [product] => {"prd_libelle":"Birds Of Paradise High Flip Flop","prd_site":"bebe.com/Shoes/View-All/Birds-Of-Paradise-High-Flip-Flop/pc/239/c/0/sc/240/50263.pro","prd_desc":"Get tropical! This pair of high bebe flip flops are a cute little way to elevate a poolside look. ","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-214689-wht-i1?$Detail$","prd_prix":"39","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => undefined
+    [product] => {"prd_libelle":"Birds Of Paradise High Flip Flop","prd_site":"bebe.com/Shoes/View-All/Birds-Of-Paradise-High-Flip-Flop/pc/239/c/0/sc/240/50263.pro","prd_desc":"Get tropical! This pair of high bebe flip flops are a cute little way to elevate a poolside look. ","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-214689-wht-i1?$Detail$","prd_prix":"39","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => undefined
+    [calcul] => {"libelle":"Birds Of Paradise High Flip Flop","qte":"","montant":"39","categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Birds Of Paradise High Flip Flop","prd_site":"bebe.com/Shoes/View-All/Birds-Of-Paradise-High-Flip-Flop/pc/239/c/0/sc/240/50263.pro","prd_desc":"Get tropical! This pair of high bebe flip flops are a cute little way to elevate a poolside look. ","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-214689-wht-i1?$Detail$","prd_prix":"39","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Birds Of Paradise High Flip Flop","prd_site":"bebe.com/Shoes/View-All/Birds-Of-Paradise-High-Flip-Flop/pc/239/c/0/sc/240/50263.pro","prd_desc":"Get tropical! This pair of high bebe flip flops are a cute little way to elevate a poolside look. ","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-214689-wht-i1?$Detail$","prd_prix":"39","prd_cat":"19"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"Birds Of Paradise High Flip Flop","qte":"1","montant":"39","categ":"19"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Ruched Print Funnel Jacket BEBE SPORT ONLINE EXCLUSIVE","prd_site":"bebe.com/bebe-Sport/View-All/Ruched-Print-Funnel-Jacket-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/233/52384.pro","prd_desc":"Attention-grabbing print and casual-cool 3/4 sleeves make this bebe jacket an electrifying way to amp up a workout outfit. Made from a lightweight, breathable fabric that dries 10 times faster th[...]","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-215608-rni-i1?$Detail$","prd_prix":"69","prd_cat":"14"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"Ruched Print Funnel Jacket BEBE SPORT ONLINE EXCLUSIVE","qte":"1","montant":"69","categ":"14"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"Ruched Print Funnel Jacket BEBE SPORT ONLINE EXCLUSIVE","url":"bebe.com/bebe-Sport/View-All/Ruched-Print-Funnel-Jacket-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/233/52384.pro","desc":"Attention-grabbing print and casual-cool 3/4 sleeves make this bebe jacket an electrifying way to amp up a workout outfit. Made from a lightweight, breathable fabric that dries 10 times faster th[...]","qte":"1","montant":90.39,"categ":"14"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => undefined
+    [product] => {"prd_libelle":"Boho Tux Icon Capri Jeans","prd_site":"bebe.com/Denim/View-All/Boho-Tux-Icon-Capri-Jeans/pc/225/c/0/sc/226/50575.pro","prd_desc":"Update your denim collection with a shot of boho-cool in this pair of bebe skinny jeans, featuring embroidered tuxedo stripes down the sides and the signature comfy fit of our denim.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-215195-opw-i1?$Detail$","prd_prix":"129","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => undefined
+    [product] => {"prd_libelle":"Boho Tux Icon Capri Jeans","prd_site":"bebe.com/Denim/View-All/Boho-Tux-Icon-Capri-Jeans/pc/225/c/0/sc/226/50575.pro","prd_desc":"Update your denim collection with a shot of boho-cool in this pair of bebe skinny jeans, featuring embroidered tuxedo stripes down the sides and the signature comfy fit of our denim.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-215195-opw-i1?$Detail$","prd_prix":"129","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => undefined
+    [product] => {"prd_libelle":"Boho Tux Icon Capri Jeans","prd_site":"bebe.com/Denim/View-All/Boho-Tux-Icon-Capri-Jeans/pc/225/c/0/sc/226/50575.pro","prd_desc":"Update your denim collection with a shot of boho-cool in this pair of bebe skinny jeans, featuring embroidered tuxedo stripes down the sides and the signature comfy fit of our denim.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-215195-opw-i1?$Detail$","prd_prix":"129","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => undefined
+    [product] => {"prd_libelle":"Boho Tux Icon Capri Jeans","prd_site":"bebe.com/Denim/View-All/Boho-Tux-Icon-Capri-Jeans/pc/225/c/0/sc/226/50575.pro","prd_desc":"Update your denim collection with a shot of boho-cool in this pair of bebe skinny jeans, featuring embroidered tuxedo stripes down the sides and the signature comfy fit of our denim.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-215195-opw-i1?$Detail$","prd_prix":"129","prd_cat":"19"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Boho Tux Icon Capri Jeans","prd_site":"bebe.com/Denim/View-All/Boho-Tux-Icon-Capri-Jeans/pc/225/c/0/sc/226/50575.pro","prd_desc":"Update your denim collection with a shot of boho-cool in this pair of bebe skinny jeans, featuring embroidered tuxedo stripes down the sides and the signature comfy fit of our denim.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-215195-opw-i1?$Detail$","prd_prix":"129","prd_cat":"25"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Boho Tux Icon Capri Jeans","prd_site":"bebe.com/Denim/View-All/Boho-Tux-Icon-Capri-Jeans/pc/225/c/0/sc/226/50575.pro","prd_desc":"Update your denim collection with a shot of boho-cool in this pair of bebe skinny jeans, featuring embroidered tuxedo stripes down the sides and the signature comfy fit of our denim.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-215195-opw-i1?$Detail$","prd_prix":"129","prd_cat":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Print Run Crop Pant BEBE SPORT ONLINE EXCLUSIVE","prd_site":"bebe.com/bebe-Sport/View-All/Print-Run-Crop-Pant-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/233/52387.pro","prd_desc":"With a hidden pocket at waistline and pop-bright print, this bebe pant is sure to be a workout go-to. Made from a lightweight, breathable fabric that dries 10 times faster than cotton. ","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-215623-oxo-i1?$Detail$","prd_prix":"54","prd_cat":"19"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Print Run Crop Pant BEBE SPORT ONLINE EXCLUSIVE","prd_site":"bebe.com/bebe-Sport/View-All/Print-Run-Crop-Pant-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/233/52387.pro","prd_desc":"With a hidden pocket at waistline and pop-bright print, this bebe pant is sure to be a workout go-to. Made from a lightweight, breathable fabric that dries 10 times faster than cotton. ","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-215623-oxo-i1?$Detail$","prd_prix":"54","prd_cat":"19"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"Print Run Crop Pant BEBE SPORT ONLINE EXCLUSIVE","qte":"2","montant":"54","categ":"19"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"Print Run Crop Pant BEBE SPORT ONLINE EXCLUSIVE","url":"bebe.com/bebe-Sport/View-All/Print-Run-Crop-Pant-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/233/52387.pro","desc":"With a hidden pocket at waistline and pop-bright print, this bebe pant is sure to be a workout go-to. Made from a lightweight, breathable fabric that dries 10 times faster than cotton. ","qte":"2","montant":141.48,"categ":"19"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Print Run Crop Pant BEBE SPORT ONLINE EXCLUSIVE","prd_site":"bebe.com/bebe-Sport/View-All/Print-Run-Crop-Pant-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/233/52387.pro","prd_desc":"With a hidden pocket at waistline and pop-bright print, this bebe pant is sure to be a workout go-to. Made from a lightweight, breathable fabric that dries 10 times faster than cotton. ","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-215623-oxo-i1?$Detail$","prd_prix":"54","prd_cat":"25"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================

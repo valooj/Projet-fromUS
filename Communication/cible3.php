@@ -3,7 +3,6 @@ header('Content-type: application/json');
 
 file_put_contents('./trace.txt', print_r($_REQUEST, 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
 
-
 // Requete insert to .... on duplicate key
 //Permet d'insérer un element , si il existe déja, il est mit à jour. 
 $sql_prepared_update_product = <<<SQL
@@ -41,29 +40,21 @@ try
 
 	// externals datas
 	$get_action = isset($_GET['action']) ? htmlspecialchars($_GET['action']) : null;
-	$get_token = isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
-
-	//Recupere l'id 
-	$req = $bdd->prepare('SELECT tok_user FROM token where tok_token= :_token');
-	$req->execute(array('_token' =>$get_token));
-	$tokId = $req->fetch();
-	$tokId = $tokId[0];
-	$req->closeCursor();
-
-	// variables tests
-	if ( !$get_token )
-		throw new Exception('MAJ :: Token not specified');
-	if(!$tokId)
-		throw new Exception('Token non valide');
+	echo $get_action;
 
 	// actions
 	switch($get_action)
 	{
 		case 'MAJ-product':
+
 			// variables
+			$get_token = isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
 			$get_product = isset($_REQUEST['product']) ? json_decode($_REQUEST['product'], TRUE) : null;
 
 			// variables tests
+			if ( !$get_token )
+				throw new Exception('MAJ :: Token not specified');
+
 			if ( !$get_product )
 				throw new Exception('MAJ :: Product not specified');
 
@@ -74,7 +65,17 @@ try
 
 			if ( !is_numeric($get_product['prd_prix']) )
 				throw new Exception('MAJ :: Price invalid');
-			
+
+			//Recupere l'id a partir du token
+			$req = $bdd->prepare('SELECT tok_user FROM token where tok_token= :_token');
+			$req->execute(array('_token' =>$get_token));
+			$tokId = $req->fetch();
+			$tokId = $tokId[0];
+			$req->closeCursor();
+
+			if(!$tokId)
+				throw new Exception('Token non valide');
+					
 			// code MAJ du produit visité
 			$req = $bdd->prepare($sql_prepared_update_product);
             $req->bindValue('_libelle' , $get_product['prd_libelle'],   PDO::PARAM_STR);
@@ -104,10 +105,15 @@ try
 			break;
 
 		case 'MAJ-panier':
-		// variables
+
+			// variables
+			$get_token = isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
 			$get_panier = isset($_REQUEST['panier']) ? json_decode($_REQUEST['panier'], TRUE) : null;
 
 			// variables tests
+			if ( !$get_token )
+				throw new Exception('MAJ :: Token not specified');
+
 			if ( !$get_panier )
 				throw new Exception('MAJ :: Panier not specified');
 
@@ -119,6 +125,17 @@ try
 
 			if ( !is_numeric($get_panier['montant']) )
 				throw new Exception('MAJ :: Price invalid');
+
+
+			//Recupere l'id a partir du token
+			$req = $bdd->prepare('SELECT tok_user FROM token where tok_token= :_token');
+			$req->execute(array('_token' =>$get_token));
+			$tokId = $req->fetch();
+			$tokId = $tokId[0];
+			$req->closeCursor();
+
+			if(!$tokId)
+				throw new Exception('Token non valide');
 	
 			// code MAJ du produit visité
 			$req = $bdd->prepare($sql_prepared_update_panier);
@@ -158,9 +175,13 @@ try
 
 		case 'MAJ-calcul':
 
+			$get_token = isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
 			$get_calcul = isset($_REQUEST['calcul']) ? json_decode($_REQUEST['calcul'], TRUE) : null;
 
 			// variables tests
+			if ( !$get_token )
+				throw new Exception('MAJ :: Token not specified');
+
 			if ( !$get_calcul )
 				throw new Exception('MAJ ::Calcul not specified');
 
@@ -172,6 +193,17 @@ try
 
 			if ( !is_numeric($get_calcul['montant']) )
 				throw new Exception('MAJ :: Price invalid');
+
+			//Recupere l'id 
+			$req = $bdd->prepare('SELECT tok_user FROM token where tok_token= :_token');
+			$req->execute(array('_token' =>$get_token));
+			$tokId = $req->fetch();
+			$tokId = $tokId[0];
+			$req->closeCursor();
+
+			// variables tests
+			if(!$tokId)
+				throw new Exception('Token non valide');
 	
 			$apv=0;
 			$frais_liv = 0;		
@@ -322,6 +354,45 @@ try
 			if(!$arr)
 				throw new Exception('MAJ :: Users or Password invalid');
 			//action a définir si ds la base 
+			break;
+
+		case 'MAJ-connect':
+			$get_token_ext = isset($_GET['token_ext']) ? htmlspecialchars($_GET['token_ext']) : null;
+
+			// variables tests
+			if ( !$get_token_ext )
+				throw new Exception('MAJ :: token_ext not specified');
+
+			$req = $bdd->prepare('SELECT tok_token FROM token where tok_ext= :_token_ext');
+			$req->execute(array('_token_ext' =>$get_token_ext));
+			$token = $req->fetch();
+			$token = $token[0];
+			$req->closeCursor();
+
+			if(!$token)
+				throw new Exception('Vous etês connecté en tant que visiteur');
+
+			$response['Token'] = $token;
+
+			break;
+
+		case 'MAJ-logout':
+			$get_token_ext = isset($_GET['token_ext']) ? htmlspecialchars($_GET['token_ext']) : null;
+
+			// variables tests
+			if ( !$get_token_ext )
+				throw new Exception('MAJ :: token_ext not specified');
+
+			$req = $bdd->prepare('UPDATE token SET tok_user = :_myNull , tok_token = :_myNull where tok_ext= :_token_ext');
+			$myNull = null;
+			$req->bindParam(':_myNull', $myNull, PDO::PARAM_NULL);
+			$req->bindParam(':_myNull', $myNull, PDO::PARAM_NULL);
+			$req->bindParam(':_token_ext', $get_token_ext, PDO::PARAM_STR);
+			$req->execute();
+			$req->closeCursor();
+
+			$response['Message'] = 'A bientot';
+
 			break;
 
 		default:
