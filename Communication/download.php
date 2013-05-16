@@ -1,7 +1,7 @@
 <?php
 	include_once 'HZip.class.php';
 	include_once 'Functions.class.php';
-	//$id_user = $_SESSION['usr_fus']['id'];
+	$id_user ='54fv4sdrtgd455yhbd4';
 
 	//Delete folder function 
 	
