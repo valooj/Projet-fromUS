@@ -40,8 +40,7 @@ try
 
 	// externals datas
 	$get_action = isset($_GET['action']) ? htmlspecialchars($_GET['action']) : null;
-	echo $get_action;
-
+	
 	// actions
 	switch($get_action)
 	{
