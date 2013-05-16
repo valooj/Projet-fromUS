@@ -98,9 +98,10 @@ console.log( "Variable from Content Script: "+localStorage["regDesc"] );
 $.Zebra_Dialog({
     'type': 'false',
 	'modal': false,
-	'widht': 100,
+	'width': 450,
 	'position': ['left + 20', 'top + 20'],
 	'overlay_close': false,
+	'auto_close': false,
 	'title': 'From-us.com',
 	'message': '<input type="button" value="Login" id="log" /></br>' + 
 				'<form id="myForm">' +
@@ -166,7 +167,7 @@ $.Zebra_Dialog({
 					}},
 					
 					// bouton annuler
-                    {caption: 'Annuler', callback: function() { }}
+                    {caption: 'Annuler', callback: function() { close()}}
                 ]
 });
 

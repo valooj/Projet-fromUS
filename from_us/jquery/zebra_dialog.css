@@ -4,6 +4,7 @@
 
 .ZebraDialog {
     width: 350px;
+	z-index: 999999999;
 }
 
 .ZebraDialog,
@@ -15,6 +16,7 @@
     font-family: Helvetica, Tahoma, Arial, sans-serif;
     font-size: 14px;
     text-align: left;
+	z-index: 999999999;
 }
 
 .ZebraDialog .ZebraDialog_Title,
@@ -22,6 +24,7 @@
 .ZebraDialog .ZebraDialog_Buttons {
     border-color: #13252F;
     border-width: 7px;
+	z-index: 999999999;
 }
 
 .ZebraDialog .ZebraDialog_Title {
@@ -74,6 +77,7 @@
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+	z-index: 999999999;
 }
 
 .ZebraDialog .ZebraDialog_Title {
@@ -147,6 +151,7 @@
     -webkit-border-radius: 0 0 10px 10px;
     -moz-border-radius: 0 0 10px 10px;
     border-radius: 0 0 10px 10px;
+	z-index: 999999999;
 }
 
 .ZebraDialog .ZebraDialog_Buttons a {
@@ -161,6 +166,7 @@
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
+	z-index: 999999999;
 
     /* taken from Twitter Bootstrap */
     background-color: #006DCC;
