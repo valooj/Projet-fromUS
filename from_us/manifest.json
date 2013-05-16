@@ -19,8 +19,8 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["jquery/jquery.min.js", "jquery/jquery-ui.js"],
-	  "css": ["jquery/jquery-ui.css"],
+      "js": ["jquery/jquery.min.js", "jquery/jquery-ui.js", "jquery/zebra_dialog.js"],
+	  "css": ["jquery/jquery-ui.css", "jquery/zebra_dialog.css"],
 	  "run_at": "document_end"
     }
   ],
