@@ -4458,3 +4458,155 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","prd_site":"bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro","prd_desc":"With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-211226-fpl-i1?$Detail$","prd_prix":"110","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","prd_site":"bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro","prd_desc":"With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-211226-fpl-i1?$Detail$","prd_prix":"110","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","prd_site":"bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro","prd_desc":"With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-211226-fpl-i1?$Detail$","prd_prix":"110","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","prd_site":"bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro","prd_desc":"With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-211226-fpl-i1?$Detail$","prd_prix":"110","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","prd_site":"bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro","prd_desc":"With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-211226-fpl-i1?$Detail$","prd_prix":"110","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","prd_site":"bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro","prd_desc":"With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-211226-fpl-i1?$Detail$","prd_prix":"110","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","prd_site":"bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro","prd_desc":"With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-211226-fpl-i1?$Detail$","prd_prix":"110","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","prd_site":"bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro","prd_desc":"With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-211226-fpl-i1?$Detail$","prd_prix":"110","prd_cat":"25"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE","qte":"1","montant":"110","categ":"25"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Side Slit Capri Jean","prd_site":"bebe.com/Denim/View-All/Side-Slit-Capri-Jean/pc/225/c/0/sc/226/52820.pro","prd_desc":"With a slit at the hemline, comfy fit and cropped cut, this pair of colorful bebe jeans is sure to wake up any top. Try it with a neutral top and a pair of wedge sandals. ","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-217245-fpl-i1?$Detail$","prd_prix":"79","prd_cat":"19"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"Side Slit Capri Jean","qte":"2","montant":"79","categ":"19"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"Side Slit Capri Jean","url":"bebe.com/Denim/View-All/Side-Slit-Capri-Jean/pc/225/c/0/sc/226/52820.pro","desc":"With a slit at the hemline, comfy fit and cropped cut, this pair of colorful bebe jeans is sure to wake up any top. Try it with a neutral top and a pair of wedge sandals. ","qte":"2","montant":206.98,"categ":"19"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"High Low Linen Blazer","prd_site":"bebe.com/Jackets-Outerwear/View-All/High-Low-Linen-Blazer/pc/227/c/0/sc/228/51861.pro","prd_desc":"With a high-low hemline, bold color and lightweight stretch, this bebe linen blazer is a polish-cool way to inject your summer wardrobe with color. Work yours into suiting pieces or toss it over [...]","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-215970-fpl-i1?$Detail$","prd_prix":"159","prd_cat":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"High Low Linen Blazer","qte":"2","montant":"159","categ":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"High Low Linen Blazer","url":"bebe.com/Jackets-Outerwear/View-All/High-Low-Linen-Blazer/pc/227/c/0/sc/228/51861.pro","desc":"With a high-low hemline, bold color and lightweight stretch, this bebe linen blazer is a polish-cool way to inject your summer wardrobe with color. Work yours into suiting pieces or toss it over [...]","qte":"2","montant":440.82,"categ":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Solid Boyshorts BEBE SPORT ONLINE EXCLUSIVE","prd_site":"bebe.com/bebe-Sport/View-All/Solid-Boyshorts-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/233/52377.pro","prd_desc":"Whether it's going for a jog or checking out a cardio class, this colorful bebe short is a super-comfy way to update your activewear collection. Made from lightweight breathable fabric that dries[...]","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-210942-rie-i1?$Detail$","prd_prix":"19","prd_cat":"26"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => a12344v234577zee
+    [product] => {"prd_libelle":"Solid Boyshorts BEBE SPORT ONLINE EXCLUSIVE","prd_site":"bebe.com/bebe-Sport/View-All/Solid-Boyshorts-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/233/52377.pro","prd_desc":"Whether it's going for a jog or checking out a cardio class, this colorful bebe short is a super-comfy way to update your activewear collection. Made from lightweight breathable fabric that dries[...]","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-210942-rie-i1?$Detail$","prd_prix":"19","prd_cat":"26"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => a12344v234577zee
+    [calcul] => {"libelle":"Solid Boyshorts BEBE SPORT ONLINE EXCLUSIVE","qte":"2","montant":"19","categ":"26"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => a12344v234577zee
+    [panier] => {"libelle":"Solid Boyshorts BEBE SPORT ONLINE EXCLUSIVE","url":"bebe.com/bebe-Sport/View-All/Solid-Boyshorts-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/233/52377.pro","desc":"Whether it's going for a jog or checking out a cardio class, this colorful bebe short is a super-comfy way to update your activewear collection. Made from lightweight breathable fabric that dries[...]","qte":"2","montant":49.78,"categ":"26"}
+)
+
+===========================================

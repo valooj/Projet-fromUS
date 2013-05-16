@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Serveur: localhost
--- Généré le : Jeu 16 Mai 2013 à 07:08
+-- Généré le : Lun 13 Mai 2013 à 14:39
 -- Version du serveur: 5.5.8
 -- Version de PHP: 5.3.5
 
@@ -320,22 +320,40 @@ CREATE TABLE IF NOT EXISTS `commande_detail` (
   `cmdd_united` varchar(5) NOT NULL,
   `cmdd_proforma` varchar(100) NOT NULL,
   `cmdd_ent` int(11) NOT NULL,
-  PRIMARY KEY (`cmdd_id`),
-  UNIQUE KEY `cmdd_url` (`cmdd_url`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1270 ;
+  PRIMARY KEY (`cmdd_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1192 ;
 
 --
 -- Contenu de la table `commande_detail`
 --
 
 INSERT INTO `commande_detail` (`cmdd_id`, `cmdd_libelle`, `cmdd_url`, `cmdd_desc`, `cmdd_qte`, `cmdd_montant`, `cmdd_categ`, `cmdd_poids`, `cmdd_unitep`, `cmdd_larg`, `cmdd_long`, `cmdd_haut`, `cmdd_united`, `cmdd_proforma`, `cmdd_ent`) VALUES
-(1, 'Deuter Kid Comfort III', 'ebags.store.rakuten.com/p/deuter-kid-comfort-iii/227828231.html', 'integrated sun roof[...]', 3, '430.42', 18, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
-(2, 'SwissGear Travel Gear ScanSmart Backpack', 'ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html', 'Comfort shoulder straps[...]', 7, '88.12', 21, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
-(1260, 'Side Slit Capri Jean', 'bebe.com/Bottoms/View-All/Side-Slit-Capri-Jean/pc/218/c/0/sc/219/52820.pro', 'With a slit at the hemline, comfy fit and cropped cut, this pair of colorful bebe jeans is sure to wake up any top. Try it with a neutral top and a pair of wedge sandals. ', 10, '206.98', 15, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
-(1264, 'Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE', 'bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro', 'With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.', 8, '320.14', 13, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
-(1267, 'Side Slit Capri Jean', 'bebe.com/Denim/View-All/Side-Slit-Capri-Jean/pc/225/c/0/sc/226/52820.pro', 'With a slit at the hemline, comfy fit and cropped cut, this pair of colorful bebe jeans is sure to wake up any top. Try it with a neutral top and a pair of wedge sandals. ', 2, '206.98', 19, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
-(1268, 'High Low Linen Blazer', 'bebe.com/Jackets-Outerwear/View-All/High-Low-Linen-Blazer/pc/227/c/0/sc/228/51861.pro', 'With a high-low hemline, bold color and lightweight stretch, this bebe linen blazer is a polish-cool way to inject your summer wardrobe with color. Work yours into suiting pieces or toss it over [...]', 2, '440.82', 16, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
-(1269, 'Solid Boyshorts BEBE SPORT ONLINE EXCLUSIVE', 'bebe.com/bebe-Sport/View-All/Solid-Boyshorts-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/233/52377.pro', 'Whether it''s going for a jog or checking out a cardio class, this colorful bebe short is a super-comfy way to update your activewear collection. Made from lightweight breathable fabric that dries[...]', 2, '49.78', 26, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1);
+(66, 'Manteau', '', '', 1, '1000.00', 2677, '2.00', 'kg', '10.00', '10.00', '10.00', 'cm', '', 68),
+(67, 'Ipad', '', '', 1, '499.99', 765, '2.00', 'kg', '10.00', '10.00', '10.00', 'cm', '', 69),
+(1136, 'Libelle', 'http://www.amazon.com', '', 1, '100.00', 2677, '1.00', 'kg', '10.00', '10.00', '10.00', 'cm', '', 88),
+(1137, 'Manteau', '', '', 1, '1000.00', 2677, '1.00', 'kg', '10.00', '10.00', '10.00', 'kg', '', 89),
+(1143, 'Harry potter', 'www.amazon.com', '', 1, '40.00', 573, '1.00', 'kg', '10.00', '10.00', '10.00', 'cm', '', 95),
+(1145, 'Libelle de test ', 'www.amazon.com', '', 1, '100.00', 101, '1.00', 'kg', '10.00', '10.00', '10.00', 'cm', '', 97),
+(1146, 'Lord of the rings', 'www.amazon.com', '', 1, '49.00', 573, '1.00', 'kg', '10.00', '10.00', '10.00', 'cm', '', 98),
+(1147, 'Test and', 'Test', 'test avec and', 1, '1000.00', 101, '0.00', '', '0.00', '0.00', '0.00', '', '', 99),
+(1148, 'Jurassic Park', 'http://www.amazon.com', 'Livre jurassic park', 1, '100.00', 573, '0.00', '', '0.00', '0.00', '0.00', '', '', 100),
+(1149, 'Libelle', '', '', 1, '119.99', 1602, '0.50', 'cm', '10.00', '10.00', '10.00', 'kg', '', 101),
+(1162, 'Libelle - test and', 'http://www.amazon.fr', 'test', 1, '140.00', 87, '0.00', '', '0.00', '0.00', '0.00', '', '', 114),
+(1163, 'Libelle - test and', 'http://www.amazon.fr', 'test', 1, '140.00', 87, '0.00', '', '0.00', '0.00', '0.00', '', '', 115),
+(1164, 'Libelle - test a1', 'http://www.amazon.fr', 'test', 1, '120.00', 649, '0.00', '', '0.00', '0.00', '0.00', '', '', 116),
+(1165, 'Libelle - test not', 'test', '', 1, '1000.00', 649, '1.00', 'kg', '10.00', '10.00', '10.00', 'cm', '', 117),
+(1166, 'Libelle - notif ', 'test', '', 1, '100.00', 649, '1.00', 'kg', '10.00', '10.00', '10.00', 'cm', '', 118),
+(1167, 'Libelle otfi 3', 'test', '', 1, '912.00', 649, '1.00', 'kg', '10.00', '10.00', '10.00', 'cm', '', 119),
+(1180, 'IPAD', 'http://www.best-buy.com', '', 1, '499.00', 87, '0.00', '', '0.00', '0.00', '0.00', '', '', 137),
+(1181, 'IPAD', 'http://www.best-buy.com', '', 3, '499.00', 86, '0.00', '', '0.00', '0.00', '0.00', '', '', 138),
+(1182, 'Ipad mini', 'http://www.best-buy.com', '', 2, '100.00', 1816, '0.00', '', '0.00', '0.00', '0.00', '', '', 139),
+(1183, 'IPAD NOrmale', 'http://www.best-buy.com', '', 1, '499.00', 0, '0.00', '', '0.00', '0.00', '0.00', '', '', 139),
+(1184, 'IPAD mini 1', 'http://www.best-buy.com', '', 1, '100.00', 765, '0.00', '', '0.00', '0.00', '0.00', '', '', 140),
+(1185, 'IPAD normal 1', 'http://www.best-buy.com', '', 2, '499.00', 765, '0.00', '', '0.00', '0.00', '0.00', '', '', 140),
+(1188, 'Libelle', '', '', 1, '100.00', 87, '1.00', 'kg', '10.00', '10.00', '10.00', 'cm', '', 143),
+(1189, 'Libelle', '', '', 1, '150.00', 88, '2.00', 'kg', '10.00', '10.00', '10.00', 'cm', '', 144),
+(1190, 'Test IPAD', 'http://www.ebay.com', '', 1, '1000.00', 87, '1.00', 'kg', '10.00', '10.00', '10.00', 'cm', '', 145),
+(1191, 'Test IPAD', 'http://www.ebay.com', '', 1, '1000.00', 87, '1.00', 'kg', '10.00', '10.00', '10.00', 'cm', '', 146);
 
 -- --------------------------------------------------------
 
@@ -1294,40 +1312,16 @@ CREATE TABLE IF NOT EXISTS `produits` (
   `prd_vis` int(1) NOT NULL,
   PRIMARY KEY (`prd_id`),
   UNIQUE KEY `prd_site` (`prd_site`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=268 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Contenu de la table `produits`
 --
 
 INSERT INTO `produits` (`prd_id`, `prd_libelle`, `prd_site`, `prd_desc`, `prd_cat`, `prd_visu`, `prd_prix`, `prd_vis`) VALUES
-(1, 'IPAD 2.0 Wifi 32GO', 'http://www.apple.com', '<p>Ipad from Apple.com</p>', 9, 'prd_ipad.png', '399.99', 0),
-(5, 'Kindle Fire', 'http://www.amazon.com', '<p>New kindle fire from Amazon.com</p>', 9, 'kindle.jpg', '159.00', 0),
-(6, 'eBags Packing Cubes - 3pc Set', 'rakuten.com/prod/ebags-packing-cubes-3pc-set/203422651.html', 'dscnico', 99, 'visunico', '21.99', 1),
-(10, 'HCG Diet Drops with Amino Acids and Vitamin B12', 'rakuten.com/prod/hcg-diet-drops-with-amino-acids-and-vitamin-b12/234632502.html', 'dscnico', 99, 'visunico', '32.95', 1),
-(61, 'Callister Cellars Double Delight', 'rakuten.com/prod/callister-cellars-double-delight/224746775.html', 'dscnico', 99, 'visunico', '39.95', 1),
-(108, 'PlayStation 3D Glasses', 'rakuten.com/prod/playstation-3d-glasses/224928388.html', 'Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]', 13, '2', '18.99', 0),
-(125, 'Skyway Retreat 36" Extra Large Duffel (Stone)', 'ebags.store.rakuten.com/p/skyway-retreat-36-extra-large-duffel-stone/221383220.html', 'dscnico', 0, 'visunico', '36.99', 0),
-(126, 'Samsonite Mobile Office Wheeled Notebook Case', 'ebags.store.rakuten.com/p/samsonite-mobile-office-wheeled-notebook-case/210977461.html', 'dscnico', 0, 'visunico', '2.00', 0),
-(130, 'SwissGear Travel Gear ScanSmart Backpack', 'ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html', 'dscnico', 0, 'visunico', '67.99', 0),
-(157, 'Deuter Kid Comfort III', 'ebags.store.rakuten.com/p/deuter-kid-comfort-iii/227828231.html', 'dscnico', 0, 'visunico', '299.00', 0),
-(161, 'Puma Pro Performance Sport-Bud + Mic', 'ebags.store.rakuten.com/p/puma-pro-performance-sport-bud-mic/243698023.html', 'dscnico', 0, 'visunico', '79.99', 0),
-(162, 'Puma Pro Performance Sport-Bud + Mic', 'ebags.store.rakuten.com/p/puma-pro-performance-sport-bud-mic/243698024.html', 'dscnico', 0, 'visunico', '79.99', 0),
-(163, 'Samsonite Travel Accessories Medium Horizontal Camera Case', 'ebags.store.rakuten.com/p/samsonite-travel-accessories-medium-horizontal-camera-case/245457725.html', 'dscnico', 0, 'visunico', '29.99', 0),
-(165, 'Incipio NGP for iPad mini - Translucent Pink IPAD-304', 'ebags.store.rakuten.com/p/incipio-ngp-for-ipad-mini-translucent-pink-ipad-304/243743928.html', 'dscnico', 0, 'visunico', '24.99', 0),
-(166, 'Incipio Premium IPAD-200 Carrying Case (Folio) for iPad - Black', 'ebags.store.rakuten.com/p/incipio-premium-ipad-200-carrying-case-folio-for-ipad-black/223014731.html', 'dscnico', 27, 'visunico', '39.99', 0),
-(167, 'iPad Sleeve', 'ebags.store.rakuten.com/p/ipad-sleeve/245446349.html', 'dscnico', 21, 'visunico', '34.95', 0),
-(168, 'Designer Sleeves Designer Sleeve for 17 MacBook Pro', 'ebags.store.rakuten.com/p/designer-sleeves-designer-sleeve-for-17-macbook-pro/211031951.html', 'Thick, durable neoprene cushions your laptop for maximum moisture, shock and scratch protection[...]', 21, 'http://img.rakuten.com/PIC/41918861/0/1/350/41918861.jpg', '40.99', 0),
-(169, 'Prezzo Acrylic Photo Mini Bag', 'ebags.store.rakuten.com/p/prezzo-acrylic-photo-mini-bag/211249130.html', 'Zipper colsure', 15, 'http://img.rakuten.com/PIC/41923129/0/1/350/41923129.jpg', '25.49', 0),
-(170, 'Penguin Kids'' Backpack', 'ebags.store.rakuten.com/p/penguin-kids-backpack/245170625.html', 'Kids Hardside backpack with fabric back', 26, 'http://img.rakuten.com/PIC/51345720/0/1/350/51345720.jpg', '30.00', 0),
-(172, 'BYU Cougars Heart Watch', 'ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html', 'Designed for Ladies', 24, 'http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg', '60.00', 0),
-(174, 'liazzade', 'siazzzade', '6', 1, '6', '6.00', 0),
-(223, '1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium', 'rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html', 'Stunning and elegant this dazzling heart pendant speaks volumes with it''s exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]', 3, '2', '185.00', 0),
-(245, 'Side Slit Capri Jean', 'bebe.com/Bottoms/View-All/Side-Slit-Capri-Jean/pc/218/c/0/sc/219/52820.pro', 'With a slit at the hemline, comfy fit and cropped cut, this pair of colorful bebe jeans is sure to wake up any top. Try it with a neutral top and a pair of wedge sandals. ', 15, 'http://s7d9.scene7.com/is/image/bebe/bb-217245-fpl-i1?$Detail$', '79.00', 0),
-(250, 'Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE', 'bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro', 'With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.', 25, 'http://s7d9.scene7.com/is/image/bebe/bb-211226-fpl-i1?$Detail$', '110.00', 0),
-(264, 'Side Slit Capri Jean', 'bebe.com/Denim/View-All/Side-Slit-Capri-Jean/pc/225/c/0/sc/226/52820.pro', 'With a slit at the hemline, comfy fit and cropped cut, this pair of colorful bebe jeans is sure to wake up any top. Try it with a neutral top and a pair of wedge sandals. ', 19, 'http://s7d9.scene7.com/is/image/bebe/bb-217245-fpl-i1?$Detail$', '79.00', 0),
-(265, 'High Low Linen Blazer', 'bebe.com/Jackets-Outerwear/View-All/High-Low-Linen-Blazer/pc/227/c/0/sc/228/51861.pro', 'With a high-low hemline, bold color and lightweight stretch, this bebe linen blazer is a polish-cool way to inject your summer wardrobe with color. Work yours into suiting pieces or toss it over [...]', 16, 'http://s7d9.scene7.com/is/image/bebe/bb-215970-fpl-i1?$Detail$', '159.00', 0),
-(266, 'Solid Boyshorts BEBE SPORT ONLINE EXCLUSIVE', 'bebe.com/bebe-Sport/View-All/Solid-Boyshorts-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/233/52377.pro', 'Whether it''s going for a jog or checking out a cardio class, this colorful bebe short is a super-comfy way to update your activewear collection. Made from lightweight breathable fabric that dries[...]', 26, 'http://s7d9.scene7.com/is/image/bebe/bb-210942-rie-i1?$Detail$', '19.00', 0);
+(1, 'IPAD 2.0 Wifi 32GO', 'http://www.apple.com', '<p>Ipad from Apple.com</p>', 9, 'prd_ipad.png', '399.99', 1),
+(5, 'Kindle Fire', 'http://www.amazon.com', '<p>New kindle fire from Amazon.com</p>', 9, 'kindle.jpg', '159.00', 1),
+(6, 'eBags Packing Cubes - 3pc Set', 'rakuten.com/prod/ebags-packing-cubes-3pc-set/203422651.html', 'dscnico', 99, 'visunico', '21.99', 1);
 
 -- --------------------------------------------------------
 
@@ -14386,17 +14380,15 @@ CREATE TABLE IF NOT EXISTS `pts_bonus` (
   `pts_id` int(11) NOT NULL AUTO_INCREMENT,
   `pts_cli` int(11) NOT NULL,
   `pts_nb` int(100) NOT NULL,
-  PRIMARY KEY (`pts_id`),
-  UNIQUE KEY `pts_cli` (`pts_cli`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=229 ;
+  PRIMARY KEY (`pts_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Contenu de la table `pts_bonus`
 --
 
 INSERT INTO `pts_bonus` (`pts_id`, `pts_cli`, `pts_nb`) VALUES
-(87, 1, 3750),
-(132, 0, 250);
+(1, 1, 7200);
 
 -- --------------------------------------------------------
 
@@ -27036,27 +27028,6 @@ INSERT INTO `textes` (`texte_id`, `texte_libelle`, `texte_contenu`, `texte_lgue`
 (74, 'WELC_DEJA', 'I''m already registered and I present the info to buy and start and', 'en', 1),
 (75, 'INDEX_FUS', '<p>Vous souhaitez acheter un produit de la marque %marque% , connectez vous directement sur le site ou inscrivez vous ...<br /> From-US.com facilite vos achats et vous permets de : </p>\n<ul>\n<li>Faire des &eacute;conomies</li>\n<li>D&eacute;couvrir de nouveaux produits exclusifs aux USA</li>\n<li>Vous faire livrer n''importe o&ugrave; sans aucune autre intervention de votre part.</li>\n</ul>\n<p>Avec From-US.com, l''import devient plus facile....</p>', 'fr', 1),
 (76, 'INDEX_FUS_A', '<p>Vous souhaitez acheter un produit: %marque% , connectez vous directement sur le site ou inscrivez vous ...<br /> From-US.com facilite vos achats et vous permets de : </p>\r\n<ul>\r\n<li>Faire des &eacute;conomies</li>\r\n<li>D&eacute;couvrir de nouveaux produits exclusifs aux USA</li>\r\n<li>Vous faire livrer n''importe o&ugrave; sans aucune autre intervention de votre part.</li>\r\n</ul>\r\n<p>Avec From-US.com, l''import devient plus facile....</p>', 'fr', 1);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `token`
---
-
-CREATE TABLE IF NOT EXISTS `token` (
-  `tok_id` int(11) NOT NULL AUTO_INCREMENT,
-  `tok_user` int(11) NOT NULL,
-  `tok_token` varchar(200) NOT NULL,
-  PRIMARY KEY (`tok_id`),
-  UNIQUE KEY `tok_token` (`tok_token`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Contenu de la table `token`
---
-
-INSERT INTO `token` (`tok_id`, `tok_user`, `tok_token`) VALUES
-(1, 1, 'a12344v234577zee');
 
 -- --------------------------------------------------------
 
