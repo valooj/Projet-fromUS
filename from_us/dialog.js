@@ -303,7 +303,7 @@ $( ".ZebraDialog" ).draggable();
 	localStorage.removeItem('regOffer');
 
 }
-});
+);
 
 
 
