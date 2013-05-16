@@ -5036,3 +5036,138 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 23457685854343
+    [product] => {"prd_libelle":"Elastic Fit Flare Dress","prd_site":"bebe.com/Dresses/View-All/Elastic-Fit-Flare-Dress/pc/197/c/0/sc/198/51856.pro","prd_desc":"With impactful black and white contrast, sexy heart-shaped neckline and luxe heavy-drape skirt, this bebe dress is sure to inject your summer look with a dose of elegance. Elevate yours with a pa[...]","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-213710-b_w-i1?$Detail$","prd_prix":"129","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 23457685854343
+    [product] => {"prd_libelle":"Elastic Fit Flare Dress","prd_site":"bebe.com/Dresses/View-All/Elastic-Fit-Flare-Dress/pc/197/c/0/sc/198/51856.pro","prd_desc":"With impactful black and white contrast, sexy heart-shaped neckline and luxe heavy-drape skirt, this bebe dress is sure to inject your summer look with a dose of elegance. Elevate yours with a pa[...]","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-213710-b_w-i1?$Detail$","prd_prix":"129","prd_cat":"default"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================

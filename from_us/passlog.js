@@ -1,4 +1,5 @@
-var _urlLog = 'https://localhost/projetFU/Communication/cible3.php?action=MAJ-log';
+var token_ext = 'ezgrzgrzg463663';
+var _urlLog = 'https://localhost/projetFU/Communication/cible3.php?action=MAJ-login&token_ext='+token_ext;
 
 function check() {
 	alert( "login");
@@ -60,6 +61,7 @@ if (isOpen != true) {
 						var postLog = JSON.stringify(jsonLog);
 						logJSON = {log:postLog};
 						check();
+						$(this).dialog('destroy');
 				}
 			},
 	

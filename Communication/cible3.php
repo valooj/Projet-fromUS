@@ -40,7 +40,7 @@ try
 
 	// externals datas
 	$get_action = isset($_GET['action']) ? htmlspecialchars($_GET['action']) : null;
-	
+
 	// actions
 	switch($get_action)
 	{
@@ -331,7 +331,7 @@ try
 
 			break;
 
-		case 'MAJ-log':
+		case 'MAJ-login':
 			$get_log = isset($_REQUEST['log']) ? json_decode($_REQUEST['log'], TRUE) : null;
 
 			// variables tests
@@ -352,7 +352,16 @@ try
 
 			if(!$arr)
 				throw new Exception('MAJ :: Users or Password invalid');
+
 			//action a définir si ds la base 
+			$new_token_user = uniqid();
+			$req = $bdd->prepare('UPDATE token SET tok_user = :_id_user , tok_token = :_token_user where tok_ext= :_token_ext');
+			$req->bindParam(':_id_user', $arr[0], PDO::PARAM_INT);
+			$req->bindParam(':_token_user', $new_token_user, PDO::PARAM_STR);
+			$req->bindParam(':_token_ext', $get_token_ext, PDO::PARAM_STR);
+			$req->execute();
+			$req->closeCursor();
+
 			break;
 
 		case 'MAJ-connect':
