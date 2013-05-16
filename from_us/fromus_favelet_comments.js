@@ -767,7 +767,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 	
 		case "www.ruelala.com":
 			{
-				fromus_objectname				=	document.getElementById("productAttributes").getElementsByTagName("h2").textContent;
+				fromus_objectname				=	document.getElementById("productAttributes").getElementsByTagName("h2")[0].textContent;
 				
 				fromus_pricemin					=	document.getElementById("salePrice").textContent;		
 		
@@ -949,23 +949,23 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{			
 				if(document.getElementById("quickview")!=undefined)
 					{	// Si c'est une preview
-						fromus_objectname		=	document.getElementsByClassName("title")[0].textContent;
+						fromus_objectname		=	document.getElementById("quickview").getElementsByTagName("p")[0].textContent;
 						
-						fromus_pricemin			=	document.getElementsByClassName("ourprice")[0].textContent;
+						fromus_pricemin			=	fromus_reg.exec(document.getElementById("quickview").getElementsByTagName("div")[1].textContent.replace(/s/g,''))[0];
 						
-						fromus_imgtmp			=	document.getElementById("quickview").innerHTML;
-						fromus_img				=	/src=\"(.*)\"/gi.exec(fromus_imgtmp)[1];				
+						fromus_img					=	document.getElementById("quickview").getElementsByTagName("div")[0].getElementsByTagName("img")[0].src;
 					}
 				else
 					{	// Si c'est une fiche
-						fromus_objectnametmp	=	document.getElementById("item-info").innerHTML;
-						fromus_objectname		=	/\<h1 itemprop=\"name\"\>(.*)\<\/h1\>/.exec(fromus_objectnametmp)[1];
+						fromus_objectname		=	document.getElementById("item-info").getElementsByTagName("h1")[0].textContent;
+						
+						fromus_img					=	document.getElementById("zoom1").getElementsByTagName("img")[0].src;
 						
 						fromus_pricemin			=	document.getElementsByClassName("current-price")[0].textContent;	
 					}		
 				if(document.getElementsByClassName("desc")[0]!=undefined)
 					{
-						fromus_desc					=	document.getElementsByClassName("desc")[0].textContent;
+						fromus_desc					=	document.getElementById("quickview").getElementsByTagName("div")[1].getElementsByTagName("div")[0].textContent;
 					}
 				if(document.getElementById("item-description")!=undefined)
 					{
@@ -991,12 +991,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemintmp				=	document.getElementsByClassName("price")[0].textContent;
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 
-				fromus_imgtmp					=	document.getElementsByClassName("boom-three-column product-image vat")[0].innerHTML;
-				fromus_img						=	/\<img src=\"(.*\.jpg)/.exec(fromus_imgtmp)[1];
+				fromus_img							=	document.getElementsByClassName("photo")[0].src;
 
 				if(document.getElementsByClassName("product-content")[0]!=undefined)
 					{
-						fromus_desc					=	document.getElementsByClassName("product-content")[0].textContent;
+						fromus_desc					=	document.getElementsByClassName("product-content")[0].textContent.replace(/\n/g,'');
 					}				
 				
 			}break;
@@ -1051,8 +1050,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 				fromus_pricemin					=	document.getElementsByClassName("price js_toPrice")[0].textContent.replace(/([0-9]{1,})([0-9]{2})/g, '$1\.$2');
 
-				fromus_imgtmp						=	document.getElementById("imgHolder").innerHTML;
-				fromus_img						=	"http:"+/\<img src=\"(.*)\" alt/.exec(fromus_imgtmp)[1];
+				fromus_img							=	document.getElementById("imgHolder").getElementsByTagName("img")[0].src;
 				
 				if(document.getElementsByClassName("addlEquity")[0]!=undefined)
 					{
@@ -1084,8 +1082,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}
 				else
 					{
-						fromus_objectnametmp	=	document.getElementById("productsummary").textContent;
-						fromus_objectname		=	/(.*)\n/.exec(fromus_objectnametmp)[0];
+						fromus_objectname	=	document.getElementById("productsummary").getElementsByTagName("h1")[0].textContent;
 					}
 
 				if(document.getElementById("saleprice")!=undefined)
@@ -1100,19 +1097,13 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 				if(document.getElementById("postcard-thumbnail")!=undefined)
 					{
-						fromus_imgtmp			=	document.getElementById("postcard-thumbnail").innerHTML.replace(/\s/gi,'');
+						fromus_img					=	document.getElementById("postcard-thumbnail").getElementsByTagName("a")[0].getElementsByTagName("img")[0].src;
 					}
 				else
 					{
-						fromus_imgtmp			=	document.getElementById("imagepreview").innerHTML.replace(/\s/gi,'');
+						fromus_img					=	document.getElementById("imagepreview").getElementsByTagName("img")[0].src;
 					}
-				fromus_img						=	/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
-		
-				if(/;/.test(fromus_img))	// Certaines src n'ont pas d'extension, elles sont coupées au ; et cette vérification tronque
-					{						// ce qui dépasse
-						fromus_img				=	fromus_img.replace(/;.*/g,'');
-					}
-					
+
 				if(document.getElementById("tabbed-bundle-overview")!=undefined)
 					{
 						fromus_desc					=	document.getElementById("tabbed-bundle-overview").textContent;
@@ -1143,54 +1134,19 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}				
 			}break;
 
-		case "www.toofaced.com":
-			{
-				fromus_objectname				=	document.getElementsByClassName("productName")[0].textContent;
-
-				fromus_pricemintmp				=	document.getElementsByClassName("variantprice")[0].textContent;
-				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
-
-				fromus_imgtmp					=	document.getElementsByClassName("mainImage")[0].innerHTML.replace(/\s/gi,'');
-				fromus_img						=	"https://www.toofaced.com"+/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
-				
-				if(document.getElementsByClassName("productSummary")[0]!=undefined)
-					{
-						fromus_desc					=	document.getElementsByClassName("productSummary")[0].textContent;
-					}
-				if(document.getElementById("tab-details")!=undefined)
-					{
-						fromus_desc					=	document.getElementById("tab-details").textContent;
-					}
-			}break;
-
 		case "www.bobbibrowncosmetics.com":
 			{
-				fromus_objectnametmp			=	document.getElementsByClassName("product-info")[0].textContent;
-				if(/\S/.test(/(.*)\n(.*)\n(.*)/g.exec(fromus_objectnametmp)[2]))
-					{	// Si le nom est en première ligne...
-						fromus_objectname		=	/(.*)\n(.*)\n(.*)/g.exec(fromus_objectnametmp)[2];
-						if( (fromus_objectname == 'New' )|| (fromus_objectname == 'Limited Edition') )
-							{	// ...Mais qu'en fait, ce n'est pas le nom
-								fromus_objectname		=	/(.*)\n(.*)\n(.*)/g.exec(fromus_objectnametmp)[3];
-							}
-					}
-				else
-					{	// Si le nom est en seconde ligne
-						fromus_objectname		=	/(.*)\n(.*)\n(.*)/g.exec(fromus_objectnametmp)[3];
-					}
-					
+				fromus_objectname				=	document.getElementsByClassName("product-info")[0].getElementsByTagName('h1')[0].textContent;
+
 				if(document.getElementsByClassName("product-info")[0]!=undefined)
 					{
 						fromus_desc					=	document.getElementsByClassName("product-info")[0].textContent;
 					}
-					
 
-				
 				fromus_pricemintmp				=	document.getElementsByClassName("purchase-row")[0].textContent;
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 
-				fromus_imgtmp					=	document.getElementsByClassName("img-holder")[0].innerHTML.replace(/\s/gi,'');
-				fromus_img						=	/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
+				fromus_img							=	document.getElementsByClassName("img-holder")[0].getElementsByTagName("img")[0].src;
 			}break;
 
 		case "tartecosmetics.com":
@@ -1217,24 +1173,20 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_pricemintmp				= 	document.getElementById("price").textContent;
 						fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];		
 
-						fromus_imgtmp					=	document.getElementById("product-image").innerHTML;
-						fromus_imgtmp					=	/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
-						fromus_imgtmp					=	/\"(http.*(\.jpg|\.png|\.gif))$/i.exec(fromus_imgtmp)[0];
-						fromus_img						=	fromus_imgtmp.substring(1,fromus_imgtmp.length);
+						fromus_img						=	document.getElementById("product-image").getElementsByTagName("div")[0].getElementsByTagName("div")[1].getElementsByTagName("img")[0].src
 					}
 				else
 					{	// Preview
-						fromus_objectname				=	document.getElementById("product-meta").getElementsByTagName("h1")[0].textContent;
+						fromus_objectname				=	document.getElementsByClassName("product-meta")[0].getElementsByTagName("h2")[0].textContent;
 
-						fromus_pricemintmp				= 	document.getElementsByClassName("variantprice")[0].textContent;
+						fromus_pricemintmp				= 	document.getElementsByClassName("product-meta")[0].getElementsByTagName("p")[0].textContent;
 						fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 
-						fromus_imgtmp					=	document.getElementsByClassName("product-img")[0].innerHTML;
-						fromus_img						=	/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];							
+						fromus_img							=	document.getElementsByClassName("product-img")[0].getElementsByTagName("img")[0].src;						
 					}
 				if(document.getElementsByClassName("description")[0]!=undefined)
 					{
-						fromus_desc					=	document.getElementsByClassName("description")[0].textContent;
+						fromus_desc					=	document.getElementsByClassName("product-meta")[0].getElementsByTagName("p")[1].textContent;
 					}
 				if(document.getElementById("description-content")!=undefined)
 					{
@@ -1249,19 +1201,16 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{
 				if(document.getElementsByClassName("spp-left-col")[0]!=undefined)
 					{	// Fiche
-						fromus_objectnametmp			=	document.getElementsByClassName("spp-left-col")[0].textContent;
-						fromus_objectname				=	/(.*)\n/.exec(fromus_objectnametmp)[0];
+						fromus_objectname				=	document.getElementsByClassName("spp-left-col")[0].getElementsByTagName("h1")[0].textContent;
 					}
 				else
 					{	// Preview
-						fromus_objectnametmp			=	document.getElementsByClassName("description-container")[0].textContent;
-						fromus_objectname				=	/(.*)\n/.exec(fromus_objectnametmp)[0];
+						fromus_objectname				=	document.getElementsByClassName("description-container")[0].getElementsByTagName("h1")[0].textContent;
 					}
 					
 				fromus_pricemin					=	document.getElementById("price-span").textContent;
 
-				fromus_imgtmp					=	document.getElementsByClassName("spp_image")[0].innerHTML;
-				fromus_img						=	'http://www.smashbox.com'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
+				fromus_img							=	document.getElementsByClassName("spp_image")[0].getElementsByTagName("img")[0].src;
 
 				if(document.getElementsByClassName("description")[0]!=undefined)
 					{
@@ -1273,13 +1222,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 		case "milanicosmetics.com":
 			{
-				fromus_objectnametmp			=	document.getElementById("product-meta").textContent;
-				fromus_objectname				=	/(.*)\n/.exec(fromus_objectnametmp)[0];
+				fromus_objectname				=	document.getElementById("product-meta").getElementsByTagName("h1")[0].textContent;
 				
 				fromus_pricemin					=	document.getElementsByClassName("product-price")[0].textContent;
 
-				fromus_imgtmp					=	document.getElementById("product-image-large").innerHTML;
-				fromus_img						=	'http://www.smashbox.com/'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
+				fromus_img							=	document.getElementById("product-image-large").getElementsByTagName("img")[0].src;
 				
 				if(document.getElementById("product-meta")!=undefined)
 					{
@@ -1291,38 +1238,15 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{
 				if(document.getElementById("vsImage")!=undefined)
 					{ 	// Fiche
-						fromus_objectnametmp			=	document.getElementsByClassName("short x-large cufon-replaced")[0].innerHTML.replace(/[^A-Za-z\s]/g,'');								
-						fromus_objectnametmp			=	fromus_objectnametmp.replace(/cufon/g,' ').replace(/class/g,' ').replace(/canvas/g,' ').replace(/ alt/g,' ').replace(/style/g,' ').replace(/width/g,' ').replace(/px/g,' ').replace(/height/g,' ').replace(/text/g,' ').replace(/left/g,' ').replace(/top/g,' ');			
-						fromus_objectname				=	/[\s]{1,}(.*)/.exec(fromus_objectnametmp.replace(/[A-Z]{1,}/,' '))[1];							
-						fromus_objectname 				=	fromus_objectname.replace(/\s/g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.');								
-						fromus_objectname 				=	fromus_objectname.replace(/\./g,' ');								
-						fromus_objectname 				=	fromus_objectname.split(' ');							
-						fromus_objectnametmp			=	fromus_objectname[1]+' '+fromus_objectname[3]+' '+fromus_objectname[5]+' '+fromus_objectname[7]+' '+fromus_objectname[9];							
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[11]+' '+fromus_objectname[13]+' '+fromus_objectname[15]+' '+fromus_objectname[17];		
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[19]+' '+fromus_objectname[21]+' '+fromus_objectname[23]+' '+fromus_objectname[25];
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[27]+' '+fromus_objectname[29]+' '+fromus_objectname[31]+' '+fromus_objectname[33];
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[35]+' '+fromus_objectname[37]+' '+fromus_objectname[39]+' '+fromus_objectname[41];
-						fromus_objectname				=	fromus_objectnametmp.replace(/ undefined/g,'');
+						fromus_objectname				=	document.getElementsByClassName("short x-large cufon-replaced")[0].textContent;								
 
 						fromus_img					=	document.getElementById("vsImage").src;		
 					}
 				else
 					{	// Preview
-						fromus_objectnametmp			=	document.getElementsByClassName("small short cufon-replaced")[0].innerHTML.replace(/[^A-Za-z\s]/g,'');								
-						fromus_objectnametmp			=	fromus_objectnametmp.replace(/cufon/g,' ').replace(/class/g,' ').replace(/canvas/g,' ').replace(/ alt/g,' ').replace(/style/g,' ').replace(/width/g,' ').replace(/px/g,' ').replace(/height/g,' ').replace(/text/g,' ').replace(/left/g,' ').replace(/top/g,' ');			
-						fromus_objectname				=	/[\s]{1,}(.*)/.exec(fromus_objectnametmp.replace(/[A-Z]{1,}/,' '))[1];							
-						fromus_objectname 				=	fromus_objectname.replace(/\s/g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.').replace(/\.\./g,'.');								
-						fromus_objectname 				=	fromus_objectname.replace(/\./g,' ');								
-						fromus_objectname 				=	fromus_objectname.split(' ');							
-						fromus_objectnametmp			=	fromus_objectname[1]+' '+fromus_objectname[3]+' '+fromus_objectname[5]+' '+fromus_objectname[7]+' '+fromus_objectname[9];							
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[11]+' '+fromus_objectname[13]+' '+fromus_objectname[15]+' '+fromus_objectname[17];		
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[19]+' '+fromus_objectname[21]+' '+fromus_objectname[23]+' '+fromus_objectname[25];
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[27]+' '+fromus_objectname[29]+' '+fromus_objectname[31]+' '+fromus_objectname[33];
-						fromus_objectnametmp			=	fromus_objectnametmp+' '+fromus_objectname[35]+' '+fromus_objectname[37]+' '+fromus_objectname[39]+' '+fromus_objectname[41];
-						fromus_objectname				=	fromus_objectnametmp.replace(/ undefined/g,'');
+						fromus_objectname			=	document.getElementsByClassName("small short cufon-replaced")[0].textContent;							
 
-						fromus_imgtmp					=	document.getElementsByClassName("col-a view")[0].innerHTML;	
-						fromus_img						=	/\<img.*src=\"(.*(\.jpg|\.gif|\.png|\;)).*\>/.exec(fromus_imgtmp)[1];
+						fromus_img						=	document.getElementsByClassName("col-a view")[0].getElementsByTagName("img")[0].src;
 					}			
 						fromus_pricemintmp				= 	document.getElementsByClassName("pricing")[0].textContent;
 						fromus_pricemin					=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/.exec(fromus_pricemintmp)[0];	
@@ -1381,8 +1305,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 						if(document.getElementsByClassName("modMh_item_1 colorizer_view mm_colorizer_c1 ui-helper-visible")[0]!=undefined)
 							{	
-								fromus_imgtmp					=	document.getElementsByClassName("modMh_item_1 colorizer_view mm_colorizer_c1 ui-helper-visible")[0].innerHTML;
-								fromus_img						=	'http://www.chevrolet.com/'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png)).*\>/.exec(fromus_imgtmp)[1];
+								fromus_img					=	document.getElementsByClassName("modMh_item_1 colorizer_view mm_colorizer_c1 ui-helper-visible")[0].getElementsByTagName('figure')[0].getElementsByTagName('img')[0].src;
 							}
 					}
 			
@@ -1412,7 +1335,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_pricemintmp				=	document.getElementsByClassName('mds-cmp-content19 mod modVi_2 section vi_2')[0].textContent;
 						fromus_pricemin					=	/(\$[0-9\,]{0,})/.exec(fromus_pricemintmp)[0];
 
-						fromus_imgtmp					=	document.getElementsByClassName("color-slides")[0].innerHTML;
+						fromus_imgtmp					=	document.getElementsByClassName("color-slides")[0].getElementsByTagName('ul')[0].getElementsByTagName('li')[0].style;
 						fromus_img						=	'http://www.cadillac.com'+/\<img.*src=\"(.*(\.jpg|\.gif|\.png))\"\>/.exec(fromus_imgtmp)[1];
 						
 				if(document.getElementsByClassName("fck_authorsinput tx")[0]!=undefined)
@@ -1831,7 +1754,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_img							= 	"non trouve";
 			}
 	}
-if((fromus_desc===undefined) ||(fromus_desc==undefined)||(fromus_desc=='undefined'))//En cas d'absence de description, utiliser le nom du produit.
+if((fromus_desc===undefined) ||(fromus_desc==undefined)||(fromus_desc=='undefined')|| ( /[\S]{1,}/g.test(fromus_desc)==false ) )//En cas d'absence de description, utiliser le nom du produit.
 		{
 			fromus_desc									=	fromus_objectname;
 		}
