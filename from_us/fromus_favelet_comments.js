@@ -496,7 +496,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 			{
 				if(/(\/catalog\/)/.test(fromus_offre))		//S'il s'agit d'une preview
 					{
-						fromus_objectname			=	document.getElementsByClassName("overlay_right")[0].textContent;
+						fromus_objectname			=	document.getElementsByClassName("overlay_right")[0].getElementsByTagName("h2")[0].textContent;
 						
 						fromus_img						=	document.getElementsByClassName("quickViewProductImage")[0].getElementsByTagName("a")[0].href;			
 					}	
@@ -505,18 +505,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 						fromus_objectnametmp			=	document.getElementsByClassName("title");
 						fromus_objectname				=	fromus_objectnametmp[0].textContent.replace("\n","");			
 
-						fromus_imgtmp					=	document.getElementsByClassName("image_container")[0].innerHTML;
-						fromus_imgtmp					+=	'';
-						fromus_imgtmp					= 	/(http)(.*)(\?)/gi.exec(fromus_imgtmp)[0];		
-						fromus_img						=	fromus_imgtmp.replace(/(&quot)(.*)/,"");							
+						fromus_img							=	document.getElementsByClassName("feature")[0].src;						
 					}
 				
 				// Partie commune aux previews et pages dédiées
 				
-				if(/(.*)(?:sale \$|now \$|original \$)/.test(fromus_objectname))	// Si le "nom" contient plus que le nom, tronquer l'excédent
-					{
-						fromus_objectname						=	/(.*)(?:sale \$|now \$|original \$)/.exec(fromus_objectname)[1];
-					}
 			
 			// Ce site utilise deux noeuds, l'un pour les prix normaux et/ou originaux et l'autre pour les offres spéciales, "sales"
 			// quelle que soit l'état de l'offre, les deux sont présents sur la page. Le code ci-dessous va donc en premier voir si
@@ -527,25 +520,22 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 
 				if(fromus_pricemintmp=='')
 					{	
-						fromus_pricemintmp					=	document.getElementsByClassName("original");
-						fromus_pricemintmp					=	fromus_pricemintmp[0].innerHTML;
+						fromus_pricemintmp					=	document.getElementsByClassName("original")[0].textContent;
 					}	
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/.exec(fromus_pricemintmp)[0];	
 
-			if(document.getElementsByClassName("prod_description")[0]!=undefined)
+			if(document.getElementById("maincopy")!=undefined)
 				{
-					fromus_desc						=	document.getElementsByClassName("prod_description")[0].textContent;
+					fromus_desc						=	document.getElementById("maincopy").textContent;
 				}
 			}break;			
 			
 		case "www.landsend.com":
 			{
-				fromus_objectnametmp			=	document.getElementsByClassName("pp-product-name");
-				fromus_objectname				=	fromus_objectnametmp[0].innerHTML;		
+				fromus_objectname			=	document.getElementsByClassName("pp-product-name")[0].textContent;
 
-				fromus_pricemintmp				=	document.getElementsByClassName("pp-summary-price");
-				fromus_pricemin					=	fromus_pricemintmp[0].textContent + '';	
-				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})/gi.exec(fromus_pricemin)[0];
+				fromus_pricemintmp				=	document.getElementsByClassName("pp-summary-price")[0].textContent;
+				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 
 				fromus_img						=	document.getElementById("backImageSjElement5_img").src;
 				fromus_img						=	fromus_img.replace(/(\?.*)/,'');
@@ -657,33 +647,38 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				fromus_pricemintmp				=	document.getElementsByClassName("price")[0].textContent.replace(/\n/g,"").replace(/\s/g,"").replace(/[^0-9\$\.]/g,'');
 				fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];
 
-				fromus_imgtmp					=	document.getElementsByClassName("main-img")[0].innerHTML;
-				fromus_imgtmp					+=	'';				
-				fromus_img						= 	(/\"(http\:\/\/.*)(\.jpg|\.jpeg|\.tif|\.bmp|\.png|\.gif)\" /gi.exec(fromus_imgtmp)[0] + '').replace(/alt.*/,'').replace("\"","").replace("\"","");
+				fromus_img					=	document.getElementsByClassName("zoom-available")[0].src;
 
-				if(document.getElementById("productDetails")!=undefined)
+				if(document.getElementsByClassName("productCutline")[0]!=undefined)
 					{
-						fromus_desc				=	document.getElementById("productDetails").textContent;
+						fromus_desc				=	document.getElementsByClassName("productCutline")[0].textContent;
+					}
+				if(document.getElementById("qvDescription")!=undefined)
+					{
+						fromus_desc				=	document.getElementById("qvDescription").textContent;
 					}
 			}break;
-
+			
+			
 		case "www.nike.com":
 			{
-				fromus_objectnametmp			=	document.getElementsByClassName("product-title");
-				fromus_objectname				=	fromus_objectnametmp[0].innerHTML;			
+				fromus_objectname				=	document.getElementsByClassName("product-title")[0].textContent;	
 			
-				fromus_pricemintmp				=	document.getElementsByClassName("local")[0];
-				fromus_pricemin					=	fromus_pricemintmp.textContent + '';	
-				fromus_pricemin					=	/(\$[0-9]{0,}[\.0-9]{0,3})/g.exec(fromus_pricemin)[0];				
+				fromus_pricemintmp				=	document.getElementsByClassName("local")[0].textContent;
+				fromus_pricemin					=	/(\$[0-9]{0,}[\.0-9]{0,3})/g.exec(fromus_pricemintmp)[0];				
 
-				fromus_imgtmp					=	document.getElementsByClassName("product-image-wrap")[0].innerHTML;
-				fromus_imgtmp					= 	fromus_imgtmp+'';
-				fromus_img						= 	/(http.*)(\.jpg|\.jpeg|\.png|\.bmp|\.tif|\.gif)/gi.exec(fromus_imgtmp)[0].replace("?","");	
+				fromus_img						=	document.getElementsByClassName("primary-product-image")[0].src;
 
 				if(document.getElementById('pi-main-headline')!=undefined)
 					{
 						fromus_desc						=	document.getElementById('pi-main-headline').textContent;	
 					}
+				if(document.getElementsByClassName("pi-sub-title")[0]!=undefined)
+				{
+					fromus_desc				=	document.getElementsByClassName("pi-sub-title")[0].textContent;
+				}				
+					
+					
 			}break;
 			
 		case "www.overstock.com":
@@ -696,14 +691,11 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 					}
 				else	//S'il s'agit d'une fiche
 					{
-						fromus_objectnametmp			=	document.getElementById("prod_mainCenter").innerHTML.replace(/\s/g,'');
-						fromus_objectname				=	/(?:\<h1\>)(.*)(?:\<\/h1\>)/.exec(fromus_objectnametmp)[1].replace(/<h1>/,'').replace(/([a-z])([A-Z])/g, '$1 $2');
+						fromus_objectname			=	document.getElementById("prod_mainCenter").getElementsByTagName("div")[0].getElementsByTagName("div")[0].textContent;
 									
 						if(document.getElementById("activeImage")==undefined)	//Si l'image est zoomable
 							{
-								fromus_imgtmp					=	document.getElementById("proImageHero").innerHTML.replace(/\s/g,'');
-								fromus_imgtmp					= 	fromus_imgtmp+'';
-								fromus_img						= 	/(http.*)(\.jpg|\.jpeg|\.png|\.bmp|\.tif|\.gif)/gi.exec(fromus_imgtmp)[0];
+								fromus_img				=	document.getElementsByClassName("proImageCenter")[0].getElementsByTagName("img")[0].src;
 							}
 						else	// Si l'image n'est pas zoomable
 							{
@@ -711,9 +703,8 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 							}
 					}	//Le prix est commun aux deux 		
 				
-					fromus_pricemintmp				=	document.getElementsByClassName("Ovalue main-price-red")[0];
-					fromus_pricemin					=	fromus_pricemintmp.textContent + '';	
-					fromus_pricemin					=	/(\$[0-9]{0,}[\.0-9]{0,3})/g.exec(fromus_pricemin)[0];		
+					fromus_pricemintmp				=	document.getElementsByClassName("Ovalue main-price-red")[0].textContent;
+					fromus_pricemin					=	fromus_reg.exec(fromus_pricemintmp)[0];		
 
 				if(document.getElementById('details_descFull')!=undefined)
 					{
@@ -723,20 +714,17 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				
 		case "www.ralphlauren.com":
 			{
-				fromus_objectnametmp			=	document.getElementsByClassName("prodtitleLG");
-				fromus_objectname				=	fromus_objectnametmp[0].textContent.replace(/\n(.*)/g,"");				
+				fromus_objectname			=	document.getElementById("title2Banner").getElementsByTagName("img")[0].alt;			
 
 				fromus_pricemintmp				=	document.getElementsByClassName("ProductPriceContainer")[0].textContent;
 				fromus_pricemintmp				=	fromus_pricemintmp.replace(/\s/g,'');
 				fromus_pricemin					=	/(\$[0-9]{0,}\.[0-9]{2})$/gi.exec(fromus_pricemintmp)[0];				
 				
-				fromus_imgtmp					=	document.getElementsByClassName("s7flyoutFlyoutView")[0].innerHTML;
-				fromus_imgtmp					= 	fromus_imgtmp+'';
-				fromus_img						= 	/(http.*\?)/gi.exec(fromus_imgtmp)[0].replace("?","");	
-			
-				if(document.getElementById('longDescDiv')!=undefined)
+				fromus_img					=	document.getElementsByClassName("s7flyoutFlyoutView")[0].getElementsByTagName("div")[0].getElementsByTagName("div")[0].getElementsByTagName("img")[0].src;
+
+				if(document.getElementById('padDescDiv')!=undefined)
 					{
-						fromus_desc						=	document.getElementById('longDescDiv').textContent;	
+						fromus_desc						=	document.getElementById('padDescDiv').textContent;	
 					}					
 			}break;
 
@@ -779,8 +767,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 	
 		case "www.ruelala.com":
 			{
-				fromus_objectnametmp			=	document.getElementById("productAttributes").innerHTML;
-				fromus_objectname				=	/(?:\<h2)(.*)(?:\<\/h2\>)/g.exec(fromus_objectnametmp.replace(/\s/g,''))[1].replace(/<h2>/,'').replace(/(.*)>/,'').replace(/([a-z])([A-Z])/g, '$1 $2');
+				fromus_objectname				=	document.getElementById("productAttributes").getElementsByTagName("h2").textContent;
 				
 				fromus_pricemin					=	document.getElementById("salePrice").textContent;		
 		
@@ -1854,7 +1841,7 @@ if((fromus_desc===undefined) ||(fromus_desc==undefined)||(fromus_desc=='undefine
 			{
 					fromus_desc									=	fromus_desc.substring(0,195)+"[...]";
 			}
-			fromus_objectname						=	fromus_objectname.substring(0,100);
+			fromus_objectname						=	fromus_objectname.replace(/\n/g,'').substring(0,100);
 			fromus_pricemin							=	fromus_pricemin.replace(/\$/g,'');
 			fromus_pricemin							=	parseFloat(/[0-9\.]{1,}/g.exec(fromus_pricemin.replace(',',''))[0]);
 	
