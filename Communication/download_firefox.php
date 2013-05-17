@@ -13,17 +13,16 @@
 	    $id_user =  '2'; /*$_SESSION['usr_fus']["id"]*/
 		$token_app = uniqid();
 		$token_user = sha1(md5('lkdqjqoerjf'.time().$id_user)); 
-		$token_ext = uniqid().time();
-		
+			
 		//insertion des token dans la bdd
 	
 		
 
 		$req = $bdd->prepare('INSERT INTO token(tok_user, tok_token, tok_ext) VALUES (:_user, :_app, :_ext)');
 		$req->execute(array(
-			'_user' => $token_user,
-			'_app' => $token_app,
-			'_ext' => $token_ext
+			'_user' => $id_user,
+			'_app' => $token_user,
+			'_ext' => $token_app
 			));
 		$req->closeCursor();
 
