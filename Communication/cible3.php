@@ -362,6 +362,8 @@ try
 			$req->execute();
 			$req->closeCursor();
 
+			$response['Message'] = 'Bienvenue';
+
 			break;
 
 		case 'MAJ-connect':

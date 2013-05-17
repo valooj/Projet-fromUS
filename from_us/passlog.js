@@ -56,12 +56,13 @@ if (isOpen != true) {
 					var password = document.getElementById("password");
 					var log = login.value;
 					var pass = password.value;
-					if (log && pass)
+					if (log && pass){
 						var jsonLog = {login: log ,password: pass};
 						var postLog = JSON.stringify(jsonLog);
 						logJSON = {log:postLog};
 						check();
 						$(this).dialog('destroy');
+					}
 				}
 			},
 	

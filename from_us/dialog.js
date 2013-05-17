@@ -286,6 +286,7 @@ $(document).ready(function() {
 
 
 
+<<<<<<< HEAD
 		//Action sur le bouton login/logout
 		var in_out = document.getElementById('log');
 		 (!token) ? in_out.value = 'logout' : in_out.value = 'login';
@@ -301,6 +302,38 @@ $(document).ready(function() {
 			}
 		    
 		}, false);
+=======
+	//Action sur le bouton login/logout
+	var in_out = document.getElementById('log');
+	 (!token) ? in_out.value = 'logout' : in_out.value = 'login';
+	in_out.addEventListener('click', function(e){
+			
+		if ( in_out.value == "login" ){
+	    	in_out.value = "logout";
+	    	windows.open()
+	    	//chrome.tabs.executeScript( null, {file: 'passlog.js', allFrames:false});
+	    }
+	    else{
+	        in_out.value = "login";
+	    	connect(_urlLogout);
+		}
+	    
+	}, false);
+
+	// ouverture de la dialog box
+	//newDialog.dialog("open");
+	connect(_urlConnect);
+	
+	// suppression des key dans le localstorage
+	localStorage.removeItem('regDesc');
+	localStorage.removeItem('regName');
+	localStorage.removeItem('regPrice');
+	localStorage.removeItem('regStore');
+	localStorage.removeItem('regOffer');
+
+}
+);
+>>>>>>> authentification
 
 		// ouverture de la dialog box
 		//newDialog.dialog("open");

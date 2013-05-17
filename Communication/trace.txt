@@ -5199,3 +5199,54 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 243436435653753F
+    [product] => {"prd_libelle":"Colorblock Belted Dress","prd_site":"bebe.com/Dresses/View-All/Colorblock-Belted-Dress/pc/197/c/0/sc/198/49918.pro","prd_desc":"Land a look-at-me look with this colorblock dress, featuring a soft knit and glossy skinny belt.\nThe belt contains lead, a chemical known to the State of California to cause birth defects or othe[...]","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-213618-nct-i1?$Detail$","prd_prix":"109","prd_cat":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 243436435653753F
+    [calcul] => {"libelle":"Colorblock Belted Dress","qte":"","montant":"109","categ":"16"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
