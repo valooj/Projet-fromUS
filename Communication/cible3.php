@@ -332,20 +332,24 @@ try
 			break;
 
 		case 'MAJ-login':
+			$get_token_ext = isset($_GET['token_ext']) ? htmlspecialchars($_GET['token_ext']) : null;
 			$get_log = isset($_REQUEST['log']) ? json_decode($_REQUEST['log'], TRUE) : null;
 
 			// variables tests
+			if ( !$get_token_ext )
+				throw new Exception('MAJ :: token_ext not specified');
 			if ( !$get_log )
-				throw new Exception('MAJ :: Log not specified');
+				throw new Exception('MAJ :: log not specified');
+			
 
-			if( !isset($get_log['login'], $get_log['password'] ) )
+			if( !isset($get_log['email'], $get_log['password'] ) )
 				throw new Exception('MAJ :: Bad parameter into Log Entity');
 
 			// log={"login":"liaznzade", "password":"password"}
 
-			$req = $bdd->prepare('SELECT user_id FROM users where user_pseudo= :_pseudo and user_password = :_password ');
+			$req = $bdd->prepare('SELECT user_id FROM users where user_email= :_email and user_mdp = :_password ');
 			$req->execute(array(
-			    '_pseudo' => $get_log['login'],
+			    '_email' => $get_log['email'],
 			    '_password' => $get_log['password']));
 			$arr = $req->fetch();
 			$req->closeCursor();

@@ -23,16 +23,16 @@
 		function jsonData(token) {
 			var token_ext = token ;
 			_urlLog = 'https://localhost/projetFU/Communication/cible3.php?action=MAJ-login&token_ext='+token_ext;
-			var login = document.getElementById("pseudo");
+			var login = document.getElementById("email");
 			var password = document.getElementById("pass");
 			var log = login.value;
 			var pass = password.value;
 			if (log && pass){
-				var jsonLog = {login: log ,password: pass};
+				var jsonLog = {email: log ,password: pass};
 				var postLog = JSON.stringify(jsonLog);
 				logJSON = {log:postLog};
 				check(_urlLog, logJSON);
-				$(this).dialog('destroy');
+				//$(this).dialog('destroy');
 			}
 		}
 		</SCRIPT>
@@ -46,8 +46,8 @@
 				$token_ext = isset($_GET['token_ext']) ? htmlspecialchars($_GET['token_ext']) : null;
 			?>
 
-	       <label for="pseudo">Votre pseudo :</label>
-	       <input type="text" name="pseudo" id="pseudo" />
+	       <label for="email">Votre email :</label>
+	       <input type="text" name="email" id="email" />
 	        
 	       <br />
 	       <label for="pass">Votre mot de passe :</label>
