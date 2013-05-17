@@ -13,12 +13,26 @@
 	    $id_user =  '2'; /*$_SESSION['usr_fus']["id"]*/
 		$token_app = uniqid();
 		$token_user = sha1(md5('lkdqjqoerjf'.time().$id_user)); 
+		$token_ext = uniqid().time();
+		
+		//insertion des token dans la bdd
+	
+		
+
+		$req = $bdd->prepare('INSERT INTO token(tok_user, tok_token, tok_ext) VALUES (:_user, :_app, :_ext)');
+		$req->execute(array(
+			'_user' => $token_user,
+			'_app' => $token_app,
+			'_ext' => $token_ext
+			));
+		$req->closeCursor();
+
 		//echo $token;
-		$data = 'var token = ' . $token . ';';
+		$data = 'var token = ' . $token_app . ';';
 		$nav = '.zip';  //changer en xpi
 		$nomPlugin = 'fomUS';
 
-		//Delete folder function 
+		 
 		
 		//récupération du fichier
 		$file = 'from_us.zip';
@@ -36,7 +50,7 @@
 			//ecriture de l'identifiant du client dans le fichier.
 			//file_get_contents($filenameJS);
 			$zip->close();
-			file_put_contents($url.$filenameJS, $data, FILE_APPENDS);
+			file_put_contents($url.$filenameJS, $data);
 		}
 
 		HZip::zipDirE($url, $outZip); 
