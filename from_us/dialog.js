@@ -110,6 +110,7 @@ $(document).ready(function() {
 			'overlay_opacity': 1,
 			'auto_close': false,
 			'title': 'From-us.com',
+<<<<<<< HEAD
 			'onClose': function(caption) {
 				//
 =======
@@ -256,6 +257,9 @@ $( ".ZebraDialog" ).draggable();
 				}
 >>>>>>> authen
 			},
+=======
+			'onClose': false,
+>>>>>>> commit
 			'message': '<input type="button" value="Login" id="log" /></br>' + 
 						'<form id="fromus_form">' +
 							'<label for="store">Marchand : </label><input type="textbox" id="store" disabled="true"/></br>' +
@@ -320,7 +324,8 @@ $( ".ZebraDialog" ).draggable();
 							}},
 							
 							// bouton annuler
-		                    {caption: 'Annuler', callback: function() { close()}}
+		                    {caption: 'Annuler', callback: function() { 
+		                    	}}
 		                ]
 		});
 
