@@ -98,7 +98,7 @@ $(document).ready(function() {
 
 	if (test == null) {
 		// creation de la popup
-		$.Zebra_Dialog({
+		new $.Zebra_Dialog({
 	    	'type': 'false',
 			'modal': false,
 			'keyboard': false,
@@ -109,7 +109,7 @@ $(document).ready(function() {
 			'auto_close': false,
 			'title': 'From-us.com',
 			'onClose': function(caption) {
-					//this.focus();
+					//
 			},
 			'message': '<input type="button" value="Login" id="log" /></br>' + 
 						'<form id="fromus_form">' +
@@ -180,7 +180,8 @@ $(document).ready(function() {
 		});
 
 		// permet de deplacer la popup
-		var popup = $( ".ZebraDialog" ).draggable();
+		$( ".ZebraDialog" ).draggable();
+
 
 		// si il n'y a pas de la dialog box alors on l'a crée
 		/*if (isOpen != true) {
