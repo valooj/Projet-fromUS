@@ -14,7 +14,7 @@
 		<getprodimgtype>"id"</getprodimgtype>
 		<getprodimg>"main-image"</getprodimg>
 	</site>
-
+	
 	<site>
 		<name></name>
 		
@@ -30,4 +30,4 @@
 		<getprodimgtype></getprodimgtype>
 		<getprodimg></getprodimg>
 	</site>	
-</sitelist>
+	</sitelist>

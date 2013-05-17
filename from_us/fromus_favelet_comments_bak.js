@@ -1725,7 +1725,7 @@ switch(fromus_site)	//Permet de sélectionner le code relatif au site consulté
 				if(document.getElementsByClassName("content-container")[0]!=undefined)
 					{
 						fromus_desc					=	document.getElementsByClassName("content-container")[0].textContent;
-					}			
+					}
 			}break;
 			
 		case "www.gilttaste.com":

@@ -2639,12 +2639,12 @@ if((fromus_desc===undefined) ||(fromus_desc==undefined)||(fromus_desc=='undefine
 	fromus_desc									=	fromus_objectname;
 }
 
-//Début de la section "limitation de la longueur des données".
+//Début de la section "limitation de la longueur des données". 
 if(fromus_desc.length > 200)
 {
 	fromus_desc									=	fromus_desc.substring(0,195)+"[...]";
 }
-fromus_objectname						=	fromus_objectname.replace(/\n/g,'').substring(0,100);
+fromus_objectname						=	fromus_objectname.replace(/\n/g,'').substring(0,100); fromus_reg
 fromus_pricemin							=	fromus_pricemin.replace(/\$/g,'');
 fromus_pricemin							=	parseFloat(/[0-9\.]{1,}/g.exec(fromus_pricemin.replace(',',''))[0]);
 
