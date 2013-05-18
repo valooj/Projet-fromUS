@@ -8,7 +8,7 @@
   
   "browser_action": {
       "name": "from-us.com",
-	  "default_icon": "img/on.png"
+	    "default_icon": "img/on.png"
   },
   
   "background": {
@@ -20,8 +20,8 @@
     {
       "matches": ["<all_urls>"],
       "js": ["jquery/jquery.min.js", "jquery/jquery-ui.js"],
-	  "css": ["jquery/jquery-ui.css"],
-	  "run_at": "document_end"
+	    "css": ["jquery/jquery-ui.css"],
+	    "run_at": "document_end"
     }
   ],
   	  
