@@ -1,37 +1,8 @@
-1
+290
 ===========================================
-5
+291
 ===========================================
-108
+290 : prix introuvable
 ===========================================
-125
+291 : site introuvable
 ===========================================
-126
-===========================================
-130
-===========================================
-157
-===========================================
-161
-===========================================
-162
-===========================================
-163
-===========================================
-165
-===========================================
-
-	$get_token = isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
-
-	//Recupere l'id 
-	$req = $bdd->prepare('SELECT tok_user FROM token where tok_token= :_token');
-	$req->execute(array('_token' =>$get_token));
-	$tokId = $req->fetch();
-	$tokId = $tokId[0];
-	$req->closeCursor();
-
-	// variables tests
-	if ( !$get_token )
-		throw new Exception('MAJ :: Token not specified');
-	if(!$tokId)
-		throw new Exception('Token non valide');

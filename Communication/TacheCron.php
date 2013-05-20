@@ -7,7 +7,7 @@ try{
     $options[PDO::MYSQL_ATTR_INIT_COMMAND] = 'SET NAMES UTF8;';
     $bdd = new PDO('mysql:host=localhost;dbname=fromus', 'root', '', $options);
 
-    unlink ("./traceTacheCron.txt");
+    //unlink ("./traceTacheCron.txt");
 
     //Requete a faire
     $req = $bdd->prepare('SELECT prd_id ,prd_site, prd_prix FROM produits');
@@ -16,48 +16,39 @@ try{
 
 	foreach($donnees as $row)
 	{
-    	//echo $row['prd_id'];
-    	//echo $row['prd_site'];
-    	$file = @file_get_contents($row['prd_site']);
-		if (!$file) 
+		$bResult = false;
+		foreach( array(null, 'wwww.', 'http://', 'http://www.', 'https://', 'https://www.') as $prefix )
 		{
-			$file = @file_get_contents('www.'.$row['prd_site']);
-			if (!$file) 
-			{
-				$file = @file_get_contents('http://www.'.$row['prd_site']);
-				if (!$file) 
-				{
-					$file = @file_get_contents('https://www.'.$row['prd_site']);
-					if (!$file) 
-					{
-						echo 'URL non valide !';
-						/*
-						$req = $bdd->prepare('DELETE FROM produits WHERE prd_id= :_id');
-						$req->bindParam('_id', $row['prd_id'], PDO::PARAM_INT);
-						$req->execute();
-						*/
-						$req = $bdd->prepare('UPDATE produits SET prd_vis = 0 WHERE  prd_id = :_id');
-						$req->bindParam('_id', $row['prd_id'], PDO::PARAM_INT);
-						$rep =$req->execute();
-						$req->closeCursor();
+			$content = @file_get_contents($prefix .  $row['prd_site']);
+			if( !$content )
+				continue; // passe au suivant
 
-						file_put_contents('./traceTacheCron.txt', print_r($row['prd_id'], 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
-					}
-				}
+			// search website price
+			$result = strpos($content,$row['prd_prix']);
+			if(!$result){
+				$req = $bdd->prepare('UPDATE produits SET prd_vis = 2 WHERE  prd_id = :_id');
+				$req->bindParam('_id', $row['prd_id'], PDO::PARAM_INT);
+				$rep =$req->execute();
+				$req->closeCursor();
+
+				file_put_contents('./traceTacheCron.txt', print_r($row['prd_id'].' : prix introuvable', 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
 			}
+
+			$bResult = true;
+			break; // quitte la boucle
 		}
-		//ne marche pas, trop aléatoire 
-		$result = strpos($file,$row['prd_prix']);
-		if(!$result){
-			$req = $bdd->prepare('UPDATE produits SET prd_vis = 0 WHERE  prd_id = :_id');
+
+		if( !$bResult ) {
+			$req = $bdd->prepare('UPDATE produits SET prd_vis = 2 WHERE  prd_id = :_id');
 			$req->bindParam('_id', $row['prd_id'], PDO::PARAM_INT);
 			$rep =$req->execute();
 			$req->closeCursor();
 
-			file_put_contents('./traceTacheCron.txt', print_r($row['prd_id'], 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
+			file_put_contents('./traceTacheCron.txt', print_r($row['prd_id'].' : site introuvable', 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
 		}
-
 	}
+
+
 }
 
 catch (PDOException $e) {
