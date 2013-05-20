@@ -704,3 +704,281 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login4
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logiN
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => AJ-logiN
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logiN
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login5
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-5login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-log3in
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logi3n
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-lo3gin
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => undefined
+    [product] => {"prd_libelle":"Colorblock Belted Dress","prd_site":"bebe.com/Dresses/View-All/Colorblock-Belted-Dress/pc/197/c/0/sc/198/49918.pro","prd_desc":"Land a look-at-me look with this colorblock dress, featuring a soft knit and glossy skinny belt.\nThe belt contains lead, a chemical known to the State of California to cause birth defects or othe[...]","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-213618-nct-i1?$Detail$","prd_prix":"109","prd_cat":"default"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 519a03fe7801e
+    [product] => {"prd_libelle":"Colorblock Belted Dress","prd_site":"bebe.com/Dresses/View-All/Colorblock-Belted-Dress/pc/197/c/0/sc/198/49918.pro","prd_desc":"Land a look-at-me look with this colorblock dress, featuring a soft knit and glossy skinny belt.\nThe belt contains lead, a chemical known to the State of California to cause birth defects or othe[...]","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-213618-nct-i1?$Detail$","prd_prix":"109","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 519a03fe7801e
+    [calcul] => {"libelle":"Colorblock Belted Dress","qte":"2","montant":"109","categ":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 519a03fe7801e
+    [product] => {"prd_libelle":"Colorblock Belted Dress","prd_site":"bebe.com/Dresses/View-All/Colorblock-Belted-Dress/pc/197/c/0/sc/198/49918.pro","prd_desc":"Land a look-at-me look with this colorblock dress, featuring a soft knit and glossy skinny belt.\nThe belt contains lead, a chemical known to the State of California to cause birth defects or othe[...]","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-213618-nct-i1?$Detail$","prd_prix":"109","prd_cat":"24"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 519a03fe7801e
+    [panier] => {"libelle":"Colorblock Belted Dress","url":"bebe.com/Dresses/View-All/Colorblock-Belted-Dress/pc/197/c/0/sc/198/49918.pro","desc":"Land a look-at-me look with this colorblock dress, featuring a soft knit and glossy skinny belt.\nThe belt contains lead, a chemical known to the State of California to cause birth defects or othe[...]","qte":"2","montant":300.62,"categ":"24"}
+)
+
+===========================================

@@ -29,11 +29,8 @@ SQL;
 
 try
 {
-	//debug
-	//$_REQUEST['product'] =  '{ "prd_libelle":"John", "prd_site":"site", "prd_prix":22 }';
-	
 
-	// connection
+	// connection a la bd
     $options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
     $options[PDO::MYSQL_ATTR_INIT_COMMAND] = 'SET NAMES UTF8;';
     $bdd = new PDO('mysql:host=localhost;dbname=fromus', 'root', '', $options);
@@ -52,12 +49,12 @@ try
 
 			// variables tests
 			if ( !$get_token )
-				throw new Exception('MAJ :: Token not specified');
+				throw new Exception('MAJ :: Token not specified or invalid');
 
 			if ( !$get_product )
 				throw new Exception('MAJ :: Product not specified');
 
-			if( !isset($get_product['prd_prix'], $get_product['prd_libelle'], $get_product['prd_site'], $get_product['prd_cat']) )
+			if( !isset($get_product['prd_prix'], $get_product['prd_libelle'], $get_product['prd_site'], $get_product['prd_cat'], $get_product['prd_desc']) )
 				throw new Exception('MAJ :: Bad parameters into Product Entity');
 
 			$get_product['prd_prix'] = str_replace('$', null, $get_product['prd_prix']);
@@ -116,7 +113,7 @@ try
 			if ( !$get_panier )
 				throw new Exception('MAJ :: Panier not specified');
 
-			if( !isset($get_panier['libelle'], $get_panier['qte'], $get_panier['montant'] , $get_panier['url']) )
+			if( !isset($get_panier['libelle'], $get_panier['qte'], $get_panier['montant'] , $get_panier['url'], $get_panier['desc'], $get_panier['categ']) )
 				throw new Exception('MAJ :: Bad parameters into this order');
 
 			if( $get_panier['qte'] == 0)
@@ -161,14 +158,6 @@ try
 
 			$response['status'] = '2';
 			$response['Message'] = 'Votre produit a bien été inséré';
-
-            // retourne le moins chere de la même catégorie
-            // $response['product'] <<<< SELECT * from products WHRE name like '%iphone%' LIMIT 1 ORDER BY price DESC
-            /*$req = $bdd->prepare('SELECT * FROM produits WHERE prd_libelle LIKE ? ORDER BY prd_prix DESC LIMIT 1');
-			$req->execute(array( "%$get_product[prd_libelle]%"));
-			$response['product'] = $req->fetch();
-			$req->closeCursor();
-			*/
 			
 			break;
 
@@ -340,13 +329,14 @@ try
 				throw new Exception('MAJ :: token_ext not specified');
 			if ( !$get_log )
 				throw new Exception('MAJ :: log not specified');
-			
 
 			if( !isset($get_log['email'], $get_log['password'] ) )
 				throw new Exception('MAJ :: Bad parameter into Log Entity');
 
-			// log={"login":"liaznzade", "password":"password"}
+			if (!filter_var($get_log['email'], FILTER_VALIDATE_EMAIL) ) 
+				throw new Exception('Emain not valid');
 
+			//selection de l'id a partir de l'email et du password
 			$req = $bdd->prepare('SELECT user_id FROM users where user_email= :_email and user_mdp = :_password ');
 			$req->execute(array(
 			    '_email' => $get_log['email'],
@@ -357,7 +347,7 @@ try
 			if(!$arr)
 				throw new Exception('MAJ :: Users or Password invalid');
 
-			//action a définir si ds la base 
+			//Creation du token et ajout dans la table
 			$new_token_user = uniqid();
 			$req = $bdd->prepare('UPDATE token SET tok_user = :_id_user , tok_token = :_token_user where tok_ext= :_token_ext');
 			$req->bindParam(':_id_user', $arr[0], PDO::PARAM_INT);

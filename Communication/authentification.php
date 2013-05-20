@@ -59,3 +59,15 @@
 		</form>
     </body>
 </html>
+
+
+
+
+erreur 404 
+humain, c'est l'admin qui te parle
+je sais tout je vois tt, même ton historique
+alors arrete de jouer avec l'url
+
+zone non autorizé
+
+tu t'es perdu ??? suis-moi j'ai plein de bonbons....
