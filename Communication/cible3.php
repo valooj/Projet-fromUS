@@ -366,7 +366,7 @@ try
 			$req->execute();
 			$req->closeCursor();
 
-			$response['Message'] = 'Bienvenue';
+			$response['Token'] = $new_token_user;
 
 			break;
 

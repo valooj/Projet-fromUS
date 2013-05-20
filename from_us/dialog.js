@@ -8,11 +8,12 @@ var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-
 var _urlConnect = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-connect&token_ext='+token_ext;
 var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&token_ext='+token_ext;
 
-var _urlLogin = 'http://localhost/projetFU/Communication/authentification.php?token_ext='+token_ext;
+var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login&token_ext='+token_ext;
 
 var productJSON = {};
 var calculJSON = {};
 var panierJSON = {};
+var logJSON = {};
 var qteVal;
 var categVal;
 var regStore;
@@ -34,6 +35,22 @@ function connect(urlSelected) {
 		alert(datas['error']); 
 		})
 ;}
+
+
+function checkLogin() {
+	$.post(_urlLogin, logJSON)
+	.done(function(datas) { 
+		if(datas['Token'] !== undefined)
+			token = datas['Token'];
+		if(datas['error'] !== undefined)
+			alert(datas['error']);  
+		})
+	.fail(function(datas) { 
+		alert(datas['error']); 
+		})
+;}
+
+
 
 function sendToServer(urlSelected, jsonSelected) {
 	$.post(urlSelected+token, jsonSelected)
@@ -255,11 +272,18 @@ $(document).ready(function() {
 		var in_out = document.getElementById('log');
 		(!token) ? in_out.value = 'logout' : in_out.value = 'login';
 		in_out.addEventListener('click', function(e){
-						
 			if ( in_out.value == "login" ){
 		    	in_out.value = "logout";
-		    	window.open(_urlLogin);
-		    	//chrome.tabs.executeScript( null, {file: 'passlog.js', allFrames:false});
+		    	var getemail = document.getElementById("idfromus");
+				var getpassword = document.getElementById("mdpfromus");
+				var emailV = getemail.value;
+				var passwordV = getpassword.value;
+				if (emailV && passwordV){
+					var jsonLog = {email: emailV ,password: passwordV};
+					var postLog = JSON.stringify(jsonLog);
+					logJSON = {log:postLog};
+					checkLogin();
+				}
 		    }
 		    else{
 		        in_out.value = "login";
