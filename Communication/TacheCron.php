@@ -26,7 +26,7 @@ try{
 			// search website price
 			$result = strpos($content,$row['prd_prix']);
 			if(!$result){
-				$req = $bdd->prepare('UPDATE produits SET prd_vis = 2 WHERE  prd_id = :_id');
+				$req = $bdd->prepare('UPDATE produits SET prd_vis = 0 WHERE  prd_id = :_id');
 				$req->bindParam('_id', $row['prd_id'], PDO::PARAM_INT);
 				$rep =$req->execute();
 				$req->closeCursor();
@@ -39,7 +39,7 @@ try{
 		}
 
 		if( !$bResult ) {
-			$req = $bdd->prepare('UPDATE produits SET prd_vis = 2 WHERE  prd_id = :_id');
+			$req = $bdd->prepare('UPDATE produits SET prd_vis = 0 WHERE  prd_id = :_id');
 			$req->bindParam('_id', $row['prd_id'], PDO::PARAM_INT);
 			$rep =$req->execute();
 			$req->closeCursor();

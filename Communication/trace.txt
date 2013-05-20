@@ -1,0 +1,8 @@
+Array
+(
+    [action] => MAJ-login
+    [token_ext] => ezgrzgrzg463663
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
