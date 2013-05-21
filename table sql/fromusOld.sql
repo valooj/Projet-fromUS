@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Serveur: localhost
--- Généré le : Mar 21 Mai 2013 à 07:43
+-- Généré le : Ven 17 Mai 2013 à 10:49
 -- Version du serveur: 5.5.8
 -- Version de PHP: 5.3.5
 
@@ -322,7 +322,7 @@ CREATE TABLE IF NOT EXISTS `commande_detail` (
   `cmdd_ent` int(11) NOT NULL,
   PRIMARY KEY (`cmdd_id`),
   UNIQUE KEY `cmdd_url` (`cmdd_url`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1276 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1272 ;
 
 --
 -- Contenu de la table `commande_detail`
@@ -337,9 +337,7 @@ INSERT INTO `commande_detail` (`cmdd_id`, `cmdd_libelle`, `cmdd_url`, `cmdd_desc
 (1268, 'High Low Linen Blazer', 'bebe.com/Jackets-Outerwear/View-All/High-Low-Linen-Blazer/pc/227/c/0/sc/228/51861.pro', 'With a high-low hemline, bold color and lightweight stretch, this bebe linen blazer is a polish-cool way to inject your summer wardrobe with color. Work yours into suiting pieces or toss it over [...]', 2, '440.82', 16, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
 (1269, 'Solid Boyshorts BEBE SPORT ONLINE EXCLUSIVE', 'bebe.com/bebe-Sport/View-All/Solid-Boyshorts-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/233/52377.pro', 'Whether it''s going for a jog or checking out a cardio class, this colorful bebe short is a super-comfy way to update your activewear collection. Made from lightweight breathable fabric that dries[...]', 2, '49.78', 26, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
 (1270, 'Ruched Print Funnel Jacket BEBE SPORT ONLINE EXCLUSIVE', 'bebe.com/bebe-Sport/View-All/Ruched-Print-Funnel-Jacket-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/233/52384.pro', 'Attention-grabbing print and casual-cool 3/4 sleeves make this bebe jacket an electrifying way to amp up a workout outfit. Made from a lightweight, breathable fabric that dries 10 times faster th[...]', 1, '90.39', 14, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
-(1271, 'Print Run Crop Pant BEBE SPORT ONLINE EXCLUSIVE', 'bebe.com/bebe-Sport/View-All/Print-Run-Crop-Pant-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/233/52387.pro', 'With a hidden pocket at waistline and pop-bright print, this bebe pant is sure to be a workout go-to. Made from a lightweight, breathable fabric that dries 10 times faster than cotton. ', 2, '141.48', 19, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
-(1272, 'Colorblock Belted Dress', 'bebe.com/Dresses/View-All/Colorblock-Belted-Dress/pc/197/c/0/sc/198/49918.pro', 'Land a look-at-me look with this colorblock dress, featuring a soft knit and glossy skinny belt.\nThe belt contains lead, a chemical known to the State of California to cause birth defects or othe[...]', 7, '300.62', 24, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
-(1275, 'Colorblock Belted Dress', 'bebe.com/Dresses/Sweater-Dresses/Colorblock-Belted-Dress/49918.pro?relationType=recentlyViewed', 'Land a look-at-me look with this colorblock dress, featuring a soft knit and glossy skinny belt.\nThe belt contains lead, a chemical known to the State of California to cause birth defects or othe[...]', 2, '300.62', 24, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1);
+(1271, 'Print Run Crop Pant BEBE SPORT ONLINE EXCLUSIVE', 'bebe.com/bebe-Sport/View-All/Print-Run-Crop-Pant-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/233/52387.pro', 'With a hidden pocket at waistline and pop-bright print, this bebe pant is sure to be a workout go-to. Made from a lightweight, breathable fabric that dries 10 times faster than cotton. ', 2, '141.48', 19, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1);
 
 -- --------------------------------------------------------
 
@@ -1298,17 +1296,46 @@ CREATE TABLE IF NOT EXISTS `produits` (
   `prd_vis` int(1) NOT NULL,
   PRIMARY KEY (`prd_id`),
   UNIQUE KEY `prd_site` (`prd_site`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=296 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=280 ;
 
 --
 -- Contenu de la table `produits`
 --
 
 INSERT INTO `produits` (`prd_id`, `prd_libelle`, `prd_site`, `prd_desc`, `prd_cat`, `prd_visu`, `prd_prix`, `prd_vis`) VALUES
-(289, 'Skyway Retreat 36" Extra Large Duffel (Stone)', 'ebags.store.rakuten.com/p/skyway-retreat-36-extra-large-duffel-stone/221383220.html', 'Constructed of water and tear resistant rip-stop polyester.', 1, 'http://img.rakuten.com/PIC/42112140/0/1/350/42112140.jpg', '40.99', 1),
-(290, 'Side Slash Legging ONLINE EXCLUSIVE', 'bebe.com/Bottoms/View-All/Side-Slash-Legging-ONLINE-EXCLUSIVE/pc/218/c/0/sc/219/53325.pro', 'Punch up your off-duty style with this pair of bebe leggings, featuring sheer slashes at sides and an ultra-soft lightweight stretch. Try yours with a white tunic and a pair of booties to complet[...]', 1, 'http://s7d9.scene7.com/is/image/bebe/bb-218184-blk-i1?$Detail$', '38.45', 2),
-(291, 'EFFZG', 'GZGZG', 'GZGZGE', 1, '1', '344.00', 2),
-(292, 'Colorblock Belted Dress', 'bebe.com/Dresses/Sweater-Dresses/Colorblock-Belted-Dress/49918.pro?relationType=recentlyViewed', 'Land a look-at-me look with this colorblock dress, featuring a soft knit and glossy skinny belt.\nThe belt contains lead, a chemical known to the State of California to cause birth defects or othe[...]', 24, 'http://s7d9.scene7.com/is/image/bebe/bb-213618-nct-i1?$Detail$', '109.00', 0);
+(1, 'IPAD 2.0 Wifi 32GO', 'http://www.apple.com', '<p>Ipad from Apple.com</p>', 9, 'prd_ipad.png', '399.99', 0),
+(5, 'Kindle Fire', 'http://www.amazon.com', '<p>New kindle fire from Amazon.com</p>', 9, 'kindle.jpg', '159.00', 0),
+(6, 'eBags Packing Cubes - 3pc Set', 'rakuten.com/prod/ebags-packing-cubes-3pc-set/203422651.html', 'dscnico', 99, 'visunico', '21.99', 1),
+(10, 'HCG Diet Drops with Amino Acids and Vitamin B12', 'rakuten.com/prod/hcg-diet-drops-with-amino-acids-and-vitamin-b12/234632502.html', 'dscnico', 99, 'visunico', '32.95', 1),
+(61, 'Callister Cellars Double Delight', 'rakuten.com/prod/callister-cellars-double-delight/224746775.html', 'dscnico', 99, 'visunico', '39.95', 1),
+(108, 'PlayStation 3D Glasses', 'rakuten.com/prod/playstation-3d-glasses/224928388.html', 'Essential equipment for your 3D gaming experience, the PlayStation 3D Glasses fully immerse you in the heat of gameplay. These lightweight, stylish, and ergonomic glasses are a product of PlaySta[...]', 13, '2', '18.99', 0),
+(125, 'Skyway Retreat 36" Extra Large Duffel (Stone)', 'ebags.store.rakuten.com/p/skyway-retreat-36-extra-large-duffel-stone/221383220.html', 'dscnico', 0, 'visunico', '36.99', 0),
+(126, 'Samsonite Mobile Office Wheeled Notebook Case', 'ebags.store.rakuten.com/p/samsonite-mobile-office-wheeled-notebook-case/210977461.html', 'dscnico', 0, 'visunico', '2.00', 0),
+(130, 'SwissGear Travel Gear ScanSmart Backpack', 'ebags.store.rakuten.com/p/swissgear-travel-gear-scansmart-backpack/219601106.html', 'dscnico', 0, 'visunico', '67.99', 0),
+(157, 'Deuter Kid Comfort III', 'ebags.store.rakuten.com/p/deuter-kid-comfort-iii/227828231.html', 'dscnico', 0, 'visunico', '299.00', 0),
+(161, 'Puma Pro Performance Sport-Bud + Mic', 'ebags.store.rakuten.com/p/puma-pro-performance-sport-bud-mic/243698023.html', 'dscnico', 0, 'visunico', '79.99', 0),
+(162, 'Puma Pro Performance Sport-Bud + Mic', 'ebags.store.rakuten.com/p/puma-pro-performance-sport-bud-mic/243698024.html', 'dscnico', 0, 'visunico', '79.99', 0),
+(163, 'Samsonite Travel Accessories Medium Horizontal Camera Case', 'ebags.store.rakuten.com/p/samsonite-travel-accessories-medium-horizontal-camera-case/245457725.html', 'dscnico', 0, 'visunico', '29.99', 0),
+(165, 'Incipio NGP for iPad mini - Translucent Pink IPAD-304', 'ebags.store.rakuten.com/p/incipio-ngp-for-ipad-mini-translucent-pink-ipad-304/243743928.html', 'dscnico', 0, 'visunico', '24.99', 0),
+(166, 'Incipio Premium IPAD-200 Carrying Case (Folio) for iPad - Black', 'ebags.store.rakuten.com/p/incipio-premium-ipad-200-carrying-case-folio-for-ipad-black/223014731.html', 'dscnico', 27, 'visunico', '39.99', 0),
+(167, 'iPad Sleeve', 'ebags.store.rakuten.com/p/ipad-sleeve/245446349.html', 'dscnico', 21, 'visunico', '34.95', 0),
+(168, 'Designer Sleeves Designer Sleeve for 17 MacBook Pro', 'ebags.store.rakuten.com/p/designer-sleeves-designer-sleeve-for-17-macbook-pro/211031951.html', 'Thick, durable neoprene cushions your laptop for maximum moisture, shock and scratch protection[...]', 21, 'http://img.rakuten.com/PIC/41918861/0/1/350/41918861.jpg', '40.99', 0),
+(169, 'Prezzo Acrylic Photo Mini Bag', 'ebags.store.rakuten.com/p/prezzo-acrylic-photo-mini-bag/211249130.html', 'Zipper colsure', 15, 'http://img.rakuten.com/PIC/41923129/0/1/350/41923129.jpg', '25.49', 0),
+(170, 'Penguin Kids'' Backpack', 'ebags.store.rakuten.com/p/penguin-kids-backpack/245170625.html', 'Kids Hardside backpack with fabric back', 26, 'http://img.rakuten.com/PIC/51345720/0/1/350/51345720.jpg', '30.00', 0),
+(172, 'BYU Cougars Heart Watch', 'ebags.store.rakuten.com/p/byu-cougars-heart-watch/217338480.html', 'Designed for Ladies', 24, 'http://img.rakuten.com/PIC/27834736/0/1/350/27834736.jpg', '60.00', 0),
+(174, 'liazzade', 'siazzzade', '6', 1, '6', '6.00', 0),
+(223, '1/4 Carat Black & White Diamond Sterling Silver Heart Pendant w/Chain & Black Rhodium', 'rakuten.com/prod/1-4-carat-black-white-diamond-sterling-silver-heart-pendant-w-chain/225914331.html', 'Stunning and elegant this dazzling heart pendant speaks volumes with it''s exotic enhanced black diamonds and glittering white diamonds. Set in sterling silver and held with a beautiful sterling s[...]', 3, '2', '185.00', 0),
+(245, 'Side Slit Capri Jean', 'bebe.com/Bottoms/View-All/Side-Slit-Capri-Jean/pc/218/c/0/sc/219/52820.pro', 'With a slit at the hemline, comfy fit and cropped cut, this pair of colorful bebe jeans is sure to wake up any top. Try it with a neutral top and a pair of wedge sandals. ', 15, 'http://s7d9.scene7.com/is/image/bebe/bb-217245-fpl-i1?$Detail$', '79.00', 0),
+(250, 'Carissa Faux Suede Wedge Sandal ONLINE EXCLUSIVE', 'bebe.com/Shoes/View-All/Carissa-Faux-Suede-Wedge-Sandal-ONLINE-EXCLUSIVE/pc/239/c/0/sc/240/47459.pro', 'With a sexy ankle strap and paneled cork platform, this bebe sandal is a seriously luxe resort-ready must-own. Try it with a hi-lo dresses or skinny cropped jeans to create a flirty outfit.', 25, 'http://s7d9.scene7.com/is/image/bebe/bb-211226-fpl-i1?$Detail$', '110.00', 0),
+(264, 'Side Slit Capri Jean', 'bebe.com/Denim/View-All/Side-Slit-Capri-Jean/pc/225/c/0/sc/226/52820.pro', 'With a slit at the hemline, comfy fit and cropped cut, this pair of colorful bebe jeans is sure to wake up any top. Try it with a neutral top and a pair of wedge sandals. ', 19, 'http://s7d9.scene7.com/is/image/bebe/bb-217245-fpl-i1?$Detail$', '79.00', 0),
+(265, 'High Low Linen Blazer', 'bebe.com/Jackets-Outerwear/View-All/High-Low-Linen-Blazer/pc/227/c/0/sc/228/51861.pro', 'With a high-low hemline, bold color and lightweight stretch, this bebe linen blazer is a polish-cool way to inject your summer wardrobe with color. Work yours into suiting pieces or toss it over [...]', 16, 'http://s7d9.scene7.com/is/image/bebe/bb-215970-fpl-i1?$Detail$', '159.00', 0),
+(266, 'Solid Boyshorts BEBE SPORT ONLINE EXCLUSIVE', 'bebe.com/bebe-Sport/View-All/Solid-Boyshorts-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/233/52377.pro', 'Whether it''s going for a jog or checking out a cardio class, this colorful bebe short is a super-comfy way to update your activewear collection. Made from lightweight breathable fabric that dries[...]', 26, 'http://s7d9.scene7.com/is/image/bebe/bb-210942-rie-i1?$Detail$', '19.00', 0),
+(268, 'Birds Of Paradise High Flip Flop', 'bebe.com/Shoes/View-All/Birds-Of-Paradise-High-Flip-Flop/pc/239/c/0/sc/240/50263.pro', 'Get tropical! This pair of high bebe flip flops are a cute little way to elevate a poolside look. ', 19, 'http://s7d9.scene7.com/is/image/bebe/bb-214689-wht-i1?$Detail$', '39.00', 0),
+(270, 'Ruched Print Funnel Jacket BEBE SPORT ONLINE EXCLUSIVE', 'bebe.com/bebe-Sport/View-All/Ruched-Print-Funnel-Jacket-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/23', 'Attention-grabbing print and casual-cool 3/4 sleeves make this bebe jacket an electrifying way to amp up a workout outfit. Made from a lightweight, breathable fabric that dries 10 times faster th[...]', 14, 'http://s7d9.scene7.com/is/image/bebe/bb-215608-rni-i1?$Detail$', '69.00', 0),
+(271, 'Boho Tux Icon Capri Jeans', 'bebe.com/Denim/View-All/Boho-Tux-Icon-Capri-Jeans/pc/225/c/0/sc/226/50575.pro', 'Update your denim collection with a shot of boho-cool in this pair of bebe skinny jeans, featuring embroidered tuxedo stripes down the sides and the signature comfy fit of our denim.', 16, 'http://s7d9.scene7.com/is/image/bebe/bb-215195-opw-i1?$Detail$', '129.00', 0),
+(273, 'Print Run Crop Pant BEBE SPORT ONLINE EXCLUSIVE', 'bebe.com/bebe-Sport/View-All/Print-Run-Crop-Pant-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/233/52387', 'With a hidden pocket at waistline and pop-bright print, this bebe pant is sure to be a workout go-to. Made from a lightweight, breathable fabric that dries 10 times faster than cotton. ', 25, 'http://s7d9.scene7.com/is/image/bebe/bb-215623-oxo-i1?$Detail$', '54.00', 0),
+(276, 'Elastic Fit Flare Dress', 'bebe.com/Dresses/View-All/Elastic-Fit-Flare-Dress/pc/197/c/0/sc/198/51856.pro', 'With impactful black and white contrast, sexy heart-shaped neckline and luxe heavy-drape skirt, this bebe dress is sure to inject your summer look with a dose of elegance. Elevate yours with a pa[...]', 0, 'http://s7d9.scene7.com/is/image/bebe/bb-213710-b_w-i1?$Detail$', '129.00', 0),
+(278, 'Colorblock Belted Dress', 'bebe.com/Dresses/View-All/Colorblock-Belted-Dress/pc/197/c/0/sc/198/49918.pro', 'Land a look-at-me look with this colorblock dress, featuring a soft knit and glossy skinny belt.\nThe belt contains lead, a chemical known to the State of California to cause birth defects or othe[...]', 19, 'http://s7d9.scene7.com/is/image/bebe/bb-213618-nct-i1?$Detail$', '109.00', 0);
 
 -- --------------------------------------------------------
 
@@ -14369,14 +14396,14 @@ CREATE TABLE IF NOT EXISTS `pts_bonus` (
   `pts_nb` int(100) NOT NULL,
   PRIMARY KEY (`pts_id`),
   UNIQUE KEY `pts_cli` (`pts_cli`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=256 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=241 ;
 
 --
 -- Contenu de la table `pts_bonus`
 --
 
 INSERT INTO `pts_bonus` (`pts_id`, `pts_cli`, `pts_nb`) VALUES
-(87, 1, 5250),
+(87, 1, 4600),
 (132, 0, 250);
 
 -- --------------------------------------------------------
@@ -27038,7 +27065,7 @@ CREATE TABLE IF NOT EXISTS `token` (
 --
 
 INSERT INTO `token` (`tok_id`, `tok_user`, `tok_token`, `tok_ext`) VALUES
-(1, 1, '519b2233d9e16', 'ezgrzgrzg463663');
+(1, 0, '', 'ezgrzgrzg463663');
 
 -- --------------------------------------------------------
 
