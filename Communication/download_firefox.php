@@ -28,7 +28,7 @@
 
 		//echo $token;
 		$data = 'var token = ' . $token_app . ';';
-		$nav = '.zip';  //changer en xpi
+		$nav = '.xpi';  //changer en xpi
 		$nomPlugin = 'fomUS';
 
 		 
