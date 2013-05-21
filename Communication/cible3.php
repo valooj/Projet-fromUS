@@ -102,7 +102,7 @@ try
             $rep = $req->execute();
             $req->closeCursor();
 
-            $response['status'] = '1';
+            $response['status'] = 'A';
             $response['Message'] = 'Vous avez gagné '.$bonus.' pts';
 
 			break;
@@ -163,7 +163,7 @@ try
             if(!$rep)
 				throw new Exception('MAJ :: Insert panier invalid');
 
-			$response['status'] = '2';
+			$response['status'] = 'P';
 			$response['Message'] = 'Votre produit a bien été inséré';
 			
 			break;
@@ -321,7 +321,7 @@ try
 			$mod_livr="e";
 			$stat = "10";
 			
-			$response['status'] = '3';
+			$response['status'] = 'C';
 			$response['Prix'] = $prix_total;
 	
 
@@ -361,45 +361,25 @@ try
 
 			$response['Status'] = 'L';
 			$response['Token'] = $new_token_user;
-			$response['Pays'] = $new_token_user;
-
-			break;
-
-		case 'MAJ-connect':
-			$get_token_ext = isset($_GET['token_ext']) ? htmlspecialchars($_GET['token_ext']) : null;
-
-			// variables tests
-			if ( !$get_token_ext )
-				throw new Exception('MAJ :: token_ext not specified');
-
-			$req = $bdd->prepare('SELECT tok_token FROM token where tok_ext= :_token_ext');
-			$req->execute(array('_token_ext' =>$get_token_ext));
-			$token = $req->fetch();
-			$token = $token[0];
-			$req->closeCursor();
-
-			if(!$token)
-				throw new Exception('Vous etês connecté en tant que visiteur');
-
-			$response['Token'] = $token;
+			$response['Pays'] = $arr[1];
 
 			break;
 
 		case 'MAJ-logout':
-			$get_token_ext = isset($_GET['token_ext']) ? htmlspecialchars($_GET['token_ext']) : null;
+			$get_token= isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
 
 			// variables tests
-			if ( !$get_token_ext )
+			if ( !$get_token)
 				throw new Exception('MAJ :: token_ext not specified');
 
-			$req = $bdd->prepare('UPDATE token SET tok_user = :_myNull , tok_token = :_myNull where tok_ext= :_token_ext');
+			$req = $bdd->prepare('UPDATE token SET tok_token = :_myNull where tok_token = :_token');
 			$myNull = null;
 			$req->bindParam(':_myNull', $myNull, PDO::PARAM_NULL);
-			$req->bindParam(':_myNull', $myNull, PDO::PARAM_NULL);
-			$req->bindParam(':_token_ext', $get_token_ext, PDO::PARAM_STR);
+			$req->bindParam(':_token', $get_token, PDO::PARAM_STR);
 			$req->execute();
 			$req->closeCursor();
 
+			$response['Status'] = 'l';
 			$response['Message'] = 'A bientot';
 
 			break;
