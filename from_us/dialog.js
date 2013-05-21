@@ -182,6 +182,11 @@ $(document).ready(function() {
 			width: 850,
 			resizable: false,
 			closeOnEscape: true,
+
+			// bouton X => ferme la pop up
+			close: function(ev,ui) {
+				$(this).remove();
+			},
 			buttons: 
 				[
 					// bouton submit qui permet de commander un produit (ne marche pas pour l'instant)
