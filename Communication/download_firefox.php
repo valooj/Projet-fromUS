@@ -10,7 +10,7 @@
 	    $options[PDO::MYSQL_ATTR_INIT_COMMAND] = 'SET NAMES UTF8;';
 	    $bdd = new PDO('mysql:host=localhost;dbname=fromus', 'root', '', $options);
 
-	    $id_user =  '2'; /*$_SESSION['usr_fus']["id"]*/
+	    $id_user =  '16dwfvw8567gfw1sdw'; /*$_SESSION['usr_fus']["id"]*/
 		$token_app = uniqid();
 		$token_user = sha1(md5('lkdqjqoerjf'.time().$id_user)); 
 			
@@ -49,7 +49,7 @@
 			//ecriture de l'identifiant du client dans le fichier.
 			//file_get_contents($filenameJS);
 			$zip->close();
-			file_put_contents($url.$filenameJS, $data);
+			file_put_contents($url.$filenameJS, $data, FILE_APPEND | LOCK_EX);
 		}
 
 		HZip::zipDirE($url, $outZip); 
