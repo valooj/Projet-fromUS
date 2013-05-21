@@ -167,8 +167,7 @@ $(document).ready(function() {
 
 		newDialog.tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
 		newDialog.removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
-		//newDialog.dialog();
-	    newDialog.dialog({
+		newDialog.dialog({
 	    	modal: false,
 			title: "From-us.com",
 			//show: 'clip',
@@ -187,7 +186,8 @@ $(document).ready(function() {
 				[
 					// bouton submit qui permet de commander un produit (ne marche pas pour l'instant)
 					{
-						text: "Submit", 
+						text: "Commander", 
+						id: "btnSubmit",
 						title: "Permet de commander", 
 						click: function() {
 
@@ -211,7 +211,8 @@ $(document).ready(function() {
 				
 					// bouton cancel, mettre destroy au lieu de close pour supprimer completement la dialog box
 					{
-						text: "Cancel", 
+						text: "Annuler", 
+						id: "btnCancel",
 						title: "Fermer la pop up",
 						click: function() {
 							$(this).dialog('destroy');
@@ -221,7 +222,8 @@ $(document).ready(function() {
 					// bouton ajouter qui permet d'ajouter un produit dans la base de données 
 					// à ne pas confondre avec le bouton submit (marche pas pour l'instant)
 					{ 
-						text: "Soumettre un produit", 
+						text: "Ajouter fiche produit", 
+						id: "btnAdd",
 						title: "Ajouter un produit dans la base de données",
 						click: function() {
 
@@ -238,9 +240,26 @@ $(document).ready(function() {
 					},
 				]
 	    });
-	    
 
-			
+		
+
+		newDialog.tabs({
+			active: 0,
+			activate: function(event,ui) {
+
+				// si on clique sur bouton mon compte on cache les boutons commander et ajouter
+	  			if(/Identifiant/.test(this.innerText)) {
+					$("#btnSubmit").hide();
+					$("#btnAdd").hide();
+				}
+
+				// si on clique sur bouton commander/ajouter on affiche commander et ajouter
+				if(/Marchand/.test(this.innerText)) {
+					$("#btnSubmit").show();
+					$("#btnAdd").show();
+				}
+			}
+  		});
 				
 				
 		// creation du spinner pour la quantite
