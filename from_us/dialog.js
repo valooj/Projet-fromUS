@@ -180,7 +180,7 @@ $(document).ready(function() {
 				},
 			height: 300,
 			width: 850,
-			resizable: false,
+			resizable: true,
 			closeOnEscape: true,
 
 			// bouton X => ferme la pop up
@@ -253,16 +253,18 @@ $(document).ready(function() {
 			active: 0,
 			activate: function(event,ui) {
 
-				// si on clique sur bouton mon compte on cache les boutons commander et ajouter
+				// si on clique sur bouton mon compte on cache les boutons commander,ajouter et annuler
 	  			if(/Identifiant/.test(this.innerText)) {
 					$("#btnSubmit").hide();
 					$("#btnAdd").hide();
+					$("#btnCancel").hide();
 				}
 
-				// si on clique sur bouton commander/ajouter on affiche commander et ajouter
+				// si on clique sur bouton commander/ajouter on affiche commander,ajouter et annuler
 				if(/Marchand/.test(this.innerText)) {
 					$("#btnSubmit").show();
 					$("#btnAdd").show();
+					$("#btnCancel").show();
 				}
 			}
   		});
