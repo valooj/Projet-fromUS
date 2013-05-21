@@ -92,3 +92,49 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 519b2233d9e16
+    [product] => {"prd_libelle":"Apple iPad 2 with Wi-Fi 16GB - Black","prd_site":"click-go-and-buy.store.rakuten.com/p/apple-ipad-2-with-wi-fi-16gb-black/249789477.html","prd_desc":"iPad 2Thinner. Lighter. Faster. FaceTime. Smart Covers. 10-hour Battery.There's more to it. And even less of it.Two cameras for FaceTime and HD video recording. The dual-core A5 chip. The same 10[...]","prd_visu":"http://img.rakuten.com/PIC/51473452/0/1/350/51473452.jpg","prd_prix":"379.99","prd_cat":"27"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 519b2233d9e16
+    [product] => {"prd_libelle":"Apple iPad 2 with Wi-Fi 16GB - Black","prd_site":"click-go-and-buy.store.rakuten.com/p/apple-ipad-2-with-wi-fi-16gb-black/249789477.html","prd_desc":"iPad 2Thinner. Lighter. Faster. FaceTime. Smart Covers. 10-hour Battery.There's more to it. And even less of it.Two cameras for FaceTime and HD video recording. The dual-core A5 chip. The same 10[...]","prd_visu":"http://img.rakuten.com/PIC/51473452/0/1/350/51473452.jpg","prd_prix":"379.99","prd_cat":"27"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 519b2233d9e16
+    [calcul] => {"libelle":"Apple iPad 2 with Wi-Fi 16GB - Black","qte":"1","montant":"379.99","categ":"27"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 519b2233d9e16
+    [panier] => {"libelle":"Apple iPad 2 with Wi-Fi 16GB - Black","url":"click-go-and-buy.store.rakuten.com/p/apple-ipad-2-with-wi-fi-16gb-black/249789477.html","desc":"iPad 2Thinner. Lighter. Faster. FaceTime. Smart Covers. 10-hour Battery.There's more to it. And even less of it.Two cameras for FaceTime and HD video recording. The dual-core A5 chip. The same 10[...]","qte":"1","montant":542.389,"categ":"27"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-connect
+    [token_ext] => ezgrzgrzg463663
+)
+
+===========================================
