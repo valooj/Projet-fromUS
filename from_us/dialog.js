@@ -104,8 +104,8 @@ $(document).ready(function() {
 	var newDialog = $('<div id="dialogBox">' +
 						'<div id="tabs">' +
 							'<ul>' +
-								'<li><a href="#tabs-1">Ajouter</a></li>' +
 								'<li><a href="#tabs-1">Commander</a></li>' +
+								'<li><a href="#tabs-1">Ajouter</a></li>' +
 								'<li><a href="#tabs-3">Mon compte</a></li>' +
 							'</ul>' +
 							'<div id="tabs-1">' +
