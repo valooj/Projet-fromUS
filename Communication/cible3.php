@@ -26,6 +26,13 @@ INSERT INTO commande_detail(cmdd_libelle, cmdd_url, cmdd_desc, cmdd_qte, cmdd_mo
 		cmdd_libelle= :_libelle, cmdd_url= :_url, cmdd_desc= :_desc, cmdd_qte= cmdd_qte + :_qte, cmdd_montant= :_montant, cmdd_categ= :_categ, cmdd_poids= :_poids, cmdd_unitep= :_unitep, cmdd_larg= :_larg, cmdd_long= :_long, cmdd_haut= :_haut, cmdd_united= :_united, cmdd_proforma= :_proforma, cmdd_ent= :_ent
 SQL;
 
+$sql_prepared_update_login = <<<SQL
+INSERT INTO token(tok_user, tok_token)
+	VALUES (:_id_user, :_token_user)
+	ON DUPLICATE KEY UPDATE
+		tok_token = :_token_user
+SQL;
+
 
 try
 {
@@ -321,12 +328,9 @@ try
 			break;
 
 		case 'MAJ-login':
-			$get_token_ext = isset($_GET['token_ext']) ? htmlspecialchars($_GET['token_ext']) : null;
 			$get_log = isset($_REQUEST['log']) ? json_decode($_REQUEST['log'], TRUE) : null;
 
 			// variables tests
-			if ( !$get_token_ext )
-				throw new Exception('MAJ :: token_ext not specified');
 			if ( !$get_log )
 				throw new Exception('MAJ :: log not specified');
 
@@ -337,7 +341,7 @@ try
 				throw new Exception('Emain not valid');
 
 			//selection de l'id a partir de l'email et du password
-			$req = $bdd->prepare('SELECT user_id FROM users where user_email= :_email and user_mdp = :_password ');
+			$req = $bdd->prepare('SELECT user_id , user_pays FROM users where user_email= :_email and user_mdp = :_password ');
 			$req->execute(array(
 			    '_email' => $get_log['email'],
 			    '_password' => $get_log['password']));
@@ -349,14 +353,15 @@ try
 
 			//Creation du token et ajout dans la table
 			$new_token_user = uniqid();
-			$req = $bdd->prepare('UPDATE token SET tok_user = :_id_user , tok_token = :_token_user where tok_ext= :_token_ext');
+			$req = $bdd->prepare($sql_prepared_update_login);
 			$req->bindParam(':_id_user', $arr[0], PDO::PARAM_INT);
 			$req->bindParam(':_token_user', $new_token_user, PDO::PARAM_STR);
-			$req->bindParam(':_token_ext', $get_token_ext, PDO::PARAM_STR);
 			$req->execute();
 			$req->closeCursor();
 
+			$response['Status'] = 'L';
 			$response['Token'] = $new_token_user;
+			$response['Pays'] = $new_token_user;
 
 			break;
 
