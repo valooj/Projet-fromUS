@@ -105,7 +105,7 @@ $(document).ready(function() {
 						'<div id="tabs">' +
 							'<ul>' +
 								'<li><a href="#tabs-1">Ajouter</a></li>' +
-								'<li><a href="#tabs-2">Commander</a></li>' +
+								'<li><a href="#tabs-1">Commander</a></li>' +
 								'<li><a href="#tabs-3">Mon compte</a></li>' +
 							'</ul>' +
 							'<div id="tabs-1">' +
@@ -137,39 +137,15 @@ $(document).ready(function() {
 											'<option value="29">Santé & Beauté</option>' +
 											'<option value="12">Sports & Loisirs</option>' +
 										'</select></br>' +
-									'<label for="quantite">Quantite : </label><input id="QteSpinner">' +
-								'</form>' +
-							'</div>' +
-							'<div id="tabs-2">' +
-								'<h2>Formulaire</h2>' + '<input type="button" name="btn1fromus" id="btn1fromus" value=""><br>' +
-								'<form id="submitForm">' + 
-									'<label for="store">Marchand : </label><input type="textbox" id="store" disabled="true"/></br>' +
-									'<label for="name">Nom du produit : </label><input type="textbox" id="name" disabled="true"/></br>' + 
-									'<label for="price">Prix du produit : </label><input type="textbox" id="price" disabled="true"/></br>' +
-									'<label for="category">Catégorie:</label>' +
-										'<select id="category">' +
-											'<option value="default" selected="selected">Choisir une catégorie</option>' +
-											'<option value="1">Antiques, Art & Collectibles</option>' +
-											'<option value="24">Auto & Moto</option>' +
-											'<option value="15">Bijoux & Montres</option>' +
-											'<option value="16">Chaussures</option>' +
-											'<option value="13">Entreprises & Industries</option>' +
-											'<option value="19">Habits pour enfants</option>' +
-											'<option value="26">Habits pour femmes</option>' +
-											'<option value="25">Habits pour hommes</option>' +
-											'<option value="14">Instrument de musique</option>' +
-											'<option value="17">Jeux & Jouets</option>' +
-											'<option value="28">Jeux vidéos & Informatique</option>' +
-											'<option value="3">Livres, Films & Musiques</option>' +
-											'<option value="30">Maison & Jardin</option>' +
-											'<option value="27">Ordinateurs & Bureau</option>' +
-											'<option value="23">Pièces, Bricolage & Outillage</option>' +
-											'<option value="18">Puericulture</option>' +
-											'<option value="21">Sacs & Accessoires</option>' +
-											'<option value="29">Santé & Beauté</option>' +
-											'<option value="12">Sports & Loisirs</option>' +
+									'<label for="category">Sous-catégorie:</label>' +
+										'<select id="category">' +			// c'est la qu'il faut que tu mettes les sous catégories
 										'</select></br>' +
-									'<label for="quantite">Quantite : </label><input id="QteSpinner">' +
+									'<label for="quantite">Quantite : </label><input id="QteSpinner"></br>' +
+									'<label for="assurance">Assurance : </label>' +
+										'<div id="radio">' +
+    										'<input type="radio" id="oui" name="assurance" /><label for="oui">Oui</label>' +
+    										'<input type="radio" id="non" name="assurance" /><label for="non">Non</label>' +
+    									'</div>' +
 								'</form>' +
 							'</div>' +
 							'<div id="tabs-3">' +
@@ -203,7 +179,7 @@ $(document).ready(function() {
 					my: "left top", 
 					at: "left top"
 				},
-			height: 300,
+			height: 330,
 			width: 855,
 			resizable: true,
 			closeOnEscape: true,
@@ -293,7 +269,9 @@ $(document).ready(function() {
 				}
 			}
   		});
-				
+		
+
+
 				
 		// creation du spinner pour la quantite
 		var newSpinner = $( "#QteSpinner" ).spinner({
@@ -349,10 +327,10 @@ $(document).ready(function() {
 			window.open('http://www.from-us.com/fromus/fr/index.html');
 		},false);
 
-		var btn1fromus = document.getElementById('btn1fromus');
+		/*var btn1fromus = document.getElementById('btn1fromus');
 		btn1fromus.addEventListener('click', function(e) {
 			window.open('http://www.from-us.com/fromus/fr/index.html');
-		},false);
+		},false);*/
 
 		// ouverture de la dialog box
 		newDialog.dialog("open");
