@@ -102,7 +102,7 @@ try
             $rep = $req->execute();
             $req->closeCursor();
 
-            $response['status'] = 'A';
+            $response['Status'] = 'A';
             $response['Message'] = 'Vous avez gagné '.$bonus.' pts';
 
 			break;
@@ -163,7 +163,7 @@ try
             if(!$rep)
 				throw new Exception('MAJ :: Insert panier invalid');
 
-			$response['status'] = 'P';
+			$response['Status'] = 'P';
 			$response['Message'] = 'Votre produit a bien été inséré';
 			
 			break;
@@ -321,7 +321,7 @@ try
 			$mod_livr="e";
 			$stat = "10";
 			
-			$response['status'] = 'C';
+			$response['Status'] = 'C';
 			$response['Prix'] = $prix_total;
 	
 
