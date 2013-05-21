@@ -1,5 +1,5 @@
 var token;
-var pays = 'fr';
+var paysLangue =  window.navigator.language ;
 
 var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&token=';
 var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&token=';
@@ -10,7 +10,6 @@ var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-l
 var productJSON = {};
 var calculJSON = {};
 var panierJSON = {};
-var logJSON = {};
 var qteVal;
 var categVal;
 var regStore;
@@ -47,33 +46,19 @@ function eraseCookie(name) {
 }
 
 
-
-function checkLogin() {
-	$.post(_urlLogin, logJSON)
-	.done(function(datas) { 
-		switch(datas['Status']){
-			case 'L':
-				token = datas['Token'];
-				createCookie('token',token,21);
-				pays = datas['Pays'];
-			break;
-
-			default:
-				alert(datas['error']);
-			break;
-		}
-	})
-	.fail(function(datas) { 
-		alert(datas['error']); 
-		})
-;}
-
+//Fonctions d'envoie de données au serveur
 function sendToServer(urlSelected, jsonSelected) {
-	$.post(urlSelected+token, jsonSelected)
+	$.post(urlSelected, jsonSelected)
 	.done(function(datas) { 
 		switch(datas['Status']){
 			case 'l':
 				alert(datas['Message']);
+			break;
+
+			case 'L':
+				token = datas['Token'];
+				createCookie('token',token,21);
+				//pays = datas['Pays'];
 			break;
 
 			case 'A':
@@ -234,13 +219,13 @@ $(document).ready(function() {
 							var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
 							var postData = JSON.stringify(jsonProduct);
 							productJSON = {product:postData};
-							sendToServer(_urlProduct,productJSON);
+							sendToServer(_urlProduct+token,productJSON);
 
 
 							var jsonCalcul = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
 							var postDataCalcul = JSON.stringify(jsonCalcul);
 							calculJSON = {calcul:postDataCalcul};
-							sendToServer(_urlCalcul , calculJSON);
+							sendToServer(_urlCalcul+token , calculJSON);
 						}
 					},		
 				
@@ -270,7 +255,7 @@ $(document).ready(function() {
 							var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
 							var postData = JSON.stringify(jsonProduct);
 							productJSON = {product:postData};
-							sendToServer(_urlProduct , productJSON);
+							sendToServer(_urlProduct+token , productJSON);
 						}
 					},
 				]
@@ -339,13 +324,15 @@ $(document).ready(function() {
 				if (emailV && passwordV){
 					var jsonLog = {email: emailV ,password: passwordV};
 					var postLog = JSON.stringify(jsonLog);
-					logJSON = {log:postLog};
-					checkLogin();
+					var logJSON = {log:postLog};
+					sendToServer(_urlLogin, logJSON);
+					//checkLogin();
 				}
 		    }
 		    else{
 		        in_out.value = "login";
-		    	sendToServer(_urlLogout, {});
+		    	sendToServer(_urlLogout+token, {});
+		    	eraseCookie('token');
 			}
 				    
 		}, false);

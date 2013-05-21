@@ -204,3 +204,85 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token] => 519b855bcab4c
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 519b8adf33dc8
+    [product] => {"prd_libelle":"Boho Tux Icon Capri Jeans","prd_site":"bebe.com/Denim/View-All/Boho-Tux-Icon-Capri-Jeans/pc/225/c/0/sc/226/50575.pro","prd_desc":"Update your denim collection with a shot of boho-cool in this pair of bebe skinny jeans, featuring embroidered tuxedo stripes down the sides and the signature comfy fit of our denim.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-215195-opw-i1?$Detail$","prd_prix":"129","prd_cat":"default"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 519b8adf33dc8
+    [product] => {"prd_libelle":"Boho Tux Icon Capri Jeans","prd_site":"bebe.com/Denim/View-All/Boho-Tux-Icon-Capri-Jeans/pc/225/c/0/sc/226/50575.pro","prd_desc":"Update your denim collection with a shot of boho-cool in this pair of bebe skinny jeans, featuring embroidered tuxedo stripes down the sides and the signature comfy fit of our denim.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-215195-opw-i1?$Detail$","prd_prix":"129","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 519b8adf33dc8
+    [calcul] => {"libelle":"Boho Tux Icon Capri Jeans","qte":"2","montant":"129","categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 519b8adf33dc8
+    [panier] => {"libelle":"Boho Tux Icon Capri Jeans","url":"bebe.com/Denim/View-All/Boho-Tux-Icon-Capri-Jeans/pc/225/c/0/sc/226/50575.pro","desc":"Update your denim collection with a shot of boho-cool in this pair of bebe skinny jeans, featuring embroidered tuxedo stripes down the sides and the signature comfy fit of our denim.","qte":"2","montant":375.44,"categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token] => 519b8adf33dc8
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token] => 519b8adf33dc8
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 519b8baa9dcf7
+    [product] => {"prd_libelle":"Boho Tux Icon Capri Jeans","prd_site":"bebe.com/Denim/View-All/Boho-Tux-Icon-Capri-Jeans/pc/225/c/0/sc/226/50575.pro","prd_desc":"Update your denim collection with a shot of boho-cool in this pair of bebe skinny jeans, featuring embroidered tuxedo stripes down the sides and the signature comfy fit of our denim.","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-215195-opw-i1?$Detail$","prd_prix":"129","prd_cat":"default"}
+)
+
+===========================================
