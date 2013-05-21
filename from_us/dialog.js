@@ -180,7 +180,7 @@ $(document).ready(function() {
 				},
 			height: 300,
 			width: 850,
-			resizable: true,
+			resizable: false,
 			closeOnEscape: true,
 
 			// bouton X => ferme la pop up
