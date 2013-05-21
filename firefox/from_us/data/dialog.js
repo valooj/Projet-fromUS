@@ -181,10 +181,16 @@ $(document).ready(function() {
 			height: 300,
 			width: 850,
 			resizable: false,
-			//closeOnEscape: false
+			closeOnEscape: true,
+
+			// bouton X => ferme la pop up
+			close: function(ev,ui) {
+				$(this).remove();
+			},
+
 			buttons: 
 				[
-					// bouton submit qui permet de commander un produit (ne marche pas pour l'instant)
+					// bouton submit qui permet de commander un produit 
 					{
 						text: "Commander", 
 						id: "btnSubmit",
@@ -220,7 +226,7 @@ $(document).ready(function() {
 					},
 						
 					// bouton ajouter qui permet d'ajouter un produit dans la base de données 
-					// à ne pas confondre avec le bouton submit (marche pas pour l'instant)
+					// à ne pas confondre avec le bouton submit 
 					{ 
 						text: "Ajouter fiche produit", 
 						id: "btnAdd",

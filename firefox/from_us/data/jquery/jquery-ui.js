@@ -2,6 +2,10 @@
 * http://jqueryui.com
 * Includes: jquery.ui.core.js, jquery.ui.widget.js, jquery.ui.mouse.js, jquery.ui.draggable.js, jquery.ui.droppable.js, jquery.ui.resizable.js, jquery.ui.selectable.js, jquery.ui.sortable.js, jquery.ui.effect.js, jquery.ui.accordion.js, jquery.ui.autocomplete.js, jquery.ui.button.js, jquery.ui.datepicker.js, jquery.ui.dialog.js, jquery.ui.effect-blind.js, jquery.ui.effect-bounce.js, jquery.ui.effect-clip.js, jquery.ui.effect-drop.js, jquery.ui.effect-explode.js, jquery.ui.effect-fade.js, jquery.ui.effect-fold.js, jquery.ui.effect-highlight.js, jquery.ui.effect-pulsate.js, jquery.ui.effect-scale.js, jquery.ui.effect-shake.js, jquery.ui.effect-slide.js, jquery.ui.effect-transfer.js, jquery.ui.menu.js, jquery.ui.position.js, jquery.ui.progressbar.js, jquery.ui.slider.js, jquery.ui.spinner.js, jquery.ui.tabs.js, jquery.ui.tooltip.js
 * Copyright 2013 jQuery Foundation and other contributors; Licensed MIT */
+
+/* close => destroy pour le bouton escape */
+
+
 (function( $, undefined ) {
 
 var uuid = 0,
@@ -6693,7 +6697,7 @@ $.widget( "ui.autocomplete", {
 				case keyCode.ESCAPE:
 					if ( this.menu.element.is( ":visible" ) ) {
 						this._value( this.term );
-						this.close( event );
+						this.destroy( event );
 						// Different browsers have different default behavior for escape
 						// Single press can mean undo or clear
 						// Double press in IE means clear the whole form
@@ -9891,7 +9895,7 @@ $.widget( "ui.dialog", {
 				if ( this.options.closeOnEscape && !event.isDefaultPrevented() && event.keyCode &&
 						event.keyCode === $.ui.keyCode.ESCAPE ) {
 					event.preventDefault();
-					this.close( event );
+					this.destroy( event );
 					return;
 				}
 
