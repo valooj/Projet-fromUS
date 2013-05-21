@@ -1,14 +1,11 @@
-var token_ext = 'ezgrzgrzg463663';
-//var token = 'a12344v234577zee';
 var token;
+var pays = 'fr';
+
 var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&token=';
 var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&token=';
 var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&token=';
-
-var _urlConnect = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-connect&token_ext='+token_ext;
-var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&token_ext='+token_ext;
-
-var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login&token_ext='+token_ext;
+var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&token=';
+var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login';
 
 var productJSON = {};
 var calculJSON = {};
@@ -23,45 +20,39 @@ var regOffer;
 var regDesc;
 var regVisu;
 
-function connect(urlSelected) {
-	$.get(urlSelected)
-	.done(function(datas) { 
-		if(datas['Token'] !== undefined)
-			token = datas['Token'];
-		if(datas['error'] !== undefined)
-			alert(datas['error']);  
-		})
-	.fail(function(datas) { 
-		alert(datas['error']); 
-		})
-;}
-
-
 function checkLogin() {
 	$.post(_urlLogin, logJSON)
 	.done(function(datas) { 
-		if(datas['Token'] !== undefined)
-			token = datas['Token'];
-		if(datas['error'] !== undefined)
-			alert(datas['error']);  
-		})
+		switch(datas['Status']){
+			case 'L':
+				token = datas['Token'];
+				navigator.preference('token',token);
+				pays = datas['Pays'];
+			break;
+
+			default:
+				alert(datas['error']);
+			break;
+		}
+	})
 	.fail(function(datas) { 
 		alert(datas['error']); 
 		})
 ;}
-
-
 
 function sendToServer(urlSelected, jsonSelected) {
 	$.post(urlSelected+token, jsonSelected)
 	.done(function(datas) { 
-		if(datas['status'] == 1){
-			if(datas['Message'] !== undefined)
+		switch(datas['Status']){
+			case 'l':
 				alert(datas['Message']);
-		}
+			break;
 
-		if(datas['status'] == 3){
-			if(datas['Prix'] !== undefined){
+			case 'A':
+				alert(datas['Message']);
+			break;
+
+			case 'C':
 				var totalPrice = datas['Prix'];
 				if(totalPrice !== 0){
 					if(confirm('L\'estimation du prix est de $'+totalPrice+' ')) {
@@ -72,17 +63,18 @@ function sendToServer(urlSelected, jsonSelected) {
 						sendAjoutPanier();
 					}
 				}
-				
-			}
-		}
+			break;
 
-		if(datas['error'] !== undefined)
-			alert(datas['error']);  
-		})
+			default:
+				alert(datas['error']);
+			break;
+		}
+	})
 	.fail(function(datas) { 
 		alert(datas['error']); 
 		})
 ;}
+
 
 function sendAjoutPanier() {
 	$.post(_urlPanier+token, panierJSON)
@@ -347,7 +339,7 @@ $(document).ready(function() {
 		    }
 		    else{
 		        in_out.value = "login";
-		    	connect(_urlLogout);
+		    	sendToServer(_urlLogout, {});
 			}
 				    
 		}, false);
@@ -364,7 +356,9 @@ $(document).ready(function() {
 
 		// ouverture de la dialog box
 		newDialog.dialog("open");
-		connect(_urlConnect);
+
+		if(navigator.preference('token'))
+			token=navigator.preference('token');
 				
 		// suppression des key dans le localstorage
 		localStorage.removeItem('regDesc');
