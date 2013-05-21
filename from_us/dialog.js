@@ -181,7 +181,7 @@ $(document).ready(function() {
 			height: 300,
 			width: 850,
 			resizable: false,
-			//closeOnEscape: false
+			closeOnEscape: true,
 			buttons: 
 				[
 					// bouton submit qui permet de commander un produit (ne marche pas pour l'instant)

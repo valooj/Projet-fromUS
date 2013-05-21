@@ -6693,7 +6693,7 @@ $.widget( "ui.autocomplete", {
 				case keyCode.ESCAPE:
 					if ( this.menu.element.is( ":visible" ) ) {
 						this._value( this.term );
-						this.close( event );
+						this.destroy( event );
 						// Different browsers have different default behavior for escape
 						// Single press can mean undo or clear
 						// Double press in IE means clear the whole form
@@ -9891,7 +9891,7 @@ $.widget( "ui.dialog", {
 				if ( this.options.closeOnEscape && !event.isDefaultPrevented() && event.keyCode &&
 						event.keyCode === $.ui.keyCode.ESCAPE ) {
 					event.preventDefault();
-					this.close( event );
+					this.destroy( event );
 					return;
 				}
 
