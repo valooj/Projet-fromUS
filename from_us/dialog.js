@@ -114,7 +114,7 @@ function sendAjoutPanier() {
 ;}
 
 function parseCat(categorieJSON) {
-    var $selectCat = $('select[id="categorie"]');
+    var $selectCat = $('select[id="category"]');
     $selectCat.empty();
     	alert(categorieJSON);
     	//var myJson = JSON.parse(categorieJson);
@@ -125,9 +125,9 @@ function parseCat(categorieJSON) {
         //alert(myJson);
         //alert(categorieJSON[idCat]);
     for(var i = 0; i < categorieJSON.length; i++) {
-        //$selectCat.append('<option value="'+categorieJSON.Cat+'">'+categorieJSON[key]+'</option>');
-   		alert(obj[i].idCat);
-   		alert(obj[i].libelleCat);
+        $selectCat.append('<option value="'+obj[i].idCat+'" disabled="true">'+obj[i].libelleCat+'</option>');
+   		//alert(obj[i].idCat);
+   		//alert(obj[i].libelleCat);
         
 
     }

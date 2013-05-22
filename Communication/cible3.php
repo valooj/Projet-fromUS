@@ -503,8 +503,8 @@ try
 			$categorie= '[';
 			$scategorie= null;
 
-			$arr = $req->fetch();
-			$categorie = $categorie.'{"idCat":"'.$arr[0].'","libelleCat":"'.$arr[1].'"}';
+			//Pour régler le probleme de la virgule
+			$categorie = $categorie.'{"idCat":"'.null.'","libelleCat":"'.null.'"}';
 
 			//selection de la sous categorie
 			while($arr = $req->fetch()){
@@ -542,19 +542,22 @@ try
 					throw new Exception('Error :: Categorie not specified');
 			}
 
-			$sscategorie = '{';
+			$sscategorie = '[';
+			
 			//selection de la sous sous categorie
 			$req = $bdd->prepare('SELECT sscat_id , sscat_libelle FROM sscategorie where sscat_scat= :_scat and sscat_lang= :_lang');
 			$req->execute(array(
 			    '_scat' => $get_sscateg,
 			    '_lang' => $get_language));
-			
+
+			$arr = $req->fetch();
+			$sscategorie = $sscategorie.'{"'.$arr[0].'":"'.$arr[1].'"}';
 			while($arr = $req->fetch()){
-				$sscategorie = $sscategorie.' {'.$arr[0].' : '.$arr[1].'} ';
+				$sscategorie = $sscategorie.',{"'.$arr[0].'":"'.$arr[1].'"}';
 			}
 			
 
-			$response['Message'] = $sscategorie.'}';
+			$response['Message'] = $sscategorie.']';
 			
 			$req->closeCursor();
 
