@@ -1,9 +1,9 @@
 // Code JavaScript écrit par BERGS Guillaume (Contact: guillaume.robert.bergs@gmail.com)		//
-// Dans le cadre de son stage du 15/04/13 au 24/06/13																//
-//																																			//
-// Objectif du script: 	Récupérer les informations de nom, site, page, image, description 			//
-//								et prix de l'offre.																						//
-//																																			//
+// Dans le cadre de son stage du 15/04/13 au 24/06/13																				//
+//																																												//
+// Objectif du script: 	Récupérer les informations de nom, site, page, image, description 				//
+//										et prix de l'offre.																											//
+//																																												//
 
 
 /////	Définition des variables	/////
@@ -19,6 +19,7 @@ fromus_img,
 fromus_desc,
 fromus_desctmp;
 var fromus_reg = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g;
+var fromus_sitelist = new Array();
 
 function fromus_site() 
 {
@@ -109,14 +110,14 @@ if( fromus_sitelist[fromus_site] != undefined)
 	if(fromus_objectname === undefined)
 	{
 		
-	for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_classN.length) && (fromus_objectname === undefined) ; fromus_i++)
-	{
-		if( document.getElementsByClassName(fromus_sitelist[fromus_site])[0]!=undefined);
+		for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_classN.length) && (fromus_objectname === undefined) ; fromus_i++)
 		{
-			fromus_objectname = document.getElementsByClassName(fromus_sitelist[fromus_site])[0].textContent;
+			if( document.getElementsByClassName(fromus_sitelist[fromus_site])[0]!=undefined);
+			{
+				fromus_objectname = document.getElementsByClassName(fromus_sitelist[fromus_site])[0].textContent;
+			}
 		}
 	}
-		}
 	
 	if(fromus_objectname === undefined)
 	{
@@ -125,84 +126,82 @@ if( fromus_sitelist[fromus_site] != undefined)
 	
 	
 	//price 
-	for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_idN.length) && (fromus_objectname === undefined) ; fromus_i++)
+	for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_idN.length) && (fromus_pricemin === undefined) ; fromus_i++)
 	{
 		if( document.getElementById(fromus_sitelist[fromus_site])!=undefined);
 		{
-			fromus_objectname = document.getElementById(fromus_sitelist[fromus_site]).textContent;
+			fromus_pricemin = document.getElementById(fromus_sitelist[fromus_site]).textContent;
 		}
 	}
 	
-	if(fromus_objectname === undefined)
+	if(fromus_pricemin === undefined)
 	{
 		
-	for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_classN.length) && (fromus_objectname === undefined) ; fromus_i++)
-	{
-		if( document.getElementsByClassName(fromus_sitelist[fromus_site])[0]!=undefined);
+		for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_classN.length) && (fromus_pricemin === undefined) ; fromus_i++)
 		{
-			fromus_objectname = document.getElementsByClassName(fromus_sitelist[fromus_site])[0].textContent;
+			if( document.getElementsByClassName(fromus_sitelist[fromus_site])[0]!=undefined);
+			{
+				fromus_pricemin = document.getElementsByClassName(fromus_sitelist[fromus_site])[0].textContent;
+			}
 		}
 	}
-		}
 	
-	if(fromus_objectname === undefined)
+	if(fromus_pricemin === undefined)
 	{
-		fromus_objectname = 'error';
+		fromus_pricemin = 'error';
 	}
 	
 	//img 
-	for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_idN.length) && (fromus_objectname === undefined) ; fromus_i++)
+	for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].img_idN.length) && (fromus_img === undefined) ; fromus_i++)
 	{
 		if( document.getElementById(fromus_sitelist[fromus_site])!=undefined);
 		{
-			fromus_objectname = document.getElementById(fromus_sitelist[fromus_site]).textContent;
+			fromus_img = document.getElementById(fromus_sitelist[fromus_site]).textContent;
 		}
 	}
 	
-	if(fromus_objectname === undefined)
+	if(fromus_img === undefined)
 	{
 		
-	for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_classN.length) && (fromus_objectname === undefined) ; fromus_i++)
-	{
-		if( document.getElementsByClassName(fromus_sitelist[fromus_site])[0]!=undefined);
+		for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].img_classN.length) && (fromus_img === undefined) ; fromus_i++)
 		{
-			fromus_objectname = document.getElementsByClassName(fromus_sitelist[fromus_site])[0].textContent;
+			if( document.getElementsByClassName(fromus_sitelist[fromus_site])[0]!=undefined);
+			{
+				fromus_img = document.getElementsByClassName(fromus_sitelist[fromus_site])[0].textContent;
+			}
 		}
 	}
-		}
 	
-	if(fromus_objectname === undefined)
+	if(fromus_img === undefined)
 	{
-		fromus_objectname = 'error';
+		fromus_img = 'error';
 	}
 	
 	//desc 
-	for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_idN.length) && (fromus_objectname === undefined) ; fromus_i++)
+	for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].desc_idN.length) && (fromus_desc === undefined) ; fromus_i++)
 	{
 		if( document.getElementById(fromus_sitelist[fromus_site])!=undefined);
 		{
-			fromus_objectname = document.getElementById(fromus_sitelist[fromus_site]).textContent;
+			fromus_desc = document.getElementById(fromus_sitelist[fromus_site]).textContent;
 		}
 	}
 	
-	if(fromus_objectname === undefined)
+	if(fromus_desc === undefined)
 	{
 		
-	for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_classN.length) && (fromus_objectname === undefined) ; fromus_i++)
-	{
-		if( document.getElementsByClassName(fromus_sitelist[fromus_site])[0]!=undefined);
+		for(var fromus_i ; (fromus_i < fromus_sitelist[fromus_site].desc_classN.length) && (fromus_desc === undefined) ; fromus_i++)
 		{
-			fromus_objectname = document.getElementsByClassName(fromus_sitelist[fromus_site])[0].textContent;
+			if( document.getElementsByClassName(fromus_sitelist[fromus_site])[0]!=undefined);
+			{
+				fromus_desc = document.getElementsByClassName(fromus_sitelist[fromus_site])[0].textContent;
+			}
 		}
 	}
-		}
 	
-	if(fromus_objectname === undefined)
+	if(fromus_desc === undefined)
 	{
-		fromus_objectname = 'error';
+		fromus_desc = 'error';
 	}
-	
-	
 	
 }
 
@@ -213,10 +212,6 @@ else
 	fromus_objectname='error';
 	fromus_pricemin='error';
 }
-
-
-
-
 
 
 if((fromus_desc===undefined) ||(fromus_desc==undefined)||(fromus_desc=='undefined')|| ( /[\S]{1,}/g.test(fromus_desc)==false ) )//En cas d'absence de description, utiliser le nom du produit.
