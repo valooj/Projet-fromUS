@@ -1620,3 +1620,829 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 186
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 185
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 184
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 179
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 182
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [sscateg] => 
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 180
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 182
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 181
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 181
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 18
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 186
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 186
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 3
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 3
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 3
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 5
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 6
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 4
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 2
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 8
+)
+
+===========================================

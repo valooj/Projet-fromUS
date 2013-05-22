@@ -504,21 +504,21 @@ try
 			$scategorie= null;
 
 			//Pour régler le probleme de la virgule
-			$categorie = $categorie.'{"idCat":"'.null.'","libelleCat":"'.null.'"}';
+			$categorie = $categorie.'{"type":"1","idCat":"'.null.'","libelleCat":"'.null.'"}';
 
 			//selection de la sous categorie
 			while($arr = $req->fetch()){
-			$reqs = $bdd->prepare('SELECT scat_id , scat_libelle FROM scategorie where scat_cat= :_cat and scat_lang= :_lang');
+			$reqs = $bdd->prepare('SELECT scat_liee , scat_libelle FROM scategorie where scat_cat= :_cat and scat_lang= :_lang');
 			$reqs->execute(array(
 			    '_cat' => $arr[0],
 			    '_lang' => $get_language));
-			$arrs = $reqs->fetch();
+
 			while($arrs = $reqs->fetch()){
-				$scategorie = $scategorie.',{"idCat":"'.$arrs[0].'","libelleCat":"'.$arrs[1].'"}';
+				$scategorie = $scategorie.',{"type":"1","idCat":"'.$arrs[0].'","libelleCat":"'.$arrs[1].'"}';
 			}
 			
 			//$categorie = $categorie.' {'.$arr[0].' : '.$arr[1].' '.$scategorie.'} ';
-			$categorie = $categorie.',{"idCat":"'.$arr[0].'","libelleCat":"'.$arr[1].'"}'.$scategorie;
+			$categorie = $categorie.',{"type":"0","idCat":"'.$arr[0].'","libelleCat":"'.$arr[1].'"}'.$scategorie;
 			$scategorie= null;
 			}
 			
@@ -542,22 +542,21 @@ try
 					throw new Exception('Error :: Categorie not specified');
 			}
 
-			$sscategorie = '[';
+			$sscategory = '[';
 			
 			//selection de la sous sous categorie
-			$req = $bdd->prepare('SELECT sscat_id , sscat_libelle FROM sscategorie where sscat_scat= :_scat and sscat_lang= :_lang');
+			$req = $bdd->prepare('SELECT sscat_liee , sscat_libelle FROM sscategorie where sscat_scat= :_scat and sscat_lang= :_lang');
 			$req->execute(array(
 			    '_scat' => $get_sscateg,
 			    '_lang' => $get_language));
 
-			$arr = $req->fetch();
-			$sscategorie = $sscategorie.'{"'.$arr[0].'":"'.$arr[1].'"}';
+			$sscategory = $sscategory.'{"type":"0","idCat":"'.null.'","libelleCat":"'.null.'"}';
 			while($arr = $req->fetch()){
-				$sscategorie = $sscategorie.',{"'.$arr[0].'":"'.$arr[1].'"}';
+				$sscategory = $sscategory.',{"type":"1","idCat":"'.$arr[0].'","libelleCat":"'.$arr[1].'"}';
 			}
 			
-
-			$response['Message'] = $sscategorie.']';
+			$response['Status'] = 's';
+			$response['Message'] = $sscategory.']';
 			
 			$req->closeCursor();
 

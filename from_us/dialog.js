@@ -10,6 +10,7 @@ var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-l
 
 
 var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-categorie&lang='+language;
+var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&lang='+language+'&sscateg=';
 
 
 var productJSON = {};
@@ -68,7 +69,11 @@ function sendToServer(urlSelected, jsonSelected) {
 			break;
 
 			case 'c':
-				parseCat(datas['Message']);
+				parseCat(datas['Message'],'');
+			break;
+
+			case 's':
+				parseCat(datas['Message'], 'ss');
 			break;
 
 			case 'A':
@@ -113,23 +118,15 @@ function sendAjoutPanier() {
 		})
 ;}
 
-function parseCat(categorieJSON) {
-    var $selectCat = $('select[id="category"]');
+function parseCat(categorieJSON, sc) {
+    var $selectCat = $('select[id="'+sc+'category"]');
     $selectCat.empty();
-    	alert(categorieJSON);
-    	//var myJson = JSON.parse(categorieJson);
-        //alert(myJson);
-        var obj = JSON.parse(categorieJSON);
-        
-
-        //alert(myJson);
-        //alert(categorieJSON[idCat]);
+    var obj = JSON.parse(categorieJSON);
     for(var i = 0; i < categorieJSON.length; i++) {
-        $selectCat.append('<option value="'+obj[i].idCat+'" disabled="true">'+obj[i].libelleCat+'</option>');
-   		//alert(obj[i].idCat);
-   		//alert(obj[i].libelleCat);
-        
-
+    	if(obj[i].type==0)
+        	$selectCat.append('<option value="'+obj[i].idCat+'" disabled="true">'+obj[i].libelleCat+'</option>');
+        else
+        	$selectCat.append('<option value="'+obj[i].idCat+'" >'+obj[i].libelleCat+'</option>');
     }
 }
 
@@ -396,6 +393,15 @@ $(document).ready(function() {
 		    	eraseCookie('token');
 			}
 				    
+		}, false);
+
+		//action sur le select de categorie pour la mise a jour de sscategory
+		var categ = document.getElementById('category');
+		categ.addEventListener('change', function(e){
+			var categV = categ.value;
+			if (categV){
+				sendToServer(_urlSSCategorie+categV, {});
+		    }    
 		}, false);
 
 		
