@@ -44,6 +44,8 @@ try
 
 	// externals datas
 	$get_action = isset($_GET['action']) ? htmlspecialchars($_GET['action']) : null;
+	$get_language = isset($_GET['lang']) ? htmlspecialchars($_GET['lang']) : 'fr';
+
 
 	// actions
 	switch($get_action)
@@ -55,19 +57,35 @@ try
 			$get_product = isset($_REQUEST['product']) ? json_decode($_REQUEST['product'], TRUE) : null;
 
 			// variables tests
-			if ( !$get_token )
-				throw new Exception('MAJ :: Token not specified or invalid');
+			if ( !$get_token ){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Token invalide');
+				else 
+					throw new Exception('Error :: Token not specified or invalid');
+			}
 
-			if ( !$get_product )
-				throw new Exception('MAJ :: Product not specified');
+			if ( !$get_product ){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Produit non selectionné');
+				else 
+					throw new Exception('Error :: Product not specified');
+			}
 
-			if( !isset($get_product['prd_prix'], $get_product['prd_libelle'], $get_product['prd_site'], $get_product['prd_cat'], $get_product['prd_desc']) )
-				throw new Exception('MAJ :: Bad parameters into Product Entity');
+			if( !isset($get_product['prd_prix'], $get_product['prd_libelle'], $get_product['prd_site'], $get_product['prd_cat'], $get_product['prd_desc']) ){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Parametres invalides');
+				else 
+					throw new Exception('Error :: Bad parameters into Product Entity');
+			}
 
 			$get_product['prd_prix'] = str_replace('$', null, $get_product['prd_prix']);
 
-			if ( !is_numeric($get_product['prd_prix']) )
-				throw new Exception('MAJ :: Price invalid');
+			if ( !is_numeric($get_product['prd_prix']) ){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Prix invalide');
+				else 
+					throw new Exception('Error :: Price invalid');
+			}
 
 			//Recupere l'id a partir du token
 			$req = $bdd->prepare('SELECT tok_user FROM token where tok_token= :_token');
@@ -76,8 +94,12 @@ try
 			$tokId = $tokId[0];
 			$req->closeCursor();
 
-			if(!$tokId)
-				throw new Exception('Token non valide');
+			if(!$tokId){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Token invalide');
+				else 
+					throw new Exception('Error :: Token invalid');
+			}
 					
 			// code MAJ du produit visité
 			$req = $bdd->prepare($sql_prepared_update_product);
@@ -90,8 +112,13 @@ try
             $req->bindValue('_vis' ,     0,                        		PDO::PARAM_INT);
             $rep = $req->execute();
             
-            if(!$rep)
-				throw new Exception('MAJ :: Insert invalid');
+            if(!$rep){
+            	if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Impossible d\'inserer le produit');
+				else 
+					throw new Exception('Error :: Insert invalid');
+			}
+
 			$bonus = ($req->rowCount() == 1) ? 100 : ( ($req->rowCount() == 0) ? 0 : 50 );
 			$req->closeCursor(); 
 
@@ -103,7 +130,10 @@ try
             $req->closeCursor();
 
             $response['Status'] = 'A';
-            $response['Message'] = 'Vous avez gagné '.$bonus.' pts';
+            if ( $get_language == 'fr')
+				$response['Message'] = 'Vous avez gagné '.$bonus.' pts';
+			else 
+            	$response['Message'] = 'You win '.$bonus.' pts';
 
 			break;
 
@@ -114,20 +144,40 @@ try
 			$get_panier = isset($_REQUEST['panier']) ? json_decode($_REQUEST['panier'], TRUE) : null;
 
 			// variables tests
-			if ( !$get_token )
-				throw new Exception('MAJ :: Token not specified');
+			if ( !$get_token ){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Token non valide');
+				else 
+					throw new Exception('Error :: Token not specified');
+			}
 
-			if ( !$get_panier )
-				throw new Exception('MAJ :: Panier not specified');
+			if ( !$get_panier ){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Panier non valide');
+				else 
+					throw new Exception('Error :: Panier not specified');
+			}
 
-			if( !isset($get_panier['libelle'], $get_panier['qte'], $get_panier['montant'] , $get_panier['url'], $get_panier['desc'], $get_panier['categ']) )
-				throw new Exception('MAJ :: Bad parameters into this order');
+			if( !isset($get_panier['libelle'], $get_panier['qte'], $get_panier['montant'] , $get_panier['url'], $get_panier['desc'], $get_panier['categ']) ){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Parametres invalides');
+				else 
+					throw new Exception('Error :: Bad parameters into this order');
+			}
 
-			if( $get_panier['qte'] == 0)
-				throw new Exception('MAJ :: Bad Quantity parameter');
+			if( $get_panier['qte'] == 0){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Quantité invalide');
+				else 
+					throw new Exception('Error :: Bad Quantity parameter');
+		}
 
-			if ( !is_numeric($get_panier['montant']) )
-				throw new Exception('MAJ :: Price invalid');
+			if ( !is_numeric($get_panier['montant']) ){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Prix non valide');
+				else 
+					throw new Exception('Error :: Price invalid');
+			}
 
 
 			//Recupere l'id a partir du token
@@ -137,8 +187,12 @@ try
 			$tokId = $tokId[0];
 			$req->closeCursor();
 
-			if(!$tokId)
-				throw new Exception('Token non valide');
+			if(!$tokId){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur:: Token non valide');
+				else 
+					throw new Exception('Error :: Token invalid');
+			}
 	
 			// code MAJ du produit visité
 			$req = $bdd->prepare($sql_prepared_update_panier);
@@ -160,11 +214,19 @@ try
             $rep = $req->execute();
             $req->closeCursor();
 
-            if(!$rep)
-				throw new Exception('MAJ :: Insert panier invalid');
+            if(!$rep){
+            	if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Insertion au panier invalide');
+				else 
+					throw new Exception('Error :: Insert panier invalid');
+			}
 
 			$response['Status'] = 'P';
-			$response['Message'] = 'Votre produit a bien été inséré';
+			if ( $get_language == 'fr')
+				$response['Message'] = 'Votre produit a bien été inséré';
+			
+			else 
+				$response['Message'] = 'Your product is inserted';
 			
 			break;
 
@@ -174,20 +236,40 @@ try
 			$get_calcul = isset($_REQUEST['calcul']) ? json_decode($_REQUEST['calcul'], TRUE) : null;
 
 			// variables tests
-			if ( !$get_token )
-				throw new Exception('MAJ :: Token not specified');
+			if ( !$get_token ){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Token invalide');
+				else 
+					throw new Exception('Error :: Token not specified');
+			}
 
-			if ( !$get_calcul )
-				throw new Exception('MAJ ::Calcul not specified');
+			if ( !$get_calcul ){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Calcul invalide');
+				else 
+					throw new Exception('Error ::Calcul not specified');
+			}
 
-			if( !isset($get_calcul['libelle'], $get_calcul['qte'], $get_calcul['montant'] ) )
-				throw new Exception('MAJ :: Bad parameters into this order');
+			if( !isset($get_calcul['libelle'], $get_calcul['qte'], $get_calcul['montant'] ) ){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur ::Parametres invalides');
+				else 
+					throw new Exception('Error :: Bad parameters into this order');
+			}
 
-			if( $get_calcul['qte'] == 0)
-				throw new Exception('MAJ :: Bad Quantity parameter');
+			if( $get_calcul['qte'] == 0){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Quantité invalide');
+				else 
+					throw new Exception('Error :: Bad Quantity parameter');
+			}
 
-			if ( !is_numeric($get_calcul['montant']) )
-				throw new Exception('MAJ :: Price invalid');
+			if ( !is_numeric($get_calcul['montant']) ){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Prix invalide');
+				else 
+					throw new Exception('Error :: Price invalid');
+			}
 
 			//Recupere l'id 
 			$req = $bdd->prepare('SELECT tok_user FROM token where tok_token= :_token');
@@ -197,8 +279,12 @@ try
 			$req->closeCursor();
 
 			// variables tests
-			if(!$tokId)
-				throw new Exception('Token non valide');
+			if(!$tokId){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Token invalide');
+				else 
+					throw new Exception('Error :: Token invalid');
+			}
 	
 			$apv=0;
 			$frais_liv = 0;		
@@ -331,14 +417,26 @@ try
 			$get_log = isset($_REQUEST['log']) ? json_decode($_REQUEST['log'], TRUE) : null;
 
 			// variables tests
-			if ( !$get_log )
-				throw new Exception('MAJ :: log not specified');
+			if ( !$get_log ){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: log invalide');
+				else 
+					throw new Exception('Error :: log not specified');
+			}
 
-			if( !isset($get_log['email'], $get_log['password'] ) )
-				throw new Exception('MAJ :: Bad parameter into Log Entity');
+			if( !isset($get_log['email'], $get_log['password'] ) ){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Parametres invalides');
+				else 
+					throw new Exception('Error :: Bad parameter into Log Entity');
+			}
 
-			if (!filter_var($get_log['email'], FILTER_VALIDATE_EMAIL) ) 
-				throw new Exception('Emain not valid');
+			if (!filter_var($get_log['email'], FILTER_VALIDATE_EMAIL) ){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Email invalide');
+				else 
+					throw new Exception('Error :: Email not valid');
+			}
 
 			//selection de l'id a partir de l'email et du password
 			$req = $bdd->prepare('SELECT user_id , user_pays FROM users where user_email= :_email and user_mdp = :_password ');
@@ -348,8 +446,12 @@ try
 			$arr = $req->fetch();
 			$req->closeCursor();
 
-			if(!$arr)
-				throw new Exception('MAJ :: Users or Password invalid');
+			if(!$arr){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: email ou mot de passe invalide');
+				else 
+					throw new Exception('Error :: Email or Password invalid');
+			}
 
 			//Creation du token et ajout dans la table
 			$new_token_user = uniqid();
@@ -369,8 +471,12 @@ try
 			$get_token= isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
 
 			// variables tests
-			if ( !$get_token)
-				throw new Exception('MAJ :: token_ext not specified');
+			if ( !$get_token){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Token invalide');
+				else 
+					throw new Exception('Error :: token not specified');
+			}
 
 			$req = $bdd->prepare('UPDATE token SET tok_token = :_myNull where tok_token = :_token');
 			$myNull = null;
@@ -380,12 +486,18 @@ try
 			$req->closeCursor();
 
 			$response['Status'] = 'l';
-			$response['Message'] = 'A bientot';
+			if ( $get_language == 'fr')
+					$response['Message'] = 'A bientot';
+			else 
+				$response['Message'] = 'Bye';
 
 			break;
 
 		default:
-			throw new Exception('No action specified');
+			if ( $get_language == 'fr')
+				throw new Exception('Erreur :: Action non spécifié');
+			else 
+				throw new Exception('Error :: No action specified');
 			break;
 	}
 }

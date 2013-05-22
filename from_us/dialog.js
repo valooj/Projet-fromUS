@@ -1,11 +1,11 @@
 var token;
-var paysLangue =  window.navigator.language ;
+var language =  window.navigator.language ;
 
-var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&token=';
-var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&token=';
-var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&token=';
-var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&token=';
-var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login';
+var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&lang='+language+'&token=';
+var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&lang='+language+'&token=';
+var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&lang='+language+'&token=';
+var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&lang='+language+'&token=';
+var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login&lang='+language;
 
 var productJSON = {};
 var calculJSON = {};
