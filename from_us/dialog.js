@@ -166,10 +166,8 @@ $(document).ready(function() {
 										'</select></br>' +
 									'<label id="quantite" for="quantite">Quantite : </label><input id="QteSpinner"></br>' +
 									'<label id="assurance" for="assurance">Assurance : </label>' +
-
-										'<div id="radio">' +
-    										'<input type="radio" id="oui" name="assurance" /><label for="oui">Oui</label>' +
-    										'<input type="radio" id="non" name="assurance" /><label for="non">Non</label>' +
+										'<div id="assurance">' +
+    										'<input type="checkbox" id="checkbox" name="assurance" />' +
     									'</div>' +
 								'</form>' +
 							'</div>' +
@@ -320,7 +318,7 @@ $(document).ready(function() {
 							$("#QteSpinner").show();
 							$("#quantite").show();
 							$("#assurance").show();
-							$("#radio").show();
+							$("#checkbox").show();
 						}
 
 						// si bouton ajouter on affiche bouton ajouter, reset
@@ -332,7 +330,8 @@ $(document).ready(function() {
 							$("#QteSpinner").hide();
 							$("#quantite").hide();
 							$("#assurance").hide();
-							$("#radio").hide();
+							$("#checkbox").hide();
+							
 						}
 
 						// si bouton mon compte on cache bouton ajouter, commander et reset
