@@ -123,7 +123,7 @@ $(document).ready(function() {
 							'</ul>' +
 							'<div id="tabs-1">' +
 								'<h2>Formulaire</h2>' + '<input type="button" name="btnfromus" id="btnfromus" value=""><br>' +
-								'<form id="addForm">' + 
+								'<form id="fromusForm">' + 
 									'<label for="store">Marchand : </label><input type="textbox" id="store" disabled="true"/></br>' +
 									'<label for="name">Nom du produit : </label><input type="textbox" id="name" disabled="true"/></br>' + 
 									'<label for="price">Prix du produit : </label><input type="textbox" id="price" disabled="true"/></br>' +
@@ -257,7 +257,11 @@ $(document).ready(function() {
 						id: "btnReset",
 						title: "Remettre à zéro les champs",
 						click: function() {
-							$(this).dialog('destroy');
+							$(':input','#fromusForm')
+							   .not(':button, :submit, :reset, :hidden')
+							   .val('')
+							   .removeAttr('checked')
+							   .removeAttr('selected');
 						}
 					},
 				]
