@@ -68,7 +68,8 @@ function sendToServer(urlSelected, jsonSelected) {
 			break;
 
 			case 'c':
-				parseCat(datas['Message']);
+				//parseCat(datas['Message']);
+				alert('ok');
 			break;
 
 			case 'A':
