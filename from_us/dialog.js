@@ -1,20 +1,16 @@
 var token;
 var language =  window.navigator.language ;
 
-<<<<<<< HEAD
+
 var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&lang='+language+'&token=';
 var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&lang='+language+'&token=';
 var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&lang='+language+'&token=';
 var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&lang='+language+'&token=';
 var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login&lang='+language;
-=======
-var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&token=';
-var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&token=';
-var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&token=';
-var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&token=';
-var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login';
-var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-categorie';
->>>>>>> ajout d'un flux json qui recupère les catégories
+
+
+var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-categorie&lang='+language;
+
 
 var productJSON = {};
 var calculJSON = {};
@@ -155,15 +151,11 @@ $(document).ready(function() {
 										'</select></br>' +
 									'<label for="sscategory">Sous-catégorie:</label>' +
 										'<select id="sscategory">' +			// c'est la qu'il faut que tu mettes les sous catégories
-<<<<<<< HEAD
+
 										'</select></br>' +
 									'<label id="quantite" for="quantite">Quantite : </label><input id="QteSpinner"></br>' +
 									'<label id="assurance" for="assurance">Assurance : </label>' +
-=======
-										'</select></br>' +*/
-									'<label for="quantite">Quantite : </label><input id="QteSpinner"></br>' +
-									'<label for="assurance">Assurance : </label>' +
->>>>>>> ajout d'un flux json qui recupère les catégories
+
 										'<div id="radio">' +
     										'<input type="radio" id="oui" name="assurance" /><label for="oui">Oui</label>' +
     										'<input type="radio" id="non" name="assurance" /><label for="non">Non</label>' +
