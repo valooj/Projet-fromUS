@@ -150,8 +150,8 @@ $(document).ready(function() {
 											'<option value="29">Santé & Beauté</option>' +
 											'<option value="12">Sports & Loisirs</option>' +
 										'</select></br>' +
-									'<label for="category">Sous-catégorie:</label>' +
-										'<select id="category">' +			// c'est la qu'il faut que tu mettes les sous catégories
+									'<label for="sscategory">Sous-catégorie:</label>' +
+										'<select id="sscategory">' +			// c'est la qu'il faut que tu mettes les sous catégories
 										'</select></br>' +
 									'<label for="quantite">Quantite : </label><input id="QteSpinner"></br>' +
 									'<label for="assurance">Assurance : </label>' +
