@@ -496,17 +496,19 @@ try
 		case 'MAJ-categorie':
 
 			//Selection de la categorie
-			$req = $bdd->prepare('SELECT cat_id , cat_libelle FROM categorie ');
-			$req->execute();
+			$req = $bdd->prepare('SELECT cat_liee , cat_libelle FROM categorie where cat_langue= :_lang');
+			$req->execute(array(
+				'_lang' => $get_language));
 			
 			$categorie= '{';
 			$scategorie= null;
 
 			//selection de la sous categorie
 			while($arr = $req->fetch()){
-			$reqs = $bdd->prepare('SELECT scat_id , scat_libelle FROM scategorie where scat_cat= :_cat ');
+			$reqs = $bdd->prepare('SELECT scat_id , scat_libelle FROM scategorie where scat_cat= :_cat and scat_lang= :_lang');
 			$reqs->execute(array(
-			    '_cat' => $arr[0]));
+			    '_cat' => $arr[0],
+			    '_lang' => $get_language));
 			$arrs = $reqs->fetch();
 			while($arrs = $reqs->fetch()){
 				$scategorie = $scategorie.' {'.$arrs[0].' : '.$arrs[1].'} ';
@@ -521,6 +523,36 @@ try
 			
 			$req->closeCursor();
 			$reqs->closeCursor();
+
+			break;
+
+		case 'MAJ-sscategorie':
+
+			$get_sscateg= isset($_GET['sscateg']) ? htmlspecialchars($_GET['sscateg']) : null;
+
+			// variables tests
+			if ( !$get_sscateg){
+				if ( $get_language == 'fr')
+					throw new Exception('Erreur :: Sous Categorie non valide');
+				else 
+					throw new Exception('Error :: Categorie not specified');
+			}
+
+			$sscategorie = '{';
+			//selection de la sous sous categorie
+			$req = $bdd->prepare('SELECT sscat_id , sscat_libelle FROM sscategorie where sscat_scat= :_scat and sscat_lang= :_lang');
+			$req->execute(array(
+			    '_scat' => $get_sscateg,
+			    '_lang' => $get_language));
+			
+			while($arr = $req->fetch()){
+				$sscategorie = $sscategorie.' {'.$arr[0].' : '.$arr[1].'} ';
+			}
+			
+
+			$response['Message'] = $sscategorie.'}';
+			
+			$req->closeCursor();
 
 			break;
 

@@ -673,3 +673,178 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 2
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
