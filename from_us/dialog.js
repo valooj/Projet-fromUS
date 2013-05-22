@@ -68,8 +68,7 @@ function sendToServer(urlSelected, jsonSelected) {
 			break;
 
 			case 'c':
-				//parseCat(datas['Message']);
-				alert('ok');
+				parseCat(datas['Message']);
 			break;
 
 			case 'A':
@@ -117,12 +116,19 @@ function sendAjoutPanier() {
 function parseCat(categorieJSON) {
     var $selectCat = $('select[id="categorie"]');
     $selectCat.empty();
-        alert(categorieJSON[idCat]);
-        alert(categorieJSON[1]);
+    	alert(categorieJSON);
+    	//var myJson = JSON.parse(categorieJson);
+        //alert(myJson);
+        var obj = JSON.parse(categorieJSON);
+        
+
+        //alert(myJson);
+        //alert(categorieJSON[idCat]);
     for(var i = 0; i < categorieJSON.length; i++) {
         //$selectCat.append('<option value="'+categorieJSON.Cat+'">'+categorieJSON[key]+'</option>');
-       // alert(categorieJSON[i]);
-       // alert(categorieJSON[i].libelleCat);
+   		alert(obj[i].idCat);
+   		alert(obj[i].libelleCat);
+        
 
     }
 }
