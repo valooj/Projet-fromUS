@@ -500,7 +500,7 @@ try
 			$req->execute(array(
 				'_lang' => $get_language));
 			
-			$categorie= '{';
+			$categorie= null;
 			$scategorie= null;
 
 			//selection de la sous categorie
@@ -511,15 +511,16 @@ try
 			    '_lang' => $get_language));
 			$arrs = $reqs->fetch();
 			while($arrs = $reqs->fetch()){
-				$scategorie = $scategorie.' { id : '.$arrs[0].' , libelle : '.$arrs[1].'} ';
+				$scategorie = $scategorie.' { idCat : '.$arrs[0].' , libelleCat : '.$arrs[1].'} ';
 			}
 			
 			//$categorie = $categorie.' {'.$arr[0].' : '.$arr[1].' '.$scategorie.'} ';
-			$categorie = $categorie.' { id : '.$arr[0].' , libelle : '.$arr[1].'} '.$scategorie;
+			$categorie = $categorie.' { idCat : '.$arr[0].' , libelleCat : '.$arr[1].'} '.$scategorie;
 			$scategorie= null;
 			}
 
-			$response['Message'] = $categorie.'}';
+			$response['Status'] = 'c';
+			$response['Message'] = $categorie;
 			
 			$req->closeCursor();
 			$reqs->closeCursor();

@@ -116,15 +116,12 @@ function sendAjoutPanier() {
 function parseCat(categorieJSON) {
     var $selectCat = $('select[id="categorie"]');
     $selectCat.empty();
-
-    for(var key in categorieJSON) {
-
-        //$selectVille.append('<option value="'+categorieJSON.Cat+'">'+categorieJSON[key]+'</option>');
-      
-
+        alert(categorieJSON[idCat]);
+        alert(categorieJSON[1]);
+    for(var i = 0; i < categorieJSON.length; i++) {
         //$selectCat.append('<option value="'+categorieJSON.Cat+'">'+categorieJSON[key]+'</option>');
-        alert(categorieJSON);
-        alert(categorieJSON[key]);
+       // alert(categorieJSON[i]);
+       // alert(categorieJSON[i].libelleCat);
 
     }
 }
