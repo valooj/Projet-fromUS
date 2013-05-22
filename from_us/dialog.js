@@ -68,7 +68,7 @@ function sendToServer(urlSelected, jsonSelected) {
 			break;
 
 			case 'c':
-				parseCat(datas['categ']);
+				parseCat(datas['Message']);
 			break;
 
 			case 'A':
@@ -118,8 +118,14 @@ function parseCat(categorieJSON) {
     $selectCat.empty();
 
     for(var key in categorieJSON) {
+<<<<<<< HEAD
         //$selectVille.append('<option value="'+categorieJSON.Cat+'">'+categorieJSON[key]+'</option>');
         alert
+=======
+        //$selectCat.append('<option value="'+categorieJSON.Cat+'">'+categorieJSON[key]+'</option>');
+        alert(categorieJSON);
+        alert(categorieJSON[key]);
+>>>>>>> debug envoi cat
     }
 }
 
@@ -393,7 +399,7 @@ $(document).ready(function() {
 		// ouverture de la dialog box
 		newDialog.dialog("open");
 
-		
+		sendToServer(_urlCategorie,{});
 
 		if(readCookie('token'))
 			token=readCookie('token');

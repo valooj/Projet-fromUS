@@ -861,6 +861,10 @@ Array
 Array
 (
     [action] => MAJ-categorie
+<<<<<<< HEAD
+=======
+    [lang] => fr
+>>>>>>> debug envoi cat
 )
 
 ===========================================
