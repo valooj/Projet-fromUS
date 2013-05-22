@@ -493,6 +493,37 @@ try
 
 			break;
 
+		case 'MAJ-categorie':
+
+			//Selection de la categorie
+			$req = $bdd->prepare('SELECT cat_id , cat_libelle FROM categorie ');
+			$req->execute();
+			
+			$categorie= '{';
+			$scategorie= null;
+
+			//selection de la sous categorie
+			while($arr = $req->fetch()){
+			$reqs = $bdd->prepare('SELECT scat_id , scat_libelle FROM scategorie where scat_cat= :_cat ');
+			$reqs->execute(array(
+			    '_cat' => $arr[0]));
+			$arrs = $reqs->fetch();
+			while($arrs = $reqs->fetch()){
+				$scategorie = $scategorie.' {'.$arrs[0].' : '.$arrs[1].'} ';
+			}
+			
+			//$categorie = $categorie.' {'.$arr[0].' : '.$arr[1].' '.$scategorie.'} ';
+			$categorie = $categorie.' {'.$arr[0].' : '.$arr[1].'} '.$scategorie;
+			$scategorie= null;
+			}
+
+			$response['Message'] = $categorie.'}';
+			
+			$req->closeCursor();
+			$reqs->closeCursor();
+
+			break;
+
 		default:
 			if ( $get_language == 'fr')
 				throw new Exception('Erreur :: Action non spécifié');
