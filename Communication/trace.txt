@@ -288,6 +288,7 @@ Array
 ===========================================
 Array
 (
+<<<<<<< HEAD
     [action] => MAJ-product
     [lang] => fr
     [token] => 519b8baa9dcf7
@@ -436,6 +437,9 @@ Array
     [lang] => en
     [token] => 519b8baa9dcf7
     [product] => {"prd_libelle":"Nirvana Bliss Icon Skinny Jeans","prd_site":"bebe.com/Denim/View-All/Nirvana-Bliss-Icon-Skinny-Jeans/pc/225/c/0/sc/226/52956.pro","prd_desc":"Five pocket styling, comfy fit and statement-making print make this pair of bebe skinny jeans an instant way to make an off-duty statement. Try it with a white top and pair of black sandals to ma[...]","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-214324-nrv-i1?$Detail$","prd_prix":"119","prd_cat":"default"}
+=======
+    [action] => MAJ-categorie
+>>>>>>> ajout d'un flux json qui recupère les catégories
 )
 
 ===========================================

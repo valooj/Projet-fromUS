@@ -1,15 +1,25 @@
 var token;
 var language =  window.navigator.language ;
 
+<<<<<<< HEAD
 var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&lang='+language+'&token=';
 var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&lang='+language+'&token=';
 var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&lang='+language+'&token=';
 var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&lang='+language+'&token=';
 var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login&lang='+language;
+=======
+var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&token=';
+var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&token=';
+var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&token=';
+var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&token=';
+var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login';
+var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-categorie';
+>>>>>>> ajout d'un flux json qui recupère les catégories
 
 var productJSON = {};
 var calculJSON = {};
 var panierJSON = {};
+var categorieJSON = {};
 var qteVal;
 var categVal;
 var regStore;
@@ -61,6 +71,10 @@ function sendToServer(urlSelected, jsonSelected) {
 				//pays = datas['Pays'];
 			break;
 
+			case 'c':
+				parseCat(datas['categ']);
+			break;
+
 			case 'A':
 				alert(datas['Message']);
 			break;
@@ -103,6 +117,14 @@ function sendAjoutPanier() {
 		})
 ;}
 
+function parseCat(categorieJSON) {
+    var $selectCat = $('select[id="categorie"]');
+    $selectCat.empty();
+
+    for(var key in categorieJSON) {
+        $selectVille.append('<option value="'+categorieJSON.Cat+'">'+categorieJSON[key]+'</option>');
+    }
+}
 
 $(document).ready(function() {
 
@@ -111,6 +133,7 @@ $(document).ready(function() {
 	console.log( "Variable from Content Script: "+localStorage["regPrice"] );
 	console.log( "Variable from Content Script: "+localStorage["regDesc"] );
 
+	
 	// creation de la dialog box
 	//var newDialog = $('<div id="dialogBox"><input type="button" value="login" id="log" /> <p>Formulaire</p><form id="myForm"><label for="store">Marchand : </label><input type="textbox" id="store" disabled="true"/></br><label for="name">Nom du produit : </label><input type="textbox" id="name" disabled="true"/></br><label for="price">Prix du produit : </label><input type="textbox" id="price" disabled="true"/></br><label for="category">Catégorie:</label><select id="category"><option value="default" selected="selected">Choisir une catégorie</option><option value="1">Antiques, Art & Collectibles</option><option value="24">Auto & Moto</option><option value="15">Bijoux & Montres</option><option value="16">Chaussures</option><option value="13">Entreprises & Industries</option><option value="19">Habits pour enfants</option><option value="26">Habits pour femmes</option><option value="25">Habits pour hommes</option><option value="14">Instrument de musique</option><option value="17">Jeux & Jouets</option><option value="28">Jeux vidéos & Informatique</option><option value="3">Livres, Films & Musiques</option><option value="30">Maison & Jardin</option><option value="27">Ordinateurs & Bureau</option><option value="23">Pièces, Bricolage & Outillage</option><option value="18">Puericulture</option><option value="21">Sacs & Accessoires</option><option value="29">Santé & Beauté</option><option value="12">Sports & Loisirs</option></select></br><label for="quantite">Quantite : </label><input id="QteSpinner"></form></div>');
 
@@ -127,34 +150,20 @@ $(document).ready(function() {
 									'<label for="store">Marchand : </label><input type="textbox" id="store" disabled="true"/></br>' +
 									'<label for="name">Nom du produit : </label><input type="textbox" id="name" disabled="true"/></br>' + 
 									'<label for="price">Prix du produit : </label><input type="textbox" id="price" disabled="true"/></br>' +
-									'<label for="category">Catégorie:</label>' +
+									'<label for="category">Catégorie:</label>'+ 
 										'<select id="category">' +
-											'<option value="default" selected="selected">Choisir une catégorie</option>' +
-											'<option value="1">Antiques, Art & Collectibles</option>' +
-											'<option value="24">Auto & Moto</option>' +
-											'<option value="15">Bijoux & Montres</option>' +
-											'<option value="16">Chaussures</option>' +
-											'<option value="13">Entreprises & Industries</option>' +
-											'<option value="19">Habits pour enfants</option>' +
-											'<option value="26">Habits pour femmes</option>' +
-											'<option value="25">Habits pour hommes</option>' +
-											'<option value="14">Instrument de musique</option>' +
-											'<option value="17">Jeux & Jouets</option>' +
-											'<option value="28">Jeux vidéos & Informatique</option>' +
-											'<option value="3">Livres, Films & Musiques</option>' +
-											'<option value="30">Maison & Jardin</option>' +
-											'<option value="27">Ordinateurs & Bureau</option>' +
-											'<option value="23">Pièces, Bricolage & Outillage</option>' +
-											'<option value="18">Puericulture</option>' +
-											'<option value="21">Sacs & Accessoires</option>' +
-											'<option value="29">Santé & Beauté</option>' +
-											'<option value="12">Sports & Loisirs</option>' +
 										'</select></br>' +
 									'<label for="sscategory">Sous-catégorie:</label>' +
 										'<select id="sscategory">' +			// c'est la qu'il faut que tu mettes les sous catégories
+<<<<<<< HEAD
 										'</select></br>' +
 									'<label id="quantite" for="quantite">Quantite : </label><input id="QteSpinner"></br>' +
 									'<label id="assurance" for="assurance">Assurance : </label>' +
+=======
+										'</select></br>' +*/
+									'<label for="quantite">Quantite : </label><input id="QteSpinner"></br>' +
+									'<label for="assurance">Assurance : </label>' +
+>>>>>>> ajout d'un flux json qui recupère les catégories
 										'<div id="radio">' +
     										'<input type="radio" id="oui" name="assurance" /><label for="oui">Oui</label>' +
     										'<input type="radio" id="non" name="assurance" /><label for="non">Non</label>' +
@@ -390,6 +399,8 @@ $(document).ready(function() {
 		
 		// ouverture de la dialog box
 		newDialog.dialog("open");
+
+		
 
 		if(readCookie('token'))
 			token=readCookie('token');
