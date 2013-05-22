@@ -202,6 +202,11 @@ $(document).ready(function() {
 				$(this).remove();
 			},
 
+			// au demarrage on cache le bouton ajouter
+			open: function(ev,ui) {
+				$("#btnAdd").hide();
+			},
+
 			buttons: 
 				[
 					// bouton submit qui permet de commander un produit 
