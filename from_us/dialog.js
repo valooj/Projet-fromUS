@@ -335,12 +335,7 @@ $(document).ready(function() {
 			}
   		});
 
-		/*var img = document.getElementById('logofromus');
-  		img.src = chrome.extension.getURL('/img/on.png');*/
-		
-
-
-				
+						
 		// creation du spinner pour la quantite
 		var newSpinner = $( "#QteSpinner" ).spinner({
 			min: 1
