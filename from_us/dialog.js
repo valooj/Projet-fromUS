@@ -118,7 +118,8 @@ function parseCat(categorieJSON) {
     $selectCat.empty();
 
     for(var key in categorieJSON) {
-        $selectVille.append('<option value="'+categorieJSON.Cat+'">'+categorieJSON[key]+'</option>');
+        //$selectVille.append('<option value="'+categorieJSON.Cat+'">'+categorieJSON[key]+'</option>');
+        alert
     }
 }
 
