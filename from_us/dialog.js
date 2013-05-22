@@ -153,8 +153,8 @@ $(document).ready(function() {
 									'<label for="sscategory">Sous-catégorie:</label>' +
 										'<select id="sscategory">' +			// c'est la qu'il faut que tu mettes les sous catégories
 										'</select></br>' +
-									'<label for="quantite">Quantite : </label><input id="QteSpinner"></br>' +
-									'<label for="assurance">Assurance : </label>' +
+									'<label id="quantite" for="quantite">Quantite : </label><input id="QteSpinner"></br>' +
+									'<label id="assurance" for="assurance">Assurance : </label>' +
 										'<div id="radio">' +
     										'<input type="radio" id="oui" name="assurance" /><label for="oui">Oui</label>' +
     										'<input type="radio" id="non" name="assurance" /><label for="non">Non</label>' +
@@ -283,43 +283,44 @@ $(document).ready(function() {
 			active: 0,
 			activate: function(event,ui) {
 
-				// si on clique sur bouton mon compte on cache les boutons commander,ajouter et annuler
-	  			/*if(/Identifiant/.test(this.innerText)) {
-					$("#btnSubmit").hide();
-					$("#btnAdd").hide();
-					$("#btnCancel").hide();
-				}
-
-				// si on clique sur bouton commander/ajouter on affiche commander,ajouter et annuler
-				if(/Marchand/.test(this.innerText)) {
-					$("#btnSubmit").show();
-					$("#btnAdd").show();
-					$("#btnCancel").show();
-				}*/
-
 				bindEvent(document,'click', function(event) 
-					{ var target = event.target || event.srcElement;
-			
-						var tabclick = target.innerHTML;
-					alert(tabclick);
-					if (/Commander/.test(tabclick)) {
-						$("#btnSubmit").show();
-						$("#btnReset").show();
-						$("#btnAdd").hide();
-					}
-					if (/Ajouter/.test(tabclick)) {
-						$("#btnAdd").show();
-						$("#btnReset").show();
-						$("#btnSubmit").hide();
-					}
-					if (/Mon compte/.test(tabclick)) {
-						$("#btnAdd").hide();
-						$("#btnReset").hide();
-						$("#btnSubmit").hide();
-					}
+					{ 
+						var target = event.target || event.srcElement;
+						var tabclick = target.textContent;
+					
+						// si bouton commander on affiche comander, reset, quantite et assurance
+						// et on cache le bouton ajouter
+						if (/Commander/.test(tabclick)) {
+							$("#btnSubmit").show();
+							$("#btnReset").show();
+							$("#btnAdd").hide();
+							$("#QteSpinner").show();
+							$("#quantite").show();
+							$("#assurance").show();
+							$("#radio").show();
+						}
+
+						// si bouton ajouter on affiche bouton ajouter, reset
+						// et on cache bouton commander, quantite et assurance
+						if (/Ajouter/.test(tabclick)) {
+							$("#btnAdd").show();
+							$("#btnReset").show();
+							$("#btnSubmit").hide();
+							$("#QteSpinner").hide();
+							$("#quantite").hide();
+							$("#assurance").hide();
+							$("#radio").hide();
+						}
+
+						// si bouton mon compte on cache bouton ajouter, commander et reset
+						if (/Mon compte/.test(tabclick)) {
+							$("#btnAdd").hide();
+							$("#btnReset").hide();
+							$("#btnSubmit").hide();
+						}
 
 					this.removeEventListener('click',arguments.callee,false);
-		});
+					});
 			}
   		});
 		
