@@ -229,16 +229,6 @@ $(document).ready(function() {
 						}
 					},		
 				
-					// bouton cancel, mettre destroy au lieu de close pour supprimer completement la dialog box
-					{
-						text: "Annuler", 
-						id: "btnCancel",
-						title: "Fermer la pop up",
-						click: function() {
-							$(this).dialog('destroy');
-						}
-					},
-						
 					// bouton ajouter qui permet d'ajouter un produit dans la base de données 
 					// à ne pas confondre avec le bouton submit 
 					{ 
@@ -258,8 +248,34 @@ $(document).ready(function() {
 							sendToServer(_urlProduct+token , productJSON);
 						}
 					},
+
+
+					// bouton cancel, mettre destroy au lieu de close pour supprimer completement la dialog box
+					// à modifier en bouton reset
+					{
+						text: "Reset", 
+						id: "btnReset",
+						title: "Remettre à zéro les champs",
+						click: function() {
+							$(this).dialog('destroy');
+						}
+					},
 				]
 	    });
+
+		var bindEvent = function(elem ,evt,cb) {
+			//vérifie si addEventListenerexiste dans l'élément
+			if ( elem.addEventListener ) {
+				elem.addEventListener(evt,cb,false);
+		        //si addEventListener n'est pas présent, vérifie si le navigateur est une version  d'IE
+		        } else if ( elem.attachEvent ) {
+				//ajoute le préfixe "on" à l'event
+				elem.attachEvent('on' + evt, function(){
+					// Simule addEventListener ; s'assure que le callback obtient l'élément pour "this" et s'assure que le premier élément de la fonction est un event
+					cb.call(event.srcElement,event);
+				});
+			}
+		}
 
 		
 
@@ -268,7 +284,7 @@ $(document).ready(function() {
 			activate: function(event,ui) {
 
 				// si on clique sur bouton mon compte on cache les boutons commander,ajouter et annuler
-	  			if(/Identifiant/.test(this.innerText)) {
+	  			/*if(/Identifiant/.test(this.innerText)) {
 					$("#btnSubmit").hide();
 					$("#btnAdd").hide();
 					$("#btnCancel").hide();
@@ -279,7 +295,31 @@ $(document).ready(function() {
 					$("#btnSubmit").show();
 					$("#btnAdd").show();
 					$("#btnCancel").show();
-				}
+				}*/
+
+				bindEvent(document,'click', function(event) 
+					{ var target = event.target || event.srcElement;
+			
+						var tabclick = target.innerHTML;
+					alert(tabclick);
+					if (/Commander/.test(tabclick)) {
+						$("#btnSubmit").show();
+						$("#btnReset").show();
+						$("#btnAdd").hide();
+					}
+					if (/Ajouter/.test(tabclick)) {
+						$("#btnAdd").show();
+						$("#btnReset").show();
+						$("#btnSubmit").hide();
+					}
+					if (/Mon compte/.test(tabclick)) {
+						$("#btnAdd").hide();
+						$("#btnReset").hide();
+						$("#btnSubmit").hide();
+					}
+
+					this.removeEventListener('click',arguments.callee,false);
+		});
 			}
   		});
 		
