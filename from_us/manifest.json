@@ -10,6 +10,8 @@
       "name": "from-us.com",
 	    "default_icon": "img/on.png"
   },
+
+  "web_accessible_resources": ["img/logo.png"],
   
   "background": {
 	"persistent" : false,

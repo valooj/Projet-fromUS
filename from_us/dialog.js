@@ -122,7 +122,7 @@ $(document).ready(function() {
 								'<li><a href="#tabs-3">Mon compte</a></li>' +
 							'</ul>' +
 							'<div id="tabs-1">' +
-								'<h2>Formulaire</h2>' + '<input type="button" name="btnfromus" id="btnfromus" value=""><br>' +
+								'<h2>Formulaire</h2>' +
 								'<form id="fromusForm">' + 
 									'<label for="store">Marchand : </label><input type="textbox" id="store" disabled="true"/></br>' +
 									'<label for="name">Nom du produit : </label><input type="textbox" id="name" disabled="true"/></br>' + 
@@ -170,13 +170,13 @@ $(document).ready(function() {
 								'<a href="http://from-us.com/fromus" target="_blank">Identifiant ou mot de passe oublié ?</a>' +
 							'</div>' +
 						'</div>' +
+						'<a href="http://from-us.com/fromus" target=_blank><img id="logofromus" height="100" src=""/></a>' +
 					'</div>');
 
 	// variable qui permet de savoir si la dialog box est ouverte
 	var isOpen = $("#dialogBox").dialog("isOpen");
 
-		
-
+	
 	if (isOpen != true) {	
 
 		newDialog.tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
@@ -204,7 +204,9 @@ $(document).ready(function() {
 
 			// au demarrage on cache le bouton ajouter
 			open: function(ev,ui) {
-				$("#btnAdd").hide();
+				var img = document.getElementById('logofromus');
+  				img.src = chrome.extension.getURL('/img/logo.png');
+  				$("#btnAdd").hide();
 			},
 
 			buttons: 
@@ -332,6 +334,9 @@ $(document).ready(function() {
 					});
 			}
   		});
+
+		/*var img = document.getElementById('logofromus');
+  		img.src = chrome.extension.getURL('/img/on.png');*/
 		
 
 
@@ -387,16 +392,7 @@ $(document).ready(function() {
 				    
 		}, false);
 
-		var btnfromus = document.getElementById('btnfromus');
-		btnfromus.addEventListener('click', function(e) {
-			window.open('http://www.from-us.com/fromus/fr/index.html');
-		},false);
-
-		/*var btn1fromus = document.getElementById('btn1fromus');
-		btn1fromus.addEventListener('click', function(e) {
-			window.open('http://www.from-us.com/fromus/fr/index.html');
-		},false);*/
-
+		
 		// ouverture de la dialog box
 		newDialog.dialog("open");
 
