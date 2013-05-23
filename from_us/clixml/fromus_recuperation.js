@@ -743,6 +743,9 @@ if(fromus_desc.length > 200)
 	fromus_desc									=	fromus_desc.substring(0,195)+"[...]";
 }
 fromus_objectname						=	fromus_objectname.replace(/\n/g,'').substring(0,100);
+
+if(typeof(fromus_pricemin)=='string')
+{fromus_pricemin							=	fromus_pricemin.replace(/\$/g,'');}
 fromus_pricemin							=	parseFloat(/[0-9\.]{1,}/g.exec(fromus_pricemin.replace(',',''))[0]);
 
 // stockage du nom dans local storage
