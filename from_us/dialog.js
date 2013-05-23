@@ -172,7 +172,7 @@ $(document).ready(function() {
 								'<h2>From-us.com</h2>' +
 								'<p>Merci d\'entrer votre identifiant et votre mot de passe From-us.com.</p>' +
 								'<label for="idfromus">Identifiant : </label><input type="textbox" id="idfromus" /></br>' +
-								'<label for="mdpfromus">Mot de passe : </label><input type="textbox" id="mdpfromus" /></br>' +
+								'<label for="mdpfromus">Mot de passe : </label><input type="password" id="mdpfromus" /></br>' +
 								'<input type="button" value="login" id="log" />' +
 								'<a href="http://from-us.com/fromus" target="_blank">Identifiant ou mot de passe oublié ?</a>' +
 							'</div>' +

@@ -14,8 +14,8 @@
   "web_accessible_resources": ["img/logo.png"],
   
   "background": {
-	"persistent" : false,
-	"scripts" : ["event.js"]
+	    "persistent" : false,
+	    "scripts" : ["event.js"]
 	},
   
   "content_scripts": [
