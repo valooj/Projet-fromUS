@@ -231,7 +231,7 @@ $(document).ready(function() {
 
 							var qteSpinner = document.getElementById("QteSpinner");
 							qteVal = qteSpinner.value;
-							var categSelect = document.getElementById("category");
+							var categSelect = document.getElementById("sscategory");
 							categVal = categSelect.value;
 
 							var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
@@ -375,7 +375,6 @@ $(document).ready(function() {
 
 		//Action sur le bouton login/logout
 		var in_out = document.getElementById('log');
-		(!token) ? in_out.value = 'logout' : in_out.value = 'login';
 		in_out.addEventListener('click', function(e){
 			if ( in_out.value == "login" ){
 		    	in_out.value = "logout";
@@ -412,12 +411,17 @@ $(document).ready(function() {
 		// ouverture de la dialog box
 		newDialog.dialog("open");
 
+		//Recupere la liste de catégorie
 		sendToServer(_urlCategorie,{});
 
-		if(readCookie('token'))
+		//Récupere le token 
+		if(readCookie('token')){
 			token=readCookie('token');
+			(!token)?in_out.value = 'login' : in_out.value = 'logout';
+		}
 		else
 			alert('Vous devez vous connecter');
+
 				
 		// suppression des key dans le localstorage
 		localStorage.removeItem('regDesc');

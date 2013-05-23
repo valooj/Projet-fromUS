@@ -2446,3 +2446,426 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 2
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 6
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 3
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 26
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 5
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 2
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lang] => fr
+    [token] => undefined
+    [product] => {"prd_libelle":"Seamless Power Bra BEBE SPORT","prd_site":"bebe.com/bebe-Sport/View-All/Seamless-Power-Bra-BEBE-SPORT/pc/232/c/0/sc/233/53846.pro","prd_desc":"Comfy sleeveless design and racerback cut that allows for more movement makes this bebe sports bra a total activewear essential. Made from moisture-wicking fabric that dries 10 times faster than [...]","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-219434-blk-i1?$Detail$","prd_prix":"24","prd_cat":""}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [lang] => fr
+    [token] => undefined
+    [calcul] => {"libelle":"Seamless Power Bra BEBE SPORT","qte":"","montant":"24","categ":""}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 3
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 2
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 2
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lang] => fr
+    [token] => undefined
+    [product] => {"prd_libelle":"Seamless Power Bra BEBE SPORT","prd_site":"bebe.com/bebe-Sport/View-All/Seamless-Power-Bra-BEBE-SPORT/pc/232/c/0/sc/233/53846.pro","prd_desc":"Comfy sleeveless design and racerback cut that allows for more movement makes this bebe sports bra a total activewear essential. Made from moisture-wicking fabric that dries 10 times faster than [...]","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-219434-blk-i1?$Detail$","prd_prix":"24","prd_cat":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [lang] => fr
+    [token] => undefined
+    [calcul] => {"libelle":"Seamless Power Bra BEBE SPORT","qte":"","montant":"24","categ":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 23
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 26
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 2
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [lang] => fr
+    [token] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [lang] => fr
+    [log] => {"email":"pmexes05@hotmail.com","password":"81dc9bdb52d04dc20036dbd8313ed055"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lang] => fr
+    [token] => 519dd63d2174a
+    [product] => {"prd_libelle":"Seamless Power Bra BEBE SPORT","prd_site":"bebe.com/bebe-Sport/View-All/Seamless-Power-Bra-BEBE-SPORT/pc/232/c/0/sc/233/53846.pro","prd_desc":"Comfy sleeveless design and racerback cut that allows for more movement makes this bebe sports bra a total activewear essential. Made from moisture-wicking fabric that dries 10 times faster than [...]","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-219434-ocf-i1?$Detail$","prd_prix":"24","prd_cat":"2"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [lang] => fr
+    [token] => 519dd63d2174a
+    [calcul] => {"libelle":"Seamless Power Bra BEBE SPORT","qte":"","montant":"24","categ":"2"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 2
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [lang] => fr
+    [token] => 519dd63d2174a
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
