@@ -2869,3 +2869,145 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 86
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lang] => fr
+    [token] => undefined
+    [product] => {"prd_libelle":"Pearl Crystal Skinny Jeans","prd_site":"bebe.com/Denim/View-All/Pearl-Crystal-Skinny-Jeans/pc/225/c/0/sc/226/52561.pro","prd_desc":"Interlocked faux pearl and rhinestone logo at back patch pockets, love-worn wash and our classic soft stretch make this pair of bebe skinny jeans a sexy way to show off your love for bebe. Try yo[...]","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-217267-lhv-i1?$Detail$","prd_prix":"119","prd_cat":"86"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [lang] => fr
+    [token] => undefined
+    [calcul] => {"libelle":"Pearl Crystal Skinny Jeans","qte":"1","montant":"119","categ":"86"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 66
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lang] => fr
+    [token] => undefined
+    [product] => {"prd_libelle":"Pearl Crystal Skinny Jeans","prd_site":"bebe.com/Denim/View-All/Pearl-Crystal-Skinny-Jeans/pc/225/c/0/sc/226/52561.pro","prd_desc":"Interlocked faux pearl and rhinestone logo at back patch pockets, love-worn wash and our classic soft stretch make this pair of bebe skinny jeans a sexy way to show off your love for bebe. Try yo[...]","prd_visu":"http://s7d9.scene7.com/is/image/bebe/bb-217267-lhv-i1?$Detail$","prd_prix":"119","prd_cat":"66"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 126
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================

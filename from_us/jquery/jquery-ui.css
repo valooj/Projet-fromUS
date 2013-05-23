@@ -2,6 +2,32 @@
 * http://jqueryui.com
 * Includes: jquery.ui.core.css, jquery.ui.accordion.css, jquery.ui.autocomplete.css, jquery.ui.button.css, jquery.ui.datepicker.css, jquery.ui.dialog.css, jquery.ui.menu.css, jquery.ui.progressbar.css, jquery.ui.resizable.css, jquery.ui.selectable.css, jquery.ui.slider.css, jquery.ui.spinner.css, jquery.ui.tabs.css, jquery.ui.tooltip.css, jquery.ui.theme.css
 * Copyright 2013 jQuery Foundation and other contributors; Licensed MIT */
+
+form {
+	border: solid;
+}
+label{
+	float: left;
+	text-align: right;
+	width: 200px;
+}
+input{
+	width: 200px;
+	margin-left: 0px;
+}
+select#category{
+	width: 206px;
+}
+select#sscategory{
+	width: 206px;
+}
+input#QteSpinner{
+	width: 182px;
+}
+#logofromus{
+	float: left;
+	margin-left: 50px;
+}
 /* Layout helpers
 ----------------------------------*/
 .ui-helper-hidden {
@@ -122,7 +148,7 @@
 	cursor: default;
 }
 
-.ui-button {
+/*.ui-button {
 	display: inline-block;
 	position: relative;
 	padding: 0;
@@ -131,8 +157,9 @@
 	cursor: pointer;
 	vertical-align: middle;
 	text-align: center;
-	overflow: visible; /* removes extra width in IE */
-}
+	overflow: visible; /* removes extra width in IE /
+
+}*/
 .ui-button,
 .ui-button:link,
 .ui-button:visited,
@@ -408,6 +435,8 @@ button.ui-button::-moz-focus-inner {
 .ui-dialog .ui-dialog-titlebar {
 	/*padding: .4em 1em;*/
 	position: relative;
+	background-color: #000080;
+	color: white;
 }
 .ui-dialog .ui-dialog-title {
 	float: left;
@@ -749,13 +778,14 @@ button.ui-button::-moz-focus-inner {
 
 /* ajout de tab vertical */
 .ui-tabs-vertical { width: 55em; }
-.ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 12em; }
-.ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }
-.ui-tabs-vertical .ui-tabs-nav li a { display:block; }
-.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; border-right-width: 1px; }
+.ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 14em; background-color: #8B0000;}
+.ui-tabs-vertical .ui-tabs-nav li { clear:center; width: 80%; background-color: #000080; margin-left: 20px;}
+.ui-tabs-vertical .ui-tabs-nav li a { display:block;  color: white;}
+.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; }
 .ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: right; width: 40em;}
 .ui-tabs .ui-tabs-nav {
-	margin: 0;
+	width: 175px;
+	margin: 5;
 	padding: .2em .2em 0;
 }
 
@@ -768,7 +798,8 @@ button.ui-button::-moz-focus-inner {
 	float: left;
 	position: relative;
 	top: 0;
-	margin: 1px .2em 0 0;
+	width: 155px;
+	margin-left: 10px;
 	border-bottom-width: 0;
 	padding: 0;
 	white-space: nowrap;
@@ -779,6 +810,7 @@ button.ui-button::-moz-focus-inner {
 	text-decoration: none;
 }
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
+
 	margin-bottom: -1px;
 	padding-bottom: 1px;
 }
