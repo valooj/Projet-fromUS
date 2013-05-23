@@ -137,23 +137,19 @@ $(document).ready(function() {
 	console.log( "Variable from Content Script: "+localStorage["regPrice"] );
 	console.log( "Variable from Content Script: "+localStorage["regDesc"] );
 
-	
-	// creation de la dialog box
-	//var newDialog = $('<div id="dialogBox"><input type="button" value="login" id="log" /> <p>Formulaire</p><form id="myForm"><label for="store">Marchand : </label><input type="textbox" id="store" disabled="true"/></br><label for="name">Nom du produit : </label><input type="textbox" id="name" disabled="true"/></br><label for="price">Prix du produit : </label><input type="textbox" id="price" disabled="true"/></br><label for="category">Catégorie:</label><select id="category"><option value="default" selected="selected">Choisir une catégorie</option><option value="1">Antiques, Art & Collectibles</option><option value="24">Auto & Moto</option><option value="15">Bijoux & Montres</option><option value="16">Chaussures</option><option value="13">Entreprises & Industries</option><option value="19">Habits pour enfants</option><option value="26">Habits pour femmes</option><option value="25">Habits pour hommes</option><option value="14">Instrument de musique</option><option value="17">Jeux & Jouets</option><option value="28">Jeux vidéos & Informatique</option><option value="3">Livres, Films & Musiques</option><option value="30">Maison & Jardin</option><option value="27">Ordinateurs & Bureau</option><option value="23">Pièces, Bricolage & Outillage</option><option value="18">Puericulture</option><option value="21">Sacs & Accessoires</option><option value="29">Santé & Beauté</option><option value="12">Sports & Loisirs</option></select></br><label for="quantite">Quantite : </label><input id="QteSpinner"></form></div>');
-
-	var newDialog = $('<div id="dialogBox">' +
-						'<div id="tabs">' +
+	var newDialog = $('<div id="fromus_dialogBox">' +
+						'<div id="fromus_tabs">' +
 							'<ul>' +
-								'<li><a href="#tabs-1">Ajouter</a></li>' +
-								'<li><a href="#tabs-1">Commander</a></li>' +
-								'<li><a href="#tabs-3">Mon compte</a></li>' +
+								'<li><a href="#fromus_tabs-1">Ajouter</a></li>' +
+								'<li><a href="#fromus_tabs-1">Commander</a></li>' +
+								'<li><a href="#fromus_tabs-2">Mon compte</a></li>' +
 							'</ul>' +
-							'<div id="tabs-1">' +
+							'<div id="fromus_tabs-1">' +
 								'<h2>Formulaire</h2>' +
 								'<form id="fromusForm">' + 
-									'<label for="store">Marchand : </label><input type="textbox" id="store" disabled="true"/></br>' +
-									'<label for="name">Nom du produit : </label><input type="textbox" id="name" disabled="true"/></br>' + 
-									'<label for="price">Prix du produit : </label><input type="textbox" id="price" disabled="true"/></br>' +
+									'<label for="store">Marchand : </label><input type="textbox" id="fromus_store" disabled="true"/></br>' +
+									'<label for="name">Nom du produit : </label><input type="textbox" id="fromus_name" disabled="true"/></br>' + 
+									'<label for="price">Prix du produit : </label><input type="textbox" id="fromus_price" /></br>' +
 									'<label for="category">Catégorie:</label>'+ 
 										'<select id="category">' +
 										'</select></br>' +
@@ -161,14 +157,14 @@ $(document).ready(function() {
 										'<select id="sscategory">' +			// c'est la qu'il faut que tu mettes les sous catégories
 
 										'</select></br>' +
-									'<label id="quantite" for="quantite">Quantite : </label><input id="QteSpinner"></br>' +
-									'<label id="assurance" for="assurance">Assurance : </label>' +
-										'<div id="assurance">' +
-    										'<input type="checkbox" id="checkbox" name="assurance" />' +
+									'<label id="fromus_quantite" for="quantite">Quantite : </label><input id="QteSpinner"></br>' +
+									'<label id="fromus_assurance" for="assurance">Assurance : </label>' +
+										'<div id="fromus_divassurance">' +
+    										'<input type="checkbox" id="fromus_checkassurance" name="assurance" />' +
     									'</div>' +
 								'</form>' +
 							'</div>' +
-							'<div id="tabs-3">' +
+							'<div id="fromus_tabs-2">' +
 								'<h2>From-us.com</h2>' +
 								'<p>Merci d\'entrer votre identifiant et votre mot de passe From-us.com.</p>' +
 								'<label for="idfromus">Identifiant : </label><input type="textbox" id="idfromus" /></br>' +
@@ -181,7 +177,7 @@ $(document).ready(function() {
 					'</div>');
 
 	// variable qui permet de savoir si la dialog box est ouverte
-	var isOpen = $("#dialogBox").dialog("isOpen");
+	var isOpen = $("#fromus_dialogBox").dialog("isOpen");
 
 	
 	if (isOpen != true) {	
@@ -215,9 +211,9 @@ $(document).ready(function() {
   				img.src = chrome.extension.getURL('/img/logo.png');
   				$("#btnSubmit").hide();
   				$("#QteSpinner").hide();
-				$("#quantite").hide();
-				$("#assurance").hide();
-				$("#checkbox").hide();
+				$("#fromus_quantite").hide();
+				$("#fromus_assurance").hide();
+				$("#fromus_divassurance").hide();
 			},
 
 			buttons: 
@@ -317,9 +313,9 @@ $(document).ready(function() {
 							$("#btnReset").show();
 							$("#btnAdd").hide();
 							$("#QteSpinner").show();
-							$("#quantite").show();
-							$("#assurance").show();
-							$("#checkbox").show();
+							$("#fromus_quantite").show();
+							$("#fromus_assurance").show();
+							$("#fromus_divassurance").show();
 						}
 
 						// si bouton ajouter on affiche bouton ajouter, reset
@@ -329,9 +325,9 @@ $(document).ready(function() {
 							$("#btnReset").show();
 							$("#btnSubmit").hide();
 							$("#QteSpinner").hide();
-							$("#quantite").hide();
-							$("#assurance").hide();
-							$("#checkbox").hide();
+							$("#fromus_quantite").hide();
+							$("#fromus_assurance").hide();
+							$("#fromus_divassurance").hide();
 							
 						}
 
@@ -355,15 +351,15 @@ $(document).ready(function() {
 
 		// ajout du marchand automatiquement
 		regStore = localStorage["regStore"];
-		$('#store').attr('value',regStore);
+		$('#fromus_store').attr('value',regStore);
 
 		// ajout du nom automatiquement
 		regName = localStorage["regName"];
-		$('#name').attr('value',regName);
+		$('#fromus_name').attr('value',regName);
 
 		// ajout du prix automatiquement
 		regPrice = localStorage["regPrice"];
-		$('#price').attr('value',regPrice);
+		$('#fromus_price').attr('value',regPrice);
 
 		regOffer = localStorage["regOffer"];
 

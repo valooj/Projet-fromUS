@@ -18,14 +18,14 @@
 	    "scripts" : ["event.js"]
 	},
   
-  "content_scripts": [
+  /*"content_scripts": [
     {
       "matches": ["<all_urls>"],
       "js": ["jquery/jquery.min.js", "jquery/jquery-ui.js"],
 	    "css": ["jquery/jquery-ui.css"],
 	    "run_at": "document_end"
     }
-  ],
+  ],*/
   	  
   "manifest_version": 2
 }
