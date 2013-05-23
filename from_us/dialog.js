@@ -144,8 +144,8 @@ $(document).ready(function() {
 	var newDialog = $('<div id="dialogBox">' +
 						'<div id="tabs">' +
 							'<ul>' +
-								'<li><a href="#tabs-1">Commander</a></li>' +
 								'<li><a href="#tabs-1">Ajouter</a></li>' +
+								'<li><a href="#tabs-1">Commander</a></li>' +
 								'<li><a href="#tabs-3">Mon compte</a></li>' +
 							'</ul>' +
 							'<div id="tabs-1">' +
@@ -209,11 +209,15 @@ $(document).ready(function() {
 				$(this).remove();
 			},
 
-			// au demarrage on cache le bouton ajouter
+			// au demarrage on cache le bouton commander, la quantité et l'assurance
 			open: function(ev,ui) {
 				var img = document.getElementById('logofromus');
   				img.src = chrome.extension.getURL('/img/logo.png');
-  				$("#btnAdd").hide();
+  				$("#btnSubmit").hide();
+  				$("#QteSpinner").hide();
+				$("#quantite").hide();
+				$("#assurance").hide();
+				$("#checkbox").hide();
 			},
 
 			buttons: 
