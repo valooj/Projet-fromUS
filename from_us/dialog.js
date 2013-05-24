@@ -370,8 +370,9 @@ $(document).ready(function() {
 
 		var fromus_morename = document.getElementById('fromus_morename');
 		fromus_morename.addEventListener('click', function(e){
-			regName = localStorage["fromus_morename"];
-			$('#fromus_name').attr('value',regName);
+			localStorage["fromus_morename"] =	JSON.stringify(true);
+			chrome.tabs.executeScript(null,{file:'/clixml/fromus_recuperation.js',allFrames:false,runAt:'document_end'});
+			$('#fromus_name').attr('value',localStorage["regName"]);
 		}, false);
 		
 		/*$( "#fromus_morename" ).button({
