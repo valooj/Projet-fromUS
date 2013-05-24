@@ -638,10 +638,12 @@ if( fromus_sitelist[fromus_site] != undefined)
 	if(fromus_morename)
 	{
 		fromus_i = localStorage["fromus_iname"];
+				console.log("Un autre nom en id");
 	}
 	else
 	{
 		fromus_i = 0;
+				console.log("Un premier nom en id");
 	}
 	
 	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && (fromus_objectname === undefined) ; fromus_i++)
@@ -651,17 +653,18 @@ if( fromus_sitelist[fromus_site] != undefined)
 		{	//S'il y a un résultat, l'enregistrer
 			fromus_objectname = fromus_name_id.textContent;
 			localStorage["fromus_iname"] = fromus_i++;
+				console.log("en id fromus_i++ est: " + fromus_i++);
 		}
 	}
 	
 	if(fromus_morename)
 	{
-	console.log("Recherche d'un autre nom");
+	console.log("Un autre nom en class");
 		fromus_i = localStorage["fromus_iname"];
 	}
 	else
 	{
-	console.log("Recherched 'un premier nom'");
+	console.log("Un premier nom' en class");
 		fromus_i = 0;
 	}
 	
@@ -675,7 +678,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 			{
 				fromus_objectname = fromus_name_class.textContent;
 				localStorage["fromus_iname"] = fromus_i++;
-				console.log("fromus_i++ est: " + fromus_i++);
+				console.log("en class fromus_i++ est: " + fromus_i++);
 			}
 		}
 	}
