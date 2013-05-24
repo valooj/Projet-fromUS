@@ -165,7 +165,7 @@ try
 					throw new Exception('Error :: Bad parameters into this order');
 			}
 
-			if( $get_panier['qte'] == 0){
+			if( $get_panier['qte'] <= 0){
 				if ( $get_language == 'fr')
 					throw new Exception('Erreur :: Quantité invalide');
 				else 
@@ -296,57 +296,12 @@ try
 			$req->execute(array('user_id' => $tokId));
 			$arr = $req->fetch();
 
-			switch ($arr['user_pays'])
-			{
-				case "fr" :
-				{
-					$code_pays = "fra";break;
-				}
-				case "en" :
-				{
-					$code_pays = "gbr";break;
-				}
-				case "it" :
-				{
-					$code_pays = "ita";break;
-				}
-				case "es" :
-				{
-					$code_pays = "esp";break;
-				}
-				case "nl" :
-				{
-					$code_pays = "nld";break;
-				}
-				case "da" :
-				{
-					$code_pays = "dnk";break;
-				}
-				case "sv" :
-				{
-					$code_pays = "swe";break;
-				}
-				case "no" :
-				{
-					$code_pays = "nor";break;
-				}
-				case "pt" :
-				{
-					$code_pays = "prt";break;
-				}
-				case "ch" :
-				{
-					$code_pays = "che";break;
-				}
-				case "au" :
-				{
-					$code_pays = "aut";break;
-				}
-				case "be" :
-				{
-					$code_pays = "bel";break;
-				}
-			}
+			$array = array('fr'=>'fra', 'en'=>'gbr', 'it'=>'ita', 'es'=>'esp', 'nl'=>'nld', 'da'=>'dnk', 'sv'=>'swe','no'=>'nor', 'pt'=>'prt','ch'=>'che','au'=>'aut','be'=>'bel');
+
+			if( !isset($array[$arr['user_pays']]) )
+				throw  new Exception('Erreur :: Pays invalide');
+	
+			$code_pays = $array[$arr['user_pays']];
 
 			//$url .= "&to=".$code_pays;
 			$url .= "&to=bel";
@@ -507,21 +462,21 @@ try
 			$categorie = $categorie.'{"type":"1","idCat":"'.null.'","libelleCat":"'.null.'"}';
 
 			//selection de la sous categorie
-			while($arr = $req->fetch()){
+			foreach($req->fetchall() as $arr){
 			$reqs = $bdd->prepare('SELECT scat_liee , scat_libelle FROM scategorie where scat_cat= :_cat and scat_lang= :_lang');
 			$reqs->execute(array(
 			    '_cat' => $arr[0],
 			    '_lang' => $get_language));
 
-			while($arrs = $reqs->fetch()){
+			foreach($reqs->fetchall() as $arrs){
 				$scategorie = $scategorie.',{"type":"1","idCat":"'.$arrs[0].'","libelleCat":"'.$arrs[1].'"}';
 			}
 			
 			//$categorie = $categorie.' {'.$arr[0].' : '.$arr[1].' '.$scategorie.'} ';
 			$categorie = $categorie.',{"type":"0","idCat":"'.$arr[0].'","libelleCat":"'.$arr[1].'"}'.$scategorie;
 			$scategorie= null;
-			}
 			
+			}			
 			$response['Status'] = 'c';
 			$response['Message'] = $categorie.']';
 			
@@ -543,6 +498,7 @@ try
 			}
 
 			$sscategory = '[';
+			//$cat = array();
 			
 			//selection de la sous sous categorie
 			$req = $bdd->prepare('SELECT sscat_liee , sscat_libelle FROM sscategorie where sscat_scat= :_scat and sscat_lang= :_lang');
@@ -550,14 +506,17 @@ try
 			    '_scat' => $get_sscateg,
 			    '_lang' => $get_language));
 
-			$sscategory = $sscategory.'{"type":"0","idCat":"'.null.'","libelleCat":"'.null.'"}';
-			while($arr = $req->fetch()){
-				$sscategory = $sscategory.',{"type":"1","idCat":"'.$arr[0].'","libelleCat":"'.$arr[1].'"}';
+			$sscategory .= '{"type":"0","idCat":"'.null.'","libelleCat":"'.null.'"}';
+			//$cat[0] = json_encode (array('type' => '0','idCat' =>''.null.'','libelleCat' => ''.null.''));
+		
+			foreach($req->fetchall() as $arr){
+				$sscategory .= ',{"type":"1","idCat":"'.$arr[0].'","libelleCat":"'.$arr[1].'"}';
+				//$cat[] = json_encode (array('type' => '1','idCat' => ''.$arr[0].'','libelleCat' => ''.$arr[1].''));
+				
 			}
-			
 			$response['Status'] = 's';
 			$response['Message'] = $sscategory.']';
-			
+			//$reponse['Message'] = $cat;
 			$req->closeCursor();
 
 			break;
