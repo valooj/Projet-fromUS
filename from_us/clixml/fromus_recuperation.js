@@ -816,7 +816,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	
 	if(fromus_moredesc)
 	{
-		fromus_i = localStorage["fromus_desc"];
+		fromus_i = localStorage["fromus_moredesc"];
 	}
 	else
 	{
