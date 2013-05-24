@@ -656,10 +656,12 @@ if( fromus_sitelist[fromus_site] != undefined)
 	
 	if(fromus_morename)
 	{
+	console.log("Recherche d'un autre nom");
 		fromus_i = localStorage["fromus_iname"];
 	}
 	else
 	{
+	console.log("Recherched 'un premier nom'");
 		fromus_i = 0;
 	}
 	
@@ -672,7 +674,8 @@ if( fromus_sitelist[fromus_site] != undefined)
 			if(fromus_name_class)
 			{
 				fromus_objectname = fromus_name_class.textContent;
-				localStorage["fromus_iname"] = fromus_i++;				
+				localStorage["fromus_iname"] = fromus_i++;
+				console.log("fromus_i++ est: " + fromus_i++);
 			}
 		}
 	}
