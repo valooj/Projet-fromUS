@@ -148,7 +148,7 @@ $(document).ready(function() {
 								'<h2>Formulaire</h2>' +
 								'<form id="fromusForm">' + 
 									'<label for="store">Marchand : </label><input type="textbox" id="fromus_store" disabled="true"/></br>' +
-									'<label for="name">Nom du produit : </label><input type="textbox" id="fromus_name" disabled="true"/></br>' + 
+									'<label for="name">Nom du produit : </label><input type="textbox" id="fromus_name" disabled="true"/><input type="button" value="test" id="fromus_morename" /></br>' + 
 									'<label for="price">Prix du produit : </label><input type="textbox" id="fromus_price" /></br>' +
 									'<label for="category">Catégorie:</label>'+ 
 										'<select id="category">' +
@@ -367,6 +367,19 @@ $(document).ready(function() {
 		regDesc = localStorage["regDesc"];
 
 		regVisu = localStorage["regImg"];
+
+		var fromus_morename = document.getElementById('fromus_morename');
+		fromus_morename.addEventListener('click', function(e){
+			regName = localStorage["fromus_morename"];
+			$('#fromus_name').attr('value',regName);
+		}, false);
+		
+		/*$( "#fromus_morename" ).button({
+      icons: {
+        primary: "ui-icon-locked"
+      },
+      text: false
+  		});*/
 
 
 
