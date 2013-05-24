@@ -137,7 +137,7 @@ $(document).ready(function() {
 	console.log( "Variable from Content Script: "+localStorage["regPrice"] );
 	console.log( "Variable from Content Script: "+localStorage["regDesc"] );
 
-	var newDialog = $('<div id="fromus_dialogBox">' +
+	var newDialog = $('<div id="fromus_dialogBox" class="toto">' +
 						'<div id="fromus_tabs">' +
 							'<ul>' +
 								'<li><a href="#fromus_tabs-1">Ajouter</a></li>' +
@@ -195,8 +195,8 @@ $(document).ready(function() {
 					my: "left top", 
 					at: "left top"
 				},
-			height: 330,
-			width: 855,
+			height: 355,
+			width: 880,
 			resizable: true,
 			closeOnEscape: true,
 
