@@ -650,7 +650,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 		if(fromus_name_id)
 		{	//S'il y a un résultat, l'enregistrer
 			fromus_objectname = fromus_name_id.textContent;
-			localStorage["fromus_iname"] = fromus_i;
+			localStorage["fromus_iname"] = fromus_i++;
 		}
 	}
 	
@@ -672,7 +672,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 			if(fromus_name_class)
 			{
 				fromus_objectname = fromus_name_class.textContent;
-				localStorage["fromus_iname"] = fromus_i;				
+				localStorage["fromus_iname"] = fromus_i++;				
 			}
 		}
 	}
@@ -699,7 +699,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 		if(fromus_price_id)
 		{	//S'il y a un résultat, l'enregistrer
 			fromus_pricemin = fromus_price_id.textContent;
-			localStorage["fromus_iprice"] = fromus_i;
+			localStorage["fromus_iprice"] = fromus_i++;
 		}
 	}
 	
@@ -720,7 +720,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 			if(fromus_price_class)
 			{
 				fromus_pricemin = fromus_price_class.textContent;
-				localStorage["fromus_iprice"] = fromus_i;
+				localStorage["fromus_iprice"] = fromus_i++;
 			}
 		}
 	}
@@ -732,7 +732,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	
 	if(fromus_moreimg)
 	{
-		fromus_i = localStorage["fromus_img"];
+		fromus_i = localStorage["fromus_iimg"];
 	}
 	else
 	{
@@ -748,19 +748,19 @@ if( fromus_sitelist[fromus_site] != undefined)
 			if(fromus_img_id.href!=undefined)
 			{
 				fromus_img	=	fromus_img_id.href;
-				localStorage["fromus_moreimg"] = fromus_i;
+				localStorage["fromus_iimg"] = fromus_i++;
 			}
 			if(fromus_img_id.src!=undefined)
 			{
 				fromus_img	=	fromus_img_id.src;
-				localStorage["fromus_moreimg"] = fromus_i;
+				localStorage["fromus_iimg"] = fromus_i++;
 			}
 		}
 	}
 	
 	if(fromus_moreimg)
 	{
-		fromus_i = localStorage["fromus_img"];
+		fromus_i = localStorage["fromus_iimg"];
 	}
 	else
 	{
@@ -777,12 +777,12 @@ if( fromus_sitelist[fromus_site] != undefined)
 				if(fromus_img_class.href != undefined)
 				{
 					fromus_img = fromus_img_class.href;
-					localStorage["fromus_moreimg"] = fromus_i;
+					localStorage["fromus_iimg"] = fromus_i++;
 				}
 				if(fromus_img = fromus_img_class.src != undefined)
 				{
 					fromus_img = fromus_img_class.src;
-					localStorage["fromus_moreimg"] = fromus_i;
+					localStorage["fromus_iimg"] = fromus_i++;
 				}
 			}
 		}
@@ -795,7 +795,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	
 	if(fromus_moredesc)
 	{
-		fromus_i = localStorage["fromus_desc"];
+		fromus_i = localStorage["fromus_idesc"];
 	}
 	else
 	{
@@ -810,13 +810,13 @@ if( fromus_sitelist[fromus_site] != undefined)
 		if(fromus_desc_id)
 		{	//S'il y a un résultat, l'enregistrer
 			fromus_desc = fromus_desc_id.textContent;
-			localStorage["fromus_moredesc"] = fromus_i;
+			localStorage["fromus_idesc"] = fromus_i++;
 		}
 	}
 	
 	if(fromus_moredesc)
 	{
-		fromus_i = localStorage["fromus_moredesc"];
+		fromus_i = localStorage["fromus_idesc"];
 	}
 	else
 	{
@@ -831,7 +831,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 			if(fromus_desc_class)
 			{
 				fromus_desc = fromus_desc_class.textContent;
-				localStorage["fromus_moredesc"] = fromus_i;
+				localStorage["fromus_idesc"] = fromus_i++;
 			}
 		}
 	}
