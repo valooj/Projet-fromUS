@@ -652,8 +652,8 @@ if( fromus_sitelist[fromus_site] != undefined)
 		if(fromus_name_id)
 		{	//S'il y a un résultat, l'enregistrer
 			fromus_objectname = fromus_name_id.textContent;
-			localStorage["fromus_iname"] = fromus_i++;
-				console.log("en id fromus_i++ est: " + fromus_i++);
+			localStorage["fromus_iname"] = fromus_i + 1 ;
+				console.log("en id fromus_i++ est: " + fromus_i + 1);
 		}
 	}
 	
