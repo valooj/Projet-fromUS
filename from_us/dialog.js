@@ -363,10 +363,19 @@ $(document).ready(function() {
 
 		var fromus_morename = document.getElementById('fromus_morename');
 		fromus_morename.addEventListener('click', function(e){
+			console.log('morename');
 			localStorage["fromus_morename"] =	JSON.stringify(true);
-			chrome.tabs.executeScript(null,{file:'/clixml/fromus_recuperation.js',allFrames:false,runAt:'document_end'});
-			$('#fromus_name').attr('value',localStorage["regName"]);
+			chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
+  			console.log(response.farewell);
+		});
+			$('#fromus_name').attr('value',"you");
+			//$('#fromus_name').attr('value',localStorage["regName"]);
 		}, false);
+
+
+		
+
+		
 		
 		/*$( "#fromus_morename" ).button({
       icons: {

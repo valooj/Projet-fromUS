@@ -21,6 +21,29 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 	});
 
 
+chrome.tabs.getSelected(null, function(tab) {
+  chrome.tabs.sendMessage(tab.id, {greeting: "hello"}, function(response) {
+    console.log(response.farewell);
+
+  });
+});
+
+
+chrome.runtime.onMessage.addListener(
+		  function(request, sender, sendResponse) {
+		    console.log(sender.tab ?
+		                "from a content script:" + sender.tab.url :
+		                "from the extension");
+		    if (request.greeting == "hello") {
+		      sendResponse({farewell: "goodbyeevent"});
+		  chrome.tabs.executeScript(null,{file:'/clixml/fromus_recuperation.js',allFrames:false,runAt:'document_end'});
+		}
+		  });
+
+
+
+
+
 
 
 
