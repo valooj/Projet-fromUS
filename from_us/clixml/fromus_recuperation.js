@@ -677,8 +677,9 @@ if( fromus_sitelist[fromus_site] != undefined)
 			if(fromus_name_class)
 			{
 				fromus_objectname = fromus_name_class.textContent;
-				localStorage["fromus_iname"] = fromus_i + 1;
-				console.log("en class fromus_i + 1 est: " + fromus_i + 1);
+				fromus_i  = fromus_i++;
+				localStorage["fromus_iname"] = fromus_i;
+				console.log("en class fromus_i + 1 est: " + fromus_i);
 			}
 		}
 	}
