@@ -12,15 +12,15 @@ var fromus_offre = document.location.href;		//récupération de l'adresse du l'o
 var fromus_site = /http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_offre)[1];	//stockage du site web où se trouve l'offre
 var fromus_objectname,
 fromus_objectnametmp,		// Les variables tmp sont des variables temporaires requises pour le traitement d'un nombre considérable de sites
-fromus_pricemin,			// Le "fromus_" permet d'empêcher les conflits lors de l'utilisation du code dans une application, une extension ou un plugin
+fromus_pricemin,					// Le "fromus_" permet d'empêcher les conflits lors de l'utilisation du code dans une application, une extension ou un plugin
 fromus_pricemintmp,	
 fromus_imgtmp,
 fromus_img,
 fromus_desc,
 fromus_desctmp;
 var fromus_reg = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g;	// Permet de récupérer un prix
-var fromus_sitelist = new Array();	// Tableau contenant les sites
-var fromus_error	=	'?';	// Message à afficher en absence de résultat
+var fromus_sitelist = new Array();			// Tableau contenant les sites
+var fromus_error	=	'?';						// Message à afficher en absence de résultat
 var fromus_moreprice,
 fromus_morename,
 fromus_moreimg,		// Ces variables servent à indiquer si l'utilisateur a demandé un/e autre nom, prix, description, image
@@ -858,16 +858,16 @@ if((fromus_desc===undefined) ||(fromus_desc==undefined)||(fromus_desc=='undefine
 //Début de la section "limitation de la longueur des données".
 if(fromus_desc.length > 200)
 {
-	fromus_desc									=	fromus_desc.substring(0,195)+"[...]";
+	fromus_desc					=	fromus_desc.substring(0,195)+"[...]";
 }
-fromus_objectname						=	fromus_objectname.replace(/\n/g,'').substring(0,100);
+fromus_objectname			=	fromus_objectname.replace(/\n/g,'').substring(0,100);
 
 if(typeof(fromus_pricemin)=='string')
 {
-	fromus_pricemin							=	fromus_pricemin.replace(/\$/g,'').replace(',','');
+	fromus_pricemin			=	fromus_pricemin.replace(/\$/g,'').replace(',','');
 	if( /[0-9\.]{1,}/g.test(fromus_pricemin))
 	{
-		fromus_pricemin							=	parseFloat(/[0-9\.]{1,}/g.exec(fromus_pricemin)[0]);
+		fromus_pricemin		=	parseFloat(/[0-9\.]{1,}/g.exec(fromus_pricemin)[0]);
 	}
 }
 
