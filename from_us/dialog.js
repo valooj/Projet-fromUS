@@ -157,7 +157,7 @@ $(document).ready(function() {
 										'<select id="sscategory">' +			// c'est la qu'il faut que tu mettes les sous catégories
 
 										'</select></br>' +
-									'<label id="fromus_quantite" for="quantite">Quantite : </label><input id="QteSpinner"></br>' +
+									'<label id="fromus_quantite" for="quantite">Quantite : </label><input id="QteSpinner" value="1"></br>' +
 									'<label id="fromus_assurance" for="assurance">Assurance : </label>' +
 										'<div id="fromus_divassurance">' +
     										'<input type="checkbox" id="fromus_checkassurance" name="assurance" />' +
@@ -348,6 +348,7 @@ $(document).ready(function() {
 		var newSpinner = $( "#QteSpinner" ).spinner({
 			min: 1
 		});	
+
 
 		// ajout du marchand automatiquement
 		regStore = localStorage["regStore"];
