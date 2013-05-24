@@ -637,7 +637,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	
 	if(fromus_morename)
 	{
-		fromus_i = localStorage["fromus_iname"];
+		fromus_i = parseInt(localStorage["fromus_iname"]);
 				console.log("Un autre nom en id");
 	}
 	else
@@ -646,21 +646,21 @@ if( fromus_sitelist[fromus_site] != undefined)
 				console.log("Un premier nom en id");
 	}
 	
-	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && (fromus_objectname === undefined) ; fromus_i++)
+	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && (fromus_objectname === undefined) ; fromus_i + 1)
 	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
 		var fromus_name_id = document.getElementById(fromus_sitelist[fromus_site].name_id[fromus_i]);
 		if(fromus_name_id)
 		{	//S'il y a un résultat, l'enregistrer
 			fromus_objectname = fromus_name_id.textContent;
 			localStorage["fromus_iname"] = fromus_i + 1 ;
-				console.log("en id fromus_i++ est: " + fromus_i + 1);
+				console.log("en id fromus_i + 1 est: " + fromus_i + 1);
 		}
 	}
 	
 	if(fromus_morename)
 	{
 	console.log("Un autre nom en class");
-		fromus_i = localStorage["fromus_iname"];
+		fromus_i = parseInt(localStorage["fromus_iname"]);
 	}
 	else
 	{
@@ -671,14 +671,14 @@ if( fromus_sitelist[fromus_site] != undefined)
 	
 	if(fromus_objectname === undefined)
 	{	//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
-		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && (fromus_objectname === undefined) ; fromus_i++)
+		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && (fromus_objectname === undefined) ; fromus_i + 1)
 		{
 			var fromus_name_class = document.getElementsByClassName(fromus_sitelist[fromus_site].name_class[fromus_i])[0];
 			if(fromus_name_class)
 			{
 				fromus_objectname = fromus_name_class.textContent;
-				localStorage["fromus_iname"] = fromus_i++;
-				console.log("en class fromus_i++ est: " + fromus_i++);
+				localStorage["fromus_iname"] = fromus_i + 1;
+				console.log("en class fromus_i + 1 est: " + fromus_i + 1);
 			}
 		}
 	}
@@ -690,7 +690,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	
 	if(fromus_moreprice)
 	{
-		fromus_i = localStorage["fromus_iprice"];
+		fromus_i = parseInt(localStorage["fromus_iprice"]);
 	}
 	else
 	{
@@ -699,19 +699,19 @@ if( fromus_sitelist[fromus_site] != undefined)
 	
 	
 	//price 
-	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && (fromus_pricemin === undefined) ; fromus_i++)
+	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && (fromus_pricemin === undefined) ; fromus_i + 1)
 	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
 		var fromus_price_id = document.getElementById(fromus_sitelist[fromus_site].price_id[fromus_i]);
 		if(fromus_price_id)
 		{	//S'il y a un résultat, l'enregistrer
 			fromus_pricemin = fromus_price_id.textContent;
-			localStorage["fromus_iprice"] = fromus_i++;
+			localStorage["fromus_iprice"] = fromus_i + 1;
 		}
 	}
 	
 	if(fromus_moreprice)
 	{
-		fromus_i = localStorage["fromus_iprice"];
+		fromus_i = parseInt(localStorage["fromus_iprice"]);
 	}
 	else
 	{
@@ -720,13 +720,13 @@ if( fromus_sitelist[fromus_site] != undefined)
 	
 	if(fromus_pricemin === undefined)
 	{	//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
-		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && (fromus_pricemin === undefined) ; fromus_i++)
+		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && (fromus_pricemin === undefined) ; fromus_i + 1)
 		{
 			var fromus_price_class = document.getElementsByClassName(fromus_sitelist[fromus_site].price_class[fromus_i])[0];
 			if(fromus_price_class)
 			{
 				fromus_pricemin = fromus_price_class.textContent;
-				localStorage["fromus_iprice"] = fromus_i++;
+				localStorage["fromus_iprice"] = fromus_i + 1;
 			}
 		}
 	}
@@ -738,7 +738,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	
 	if(fromus_moreimg)
 	{
-		fromus_i = localStorage["fromus_iimg"];
+		fromus_i = parseInt(localStorage["fromus_iimg"]);
 	}
 	else
 	{
@@ -746,7 +746,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	}		
 	
 	//img 
-	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].img_id.length) && (fromus_img === undefined) ; fromus_i++)
+	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].img_id.length) && (fromus_img === undefined) ; fromus_i + 1)
 	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
 		var fromus_img_id = document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i]);
 		if(fromus_img_id)
@@ -754,19 +754,19 @@ if( fromus_sitelist[fromus_site] != undefined)
 			if(fromus_img_id.href!=undefined)
 			{
 				fromus_img	=	fromus_img_id.href;
-				localStorage["fromus_iimg"] = fromus_i++;
+				localStorage["fromus_iimg"] = fromus_i + 1;
 			}
 			if(fromus_img_id.src!=undefined)
 			{
 				fromus_img	=	fromus_img_id.src;
-				localStorage["fromus_iimg"] = fromus_i++;
+				localStorage["fromus_iimg"] = fromus_i + 1;
 			}
 		}
 	}
 	
 	if(fromus_moreimg)
 	{
-		fromus_i = localStorage["fromus_iimg"];
+		fromus_i = parseInt(localStorage["fromus_iimg"]);
 	}
 	else
 	{
@@ -775,7 +775,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	
 	if(fromus_img === undefined)
 	{//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
-		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].img_class.length) && (fromus_img === undefined) ; fromus_i++)
+		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].img_class.length) && (fromus_img === undefined) ; fromus_i + 1)
 		{
 			var fromus_img_class = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0];
 			if(fromus_img_class)
@@ -783,12 +783,12 @@ if( fromus_sitelist[fromus_site] != undefined)
 				if(fromus_img_class.href != undefined)
 				{
 					fromus_img = fromus_img_class.href;
-					localStorage["fromus_iimg"] = fromus_i++;
+					localStorage["fromus_iimg"] = fromus_i + 1;
 				}
 				if(fromus_img = fromus_img_class.src != undefined)
 				{
 					fromus_img = fromus_img_class.src;
-					localStorage["fromus_iimg"] = fromus_i++;
+					localStorage["fromus_iimg"] = fromus_i + 1;
 				}
 			}
 		}
@@ -801,7 +801,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	
 	if(fromus_moredesc)
 	{
-		fromus_i = localStorage["fromus_idesc"];
+		fromus_i = parseInt(localStorage["fromus_idesc"]);
 	}
 	else
 	{
@@ -810,19 +810,19 @@ if( fromus_sitelist[fromus_site] != undefined)
 	
 	
 	//desc 
-	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].desc_id.length) && (fromus_desc === undefined) ; fromus_i++)
+	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].desc_id.length) && (fromus_desc === undefined) ; fromus_i + 1)
 	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
 		var fromus_desc_id = document.getElementById(fromus_sitelist[fromus_site].desc_id[fromus_i]);
 		if(fromus_desc_id)
 		{	//S'il y a un résultat, l'enregistrer
 			fromus_desc = fromus_desc_id.textContent;
-			localStorage["fromus_idesc"] = fromus_i++;
+			localStorage["fromus_idesc"] = fromus_i + 1;
 		}
 	}
 	
 	if(fromus_moredesc)
 	{
-		fromus_i = localStorage["fromus_idesc"];
+		fromus_i = parseInt(localStorage["fromus_idesc"]);
 	}
 	else
 	{
@@ -831,13 +831,13 @@ if( fromus_sitelist[fromus_site] != undefined)
 	
 	if(fromus_desc === undefined)
 	{	//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
-		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].desc_class.length) && (fromus_desc === undefined) ; fromus_i++)
+		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].desc_class.length) && (fromus_desc === undefined) ; fromus_i + 1)
 		{
 			var fromus_desc_class = document.getElementsByClassName(fromus_sitelist[fromus_site].desc_class[fromus_i])[0];
 			if(fromus_desc_class)
 			{
 				fromus_desc = fromus_desc_class.textContent;
-				localStorage["fromus_idesc"] = fromus_i++;
+				localStorage["fromus_idesc"] = fromus_i + 1;
 			}
 		}
 	}
