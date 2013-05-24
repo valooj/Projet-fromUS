@@ -20,6 +20,47 @@ fromus_desc,
 fromus_desctmp;
 var fromus_reg = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g;	// Permet de récupérer un prix
 var fromus_sitelist = new Array();	// Tableau contenant les sites
+var fromus_error	=	'?';	// Message à afficher en absence de résultat
+var fromus_moreprice,
+fromus_morename,
+fromus_moreimg,		// Ces variables servent à indiquer si l'utilisateur a demandé un/e autre nom, prix, description, image
+fromus_moredesc;
+
+
+/////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
+if(localStorage["fromus_morename"] != undefined)
+{
+	fromus_morename = JSON.parse(localStorage["fromus_morename"]);
+}
+else
+{
+	fromus_morename = false;
+}
+if(localStorage["fromus_moreprice"] != undefined)
+{
+	fromus_moreprice = JSON.parse(localStorage["fromus_moreprice"]);
+}
+else
+{
+	fromus_moreprice = false;
+}
+if(localStorage["fromus_moreimg"] != undefined)
+{
+	fromus_moreimg = JSON.parse(localStorage["fromus_moreimg"]);
+}
+else
+{
+	fromus_moreimg= false;
+}
+if(localStorage["fromus_moredesc"] != undefined)
+{
+	fromus_moredesc = JSON.parse(localStorage["fromus_moredesc"]);
+}
+else
+{
+	fromus_moredesc = false;
+}
+/////////////////////////////////////// Fin de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
 
 /**********************************************************************************************/
 /*																																							*/
@@ -27,7 +68,6 @@ var fromus_sitelist = new Array();	// Tableau contenant les sites
 /*	Il y a deux tableaux par donnée à récupérer, un pour les classes et un pour les id.	*/
 /*																																							*/
 /**********************************************************************************************/
-
 
 function fromus_siteObj() 
 {
@@ -581,13 +621,9 @@ else
 			}
 		}
 	}
-	
 }
 
 ///////////////////////////////////////////////////// Partie cherchant l'info /////////////////////////////////////////////////////
-
-//Message à afficher en absence de résultat
-var fromus_error	=	'?';
 
 // regex pour supprimmer www.         
 var regStore = fromus_site.replace(/www\./,'');
@@ -595,28 +631,48 @@ var regStore = fromus_site.replace(/www\./,'');
 // stockage du marchand dans local storage 
 localStorage["regStore"] = regStore;	
 
-
-
 if( fromus_sitelist[fromus_site] != undefined)
 {	//Si le site est connu
 	//name
-	for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && (fromus_objectname === undefined) ; fromus_i++)
+	
+	if(fromus_morename)
+	{
+		fromus_i = localStorage["fromus_iname"];
+	}
+	else
+	{
+		fromus_i = 0;
+	}
+	
+	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && (fromus_objectname === undefined) ; fromus_i++)
 	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
 		var fromus_name_id = document.getElementById(fromus_sitelist[fromus_site].name_id[fromus_i]);
 		if(fromus_name_id)
 		{	//S'il y a un résultat, l'enregistrer
 			fromus_objectname = fromus_name_id.textContent;
+			localStorage["fromus_iname"] = fromus_i;
 		}
 	}
 	
+	if(fromus_morename)
+	{
+		fromus_i = localStorage["fromus_iname"];
+	}
+	else
+	{
+		fromus_i = 0;
+	}
+	
+	
 	if(fromus_objectname === undefined)
 	{	//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
-		for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && (fromus_objectname === undefined) ; fromus_i++)
+		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && (fromus_objectname === undefined) ; fromus_i++)
 		{
 			var fromus_name_class = document.getElementsByClassName(fromus_sitelist[fromus_site].name_class[fromus_i])[0];
 			if(fromus_name_class)
 			{
 				fromus_objectname = fromus_name_class.textContent;
+				localStorage["fromus_iname"] = fromus_i;				
 			}
 		}
 	}
@@ -626,24 +682,45 @@ if( fromus_sitelist[fromus_site] != undefined)
 		fromus_objectname = fromus_error;
 	}
 	
+	if(fromus_moreprice)
+	{
+		fromus_i = localStorage["fromus_iprice"];
+	}
+	else
+	{
+		fromus_i = 0;
+	}
+	
+	
 	//price 
-	for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && (fromus_pricemin === undefined) ; fromus_i++)
+	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && (fromus_pricemin === undefined) ; fromus_i++)
 	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
 		var fromus_price_id = document.getElementById(fromus_sitelist[fromus_site].price_id[fromus_i]);
 		if(fromus_price_id)
 		{	//S'il y a un résultat, l'enregistrer
 			fromus_pricemin = fromus_price_id.textContent;
+			localStorage["fromus_iprice"] = fromus_i;
 		}
 	}
 	
+	if(fromus_moreprice)
+	{
+		fromus_i = localStorage["fromus_iprice"];
+	}
+	else
+	{
+		fromus_i = 0;
+	}	
+	
 	if(fromus_pricemin === undefined)
 	{	//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
-		for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && (fromus_pricemin === undefined) ; fromus_i++)
+		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && (fromus_pricemin === undefined) ; fromus_i++)
 		{
 			var fromus_price_class = document.getElementsByClassName(fromus_sitelist[fromus_site].price_class[fromus_i])[0];
 			if(fromus_price_class)
 			{
 				fromus_pricemin = fromus_price_class.textContent;
+				localStorage["fromus_iprice"] = fromus_i;
 			}
 		}
 	}
@@ -653,8 +730,17 @@ if( fromus_sitelist[fromus_site] != undefined)
 		fromus_pricemin = fromus_error;
 	}
 	
+	if(fromus_moreimg)
+	{
+		fromus_i = localStorage["fromus_img"];
+	}
+	else
+	{
+		fromus_i = 0;
+	}		
+	
 	//img 
-	for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].img_id.length) && (fromus_img === undefined) ; fromus_i++)
+	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].img_id.length) && (fromus_img === undefined) ; fromus_i++)
 	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
 		var fromus_img_id = document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i]);
 		if(fromus_img_id)
@@ -662,18 +748,28 @@ if( fromus_sitelist[fromus_site] != undefined)
 			if(fromus_img_id.href!=undefined)
 			{
 				fromus_img	=	fromus_img_id.href;
+				localStorage["fromus_moreimg"] = fromus_i;
 			}
 			if(fromus_img_id.src!=undefined)
 			{
 				fromus_img	=	fromus_img_id.src;
+				localStorage["fromus_moreimg"] = fromus_i;
 			}
-			
 		}
 	}
 	
+	if(fromus_moreimg)
+	{
+		fromus_i = localStorage["fromus_img"];
+	}
+	else
+	{
+		fromus_i = 0;
+	}			
+	
 	if(fromus_img === undefined)
 	{//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
-		for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].img_class.length) && (fromus_img === undefined) ; fromus_i++)
+		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].img_class.length) && (fromus_img === undefined) ; fromus_i++)
 		{
 			var fromus_img_class = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0];
 			if(fromus_img_class)
@@ -681,10 +777,12 @@ if( fromus_sitelist[fromus_site] != undefined)
 				if(fromus_img_class.href != undefined)
 				{
 					fromus_img = fromus_img_class.href;
+					localStorage["fromus_moreimg"] = fromus_i;
 				}
 				if(fromus_img = fromus_img_class.src != undefined)
 				{
 					fromus_img = fromus_img_class.src;
+					localStorage["fromus_moreimg"] = fromus_i;
 				}
 			}
 		}
@@ -695,24 +793,45 @@ if( fromus_sitelist[fromus_site] != undefined)
 		fromus_img = fromus_error;
 	}
 	
+	if(fromus_moredesc)
+	{
+		fromus_i = localStorage["fromus_desc"];
+	}
+	else
+	{
+		fromus_i = 0;
+	}			
+	
+	
 	//desc 
-	for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].desc_id.length) && (fromus_desc === undefined) ; fromus_i++)
+	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].desc_id.length) && (fromus_desc === undefined) ; fromus_i++)
 	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
 		var fromus_desc_id = document.getElementById(fromus_sitelist[fromus_site].desc_id[fromus_i]);
 		if(fromus_desc_id)
 		{	//S'il y a un résultat, l'enregistrer
 			fromus_desc = fromus_desc_id.textContent;
+			localStorage["fromus_moredesc"] = fromus_i;
 		}
 	}
 	
+	if(fromus_moredesc)
+	{
+		fromus_i = localStorage["fromus_desc"];
+	}
+	else
+	{
+		fromus_i = 0;
+	}				
+	
 	if(fromus_desc === undefined)
 	{	//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
-		for(var fromus_i = 0 ; (fromus_i < fromus_sitelist[fromus_site].desc_class.length) && (fromus_desc === undefined) ; fromus_i++)
+		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].desc_class.length) && (fromus_desc === undefined) ; fromus_i++)
 		{
 			var fromus_desc_class = document.getElementsByClassName(fromus_sitelist[fromus_site].desc_class[fromus_i])[0];
 			if(fromus_desc_class)
 			{
 				fromus_desc = fromus_desc_class.textContent;
+				localStorage["fromus_moredesc"] = fromus_i;
 			}
 		}
 	}
@@ -721,7 +840,6 @@ if( fromus_sitelist[fromus_site] != undefined)
 	{	// S'il n'y a eu aucun résultat...
 		fromus_desc = fromus_error;
 	}
-	
 }
 
 else
@@ -768,4 +886,10 @@ localStorage["regImg"] = fromus_img;
 // stockage de la page du site dans local storage
 var wwwOffre = fromus_offre.replace(/www\./,'');
 localStorage["regOffer"] = /http[s]{0,1}\:\/\/(.*)/gi.exec(wwwOffre)[1];	
-//localStorage["regOffer"] = fromus_offre;	
+//localStorage["regOffer"] = fromus_offre;
+
+//Mise à zéro des indicateurs
+localStorage["fromus_morename"] =	JSON.stringify(false);
+localStorage["fromus_moreprice"]	=	JSON.stringify(false);
+localStorage["fromus_moreimg"]	=	JSON.stringify(false);
+localStorage["fromus_moredesc"]	=	JSON.stringify(false);
