@@ -1,0 +1,57 @@
+{
+	"tabAdd": {
+		"message": "Ajouter"
+	},
+	"tabBuy": {
+		"message": "Commander"
+	},
+	"tabAccount": {
+		"message": "Mon compte"
+	},
+	"Merchant": {
+		"message": "Marchand : "
+	},
+	"NameP": {
+		"message": "Nom du produit : "
+	},
+	"PriceP": {
+		"message": "Prix du produit : "
+	},
+	"CategP": {
+		"message": "Categorie : "
+	},
+	"SCategP": {
+		"message": "Sous-Categorie : "
+	},
+	"QuantityP": {
+		"message": "Quantite : "
+	},
+
+	"InsuranceP": {
+		"message": "Assurance : "
+	},
+	"MsgIdPass": {
+		"message": "Merci d'entrer votre identifiant et votre mot de passe From-us.com."
+	},
+	"EmailU": {
+		"message": "Email : "
+	},
+	"PasswordU": {
+		"message": "Mot de passe : "
+	},
+	"oubliU": {
+		"message": "Identifiant ou mot de passe oublié ? "
+	},
+	"CreateU": {
+		"message": "Creer un compte "
+	},
+	"FormP": {
+		"message": "Formulaire "
+	},
+	"ButtonBuy": {
+		"message": "Commander "
+	},
+	"ButtonAdd": {
+		"message": "Ajouter fiche produit"
+	}
+}

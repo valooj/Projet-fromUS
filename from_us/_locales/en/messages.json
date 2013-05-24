@@ -1,0 +1,57 @@
+{
+	"tabAdd": {
+		"message": "Add"
+	},
+	"tabBuy": {
+		"message": "Buy"
+	},
+	"tabAccount": {
+		"message": "My account"
+	},
+	"Merchant": {
+		"message": "Merchant : "
+	},
+	"NameP": {
+		"message": "Product name : "
+	},
+	"PriceP": {
+		"message": "Product price: "
+	},
+	"CategP": {
+		"message": "Category : "
+	},
+	"SCategP": {
+		"message": "Sub-Category : "
+	},
+	"QuantityP": {
+		"message": "Quantity : "
+	},
+
+	"InsuranceP": {
+		"message": "Insurance : "
+	},
+	"MsgIdPass": {
+		"message": "Please enter your email and From-us.com password ."
+	},
+	"EmailU": {
+		"message": "Email : "
+	},
+	"PasswordU": {
+		"message": "Password : "
+	},
+	"oubliU": {
+		"message": "Forgot your email or password? "
+	},
+	"CreateU": {
+		"message": "Create an account "
+	},
+	"FormP": {
+		"message": "Form "
+	},
+	"ButtonBuy": {
+		"message": "Buy "
+	},
+	"ButtonAdd": {
+		"message": "Add product sheet"
+	}
+}
