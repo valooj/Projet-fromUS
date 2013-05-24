@@ -21,12 +21,12 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 	});
 
 
-chrome.tabs.getSelected(null, function(tab) {
+/*chrome.tabs.getSelected(null, function(tab) {
   chrome.tabs.sendMessage(tab.id, {greeting: "hello"}, function(response) {
     console.log(response.farewell);
 
   });
-});
+});*/
 
 
 chrome.runtime.onMessage.addListener(
