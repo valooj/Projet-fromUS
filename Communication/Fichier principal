@@ -1,0 +1,41 @@
+Fichier principal
+=================
+
+	<?php
+	$prefered_lng = UnFonctionPourRecupererLaLng(); // fr, en, ch, pl // FR-fr, FR-ca, EN-en, EN-CA, EN-US, ...
+	$lng = array();
+
+	include './lngs/en.php';
+	if( $prefered_lng && ($file = './lngs/' . $prefered_lng . '.php'))
+		include $file;
+
+
+	echo $lng['invalid_token'];
+
+
+File ./lngs/en.php
+==================
+	<?php
+
+	$lng['invalid_token'] = 'Invalid Token !!!';
+	$lng['bad_password'] = 'Bad password !!!';
+
+	?>
+
+File ./lngs/fr.php
+==================
+	<?php
+
+	$lng['invalid_token'] = 'Token Invalide !!!';
+
+	?>
+
+
+
+$search = 'fr';
+$array = array('fr'=>'fra', ...);
+
+if( !isset($array[$search]) )
+	throw new ....
+	
+$result = $array[$search];
