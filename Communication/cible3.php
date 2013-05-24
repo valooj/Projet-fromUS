@@ -72,13 +72,16 @@ try
 			if ( !$get_product )
 				throw new Exception($lng['invalid_product']);
 
-			if( !isset($get_product['prd_prix'], $get_product['prd_libelle'], $get_product['prd_site'], $get_product['prd_cat'], $get_product['prd_desc']) )
+			if( !isset($get_product['prd_prix'], $get_product['prd_libelle'], $get_product['prd_site'], $get_product['prd_cat'], $get_product['prd_desc'], $get_product['prd_cat']) )
 				throw new Exception($lng['bad_param']);
 
 			$get_product['prd_prix'] = str_replace('$', null, $get_product['prd_prix']);
 
 			if ( !is_numeric($get_product['prd_prix']) )
 				throw new Exception($lng['invalid_price']);
+
+			if ( !is_numeric($get_product['prd_cat']) )
+				throw new Exception($lng['invalid_categ']);
 
 			//Recupere l'id a partir du token
 			$req = $bdd->prepare('SELECT tok_user FROM token where tok_token= :_token');
@@ -137,8 +140,14 @@ try
 			if( $get_panier['qte'] <= 0)
 				throw new Exception($lng['invalid_qte']);
 
+			if ( !is_numeric($get_panier['qte']) )
+				throw new Exception($lng['invalid_categ']);
+
 			if ( !is_numeric($get_panier['montant']) )
 				throw new Exception($lng['invalid_price']);
+
+			if ( !is_numeric($get_panier['categ']) )
+				throw new Exception($lng['invalid_categ']);
 
 			//Recupere l'id a partir du token
 			$req = $bdd->prepare('SELECT tok_user FROM token where tok_token= :_token');
@@ -196,8 +205,14 @@ try
 			if( $get_calcul['qte'] == 0)
 				throw new Exception($lng['invalid_qte']);
 
+			if ( !is_numeric($get_calcul['qte']) )
+				throw new Exception($lng['invalid_price']);
+
 			if ( !is_numeric($get_calcul['montant']) )
 				throw new Exception($lng['invalid_price']);
+
+			if ( !is_numeric($get_calcul['categ']) )
+				throw new Exception($lng['invalid_categ']);
 
 			//Recupere l'id 
 			$req = $bdd->prepare('SELECT tok_user FROM token where tok_token= :_token');

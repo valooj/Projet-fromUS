@@ -8,15 +8,9 @@ var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-
 var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&lang='+language+'&token=';
 var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login&lang='+language;
 
-
 var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-categorie&lang='+language;
 var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&lang='+language+'&sscateg=';
 
-
-var productJSON = {};
-var calculJSON = {};
-var panierJSON = {};
-var categorieJSON = {};
 var qteVal;
 var categVal;
 var regStore;
@@ -65,7 +59,6 @@ function sendToServer(urlSelected, jsonSelected) {
 			case 'L':
 				token = datas['Token'];
 				createCookie('token',token,21);
-				//pays = datas['Pays'];
 			break;
 
 			case 'c':
@@ -87,8 +80,8 @@ function sendToServer(urlSelected, jsonSelected) {
 						
 						var jsonPanier = {libelle: regName ,url: regOffer ,desc: regDesc, qte: qteVal ,montant: totalPrice ,categ: categVal};
 						var postDataPanier = JSON.stringify(jsonPanier);
-						panierJSON = {panier:postDataPanier};
-						sendAjoutPanier();
+						var panierJSON = {panier:postDataPanier};
+						sendAjoutPanier(panierJSON);
 					}
 				}
 			break;
@@ -104,8 +97,8 @@ function sendToServer(urlSelected, jsonSelected) {
 ;}
 
 
-function sendAjoutPanier() {
-	$.post(_urlPanier+token, panierJSON)
+function sendAjoutPanier(panierJ) {
+	$.post(_urlPanier+token, panierJ)
 	.done(function(datas) { 
 		if(datas['Message'] !== undefined)
 			alert(datas['Message']);
@@ -232,13 +225,13 @@ $(document).ready(function() {
 
 							var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
 							var postData = JSON.stringify(jsonProduct);
-							productJSON = {product:postData};
+							var productJSON = {product:postData};
 							sendToServer(_urlProduct+token,productJSON);
 
 
 							var jsonCalcul = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
 							var postDataCalcul = JSON.stringify(jsonCalcul);
-							calculJSON = {calcul:postDataCalcul};
+							var calculJSON = {calcul:postDataCalcul};
 							sendToServer(_urlCalcul+token , calculJSON);
 						}
 					},		
@@ -253,12 +246,12 @@ $(document).ready(function() {
 
 							var qteSpinner = document.getElementById("QteSpinner");
 							qteVal = qteSpinner.value;
-							var categSelect = document.getElementById("category");
+							var categSelect = document.getElementById("sscategory");
 							categVal = categSelect.value;
 
 							var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
 							var postData = JSON.stringify(jsonProduct);
-							productJSON = {product:postData};
+							var productJSON = {product:postData};
 							sendToServer(_urlProduct+token , productJSON);
 						}
 					},

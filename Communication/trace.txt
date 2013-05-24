@@ -76,3 +76,189 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lang] => fr
+    [token] => 519f6115ce577
+    [product] => {"prd_libelle":"Baby Jogger City Select Car Seat Adaptor - Others","prd_site":"rakuten.com/prod/baby-jogger-city-select-car-seat-adaptor/216544293.html","prd_desc":"IJ1339: Features: -Car Seat Adaptor.-Designed to fit several popular car seat models. Collection: -City Select collection.","prd_visu":"?","prd_prix":"60.95","prd_cat":""}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lang] => fr
+    [token] => 519f6115ce577
+    [product] => {"prd_libelle":"Baby Jogger City Select Car Seat Adaptor - Others","prd_site":"rakuten.com/prod/baby-jogger-city-select-car-seat-adaptor/216544293.html","prd_desc":"IJ1339: Features: -Car Seat Adaptor.-Designed to fit several popular car seat models. Collection: -City Select collection.","prd_visu":"?","prd_prix":"60.95","prd_cat":"2"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [lang] => fr
+    [token] => 519f6115ce577
+    [calcul] => {"libelle":"Baby Jogger City Select Car Seat Adaptor - Others","qte":"1","montant":"60.95","categ":"2"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [lang] => fr
+    [token] => 519f6115ce577
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lang] => fr
+    [token] => 519f6115ce577
+    [product] => {"prd_libelle":"Baby Jogger City Select Car Seat Adaptor - Others","prd_site":"rakuten.com/prod/baby-jogger-city-select-car-seat-adaptor/216544293.html","prd_desc":"IJ1339: Features: -Car Seat Adaptor.-Designed to fit several popular car seat models. Collection: -City Select collection.","prd_visu":"?","prd_prix":"60.95","prd_cat":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [lang] => fr
+    [token] => 519f6115ce577
+    [calcul] => {"libelle":"Baby Jogger City Select Car Seat Adaptor - Others","qte":"1","montant":"60.95","categ":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [lang] => fr
+    [token] => 519f6115ce577
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lang] => fr
+    [token] => 519f6115ce577
+    [product] => {"prd_libelle":"Baby Jogger City Select Car Seat Adaptor - Others","prd_site":"rakuten.com/prod/baby-jogger-city-select-car-seat-adaptor/216544293.html","prd_desc":"IJ1339: Features: -Car Seat Adaptor.-Designed to fit several popular car seat models. Collection: -City Select collection.","prd_visu":"?","prd_prix":"60.95","prd_cat":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [lang] => fr
+    [token] => 519f6115ce577
+    [calcul] => {"libelle":"Baby Jogger City Select Car Seat Adaptor - Others","qte":"1","montant":"60.95","categ":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [lang] => fr
+    [token] => 519f6115ce577
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 2
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lang] => fr
+    [token] => 519f6115ce577
+    [product] => {"prd_libelle":"Baby Jogger City Select Car Seat Adaptor - Others","prd_site":"rakuten.com/prod/baby-jogger-city-select-car-seat-adaptor/216544293.html","prd_desc":"IJ1339: Features: -Car Seat Adaptor.-Designed to fit several popular car seat models. Collection: -City Select collection.","prd_visu":"?","prd_prix":"60.95","prd_cat":"6"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lang] => fr
+    [token] => 519f6115ce577
+    [product] => {"prd_libelle":"Baby Jogger City Select Car Seat Adaptor - Others","prd_site":"rakuten.com/prod/baby-jogger-city-select-car-seat-adaptor/216544293.html","prd_desc":"IJ1339: Features: -Car Seat Adaptor.-Designed to fit several popular car seat models. Collection: -City Select collection.","prd_visu":"?","prd_prix":"60.95","prd_cat":"6"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [lang] => fr
+    [token] => 519f6115ce577
+    [calcul] => {"libelle":"Baby Jogger City Select Car Seat Adaptor - Others","qte":"1","montant":"60.95","categ":"6"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [lang] => fr
+    [token] => 519f6115ce577
+    [panier] => {"libelle":"Baby Jogger City Select Car Seat Adaptor - Others","url":"rakuten.com/prod/baby-jogger-city-select-car-seat-adaptor/216544293.html","desc":"IJ1339: Features: -Car Seat Adaptor.-Designed to fit several popular car seat models. Collection: -City Select collection.","qte":"1","montant":79.845,"categ":"6"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lang] => fr
+    [token] => 519f6115ce577
+    [product] => {"prd_libelle":"Baby Jogger City Select Car Seat Adaptor - Others","prd_site":"rakuten.com/prod/baby-jogger-city-select-car-seat-adaptor/216544293.html","prd_desc":"IJ1339: Features: -Car Seat Adaptor.-Designed to fit several popular car seat models. Collection: -City Select collection.","prd_visu":"?","prd_prix":"60.95","prd_cat":""}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lang] => fr
+    [sscateg] => 2
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lang] => fr
+    [token] => 519f6115ce577
+    [product] => {"prd_libelle":"Baby Jogger City Select Car Seat Adaptor - Others","prd_site":"rakuten.com/prod/baby-jogger-city-select-car-seat-adaptor/216544293.html","prd_desc":"IJ1339: Features: -Car Seat Adaptor.-Designed to fit several popular car seat models. Collection: -City Select collection.","prd_visu":"?","prd_prix":"60.95","prd_cat":"4"}
+)
+
+===========================================
