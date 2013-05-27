@@ -144,6 +144,7 @@ $(document).ready(function() {
 							'<div id="fromus_tabs-1">' +
 								'<h2>'+chrome.i18n.getMessage("FormP")+'</h2>' +
 								'<form id="fromusForm">' + 
+<<<<<<< HEAD
 									'<label for="store">'+chrome.i18n.getMessage("Merchant")+'</label><input type="textbox" id="fromus_store" disabled="true"/></br>' +
 									'<label for="name">'+chrome.i18n.getMessage("NameP")+'</label><input type="textbox" id="fromus_name" disabled="true"/><input type="button" value="test" id="fromus_morename" /></br>' + 
 									'<label for="price">'+chrome.i18n.getMessage("PriceP")+'</label><input type="textbox" id="fromus_price" /></br>' +
@@ -156,6 +157,20 @@ $(document).ready(function() {
 										'</select></br>' +
 									'<label id="fromus_quantite" for="quantite">'+chrome.i18n.getMessage("QuantityP")+'</label><input id="QteSpinner" value="1"></br>' +
 									'<label id="fromus_assurance" for="assurance">'+chrome.i18n.getMessage("InsuranceP")+'</label>' +
+=======
+									'<label for="store">Marchand : </label><input type="textbox" id="fromus_store" disabled="true"/>' +
+									'<label for="name">Nom du produit : </label><input type="textbox" id="fromus_name" disabled="true"/>' + 
+									'<label for="price">Prix du produit : </label><input type="textbox" id="fromus_price" />' +
+									'<label for="category">Catégorie:</label>'+ 
+										'<select id="category">' +
+										'</select>' +
+									'<label for="sscategory">Sous-catégorie:</label>' +
+										'<select id="sscategory">' +			// c'est la qu'il faut que tu mettes les sous catégories
+
+										'</select>' +
+									'<label id="fromus_quantite" for="quantite">Quantite : </label><input id="QteSpinner" value="1"></br>' +
+									'<label id="fromus_assurance" for="assurance">Assurance : </label>' +
+>>>>>>> modification du css
 										'<div id="fromus_divassurance">' +
     										'<input type="checkbox" id="fromus_checkassurance" name="assurance" />' +
     									'</div>' +
@@ -163,9 +178,15 @@ $(document).ready(function() {
 							'</div>' +
 							'<div id="fromus_tabs-2">' +
 								'<h2>From-us.com</h2>' +
+<<<<<<< HEAD
 								'<p>'+chrome.i18n.getMessage("MsgIdPass")+'</p>' +
 								'<label for="idfromus">'+chrome.i18n.getMessage("EmailU")+'</label><input type="textbox" id="idfromus" /></br>' +
 								'<label for="mdpfromus">'+chrome.i18n.getMessage("PasswordU")+'</label><input type="password" id="mdpfromus" /></br>' +
+=======
+								'<p>Merci d\'entrer votre identifiant et votre mot de passe From-us.com.</p>' +
+								'<label for="idfromus">Identifiant : </label><input type="textbox" id="idfromus" />' +
+								'<label for="mdpfromus">Mot de passe : </label><input type="password" id="mdpfromus" />' +
+>>>>>>> modification du css
 								'<input type="button" value="login" id="log" />' +
 								'<a href="http://from-us.com/fromus" target="_blank">'+chrome.i18n.getMessage("OubliU")+'</a>' +
 								'<a href="http://from-us.com/fromus" target="_blank">'+chrome.i18n.getMessage("CreateU")+'</a>' +
@@ -193,7 +214,7 @@ $(document).ready(function() {
 					my: "left top", 
 					at: "left top"
 				},
-			height: 355,
+			height: 380	,
 			width: 880,
 			resizable: true,
 			closeOnEscape: true,

@@ -2,17 +2,18 @@
 * http://jqueryui.com
 * Includes: jquery.ui.core.css, jquery.ui.accordion.css, jquery.ui.autocomplete.css, jquery.ui.button.css, jquery.ui.datepicker.css, jquery.ui.dialog.css, jquery.ui.menu.css, jquery.ui.progressbar.css, jquery.ui.resizable.css, jquery.ui.selectable.css, jquery.ui.slider.css, jquery.ui.spinner.css, jquery.ui.tabs.css, jquery.ui.tooltip.css, jquery.ui.theme.css
 * Copyright 2013 jQuery Foundation and other contributors; Licensed MIT */
-.toto ..ui-dialog-titlebar{
+.toto .ui-dialog-titlebar{
 	background-color: #000080;
 }
-.toto #fromus_dialogBox{
-	width: 1200px;
-	height: 500px;
+.toto .ui-widget-header{
+	background-color: #000080;
 }
 .toto label {
 	display: inline-block;
-	width: 200px;
+	width: 130px;
 	text-align: right;
+	margin-left: 90px;
+	margin-top: 3px;
 }
 
 .toto * {
@@ -21,28 +22,54 @@
 .toto #fromus_tabs-1 {
 	border: 2px dotted #000080;
 	border-radius: 5px;
-	margin: 10px 10px 10px 10px;
+	margin: 10px;
+	padding: 20px;
+}
+.toto h2{
+	margin-bottom: 20px;
+	text-align: center;
 }
 .toto #fromusForm {
-	border: solid;
 }
 .toto #FromusFrom label{
 	float: left;
 	text-align: right;
 	width: 200px;
 }
-input[type="textbox"]{
-	width: 200px;
-	margin-left: 0px;
+.toto #fromusForm input[type="textbox"] {
+	width: 280px;
+	margin: 0px;
+	margin-bottom: 5px;
+	padding: 0px;
 }
 select#category{
-	width: 206px;
+	width: 282px;
+	margin-top: 0px;
+	margin-bottom: 5px;
+	padding: 0px;
+	height: 20px;
 }
 select#sscategory{
-	width: 206px;
+	width: 282px;
+	margin-bottom: 5px;
+	margin-top: 0px;
+	padding: 0px;
+	height: 20px;
 }
 input#QteSpinner{
-	width: 182px;
+	width: 50px;
+	/*height: 20px;*/
+}
+.toto .ui-spinner{
+	height: 18px;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+.toto #fromus_divassurance	{
+	width: 50px;
+	display: inline-block;
+	margin-top: -4px;
+	margin-bottom: 5px;
 }
 #logofromus{
 	float: left;
