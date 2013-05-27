@@ -28,7 +28,7 @@ fromus_moredesc;
 
 
 /////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
-if(localStorage["fromus_morename"] != undefined)
+if(localStorage["fromus_morename"])
 {
 	fromus_morename = JSON.parse(localStorage["fromus_morename"]);
 }
@@ -36,7 +36,7 @@ else
 {
 	fromus_morename = false;
 }
-if(localStorage["fromus_moreprice"] != undefined)
+if(localStorage["fromus_moreprice"])
 {
 	fromus_moreprice = JSON.parse(localStorage["fromus_moreprice"]);
 }
@@ -44,7 +44,7 @@ else
 {
 	fromus_moreprice = false;
 }
-if(localStorage["fromus_moreimg"] != undefined)
+if(localStorage["fromus_moreimg"])
 {
 	fromus_moreimg = JSON.parse(localStorage["fromus_moreimg"]);
 }
@@ -52,7 +52,7 @@ else
 {
 	fromus_moreimg= false;
 }
-if(localStorage["fromus_moredesc"] != undefined)
+if(localStorage["fromus_moredesc"])
 {
 	fromus_moredesc = JSON.parse(localStorage["fromus_moredesc"]);
 }
@@ -633,7 +633,7 @@ var regStore = fromus_site.replace(/www\./,'');
 // stockage du marchand dans local storage 
 localStorage["regStore"] = regStore;	
 
-if( fromus_sitelist[fromus_site] != undefined)
+if( fromus_sitelist[fromus_site])
 {	//Si le site est connu
 	//name
 				console.log("Le site est connu");	
@@ -697,6 +697,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 				console.log("Aucun résultat au final. Donc le nomp vaut \'?\'");		
 	}
 				console.log("Fin de la partie name du script, objectname vaut finalement : " + fromus_objectname);	
+	//price			
 	if(fromus_moreprice)
 	{
 		fromus_i = parseInt(localStorage["fromus_iprice"]);
@@ -705,9 +706,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	{
 		fromus_i = 0;
 	}
-	
-	
-	//price 
+
 	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && !(fromus_pricemin) ; fromus_i++)
 	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
 		var fromus_price_id = document.getElementById(fromus_sitelist[fromus_site].price_id[fromus_i]);
@@ -727,7 +726,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 		fromus_i = 0;
 	}	
 	
-	if(fromus_pricemin === undefined)
+	if(!(fromus_pricemin))
 	{	//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
 		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && !(fromus_pricemin) ; fromus_i++)
 		{
@@ -740,7 +739,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 		}
 	}
 	
-	if(fromus_pricemin === undefined)
+	if(!(fromus_pricemin))
 	{	// S'il n'y a eu aucun résultat...
 		fromus_pricemin = fromus_error;
 	}
@@ -782,19 +781,19 @@ if( fromus_sitelist[fromus_site] != undefined)
 		fromus_i = 0;
 	}			
 	
-	if(fromus_img === undefined)
+	if(!(fromus_img))
 	{//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
 		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].img_class.length) && !(fromus_img) ; fromus_i++)
 		{
 			var fromus_img_class = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0];
 			if(fromus_img_class)
 			{
-				if(fromus_img_class.href != undefined)
+				if(fromus_img_class.href)
 				{
 					fromus_img = fromus_img_class.href;
 					localStorage["fromus_iimg"] = fromus_i + 1;
 				}
-				if(fromus_img = fromus_img_class.src != undefined)
+				if(fromus_img = fromus_img_class.src)
 				{
 					fromus_img = fromus_img_class.src;
 					localStorage["fromus_iimg"] = fromus_i + 1;
@@ -803,7 +802,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 		}
 	}
 	
-	if(fromus_img === undefined)
+	if(!(fromus_img))
 	{	// S'il n'y a eu aucun résultat...
 		fromus_img = fromus_error;
 	}
@@ -838,7 +837,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 		fromus_i = 0;
 	}				
 	
-	if(fromus_desc === undefined)
+	if(!(fromus_desc))
 	{	//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
 		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].desc_class.length) && !(fromus_desc) ; fromus_i++)
 		{
@@ -851,7 +850,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 		}
 	}
 	
-	if(fromus_desc === undefined)
+	if(!(fromus_desc))
 	{	// S'il n'y a eu aucun résultat...
 		fromus_desc = fromus_error;
 	}
@@ -875,7 +874,7 @@ if(fromus_desc.length > 200)
 {
 	fromus_desc					=	fromus_desc.substring(0,195)+"[...]";
 }
-fromus_objectname			=	fromus_objectname.replace(/\n/g,'').substring(0,100);
+fromus_objectname			=	fromus_objectname.replace(/\n/,'').replace(/\n.*/g,'').substring(0,100);
 
 if(typeof(fromus_pricemin)=='string')
 {
