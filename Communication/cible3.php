@@ -360,7 +360,7 @@ try
 			$req->closeCursor();
 
 			$response['Status'] = 'l';
-			$response['Message'] = $lng['logout'];
+			//$response['Message'] = $lng['logout'];
 
 			break;
 

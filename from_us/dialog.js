@@ -53,7 +53,8 @@ function sendToServer(urlSelected, jsonSelected) {
 	.done(function(datas) { 
 		switch(datas['Status']){
 			case 'l':
-				alert(datas['Message']);
+				document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgConnect");
+				//alert(datas['Message']);
 			break;
 
 			case 'L':
@@ -439,7 +440,7 @@ $(document).ready(function() {
 		    	sendToServer(_urlLogout+token, {});
 		    	eraseCookie('token');
 		    	eraseCookie('Nick_Name');
-		    	document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgConnect");
+		    	
 			}
 				    
 		}, false);
