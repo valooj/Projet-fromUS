@@ -385,10 +385,12 @@ $(document).ready(function() {
 		regVisu = localStorage["regImg"];
 
 		var fromus_morename = document.getElementById('fromus_morename');
+		var runtimeOrExtension = chrome.runtime && chrome.runtime.sendMessage ?
+ 		'runtime' : 'extension';
 		fromus_morename.addEventListener('click', function(e){
 			console.log('morename');
 			localStorage["fromus_morename"] =	JSON.stringify(true);
-			chrome.extension.sendMessage({greeting: "hello"}, function(response) {
+			chrome[runtimeOrExtension].sendMessage({greeting: "hello"}, function(response) {
   			console.log(response.farewell);
 		});
 			$('#fromus_name').attr('value',"you");

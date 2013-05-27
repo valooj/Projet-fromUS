@@ -28,8 +28,10 @@ chrome.browserAction.onClicked.addListener(function(tab) {
   });
 });*/
 
+var runtimeOrExtension = chrome.runtime && chrome.runtime.sendMessage ?
+'runtime' : 'extension';
 
-chrome.extension.onMessage.addListener(
+chrome[runtimeOrExtension].onMessage.addListener(
 		  function(request, sender, sendResponse) {
 		    console.log(sender.tab ?
 		                "from a content script:" + sender.tab.url :
