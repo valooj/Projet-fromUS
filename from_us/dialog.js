@@ -396,11 +396,14 @@ $(document).ready(function() {
 		fromus_morename.addEventListener('click', function(e){
 			console.log('morename');
 			console.log("avant d'executer le script : " + localStorage["regName"]);
+			var start = new Date().getTime();
 			localStorage["fromus_morename"] =	JSON.stringify(true);
 			chrome[runtimeOrExtension].sendMessage({greeting: "hello"}, function(response) {
   			console.log(response.farewell);
   		});
-
+			var end = new Date().getTime();
+			var time = end - start;
+			alert('Execution time: ' + time);
 			setTimeout(function () {
 	        	$('#fromus_name').attr('value',localStorage["regName"]);
 	        	console.log("apres avoir d'executer le script : " + localStorage["regName"]);
