@@ -438,6 +438,7 @@ $(document).ready(function() {
 		    	sendToServer(_urlLogout+token, {});
 		    	eraseCookie('token');
 		    	eraseCookie('Nick_Name');
+		    	document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgConnect");
 			}
 				    
 		}, false);
@@ -465,7 +466,8 @@ $(document).ready(function() {
 			document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgWelcome")+readCookie('Nick_Name');
 		}
 		else
-			alert('Vous devez vous connecter');
+			document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgConnect");
+			//alert('Vous devez vous connecter');
 
 				
 		// suppression des key dans le localstorage

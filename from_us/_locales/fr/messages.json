@@ -56,5 +56,8 @@
 	},
 	"MsgWelcome": {
 		"message": "Bienvenue "
+	},
+	"MsgConnect": {
+		"message": "Vous devez vous connecter"
 	}
 }
