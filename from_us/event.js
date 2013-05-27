@@ -29,7 +29,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 });*/
 
 
-/*chrome.runtime.onMessage.addListener(
+chrome.extension.onMessage.addListener(
 		  function(request, sender, sendResponse) {
 		    console.log(sender.tab ?
 		                "from a content script:" + sender.tab.url :
@@ -39,8 +39,8 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 		  		chrome.tabs.executeScript(null,{file:'/clixml/fromus_recuperation.js',allFrames:false,runAt:'document_end'});
 			}
 		  }
-);*/
-
+);
+/*
 chrome.runtime.onConnect.addListener(function(port) {
   console.assert(port.name == "knockknock");
   port.onMessage.addListener(function(msg) {
@@ -56,7 +56,7 @@ chrome.runtime.onConnect.addListener(function(port) {
   		console.log('don\'t get it');}
   });
 });
-
+*/
 
 
 
