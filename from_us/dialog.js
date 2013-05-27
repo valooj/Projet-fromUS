@@ -144,8 +144,8 @@ $(document).ready(function() {
 								'<li><a href="#fromus_tabs-1">'+chrome.i18n.getMessage("tabBuy")+'</a></li>' +
 								'<li><a href="#fromus_tabs-2">'+chrome.i18n.getMessage("tabAccount")+'</a></li>' +
 							'</ul>' +
+							'<label for="Nick_Name"></label><input type="textbox" id="Nick_Name" disabled="true"/></br>' +
 							'<div id="fromus_tabs-1">' +
-								'<label for="Nick_Name"></label><input type="textbox" id="Nick_Name" disabled="true" style="border:None"/></br>' +
 								'<h2>'+chrome.i18n.getMessage("FormP")+'</h2>' +
 								'<form id="fromusForm">' + 
 
@@ -159,7 +159,7 @@ $(document).ready(function() {
 										'<select id="sscategory">' +
 
 										'</select></br>' +
-									'<label id="fromus_quantite" for="quantite">'+chrome.i18n.getMessage("QuantityP")+'</label><input id="QteSpinner" value="1"></br>' +
+									'<label id="fromus_quantite" for="quantite">'+chrome.i18n.getMessage("QuantityP")+'</label><input id="QteSpinner" value="1">' +
 									'<label id="fromus_assurance" for="assurance">'+chrome.i18n.getMessage("InsuranceP")+'</label>' +
 									'<div id="fromus_divassurance">' +
 										'<input type="checkbox" id="fromus_checkassurance" name="assurance" />' +
@@ -200,7 +200,7 @@ $(document).ready(function() {
 					my: "left top", 
 					at: "left top"
 				},
-			height: 380	,
+			height: 400,
 			width: 880,
 			resizable: true,
 			closeOnEscape: true,

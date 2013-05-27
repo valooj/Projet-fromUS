@@ -4,6 +4,10 @@
 * Copyright 2013 jQuery Foundation and other contributors; Licensed MIT */
 .toto .ui-dialog-titlebar{
 	background-color: #203064;
+	text-align: left;
+}
+#ui-id-4 {
+	width: 858px;
 }
 .toto .ui-widget-header{
 	background-color: #203064;
@@ -25,9 +29,19 @@
 	margin: 10px;
 	padding: 20px;
 }
+.toto input#Nick_Name {
+	width: 600px;
+	float: right;
+	margin-top: 0px;
+	text-align: right;
+	font-size: small;
+	border: none;
+}
 .toto h2{
 	margin-bottom: 20px;
 	text-align: center;
+	font-size: x-large;
+	text-decoration: underline;
 }
 .toto #fromusForm {
 }
