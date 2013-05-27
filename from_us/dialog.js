@@ -365,6 +365,24 @@ $(document).ready(function() {
 			min: 1
 		});	
 
+		/*var value;
+		var $container=$("#QteSpinner");
+		var newSpinner = $container.spinner({
+		        min: 1,
+		    }).focus(function () {
+		        value = $container.val();
+		    }).blur(function () {
+		        var value1 = $container.val();
+		        if (value1<0) {
+		           $container.val(value);
+		        }
+		        if(isNaN(value1))
+		        {
+		           $container.val(value);
+		        } 
+
+		    });*/
+
 
 		// ajout du marchand automatiquement
 		regStore = localStorage["regStore"];
