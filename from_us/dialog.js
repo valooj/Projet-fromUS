@@ -388,18 +388,25 @@ $(document).ready(function() {
 
 		regVisu = localStorage["regImg"];
 
+		console.log("avant d'appuyer sur le bouton : " + localStorage["regName"]);
+
 		var fromus_morename = document.getElementById('fromus_morename');
 		var runtimeOrExtension = chrome.runtime && chrome.runtime.sendMessage ?
  		'runtime' : 'extension';
 		fromus_morename.addEventListener('click', function(e){
 			console.log('morename');
+			console.log("avant d'executer le script : " + localStorage["regName"]);
 			localStorage["fromus_morename"] =	JSON.stringify(true);
 			chrome[runtimeOrExtension].sendMessage({greeting: "hello"}, function(response) {
   			console.log(response.farewell);
-		});
+  		});
 
-			//$('#fromus_name').attr('value',"you");
-			$('#fromus_name').attr('value',localStorage["regName"]);
+			setTimeout(function () {
+	        	$('#fromus_name').attr('value',localStorage["regName"]);
+	        	console.log("apres avoir d'executer le script : " + localStorage["regName"]);
+        	}, 15);
+			
+			
 		}, false);
 
 
@@ -473,11 +480,11 @@ $(document).ready(function() {
 
 				
 		// suppression des key dans le localstorage
-		localStorage.removeItem('regDesc');
-		//localStorage.removeItem('regName');
+		/*localStorage.removeItem('regDesc');
+		localStorage.removeItem('regName');
 		localStorage.removeItem('regPrice');
 		localStorage.removeItem('regStore');
-		localStorage.removeItem('regOffer');
+		localStorage.removeItem('regOffer');*/
 			
 	}
 });
