@@ -59,6 +59,8 @@ function sendToServer(urlSelected, jsonSelected) {
 			case 'L':
 				token = datas['Token'];
 				createCookie('token',token,21);
+				alert(datas['Message']);
+				document.getElementById("Nick_Name").value = 'Bienvenue '+datas['Message'];
 			break;
 
 			case 'c':
@@ -142,6 +144,7 @@ $(document).ready(function() {
 								'<li><a href="#fromus_tabs-2">'+chrome.i18n.getMessage("tabAccount")+'</a></li>' +
 							'</ul>' +
 							'<div id="fromus_tabs-1">' +
+								'<label for="Nick_Name"></label><input type="textbox" id="Nick_Name" /></br>' +
 								'<h2>'+chrome.i18n.getMessage("FormP")+'</h2>' +
 								'<form id="fromusForm">' + 
 
