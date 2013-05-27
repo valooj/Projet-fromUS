@@ -404,7 +404,7 @@ $(document).ready(function() {
 			var end = new Date().getTime();
 			var time = end - start;
 			var timeafterbtn = time + 15;
-			alert('Execution time: ' + time);
+			
 			setTimeout(function () {
 	        	$('#fromus_name').attr('value',localStorage["regName"]);
 	        	console.log("apres avoir d'executer le script : " + localStorage["regName"]);
@@ -484,11 +484,11 @@ $(document).ready(function() {
 
 				
 		// suppression des key dans le localstorage
-		/*localStorage.removeItem('regDesc');
+		localStorage.removeItem('regDesc');
 		localStorage.removeItem('regName');
 		localStorage.removeItem('regPrice');
 		localStorage.removeItem('regStore');
-		localStorage.removeItem('regOffer');*/
+		localStorage.removeItem('regOffer');
 			
 	}
 });
