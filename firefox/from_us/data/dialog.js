@@ -8,15 +8,9 @@ var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-
 var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&lang='+language+'&token=';
 var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login&lang='+language;
 
-
 var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-categorie&lang='+language;
 var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&lang='+language+'&sscateg=';
 
-
-var productJSON = {};
-var calculJSON = {};
-var panierJSON = {};
-var categorieJSON = {};
 var qteVal;
 var categVal;
 var regStore;
@@ -65,7 +59,6 @@ function sendToServer(urlSelected, jsonSelected) {
 			case 'L':
 				token = datas['Token'];
 				createCookie('token',token,21);
-				//pays = datas['Pays'];
 			break;
 
 			case 'c':
@@ -87,8 +80,8 @@ function sendToServer(urlSelected, jsonSelected) {
 						
 						var jsonPanier = {libelle: regName ,url: regOffer ,desc: regDesc, qte: qteVal ,montant: totalPrice ,categ: categVal};
 						var postDataPanier = JSON.stringify(jsonPanier);
-						panierJSON = {panier:postDataPanier};
-						sendAjoutPanier();
+						var panierJSON = {panier:postDataPanier};
+						sendAjoutPanier(panierJSON);
 					}
 				}
 			break;
@@ -104,8 +97,8 @@ function sendToServer(urlSelected, jsonSelected) {
 ;}
 
 
-function sendAjoutPanier() {
-	$.post(_urlPanier+token, panierJSON)
+function sendAjoutPanier(panierJ) {
+	$.post(_urlPanier+token, panierJ)
 	.done(function(datas) { 
 		if(datas['Message'] !== undefined)
 			alert(datas['Message']);
@@ -137,40 +130,48 @@ $(document).ready(function() {
 	console.log( "Variable from Content Script: "+localStorage["regPrice"] );
 	console.log( "Variable from Content Script: "+localStorage["regDesc"] );
 
-	var newDialog = $('<div id="fromus_dialogBox">' +
+	var retyu = 0;
+	console.log(retyu + 1);
+
+
+	var newDialog = $('<div id="fromus_dialogBox" class="toto">' +
 						'<div id="fromus_tabs">' +
 							'<ul>' +
-								'<li><a href="#fromus_tabs-1">Ajouter</a></li>' +
-								'<li><a href="#fromus_tabs-1">Commander</a></li>' +
-								'<li><a href="#fromus_tabs-2">Mon compte</a></li>' +
+								'<li><a href="#fromus_tabs-1">'+chrome.i18n.getMessage("tabAdd")+'</a></li>' +
+								'<li><a href="#fromus_tabs-1">'+chrome.i18n.getMessage("tabBuy")+'</a></li>' +
+								'<li><a href="#fromus_tabs-2">'+chrome.i18n.getMessage("tabAccount")+'</a></li>' +
 							'</ul>' +
 							'<div id="fromus_tabs-1">' +
-								'<h2>Formulaire</h2>' +
+								'<h2>'+chrome.i18n.getMessage("FormP")+'</h2>' +
 								'<form id="fromusForm">' + 
-									'<label for="store">Marchand : </label><input type="textbox" id="fromus_store" disabled="true"/></br>' +
-									'<label for="name">Nom du produit : </label><input type="textbox" id="fromus_name" disabled="true"/></br>' + 
-									'<label for="price">Prix du produit : </label><input type="textbox" id="fromus_price" /></br>' +
-									'<label for="category">Catégorie:</label>'+ 
+
+									'<label for="store">'+chrome.i18n.getMessage("Merchant")+'</label><input type="textbox" id="fromus_store" disabled="true"/></br>' +
+									'<label for="name">'+chrome.i18n.getMessage("NameP")+'</label><input type="textbox" id="fromus_name" disabled="true"/><input type="button" value="test" id="fromus_morename" /></br>' + 
+									'<label for="price">'+chrome.i18n.getMessage("PriceP")+'</label><input type="textbox" id="fromus_price" /></br>' +
+									'<label for="category">'+chrome.i18n.getMessage("CategP")+'</label>'+ 
 										'<select id="category">' +
 										'</select></br>' +
-									'<label for="sscategory">Sous-catégorie:</label>' +
-										'<select id="sscategory">' +			// c'est la qu'il faut que tu mettes les sous catégories
+									'<label for="sscategory">'+chrome.i18n.getMessage("SCategP")+'</label>' +
+										'<select id="sscategory">' +
 
 										'</select></br>' +
-									'<label id="fromus_quantite" for="quantite">Quantite : </label><input id="QteSpinner" value="1"></br>' +
-									'<label id="fromus_assurance" for="assurance">Assurance : </label>' +
-										'<div id="fromus_divassurance">' +
-    										'<input type="checkbox" id="fromus_checkassurance" name="assurance" />' +
-    									'</div>' +
+									'<label id="fromus_quantite" for="quantite">'+chrome.i18n.getMessage("QuantityP")+'</label><input id="QteSpinner" value="1"></br>' +
+									'<label id="fromus_assurance" for="assurance">'+chrome.i18n.getMessage("InsuranceP")+'</label>' +
+									'<div id="fromus_divassurance">' +
+										'<input type="checkbox" id="fromus_checkassurance" name="assurance" />' +
+									'</div>' +
 								'</form>' +
 							'</div>' +
 							'<div id="fromus_tabs-2">' +
 								'<h2>From-us.com</h2>' +
-								'<p>Merci d\'entrer votre identifiant et votre mot de passe From-us.com.</p>' +
-								'<label for="idfromus">Identifiant : </label><input type="textbox" id="idfromus" /></br>' +
-								'<label for="mdpfromus">Mot de passe : </label><input type="password" id="mdpfromus" /></br>' +
+
+								'<p>'+chrome.i18n.getMessage("MsgIdPass")+'</p>' +
+								'<label for="idfromus">'+chrome.i18n.getMessage("EmailU")+'</label><input type="textbox" id="idfromus" /></br>' +
+								'<label for="mdpfromus">'+chrome.i18n.getMessage("PasswordU")+'</label><input type="password" id="mdpfromus" /></br>' +
+
 								'<input type="button" value="login" id="log" />' +
-								'<a href="http://from-us.com/fromus" target="_blank">Identifiant ou mot de passe oublié ?</a>' +
+								'<a href="http://from-us.com/fromus" target="_blank">'+chrome.i18n.getMessage("OubliU")+'</a>' +
+								'<a href="http://from-us.com/fromus" target="_blank">'+chrome.i18n.getMessage("CreateU")+'</a>' +
 							'</div>' +
 						'</div>' +
 						'<a href="http://from-us.com/fromus" target=_blank><img id="logofromus" height="100" src=""/></a>' +
@@ -195,8 +196,8 @@ $(document).ready(function() {
 					my: "left top", 
 					at: "left top"
 				},
-			height: 330,
-			width: 855,
+			height: 380	,
+			width: 880,
 			resizable: true,
 			closeOnEscape: true,
 
@@ -220,9 +221,8 @@ $(document).ready(function() {
 				[
 					// bouton submit qui permet de commander un produit 
 					{
-						text: "Commander", 
+						text: chrome.i18n.getMessage("ButtonBuy"), 
 						id: "btnSubmit",
-						title: "Permet de commander", 
 						click: function() {
 
 							var qteSpinner = document.getElementById("QteSpinner");
@@ -232,13 +232,13 @@ $(document).ready(function() {
 
 							var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
 							var postData = JSON.stringify(jsonProduct);
-							productJSON = {product:postData};
+							var productJSON = {product:postData};
 							sendToServer(_urlProduct+token,productJSON);
 
 
 							var jsonCalcul = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
 							var postDataCalcul = JSON.stringify(jsonCalcul);
-							calculJSON = {calcul:postDataCalcul};
+							var calculJSON = {calcul:postDataCalcul};
 							sendToServer(_urlCalcul+token , calculJSON);
 						}
 					},		
@@ -246,19 +246,18 @@ $(document).ready(function() {
 					// bouton ajouter qui permet d'ajouter un produit dans la base de données 
 					// à ne pas confondre avec le bouton submit 
 					{ 
-						text: "Ajouter fiche produit", 
+						text: chrome.i18n.getMessage("ButtonAdd"), 
 						id: "btnAdd",
-						title: "Ajouter un produit dans la base de données",
 						click: function() {
 
 							var qteSpinner = document.getElementById("QteSpinner");
 							qteVal = qteSpinner.value;
-							var categSelect = document.getElementById("category");
+							var categSelect = document.getElementById("sscategory");
 							categVal = categSelect.value;
 
 							var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
 							var postData = JSON.stringify(jsonProduct);
-							productJSON = {product:postData};
+							var productJSON = {product:postData};
 							sendToServer(_urlProduct+token , productJSON);
 						}
 					},
@@ -269,7 +268,6 @@ $(document).ready(function() {
 					{
 						text: "Reset", 
 						id: "btnReset",
-						title: "Remettre à zéro les champs",
 						click: function() {
 							$(':input','#fromusForm')
 							   .not(':button, :submit, :reset, :hidden')
@@ -308,7 +306,7 @@ $(document).ready(function() {
 					
 						// si bouton commander on affiche comander, reset, quantite et assurance
 						// et on cache le bouton ajouter
-						if (/Commander/.test(tabclick)) {
+						if (/Commander/.test(tabclick) || /Buy/.test(tabclick)) {
 							$("#btnSubmit").show();
 							$("#btnReset").show();
 							$("#btnAdd").hide();
@@ -320,7 +318,7 @@ $(document).ready(function() {
 
 						// si bouton ajouter on affiche bouton ajouter, reset
 						// et on cache bouton commander, quantite et assurance
-						if (/Ajouter/.test(tabclick)) {
+						if (/Ajouter/.test(tabclick)|| /Add/.test(tabclick)) {
 							$("#btnAdd").show();
 							$("#btnReset").show();
 							$("#btnSubmit").hide();
@@ -332,7 +330,7 @@ $(document).ready(function() {
 						}
 
 						// si bouton mon compte on cache bouton ajouter, commander et reset
-						if (/Mon compte/.test(tabclick)) {
+						if (/Mon compte/.test(tabclick)|| /My account/.test(tabclick)) {
 							$("#btnAdd").hide();
 							$("#btnReset").hide();
 							$("#btnSubmit").hide();
@@ -348,6 +346,24 @@ $(document).ready(function() {
 		var newSpinner = $( "#QteSpinner" ).spinner({
 			min: 1
 		});	
+
+		/*var value;
+		var $container=$("#QteSpinner");
+		var newSpinner = $container.spinner({
+		        min: 1,
+		    }).focus(function () {
+		        value = $container.val();
+		    }).blur(function () {
+		        var value1 = $container.val();
+		        if (value1<0) {
+		           $container.val(value);
+		        }
+		        if(isNaN(value1))
+		        {
+		           $container.val(value);
+		        } 
+
+		    });*/
 
 
 		// ajout du marchand automatiquement
@@ -367,6 +383,29 @@ $(document).ready(function() {
 		regDesc = localStorage["regDesc"];
 
 		regVisu = localStorage["regImg"];
+
+		var fromus_morename = document.getElementById('fromus_morename');
+		fromus_morename.addEventListener('click', function(e){
+			console.log('morename');
+			localStorage["fromus_morename"] =	JSON.stringify(true);
+			chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
+  			console.log(response.farewell);
+		});
+			//$('#fromus_name').attr('value',"you");
+			$('#fromus_name').attr('value',localStorage["regName"]);
+		}, false);
+
+
+		
+
+		
+		
+		/*$( "#fromus_morename" ).button({
+      icons: {
+        primary: "ui-icon-locked"
+      },
+      text: false
+  		});*/
 
 
 
@@ -422,7 +461,7 @@ $(document).ready(function() {
 				
 		// suppression des key dans le localstorage
 		localStorage.removeItem('regDesc');
-		localStorage.removeItem('regName');
+		//localStorage.removeItem('regName');
 		localStorage.removeItem('regPrice');
 		localStorage.removeItem('regStore');
 		localStorage.removeItem('regOffer');

@@ -16,21 +16,25 @@ var tbb = require('toolbarbutton').ToolbarButton({
         		'window.alert(fromus_offre);'*/
         	//contentStyleFile: self.data.url('jquery/jquery-ui.css'),
         	contentScriptFile: [self.data.url('jquery/jquery.min.js'),
-        						self.data.url('jquery/jquery-ui.js'),
-                      			self.data.url('fromus_recuperation.js'),
-                      			self.data.url('dialog.js')],
-          contentStyleFile: self.data.url('jquery/jquery-ui.css'),
-            contentScriptWhen: 'end'
-		});
+        						          self.data.url('jquery/jquery-ui.js'),
+                      			  self.data.url('fromus_recuperation.js'),
+                      			  self.data.url('dialog.js')],
+          //contentStyleFile: self.data.url('jquery/jquery-ui.css'),
+          contentScript: 'var divs = document.getElementsByTagName("div");' +
+        'for (var i = 0; i < divs.length; ++i) {' +
+          'divs[i].setAttribute("style", "border: solid red 1px;");' +
+        '}',
+          contentScriptWhen: 'end'
+		    });
       }
-    });
+});
 
-    if (require('self').loadReason == 'install') {
-      tbb.moveTo({
-        toolbarID: 'nav-bar',
-        forceMove: false // only move from palette
-      });
-    }
+if (require('self').loadReason == 'install') {
+  tbb.moveTo({
+    toolbarID: 'nav-bar',
+    forceMove: false // only move from palette
+  });
+}
 
 // worker = tab.attach(script.js);
 // worker.on("message",handleMessage);
