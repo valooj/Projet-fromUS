@@ -740,7 +740,7 @@ if( fromus_sitelist[fromus_site])
 		}
 	}
 
-	if(!(fromus_pricemin))
+if(!(fromus_pricemin))
 	{	// S'il n'y a eu aucun résultat...
 		fromus_pricemin = fromus_error;
 	}
@@ -749,6 +749,7 @@ if( fromus_sitelist[fromus_site])
 	if(fromus_moreimg)
 	{
 		fromus_i = parseInt(localStorage["fromus_iimg"]);
+		fromus_img = '';
 	}
 	else
 	{
@@ -776,6 +777,7 @@ if( fromus_sitelist[fromus_site])
 	if(fromus_moreimg)
 	{
 		fromus_i = parseInt(localStorage["fromus_iimg"]);
+		fromus_img = '';
 	}
 	else
 	{
@@ -811,6 +813,7 @@ if( fromus_sitelist[fromus_site])
 	if(fromus_moredesc)
 	{
 		fromus_i = parseInt(localStorage["fromus_idesc"]);
+		fromus_desc	=	'';
 	}
 	else
 	{
@@ -831,6 +834,7 @@ if( fromus_sitelist[fromus_site])
 	if(fromus_moredesc)
 	{
 		fromus_i = parseInt(localStorage["fromus_idesc"]);
+		fromus_desc	=	'';
 	}
 	else
 	{
