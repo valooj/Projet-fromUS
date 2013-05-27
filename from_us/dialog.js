@@ -396,7 +396,11 @@ $(document).ready(function() {
 			chrome[runtimeOrExtension].sendMessage({greeting: "hello"}, function(response) {
   			console.log(response.farewell);
 		});
+<<<<<<< HEAD
 	//		$('#fromus_name').attr('value',"you");
+=======
+			//$('#fromus_name').attr('value',"you");
+>>>>>>> commit
 			$('#fromus_name').attr('value',localStorage["regName"]);
 		}, false);
 
