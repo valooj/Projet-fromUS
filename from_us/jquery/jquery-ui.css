@@ -20,7 +20,7 @@
 	border: 1px solid red;
 }*/
 .toto #fromus_tabs-1 {
-	border: 2px dotted #000080;
+	border: 2px dashed #000080;
 	border-radius: 5px;
 	margin: 10px;
 	padding: 20px;
@@ -795,7 +795,7 @@ body .ui-tooltip {
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
-	border: 1px solid #aaaaaa/*{borderColorActive}*/;
+	border: 1px solid #aaaaaa /*{borderColorActive}*/;
 	font-weight: normal/*{fwDefault}*/;
 	color: #212121/*{fcActive}*/;
 }
@@ -880,7 +880,7 @@ body .ui-tooltip {
 .ui-state-default .ui-icon {
 	background-image: url(chrome-extension://__MSG_@@extension_id__/jquery/images/ui-icons_cd0a0a_256x240.png);/*{iconsDefault}*/
 	float:right;
-	margin-right: 0px;
+	margin-right: 0px !important;
 }
 .ui-state-hover .ui-icon,
 .ui-state-focus .ui-icon {

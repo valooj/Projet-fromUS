@@ -824,6 +824,7 @@ Array
 <<<<<<< HEAD
 =======
 >>>>>>> modification du css version presque finale
+<<<<<<< HEAD
 =======
 Array
 (
@@ -970,6 +971,8 @@ Array
 )
 
 ===========================================
+=======
+>>>>>>> trace.txt
 Array
 (
     [action] => MAJ-categorie
