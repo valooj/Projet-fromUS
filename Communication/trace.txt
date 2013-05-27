@@ -821,5 +821,120 @@ Array
 )
 
 ===========================================
+<<<<<<< HEAD
 =======
 >>>>>>> modification du css version presque finale
+=======
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token] => 51a321382bcfd
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token] => 51a32418787e9
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token] => 51a3248656c76
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token] => 51a32514c9436
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token] => 51a3266f04300
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+>>>>>>> commit

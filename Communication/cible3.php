@@ -321,7 +321,7 @@ try
 				throw new Exception('Error :: Email not valid');
 
 			//selection de l'id a partir de l'email et du password
-			$req = $bdd->prepare('SELECT user_id FROM users where user_email= :_email and user_mdp = :_password ');
+			$req = $bdd->prepare('SELECT user_id, user_prenom, user_nom FROM users where user_email= :_email and user_mdp = :_password ');
 			$req->execute(array(
 			    '_email' => $get_log['email'],
 			    '_password' => $get_log['password']));
@@ -341,6 +341,7 @@ try
 
 			$response['Status'] = 'L';
 			$response['Token'] = $new_token_user;
+			$response['Message'] = $arr[1].' '.$arr[2];
 
 			break;
 
