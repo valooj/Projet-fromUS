@@ -396,8 +396,8 @@ $(document).ready(function() {
 			chrome[runtimeOrExtension].sendMessage({greeting: "hello"}, function(response) {
   			console.log(response.farewell);
 		});
-			$('#fromus_name').attr('value',"you");
-	//		$('#fromus_name').attr('value',localStorage["regName"]);
+	//		$('#fromus_name').attr('value',"you");
+			$('#fromus_name').attr('value',localStorage["regName"]);
 		}, false);
 
 

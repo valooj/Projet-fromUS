@@ -17,7 +17,7 @@ fromus_pricemintmp,
 fromus_imgtmp,
 fromus_img,
 fromus_desc,
-fromus_desctmp;
+fromus_desctmp = null;
 var fromus_reg = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g;	// Permet de récupérer un prix
 var fromus_sitelist = new Array();			// Tableau contenant les sites
 var fromus_error	=	'?';						// Message à afficher en absence de résultat
@@ -637,9 +637,11 @@ if( fromus_sitelist[fromus_site] != undefined)
 {	//Si le site est connu
 	//name
 				console.log("Le site est connu");	
+				console.log("Le nom vaut avant le script : " + fromus_objectname);
 	if(fromus_morename)
 	{
 		fromus_i = parseInt(localStorage["fromus_iname"]);
+		fromus_objectname	=	'';
 				console.log("On demande un autre nom en id et i vaut alors" + fromus_i);
 	}
 	else
@@ -648,7 +650,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 				console.log("On execute le script pour la premiere fois et fromus_i est donc initialise a 0");
 	}
 	
-	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && (fromus_objectname === undefined) ; fromus_i++)
+	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && !(fromus_objectname) ; fromus_i++)
 	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
 				console.log("On est dans la boucle des id. fromus_i =" + fromus_i);	
 	var fromus_name_id = document.getElementById(fromus_sitelist[fromus_site].name_id[fromus_i]);
@@ -664,6 +666,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 	{
 	console.log("On demande un autre nom en class et fromus_i vaut alors" + fromus_i);
 		fromus_i = parseInt(localStorage["fromus_iname"]);
+		fromus_objectname	=	'';
 	}
 	else
 	{
@@ -672,9 +675,9 @@ if( fromus_sitelist[fromus_site] != undefined)
 	}
 	
 				console.log("On va entrer dans la boucle de class");	
-	if(fromus_objectname === undefined)
+	if(!fromus_objectname)
 	{	//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
-		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && (fromus_objectname === undefined) ; fromus_i++)
+		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && !(fromus_objectname) ; fromus_i++)
 		{
 				console.log("On est dans la boucle de class. Fromus_i vaut : " + fromus_i);		
 			var fromus_name_class = document.getElementsByClassName(fromus_sitelist[fromus_site].name_class[fromus_i])[0];
@@ -688,12 +691,12 @@ if( fromus_sitelist[fromus_site] != undefined)
 		}
 	}
 				console.log("On quitte la boucle de class.");	
-	if(fromus_objectname === undefined)
+	if(!(fromus_objectname))
 	{	// S'il n'y a eu aucun résultat...
 		fromus_objectname = fromus_error;
 				console.log("Aucun résultat au final. Donc le nomp vaut \'?\'");		
 	}
-				console.log("Fin de la partie name du script");	
+				console.log("Fin de la partie name du script, objectname vaut finalement : " + fromus_objectname);	
 	if(fromus_moreprice)
 	{
 		fromus_i = parseInt(localStorage["fromus_iprice"]);
