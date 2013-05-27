@@ -59,8 +59,8 @@ function sendToServer(urlSelected, jsonSelected) {
 			case 'L':
 				token = datas['Token'];
 				createCookie('token',token,21);
-				alert(datas['Message']);
-				document.getElementById("Nick_Name").value = 'Bienvenue '+datas['Message'];
+				createCookie('Nick_Name',datas['Message'],21);
+				document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgWelcome")+datas['Message'];
 			break;
 
 			case 'c':
@@ -144,7 +144,7 @@ $(document).ready(function() {
 								'<li><a href="#fromus_tabs-2">'+chrome.i18n.getMessage("tabAccount")+'</a></li>' +
 							'</ul>' +
 							'<div id="fromus_tabs-1">' +
-								'<label for="Nick_Name"></label><input type="textbox" id="Nick_Name" /></br>' +
+								'<label for="Nick_Name"></label><input type="textbox" id="Nick_Name" disabled="true" style="border:None"/></br>' +
 								'<h2>'+chrome.i18n.getMessage("FormP")+'</h2>' +
 								'<form id="fromusForm">' + 
 
@@ -437,6 +437,7 @@ $(document).ready(function() {
 		        in_out.value = "login";
 		    	sendToServer(_urlLogout+token, {});
 		    	eraseCookie('token');
+		    	eraseCookie('Nick_Name');
 			}
 				    
 		}, false);
@@ -461,6 +462,7 @@ $(document).ready(function() {
 		if(readCookie('token')){
 			token=readCookie('token');
 			(!token)?in_out.value = 'login' : in_out.value = 'logout';
+			document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgWelcome")+readCookie('Nick_Name');
 		}
 		else
 			alert('Vous devez vous connecter');

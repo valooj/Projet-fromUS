@@ -53,5 +53,8 @@
 	},
 	"ButtonAdd": {
 		"message": "Add product sheet"
+	},
+	"MsgWelcome": {
+		"message": "Welcome "
 	}
 }
