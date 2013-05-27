@@ -83,6 +83,8 @@ function fromus_siteObj()
 	this.desc_id= new Array();;
 	this.desc_class= new Array();
 }
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -634,61 +636,64 @@ localStorage["regStore"] = regStore;
 if( fromus_sitelist[fromus_site] != undefined)
 {	//Si le site est connu
 	//name
-	
+				console.log("Le site est connu");	
 	if(fromus_morename)
 	{
 		fromus_i = parseInt(localStorage["fromus_iname"]);
-				console.log("Un autre nom en id");
+				console.log("On demande un autre nom en id et i vaut alors" + fromus_i);
 	}
 	else
 	{
 		fromus_i = 0;
-				console.log("Un premier nom en id");
+				console.log("On execute le script pour la premiere fois et fromus_i est donc initialise a 0");
 	}
 	
 	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && (fromus_objectname === undefined) ; fromus_i++)
 	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
-		var fromus_name_id = document.getElementById(fromus_sitelist[fromus_site].name_id[fromus_i]);
+				console.log("On est dans la boucle des id. fromus_i =" + fromus_i);	
+	var fromus_name_id = document.getElementById(fromus_sitelist[fromus_site].name_id[fromus_i]);
 		if(fromus_name_id)
 		{	//S'il y a un résultat, l'enregistrer
 			fromus_objectname = fromus_name_id.textContent;
 			localStorage["fromus_iname"] = fromus_i + 1 ;
-				console.log("en id fromus_i + 1 est: " + fromus_i + 1);
+				console.log("Il y a un résultat. On incrémente fromus_i qui vaut maintenant : " + fromus_i);
 		}
 	}
 	
 	if(fromus_morename)
 	{
-	console.log("Un autre nom en class");
+	console.log("On demande un autre nom en class et fromus_i vaut alors" + fromus_i);
 		fromus_i = parseInt(localStorage["fromus_iname"]);
 	}
 	else
 	{
-	console.log("Un premier nom' en class");
+	console.log("On execute le script pour la premiere fois et fromus_i est donc initialise a 0");
 		fromus_i = 0;
 	}
 	
-	
+				console.log("On va entrer dans la boucle de class");	
 	if(fromus_objectname === undefined)
 	{	//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
 		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && (fromus_objectname === undefined) ; fromus_i++)
 		{
+				console.log("On est dans la boucle de class. Fromus_i vaut : " + fromus_i);		
 			var fromus_name_class = document.getElementsByClassName(fromus_sitelist[fromus_site].name_class[fromus_i])[0];
 			if(fromus_name_class)
 			{
 				fromus_objectname = fromus_name_class.textContent;
 				fromus_i  = fromus_i++;
 				localStorage["fromus_iname"] = fromus_i;
-				console.log("en class fromus_i + 1 est: " + fromus_i);
+				console.log("Il y a un résultat. On incrémente fromus_i qui vaut maintenant : " + fromus_i);
 			}
 		}
 	}
-	
+				console.log("On quitte la boucle de class.");	
 	if(fromus_objectname === undefined)
 	{	// S'il n'y a eu aucun résultat...
 		fromus_objectname = fromus_error;
+				console.log("Aucun résultat au final. Donc le nomp vaut \'?\'");		
 	}
-	
+				console.log("Fin de la partie name du script");	
 	if(fromus_moreprice)
 	{
 		fromus_i = parseInt(localStorage["fromus_iprice"]);
