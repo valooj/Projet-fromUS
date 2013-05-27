@@ -26,7 +26,6 @@ fromus_morename,
 fromus_moreimg,		// Ces variables servent à indiquer si l'utilisateur a demandé un/e autre nom, prix, description, image
 fromus_moredesc;
 
-
 /////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
 if(localStorage["fromus_morename"])
 {
@@ -83,7 +82,6 @@ function fromus_siteObj()
 	this.desc_id= new Array();;
 	this.desc_class= new Array();
 }
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -696,10 +694,13 @@ if( fromus_sitelist[fromus_site])
 		console.log("Aucun résultat au final. Donc le nomp vaut \'?\'");		
 	}
 	console.log("Fin de la partie name du script, objectname vaut finalement : " + fromus_objectname);	
+	
+	
 	//price			
 	if(fromus_moreprice)
 	{
 		fromus_i = parseInt(localStorage["fromus_iprice"]);
+		fromus_pricemin = '';
 	}
 	else
 	{
@@ -719,6 +720,7 @@ if( fromus_sitelist[fromus_site])
 	if(fromus_moreprice)
 	{
 		fromus_i = parseInt(localStorage["fromus_iprice"]);
+		fromus_pricemin = '';
 	}
 	else
 	{
@@ -737,12 +739,13 @@ if( fromus_sitelist[fromus_site])
 			}
 		}
 	}
-	
+
 	if(!(fromus_pricemin))
 	{	// S'il n'y a eu aucun résultat...
 		fromus_pricemin = fromus_error;
 	}
 	
+	//img 		
 	if(fromus_moreimg)
 	{
 		fromus_i = parseInt(localStorage["fromus_iimg"]);
@@ -752,7 +755,6 @@ if( fromus_sitelist[fromus_site])
 		fromus_i = 0;
 	}		
 	
-	//img 
 	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].img_id.length) && !(fromus_img) ; fromus_i++)
 	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
 		var fromus_img_id = document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i]);
@@ -814,7 +816,6 @@ if( fromus_sitelist[fromus_site])
 	{
 		fromus_i = 0;
 	}			
-	
 	
 	//desc 
 	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].desc_id.length) && !(fromus_desc) ; fromus_i++)
