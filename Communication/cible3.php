@@ -51,11 +51,11 @@ try
 	
 	//Pour le choix de la langue
 	$prefered_lng = getLng();
+	//echo($prefered_lng);
 	$lng = array();
 	include './lngs/en.php';
 	if( $prefered_lng && ($file = './lngs/' . $prefered_lng . '.php'))
 		include $file;
-
 	// actions
 	switch($get_action)
 	{
