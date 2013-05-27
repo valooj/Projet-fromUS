@@ -2,14 +2,14 @@ var token;
 var language =  window.navigator.language ;
 
 
-var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&lang='+language+'&token=';
-var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&lang='+language+'&token=';
-var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&lang='+language+'&token=';
-var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&lang='+language+'&token=';
-var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login&lang='+language;
+var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&token=';
+var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&token=';
+var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&token=';
+var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&token=';
+var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login';
 
-var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-categorie&lang='+language;
-var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&lang='+language+'&sscateg=';
+var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-categorie';
+var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&sscateg=';
 
 var qteVal;
 var categVal;
@@ -428,12 +428,14 @@ $(document).ready(function() {
 				var getpassword = document.getElementById("mdpfromus");
 				var emailV = getemail.value;
 				var passwordV = getpassword.value;
+				document.getElementById("idfromus").value='';
+				document.getElementById("mdpfromus").value='';
 				if (emailV && passwordV){
 					var jsonLog = {email: emailV ,password: passwordV};
 					var postLog = JSON.stringify(jsonLog);
 					var logJSON = {log:postLog};
 					sendToServer(_urlLogin, logJSON);
-					//checkLogin();
+					
 				}
 		    }
 		    else{

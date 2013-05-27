@@ -444,3 +444,379 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lang] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token] => 519f6115ce577
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 519f6115ce577
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","prd_visu":"http://img.rakuten.com/PIC/38977900/0/1/300/38977900.jpg","prd_prix":"151.99","prd_cat":""}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 519f6115ce577
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","prd_visu":"http://img.rakuten.com/PIC/38977900/0/1/300/38977900.jpg","prd_prix":"151.99","prd_cat":""}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 519f6115ce577
+    [calcul] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","qte":"1","montant":"151.99","categ":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 519f6115ce577
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","prd_visu":"http://img.rakuten.com/PIC/38977900/0/1/300/38977900.jpg","prd_prix":"151.99","prd_cat":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 51a31f3776761
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","prd_visu":"http://img.rakuten.com/PIC/38977900/0/1/300/38977900.jpg","prd_prix":"151.99","prd_cat":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 51a31f3776761
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","prd_visu":"http://img.rakuten.com/PIC/38977900/0/1/300/38977900.jpg","prd_prix":"151.99","prd_cat":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 3
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 51a31f3776761
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","prd_visu":"http://img.rakuten.com/PIC/38977900/0/1/300/38977900.jpg","prd_prix":"151.99","prd_cat":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 51a31f3776761
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","prd_visu":"http://img.rakuten.com/PIC/38977900/0/1/300/38977900.jpg","prd_prix":"151.99","prd_cat":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 51a31f3776761
+    [calcul] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","qte":"1","montant":"151.99","categ":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 51a31f3776761
+    [panier] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","url":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","qte":"1","montant":199.109,"categ":"13"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 51a31f3776761
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","prd_visu":"http://img.rakuten.com/PIC/38977900/0/1/300/38977900.jpg","prd_prix":"151.99","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 51a31f3776761
+    [calcul] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","qte":"1","montant":"151.99","categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 51a31f3776761
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","prd_visu":"http://img.rakuten.com/PIC/38977900/0/1/300/38977900.jpg","prd_prix":"151.99","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 51a31f3776761
+    [calcul] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","qte":"1","montant":"151.99","categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 51a31f3776761
+    [panier] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","url":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","qte":"1","montant":199.109,"categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 51a31f3776761
+    [calcul] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","qte":"1","montant":"151.99","categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 51a31f3776761
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","prd_visu":"http://img.rakuten.com/PIC/38977900/0/1/300/38977900.jpg","prd_prix":"151.99","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 51a31f3776761
+    [panier] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","url":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","qte":"1","montant":199.109,"categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 51a31f3776761
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","prd_visu":"http://img.rakuten.com/PIC/38977900/0/1/300/38977900.jpg","prd_prix":"151.99","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 51a31f3776761
+    [calcul] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","qte":"1","montant":"151.99","categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 51a31f3776761
+    [panier] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","url":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","qte":"1","montant":199.109,"categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 51a31f3776761
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","prd_visu":"http://img.rakuten.com/PIC/38977900/0/1/300/38977900.jpg","prd_prix":"151.99","prd_cat":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 51a31f3776761
+    [calcul] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","qte":"2","montant":"151.99","categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 51a31f3776761
+    [panier] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","url":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","qte":"2","montant":442.358,"categ":"15"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 51a31f3776761
+    [calcul] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","qte":"2","montant":"151.99","categ":"18"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 51a31f3776761
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","prd_visu":"http://img.rakuten.com/PIC/38977900/0/1/300/38977900.jpg","prd_prix":"151.99","prd_cat":"18"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 51a31f3776761
+    [panier] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","url":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","qte":"2","montant":442.358,"categ":"18"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [sscateg] => 7
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 51a31f3776761
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","prd_visu":"http://img.rakuten.com/PIC/38977900/0/1/300/38977900.jpg","prd_prix":"151.99","prd_cat":"67"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 51a31f3776761
+    [calcul] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","qte":"2","montant":"151.99","categ":"67"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 51a31f3776761
+    [panier] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","url":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","qte":"2","montant":409.248,"categ":"67"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 51a31f3776761
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","prd_visu":"http://img.rakuten.com/PIC/38977900/0/1/300/38977900.jpg","prd_prix":"151.99","prd_cat":"67"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 51a31f3776761
+    [calcul] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","qte":"3","montant":"151.99","categ":"67"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 51a31f3776761
+    [panier] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","url":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","qte":"3","montant":613.877,"categ":"67"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [token] => 51a31f3776761
+    [calcul] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","qte":"3","montant":"151.99","categ":"67"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [token] => 51a31f3776761
+    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","prd_desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","prd_visu":"http://img.rakuten.com/PIC/38977900/0/1/300/38977900.jpg","prd_prix":"151.99","prd_cat":"67"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [token] => 51a31f3776761
+    [panier] => {"libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","url":"rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html","desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","qte":"3","montant":613.877,"categ":"67"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token] => 51a31f3776761
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
