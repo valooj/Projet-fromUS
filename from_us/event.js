@@ -42,6 +42,18 @@ chrome[runtimeOrExtension].onMessage.addListener(
 			}
 		  }
 );
+
+chrome[runtimeOrExtension].onMessage.addListener(
+		  function(request, sender, sendResponse) {
+		    console.log(sender.tab ?
+		                "from a content script:" + sender.tab.url :
+		                "from the extension");
+		    if (request.greeting == "youhou") {
+		      	sendResponse({farewell: "hello"});
+		  		chrome.tabs.executeScript(null,{file:'/clixml/fromus_recuperation.js',allFrames:false,runAt:'document_end'});
+			}
+		  }
+);
 /*
 chrome.runtime.onConnect.addListener(function(port) {
   console.assert(port.name == "knockknock");

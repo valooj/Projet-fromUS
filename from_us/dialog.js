@@ -133,10 +133,7 @@ $(document).ready(function() {
 	console.log( "Variable from Content Script: "+localStorage["regPrice"] );
 	console.log( "Variable from Content Script: "+localStorage["regDesc"] );
 
-	var retyu = 0;
-	console.log(retyu + 1);
-
-
+	
 	var newDialog = $('<div id="fromus_dialogBox" class="toto">' +
 						'<div id="fromus_tabs">' +
 							'<ul>' +
@@ -150,8 +147,8 @@ $(document).ready(function() {
 								'<form id="fromusForm">' + 
 
 									'<label for="store">'+chrome.i18n.getMessage("Merchant")+'</label><input type="textbox" id="fromus_store" disabled="true"/></br>' +
-									'<label for="name">'+chrome.i18n.getMessage("NameP")+'</label><input type="textbox" id="fromus_name" disabled="true"/><input type="button" value="test" id="fromus_morename" /></br>' + 
-									'<label for="price">'+chrome.i18n.getMessage("PriceP")+'</label><input type="textbox" id="fromus_price" /></br>' +
+									'<label for="name">'+chrome.i18n.getMessage("NameP")+'</label><input type="textbox" id="fromus_name" disabled="true"/><input type="button" id="fromus_morename" /></br>' + 
+									'<label for="price">'+chrome.i18n.getMessage("PriceP")+'</label><input type="textbox" id="fromus_price" /><input type="button" id="fromus_moreprice" /></br>' +
 									'<label for="category">'+chrome.i18n.getMessage("CategP")+'</label>'+ 
 										'<select id="category">' +
 										'</select></br>' +
@@ -413,18 +410,30 @@ $(document).ready(function() {
 			
 		}, false);
 
+		var fromus_moreprice = document.getElementById('fromus_moreprice');
+		var runtimeOrExtension = chrome.runtime && chrome.runtime.sendMessage ?
+ 		'runtime' : 'extension';
+		fromus_moreprice.addEventListener('click', function(e){
+			console.log('moreprice');
+			console.log("avant d'executer le script : " + localStorage["regPrice"]);
+			var start = new Date().getTime();
+			localStorage["fromus_moreprice"] =	JSON.stringify(true);
+			chrome[runtimeOrExtension].sendMessage({greeting: "youhou"}, function(response) {
+  			console.log(response.farewell);
+  		});
+			var end = new Date().getTime();
+			var time = end - start;
+			var timeafterbtn = time + 15;
+			
+			setTimeout(function () {
+	        	$('#fromus_price').attr('value',localStorage["regPrice"]);
+	        	console.log("apres avoir d'executer le script : " + localStorage["regPrice"]);
+        	}, timeafterbtn);
+			
+			
+		}, false);
 
 		
-
-		
-		
-		/*$( "#fromus_morename" ).button({
-      icons: {
-        primary: "ui-icon-locked"
-      },
-      text: false
-  		});*/
-
 
 
 		//Action sur le bouton login/logout
