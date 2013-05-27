@@ -656,7 +656,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 		{	//S'il y a un résultat, l'enregistrer
 			fromus_objectname = fromus_name_id.textContent;
 			localStorage["fromus_iname"] = fromus_i + 1 ;
-				console.log("Il y a un résultat. On incrémente fromus_i qui vaut maintenant : " + fromus_i);
+				console.log("Il y a un résultat. On incrémente fromus_i qui vaut maintenant : " +localStorage["fromus_iname"]);
 		}
 	}
 	
@@ -683,7 +683,7 @@ if( fromus_sitelist[fromus_site] != undefined)
 				fromus_objectname = fromus_name_class.textContent;
 				fromus_i  = fromus_i++;
 				localStorage["fromus_iname"] = fromus_i;
-				console.log("Il y a un résultat. On incrémente fromus_i qui vaut maintenant : " + fromus_i);
+				console.log("Il y a un résultat. On incrémente fromus_i qui vaut maintenant : " + localStorage["fromus_iname"]);
 			}
 		}
 	}
