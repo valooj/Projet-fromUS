@@ -18,4 +18,5 @@ ressources :
 
  site à regarder pour le css
  	-http://www.bestbuy.com/site/Office-for-Mac-Home-and-Student-2011---Mac/7016136.p?id=1218824951308&skuId=7016136
+ 	-http://www.target.com/p/toshiba-blu-ray-player-black-bdx2150/-/A-14007711#prodSlot=large_1_1
 Projet-fromUS
