@@ -29,16 +29,33 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 });*/
 
 
-chrome.runtime.onMessage.addListener(
+/*chrome.runtime.onMessage.addListener(
 		  function(request, sender, sendResponse) {
 		    console.log(sender.tab ?
 		                "from a content script:" + sender.tab.url :
 		                "from the extension");
 		    if (request.greeting == "hello") {
-		      sendResponse({farewell: "goodbyeevent"});
-		  chrome.tabs.executeScript(null,{file:'/clixml/fromus_recuperation.js',allFrames:false,runAt:'document_end'});
-		}
-		  });
+		      	sendResponse({farewell: "goodbyeevent"});
+		  		chrome.tabs.executeScript(null,{file:'/clixml/fromus_recuperation.js',allFrames:false,runAt:'document_end'});
+			}
+		  }
+);*/
+
+chrome.runtime.onConnect.addListener(function(port) {
+  console.assert(port.name == "knockknock");
+  port.onMessage.addListener(function(msg) {
+    if (msg.joke == "Knock knock")
+      {port.postMessage({question: "Who's there?"});
+  		console.log('who');
+  	chrome.tabs.executeScript(null,{file:'/clixml/fromus_recuperation.js',allFrames:false,runAt:'document_end'});}
+    else if (msg.answer == "Madame")
+      {port.postMessage({question: "Madame who?"});
+  		console.log('madame who');}
+    else if (msg.answer == "Madame... Bovary")
+      {port.postMessage({question: "I don't get it."});
+  		console.log('don\'t get it');}
+  });
+});
 
 
 

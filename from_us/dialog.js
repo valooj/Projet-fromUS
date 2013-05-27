@@ -388,11 +388,21 @@ $(document).ready(function() {
 		fromus_morename.addEventListener('click', function(e){
 			console.log('morename');
 			localStorage["fromus_morename"] =	JSON.stringify(true);
-			chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
-  			console.log(response.farewell);
-		});
-			$('#fromus_name').attr('value',"you");
-	//		$('#fromus_name').attr('value',localStorage["regName"]);
+			/*chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
+  			console.log(response.farewell);*/
+  			var port = chrome.runtime.connect({name: "knockknock"});
+			port.postMessage({joke: "Knock knock"});
+			port.onMessage.addListener(function(msg) {
+			  if (msg.question == "Who's there?")
+			    {port.postMessage({answer: "Madame"});
+				console.log('madame');}
+			  else if (msg.question == "Madame who?")
+			    {port.postMessage({answer: "Madame... Bovary"});
+				console.log('bovary');}
+			});
+		//});
+	//		$('#fromus_name').attr('value',"you");
+			$('#fromus_name').attr('value',localStorage["regName"]);
 		}, false);
 
 
