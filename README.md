@@ -15,4 +15,7 @@ ressources :
 
  pour utiliser zip 
  	-http://www.developpez.net/forums/d368749/php/bibliotheques-frameworks/zip-petit-soucis-variable-zip-lib-php-resolu/
+
+ site à regarder pour le css
+ 	-http://www.bestbuy.com/site/Office-for-Mac-Home-and-Student-2011---Mac/7016136.p?id=1218824951308&skuId=7016136
 Projet-fromUS
