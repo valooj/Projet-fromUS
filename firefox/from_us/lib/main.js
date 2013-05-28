@@ -3,6 +3,8 @@ var pageMod = require('sdk/page-mod');
 // Import the self API
 var self = require('sdk/self');
 var tabs = require('tabs');
+var _ = require("sdk/l10n").get;
+console.log(_("hello_id!"));
 
 var tbb = require('toolbarbutton').ToolbarButton({
       id: 'from-us_button',
@@ -11,19 +13,21 @@ var tbb = require('toolbarbutton').ToolbarButton({
       onCommand: function () {
         //tbb.destroy(); 
         tabs.activeTab.attach ({
-        	/*contentScript:
-        		'var fromus_offre = document.location.href;' +
-        		'window.alert(fromus_offre);'*/
         	//contentStyleFile: self.data.url('jquery/jquery-ui.css'),
-        	contentScriptFile: [self.data.url('jquery/jquery.min.js'),
-        						          self.data.url('jquery/jquery-ui.js'),
-                      			  self.data.url('fromus_recuperation.js'),
-                      			  self.data.url('dialog.js')],
+        	contentScriptFile: [
+            self.data.url('jquery/jquery.min.js'),
+        		self.data.url('jquery/jquery-ui.js'),
+            self.data.url('fromus_recuperation.js'),
+            self.data.url('dialog.js')
+          ],
           //contentStyleFile: self.data.url('jquery/jquery-ui.css'),
-          contentScript: 'var divs = document.getElementsByTagName("div");' +
+          /*contentScript: 'var divs = document.getElementsByTagName("div");' +
         'for (var i = 0; i < divs.length; ++i) {' +
           'divs[i].setAttribute("style", "border: solid red 1px;");' +
-        '}',
+        '}',*/
+       //contentStyleFile: self.data.url('http://sebastiensy.github.io/test/jquery-ui.css'),
+       //contentStyle: ["div { padding: 10px; border: 5px solid red}"],
+          
           contentScriptWhen: 'end'
 		    });
       }

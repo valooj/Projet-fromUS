@@ -130,33 +130,30 @@ $(document).ready(function() {
 	console.log( "Variable from Content Script: "+localStorage["regPrice"] );
 	console.log( "Variable from Content Script: "+localStorage["regDesc"] );
 
-	var retyu = 0;
-	console.log(retyu + 1);
-
-
+	
 	var newDialog = $('<div id="fromus_dialogBox" class="toto">' +
 						'<div id="fromus_tabs">' +
 							'<ul>' +
-								'<li><a href="#fromus_tabs-1">'+chrome.i18n.getMessage("tabAdd")+'</a></li>' +
-								'<li><a href="#fromus_tabs-1">'+chrome.i18n.getMessage("tabBuy")+'</a></li>' +
-								'<li><a href="#fromus_tabs-2">'+chrome.i18n.getMessage("tabAccount")+'</a></li>' +
+								'<li><a href="#fromus_tabs-1">'+data-l10n-id="tabAdd"+'</a></li>' +
+								'<li><a href="#fromus_tabs-1">'+data-l10n-id="tabBuy"+'</a></li>' +
+								'<li><a href="#fromus_tabs-2">'+data-l10n-id="tabAccount"+'</a></li>' +
 							'</ul>' +
 							'<div id="fromus_tabs-1">' +
-								'<h2>'+chrome.i18n.getMessage("FormP")+'</h2>' +
+								'<h2>'+data-l10n-id="FormP"+'</h2>' +
 								'<form id="fromusForm">' + 
 
-									'<label for="store">'+chrome.i18n.getMessage("Merchant")+'</label><input type="textbox" id="fromus_store" disabled="true"/></br>' +
-									'<label for="name">'+chrome.i18n.getMessage("NameP")+'</label><input type="textbox" id="fromus_name" disabled="true"/><input type="button" value="test" id="fromus_morename" /></br>' + 
-									'<label for="price">'+chrome.i18n.getMessage("PriceP")+'</label><input type="textbox" id="fromus_price" /></br>' +
-									'<label for="category">'+chrome.i18n.getMessage("CategP")+'</label>'+ 
+									'<label for="store">'+data-l10n-id="Merchant"+'</label><input type="textbox" id="fromus_store" disabled="true"/></br>' +
+									'<label for="name">'+data-l10n-id="NameP"+'</label><input type="textbox" id="fromus_name" disabled="true"/><input type="button" value="test" id="fromus_morename" /></br>' + 
+									'<label for="price">'+data-l10n-id="PriceP"+'</label><input type="textbox" id="fromus_price" /></br>' +
+									'<label for="category">'+data-l10n-id="CategP"+'</label>'+ 
 										'<select id="category">' +
 										'</select></br>' +
-									'<label for="sscategory">'+chrome.i18n.getMessage("SCategP")+'</label>' +
+									'<label for="sscategory">'+data-l10n-id="SCategP"+'</label>' +
 										'<select id="sscategory">' +
 
 										'</select></br>' +
-									'<label id="fromus_quantite" for="quantite">'+chrome.i18n.getMessage("QuantityP")+'</label><input id="QteSpinner" value="1"></br>' +
-									'<label id="fromus_assurance" for="assurance">'+chrome.i18n.getMessage("InsuranceP")+'</label>' +
+									'<label id="fromus_quantite" for="quantite">'+data-l10n-id="QuantityP"+'</label><input id="QteSpinner" value="1"></br>' +
+									'<label id="fromus_assurance" for="assurance">'+data-l10n-id="InsuranceP"+'</label>' +
 									'<div id="fromus_divassurance">' +
 										'<input type="checkbox" id="fromus_checkassurance" name="assurance" />' +
 									'</div>' +
@@ -165,13 +162,13 @@ $(document).ready(function() {
 							'<div id="fromus_tabs-2">' +
 								'<h2>From-us.com</h2>' +
 
-								'<p>'+chrome.i18n.getMessage("MsgIdPass")+'</p>' +
-								'<label for="idfromus">'+chrome.i18n.getMessage("EmailU")+'</label><input type="textbox" id="idfromus" /></br>' +
-								'<label for="mdpfromus">'+chrome.i18n.getMessage("PasswordU")+'</label><input type="password" id="mdpfromus" /></br>' +
+								'<p>'+data-l10n-id="MsgIdPass"+'</p>' +
+								'<label for="idfromus">'+data-l10n-id="EmailU"+'</label><input type="textbox" id="idfromus" /></br>' +
+								'<label for="mdpfromus">'+data-l10n-id="PasswordU"+'</label><input type="password" id="mdpfromus" /></br>' +
 
 								'<input type="button" value="login" id="log" />' +
-								'<a href="http://from-us.com/fromus" target="_blank">'+chrome.i18n.getMessage("OubliU")+'</a>' +
-								'<a href="http://from-us.com/fromus" target="_blank">'+chrome.i18n.getMessage("CreateU")+'</a>' +
+								'<a href="http://from-us.com/fromus" target="_blank">'+data-l10n-id="OubliU"+'</a>' +
+								'<a href="http://from-us.com/fromus" target="_blank">'+data-l10n-id="CreateU"+'</a>' +
 							'</div>' +
 						'</div>' +
 						'<a href="http://from-us.com/fromus" target=_blank><img id="logofromus" height="100" src=""/></a>' +
@@ -179,7 +176,7 @@ $(document).ready(function() {
 
 	// variable qui permet de savoir si la dialog box est ouverte
 	var isOpen = $("#fromus_dialogBox").dialog("isOpen");
-
+	console.log("apres la trad");
 	
 	if (isOpen != true) {	
 
@@ -221,7 +218,7 @@ $(document).ready(function() {
 				[
 					// bouton submit qui permet de commander un produit 
 					{
-						text: chrome.i18n.getMessage("ButtonBuy"), 
+						text: data-l10n-id="ButtonBuy", 
 						id: "btnSubmit",
 						click: function() {
 
@@ -246,7 +243,7 @@ $(document).ready(function() {
 					// bouton ajouter qui permet d'ajouter un produit dans la base de données 
 					// à ne pas confondre avec le bouton submit 
 					{ 
-						text: chrome.i18n.getMessage("ButtonAdd"), 
+						text: data-l10n-id="ButtonAdd", 
 						id: "btnAdd",
 						click: function() {
 
