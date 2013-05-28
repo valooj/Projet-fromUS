@@ -171,8 +171,8 @@ $(document).ready(function() {
 								'<label for="mdpfromus">'+chrome.i18n.getMessage("PasswordU")+'</label><input type="password" id="mdpfromus" /></br>' +
 
 								'<input type="button" value="login" id="log" />' +
-								'<a href="http://from-us.com/fromus" target="_blank">'+chrome.i18n.getMessage("OubliU")+'</a>' +
-								'<a href="http://from-us.com/fromus" target="_blank">'+chrome.i18n.getMessage("CreateU")+'</a>' +
+								'<a id="login" href="http://from-us.com/fromus" target="_blank">'+chrome.i18n.getMessage("OubliU")+'</a>' +
+								'<a id="create" href="http://from-us.com/fromus" target="_blank">'+chrome.i18n.getMessage("CreateU")+'</a>' +
 							'</div>' +
 						'</div>' +
 						'<a href="http://from-us.com/fromus" target=_blank><img id="logofromus" height="100" src=""/></a>' +
