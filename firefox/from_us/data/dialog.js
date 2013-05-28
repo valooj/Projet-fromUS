@@ -478,6 +478,12 @@ $(document).ready(function() {
 		localStorage.removeItem('regStore');
 		localStorage.removeItem('regOffer');
 
+
+
+		var form = document.getElementId('fromus_assurance').innerText;
+		console.log(form);
+		form.setAttribute("style", "float:right;text-align:right;width:200px;");
+
 		console.log("fin de script");			
 	}
 });

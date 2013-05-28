@@ -13,23 +13,29 @@ var tbb = require('toolbarbutton').ToolbarButton({
       onCommand: function () {
         //tbb.destroy(); 
         tabs.activeTab.attach ({
-        	//contentStyleFile: self.data.url('jquery/jquery-ui.css'),
+        	
         	contentScriptFile: [
             self.data.url('jquery/jquery.min.js'),
         		self.data.url('jquery/jquery-ui.js'),
             self.data.url('fromus_recuperation.js'),
-            self.data.url('dialog.js')
+            self.data.url('dialog.js'),
+            self.data.url('css.js')
           ],
+          attachTo: ["existing", "top"],
+          //contentStyleFile: self.data.url('jquery/style.css'),
           //contentStyleFile: self.data.url('jquery/jquery-ui.css'),
-          contentScript: 'var divs = document.getElementsByTagName("div");' +
+          /*contentScript: 'var divs = document.getElementsByTagName("div");' +
         'for (var i = 0; i < divs.length; ++i) {' +
           'divs[i].setAttribute("style", "border: solid red 1px;");' +
-        '}',
+        '}',*/
+       /*contentScript: 'var form = document.getElementById("fromusForm").getElementsByTagName("label");' +
+           'form.setAttribute("style", "float: left;text-align: right;width: 200px;");',*/
        //contentStyleFile: self.data.url('http://sebastiensy.github.io/test/jquery-ui.css'),
        //contentStyle: ["div { padding: 10px; border: 5px solid red}"],
           
           contentScriptWhen: 'end'
 		    });
+
       }
 });
 
