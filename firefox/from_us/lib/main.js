@@ -21,10 +21,10 @@ var tbb = require('toolbarbutton').ToolbarButton({
             self.data.url('dialog.js')
           ],
           //contentStyleFile: self.data.url('jquery/jquery-ui.css'),
-          /*contentScript: 'var divs = document.getElementsByTagName("div");' +
+          contentScript: 'var divs = document.getElementsByTagName("div");' +
         'for (var i = 0; i < divs.length; ++i) {' +
           'divs[i].setAttribute("style", "border: solid red 1px;");' +
-        '}',*/
+        '}',
        //contentStyleFile: self.data.url('http://sebastiensy.github.io/test/jquery-ui.css'),
        //contentStyle: ["div { padding: 10px; border: 5px solid red}"],
           
