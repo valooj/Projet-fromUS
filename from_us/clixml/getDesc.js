@@ -47,26 +47,22 @@ bindEvent(document,'click', function(event)
 			// id et class 
 			
 			fromus_selectedTexttmp	= fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
-			console.log('fromus_sitelist[\''+fromus_site+'\'].price_id.push(\''+fromus_selectedTexttmp+'\');');
+			console.log('fromus_sitelist[\''+fromus_site+'\'].desc_id.push(\''+fromus_selectedTexttmp+'\');');
 			
 			fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);			
-			console.log('fromus_sitelist[\''+fromus_site+'\'].price_class.push(\''+fromus_selectedTexttmp+'\');');
+			console.log('fromus_sitelist[\''+fromus_site+'\'].desc_class.push(\''+fromus_selectedTexttmp+'\');');
 			
 		}
 		else
 		{
 			//id sans class
 			fromus_selectedTexttmp	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
-			console.log('fromus_sitelist[\''+fromus_site+'\'].price_id.push(\''+fromus_selectedTexttmp+'\');');
+			console.log('fromus_sitelist[\''+fromus_site+'\'].desc_id.push(\''+fromus_selectedTexttmp+'\');');
 			
 		}
 		
 		fromus_selectedText	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);
 		fromus_selectedText	=	document.getElementById(fromus_selectedText).textContent;
-		if(/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.test(fromus_selectedText))
-		{
-			fromus_selectedText	=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
-		}
 		
 	}
 	else
@@ -74,34 +70,22 @@ bindEvent(document,'click', function(event)
 		if(fromus_classmatch !=undefined)
 		{ //Class sans id
 			fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
-			console.log('fromus_sitelist[\''+fromus_site+'\'].price_class.push(\''+fromus_selectedTexttmp+'\');');
+			console.log('fromus_sitelist[\''+fromus_site+'\'].desc_class.push(\''+fromus_selectedTexttmp+'\');');
 			
 			fromus_selectedText = fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
 			
 			fromus_selectedText	=	document.getElementsByClassName(fromus_selectedText)[0].textContent;
 			console.log(fromus_selectedText);
-			if(/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.test(fromus_selectedText))
-			{
-				fromus_selectedText	=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
-			}
-			else
-			{
-				fromus_selectedText	=	'';
-			}
 		}
 		else
 		{
 			//ni class ni id
 			console.log('Rien.')
-			if(/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.test(fromus_selectedText))
-			{
-				fromus_selectedText	=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
-			}
 		}  
 	}
 	console.log("Et ce qui est affiché dans la case est...");
 	console.log(fromus_selectedText);
-	localStorage["regPrice"] = fromus_selectedText;
+	localStorage["regdesc"] = fromus_selectedText;
 	
 	this.removeEventListener('click',arguments.callee,false);
 });
