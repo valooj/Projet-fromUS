@@ -129,31 +129,32 @@ $(document).ready(function() {
 	console.log( "Variable from Content Script: "+localStorage["regName"] );
 	console.log( "Variable from Content Script: "+localStorage["regPrice"] );
 	console.log( "Variable from Content Script: "+localStorage["regDesc"] );
+	
 
 	
 	var newDialog = $('<div id="fromus_dialogBox" class="toto">' +
 						'<div id="fromus_tabs">' +
 							'<ul>' +
-								'<li><a href="#fromus_tabs-1">'+data-l10n-id="tabAdd"+'</a></li>' +
-								'<li><a href="#fromus_tabs-1">'+data-l10n-id="tabBuy"+'</a></li>' +
-								'<li><a href="#fromus_tabs-2">'+data-l10n-id="tabAccount"+'</a></li>' +
+								'<li><a href="#fromus_tabs-1">tabAdd</a></li>' +
+								'<li><a href="#fromus_tabs-1">tabBuy</a></li>' +
+								'<li><a href="#fromus_tabs-2">tabAccount</a></li>' +
 							'</ul>' +
 							'<div id="fromus_tabs-1">' +
-								'<h2>'+data-l10n-id="FormP"+'</h2>' +
+								'<h2>FormP</h2>' +
 								'<form id="fromusForm">' + 
 
-									'<label for="store">'+data-l10n-id="Merchant"+'</label><input type="textbox" id="fromus_store" disabled="true"/></br>' +
-									'<label for="name">'+data-l10n-id="NameP"+'</label><input type="textbox" id="fromus_name" disabled="true"/><input type="button" value="test" id="fromus_morename" /></br>' + 
-									'<label for="price">'+data-l10n-id="PriceP"+'</label><input type="textbox" id="fromus_price" /></br>' +
-									'<label for="category">'+data-l10n-id="CategP"+'</label>'+ 
+									'<label for="store">Merchant</label><input type="textbox" id="fromus_store" disabled="true"/></br>' +
+									'<label for="name">NameP</label><input type="textbox" id="fromus_name" disabled="true"/><input type="button" value="test" id="fromus_morename" /></br>' + 
+									'<label for="price">PriceP</label><input type="textbox" id="fromus_price" /></br>' +
+									'<label for="category">CategP</label>'+ 
 										'<select id="category">' +
 										'</select></br>' +
-									'<label for="sscategory">'+data-l10n-id="SCategP"+'</label>' +
+									'<label for="sscategory">SCategP</label>' +
 										'<select id="sscategory">' +
 
 										'</select></br>' +
-									'<label id="fromus_quantite" for="quantite">'+data-l10n-id="QuantityP"+'</label><input id="QteSpinner" value="1"></br>' +
-									'<label id="fromus_assurance" for="assurance">'+data-l10n-id="InsuranceP"+'</label>' +
+									'<label id="fromus_quantite" for="quantite">QuantityP</label><input id="QteSpinner" value="1"></br>' +
+									'<label id="fromus_assurance" for="assurance">InsuranceP</label>' +
 									'<div id="fromus_divassurance">' +
 										'<input type="checkbox" id="fromus_checkassurance" name="assurance" />' +
 									'</div>' +
@@ -162,18 +163,20 @@ $(document).ready(function() {
 							'<div id="fromus_tabs-2">' +
 								'<h2>From-us.com</h2>' +
 
-								'<p>'+data-l10n-id="MsgIdPass"+'</p>' +
-								'<label for="idfromus">'+data-l10n-id="EmailU"+'</label><input type="textbox" id="idfromus" /></br>' +
-								'<label for="mdpfromus">'+data-l10n-id="PasswordU"+'</label><input type="password" id="mdpfromus" /></br>' +
+								'<p>MsgIdPass</p>' +
+								'<label for="idfromus">EmailU</label><input type="textbox" id="idfromus" /></br>' +
+								'<label for="mdpfromus">PasswordU</label><input type="password" id="mdpfromus" /></br>' +
 
 								'<input type="button" value="login" id="log" />' +
-								'<a href="http://from-us.com/fromus" target="_blank">'+data-l10n-id="OubliU"+'</a>' +
-								'<a href="http://from-us.com/fromus" target="_blank">'+data-l10n-id="CreateU"+'</a>' +
+								'<a href="http://from-us.com/fromus" target="_blank">OubliU</a>' +
+								'<a href="http://from-us.com/fromus" target="_blank">CreateU</a>' +
 							'</div>' +
 						'</div>' +
 						'<a href="http://from-us.com/fromus" target=_blank><img id="logofromus" height="100" src=""/></a>' +
 					'</div>');
 
+	
+	
 	// variable qui permet de savoir si la dialog box est ouverte
 	var isOpen = $("#fromus_dialogBox").dialog("isOpen");
 	console.log("apres la trad");
@@ -182,6 +185,7 @@ $(document).ready(function() {
 
 		newDialog.tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
 		newDialog.removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+		console.log("apres tabs vertical");
 		newDialog.dialog({
 	    	modal: false,
 			title: "From-us.com",
@@ -205,8 +209,8 @@ $(document).ready(function() {
 
 			// au demarrage on cache le bouton commander, la quantité et l'assurance
 			open: function(ev,ui) {
-				var img = document.getElementById('logofromus');
-  				img.src = chrome.extension.getURL('/img/logo.png');
+				//var img = document.getElementById('logofromus');
+  				//img.src = chrome.extension.getURL('/img/logo.png');
   				$("#btnSubmit").hide();
   				$("#QteSpinner").hide();
 				$("#fromus_quantite").hide();
@@ -218,7 +222,7 @@ $(document).ready(function() {
 				[
 					// bouton submit qui permet de commander un produit 
 					{
-						text: data-l10n-id="ButtonBuy", 
+						text: "ButtonBuy", 
 						id: "btnSubmit",
 						click: function() {
 
@@ -243,7 +247,7 @@ $(document).ready(function() {
 					// bouton ajouter qui permet d'ajouter un produit dans la base de données 
 					// à ne pas confondre avec le bouton submit 
 					{ 
-						text: data-l10n-id="ButtonAdd", 
+						text: "ButtonAdd", 
 						id: "btnAdd",
 						click: function() {
 
@@ -275,6 +279,8 @@ $(document).ready(function() {
 					},
 				]
 	    });
+
+		console.log("apres newDialog");
 
 		var bindEvent = function(elem ,evt,cb) {
 			//vérifie si addEventListenerexiste dans l'élément
@@ -338,6 +344,8 @@ $(document).ready(function() {
 			}
   		});
 
+		console.log("apres dialog tabs");
+
 						
 		// creation du spinner pour la quantite
 		var newSpinner = $( "#QteSpinner" ).spinner({
@@ -381,6 +389,8 @@ $(document).ready(function() {
 
 		regVisu = localStorage["regImg"];
 
+		console.log("apres ajout automatiquement");
+
 		var fromus_morename = document.getElementById('fromus_morename');
 		fromus_morename.addEventListener('click', function(e){
 			console.log('morename');
@@ -391,6 +401,9 @@ $(document).ready(function() {
 			//$('#fromus_name').attr('value',"you");
 			$('#fromus_name').attr('value',localStorage["regName"]);
 		}, false);
+
+
+		console.log("apres btn morename");
 
 
 		
@@ -431,6 +444,8 @@ $(document).ready(function() {
 				    
 		}, false);
 
+		console.log("apres btn login logout");
+
 		//action sur le select de categorie pour la mise a jour de sscategory
 		var categ = document.getElementById('category');
 		categ.addEventListener('change', function(e){
@@ -458,11 +473,12 @@ $(document).ready(function() {
 				
 		// suppression des key dans le localstorage
 		localStorage.removeItem('regDesc');
-		//localStorage.removeItem('regName');
+		localStorage.removeItem('regName');
 		localStorage.removeItem('regPrice');
 		localStorage.removeItem('regStore');
 		localStorage.removeItem('regOffer');
-			
+
+		console.log("fin de script");			
 	}
 });
 

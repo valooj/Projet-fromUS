@@ -4,7 +4,7 @@ var pageMod = require('sdk/page-mod');
 var self = require('sdk/self');
 var tabs = require('tabs');
 var _ = require("sdk/l10n").get;
-console.log(_("hello_id!"));
+
 
 var tbb = require('toolbarbutton').ToolbarButton({
       id: 'from-us_button',
