@@ -324,7 +324,7 @@ button.ui-button::-moz-focus-inner {
 	/*padding: .2em;*/
 	outline: 0;
 	z-index: 999999999;
-	
+
 }
 .ui-dialog .ui-dialog-titlebar {
 	/*padding: .4em 1em;*/
@@ -1133,3 +1133,4 @@ body .ui-tooltip {
 	filter: Alpha(Opacity=30)/*{opacityFilterShadow}*/;
 	border-radius: 8px/*{cornerRadiusShadow}*/;
 }
+
