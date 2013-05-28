@@ -15,40 +15,49 @@ var bindEvent = function(elem ,evt,cb) {
 bindEvent(document,'click', function(event) 
 { var target = event.target || event.srcElement;
 	
+	var 	fromus_txt    = target.innerHTML;
+	var 	fromus_selectedText  = target.textContent;
+	var 	fromus_selectedTexttmp;
 	
-	
-	var fromus_txt    = target.innerHTML;
-	var fromus_selectedText  = target.textContent;
+	var 	fromus_site 	=	document.location.href;		//récupération de l'adresse fromus_
+	fromus_site 	=	/http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_site)[1];
+	fromus_site	=	/\.[a-z0-9\-A-Z]{1,}\.com$/.exec(fromus_site)[0];
+	fromus_site	=	'www'+fromus_site;
 	
 	fromus_txt        = fromus_txt.replace(/\n/g,'');
-	//alert(target.textContent);
+	console.log(target.textContent);
 	
 	if(/id=\"/.test(fromus_txt))
 	{
 		var fromus_idmatch    = fromus_txt.match(/id=(\"[^\"]{1,}\")/mgi);
-		//alert(fromus_idmatch);
+		console.log(fromus_idmatch);
 	}
 	if(/class=\"/.test(fromus_txt))
 	{
 		var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  
-		// alert(fromus_classmatch);
+		console.log(fromus_classmatch);
 	}
 	
-	//alert("Ce qui est ajouté à la base de données est...");
+	console.log("Ce qui est ajouté à la base de données est...");
 	
 	if(fromus_idmatch !=undefined)
 	{
 		if(fromus_classmatch !=undefined)
 		{
-			// id et class     
-			//alert("<getprodpricetype>\"id\"<\/getprodpricetype>\n<getprodprice>"+fromus_idmatch[0].substring(3,fromus_idmatch[0].length)+"<\/getprodprice>");
-			//alert("<getprodpricetype>\"class\"<\/getprodpricetype>\n<getprodprice>"+fromus_classmatch[0].substring(6,fromus_classmatch[0].length)+"<\/getprodprice>");
+			// id et class 
+			
+			fromus_selectedTexttmp	= fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
+			console.log('fromus_sitelist[\''+fromus_site+'\'].price_id.push(\''+fromus_selectedTexttmp+'\');');
+			
+			fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);			
+			console.log('fromus_sitelist[\''+fromus_site+'\'].price_class.push(\''+fromus_selectedTexttmp+'\');');
 			
 		}
 		else
 		{
 			//id sans class
-			//alert("<getprodpricetype>\"id\"<\/getprodpricetype>\n<getprodprice>"+fromus_idmatch[0].substring(3,fromus_idmatch[0].length)+"<\/getprodprice>");
+			fromus_selectedTexttmp	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
+			console.log('fromus_sitelist[\''+fromus_site+'\'].price_id.push(\''+fromus_selectedTexttmp+'\');');
 			
 		}
 		
@@ -60,24 +69,32 @@ bindEvent(document,'click', function(event)
 	{
 		if(fromus_classmatch !=undefined)
 		{ //Class sans id
+			fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
+			console.log('fromus_sitelist[\''+fromus_site+'\'].price_class.push(\''+fromus_selectedTexttmp+'\');');
 			
-			//alert("<getprodpricetype>\"class\"<\/getprodpricetype>\n<getprodprice>"+fromus_classmatch[0].substring(6,fromus_classmatch[0].length)+"<\/getprodprice>");
+			fromus_selectedText = fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
 			
-			fromus_selectedText = fromus_classmatch[0].substring(6,fromus_classmatch[0].length-1);
-			fromus_selectedText = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(document.getElementsByClassName(fromus_selectedText)[0].textContent)[0];
+			fromus_selectedText	=	document.getElementsByClassName(fromus_selectedText)[0].textContent;
+			console.log(fromus_selectedText);
+			if(/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.test(fromus_selectedText))
+			{
+				fromus_selectedText	=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
+			}
+			else
+			{
+				fromus_selectedText	=	'';
+			}
 		}
 		else
 		{
 			//ni class ni id
+			console.log('Rien.')
+			fromus_selectedText = /(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
 		}  
 	}
-	//alert("Et ce qui est affiché dans la case est...");
-	//alert(fromus_selectedText);
-	
-	
-	
-	
-	
+	console.log("Et ce qui est affiché dans la case est...");
+	console.log(fromus_selectedText);
+	localStorage["regPrice"] = fromus_selectedText;
 	
 	this.removeEventListener('click',arguments.callee,false);
 });
