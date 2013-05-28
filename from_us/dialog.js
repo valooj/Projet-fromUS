@@ -156,7 +156,7 @@ $(document).ready(function() {
 										'<select id="sscategory">' +
 
 										'</select></br>' +
-									'<label id="fromus_quantite" for="quantite">'+chrome.i18n.getMessage("QuantityP")+'</label><input id="QteSpinner" value="1">' +
+									'<label id="fromus_quantite" for="quantite">'+chrome.i18n.getMessage("QuantityP")+'</label><input id="QteSpinner" value="1"></br>' +
 									'<label id="fromus_assurance" for="assurance">'+chrome.i18n.getMessage("InsuranceP")+'</label>' +
 									'<div id="fromus_divassurance">' +
 										'<input type="checkbox" id="fromus_checkassurance" name="assurance" />' +

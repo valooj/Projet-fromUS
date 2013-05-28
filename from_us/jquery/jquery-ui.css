@@ -56,28 +56,30 @@
 	margin-bottom: 5px;
 	padding: 0px;
 }
-select#category{
+.toto select#category{
 	width: 282px;
 	margin-top: 0px;
 	margin-bottom: 5px;
 	padding: 0px;
 	height: 20px;
 }
-select#sscategory{
+.toto select#sscategory{
 	width: 282px;
 	margin-bottom: 5px;
 	margin-top: 0px;
 	padding: 0px;
 	height: 20px;
 }
-input#QteSpinner{
+.toto input#QteSpinner{
 	width: 50px;
-	/*height: 20px;*/
+	height: 20px;
+	border: none;
 }
 .toto .ui-spinner{
 	height: 18px;
 	margin-top: 0px;
 	margin-bottom: 5px;
+	border: none;
 }
 .toto #fromus_divassurance	{
 	width: 50px;
@@ -85,7 +87,7 @@ input#QteSpinner{
 	margin-top: -4px;
 	margin-bottom: 5px;
 }
-#logofromus{
+.toto #logofromus{
 	float: left;
 	margin-left: 50px;
 }
@@ -615,6 +617,7 @@ button.ui-button::-moz-focus-inner {
 	overflow: hidden;
 	padding: 0;
 	vertical-align: middle;
+
 }
 .ui-spinner-input {
 	border: none;
