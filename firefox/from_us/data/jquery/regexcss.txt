@@ -1,0 +1,18 @@
+pour css balise#id.classe
+
+rechercher :
+^([a-z]*)(\.?#?[a-z0-9\-\n]*) (\.?#?[a-z0-9\-\_\*]*) *(\.?#?[a-z0-9\-\_\*]*) *,?\{\r
+
+
+remplacer par :
+$\("$1 $2 $3 $4"\).css\({
+
+
+pour propriete css prop1: prop2;
+
+rechercher:
+(\s)([a-z\-?\_?]+):\s([\#\.??a-z0-9\-?\_?\%?]+);+\r
+
+remplacer par:
+$1"$2": "$3",
+
