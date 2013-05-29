@@ -33,3 +33,9 @@ rechercher:
 
 remplacer par:
 $\("$1 $2 $3 $4"\).css\({}\);
+
+
+.ui-state-active,
+$(".ui-state-active).css({});
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a,
