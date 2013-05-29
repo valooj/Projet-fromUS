@@ -503,6 +503,215 @@ $(document).ready(function() {
 			"margin-top": "3px"
 		});
 
+		$(" .toto #login").css({
+			"font-size": "small",
+			"color": "grey",  
+			"display": "inline-block",
+			"margin-left": "200px"
+		});
+		$(" .toto #create").css({
+			"font-size": "small",
+			"color": "grey",  
+			"display": "inline-block",
+			"margin-left": "255px"
+		});
+
+		$(" .toto #log").css({
+			"display": "inline-block",
+			"float": "center",
+			"margin-left": "280px"
+		});
+
+		$(" .toto #fromus_tabs-1").css({
+			"border": "2px double #203064",
+			"border-radius": "5px",
+			"margin": "10px",
+			"padding": "20px"
+		});
+		$(" .toto input").css({
+			"width": "600px",
+			"float": "right",
+			"margin-top": "0px",
+			"text-align": "right",
+			"font-size": "small",
+			"border": "none"
+		});
+		$(" .toto h2").css({
+			"margin-bottom": "20px",
+			"text-align": "center",
+			"font-size": "x-large",
+			"text-decoration": "underline",
+			"color": "#203064"
+		});
+
+		$(" .toto #fromusForm").css({
+		});
+		$(" .toto #FromusFrom").css({
+			"float": "left",
+			"text-align": "right",
+			"width": "200px"
+		});
+
+		$(".toto #fromusForm input[type='textbox']").css({
+			"width": "280px",
+			"margin": "0px",
+			"margin-bottom": "5px",
+			"padding": "0px"
+		});
+		$(" .toto select").css({
+			"width": "282px",
+			"margin-top": "0px",
+			"margin-bottom": "5px",
+			"padding": "0px",
+			"height": "20px"
+		});
+		$(" .toto select #sscategory").css({
+			"width": "282px",
+			"margin-bottom": "5px",
+			"margin-top": "0px",
+			"padding": "0px",
+			"height": "20px"
+		});
+		$(" .toto input #QteSpinner").css({
+			"width": "50px",
+			"height": "20px",
+			"border": "none"
+		});
+		$(" .toto .ui-spinner").css({
+			"height": "18px",
+			"margin-top": "0px",
+			"margin-bottom": "5px",
+			"border": "none"
+		});
+		$(".toto #fromus_divassurance").css({
+			"width": "50px",
+			"display": "inline-block",
+			"margin-top": "-4px",
+			"margin-bottom": "5px"
+		});
+		$(" .toto #logofromus").css({
+			"float": "left",
+			"margin-left": "50px"
+		});
+
+		$(" .ui-helper-hidden ").css({
+			"display": "none"
+		});
+		$(" .ui-helper-hidden-accessible ").css({
+			"border": "0",
+			"clip": "rect(0 0 0 0)",
+			"height": "1px",
+			"margin": "-1px",
+			"overflow": "hidden",
+			"padding": "0",
+			"position": "absolute",
+			"width": "1px"
+		});
+		$(" .ui-helper-reset ").css({
+			"margin": "0",
+			"padding": "0",
+			"border": "0",
+			"outline": "0",
+			"line-height": "1.3",
+			"text-decoration": "none",
+			"font-size": "100%",
+			/*font-size: 55px;*/
+			"list-style": "none"
+		});
+
+		$(".ui-helper-clearfix:before").css({});
+		$(".ui-helper-clearfix:after").css({
+			"content": "",
+			"display": "table",
+			"border-collapse": "collapse"
+		});
+		$(".ui-helper-clearfix:after").css({
+			"clear": "both"
+		});
+		$(" .ui-helper-clearfix ").css({
+			"min-height": "0" /* support: IE7 */
+		});
+		$(" .ui-helper-zfix ").css({
+			"width": "100%",
+			"height": "100%",
+			"top": "0",
+			"left": "0",
+			"position": "absolute",
+			"opacity": "0",
+			"filter":"Alpha(Opacity=0)"
+		});
+
+		$(" .ui-front ").css({
+			"z-index": "100"
+		});
+
+		$(" .ui-state-disabled ").css({
+			"cursor": "default !important"
+		});
+
+		$(" .ui-icon ").css({
+			"display": "block",
+			"text-indent": "-99999px",
+			"overflow": "hidden",
+			"background-repeat": "no-repeat"
+		});
+
+		$(" .ui-widget-overlay ").css({
+			"position": "fixed",
+			"top": "0",
+			"left": "0",
+			"width": "100%",
+			"height": "100%"
+		});
+
+		$(".ui-button").css({});
+		$(".ui-button:link").css({});
+		$(".ui-button:visited").css({});
+		$(".ui-button:hover").css({});
+		$(".ui-button:active").css({
+			"text-decoration": "none"
+		});
+
+		$(" .ui-button-icon-only  ").css({
+			"width": "2.2em"
+		});
+
+		$("button .ui-button-icon-only  ").css({
+			"width": "2.4em"
+		});
+		$(" .ui-button-icons-only  ").css({
+			"width": "3.4em"
+		});
+		$("button .ui-button-icons-only  ").css({
+			"width": "3.7em"
+		});
+
+		$(" .ui-button .ui-button-text ").css({
+			"display": "block",
+			"line-height": "normal",
+			"color": "white"
+		});
+		$(" .ui-button-text-only .ui-button-text ").css({
+			"padding": ".4em 1em"
+		});
+		$(".ui-button-icon-only .ui-button-text").css({});
+		$(" .ui-button-icons-only .ui-button-text ").css({
+			"padding": ".4em",
+			"text-indent": "-9999999px"
+		});
+		$(".ui-button-text-icon-primary .ui-button-text").css({});
+		$(" .ui-button-text-icons .ui-button-text ").css({
+			"padding": ".4em 1em .4em 2.1em"
+		});
+		$(".ui-button-text-icon-secondary .ui-button-text").css({});
+		$(" .ui-button-text-icons .ui-button-text ").css({
+			"padding": ".4em 2.1em .4em 1em"
+		});
+		$(" .ui-button-text-icons .ui-button-text ").css({
+			"padding-left": "2.1em",
+			"padding-right": "2.1em"
+		});
+
 		console.log("apres le css");
 
 		
