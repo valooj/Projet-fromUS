@@ -3,171 +3,171 @@
 * Includes: jquery.ui.core.css, jquery.ui.accordion.css, jquery.ui.autocomplete.css, jquery.ui.button.css, jquery.ui.datepicker.css, jquery.ui.dialog.css, jquery.ui.menu.css, jquery.ui.progressbar.css, jquery.ui.resizable.css, jquery.ui.selectable.css, jquery.ui.slider.css, jquery.ui.spinner.css, jquery.ui.tabs.css, jquery.ui.tooltip.css, jquery.ui.theme.css
 * Copyright 2013 jQuery Foundation and other contributors; Licensed MIT */
 $(" .toto .ui-dialog-titlebar").css({
-	background-color: #203064;
-	text-align: left;
-}
+	"background-color": "#203064",
+	"text-align": "left",
+});
 $(" #ui-id-4 ").css({
-	width: 858px;
-}
+	"width": "858px",
+});
 $(" .toto .ui-widget-header").css({
-	background-color: #203064;
-}
+	"background-color": "#203064",
+});
 $(" .toto label").css({
-	display: inline-block;
-	width: 130px;
-	text-align: right;
-	margin-left: 90px;
-	margin-top: 3px;
-}
+	"display": "inline-block",
+	"width": "130px",
+	"text-align": "right",
+	"margin-left": "90px",
+	"margin-top": "3px",
+});
 $(" .toto #login").css({
-	font-size: small;
+	"font-size": "small",
 	color: grey;  
-	display: inline-block;
-	margin-left: 200px;
-}
+	"display": "inline-block",
+	"margin-left": "200px",
+});
 $(" .toto #create").css({
-	font-size: small;
+	"font-size": "small",
 	color: grey;  
-	display: inline-block;
-	margin-left: 255px;
-}
+	"display": "inline-block",
+	"margin-left": "255px",
+});
 
 $(" .toto #log").css({
-	display: inline-block;
-	float: center;
-	margin-left: 280px;
-}
+	"display": "inline-block",
+	"float": "center",
+	"margin-left": "280px",
+});
 /*
 $(" .toto *").css({
 	border: 1px solid red;
 }*/
 $(" .toto #fromus_tabs-1").css({
 	border: 2px double #203064;
-	border-radius: 5px;
-	margin: 10px;
-	padding: 20px;
-}
+	"border-radius": "5px",
+	"margin": "10px",
+	"padding": "20px",
+});
 $(" .toto input").css({
-	width: 600px;
-	float: right;
-	margin-top: 0px;
-	text-align: right;
-	font-size: small;
-	border: none;
-}
+	"width": "600px",
+	"float": "right",
+	"margin-top": "0px",
+	"text-align": "right",
+	"font-size": "small",
+	"border": "none",
+});
 $(" .toto h2").css({
-	margin-bottom: 20px;
-	text-align: center;
-	font-size: x-large;
-	text-decoration: underline;
-	color: #203064;
-}
+	"margin-bottom": "20px",
+	"text-align": "center",
+	"font-size": "x-large",
+	"text-decoration": "underline",
+	"color": "#203064",
+});
 $(" .toto #fromusForm").css({
-}
+});
 $(" .toto #FromusFrom").css({
-	float: left;
-	text-align: right;
-	width: 200px;
-}
+	"float": "left",
+	"text-align": "right",
+	"width": "200px",
+});
 .toto #fromusForm input[type="textbox"] {
-	width: 280px;
-	margin: 0px;
-	margin-bottom: 5px;
-	padding: 0px;
-}
+	"width": "280px",
+	"margin": "0px",
+	"margin-bottom": "5px",
+	"padding": "0px",
+});
 $(" .toto select").css({
-	width: 282px;
-	margin-top: 0px;
-	margin-bottom: 5px;
-	padding: 0px;
-	height: 20px;
-}
+	"width": "282px",
+	"margin-top": "0px",
+	"margin-bottom": "5px",
+	"padding": "0px",
+	"height": "20px",
+});
 $(" .toto select #sscategory").css({
-	width: 282px;
-	margin-bottom: 5px;
-	margin-top: 0px;
-	padding: 0px;
-	height: 20px;
-}
+	"width": "282px",
+	"margin-bottom": "5px",
+	"margin-top": "0px",
+	"padding": "0px",
+	"height": "20px",
+});
 $(" .toto input #QteSpinner").css({
-	width: 50px;
-	height: 20px;
-	border: none;
-}
+	"width": "50px",
+	"height": "20px",
+	"border": "none",
+});
 $(" .toto .ui-spinner").css({
-	height: 18px;
-	margin-top: 0px;
-	margin-bottom: 5px;
-	border: none;
-}
+	"height": "18px",
+	"margin-top": "0px",
+	"margin-bottom": "5px",
+	"border": "none",
+});
 .toto #fromus_divassurance	{
-	width: 50px;
-	display: inline-block;
-	margin-top: -4px;
-	margin-bottom: 5px;
-}
+	"width": "50px",
+	"display": "inline-block",
+	"margin-top": "-4px",
+	"margin-bottom": "5px",
+});
 $(" .toto #logofromus").css({
-	float: left;
-	margin-left: 50px;
-}
+	"float": "left",
+	"margin-left": "50px",
+});
 /* Layout helpers
 ----------------------------------*/
 $(" .ui-helper-hidden ").css({
-	display: none;
-}
+	"display": "none",
+});
 $(" .ui-helper-hidden-accessible ").css({
-	border: 0;
+	"border": "0",
 	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-}
+	"height": "1px",
+	"margin": "-1px",
+	"overflow": "hidden",
+	"padding": "0",
+	"position": "absolute",
+	"width": "1px",
+});
 $(" .ui-helper-reset ").css({
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	line-height: 1.3;
-	text-decoration: none;
-	font-size: 100%;
+	"margin": "0",
+	"padding": "0",
+	"border": "0",
+	"outline": "0",
+	"line-height": "1.3",
+	"text-decoration": "none",
+	"font-size": "100%",
 	/*font-size: 55px;*/
-	list-style: none;
-}
+	"list-style": "none",
+});
 .ui-helper-clearfix:before,
 .ui-helper-clearfix:after {
 	content: "";
-	display: table;
-	border-collapse: collapse;
-}
+	"display": "table",
+	"border-collapse": "collapse",
+});
 .ui-helper-clearfix:after {
-	clear: both;
-}
+	"clear": "both",
+});
 $(" .ui-helper-clearfix ").css({
 	min-height: 0; /* support: IE7 */
-}
+});
 $(" .ui-helper-zfix ").css({
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	position: absolute;
-	opacity: 0;
+	"width": "100%",
+	"height": "100%",
+	"top": "0",
+	"left": "0",
+	"position": "absolute",
+	"opacity": "0",
 	filter:Alpha(Opacity=0);
-}
+});
 
 $(" .ui-front ").css({
-	z-index: 100;
-}
+	"z-index": "100",
+});
 
 
 /* Interaction Cues
 ----------------------------------*/
 $(" .ui-state-disabled ").css({
 	cursor: default !important;
-}
+});
 
 
 /* Icons
@@ -175,11 +175,11 @@ $(" .ui-state-disabled ").css({
 
 /* states and images */
 $(" .ui-icon ").css({
-	display: block;
-	text-indent: -99999px;
-	overflow: hidden;
-	background-repeat: no-repeat;
-}
+	"display": "block",
+	"text-indent": "-99999px",
+	"overflow": "hidden",
+	"background-repeat": "no-repeat",
+});
 
 
 /* Misc visuals
@@ -187,58 +187,58 @@ $(" .ui-icon ").css({
 
 /* Overlays */
 $(" .ui-widget-overlay ").css({
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
+	"position": "fixed",
+	"top": "0",
+	"left": "0",
+	"width": "100%",
+	"height": "100%",
+});
 
 $(" .ui-accordion .ui-accordion-header").css({
-	display: block;
-	cursor: pointer;
-	position: relative;
-	margin-top: 2px;
+	"display": "block",
+	"cursor": "pointer",
+	"position": "relative",
+	"margin-top": "2px",
 	padding: .5em .5em .5em .7em;
 	min-height: 0; /* support: IE7 */
-}
+});
 $(" .ui-accordion .ui-accordion-icons").css({
-	padding-left: 2.2em;
-}
+	"padding-left": "2.2em",
+});
 $(" .ui-accordion .ui-accordion-noicons").css({
-	padding-left: .7em;
-}
+	"padding-left": ".7em",
+});
 $(" .ui-accordion .ui-accordion-icons").css({
-	padding-left: 2.2em;
-}
+	"padding-left": "2.2em",
+});
 $(" .ui-accordion .ui-accordion-header .ui-accordion-header-icon").css({
-	position: absolute;
-	left: .5em;
-	top: 50%;
-	margin-top: -8px;
-}
+	"position": "absolute",
+	"left": ".5em",
+	"top": "50%",
+	"margin-top": "-8px",
+});
 $(" .ui-accordion .ui-accordion-content ").css({
 	padding: 1em 2.2em;
-	border-top: 0;
-	overflow: auto;
-}
+	"border-top": "0",
+	"overflow": "auto",
+});
 
 $(" .ui-autocomplete  ").css({
-	position: absolute;
-	top: 0;
-	left: 0;
-	cursor: default;
-}
+	"position": "absolute",
+	"top": "0",
+	"left": "0",
+	"cursor": "default",
+});
 
 /*.ui-button {
-	display: inline-block;
-	position: relative;
-	padding: 0;
-	line-height: normal;
-	margin-right: .1em;
-	cursor: pointer;
-	vertical-align: middle;
-	text-align: center;
+	"display": "inline-block",
+	"position": "relative",
+	"padding": "0",
+	"line-height": "normal",
+	"margin-right": ".1em",
+	"cursor": "pointer",
+	"vertical-align": "middle",
+	"text-align": "center",
 	overflow: visible; /* removes extra width in IE /
 
 }*/
@@ -247,53 +247,53 @@ $(" .ui-autocomplete  ").css({
 .ui-button:visited,
 .ui-button:hover,
 .ui-button:active {
-	text-decoration: none;
-}
+	"text-decoration": "none",
+});
 /* to make room for the icon, a width needs to be set here */
 $(" .ui-button-icon-only  ").css({
-	width: 2.2em;
-}
+	"width": "2.2em",
+});
 /* button elements seem to need a little more width */
 $("button .ui-button-icon-only  ").css({
-	width: 2.4em;
-}
+	"width": "2.4em",
+});
 $(" .ui-button-icons-only  ").css({
-	width: 3.4em;
-}
+	"width": "3.4em",
+});
 $("button .ui-button-icons-only  ").css({
-	width: 3.7em;
-}
+	"width": "3.7em",
+});
 
 /* button text element */
 $(" .ui-button .ui-button-text ").css({
-	display: block;
-	line-height: normal;
-	color: white;
-}
+	"display": "block",
+	"line-height": "normal",
+	"color": "white",
+});
 $(" .ui-button-text-only .ui-button-text ").css({
 	padding: .4em 1em;
-}
+});
 .ui-button-icon-only .ui-button-text,
 $(" .ui-button-icons-only .ui-button-text ").css({
-	padding: .4em;
-	text-indent: -9999999px;
-}
+	"padding": ".4em",
+	"text-indent": "-9999999px",
+});
 .ui-button-text-icon-primary .ui-button-text,
 $(" .ui-button-text-icons .ui-button-text ").css({
 	padding: .4em 1em .4em 2.1em;
-}
+});
 .ui-button-text-icon-secondary .ui-button-text,
 $(" .ui-button-text-icons .ui-button-text ").css({
 	padding: .4em 2.1em .4em 1em;
-}
+});
 $(" .ui-button-text-icons .ui-button-text ").css({
-	padding-left: 2.1em;
-	padding-right: 2.1em;
-}
+	"padding-left": "2.1em",
+	"padding-right": "2.1em",
+});
 /* no icon support for input elements, provide padding by default */
 $("input .ui-button  ").css({
 	padding: .4em 1em;
-}
+});
 
 /* button icon element(s) */
 .ui-button-icon-only .ui-icon,
@@ -301,396 +301,396 @@ $("input .ui-button  ").css({
 .ui-button-text-icon-secondary .ui-icon,
 .ui-button-text-icons .ui-icon,
 $(" .ui-button-icons-only .ui-icon ").css({
-	position: absolute;
-	top: 50%;
-	margin-top: -8px;
-	margin-right: 10px;
-}
+	"position": "absolute",
+	"top": "50%",
+	"margin-top": "-8px",
+	"margin-right": "10px",
+});
 $(" .ui-button-icon-only .ui-icon ").css({
-	left: 50%;
-	margin-left: -8px;
-}
+	"left": "50%",
+	"margin-left": "-8px",
+});
 .ui-button-text-icon-primary .ui-button-icon-primary,
 .ui-button-text-icons .ui-button-icon-primary,
 $(" .ui-button-icons-only .ui-button-icon-primary ").css({
-	left: .5em;
-	color: white;
-}
+	"left": ".5em",
+	"color": "white",
+});
 .ui-button-text-icon-secondary .ui-button-icon-secondary,
 .ui-button-text-icons .ui-button-icon-secondary,
 $(" .ui-button-icons-only .ui-button-icon-secondary ").css({
-	right: .5em;
-}
+	"right": ".5em",
+});
 
 /* button sets */
 $(" .ui-buttonset  ").css({
-	margin-right: 7px;
-}
+	"margin-right": "7px",
+});
 $(" .ui-buttonset .ui-button ").css({
-	margin-left: 0;
-	margin-right: -.3em;
-}
+	"margin-left": "0",
+	"margin-right": "-.3em",
+});
 
 /* workarounds */
 /* reset extra padding in Firefox, see h5bp.com/l */
 input.ui-button::-moz-focus-inner,
 button.ui-button::-moz-focus-inner {
-	border: 0;
-	padding: 0;
-}
+	"border": "0",
+	"padding": "0",
+});
 $(" .ui-dialog  ").css({
-	position: absolute;
-	top: 0;
-	left: 0;
+	"position": "absolute",
+	"top": "0",
+	"left": "0",
 	/*padding: .2em;*/
-	outline: 0;
-	z-index: 999999999;
+	"outline": "0",
+	"z-index": "999999999",
 
-}
+});
 $(" .ui-dialog .ui-dialog-titlebar ").css({
 	/*padding: .4em 1em;*/
-	position: relative;
-	background-color: #203064;
-	color: white;
-}
+	"position": "relative",
+	"background-color": "#203064",
+	"color": "white",
+});
 $(" .ui-dialog .ui-dialog-title ").css({
-	float: left;
+	"float": "left",
 	/*margin: .1em 0;*/
-	white-space: nowrap;
-	width: 90%;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
+	"white-space": "nowrap",
+	"width": "90%",
+	"overflow": "hidden",
+	"text-overflow": "ellipsis",
+});
 $(" .ui-dialog .ui-dialog-titlebar-close ").css({
-	position: absolute;
+	"position": "absolute",
 	/*right: .3em;*/
-	top: 50%;
-	width: 21px;
+	"top": "50%",
+	"width": "21px",
 	margin: -10px 0 0 0;
-	padding: 1px;
-	height: 20px;
-}
+	"padding": "1px",
+	"height": "20px",
+});
 $(" .ui-dialog .ui-dialog-content ").css({
-	position: relative;
-	border: 0;
+	"position": "relative",
+	"border": "0",
 	/*padding: .5em 1em;*/
-	background: none;
-	overflow: auto;
-}
+	"background": "none",
+	"overflow": "auto",
+});
 $(" .ui-dialog .ui-dialog-buttonpane ").css({
-	text-align: left;
+	"text-align": "left",
 	border-width: 1px 0 0 0;
-	background-image: none;
+	"background-image": "none",
 	/*margin-top: .5em;*/
 	/*padding: .3em 1em .5em .4em;*/
-}
+});
 $(" .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset").css({
-	float: right;
-}
+	"float": "right",
+});
 $(" .ui-dialog .ui-dialog-buttonpane button").css({
 	/*margin: .5em .4em .5em 0;*/
-	cursor: pointer;
-}
+	"cursor": "pointer",
+});
 $(" .ui-dialog .ui-resizable-se ").css({
-	width: 12px;
-	height: 12px;
-	right: -5px;
-	bottom: -5px;
+	"width": "12px",
+	"height": "12px",
+	"right": "-5px",
+	"bottom": "-5px",
 	background-position: 16px 16px;
-}
+});
 $(" .ui-draggable .ui-dialog-titlebar ").css({
-	cursor: move;
-}
+	"cursor": "move",
+});
 
 $(" .ui-menu  ").css({
-	list-style: none;
-	padding: 2px;
-	margin: 0;
-	display: block;
-	outline: none;
-}
+	"list-style": "none",
+	"padding": "2px",
+	"margin": "0",
+	"display": "block",
+	"outline": "none",
+});
 $(" .ui-menu .ui-menu ").css({
-	margin-top: -3px;
-	position: absolute;
-}
+	"margin-top": "-3px",
+	"position": "absolute",
+});
 $(" .ui-menu .ui-menu-item ").css({
-	margin: 0;
-	padding: 0;
-	width: 100%;
-}
+	"margin": "0",
+	"padding": "0",
+	"width": "100%",
+});
 $(" .ui-menu .ui-menu-divider ").css({
 	margin: 5px -2px 5px -2px;
-	height: 0;
-	font-size: 0;
-	line-height: 0;
+	"height": "0",
+	"font-size": "0",
+	"line-height": "0",
 	border-width: 1px 0 0 0;
-}
+});
 $(" .ui-menu .ui-menu-item a").css({
-	text-decoration: none;
-	display: block;
+	"text-decoration": "none",
+	"display": "block",
 	padding: 2px .4em;
-	line-height: 1.5;
+	"line-height": "1.5",
 	min-height: 0; /* support: IE7 */
-	font-weight: normal;
-}
+	"font-weight": "normal",
+});
 .ui-menu .ui-menu-item a.ui-state-focus,
 .ui-menu .ui-menu-item a.ui-state-active {
-	font-weight: normal;
-	margin: -1px;
-}
+	"font-weight": "normal",
+	"margin": "-1px",
+});
 
 $(" .ui-menu .ui-state-disabled ").css({
-	font-weight: normal;
+	"font-weight": "normal",
 	margin: .4em 0 .2em;
-	line-height: 1.5;
-}
+	"line-height": "1.5",
+});
 $(" .ui-menu .ui-state-disabled a").css({
-	cursor: default;
-}
+	"cursor": "default",
+});
 
 /* icon support */
 $(" .ui-menu-icons  ").css({
-	position: relative;
-}
+	"position": "relative",
+});
 $(" .ui-menu-icons .ui-menu-item a").css({
-	position: relative;
-	padding-left: 2em;
-}
+	"position": "relative",
+	"padding-left": "2em",
+});
 
 /* left-aligned */
 $(" .ui-menu .ui-icon ").css({
-	position: absolute;
-	top: .2em;
-	left: .2em;
-}
+	"position": "absolute",
+	"top": ".2em",
+	"left": ".2em",
+});
 
 /* right-aligned */
 $(" .ui-menu .ui-menu-icon ").css({
-	position: static;
-	float: right;
-}
+	"position": "static",
+	"float": "right",
+});
 
 $(" .ui-progressbar  ").css({
-	height: 2em;
-	text-align: left;
-	overflow: hidden;
-}
+	"height": "2em",
+	"text-align": "left",
+	"overflow": "hidden",
+});
 $(" .ui-progressbar .ui-progressbar-value ").css({
-	margin: -1px;
-	height: 100%;
-}
+	"margin": "-1px",
+	"height": "100%",
+});
 $(" .ui-progressbar .ui-progressbar-overlay ").css({
 	/*background: url("chrome-extension://__MSG_@@extension_id__/jquery/images/animated-overlay.gif");*/
-	height: 100%;
+	"height": "100%",
 	filter: alpha(opacity=25);
-	opacity: 0.25;
-}
+	"opacity": "0.25",
+});
 $(" .ui-progressbar-indeterminate .ui-progressbar-value ").css({
-	background-image: none;
-}
+	"background-image": "none",
+});
 
 $(" .ui-resizable  ").css({
-	position: relative;
-}
+	"position": "relative",
+});
 
 $(" .ui-resizable-handle  ").css({
-	position: absolute;
-	font-size: 0.1px;
-	display: block;
-}
+	"position": "absolute",
+	"font-size": "0.1px",
+	"display": "block",
+});
 
 .ui-resizable-disabled .ui-resizable-handle,
 $(" .ui-resizable-autohide .ui-resizable-handle ").css({
-	display: none;
-}
+	"display": "none",
+});
 $(" .ui-resizable-n  ").css({
-	cursor: n-resize;
-	height: 7px;
-	width: 100%;
-	top: -5px;
-	left: 0;
-}
+	"cursor": "n-resize",
+	"height": "7px",
+	"width": "100%",
+	"top": "-5px",
+	"left": "0",
+});
 $(" .ui-resizable-s  ").css({
-	cursor: s-resize;
-	height: 7px;
-	width: 100%;
-	bottom: -5px;
-	left: 0;
-}
+	"cursor": "s-resize",
+	"height": "7px",
+	"width": "100%",
+	"bottom": "-5px",
+	"left": "0",
+});
 $(" .ui-resizable-e  ").css({
-	cursor: e-resize;
-	width: 7px;
-	right: -5px;
-	top: 0;
-	height: 100%;
-}
+	"cursor": "e-resize",
+	"width": "7px",
+	"right": "-5px",
+	"top": "0",
+	"height": "100%",
+});
 $(" .ui-resizable-w  ").css({
-	cursor: w-resize;
-	width: 7px;
-	left: -5px;
-	top: 0;
-	height: 100%;
-}
+	"cursor": "w-resize",
+	"width": "7px",
+	"left": "-5px",
+	"top": "0",
+	"height": "100%",
+});
 $(" .ui-resizable-se  ").css({
-	cursor: se-resize;
-	width: 12px;
-	height: 12px;
-	right: 1px;
-	bottom: 1px;
-}
+	"cursor": "se-resize",
+	"width": "12px",
+	"height": "12px",
+	"right": "1px",
+	"bottom": "1px",
+});
 $(" .ui-resizable-sw  ").css({
-	cursor: sw-resize;
-	width: 9px;
-	height: 9px;
-	left: -5px;
-	bottom: -5px;
-}
+	"cursor": "sw-resize",
+	"width": "9px",
+	"height": "9px",
+	"left": "-5px",
+	"bottom": "-5px",
+});
 $(" .ui-resizable-nw  ").css({
-	cursor: nw-resize;
-	width: 9px;
-	height: 9px;
-	left: -5px;
-	top: -5px;
-}
+	"cursor": "nw-resize",
+	"width": "9px",
+	"height": "9px",
+	"left": "-5px",
+	"top": "-5px",
+});
 $(" .ui-resizable-ne  ").css({
-	cursor: ne-resize;
-	width: 9px;
-	height: 9px;
-	right: -5px;
-	top: -5px;
-}
+	"cursor": "ne-resize",
+	"width": "9px",
+	"height": "9px",
+	"right": "-5px",
+	"top": "-5px",
+});
 
 $(" .ui-selectable-helper  ").css({
-	position: absolute;
-	z-index: 100;
+	"position": "absolute",
+	"z-index": "100",
 	border: 1px dotted black;
-}
+});
 
 $(" .ui-slider  ").css({
-	position: relative;
-	text-align: left;
-}
+	"position": "relative",
+	"text-align": "left",
+});
 $(" .ui-slider .ui-slider-handle ").css({
-	position: absolute;
-	z-index: 2;
-	width: 1.2em;
-	height: 1.2em;
-	cursor: default;
-}
+	"position": "absolute",
+	"z-index": "2",
+	"width": "1.2em",
+	"height": "1.2em",
+	"cursor": "default",
+});
 $(" .ui-slider .ui-slider-range ").css({
-	position: absolute;
-	z-index: 1;
-	font-size: .7em;
-	display: block;
-	border: 0;
+	"position": "absolute",
+	"z-index": "1",
+	"font-size": ".7em",
+	"display": "block",
+	"border": "0",
 	background-position: 0 0;
-}
+});
 
 /* For IE8 - See #6727 */
 .ui-slider.ui-state-disabled .ui-slider-handle,
 .ui-slider.ui-state-disabled .ui-slider-range {
-	filter: inherit;
-}
+	"filter": "inherit",
+});
 
 $(" .ui-slider-horizontal  ").css({
-	height: .8em;
-}
+	"height": ".8em",
+});
 $(" .ui-slider-horizontal .ui-slider-handle ").css({
-	top: -.3em;
-	margin-left: -.6em;
-}
+	"top": "-.3em",
+	"margin-left": "-.6em",
+});
 $(" .ui-slider-horizontal .ui-slider-range ").css({
-	top: 0;
-	height: 100%;
-}
+	"top": "0",
+	"height": "100%",
+});
 $(" .ui-slider-horizontal .ui-slider-range-min ").css({
-	left: 0;
-}
+	"left": "0",
+});
 $(" .ui-slider-horizontal .ui-slider-range-max ").css({
-	right: 0;
-}
+	"right": "0",
+});
 
 $(" .ui-slider-vertical  ").css({
-	width: .8em;
-	height: 100px;
-}
+	"width": ".8em",
+	"height": "100px",
+});
 $(" .ui-slider-vertical .ui-slider-handle ").css({
-	left: -.3em;
-	margin-left: 0;
-	margin-bottom: -.6em;
-}
+	"left": "-.3em",
+	"margin-left": "0",
+	"margin-bottom": "-.6em",
+});
 $(" .ui-slider-vertical .ui-slider-range ").css({
-	left: 0;
-	width: 100%;
-}
+	"left": "0",
+	"width": "100%",
+});
 $(" .ui-slider-vertical .ui-slider-range-min ").css({
-	bottom: 0;
-}
+	"bottom": "0",
+});
 $(" .ui-slider-vertical .ui-slider-range-max ").css({
-	top: 0;
-}
+	"top": "0",
+});
 
 $(" .ui-spinner  ").css({
-	position: relative;
-	display: inline-block;
-	overflow: hidden;
-	padding: 0;
-	vertical-align: middle;
+	"position": "relative",
+	"display": "inline-block",
+	"overflow": "hidden",
+	"padding": "0",
+	"vertical-align": "middle",
 
-}
+});
 $(" .ui-spinner-input  ").css({
-	border: none;
-	background: none;
-	color: inherit;
-	padding: 0;
+	"border": "none",
+	"background": "none",
+	"color": "inherit",
+	"padding": "0",
 	margin: .2em 0;
-	vertical-align: middle;
-	margin-left: .4em;
-	margin-right: 22px;
-}
+	"vertical-align": "middle",
+	"margin-left": ".4em",
+	"margin-right": "22px",
+});
 $(" .ui-spinner-button  ").css({
-	width: 16px;
-	height: 50%;
-	font-size: .5em;
-	padding: 0;
-	margin: 0;
-	text-align: center;
-	position: absolute;
-	cursor: default;
-	display: block;
-	overflow: hidden;
-	right: 0;
-}
+	"width": "16px",
+	"height": "50%",
+	"font-size": ".5em",
+	"padding": "0",
+	"margin": "0",
+	"text-align": "center",
+	"position": "absolute",
+	"cursor": "default",
+	"display": "block",
+	"overflow": "hidden",
+	"right": "0",
+});
 /* more specificity required here to overide default borders */
 $(" .ui-spinner a .ui-spinner-button").css({
-	border-top: none;
-	border-bottom: none;
-	border-right: none;
-}
+	"border-top": "none",
+	"border-bottom": "none",
+	"border-right": "none",
+});
 /* vertical centre icon */
 $(" .ui-spinner .ui-icon ").css({
-	position: absolute;
-	margin-top: -8px;
-	top: 50%;
-	left: 0;
-}
+	"position": "absolute",
+	"margin-top": "-8px",
+	"top": "50%",
+	"left": "0",
+});
 $(" .ui-spinner-up  ").css({
-	top: 0;
-}
+	"top": "0",
+});
 $(" .ui-spinner-down  ").css({
-	bottom: 0;
-}
+	"bottom": "0",
+});
 
 /* TR overrides */
 $(" .ui-spinner .ui-icon-triangle-1-s ").css({
 	/* need to fix icons sprite */
 	background-position: -65px -16px;
-}
+});
 
 $(" .ui-tabs  ").css({
 	position: relative;/* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
-	padding: .2em;
-}
+	"padding": ".2em",
+});
 
 /* ajout de tab vertical */
 .ui-tabs-vertical { width: 55em; }
@@ -700,101 +700,101 @@ $(" .ui-tabs  ").css({
 .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: 3px; background-color: #204093; }
 .ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: right; width: 40em;}
 $(" .ui-tabs .ui-tabs-nav ").css({
-	width: 160px;
-	margin: 5px;
-	padding: 5px;
-}
+	"width": "160px",
+	"margin": "5px",
+	"padding": "5px",
+});
 
 
 
 
 
 $(" .ui-tabs .ui-tabs-nav li").css({
-	list-style: none;
-	float: left;
-	position: relative;
-	top: 0;
-	width: 158px;
-	border-bottom-width: 0;
-	padding: 0;
-	white-space: nowrap;
-}
+	"list-style": "none",
+	"float": "left",
+	"position": "relative",
+	"top": "0",
+	"width": "158px",
+	"border-bottom-width": "0",
+	"padding": "0",
+	"white-space": "nowrap",
+});
 .ui-tabs .ui-tabs-nav li a {
-	float: left;
+	"float": "left",
 	padding: .5em 1em;
-	text-decoration: none;
-}
+	"text-decoration": "none",
+});
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
 
-	margin-bottom: -1px;
-	padding-bottom: 1px;
-}
+	"margin-bottom": "-1px",
+	"padding-bottom": "1px",
+});
 .ui-tabs .ui-tabs-nav li.ui-tabs-active a,
 .ui-tabs .ui-tabs-nav li.ui-state-disabled a,
 .ui-tabs .ui-tabs-nav li.ui-tabs-loading a {
-	cursor: text;
-}
+	"cursor": "text",
+});
 .ui-tabs .ui-tabs-nav li a, /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
 .ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active a {
-	cursor: pointer;
-}
+	"cursor": "pointer",
+});
 $(" .ui-tabs .ui-tabs-panel ").css({
-	display: block;
-	border-width: 0;
+	"display": "block",
+	"border-width": "0",
 	padding: 1em 1.4em;
-	background: none;
-}
+	"background": "none",
+});
 
 $(" .ui-tooltip  ").css({
-	padding: 8px;
-	position: absolute;
-	z-index: 9999;
-	max-width: 300px;
+	"padding": "8px",
+	"position": "absolute",
+	"z-index": "9999",
+	"max-width": "300px",
 	-webkit-box-shadow: 0 0 5px #aaa;
 	box-shadow: 0 0 5px #aaa;
-}
+});
 $("body  .ui-tooltip ").css({
-	border-width: 2px;
-}
+	"border-width": "2px",
+});
 
 /* Component containers
 ----------------------------------*/
 $(" .ui-widget  ").css({
 	font-family: Verdana,Arial,sans-serif; /*{ffDefault}*/
 	/*font-size: 1.1em{fsDefault}*/;
-	font-size: 15px;
-}
+	"font-size": "15px",
+});
 $(" .ui-widget .ui-widget ").css({
-	font-size: 1em;
-}
+	"font-size": "1em",
+});
 .ui-widget input,
 .ui-widget select,
 .ui-widget textarea,
 $(" .ui-widget button ").css({
 	font-family: Verdana,Arial,sans-serif;/*{ffDefault}*/
 	/*font-size: 1em;*/
-	font-size: 15px;
-}
+	"font-size": "15px",
+});
 $(" .ui-widget button ").css({
-	background-color: #203064;
-	color: white;
-}
+	"background-color": "#203064",
+	"color": "white",
+});
 $(" .ui-widget-content  ").css({
 	border: 1px solid #aaaaaa;/*{borderColorContent}*/
 	background: white url(chrome-extension://__MSG_@@extension_id__/jquery/images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
 	color: #222222;/*{fcContent}*/
-}
+});
 $(" .ui-widget-content a ").css({
 	color: #222222;/*{fcContent}*/
-}
+});
 $(" .ui-widget-header  ").css({
 	border: 1px solid #aaaaaa;/*{borderColorHeader}*/
 	color: #222222;/*{fcHeader}*/
-	font-weight: bold;
-}
+	"font-weight": "bold",
+});
 $(" .ui-widget-header a ").css({
 	color: #222222;/*{fcHeader}*/
-}
+});
 
 /* Interaction states
 ----------------------------------*/
@@ -804,13 +804,13 @@ $(" .ui-widget-header .ui-state-default ").css({
 	border: 1px solid #d3d3d3;/*{borderColorDefault}*/
 	font-weight: normal/*{fwDefault}*/;
 	color: #555555/*{fcDefault}*/;
-}
+});
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited {
 	color: #555555/*{fcDefault}*/;
-	text-decoration: none;
-}
+	"text-decoration": "none",
+});
 .ui-state-hover,
 .ui-widget-content .ui-state-hover,
 .ui-widget-header .ui-state-hover,
@@ -820,27 +820,27 @@ $(" .ui-widget-header .ui-state-focus ").css({
 	border: 1px solid #999999;/*{borderColorHover}*/
 	font-weight: normal;/*{fwDefault}*/
 	color: #212121;/*{fcHover}*/
-}
+});
 .ui-state-hover a,
 .ui-state-hover a:hover,
 .ui-state-hover a:link,
 .ui-state-hover a:visited {
 	color: #212121/*{fcHover}*/;
-	text-decoration: none;
-}
+	"text-decoration": "none",
+});
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 $(" .ui-widget-header .ui-state-active ").css({
 	border: 1px solid #aaaaaa /*{borderColorActive}*/;
 	font-weight: normal/*{fwDefault}*/;
 	color: #212121/*{fcActive}*/;
-}
+});
 .ui-state-active a,
 .ui-state-active a:link,
 .ui-state-active a:visited {
 	color: #212121/*{fcActive}*/;
-	text-decoration: none;
-}
+	"text-decoration": "none",
+});
 
 /* Interaction Cues
 ----------------------------------*/
@@ -850,88 +850,88 @@ $(" .ui-widget-header .ui-state-highlight ").css({
 	border: 1px solid #fcefa1/*{borderColorHighlight}*/;
 	background: #fbf9ee/*{bgColorHighlight}*/ url(chrome-extension://__MSG_@@extension_id__/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png)/*{bgImgUrlHighlight}*/ 50%/*{bgHighlightXPos}*/ 50%/*{bgHighlightYPos}*/ repeat-x/*{bgHighlightRepeat}*/;
 	color: #363636/*{fcHighlight}*/;
-}
+});
 .ui-state-highlight a,
 .ui-widget-content .ui-state-highlight a,
 $(" .ui-widget-header .ui-state-highlight a").css({
 	color: #363636/*{fcHighlight}*/;
-}
+});
 .ui-state-error,
 .ui-widget-content .ui-state-error,
 $(" .ui-widget-header .ui-state-error ").css({
 	border: 1px solid #cd0a0a/*{borderColorError}*/;
 	background: #fef1ec/*{bgColorError}*/ url(chrome-extension://__MSG_@@extension_id__/jquery/images/ui-bg_glass_95_fef1ec_1x400.png)/*{bgImgUrlError}*/ 50%/*{bgErrorXPos}*/ 50%/*{bgErrorYPos}*/ repeat-x/*{bgErrorRepeat}*/;
 	color: #cd0a0a/*{fcError}*/;
-}
+});
 .ui-state-error a,
 .ui-widget-content .ui-state-error a,
 $(" .ui-widget-header .ui-state-error a").css({
 	color: #cd0a0a/*{fcError}*/;
-}
+});
 .ui-state-error-text,
 .ui-widget-content .ui-state-error-text,
 $(" .ui-widget-header .ui-state-error-text ").css({
 	color: #cd0a0a/*{fcError}*/;
-}
+});
 .ui-priority-primary,
 .ui-widget-content .ui-priority-primary,
 $(" .ui-widget-header .ui-priority-primary ").css({
-	font-weight: bold;
-}
+	"font-weight": "bold",
+});
 .ui-priority-secondary,
 .ui-widget-content .ui-priority-secondary,
 $(" .ui-widget-header .ui-priority-secondary ").css({
-	opacity: .7;
+	"opacity": ".7",
 	filter:Alpha(Opacity=70);
-	font-weight: normal;
-}
+	"font-weight": "normal",
+});
 .ui-state-disabled,
 .ui-widget-content .ui-state-disabled,
 $(" .ui-widget-header .ui-state-disabled ").css({
-	opacity: .35;
+	"opacity": ".35",
 	filter:Alpha(Opacity=35);
-	background-image: none;
-}
+	"background-image": "none",
+});
 $(" .ui-state-disabled .ui-icon ").css({
 	filter:Alpha(Opacity=35); /* For IE8 - See #6059 */
-}
+});
 
 /* Icons
 ----------------------------------*/
 
 /* states and images */
 $(" .ui-icon  ").css({
-	width: 16px;
-	height: 16px;
-	float: right;
-	margin-right: 0px;
-}
+	"width": "16px",
+	"height": "16px",
+	"float": "right",
+	"margin-right": "0px",
+});
 .ui-icon,
 $(" .ui-widget-content .ui-icon ").css({
 	background-image: url(chrome-extension://__MSG_@@extension_id__/jquery/images/ui-icons_cd0a0a_256x240.png)/*{iconsContent}*/;
-}
+});
 $(" .ui-widget-header .ui-icon ").css({
 	background-image: url(chrome-extension://__MSG_@@extension_id__/jquery/images/ui-icons_cd0a0a_256x240.png)/*{iconsHeader}*/;
-}
+});
 $(" .ui-state-default .ui-icon ").css({
 	background-image: url(chrome-extension://__MSG_@@extension_id__/jquery/images/ui-icons_cd0a0a_256x240.png);/*{iconsDefault}*/
 	float:right;
 	margin-right: 0px !important;
-}
+});
 .ui-state-hover .ui-icon,
 $(" .ui-state-focus .ui-icon ").css({
 	background-image: url(chrome-extension://__MSG_@@extension_id__/jquery/images/ui-icons_cd0a0a_256x240.png)/*{iconsHover}*/;
-}
+});
 $(" .ui-state-active .ui-icon ").css({
 	background-image: url(chrome-extension://__MSG_@@extension_id__/jquery/images/ui-icons_cd0a0a_256x240.png)/*{iconsActive}*/;
-}
+});
 $(" .ui-state-highlight .ui-icon ").css({
 	background-image: url(chrome-extension://__MSG_@@extension_id__/jquery/images/ui-icons_cd0a0a_256x240.png)/*{iconsHighlight}*/;
-}
+});
 .ui-state-error .ui-icon,
 $(" .ui-state-error-text .ui-icon ").css({
 	background-image: url(chrome-extension://__MSG_@@extension_id__/jquery/images/ui-icons_cd0a0a_256x240.png)/*{iconsError}*/;
-}
+});
 
 /* positioning */
 .ui-icon-blank { background-position: 16px 16px; }
@@ -1121,32 +1121,32 @@ $(" .ui-state-error-text .ui-icon ").css({
 .ui-corner-left,
 $(" .ui-corner-tl  ").css({
 	border-top-left-radius: 4px/*{cornerRadius}*/;
-}
+});
 .ui-corner-all,
 .ui-corner-top,
 .ui-corner-right,
 $(" .ui-corner-tr  ").css({
 	border-top-right-radius: 4px/*{cornerRadius}*/;
-}
+});
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-left,
 $(" .ui-corner-bl  ").css({
 	border-bottom-left-radius: 4px/*{cornerRadius}*/;
-}
+});
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-right,
 $(" .ui-corner-br  ").css({
 	border-bottom-right-radius: 4px/*{cornerRadius}*/;
-}
+});
 
 /* Overlays */
 $(" .ui-widget-overlay  ").css({
 	background: #aaaaaa/*{bgColorOverlay}*/ url(chrome-extension://__MSG_@@extension_id__/jquery/images/ui-bg_flat_0_aaaaaa_40x100.png)/*{bgImgUrlOverlay}*/ 50%/*{bgOverlayXPos}*/ 50%/*{bgOverlayYPos}*/ repeat-x/*{bgOverlayRepeat}*/;
 	opacity: .3/*{opacityOverlay}*/;
 	filter: Alpha(Opacity=30)/*{opacityFilterOverlay}*/;
-}
+});
 $(" .ui-widget-shadow  ").css({
 	margin: -8px/*{offsetTopShadow}*/ 0 0 -8px/*{offsetLeftShadow}*/;
 	padding: 8px/*{thicknessShadow}*/;
@@ -1154,5 +1154,5 @@ $(" .ui-widget-shadow  ").css({
 	opacity: .3/*{opacityShadow}*/;
 	filter: Alpha(Opacity=30)/*{opacityFilterShadow}*/;
 	border-radius: 8px/*{cornerRadiusShadow}*/;
-}
+});
 
