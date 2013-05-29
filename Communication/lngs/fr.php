@@ -17,5 +17,6 @@
 	$lng['logout'] = 'Au revoir';
 	$lng['invalid_categ'] = 'Erreur :: Categorie non specifie';
 	$lng['invalid_action'] = ' Erreur :: Action non specifie';
+	$lng['invalid_bd'] = ' Erreur :: Connection au serveur impossible';
 
 ?>
