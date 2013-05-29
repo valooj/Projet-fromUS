@@ -59,5 +59,8 @@
 	},
 	"MsgConnect": {
 		"message": "Vous devez vous connecter"
+	},
+	"MsgBD": {
+		"message": "Erreur :: Connection au serveur impossible"
 	}
 }

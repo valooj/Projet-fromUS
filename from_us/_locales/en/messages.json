@@ -59,5 +59,8 @@
 	},
 	"MsgConnect": {
 		"message": "You must login"
+	},
+	"MsgBD": {
+		"message": "Error :: connection to the server could not"
 	}
 }

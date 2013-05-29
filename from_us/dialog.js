@@ -95,7 +95,8 @@ function sendToServer(urlSelected, jsonSelected) {
 		}
 	})
 	.fail(function(datas) { 
-		alert('error'); 
+		//alert(datas['error']);
+		alert(chrome.i18n.getMessage("MsgBD"));
 		})
 ;}
 
@@ -110,7 +111,8 @@ function sendAjoutPanier(panierJ) {
 			alert(datas['error']);  
 		})
 	.fail(function(datas) { 
-		alert(datas['error']); 
+		//alert(datas['error']); 
+		alert(chrome.i18n.getMessage("MsgBD"));
 		})
 ;}
 

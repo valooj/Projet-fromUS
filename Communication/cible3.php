@@ -40,14 +40,10 @@ function getLng(){
 
 try
 {
-
 	// connection a la bd
     $options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
     $options[PDO::MYSQL_ATTR_INIT_COMMAND] = 'SET NAMES UTF8;';
     $bdd = new PDO('mysql:host=localhost;dbname=fromus', 'root', '', $options);
-
-    if ( !$bdd)
-		throw new Exception($lng['invalid_bd']);
 
 	// externals datas
 	$get_action = isset($_GET['action']) ? htmlspecialchars($_GET['action']) : null;
