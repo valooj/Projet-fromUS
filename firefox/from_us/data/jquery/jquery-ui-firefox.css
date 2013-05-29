@@ -633,7 +633,7 @@ $(".ui-spinner").css({
 	"display":"inline-block",
 	"overflow":"hidden",
 	"padding":"0",
-	"vertical-align":"middle",
+	"vertical-align":"middle"
 
 });
 $(".ui-spinner-input").css({

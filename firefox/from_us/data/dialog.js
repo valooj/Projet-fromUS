@@ -709,6 +709,8 @@ $(".ui-accordion .ui-accordion-content").css({
 	"overflow":"auto"
 });
 
+console.log("apres accordion");
+
 $(".ui-autocomplete").css({
 	"position":"absolute",
 	"top":"0",
@@ -816,6 +818,8 @@ $(".ui-buttonset .ui-button").css({
 	"margin-left":"0",
 	"margin-right":"-.3em"
 });
+
+console.log("apres button sets");
 
 /* workarounds */
 /* reset extra padding in Firefox, see h5bp.com/l */
@@ -934,6 +938,8 @@ $(".ui-menu .ui-state-disabled a").css({
 	"cursor":"default"
 });
 
+console.log("avant icon support");
+
 /* icon support */
 $(".ui-menu-icons").css({
 	"position":"relative"
@@ -974,6 +980,8 @@ $(".ui-progressbar .ui-progressbar-overlay").css({
 $(".ui-progressbar-indeterminate .ui-progressbar-value").css({
 	"background-image":"none"
 });
+
+console.log("apres progressbar");
 
 $(".ui-resizable").css({
 	"position":"relative"
@@ -1121,7 +1129,7 @@ $(".ui-spinner").css({
 	"display":"inline-block",
 	"overflow":"hidden",
 	"padding":"0",
-	"vertical-align":"middle",
+	"vertical-align":"middle"
 
 });
 $(".ui-spinner-input").css({
@@ -1172,6 +1180,8 @@ $(".ui-spinner .ui-icon-triangle-1-s").css({
 	/* need to fix icons sprite */
 	"background-position":"-65px -16px"
 });
+
+console.log("apres spinner");
 
 $(".ui-tabs").css({
 	"position":"relative",/* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as"fixed") */
@@ -1254,6 +1264,8 @@ $(".ui-tabs .ui-tabs-panel").css({
 	"padding":"1em 1.4em",
 	"background":"none"
 });
+
+console.log("apres tabs");
 
 $(".ui-tooltip").css({
 	"padding":"8px",
