@@ -366,7 +366,7 @@ try
 		case 'MAJ-categorie':
 
 			//Selection de la categorie
-			$req = $bdd->prepare('SELECT cat_liee , cat_libelle FROM categorie where cat_langue= :_lang');
+			$req = $bdd->prepare('SELECT cat_liee , cat_libelle FROM categorie where cat_langue= :_lang ORDER BY cat_libelle ASC');
 			$req->execute(array(
 				'_lang' => getLng()));
 			
@@ -378,7 +378,7 @@ try
 
 			//selection de la sous categorie
 			foreach($req->fetchall() as $arr){
-			$reqs = $bdd->prepare('SELECT scat_liee , scat_libelle FROM scategorie where scat_cat= :_cat and scat_lang= :_lang');
+			$reqs = $bdd->prepare('SELECT scat_liee , scat_libelle FROM scategorie where scat_cat= :_cat and scat_lang= :_lang ORDER BY scat_libelle ASC');
 			$reqs->execute(array(
 			    '_cat' => $arr[0],
 			    '_lang' => getLng()));
@@ -412,7 +412,7 @@ try
 			//$cat = array();
 			
 			//selection de la sous sous categorie
-			$req = $bdd->prepare('SELECT sscat_liee , sscat_libelle FROM sscategorie where sscat_scat= :_scat and sscat_lang= :_lang');
+			$req = $bdd->prepare('SELECT sscat_liee , sscat_libelle FROM sscategorie where sscat_scat= :_scat and sscat_lang= :_lang ORDER BY sscat_libelle ASC');
 			$req->execute(array(
 			    '_scat' => $get_sscateg,
 			    '_lang' => getLng()));
