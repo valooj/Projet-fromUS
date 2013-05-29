@@ -95,7 +95,7 @@ function sendToServer(urlSelected, jsonSelected) {
 		}
 	})
 	.fail(function(datas) { 
-		alert(datas['error']); 
+		alert('error'); 
 		})
 ;}
 
