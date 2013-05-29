@@ -1224,7 +1224,7 @@ $(".ui-tabs .ui-tabs-nav").css({
 	"padding":"5px"
 });
 
-
+console.log("apres tabs vertical");
 
 
 
@@ -1253,7 +1253,7 @@ $(".ui-tabs .ui-tabs-nav li.ui-state-disabled a").css({});
 $(".ui-tabs .ui-tabs-nav li.ui-tabs-loading a").css({
 	"cursor":"text"
 });
-$(".ui-tabs .ui-tabs-nav li a,").css({});
+$(".ui-tabs .ui-tabs-nav li a").css({});
 /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
 $(".ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active a").css({
 	"cursor":"pointer"
