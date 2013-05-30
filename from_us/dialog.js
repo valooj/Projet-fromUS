@@ -1,4 +1,5 @@
 var token;
+var Nick_Name;
 var language =  window.navigator.language ;
 
 
@@ -28,7 +29,7 @@ function createCookie(name,value,days) {
 		var expires = "; expires="+date.toGMTString();
 	}
 	else var expires = "";
-	document.cookie = name+"="+value+expires+"; path=/";
+	document.cookie = name+"="+value+expires+"; path=";
 }
 
 function readCookie(name) {
@@ -62,8 +63,9 @@ function sendToServer(urlSelected, jsonSelected) {
 			case 'L':
 				token = datas['Token'];
 				createCookie('token',token,21);
-				createCookie('Nick_Name',datas['Message'],21);
-				document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgWelcome")+datas['Message'];
+				Nick_Name = datas['Message'];
+				createCookie('Nick_Name',Nick_Name,21);
+				document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgWelcome")+Nick_Name;
 				logHide();
 				
 			break;
@@ -521,7 +523,14 @@ $(document).ready(function() {
 		if(readCookie('token')){
 			token=readCookie('token');
 			(!token)?in_out.value = 'login' : in_out.value = 'logout';
-			document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgWelcome")+readCookie('Nick_Name');
+			alert(token);
+			alert(readCookie('Nick_Name'));
+			if(readCookie('Nick_Name')){
+				var Nick_Name = readCookie('Nick_Name');
+				document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgWelcome")+Nick_Name;
+			}
+			else 
+				document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgConnect");
 		}
 		else
 			document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgConnect");
