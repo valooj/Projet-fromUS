@@ -62,5 +62,8 @@
 	},
 	"MsgBD": {
 		"message": "Erreur :: Connection au serveur impossible"
+	},
+	"ButtonReset": {
+		"message": "Annuler"
 	}
 }

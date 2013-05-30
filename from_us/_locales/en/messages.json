@@ -62,5 +62,11 @@
 	},
 	"MsgBD": {
 		"message": "Error :: connection to the server could not"
+	},
+	"MsgBD": {
+		"message": "Error :: connection to the server could not"
+	},
+	"ButtonReset": {
+		"message": "Reset"
 	}
 }

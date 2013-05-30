@@ -293,7 +293,7 @@ $(document).ready(function() {
 					// bouton cancel, mettre destroy au lieu de close pour supprimer completement la dialog box
 					// à modifier en bouton reset
 					{
-						text: "Reset", 
+						text: chrome.i18n.getMessage("ButtonReset"), 
 						id: "btnReset",
 						click: function() {
 							$(':input','#fromusForm')
