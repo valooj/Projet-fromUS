@@ -9,7 +9,7 @@
 /////	Définition des variables	/////
 
 var fromus_offre = document.location.href;		//récupération de l'adresse du l'offre
-var fromus_site = /http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_offre)[1];	//stockage du site web où se trouve l'offre
+var fromus_site = /http[s]{0,1}\:\/\/(.*\.[a-z]{2,3})\//gi.exec(fromus_offre)[1];	//stockage du site web où se trouve l'offre
 var fromus_objectname,
 fromus_objectnametmp,		// Les variables tmp sont des variables temporaires requises pour le traitement d'un nombre considérable de sites
 fromus_pricemin,					// Le "fromus_" permet d'empêcher les conflits lors de l'utilisation du code dans une application, une extension ou un plugin
@@ -691,7 +691,7 @@ if( fromus_sitelist[fromus_site])
 	if(!(fromus_objectname))
 	{	// S'il n'y a eu aucun résultat...
 		fromus_objectname = fromus_error;
-		console.log("Aucun résultat au final. Donc le nomp vaut \'?\'");		
+		console.log("Aucun résultat au final. Donc le nom vaut \'?\'");		
 	}
 	console.log("Fin de la partie name du script, objectname vaut finalement : " + fromus_objectname);	
 	
