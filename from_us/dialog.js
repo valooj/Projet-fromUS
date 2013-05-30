@@ -54,6 +54,8 @@ function sendToServer(urlSelected, jsonSelected) {
 		switch(datas['Status']){
 			case 'l':
 				document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgConnect");
+				logShow();
+				
 				//alert(datas['Message']);
 			break;
 
@@ -62,6 +64,8 @@ function sendToServer(urlSelected, jsonSelected) {
 				createCookie('token',token,21);
 				createCookie('Nick_Name',datas['Message'],21);
 				document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgWelcome")+datas['Message'];
+				logHide();
+				
 			break;
 
 			case 'c':
@@ -123,9 +127,29 @@ function parseCat(categorieJSON, sc) {
     for(var i = 0; i < categorieJSON.length; i++) {
     	if(obj[i].type==0)
         	$selectCat.append('<option value="'+obj[i].idCat+'" disabled="true">'+obj[i].libelleCat+'</option>');
-        else
+        else 
         	$selectCat.append('<option value="'+obj[i].idCat+'" >'+obj[i].libelleCat+'</option>');
     }
+}
+
+function logHide(){
+	$("#MsgIdPass").hide();
+	$("#idfromus").hide();
+	$("#mdpfromus").hide();
+	$("#login").hide();
+	$("#create").hide();
+	$("#msgIdfromus").hide();
+	$("#msgMdpfromus").hide();
+}
+
+function logShow(){
+	$("#MsgIdPass").show();
+	$("#idfromus").show();
+	$("#mdpfromus").show();
+	$("#login").show();
+	$("#create").show();
+	$("#msgIdfromus").show();
+	$("#msgMdpfromus").show();
 }
 
 $(document).ready(function() {
@@ -168,9 +192,9 @@ $(document).ready(function() {
 							'<div id="fromus_tabs-2">' +
 								'<h2>From-us.com</h2>' +
 
-								'<p>'+chrome.i18n.getMessage("MsgIdPass")+'</p>' +
-								'<label for="idfromus">'+chrome.i18n.getMessage("EmailU")+'</label><input type="textbox" id="idfromus" /></br>' +
-								'<label for="mdpfromus">'+chrome.i18n.getMessage("PasswordU")+'</label><input type="password" id="mdpfromus" /></br>' +
+								'<p id="MsgIdPass">'+chrome.i18n.getMessage("MsgIdPass")+'</p>' +
+								'<label for="idfromus" id="msgIdfromus">'+chrome.i18n.getMessage("EmailU")+'</label><input type="textbox" id="idfromus" /></br>' +
+								'<label for="mdpfromus" id="msgMdpfromus">'+chrome.i18n.getMessage("PasswordU")+'</label><input type="password" id="mdpfromus" /></br>' +
 
 								'<input type="button" value="login" id="log" />' +
 								'<a id="login" href="http://from-us.com/fromus" target="_blank">'+chrome.i18n.getMessage("OubliU")+'</a>' +
@@ -337,6 +361,12 @@ $(document).ready(function() {
 							$("#btnAdd").hide();
 							$("#btnReset").hide();
 							$("#btnSubmit").hide();
+							if(token){
+								logHide();
+							}
+							else{
+								logShow();
+							}
 						}
 
 					this.removeEventListener('click',arguments.callee,false);
@@ -454,7 +484,6 @@ $(document).ready(function() {
 					var postLog = JSON.stringify(jsonLog);
 					var logJSON = {log:postLog};
 					sendToServer(_urlLogin, logJSON);
-					
 				}
 		    }
 		    else{
@@ -462,6 +491,7 @@ $(document).ready(function() {
 		    	sendToServer(_urlLogout+token, {});
 		    	eraseCookie('token');
 		    	eraseCookie('Nick_Name');
+		    	token="";
 		    	
 			}
 				    
@@ -473,7 +503,11 @@ $(document).ready(function() {
 			var categV = categ.value;
 			if (categV){
 				sendToServer(_urlSSCategorie+categV, {});
-		    }    
+		    }
+		    else{
+		    	var $selectCat = $('select[id=sscategory]');
+    			$selectCat.empty();
+    		}
 		}, false);
 
 		

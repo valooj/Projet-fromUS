@@ -18,13 +18,13 @@
 		"message": "Prix du produit : "
 	},
 	"CategP": {
-		"message": "Categorie : "
+		"message": "Catégorie : "
 	},
 	"SCategP": {
-		"message": "Sous-Categorie : "
+		"message": "Sous-Catégorie : "
 	},
 	"QuantityP": {
-		"message": "Quantite : "
+		"message": "Quantité : "
 	},
 
 	"InsuranceP": {

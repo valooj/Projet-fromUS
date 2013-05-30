@@ -374,7 +374,7 @@ try
 			$scategorie= null;
 
 			//Pour régler le probleme de la virgule
-			$categorie = $categorie.'{"type":"1","idCat":"'.null.'","libelleCat":"'.null.'"}';
+			$categorie = $categorie.'{"type":"1","idCat":"'.null.'","libelleCat":"'.$lng['choix_categ'].'"}';
 
 			//selection de la sous categorie
 			foreach($req->fetchall() as $arr){
@@ -417,7 +417,7 @@ try
 			    '_scat' => $get_sscateg,
 			    '_lang' => getLng()));
 
-			$sscategory .= '{"type":"0","idCat":"'.null.'","libelleCat":"'.null.'"}';
+			$sscategory .= '{"type":"0","idCat":"'.null.'","libelleCat":"'.$lng['choix_scateg'].'"}';
 			//$cat[0] = json_encode (array('type' => '0','idCat' =>''.null.'','libelleCat' => ''.null.''));
 		
 			foreach($req->fetchall() as $arr){
