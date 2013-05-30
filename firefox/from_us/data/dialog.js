@@ -556,12 +556,12 @@ $(".toto #FromusFrom label").css({
 	"text-align":"right",
 	"width":"200px"
 });
-/*$(".toto #fromusForm input[type="textbox"] ").css({
+$('.toto #fromusForm input[type="textbox"]').css({
 	"width":"280px",
 	"margin":"0px",
 	"margin-bottom":"5px",
 	"padding":"0px"
-});*/
+});
 $(".toto select#category").css({
 	"width":"282px",
 	"margin-top":"0px",
@@ -1303,8 +1303,8 @@ $(".ui-widget button").css({
 });
 $(".ui-widget-content").css({
 	"border":"1px solid #aaaaaa",
-/*	"background: white url(chrome-extension":"//__MSG_@@extension_id__/jquery/images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x",*/
-	"color":"#222222",
+	"background": "white url(jquery/images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x",
+	"color":"#222222"
 
 });
 $(".ui-widget-content a").css({
@@ -1354,7 +1354,7 @@ $(".ui-state-hover a:visited").css({
 $(".ui-state-active").css({});
 $(".ui-widget-content .ui-state-active").css({});
 $(".ui-widget-header .ui-state-active").css({
-	"border":"1px solid #aaaaaa ",
+	"border":"1px solid #aaaaaa",
 	"font-weight":"normal",
 	"color":"#212121"
 });
@@ -1372,6 +1372,7 @@ $(".ui-widget-content .ui-state-highlight").css({});
 $(".ui-widget-header .ui-state-highlight").css({
 	"border":"1px solid #fcefa1",
 /*	"background: #fbf9ee",*/
+	"background": "#fbf9ee url(/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png) 50% 50% repeat-x",
 	"color":"#363636"
 });
 $(".ui-state-highlight a").css({});
@@ -1383,7 +1384,7 @@ $(".ui-state-error").css({});
 $(".ui-widget-content .ui-state-error").css({});
 $(".ui-widget-header .ui-state-error").css({
 	"border":"1px solid #cd0a0a",
-/*	"background: #fef1ec",*/
+	"background": "#fef1ec url(/jquery/images/ui-bg_glass_95_fef1ec_1x400.png) 50% 50% repeat-x",
 	"color":"#cd0a0a"
 });
 $(".ui-state-error a").css({});
@@ -1431,29 +1432,29 @@ $(".ui-icon").css({
 });
 $(".ui-icon").css({});
 $(".ui-widget-content .ui-icon").css({
-/*	"background-image: url(chrome-extension":"//__MSG_@@extension_id__/jquery/images/ui-icons_cd0a0a_256x240.png)"*/
+	"background-image": "url(/jquery/images/ui-icons_cd0a0a_256x240.png)"
 });
 $(".ui-widget-header .ui-icon").css({
-/*	"background-image: url(chrome-extension":"//__MSG_@@extension_id__/jquery/images/ui-icons_cd0a0a_256x240.png)"*/
+	"background-image": "url(/jquery/images/ui-icons_cd0a0a_256x240.png)"
 });
 $(".ui-state-default .ui-icon").css({
-/*	"background-image: url(chrome-extension":"//__MSG_@@extension_id__/jquery/images/ui-icons_cd0a0a_256x240.png)",*/
+	"background-image": "url(/jquery/images/ui-icons_cd0a0a_256x240.png)",
 	"float":"right",
 	"margin-right":"0px !important"
 });
 $(".ui-state-hover .ui-icon").css({});
 $(".ui-state-focus .ui-icon").css({
-/*	"background-image: url(chrome-extension":"//__MSG_@@extension_id__/jquery/images/ui-icons_cd0a0a_256x240.png)"*/
+	"background-image": "url(/jquery/images/ui-icons_cd0a0a_256x240.png)"
 });
 $(".ui-state-active .ui-icon").css({
-/*	"background-image: url(chrome-extension":"//__MSG_@@extension_id__/jquery/images/ui-icons_cd0a0a_256x240.png)"*/
+	"background-image": "url(/jquery/images/ui-icons_cd0a0a_256x240.png)"
 });
 $(".ui-state-highlight .ui-icon").css({
-/*	"background-image: url(chrome-extension":"//__MSG_@@extension_id__/jquery/images/ui-icons_cd0a0a_256x240.png)"*/
+	"background-image": "url(/jquery/images/ui-icons_cd0a0a_256x240.png)"
 });
 $(".ui-state-error .ui-icon").css({});
 $(".ui-state-error-text .ui-icon").css({
-/*	"background-image: url(chrome-extension":"//__MSG_@@extension_id__/jquery/images/ui-icons_cd0a0a_256x240.png)"*/
+	"background-image": "url(/jquery/images/ui-icons_cd0a0a_256x240.png)"
 });
 
 /* positioning */
@@ -2016,14 +2017,14 @@ $(".ui-corner-br").css({
 
 /* Overlays */
 $(".ui-widget-overlay").css({
-/*	"background: #aaaaaa",*/
+	"background": "#aaaaaa url(/jquery/images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x",
 	"opacity":".3",
 	"filter":"Alpha(Opacity=30)"
 });
 $(".ui-widget-shadow").css({
-	"margin":"-8px",
+	"margin":"-8px 0 0 -8px",
 	"padding":"8px",
-/*	"background: #aaaaaa",*/
+	"background": "#aaaaaa url(/jquery/images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x",
 	"opacity":".3",
 	"filter":"Alpha(Opacity=30)",
 	"border-radius":"8px"
