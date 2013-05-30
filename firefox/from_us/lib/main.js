@@ -6,11 +6,25 @@ var tabs = require('tabs');
 var _ = require("sdk/l10n").get;
 
 
+
+/*var mainPanel = require("panel").Panel({
+    width: '200',
+    height: '500',
+    contentScriptWhen: 'end',
+    contentScriptFile: [
+        //self.data.url('jquery/jquery.min.js'),
+        //self.data.url('jquery/jquery-ui.js'),
+        self.data.url('fromus_recuperation.js'),
+        self.data.url('dialog.js')
+    ]
+});*/
+
+
 var tbb = require('toolbarbutton').ToolbarButton({
       id: 'from-us_button',
       label: 'from-us',
-      image: self.data.url('img/on.png'),
-      onCommand: function () {
+      image: self.data.url('img/on.png')
+      /*onCommand: function () {
         //tbb.destroy(); 
         tabs.activeTab.attach ({
         	
@@ -24,27 +38,30 @@ var tbb = require('toolbarbutton').ToolbarButton({
           attachTo: ["existing", "top"],
           //contentStyleFile: self.data.url('jquery/style.css'),
           //contentStyleFile: self.data.url('jquery/jquery-ui.css'),
-          /*contentScript: 'var divs = document.getElementsByTagName("div");' +
+          contentScript: 'var divs = document.getElementsByTagName("div");' +
         'for (var i = 0; i < divs.length; ++i) {' +
           'divs[i].setAttribute("style", "border: solid red 1px;");' +
-        '}',*/
-       /*contentScript: 'var form = document.getElementById("fromusForm").getElementsByTagName("label");' +
-           'form.setAttribute("style", "float: left;text-align: right;width: 200px;");',*/
+        '}',
+       //contentScript: 'var form = document.getElementById("fromusForm").getElementsByTagName("label");' +
+       //    'form.setAttribute("style", "float: left;text-align: right;width: 200px;");',
        //contentStyleFile: self.data.url('http://sebastiensy.github.io/test/jquery-ui.css'),
        //contentStyle: ["div { padding: 10px; border: 5px solid red}"],
           
           contentScriptWhen: 'end'
-		    });
+		    });*/
 
-      }
+      //},
+    
 });
 
-if (require('self').loadReason == 'install') {
+
+
+/*if (require('self').loadReason == 'install') {
   tbb.moveTo({
     toolbarID: 'nav-bar',
     forceMove: false // only move from palette
   });
-}
+}*/
 
 // worker = tab.attach(script.js);
 // worker.on("message",handleMessage);

@@ -522,7 +522,7 @@ $(".toto #create").css({
 
 $(".toto #log").css({
 	"display":"inline-block",
-	"float":"center",
+	/*"float":"center",*/
 	"margin-left":"280px"
 });
 /*
@@ -823,11 +823,11 @@ console.log("apres button sets");
 
 /* workarounds */
 /* reset extra padding in Firefox, see h5bp.com/l */
-$("input.ui-button::-moz-focus-inner").css({});
+/*$("input.ui-button::-moz-focus-inner").css({});
 $("button.ui-button::-moz-focus-inner").css({
 	"border":"0",
 	"padding":"0"
-});
+});*/
 $(".ui-dialog").css({
 	"position":"absolute",
 	"top":"0",
@@ -1198,7 +1198,7 @@ $(".ui-tabs-vertical .ui-tabs-nav").css({
 	"background-color":"#c11f34"
 });
 $(".ui-tabs-vertical .ui-tabs-nav li").css({
-	"clear":"center",
+	/*"clear":"center",*/
 	"width":"80%",
 	"background-color":"#203064",
 	"margin-left":"0px"
@@ -1271,9 +1271,9 @@ $(".ui-tooltip").css({
 	"padding":"8px",
 	"position":"absolute",
 	"z-index":"9999",
-	"max-width":"300px",
-	"-webkit-box-shadow":"0 0 5px #aaa",
-	"box-shadow":"0 0 5px #aaa"
+	"max-width":"300px"
+	/*"-webkit-box-shadow":"0 0 5px #aaa",*/
+	/*"box-shadow":"0 0 5px #aaa"*/
 });
 $("body .ui-tooltip").css({
 	"border-width":"2px"
@@ -1439,8 +1439,8 @@ $(".ui-widget-header .ui-icon").css({
 });
 $(".ui-state-default .ui-icon").css({
 	"background-image": "url(/jquery/images/ui-icons_cd0a0a_256x240.png)",
-	"float":"right",
-	"margin-right":"0px !important"
+	"float":"right"
+	/*"margin-right":"0px !important"*/
 });
 $(".ui-state-hover .ui-icon").css({});
 $(".ui-state-focus .ui-icon").css({
