@@ -3,7 +3,7 @@
   "version": "1.0",
   
   "permissions": [
-    "tabs", "http://*/*", "storage"
+    "tabs", "http://*/*", "storage", "cookies", "*://*.google.com"
   ],
   
   "browser_action": {
