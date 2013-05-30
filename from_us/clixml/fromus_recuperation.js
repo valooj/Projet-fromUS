@@ -796,7 +796,7 @@ if(!(fromus_pricemin))
 					fromus_img = fromus_img_class.href;
 					localStorage["fromus_iimg"] = fromus_i + 1;
 				}
-				if(fromus_img = fromus_img_class.src)
+				if(fromus_img_class.src)
 				{
 					fromus_img = fromus_img_class.src;
 					localStorage["fromus_iimg"] = fromus_i + 1;
