@@ -185,10 +185,10 @@ $(document).ready(function() {
 	
 	//if (isOpen != true) {	
 
-		newDialog.tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
-		newDialog.removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+		$("#fromus_dialogBox").tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+		$("#fromus_dialogBox").removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
 		console.log("apres tabs vertical");
-		newDialog.dialog({
+		$("#fromus_dialogBox").dialog({
 	    	modal: false,
 			title: "From-us.com",
 			//show: 'clip',
@@ -300,7 +300,7 @@ $(document).ready(function() {
 
 		
 
-		newDialog.tabs({
+		$("#fromus_dialogBox").tabs({
 			active: 0,
 			activate: function(event,ui) {
 
@@ -449,7 +449,7 @@ $(document).ready(function() {
 		console.log("apres btn login logout");
 
 		//action sur le select de categorie pour la mise a jour de sscategory
-		var categ = document.getElementById('category');
+		/*var categ = document.getElementById('category');
 		categ.addEventListener('change', function(e){
 			var categV = categ.value;
 			if (categV){
@@ -464,7 +464,7 @@ $(document).ready(function() {
 
 				
 		// ouverture de la dialog box
-		newDialog.dialog("open");
+		$("#fromus_dialogBox").dialog("open");
 
 		//Recupere la liste de catégorie
 		sendToServer(_urlCategorie,{});
@@ -483,7 +483,7 @@ $(document).ready(function() {
 		localStorage.removeItem('regName');
 		localStorage.removeItem('regPrice');
 		localStorage.removeItem('regStore');
-		localStorage.removeItem('regOffer');
+		localStorage.removeItem('regOffer');*/
 
 
 

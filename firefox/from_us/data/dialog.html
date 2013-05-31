@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Titre</title>
+<!-- <script src="/jquery/jquery.min.js" type="text/javascript"></script>
+<script src="/jquery/jquery-ui.js" type="text/javascript"></script>
+<script src="fromus_recuperation.js" type="text/javascript"></script>
+<script src="dialog_css.js" type="text/javascript"></script> -->
+<link rel="stylesheet" type="text/css" href="/jquery/jquery-ui.css">
+</head> 
+<body>
+
+
+
+<div id="fromus_dialogBox" class="toto"> 
+						<div id="fromus_tabs"> 
+							<ul> 
+								<li><a href="#fromus_tabs-1">tabAdd</a></li> 
+								<li><a href="#fromus_tabs-1">tabBuy</a></li> 
+								<li><a href="#fromus_tabs-2">tabAccount</a></li> 
+							</ul> 
+							<div id="fromus_tabs-1"> 
+								<h2>FormP</h2> 
+								<form id="fromusForm">  
+
+									<label for="store">Merchant</label><input type="textbox" id="fromus_store" disabled="true"/></br> 
+									<label for="name">NameP</label><input type="textbox" id="fromus_name" disabled="true"/><input type="button" value="test" id="fromus_morename" /></br>  
+									<label for="price">PriceP</label><input type="textbox" id="fromus_price" /></br> 
+									<label for="category">CategP</label> 
+										<select id="category"> 
+										</select></br> 
+									<label for="sscategory">SCategP</label> 
+										<select id="sscategory"> 
+
+										</select></br> 
+									<label id="fromus_quantite" for="quantite">QuantityP</label><input id="QteSpinner" value="1"></br> 
+									<label id="fromus_assurance" for="assurance">InsuranceP</label> 
+									<div id="fromus_divassurance"> 
+										<input type="checkbox" id="fromus_checkassurance" name="assurance" /> 
+									</div> 
+								</form> 
+							</div> 
+							<div id="fromus_tabs-2"> 
+								<h2>From-us.com</h2> 
+
+								<p>MsgIdPass</p> 
+								<label for="idfromus">EmailU</label><input type="textbox" id="idfromus" /></br> 
+								<label for="mdpfromus">PasswordU</label><input type="password" id="mdpfromus" /></br> 
+
+								<input type="button" value="login" id="log" /> 
+								<a href="http://from-us.com/fromus" target="_blank">OubliU</a> 
+								<a href="http://from-us.com/fromus" target="_blank">CreateU</a> 
+							</div> 
+						</div> 
+						<a href="http://from-us.com/fromus" target=_blank><img id="logofromus" height="100" src=""/></a> 
+					</div>
+
+</body>
+</html> 
