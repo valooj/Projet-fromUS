@@ -185,7 +185,7 @@ $(document).ready(function() {
 	
 	//if (isOpen != true) {	
 
-		$("#fromus_dialogBox").tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+		/*$("#fromus_dialogBox").tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
 		$("#fromus_dialogBox").removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
 		console.log("apres tabs vertical");
 		$("#fromus_dialogBox").dialog({
@@ -280,9 +280,9 @@ $(document).ready(function() {
 						}
 					},
 				]
-	    });
+	    });*/
 
-		console.log("apres newDialog");
+		/*console.log("apres newDialog");
 
 		var bindEvent = function(elem ,evt,cb) {
 			//vérifie si addEventListenerexiste dans l'élément
@@ -296,11 +296,11 @@ $(document).ready(function() {
 					cb.call(event.srcElement,event);
 				});
 			}
-		}
+		}*/
 
 		
 
-		$("#fromus_dialogBox").tabs({
+		/*$("#fromus_dialogBox").tabs({
 			active: 0,
 			activate: function(event,ui) {
 
@@ -346,13 +346,13 @@ $(document).ready(function() {
 			}
   		});
 
-		console.log("apres dialog tabs");
+		console.log("apres dialog tabs");*/
 
 						
 		// creation du spinner pour la quantite
-		var newSpinner = $( "#QteSpinner" ).spinner({
+		/*var newSpinner = $( "#QteSpinner" ).spinner({
 			min: 1
-		});	
+		});	*/
 
 		/*var value;
 		var $container=$("#QteSpinner");
@@ -393,7 +393,7 @@ $(document).ready(function() {
 
 		console.log("apres ajout automatiquement");
 
-		var fromus_morename = document.getElementById('fromus_morename');
+		/*var fromus_morename = document.getElementById('fromus_morename');
 		fromus_morename.addEventListener('click', function(e){
 			console.log('morename');
 			localStorage["fromus_morename"] =	JSON.stringify(true);
@@ -412,12 +412,7 @@ $(document).ready(function() {
 
 		
 		
-		/*$( "#fromus_morename" ).button({
-      icons: {
-        primary: "ui-icon-locked"
-      },
-      text: false
-  		});*/
+		
 
 
 
@@ -446,7 +441,7 @@ $(document).ready(function() {
 				    
 		}, false);
 
-		console.log("apres btn login logout");
+		console.log("apres btn login logout");*/
 
 		//action sur le select de categorie pour la mise a jour de sscategory
 		/*var categ = document.getElementById('category');
