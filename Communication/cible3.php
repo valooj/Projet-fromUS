@@ -1,7 +1,7 @@
 <?php
 header('Content-type: application/json');
 
-//file_put_contents('./trace.txt', print_r($_REQUEST, 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
+file_put_contents('./trace.txt', print_r($_REQUEST, 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
 
 // Requete insert to .... on duplicate key
 //Permet d'insérer un element , si il existe déja, il est mit à jour. 
