@@ -62,7 +62,7 @@ function sendToServer(urlSelected, jsonSelected) {
 
 			case 'L':
 				token = datas['Token'];
-				createCookie('token',token,21);
+				createCookie('tokenFU',token,21);
 				Nick_Name = datas['Message'];
 				createCookie('Nick_Name',Nick_Name,21);
 				document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgWelcome")+Nick_Name;
@@ -520,11 +520,9 @@ $(document).ready(function() {
 		sendToServer(_urlCategorie,{});
 
 		//Récupere le token 
-		if(readCookie('token')){
-			token=readCookie('token');
+		if(readCookie('tokenFU')){
+			token=readCookie('tokenFU');
 			(!token)?in_out.value = 'login' : in_out.value = 'logout';
-			alert(token);
-			alert(readCookie('Nick_Name'));
 			if(readCookie('Nick_Name')){
 				var Nick_Name = readCookie('Nick_Name');
 				document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgWelcome")+Nick_Name;

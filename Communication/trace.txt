@@ -1,0 +1,102 @@
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token] => 519f36d777c47
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token] => 519f36d777c47
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token] => 51a86d7a29442
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token] => 51a86e87c3041
+)
+
+===========================================
