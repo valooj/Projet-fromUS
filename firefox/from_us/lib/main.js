@@ -1,80 +1,73 @@
-// Import the page-mod API
-var pageMod = require('sdk/page-mod');
-// Import the self API
-var self = require('sdk/self');
+// import the modules we need
+var data = require('self').data;
+var {Cc, Ci} = require('chrome');
+var mediator = Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator);
 var tabs = require('tabs');
-var _ = require("sdk/l10n").get;
+var self = require('self');
 
-
-
-/*var mainPanel = require("panel").Panel({
-    width: '200',
-    height: '500',
-    contentScriptWhen: 'end',
-    contentScriptFile: [
-        //self.data.url('jquery/jquery.min.js'),
-        //self.data.url('jquery/jquery-ui.js'),
-        self.data.url('fromus_recuperation.js'),
-        self.data.url('dialog.js')
-    ]
-});*/
-
-
-var tbb = require('toolbarbutton').ToolbarButton({
-      id: 'from-us_button',
-      label: 'from-us',
-      image: self.data.url('img/on.png')
-      /*onCommand: function () {
-        //tbb.destroy(); 
-        tabs.activeTab.attach ({
-        	
-        	contentScriptFile: [
-            self.data.url('jquery/jquery.min.js'),
-        		self.data.url('jquery/jquery-ui.js'),
-            self.data.url('fromus_recuperation.js'),
-            self.data.url('dialog.js'),
-            self.data.url('css.js')
-          ],
-          attachTo: ["existing", "top"],
-          //contentStyleFile: self.data.url('jquery/style.css'),
-          //contentStyleFile: self.data.url('jquery/jquery-ui.css'),
-          contentScript: 'var divs = document.getElementsByTagName("div");' +
-        'for (var i = 0; i < divs.length; ++i) {' +
-          'divs[i].setAttribute("style", "border: solid red 1px;");' +
-        '}',
-       //contentScript: 'var form = document.getElementById("fromusForm").getElementsByTagName("label");' +
-       //    'form.setAttribute("style", "float: left;text-align: right;width: 200px;");',
-       //contentStyleFile: self.data.url('http://sebastiensy.github.io/test/jquery-ui.css'),
-       //contentStyle: ["div { padding: 10px; border: 5px solid red}"],
-          
-          contentScriptWhen: 'end'
-		    });*/
-
-      //},
-    
-});
-
-
-
-/*if (require('self').loadReason == 'install') {
-  tbb.moveTo({
-    toolbarID: 'nav-bar',
-    forceMove: false // only move from palette
-  });
-}*/
-
-// worker = tab.attach(script.js);
-// worker.on("message",handleMessage);
+function pmclick(){
+	var pageMod = require("sdk/page-mod").PageMod({
+		  include: "http://*",
+		  contentStyleFile: data.url("jquery/jquery-ui.css"),
+		  contentScriptFile: [
+		            data.url('jquery/jquery.min.js'),
+		        	data.url('jquery/jquery-ui.js'),
+		            data.url('fromus_recuperation.js'),
+		            data.url('dialog_css.js')
+		            ],
+		  contentScriptWhen: 'end',
+		  
+		});
+	}
  
-// Create a page mod
-// It will run a script whenever a ".org" URL is loaded
-// The script replaces the page contents with a message
-/*pageMod.PageMod({
-  include: 'http://*',
-  contentScriptFile: [self.data.url('jquery.min.js'),
-                      self.data.url('fromus_favelet_comments.js')],
-  contentScriptWhen: 'end'
-});*/
+// exports.main is called when extension is installed or re-enabled
+exports.main = function(options, callbacks) {
+	addToolbarButton();
+	
+	// do other stuff
+};
+ 
+// exports.onUnload is called when Firefox starts and when the extension is disabled or uninstalled
+exports.onUnload = function(reason) {
+	removeToolbarButton();
+	// do other stuff
+};
+ 
+// add our button
+function addToolbarButton() {
+	// this document is an XUL document
+	var document = mediator.getMostRecentWindow('navigator:browser').document;		
+	var navBar = document.getElementById('nav-bar');
+	if (!navBar) {
+		return;
+	}
+	var btn = document.createElement('toolbarbutton');	
+	btn.setAttribute('id', 'mybutton-id');
+	btn.setAttribute('type', 'button');
+	// the toolbarbutton-1 class makes it look like a traditional button
+	btn.setAttribute('class', 'toolbarbutton-1');
+	// the data.url is relative to the data folder
+	btn.setAttribute('image', data.url('img/on.png'));
+	btn.setAttribute('orient', 'horizontal');
+	// this text will be shown when the toolbar is set to text or text and iconss
+	btn.setAttribute('label', 'My Button');
+	btn.addEventListener('click', function() {
+		// do stuff, for example with tabs or pageMod
+		console.log('test');
+		pmclick();
+		
 
-// handleMessage(message);
-// request.post(message);
+		
+	}, false)
+	navBar.appendChild(btn);
+}
+ 
+function removeToolbarButton() {
+	// this document is an XUL document
+	var document = mediator.getMostRecentWindow('navigator:browser').document;		
+	var navBar = document.getElementById('nav-bar');
+	var btn = document.getElementById('mybutton-id');
+	if (navBar && btn) {
+		navBar.removeChild(btn);
+	}
+}

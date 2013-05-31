@@ -462,27 +462,7 @@ $(document).ready(function() {
 		//console.log(form);
 		//form.setAttribute("style", "float:right;text-align:right;width:200px;");
 
-		
-		$(".toto .ui-dialog-titlebar").css({
-			"background-color": "#203064",	
-			"text-align": "left"
-		});
-		$("#ui-id-4").css({
-			"width": "858px"
-		});
-		$(".toto .ui-widget-header").css({
-			"background-color": "#203064"
-		});
-		$(".toto label").css({
-			"display": "inline-block",
-			"width": "130px",
-			"text-align": "right",
-			"margin-left": "90px",
-			"margin-top": "3px"
-		});
-
-
-		
+				
 		// ouverture de la dialog box
 		newDialog.dialog("open");
 
