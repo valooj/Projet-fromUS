@@ -101,7 +101,7 @@ function sendToServer(urlSelected, jsonSelected) {
 
 			case 'p':
 				points = datas['Message'];
-				document.getElementById("ptsFU").value = points ;
+				document.getElementById("ptsFU").value = points+' pts' ;
 			break;
 
 			case 'c':
@@ -229,6 +229,13 @@ $(document).ready( function () {
   	});
 
   	$("img[id='lgfr']").click(function() {
+		language = fr;
+		alert(language);
+
+  	});
+  	$("img[id='lgfr']").click(function() {
+		language = en;
+		alert(language);
 		
   	});
 
@@ -247,18 +254,18 @@ function showLog(){
 
 
 regStore = localStorage["regStore"];
-		$('#fromus_store').attr('value',regStore);
+			$('#fromus_store').attr('value',regStore);
 
-		// ajout du nom automatiquement
-		regName = localStorage["regName"];
-		$('#fromus_name').attr('value',regName);
+			// ajout du nom automatiquement
+			regName = localStorage["regName"];
+			$('#fromus_name').attr('value',regName);
 
-		// ajout du prix automatiquement
-		regPrice = localStorage["regPrice"];
-		$('#fromus_price').attr('value',regPrice);
+			// ajout du prix automatiquement
+			regPrice = localStorage["regPrice"];
+			$('#fromus_price').attr('value',regPrice);
 
-		regOffer = localStorage["regOffer"];
+			regOffer = localStorage["regOffer"];
 
-		regDesc = localStorage["regDesc"];
+			regDesc = localStorage["regDesc"];
 
-		regVisu = localStorage["regImg"];
+			regVisu = localStorage["regImg"];

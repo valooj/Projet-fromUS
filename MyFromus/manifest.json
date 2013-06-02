@@ -1,6 +1,6 @@
 {
   "name": "from-us.com",
-  "description": "This extension demonstrates a browser action with kittens.",
+  "description": "from-us",
   "version": "1.0",
 
   "permissions": [
