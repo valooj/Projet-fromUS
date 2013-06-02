@@ -472,20 +472,21 @@ try
 
 			// variables tests
 			if ( !$get_url )
-				throw new Exception($lng['invalid_token']);
+				throw new Exception($lng['invalid_url']);
 
 			$req = $bdd->prepare('SELECT sa_chemin FROM site_access where sa_site= :_url and sa_valid= :_valid');
-			$req->execute(array('_token' =>$get_token));
-			$tokId = $req->fetch();
-			$tokId = $tokId[0];
+			$req->execute(array(
+			    '_url' => $get_url,
+			    '_valid' => 0));
+			$chemin = $req->fetch();
+			$chemin = $chemin[0];
 			$req->closeCursor();
 
-			if(!$tokId)
-				throw new Exception($lng['invalid_token']);
+			if(!$chemin)
+				throw new Exception($lng['invalid_url']);
 			
-	        $response['Status'] = 'p';
-	        $response['Message'] = $pts;
-			break;
+	        $response['Status'] = 'a';
+	        $response['Message'] = $chemin;
 			break;
 
 		default:

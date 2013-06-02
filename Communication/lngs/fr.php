@@ -21,4 +21,5 @@
 	$lng['choix_categ'] = ' Choisissez une catégorie ';
 	$lng['choix_scateg'] = ' Choisissez une sous-catégorie';
 
+	$lng['invalid_url'] = 'Erreur :: Url non valide';
 ?>
