@@ -229,14 +229,17 @@ $(document).ready( function () {
   	});
 
   	$("img[id='lgfr']").click(function() {
-		language = fr;
-		alert(language);
+	
+		alert('fr');
+		//config.i18n.default_locale = 'fr'
+		alert('fr');
 
   	});
-  	$("img[id='lgfr']").click(function() {
-		language = en;
-		alert(language);
+  	$("img[id='lgen']").click(function() {
 		
+		alert('en');
+		//config.i18n.default_locale = 'en'
+		alert('en');
   	});
 
 });
