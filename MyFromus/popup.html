@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
+  <head>
+    <title>From-US</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" type="text/css" href="styleFU.css">
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
+      -->
+    <script type="text/javascript" src="jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery/jquery-ui.js"></script>
+    <script type="text/javascript" src="popup.js"></script>
+  </head>
+  <body>
+  <div>
+    <div id="selectLang">
+      <img src = "img/fr.png" id="lgfr"></img>
+      <img src = "img/en.png" id="lgen"></img>
+      <img src = "img/de.png" id="lgde"></img>
+    </div>
+    <FORM name="loginU" id="loginU">
+     <input type="textbox" id="emailBox" placeholder="email"/><input type="password" id="passBox" placeholder="password"/>
+     <INPUT TYPE="button" NAME="logB" VALUE="Login" id="connect">
+    </FORM>
+    <div id="isconnect">
+      <input type="textbox" id="nick_name" disabled="true" style='border:none'/></br>
+      <input type="textbox" id="ptsFU" disabled="true" style='border:none'/></br>
+      <INPUT TYPE="button" NAME="dislogB" id="disconnect">
+    </div>
+
+  </div>
+
+  <div id="menu">
+    <div class="element_menu">
+      <ul id="onglets">
+        <li class="active"><a href="#tab1" id="tabAdd"></a></li>
+        <li><a href="#tab2" id="tabBuy"></a></li>
+      </ul>
+    </div>
+  </div>
+
+    <div id="corpAdd">
+      <input type="textbox" id="msgServer" disabled="true" style='border:none'/>
+      <div id="fromus_tabs">
+        <h2 id="FormP"></h2>
+        <form id="fromusForm">
+          <label for="store" id="store"></label><input type="textbox" id="fromus_store" disabled="true"/></br>
+            <label for="name" id="nameP"></label><input type="textbox" id="fromus_name" disabled="true"/></br>
+            <label for="price" id="priceP" ></label><input type="textbox" id="fromus_price" /></br>
+            <label for="category" id="categP"></label>
+            <select id="category">
+            </select></br>
+            <label for="sscategory" id="scategP"></label>
+            <select id="sscategory">
+            </select></br>
+
+        <div class="content" id="tab1">
+          <input type="button" id="addP">
+        </div>
+        <div class="content" id="tab2">
+          <label id="fu_quantite" for="quantite"></label><input id="QteSpinner" value="1"></br>
+          <label id="fu_assurance" for="assurance"></label><input type="checkbox" id="checkassur" name="assurance" /></br>
+          <input type="button" id="buyP"> 
+        </div>
+        </form>
+      </div>
+
+    </div>
+
+  </body>
+</html>
+

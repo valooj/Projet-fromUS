@@ -9,7 +9,7 @@ $sql_prepared_update_product = <<<SQL
 INSERT INTO produits(prd_libelle, prd_site, prd_desc, prd_cat, prd_visu, prd_prix, prd_vis)
 	VALUES (:_libelle, :_site, :_desc, :_cat, :_visu, :_prix, :_vis)
 	ON DUPLICATE KEY UPDATE
-		prd_desc= :_desc, prd_cat= :_cat, prd_visu= :_visu, prd_prix= :_prix, prd_vis= :_vis
+		prd_desc= :_desc, prd_visu= :_visu, prd_prix= :_prix, prd_vis= :_vis
 SQL;
 
 $sql_prepared_update_bonus = <<<SQL
@@ -81,7 +81,7 @@ try
 
 			if ( !is_numeric($get_product['prd_cat']) )
 				throw new Exception($lng['invalid_categ']);
-
+/*
 			//Recupere l'id a partir du token
 			$req = $bdd->prepare('SELECT tok_user FROM token where tok_token= :_token');
 			$req->execute(array('_token' =>$get_token));
@@ -91,6 +91,7 @@ try
 
 			if(!$tokId)
 				throw new Exception($lng['invalid_token']);
+*/
 					
 			// code MAJ du produit visité
 			$req = $bdd->prepare($sql_prepared_update_product);
@@ -105,7 +106,7 @@ try
             
             if(!$rep)
             	throw new Exception($lng['invalid_insert']);
-
+/*
 			$bonus = ($req->rowCount() == 1) ? 100 : ( ($req->rowCount() == 0) ? 0 : 50 );
 			$req->closeCursor(); 
 
@@ -118,7 +119,40 @@ try
 
             $response['Status'] = 'A';
 	        $response['Message'] = $lng['win'].$bonus.' pts';
+*/
+	        $response['Status'] = 'A';
+	        $response['Message'] = 'confirmation product';
 			break;
+
+		case 'MAJ-pts':
+
+			// variables
+			$get_token = isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
+
+			// variables tests
+			if ( !$get_token )
+				throw new Exception($lng['invalid_token']);
+
+			$req = $bdd->prepare('SELECT tok_user FROM token where tok_token= :_token');
+			$req->execute(array('_token' =>$get_token));
+			$tokId = $req->fetch();
+			$tokId = $tokId[0];
+			$req->closeCursor();
+
+			if(!$tokId)
+				throw new Exception($lng['invalid_token']);
+
+			$req = $bdd->prepare('SELECT pts_nb FROM pts_bonus where pts_cli= :_cli');
+			$req->execute(array('_cli' =>$tokId));
+			$pts = $req->fetch();
+			$pts = $pts[0];
+			$req->closeCursor();
+
+			
+	        $response['Status'] = 'p';
+	        $response['Message'] = $pts;
+			break;
+
 
 		case 'MAJ-panier':
 
@@ -430,6 +464,28 @@ try
 			//$reponse['Message'] = $cat;
 			$req->closeCursor();
 
+			break;
+
+		case 'MAJ-access':
+			// variables
+			$get_url = isset($_POST['url_site']) ? htmlspecialchars($_POST['url_site']) : null;
+
+			// variables tests
+			if ( !$get_url )
+				throw new Exception($lng['invalid_token']);
+
+			$req = $bdd->prepare('SELECT sa_chemin FROM site_access where sa_site= :_url and sa_valid= :_valid');
+			$req->execute(array('_token' =>$get_token));
+			$tokId = $req->fetch();
+			$tokId = $tokId[0];
+			$req->closeCursor();
+
+			if(!$tokId)
+				throw new Exception($lng['invalid_token']);
+			
+	        $response['Status'] = 'p';
+	        $response['Message'] = $pts;
+			break;
 			break;
 
 		default:

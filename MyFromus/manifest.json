@@ -1,0 +1,24 @@
+{
+  "name": "from-us.com",
+  "description": "This extension demonstrates a browser action with kittens.",
+  "version": "1.0",
+
+  "permissions": [
+    "https://secure.flickr.com/", "tabs", "http://*/*", "storage", "cookies"
+  ],
+
+  "browser_action": {
+    "name": "from-us.com",
+    "default_icon": "img/on.png",
+    "default_popup": "popup.html"
+  },
+/*
+  "background": {
+      "persistent" : false,
+      "scripts" : ["event.js"]
+  },
+*/
+  "manifest_version": 2,
+  "default_locale": "en"
+  
+}
