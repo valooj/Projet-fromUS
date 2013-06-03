@@ -1,7 +1,7 @@
 var data = require('sdk/self').data;
 var tabs = require('sdk/tabs');
-var _ = require("sdk/l10n").get;
-console.log(_("tabAdd"));
+
+
 
 var fromus_panel = require('panel').Panel({
 	width: 200,
@@ -9,12 +9,25 @@ var fromus_panel = require('panel').Panel({
 	//focus: false,
 	contentURL: data.url('popup.html'),
 	contentScriptFile: [
-            	/*data.url('jquery/jquery.min.js'),
-        		data.url('locales/en/enLng.js'),
-        		data.url('locales/fr/frLng.js'),
-        		data.url('langue.js'),
-        		data.url('popup.js')*/
-        		]
+            	//data.url('jquery/jquery.min.js'),
+        		//data.url('locales/en/enLng.js'),
+        		//data.url('locales/fr/frLng.js'),
+        		//data.url('langue.js'),
+        		//data.url('fromus_recuperation.js'),
+        		//data.url('popup.js')
+        		],
+    contentScriptWhen : "end"
+});
+
+var pageMod = require("sdk/page-mod");
+ 
+pageMod.PageMod({
+  include: "*",
+  contentScriptFile: [
+  	data.url('fromus_recuperation.js')
+  	],
+  contentScriptWhen : "end",
+  attachTo: ["existing", "top"]
 });
 
 var tbb = require('toolbarbutton').ToolbarButton({

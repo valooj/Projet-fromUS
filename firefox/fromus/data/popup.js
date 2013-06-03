@@ -11,6 +11,8 @@ var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=M
 var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&lng='+defLng+'&sscateg=';
 var _urlPts = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-pts&lng='+defLng+'&token=';
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('tabAdd').innerHTML = i18n("tabAdd") ;
     document.getElementById('tabBuy').innerHTML = i18n("tabBuy") ;
@@ -27,6 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('buyP').value = i18n("ButtonBuy") ;
 	document.getElementById('fu_quantite').innerHTML = i18n("QuantityP") ;
 	document.getElementById('fu_assurance').innerHTML = i18n("InsuranceP") ;
+
+
+	document.getElementById('fromus_store').value = regStore ;
 
 });
 
@@ -235,6 +240,8 @@ $(document).ready( function () {
 		changeLng('en');
   	});
 
+  	
+
 });
 
 
@@ -247,4 +254,3 @@ function showLog(){
 	$("#loginU").show();
 	$("#isconnect").hide();
 };
-
