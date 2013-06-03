@@ -2933,3 +2933,219 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51ac773e1ab7a
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => en
+    [token] => 51ac773e1ab7a
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51ac773e1ab7a
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51ac773e1ab7a
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => en
+    [token] => 51ac773e1ab7a
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => en
+    [token] => 51ac773e1ab7a
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => en
+    [token] => 51ac773e1ab7a
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51ac773e1ab7a
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => en
+    [token] => 51ac773e1ab7a
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => en
+    [token] => 51ac773e1ab7a
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => en
+    [token] => 51ac773e1ab7a
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => en
+    [token] => 51ac773e1ab7a
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => en
+    [token] => 51ac773e1ab7a
+)
+
+===========================================
