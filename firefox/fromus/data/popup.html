@@ -11,9 +11,9 @@
       -
       - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
       -->
-    <!--<script type="text/javascript" src="jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery/jquery.min.js"></script>
     <script type="text/javascript" src="jquery/jquery-ui.js"></script>
-    <script type="text/javascript" src="popup.js"></script>-->
+    <script type="text/javascript" src="popup.js"></script>
   </head>
   <body>
   <div>
@@ -48,7 +48,7 @@
         <form id="fromusForm">
           <label for="store" data-l10n-id="Merchant"></label><input type="textbox" id="fromus_store" disabled="true"/></br>
             <label for="name" data-l10n-id="NameP"></label><input type="textbox" id="fromus_name" disabled="true"/></br>
-            <label for="price" data-l10n-id="PriceP" ></label><input type="textbox" id="fromus_price" /></br>
+            <label for="price" data-l10n-id="PriceP" ></label><input type="textbox" id="fromus_price" disabled="true"/></br>
             <label for="category" data-l10n-id="CategP"></label>
             <select id="category">
             </select></br>
@@ -57,7 +57,7 @@
             </select></br>
 
         <div class="content" id="tab1">
-          <input type="button" id="addP">
+          <input type="button" data-l10n-id="ButtonAdd">
         </div>
         <div class="content" id="tab2">
           <label data-l10n-id="QuantityP" for="quantite"></label><input id="QteSpinner" value="1"></br>

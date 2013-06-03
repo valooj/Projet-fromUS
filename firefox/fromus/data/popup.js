@@ -3,6 +3,7 @@ var Nick_Name;
 var language;
 var points;
 
+
 var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&token=';
 var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&token=';
 var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&token=';
