@@ -12,11 +12,20 @@
     "default_icon": "img/on.png",
     "default_popup": "popup.html"
   },
-/*
+
   "background": {
       "persistent" : false,
-      "scripts" : ["event.js"]
+     "scripts" : ["event.js"] 
   },
-*/
+
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["clixml/fromus_recuperation.js"],
+      "run_at": "document_end"
+    }
+  ],
+
   "manifest_version": 2
 }

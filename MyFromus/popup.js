@@ -10,6 +10,7 @@ var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-l
 var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-categorie&lng='+defLng;
 var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&lng='+defLng+'&sscateg=';
 var _urlPts = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-pts&lng='+defLng+'&token=';
+var _urlAccessIn = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-accessIn';
 
 document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('tabAdd').innerHTML = i18n("tabAdd") ;
@@ -28,6 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('fu_quantite').innerHTML = i18n("QuantityP") ;
 	document.getElementById('fu_assurance').innerHTML = i18n("InsuranceP") ;
 
+	document.getElementById('fromus_store').value = localStorage["popup_store"] ;
+
 });
 
 window.onload = function() {
@@ -44,9 +47,7 @@ window.onload = function() {
 	}
 	else 
 		showLog();
-
-	//$("#tab2").hide();
-
+	searchInfo();
 };
 
 //Pour creer le cookie 
@@ -114,6 +115,52 @@ function sendToServer(urlSelected, jsonSelected) {
 
 			case 'A':
 				document.getElementById('msgServer').value = datas['Message'];
+			break;
+
+			case 'a':
+				//fromus_sitelist[localStorage["popup_store"]] = new fromus_siteObj();
+				//alert(datas['Message']['sa_chemin']);
+				var elem = datas['Message']['sa_chemin'].split('/');
+				//alert(elem[2]);
+				for(var i=0 ; i<elem.length ; i++)
+				{
+				    if(elem[i].indexOf('price_class') !== (-1)){
+				  		var sous_elem = elem[i].split('<-->');
+				  		//alert(sous_elem[0]);
+				  		//alert(sous_elem[1]);
+				  		//fromus_sitelist[localStorage["popup_store"]].price_id.push(sous_elem[1]);
+				  		//i = elem.length+1;
+				  	}
+				  	else if(elem[i].indexOf('price_id') !== (-1)){
+				  	 var sous_elem = elem[i].split('<-->');
+				  		//alert(sous_elem[0]);
+				  		//alert(sous_elem[1]);
+				  		//fromus_sitelist[localStorage["popup_store"]].price_class.push(sous_elem[1]);
+				  		//i = elem.length+1;
+				  	} 
+				} /*
+				for(var i=0 ; i<elem.length ; i++)
+				{
+				  	if(elem[i].indexOf('name_class') == -1){
+				  		if(elem[i].indexOf('name_id') == -1)
+				  			document.getElementById('fromus_name').value = '?' ;
+				  		else{
+				  			var sous_elem = elem[1].split('<-->');
+				  			alert(sous_elm[1]);
+				  			//fromus_sitelist[localStorage["popup_name"]].price_id.push(sous_elem[1]);
+				  			i = elem.length + 1;
+				  		}
+				  	}
+				  	else {
+				  		var sous_elem = elem[1].split('<-->');
+				  		alert(sous_elm[1]);
+				  		//fromus_sitelist[localStorage["popup_name"]].price_class.push(sous_elem[1]);
+				  		i = elem.length + 1;
+				  	}
+				} */
+
+			break;
+
 			break;
 
 			case 'C':
@@ -237,6 +284,12 @@ $(document).ready( function () {
 
 });
 
+function searchInfo (){
+	var jsonUrl = {info_url:localStorage["popup_store"]};
+	var postUrl = JSON.stringify(jsonUrl);
+	var urlJSON = {url_site:postUrl};
+	sendToServer(_urlAccessIn+'&url_site='+localStorage["popup_store"], {});
+}
 
 function hideLog(){
 	$("#loginU").hide();

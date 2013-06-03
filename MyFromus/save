@@ -7,7 +7,7 @@ function i18n(text){
 
 function changeLng(lng){
 	_lng = lng;
-	$.get('_locales/'+_lng+'/messages.json', function(data){
+	.get('_locales/'+_lng+'/messages.json', function(data){
 		lng_lib=eval('return'+data+';');
 	} );
 
@@ -63,7 +63,7 @@ function changeLng(lng){
 	alert('try ' + lng);
 	_lng = readCookie('_lng');
 
-	$.get('_locales/'+_lng+'/messages.json', function(data){
+	.get('_locales/'+_lng+'/messages.json', function(data){
 		alert('? ' + _lng);
 		//eval('lng_lib = data;');
 		//alert(i18n('tabAdd'));
@@ -71,3 +71,8 @@ function changeLng(lng){
 	});
 
 }
+
+
+
+
+name_class<-->bwcProductTitle;price_class<-->mpsTotalPriceMoney;img_class<-->itemimage;desc_id<-->ctl00_TemplateContentPlaceHolder_ctlProductSummary_divDescription;name_id<-->AuthorArtistTitle_productTitle;name_id<-->StorePromo_title;img_id<-->ImageVideo_ImageRepeater_ctl00_Image;img_id<-->StorePromo_imgPromo;price_id<-->spanMainTotalPrice;price_id<-->StorePromo_PriceText;desc_id<-->divDescription;desc_id<-->StorePromo_spnDescription1;
