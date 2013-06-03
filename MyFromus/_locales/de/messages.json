@@ -1,0 +1,72 @@
+{
+	"tabAdd": {
+		"message": "hinzufügen"
+	},
+	"tabBuy": {
+		"message": "Bestellen"
+	},
+	"tabAccount": {
+		"message": "Mein Konto"
+	},
+	"Merchant": {
+		"message": "Der Händler : "
+	},
+	"NameP": {
+		"message": "Producktname : "
+	},
+	"PriceP": {
+		"message": "Wares Preis : "
+	},
+	"CategP": {
+		"message": "Kategorie : "
+	},
+	"SCategP": {
+		"message": "UnterKategorie : "
+	},
+	"QuantityP": {
+		"message": "Bretag : "
+	},
+
+	"InsuranceP": {
+		"message": "Versicherung : "
+	},
+	"MsgIdPass": {
+		"message": "Please enter your email and From-us.com password ."
+	},
+	"EmailU": {
+		"message": "Email : "
+	},
+	"PasswordU": {
+		"message": "Passwort : "
+	},
+	"oubliU": {
+		"message": "Forgot your email or password? "
+	},
+	"CreateU": {
+		"message": "Create an account "
+	},
+	"FormP": {
+		"message": "Product sheet "
+	},
+	"ButtonBuy": {
+		"message": "Bestellen "
+	},
+	"ButtonAdd": {
+		"message": "Datenbatt hinzufügen"
+	},
+	"MsgWelcome": {
+		"message": "Welcome "
+	},
+	"MsgConnect": {
+		"message": "You must login"
+	},
+	"MsgBD": {
+		"message": "Error :: connection to the server could not"
+	},
+	"MsgBD": {
+		"message": "Error :: connection to the server could not"
+	},
+	"ButtonReset": {
+		"message": "Reset"
+	}
+}

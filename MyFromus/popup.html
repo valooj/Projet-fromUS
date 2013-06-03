@@ -16,7 +16,7 @@
     <script type="text/javascript" src="popup.js"></script>
   </head>
   <body>
-  <div>
+  <div id="header">
     <div id="selectLang">
       <img  src = "img/fr.png" id="lgfr"></img>
       <img  src = "img/en.png" id="lgen"></img>
@@ -31,7 +31,6 @@
       <input type="textbox" id="ptsFU" disabled="true" style='border:none'/></br>
       <INPUT TYPE="button" NAME="dislogB" id="disconnect">
     </div>
-
   </div>
 
   <div id="menu" class="element_menu">
@@ -46,29 +45,30 @@
       <div id="fromus_tabs">
         <h2 id="FormP"></h2>
         <form id="fromusForm">
-          <label for="store" id="store"></label><input type="textbox" id="fromus_store" disabled="true"/></br>
-            <label for="name" id="nameP"></label><input type="textbox" id="fromus_name" disabled="true"/></br>
-            <label for="price" id="priceP" ></label><input type="textbox" id="fromus_price" /></br>
-            <label for="category" id="categP"></label>
-            <select id="category">
-            </select></br>
-            <label for="sscategory" id="scategP"></label>
-            <select id="sscategory">
-            </select></br>
+          <label for="store" id="store"></label></br>
+          <input type="textbox" id="fromus_store" disabled="true"/></br>
+          <label for="name" id="nameP"></label></br>
+          <input type="textbox" id="fromus_name" disabled="true"/></br>
+          <label for="price" id="priceP" ></label></br>
+          <input type="textbox" id="fromus_price" /></br>
+          <label for="category" id="categP"></label></br>
+          <select id="category">
+          </select></br>
+          <label for="sscategory" id="scategP"></label></br>
+          <select id="sscategory">
+          </select></br>
 
-        <div class="content" id="tab1">
-          <input type="button" id="addP">
-        </div>
-        <div class="content" id="tab2">
-          <label id="fu_quantite" for="quantite"></label><input id="QteSpinner" value="1"></br>
-          <label id="fu_assurance" for="assurance"></label><input type="checkbox" id="checkassur" name="assurance" /></br>
-          <input type="button" id="buyP"> 
-        </div>
+          <div class="content" id="tab1">
+            <input type="button" id="addP">
+          </div>
+          <div class="content" id="tab2">
+            <label id="fu_quantite" for="quantite"></label><input id="QteSpinner" value="1"></br>
+            <label id="fu_assurance" for="assurance"></label><input type="checkbox" id="checkassur" name="assurance" /></br>
+            <input type="button" id="buyP"> 
+          </div>
         </form>
       </div>
-
     </div>
-
   </body>
 </html>
 
