@@ -36,23 +36,23 @@
 
   <div id="menu" class="element_menu">
     <ul id="onglets">
-      <li><a href="#tab1" id="tabAdd"></a></li>
-      <li><a href="#tab2" id="tabBuy"></a></li>
+      <li><a href="#tab1" data-l10n-id="tabAdd"></a></li>
+      <li><a href="#tab2" data-l10n-id="tabBuy"></a></li>
     </ul>
   </div>
 
     <div id="corpAdd">
       <input type="textbox" id="msgServer" disabled="true" style='border:none'/>
       <div id="fromus_tabs">
-        <h2 id="FormP"></h2>
+        <h2 data-l10n-id="FormP"></h2>
         <form id="fromusForm">
-          <label for="store" id="store"></label><input type="textbox" id="fromus_store" disabled="true"/></br>
-            <label for="name" id="nameP"></label><input type="textbox" id="fromus_name" disabled="true"/></br>
-            <label for="price" id="priceP" ></label><input type="textbox" id="fromus_price" /></br>
-            <label for="category" id="categP"></label>
+          <label for="store" data-l10n-id="Merchant"></label><input type="textbox" id="fromus_store" disabled="true"/></br>
+            <label for="name" data-l10n-id="NameP"></label><input type="textbox" id="fromus_name" disabled="true"/></br>
+            <label for="price" data-l10n-id="PriceP" ></label><input type="textbox" id="fromus_price" /></br>
+            <label for="category" data-l10n-id="CategP"></label>
             <select id="category">
             </select></br>
-            <label for="sscategory" id="scategP"></label>
+            <label for="sscategory" data-l10n-id="SCategP"></label>
             <select id="sscategory">
             </select></br>
 
@@ -60,9 +60,9 @@
           <input type="button" id="addP">
         </div>
         <div class="content" id="tab2">
-          <label id="fu_quantite" for="quantite"></label><input id="QteSpinner" value="1"></br>
-          <label id="fu_assurance" for="assurance"></label><input type="checkbox" id="checkassur" name="assurance" /></br>
-          <input type="button" id="buyP"> 
+          <label data-l10n-id="QuantityP" for="quantite"></label><input id="QteSpinner" value="1"></br>
+          <label data-l10n-id="InsuranceP" for="assurance"></label><input type="checkbox" id="checkassur" name="assurance" /></br>
+          <input type="button" data-l10n-id="ButtonBuy"> 
         </div>
         </form>
       </div>
