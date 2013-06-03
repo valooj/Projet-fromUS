@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Serveur: localhost
--- Généré le : Mar 21 Mai 2013 à 07:43
+-- Généré le : Lun 03 Juin 2013 à 11:59
 -- Version du serveur: 5.5.8
 -- Version de PHP: 5.3.5
 
@@ -322,7 +322,7 @@ CREATE TABLE IF NOT EXISTS `commande_detail` (
   `cmdd_ent` int(11) NOT NULL,
   PRIMARY KEY (`cmdd_id`),
   UNIQUE KEY `cmdd_url` (`cmdd_url`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1276 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1291 ;
 
 --
 -- Contenu de la table `commande_detail`
@@ -339,7 +339,12 @@ INSERT INTO `commande_detail` (`cmdd_id`, `cmdd_libelle`, `cmdd_url`, `cmdd_desc
 (1270, 'Ruched Print Funnel Jacket BEBE SPORT ONLINE EXCLUSIVE', 'bebe.com/bebe-Sport/View-All/Ruched-Print-Funnel-Jacket-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/233/52384.pro', 'Attention-grabbing print and casual-cool 3/4 sleeves make this bebe jacket an electrifying way to amp up a workout outfit. Made from a lightweight, breathable fabric that dries 10 times faster th[...]', 1, '90.39', 14, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
 (1271, 'Print Run Crop Pant BEBE SPORT ONLINE EXCLUSIVE', 'bebe.com/bebe-Sport/View-All/Print-Run-Crop-Pant-BEBE-SPORT-ONLINE-EXCLUSIVE/pc/232/c/0/sc/233/52387.pro', 'With a hidden pocket at waistline and pop-bright print, this bebe pant is sure to be a workout go-to. Made from a lightweight, breathable fabric that dries 10 times faster than cotton. ', 2, '141.48', 19, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
 (1272, 'Colorblock Belted Dress', 'bebe.com/Dresses/View-All/Colorblock-Belted-Dress/pc/197/c/0/sc/198/49918.pro', 'Land a look-at-me look with this colorblock dress, featuring a soft knit and glossy skinny belt.\nThe belt contains lead, a chemical known to the State of California to cause birth defects or othe[...]', 7, '300.62', 24, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
-(1275, 'Colorblock Belted Dress', 'bebe.com/Dresses/Sweater-Dresses/Colorblock-Belted-Dress/49918.pro?relationType=recentlyViewed', 'Land a look-at-me look with this colorblock dress, featuring a soft knit and glossy skinny belt.\nThe belt contains lead, a chemical known to the State of California to cause birth defects or othe[...]', 2, '300.62', 24, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1);
+(1275, 'Colorblock Belted Dress', 'bebe.com/Dresses/Sweater-Dresses/Colorblock-Belted-Dress/49918.pro?relationType=recentlyViewed', 'Land a look-at-me look with this colorblock dress, featuring a soft knit and glossy skinny belt.\nThe belt contains lead, a chemical known to the State of California to cause birth defects or othe[...]', 2, '300.62', 24, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
+(1276, 'Boho Tux Icon Capri Jeans', 'bebe.com/Denim/View-All/Boho-Tux-Icon-Capri-Jeans/pc/225/c/0/sc/226/50575.pro', 'Update your denim collection with a shot of boho-cool in this pair of bebe skinny jeans, featuring embroidered tuxedo stripes down the sides and the signature comfy fit of our denim.', 5, '375.44', 15, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
+(1277, 'Baby Jogger City Select Car Seat Adaptor - Others', 'rakuten.com/prod/baby-jogger-city-select-car-seat-adaptor/216544293.html', 'IJ1339: Features: -Car Seat Adaptor.-Designed to fit several popular car seat models. Collection: -City Select collection.', 2, '79.85', 6, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 6),
+(1279, 'The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector''s ', 'rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html', 'Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]', 17, '196.49', 19, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
+(1288, 'Men''s Citizen Eco-Drive Proximity Chronograph Watch AT7030-05E', 'rakuten.com/prod/men-s-citizen-eco-drive-proximity-chronograph-watch-at7030-05e/248053314.html', 'Always be in contact with this multi-functional Proximity watch from Citizen.  Built with Bluetooth technology you''ll be notified when emails and phone calls come in.  Also boasts Eco-Drive harne[...]', 9, '686.18', 45, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
+(1290, 'Canon PowerShot S100 12.1 Megapixel Compact Camera - Black - 3" LCD - 5x Optical Zoom - Optical (IS)', 'rakuten.com/loc/12-Megapixel-Camera-Canon-Nikon/65664.html', 'Canon''s PowerShot S100 Digital Camera is an advanced compact digital camera with lots of razzle-dazzle backed up by top-notch engineering. It boasts an impressive 12.1 MP CMOS sensor and a DIGIC [...]', 2, '451.31', 1260, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1);
 
 -- --------------------------------------------------------
 
@@ -1298,7 +1303,7 @@ CREATE TABLE IF NOT EXISTS `produits` (
   `prd_vis` int(1) NOT NULL,
   PRIMARY KEY (`prd_id`),
   UNIQUE KEY `prd_site` (`prd_site`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=296 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=370 ;
 
 --
 -- Contenu de la table `produits`
@@ -1308,7 +1313,17 @@ INSERT INTO `produits` (`prd_id`, `prd_libelle`, `prd_site`, `prd_desc`, `prd_ca
 (289, 'Skyway Retreat 36" Extra Large Duffel (Stone)', 'ebags.store.rakuten.com/p/skyway-retreat-36-extra-large-duffel-stone/221383220.html', 'Constructed of water and tear resistant rip-stop polyester.', 1, 'http://img.rakuten.com/PIC/42112140/0/1/350/42112140.jpg', '40.99', 1),
 (290, 'Side Slash Legging ONLINE EXCLUSIVE', 'bebe.com/Bottoms/View-All/Side-Slash-Legging-ONLINE-EXCLUSIVE/pc/218/c/0/sc/219/53325.pro', 'Punch up your off-duty style with this pair of bebe leggings, featuring sheer slashes at sides and an ultra-soft lightweight stretch. Try yours with a white tunic and a pair of booties to complet[...]', 1, 'http://s7d9.scene7.com/is/image/bebe/bb-218184-blk-i1?$Detail$', '38.45', 2),
 (291, 'EFFZG', 'GZGZG', 'GZGZGE', 1, '1', '344.00', 2),
-(292, 'Colorblock Belted Dress', 'bebe.com/Dresses/Sweater-Dresses/Colorblock-Belted-Dress/49918.pro?relationType=recentlyViewed', 'Land a look-at-me look with this colorblock dress, featuring a soft knit and glossy skinny belt.\nThe belt contains lead, a chemical known to the State of California to cause birth defects or othe[...]', 24, 'http://s7d9.scene7.com/is/image/bebe/bb-213618-nct-i1?$Detail$', '109.00', 0);
+(292, 'Colorblock Belted Dress', 'bebe.com/Dresses/Sweater-Dresses/Colorblock-Belted-Dress/49918.pro?relationType=recentlyViewed', 'Land a look-at-me look with this colorblock dress, featuring a soft knit and glossy skinny belt.\nThe belt contains lead, a chemical known to the State of California to cause birth defects or othe[...]', 24, 'http://s7d9.scene7.com/is/image/bebe/bb-213618-nct-i1?$Detail$', '109.00', 0),
+(296, 'Boho Tux Icon Capri Jeans', 'bebe.com/Denim/View-All/Boho-Tux-Icon-Capri-Jeans/pc/225/c/0/sc/226/50575.pro', 'Update your denim collection with a shot of boho-cool in this pair of bebe skinny jeans, featuring embroidered tuxedo stripes down the sides and the signature comfy fit of our denim.', 0, 'http://s7d9.scene7.com/is/image/bebe/bb-215195-opw-i1?$Detail$', '129.00', 0),
+(326, 'Nirvana Bliss Icon Skinny Jeans', 'bebe.com/Denim/View-All/Nirvana-Bliss-Icon-Skinny-Jeans/pc/225/c/0/sc/226/52956.pro', 'Five pocket styling, comfy fit and statement-making print make this pair of bebe skinny jeans an instant way to make an off-duty statement. Try it with a white top and pair of black sandals to ma[...]', 0, 'http://s7d9.scene7.com/is/image/bebe/bb-214324-nrv-i1?$Detail$', '119.00', 0),
+(327, 'Seamless Power Bra BEBE SPORT', 'bebe.com/bebe-Sport/View-All/Seamless-Power-Bra-BEBE-SPORT/pc/232/c/0/sc/233/53846.pro', 'Comfy sleeveless design and racerback cut that allows for more movement makes this bebe sports bra a total activewear essential. Made from moisture-wicking fabric that dries 10 times faster than [...]', 2, 'http://s7d9.scene7.com/is/image/bebe/bb-219434-ocf-i1?$Detail$', '24.00', 0),
+(328, 'The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector''s ', 'rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.ht', 'Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]', 19, 'http://img.rakuten.com/PIC/38977900/0/1/300/38977900.jpg', '149.99', 0),
+(330, 'Samsonite 5-Piece Travel Set', 'rakuten.com/prod/samsonite-5-piece-travel-set/201649174.html', 'Includes the following five styles:', 1, 'http://img.rakuten.com/PIC/41543512/0/1/300/41543512.jpg', '109.99', 0),
+(331, 'Baby Jogger City Select Car Seat Adaptor - Others', 'rakuten.com/prod/baby-jogger-city-select-car-seat-adaptor/216544293.html', 'IJ1339: Features: -Car Seat Adaptor.-Designed to fit several popular car seat models. Collection: -City Select collection.', 4, '?', '60.95', 0),
+(357, 'Men''s Citizen Eco-Drive Proximity Chronograph Watch AT7030-05E', 'rakuten.com/prod/men-s-citizen-eco-drive-proximity-chronograph-watch-at7030-05e/248053314.html', 'Always be in contact with this multi-functional Proximity watch from Citizen.  Built with Bluetooth technology you''ll be notified when emails and phone calls come in.  Also boasts Eco-Drive harne[...]', 45, 'http://img.rakuten.com/PIC/50832624/0/1/300/50832624.jpg', '495.00', 0),
+(360, 'Canon PowerShot S100 12.1 Megapixel Compact Camera - Black - 3" LCD - 5x Optical Zoom - Optical (IS)', 'rakuten.com/loc/12-Megapixel-Camera-Canon-Nikon/65664.html', 'Canon''s PowerShot S100 Digital Camera is an advanced compact digital camera with lots of razzle-dazzle backed up by top-notch engineering. It boasts an impressive 12.1 MP CMOS sensor and a DIGIC [...]', 1260, 'http://img.rakuten.com/PIC/42205432/0/1/225/42205432.jpg', '325.00', 0),
+(368, 'Samsung HMX-F80 Digital Camcorder - 2.7" LCD - CMOS- Full HD, Black', 'rakuten.com/cat/hd-camcorders/2108.html', '?', 1293, 'http://img.rakuten.com/PIC/42953428/0/1/225/42953428.jpg', '199.00', 0),
+(369, 'JVC 1080P High-Definition Everio Digital Video Camera (Black)', 'rakuten.com/prod/jvc-1080p-high-definition-everio-digital-video-camera-black/227430942.html', 'Full HD 1920x1080 RecordingCapture bright and clear Full HD images with this compact memory camcorder even in low light, thanks to the Back-illuminated CMOS Sensor. A powerful Optical 40x Zoom ge[...]', 2, 'http://img.rakuten.com/PIC/42233293/0/1/300/42233293.jpg', '129.95', 0);
 
 -- --------------------------------------------------------
 
@@ -14369,15 +14384,16 @@ CREATE TABLE IF NOT EXISTS `pts_bonus` (
   `pts_nb` int(100) NOT NULL,
   PRIMARY KEY (`pts_id`),
   UNIQUE KEY `pts_cli` (`pts_cli`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=256 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=134 ;
 
 --
 -- Contenu de la table `pts_bonus`
 --
 
 INSERT INTO `pts_bonus` (`pts_id`, `pts_cli`, `pts_nb`) VALUES
-(87, 1, 5250),
-(132, 0, 250);
+(87, 1, 7200),
+(132, 0, 250),
+(133, 6, 450);
 
 -- --------------------------------------------------------
 
@@ -20410,6 +20426,26 @@ INSERT INTO `shipping_fedex` (`shipping_id`, `shipping_poids`, `shipping_pays`, 
 (1831, '69.50', 'ch', '232.10', '232.10', '197.29'),
 (1832, '70.00', 'ch', '233.55', '233.55', '198.52'),
 (1833, '70.50', 'ch', '235.00', '235.00', '199.75');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `site_access`
+--
+
+CREATE TABLE IF NOT EXISTS `site_access` (
+  `sa_id` int(11) NOT NULL AUTO_INCREMENT,
+  `sa_site` varchar(100) NOT NULL,
+  `sa_chemin` text NOT NULL,
+  `sa_valid` int(1) NOT NULL,
+  PRIMARY KEY (`sa_id`),
+  UNIQUE KEY `sa_site` (`sa_site`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Contenu de la table `site_access`
+--
+
 
 -- --------------------------------------------------------
 
@@ -27028,17 +27064,17 @@ CREATE TABLE IF NOT EXISTS `token` (
   `tok_id` int(11) NOT NULL AUTO_INCREMENT,
   `tok_user` int(11) NOT NULL,
   `tok_token` varchar(200) NOT NULL,
-  `tok_ext` varchar(200) NOT NULL,
   PRIMARY KEY (`tok_id`),
-  UNIQUE KEY `tok_ext` (`tok_ext`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+  UNIQUE KEY `tok_user` (`tok_user`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Contenu de la table `token`
 --
 
-INSERT INTO `token` (`tok_id`, `tok_user`, `tok_token`, `tok_ext`) VALUES
-(1, 1, '519b2233d9e16', 'ezgrzgrzg463663');
+INSERT INTO `token` (`tok_id`, `tok_user`, `tok_token`) VALUES
+(1, 1, '51ac773e1ab7a'),
+(2, 6, '');
 
 -- --------------------------------------------------------
 
