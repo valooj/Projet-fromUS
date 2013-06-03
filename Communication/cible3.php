@@ -121,7 +121,7 @@ try
 	        $response['Message'] = $lng['win'].$bonus.' pts';
 */
 	        $response['Status'] = 'A';
-	        $response['Message'] = 'confirmation product';
+	        $response['Message'] =  $lng['participation'];
 			break;
 
 		case 'MAJ-pts':
@@ -486,6 +486,26 @@ try
 			
 	        $response['Status'] = 'a';
 	        $response['Message'] = $chemin;
+			break;
+
+		case 'MAJ-accessOut':
+			// variables
+			$get_access= isset($_REQUEST['access']) ? htmlspecialchars($_REQUEST['access']) : null;
+
+			// variables tests
+			if ( !$get_access )
+				throw new Exception($lng['invalid_url']);
+
+			$req = $bdd->prepare('INSERT INTO site_access (sa_site,sa_chemin,sa_valid) VALUES (:_site, :_chemin, :_valid)');
+			$req->execute(array(
+			    '_site' => $get_url,
+			    '_chemin' => $get_url,
+			    '_valid' => 0));
+			$req->fetch();
+			$req->closeCursor();
+			
+	        $response['Status'] = 'o';
+	        $response['Message'] = $lng['participation'];
 			break;
 
 		default:

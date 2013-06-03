@@ -22,4 +22,5 @@
 	$lng['choix_scateg'] = ' Choisissez une sous-catégorie';
 
 	$lng['invalid_url'] = 'Erreur :: Url non valide';
+	$lng['participation'] = 'Merci de votre contribution au site';
 ?>
