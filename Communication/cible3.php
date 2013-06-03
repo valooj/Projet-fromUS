@@ -47,10 +47,10 @@ try
 
 	// externals datas
 	$get_action = isset($_GET['action']) ? htmlspecialchars($_GET['action']) : null;
-	
+
 	//Pour le choix de la langue
-	$prefered_lng = getLng();
-	//echo($prefered_lng);
+	$prefered_lng = isset($_GET['lng']) ? htmlspecialchars($_GET['lng']) : getLng();
+
 	$lng = array();
 	include './lngs/en.php';
 	if( $prefered_lng && ($file = './lngs/' . $prefered_lng . '.php'))

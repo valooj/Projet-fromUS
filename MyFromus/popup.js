@@ -1,16 +1,15 @@
 var token;
 var Nick_Name;
-var language;
 var points;
 
-var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&token=';
-var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&token=';
-var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&token=';
-var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&token=';
-var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login';
-var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-categorie';
-var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&sscateg=';
-var _urlPts = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-pts&token=';
+var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&lng='+defLng+'&token=';
+var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&lng='+defLng+'&token=';
+var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&lng='+defLng+'&token=';
+var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&lng='+defLng+'&token=';
+var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login&lng='+defLng;
+var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-categorie&lng='+defLng;
+var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&lng='+defLng+'&sscateg=';
+var _urlPts = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-pts&lng='+defLng+'&token=';
 
 document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('tabAdd').innerHTML = i18n("tabAdd") ;
