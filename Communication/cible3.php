@@ -466,7 +466,30 @@ try
 
 			break;
 
-		case 'MAJ-access':
+		case 'MAJ-accessOut':
+			// variables
+			$get_url = isset($_POST['url_site']) ? htmlspecialchars($_POST['url_site']) : null;
+
+			// variables tests
+			if ( !$get_url )
+				throw new Exception($lng['invalid_url']);
+
+			$req = $bdd->prepare('SELECT sa_chemin FROM site_access where sa_site= :_url and sa_valid= :_valid');
+			$req->execute(array(
+			    '_url' => $get_url,
+			    '_valid' => 0));
+			$chemin = $req->fetch();
+			$chemin = $chemin[0];
+			$req->closeCursor();
+
+			if(!$chemin)
+				throw new Exception($lng['invalid_url']);
+			
+	        $response['Status'] = 'a';
+	        $response['Message'] = $chemin;
+			break;
+
+		case 'MAJ-accessIn':
 			// variables
 			$get_url = isset($_POST['url_site']) ? htmlspecialchars($_POST['url_site']) : null;
 
