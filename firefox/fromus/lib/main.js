@@ -9,12 +9,11 @@ var fromus_panel = require('panel').Panel({
 	//focus: false,
 	contentURL: data.url('popup.html'),
 	contentScriptFile: [
-            	data.url('jquery/jquery.min.js'),
-        		data.url('jquery/jquery-ui.js'),
+            	/*data.url('jquery/jquery.min.js'),
         		data.url('locales/en/enLng.js'),
         		data.url('locales/fr/frLng.js'),
         		data.url('langue.js'),
-        		data.url('popup.js')
+        		data.url('popup.js')*/
         		]
 });
 
