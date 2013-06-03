@@ -1,36 +1,34 @@
 var token;
 var Nick_Name;
-var language;
 var points;
 
+var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&lng='+defLng+'&token=';
+var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&lng='+defLng+'&token=';
+var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&lng='+defLng+'&token=';
+var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&lng='+defLng+'&token=';
+var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login&lng='+defLng;
+var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-categorie&lng='+defLng;
+var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&lng='+defLng+'&sscateg=';
+var _urlPts = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-pts&lng='+defLng+'&token=';
 
-var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&token=';
-var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&token=';
-var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&token=';
-var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&token=';
-var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login';
-var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-categorie';
-var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&sscateg=';
-var _urlPts = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-pts&token=';
-
-/*document.addEventListener('DOMContentLoaded', function() {
-	document.getElementById('tabAdd').innerHTML = chrome.i18n.getMessage("tabAdd") ;
-    document.getElementById('tabBuy').innerHTML = chrome.i18n.getMessage("tabBuy") ;
-	document.getElementById('store').innerHTML = chrome.i18n.getMessage("Merchant") ;
-    document.getElementById('nameP').innerHTML = chrome.i18n.getMessage("NameP") ;
-	document.getElementById('priceP').innerHTML = chrome.i18n.getMessage("PriceP") ;
-	document.getElementById('categP').innerHTML = chrome.i18n.getMessage("CategP") ;
-	document.getElementById('scategP').innerHTML = chrome.i18n.getMessage("SCategP") ;
-	document.getElementById('addP').value = chrome.i18n.getMessage("ButtonAdd") ;
+document.addEventListener('DOMContentLoaded', function() {
+	document.getElementById('tabAdd').innerHTML = i18n("tabAdd") ;
+    document.getElementById('tabBuy').innerHTML = i18n("tabBuy") ;
+	document.getElementById('store').innerHTML = i18n("Merchant") ;
+    document.getElementById('nameP').innerHTML = i18n("NameP") ;
+	document.getElementById('priceP').innerHTML = i18n("PriceP") ;
+	document.getElementById('categP').innerHTML = i18n("CategP") ;
+	document.getElementById('scategP').innerHTML = i18n("SCategP") ;
+	document.getElementById('addP').value = i18n("ButtonAdd") ;
 	
-	document.getElementById('FormP').innerHTML = chrome.i18n.getMessage("FormP") ;
+	document.getElementById('FormP').innerHTML = i18n("FormP") ;
 	document.getElementById('disconnect').value = 'logout' ;
 
-	document.getElementById('buyP').value = chrome.i18n.getMessage("ButtonBuy") ;
-	document.getElementById('fu_quantite').innerHTML =chrome.i18n.getMessage("QuantityP") ;
-	document.getElementById('fu_assurance').innerHTML = chrome.i18n.getMessage("InsuranceP") ;
+	document.getElementById('buyP').value = i18n("ButtonBuy") ;
+	document.getElementById('fu_quantite').innerHTML = i18n("QuantityP") ;
+	document.getElementById('fu_assurance').innerHTML = i18n("InsuranceP") ;
 
-});*/
+});
 
 window.onload = function() {
 	sendToServer(_urlCategorie,{});
@@ -40,7 +38,7 @@ window.onload = function() {
 		token=readCookie('tokenFU');
 		if(readCookie('nameFU')){
 			Nick_Name = readCookie('nameFU');
-			document.getElementById("nick_name").value = chrome.i18n.getMessage("MsgWelcome")+Nick_Name ;
+			document.getElementById("nick_name").value = i18n("MsgWelcome")+Nick_Name ;
 			sendToServer(_urlPts+token,{});
 		}
 	}
@@ -94,7 +92,7 @@ function sendToServer(urlSelected, jsonSelected) {
 				createCookie('tokenFU',token,21);
 				Nick_Name = datas['Message'];
 				createCookie('nameFU',Nick_Name,21);
-				document.getElementById("nick_name").value = chrome.i18n.getMessage("MsgWelcome")+Nick_Name ;
+				document.getElementById("nick_name").value = i18n("MsgWelcome")+Nick_Name ;
 				hideLog();
 				sendToServer(_urlPts+token,{});
 				
@@ -139,7 +137,7 @@ function sendToServer(urlSelected, jsonSelected) {
 	})
 	.fail(function(datas) { 
 		//alert(datas['error']);
-		document.getElementById('msgServer').value = chrome.i18n.getMessage("MsgBD");
+		document.getElementById('msgServer').value = i18n("MsgBD");
 		})
 ;};
 
@@ -148,6 +146,7 @@ function parseCat(categorieJSON, sc) {
     var $selectCat = $('select[id="'+sc+'category"]');
     $selectCat.empty();
     var obj = JSON.parse(categorieJSON);
+    // for( a in categorieJSON ) { categorieJSON[a]; }
     for(var i = 0; i < categorieJSON.length; i++) {
     	if(obj[i].type==0)
         	$selectCat.append('<option value="'+obj[i].idCat+'" disabled="true">'+obj[i].libelleCat+'</option>');
@@ -230,17 +229,10 @@ $(document).ready( function () {
   	});
 
   	$("img[id='lgfr']").click(function() {
-	
-		alert('fr');
-		//config.i18n.default_locale = 'fr'
-		alert('fr');
-
+		changeLng('fr');
   	});
   	$("img[id='lgen']").click(function() {
-		
-		alert('en');
-		//config.i18n.default_locale = 'en'
-		alert('en');
+		changeLng('en');
   	});
 
 });
@@ -256,20 +248,3 @@ function showLog(){
 	$("#isconnect").hide();
 };
 
-
-regStore = localStorage["regStore"];
-			$('#fromus_store').attr('value',regStore);
-
-			// ajout du nom automatiquement
-			regName = localStorage["regName"];
-			$('#fromus_name').attr('value',regName);
-
-			// ajout du prix automatiquement
-			regPrice = localStorage["regPrice"];
-			$('#fromus_price').attr('value',regPrice);
-
-			regOffer = localStorage["regOffer"];
-
-			regDesc = localStorage["regDesc"];
-
-			regVisu = localStorage["regImg"];

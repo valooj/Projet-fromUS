@@ -9,9 +9,12 @@ var fromus_panel = require('panel').Panel({
 	//focus: false,
 	contentURL: data.url('popup.html'),
 	contentScriptFile: [
-            	/*data.url('jquery/jquery.min.js'),
+            	data.url('jquery/jquery.min.js'),
         		data.url('jquery/jquery-ui.js'),
-        		data.url('popup.js')*/
+        		data.url('locales/en/enLng.js'),
+        		data.url('locales/fr/frLng.js'),
+        		data.url('langue.js'),
+        		data.url('popup.js')
         		]
 });
 
@@ -47,7 +50,7 @@ if (require('self').loadReason == 'install') {
 }
 
 
-var alertContentScript = "self.port.on('alert', function(message) {" +
+/*var alertContentScript = "self.port.on('alert', function(message) {" +
                          "  window.alert(message);" +
                          "})";
  
@@ -58,4 +61,4 @@ tabs.on("ready", function(tab) {
   worker.port.emit("alert", "Message from the add-on");
 });
  
-tabs.open("http://www.mozilla.org");
+tabs.open("http://www.mozilla.org");*/
