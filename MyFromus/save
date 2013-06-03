@@ -1,0 +1,73 @@
+var lng_lib={};
+var _lng;
+
+function i18n(text){
+	return lng_lib[text];
+}
+
+function changeLng(lng){
+	_lng = lng;
+	$.get('_locales/'+_lng+'/messages.json', function(data){
+		lng_lib=eval('return'+data+';');
+	} );
+
+}
+
+
+
+
+
+
+var lng_lib={};
+var _lng;
+
+_lng = readCookie('_lng')? readCookie('_lng') :  'fr';
+if(!lng_lib)
+	changeLng(_lng); 
+
+//Pour creer le cookie 
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+";path=/";
+}
+
+//Pour lire le cookie
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+//Pour supprimer le cookie
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}
+
+function i18n(text){
+	return lng_lib[text]? lng_lib[text].message : chrome.i18n.getMessage(text);
+}
+
+function changeLng(lng){
+	eraseCookie('_lng');
+	createCookie('_lng',lng,21);
+	alert('try ' + lng);
+	_lng = readCookie('_lng');
+
+	$.get('_locales/'+_lng+'/messages.json', function(data){
+		alert('? ' + _lng);
+		//eval('lng_lib = data;');
+		//alert(i18n('tabAdd'));
+		//location.assign(location.href);
+	});
+
+}
