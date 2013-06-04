@@ -5,7 +5,6 @@
 //										et prix de l'offre.																											//
 //																																												//
 
-
 /////	Définition des variables	/////
 
 var fromus_offre = document.location.href;		//récupération de l'adresse du l'offre
@@ -25,33 +24,6 @@ var fromus_moreprice,
 fromus_morename,
 fromus_moreimg,		// Ces variables servent à indiquer si l'utilisateur a demandé un/e autre nom, prix, description, image
 fromus_moredesc;
-
-/////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
-if(localStorage["fromus_morename"])
-{
-	fromus_morename = JSON.parse(localStorage["fromus_morename"]);
-}
-else
-{
-	fromus_morename = false;
-}
-if(localStorage["fromus_moreimg"])
-{
-	fromus_moreimg = JSON.parse(localStorage["fromus_moreimg"]);
-}
-else
-{
-	fromus_moreimg= false;
-}
-if(localStorage["fromus_moredesc"])
-{
-	fromus_moredesc = JSON.parse(localStorage["fromus_moredesc"]);
-}
-else
-{
-	fromus_moredesc = false;
-}
-/////////////////////////////////////// Fin de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
 
 /**********************************************************************************************/
 /*																																							*/
@@ -77,6 +49,86 @@ function fromus_siteObj()
 
 /////////////////////////////////////// Début de la déclaration des fonctions de récupération ///////////////////////////////////////
 
+function fromus_recupName(idclass)
+{
+	if(idclass == 'id'
+	{
+		fromus_sitelist[fromus_site].name_id = request.data.split(';');
+		fromus_sitelist[fromus_site].name_class.push('');		
+	}
+	else
+	{
+		fromus_sitelist[fromus_site].name_class = request.data.split(';');
+		fromus_sitelist[fromus_site].name_id.push('');		
+	}
+	/////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
+	if(localStorage["fromus_morename"])
+	{
+		fromus_morename = JSON.parse(localStorage["fromus_morename"]);
+	}
+	else
+	{
+		fromus_morename = false;
+	}
+	///////////////////////////////////////////////////// Partie cherchant l'info /////////////////////////////////////////////////////
+	//name
+	if(fromus_morename)
+	{
+		fromus_i = parseInt(localStorage["fromus_iname"]);
+		fromus_objectname	=	'';
+	}
+	else
+	{
+		fromus_i = 0;
+	}
+	
+	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && !(fromus_objectname) ; fromus_i++)
+	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
+		
+		var fromus_name_id = document.getElementById(fromus_sitelist[fromus_site].name_id[fromus_i]);
+		if(fromus_name_id)
+		{	//S'il y a un résultat, l'enregistrer
+			fromus_objectname = fromus_name_id.textContent;
+			localStorage["fromus_iname"] = fromus_i + 1 ;
+		}
+	}
+	
+	if(fromus_morename)
+	{
+		fromus_i = parseInt(localStorage["fromus_iname"]);
+		fromus_objectname	=	'';
+	}
+	else
+	{
+		fromus_i = 0;
+	}
+	
+	if(!fromus_objectname)
+	{	//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
+		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && !(fromus_objectname) ; fromus_i++)
+		{
+			var fromus_name_class = document.getElementsByClassName(fromus_sitelist[fromus_site].name_class[fromus_i])[0];
+			if(fromus_name_class)
+			{
+				fromus_objectname = fromus_name_class.textContent;
+				localStorage["fromus_iname"] = fromus_i + 1;	
+			}
+		}
+	}
+	
+	if(!(fromus_objectname))
+	{	// S'il n'y a eu aucun résultat...
+		fromus_objectname = fromus_error;
+	}
+	
+	fromus_objectname			=	fromus_objectname.replace(/^[\s]{0,}/,'').replace(/\n.*/g,'').substring(0,100);
+	
+	// stockage du nom dans local storage
+	localStorage["regName"] = fromus_objectname;
+	//Mise à zéro des indicateurs
+	localStorage["fromus_morename"] =	JSON.stringify(false);
+}
+
 function fromus_recupPrice(idclass)
 {
 	if(idclass == 'id'
@@ -89,7 +141,7 @@ function fromus_recupPrice(idclass)
 		fromus_sitelist[fromus_site].price_class = request.data.split(';');
 		fromus_sitelist[fromus_site].price_id.push('');		
 	}
-	
+	/////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
 	if(localStorage["fromus_moreprice"])
 	{
 		fromus_moreprice = JSON.parse(localStorage["fromus_moreprice"]);
@@ -98,6 +150,7 @@ function fromus_recupPrice(idclass)
 	{
 		fromus_moreprice = false;
 	}
+	///////////////////////////////////////////////////// Partie cherchant l'info /////////////////////////////////////////////////////
 	//price			
 	if(fromus_moreprice)
 	{
@@ -158,72 +211,32 @@ function fromus_recupPrice(idclass)
 	
 	// stockage du prix dans local storage
 	localStorage["regPrice"] = fromus_pricemin;	
-	
+	//Mise à zéro des indicateurs
 	localStorage["fromus_moreprice"]	=	JSON.stringify(false);
 }
 
-
-
-///////////////////////////////////////////////////// Partie cherchant l'info /////////////////////////////////////////////////////
-
-// stockage du marchand dans local storage 
-localStorage["regStore"] = fromus_site;	
-
-if( fromus_sitelist[fromus_site])
-{	//Si le site est connu
-	//name
-	
-	
-	if(fromus_morename)
+function fromus_recupImg(idclass)
+{
+	if(idclass == 'id'
 	{
-		fromus_i = parseInt(localStorage["fromus_iname"]);
-		fromus_objectname	=	'';
+		fromus_sitelist[fromus_site].img_id = request.data.split(';');
+		fromus_sitelist[fromus_site].img_class.push('');		
 	}
 	else
 	{
-		fromus_i = 0;
+		fromus_sitelist[fromus_site].img_class = request.data.split(';');
+		fromus_sitelist[fromus_site].img_id.push('');		
 	}
-	
-	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && !(fromus_objectname) ; fromus_i++)
-	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
-		
-		var fromus_name_id = document.getElementById(fromus_sitelist[fromus_site].name_id[fromus_i]);
-		if(fromus_name_id)
-		{	//S'il y a un résultat, l'enregistrer
-			fromus_objectname = fromus_name_id.textContent;
-			localStorage["fromus_iname"] = fromus_i + 1 ;
-		}
-	}
-	
-	if(fromus_morename)
+	/////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
+	if(localStorage["fromus_moreimg"])
 	{
-		fromus_i = parseInt(localStorage["fromus_iname"]);
-		fromus_objectname	=	'';
+		fromus_moreimg = JSON.parse(localStorage["fromus_moreimg"]);
 	}
 	else
 	{
-		fromus_i = 0;
+		fromus_moreimg= false;
 	}
-	
-	
-	if(!fromus_objectname)
-	{	//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
-		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && !(fromus_objectname) ; fromus_i++)
-		{
-			var fromus_name_class = document.getElementsByClassName(fromus_sitelist[fromus_site].name_class[fromus_i])[0];
-			if(fromus_name_class)
-			{
-				fromus_objectname = fromus_name_class.textContent;
-				localStorage["fromus_iname"] = fromus_i + 1;	
-			}
-		}
-	}
-	
-	if(!(fromus_objectname))
-	{	// S'il n'y a eu aucun résultat...
-		fromus_objectname = fromus_error;
-	}
-	
+	///////////////////////////////////////////////////// Partie cherchant l'info /////////////////////////////////////////////////////
 	//img 		
 	if(fromus_moreimg)
 	{
@@ -298,7 +311,35 @@ if( fromus_sitelist[fromus_site])
 	{
 		fromus_i = 0;
 	}			
-	
+
+	// stockage du visuel dans local storage
+	localStorage["regImg"] = fromus_img;
+	//Mise à zéro des indicateurs	
+	localStorage["fromus_moreimg"]	=	JSON.stringify(false);
+}
+
+function fromus_recupdesc(idclass)
+{
+	if(idclass == 'id'
+	{
+		fromus_sitelist[fromus_site].desc_id = request.data.split(';');
+		fromus_sitelist[fromus_site].desc_class.push('');		
+	}
+	else
+	{
+		fromus_sitelist[fromus_site].desc_class = request.data.split(';');
+		fromus_sitelist[fromus_site].desc_id.push('');		
+	}
+	/////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
+	if(localStorage["fromus_moredesc"])
+	{
+		fromus_moredesc = JSON.parse(localStorage["fromus_moredesc"]);
+	}
+	else
+	{
+		fromus_moredesc = false;
+	}	
+	///////////////////////////////////////////////////// Partie cherchant l'info /////////////////////////////////////////////////////
 	//desc 
 	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].desc_id.length) && !(fromus_desc) ; fromus_i++)
 	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
@@ -337,8 +378,28 @@ if( fromus_sitelist[fromus_site])
 	{	// S'il n'y a eu aucun résultat...
 		fromus_desc = fromus_error;
 	}
-}
+	
+	if((fromus_desc===undefined) ||(fromus_desc==undefined)||(fromus_desc=='undefined')|| ( /[\S]{1,}/g.test(fromus_desc)==false ) )
+	{//En cas d'absence de description, utiliser le nom du produit.
+		fromus_desc =	fromus_objectname;
+	}
 
+	// stockage de la description dans local storage
+	localStorage["regDesc"] = fromus_desc;
+	
+	//Mise à zéro des indicateurs
+	localStorage["fromus_moredesc"]	=	JSON.stringify(false);
+
+}
+///////////////////////////////////////////////////// Partie cherchant l'info /////////////////////////////////////////////////////
+
+// stockage du marchand dans local storage 
+localStorage["regStore"] = fromus_site;	
+
+if( fromus_sitelist[fromus_site])
+{	//Si le site est connu
+
+}
 else
 {	// Si le site n'est pas enregistré
 	fromus_desc=fromus_error
@@ -347,34 +408,13 @@ else
 	fromus_pricemin=fromus_error;
 }
 
-if((fromus_desc===undefined) ||(fromus_desc==undefined)||(fromus_desc=='undefined')|| ( /[\S]{1,}/g.test(fromus_desc)==false ) )
-{//En cas d'absence de description, utiliser le nom du produit.
-	fromus_desc =	fromus_objectname;
-}
-
 //Début de la section "limitation de la longueur des données".
 if(fromus_desc.length > 200)
 {
 	fromus_desc					=	fromus_desc.substring(0,195)+"[...]";
 }
-fromus_objectname			=	fromus_objectname.replace(/^[\s]{0,}/,'').replace(/\n.*/g,'').substring(0,100);
-
-
-// stockage du nom dans local storage
-localStorage["regName"] = fromus_objectname;
-
-// stockage de la description dans local storage
-localStorage["regDesc"] = fromus_desc;
-
-// stockage du visuel dans local storage
-localStorage["regImg"] = fromus_img;
 
 // stockage de la page du site dans local storage
 var wwwOffre = fromus_offre.replace(/www\./,'');
 localStorage["regOffer"] = /http[s]{0,1}\:\/\/(.*)/gi.exec(wwwOffre)[1];	
 //localStorage["regOffer"] = fromus_offre;
-
-//Mise à zéro des indicateurs
-localStorage["fromus_morename"] =	JSON.stringify(false);
-localStorage["fromus_moreimg"]	=	JSON.stringify(false);
-localStorage["fromus_moredesc"]	=	JSON.stringify(false);

@@ -10,7 +10,7 @@ function fromus_recupPrice(idclass)
 		fromus_sitelist[fromus_site].price_class = request.data.split(';');
 		fromus_sitelist[fromus_site].price_id.push('');		
 	}
-	
+	/////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
 	if(localStorage["fromus_moreprice"])
 	{
 		fromus_moreprice = JSON.parse(localStorage["fromus_moreprice"]);
@@ -19,6 +19,7 @@ function fromus_recupPrice(idclass)
 	{
 		fromus_moreprice = false;
 	}
+	///////////////////////////////////////////////////// Partie cherchant l'info /////////////////////////////////////////////////////
 	//price			
 	if(fromus_moreprice)
 	{
@@ -79,7 +80,6 @@ function fromus_recupPrice(idclass)
 	
 	// stockage du prix dans local storage
 	localStorage["regPrice"] = fromus_pricemin;	
-	
+	//Mise à zéro des indicateurs
 	localStorage["fromus_moreprice"]	=	JSON.stringify(false);
 }
-
