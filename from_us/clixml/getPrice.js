@@ -81,25 +81,38 @@ var inversHTML	=	function(htmlcode){
 	}
 }
 
-var mouser = bindEvent(document,'mouseover', function(event) 
-{ var target = event.target || event.srcElement;
-	if(fus_actprice == 1)	// Si on cherceh le prix...
-	{
-		console.log('mouseover');
-		target.style.backgroundColor = inversHTML(getComputedStyle(target).backgroundColor);	
-		// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
-	}
-});
-
-var mouset = bindEvent(document,'mouseout', function(event) 
-{ var target = event.target || event.srcElement;
-	if(fus_actprice == 1)	// Si on cherceh le prix...
-	{
-		console.log('mouseout');
-		target.style.backgroundColor = inversHTML(getComputedStyle(target).backgroundColor);
-	}
-});
-
+if(fus_actprice == 0)
+{
+	var bindEvent(document,'mouseover', function(event) 
+	{ var target = event.target || event.srcElement;
+		if(fus_actprice == 1)	// Si on cherceh le prix...
+		{
+			console.log('mouseover');
+			target.style.backgroundColor = inversHTML(getComputedStyle(target).backgroundColor);	
+			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
+		}
+		else
+		{
+			this.removeEventListener('mouseover',arguments.callee,false);			
+		}
+	});
+}
+if(fus_actprice == 0)
+{
+	var bindEvent(document,'mouseout', function(event) 
+	{ var target = event.target || event.srcElement;
+		if(fus_actprice == 1)	// Si on cherceh le prix...
+		{
+			console.log('mouseout');
+			target.style.backgroundColor = inversHTML(getComputedStyle(target).backgroundColor);
+			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
+		}
+		else
+		{
+			this.removeEventListener('mouseout',arguments.callee,false);			
+		}
+	});
+}
 
 
 bindEvent(document,'click', function(event) 
@@ -192,6 +205,7 @@ bindEvent(document,'click', function(event)
 	console.log("Et ce qui est affiché dans la case est...");
 	console.log(fromus_selectedText);
 	localStorage["regPrice"] = fromus_selectedText;
-	fus_actprice = 0;	// On ne cherche pas le prix
+	fus_actprice = 0;	// On ne cherche plus le prix
+	target.style.backgroundColor = inversHTML(getComputedStyle(target).backgroundColor);	
 	this.removeEventListener('click',arguments.callee,false);
 });		

@@ -35,14 +35,6 @@ else
 {
 	fromus_morename = false;
 }
-if(localStorage["fromus_moreprice"])
-{
-	fromus_moreprice = JSON.parse(localStorage["fromus_moreprice"]);
-}
-else
-{
-	fromus_moreprice = false;
-}
 if(localStorage["fromus_moreimg"])
 {
 	fromus_moreimg = JSON.parse(localStorage["fromus_moreimg"]);
@@ -83,105 +75,18 @@ function fromus_siteObj()
 	this.desc_class= new Array();
 }
 
+/////////////////////////////////////// Début de la déclaration des fonctions de récupération ///////////////////////////////////////
 
-/////	Normalisation des sites du type quelquechose.nomdusite.com	/////	
-
-if(/(\.rakuten)/.test(fromus_site))
+function fromus_recupPrice()
 {
-	fromus_site = "www.rakuten.com";
-}
-else
-{
-	if(/(\.gap)/.test(fromus_site))
+	if(localStorage["fromus_moreprice"])
 	{
-		fromus_site = "www.gap.com";
-	}
-	else	
-	{
-		if(/(\.nike)/.test(fromus_site))
-		{
-			fromus_site = "www.nike.com";
-		}
-		else
-		{
-			if(/(qvc\.com)/.test(fromus_site))
-			{
-				fromus_site = "www.qvc.com";
-			}
-		}
-	}
-}
-
-///////////////////////////////////////////////////// Partie cherchant l'info /////////////////////////////////////////////////////
-
-// stockage du marchand dans local storage 
-localStorage["regStore"] = fromus_site;	
-
-if( fromus_sitelist[fromus_site])
-{	//Si le site est connu
-	//name
-	console.log("Le site est connu");	
-	console.log("Le nom vaut avant le script : " + fromus_objectname);
-	if(fromus_morename)
-	{
-		fromus_i = parseInt(localStorage["fromus_iname"]);
-		fromus_objectname	=	'';
-		console.log("On demande un autre nom en id et i vaut alors" + fromus_i);
+		fromus_moreprice = JSON.parse(localStorage["fromus_moreprice"]);
 	}
 	else
 	{
-		fromus_i = 0;
-		console.log("On execute le script pour la premiere fois et fromus_i est donc initialise a 0");
+		fromus_moreprice = false;
 	}
-	
-	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && !(fromus_objectname) ; fromus_i++)
-	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
-		console.log("On est dans la boucle des id. fromus_i =" + fromus_i);	
-		var fromus_name_id = document.getElementById(fromus_sitelist[fromus_site].name_id[fromus_i]);
-		if(fromus_name_id)
-		{	//S'il y a un résultat, l'enregistrer
-			fromus_objectname = fromus_name_id.textContent;
-			localStorage["fromus_iname"] = fromus_i + 1 ;
-			console.log("Il y a un résultat. On incrémente fromus_i qui vaut maintenant : " +localStorage["fromus_iname"]);
-		}
-	}
-	
-	if(fromus_morename)
-	{
-		console.log("On demande un autre nom en class et fromus_i vaut alors" + fromus_i);
-		fromus_i = parseInt(localStorage["fromus_iname"]);
-		fromus_objectname	=	'';
-	}
-	else
-	{
-		console.log("On execute le script pour la premiere fois et fromus_i est donc initialise a 0");
-		fromus_i = 0;
-	}
-	
-	console.log("On va entrer dans la boucle de class");	
-	if(!fromus_objectname)
-	{	//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
-		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && !(fromus_objectname) ; fromus_i++)
-		{
-			console.log("On est dans la boucle de class. Fromus_i vaut : " + fromus_i);		
-			var fromus_name_class = document.getElementsByClassName(fromus_sitelist[fromus_site].name_class[fromus_i])[0];
-			if(fromus_name_class)
-			{
-				fromus_objectname = fromus_name_class.textContent;
-				localStorage["fromus_iname"] = fromus_i + 1;
-				console.log("Il y a un résultat. On incrémente fromus_i qui vaut maintenant : " + localStorage["fromus_iname"]);
-			}
-		}
-	}
-	console.log("On quitte la boucle de class.");	
-	if(!(fromus_objectname))
-	{	// S'il n'y a eu aucun résultat...
-		fromus_objectname = fromus_error;
-		console.log("Aucun résultat au final. Donc le nom vaut \'?\'");		
-	}
-	console.log("Fin de la partie name du script, objectname vaut finalement : " + fromus_objectname);	
-	
-	
 	//price			
 	if(fromus_moreprice)
 	{
@@ -225,11 +130,89 @@ if( fromus_sitelist[fromus_site])
 			}
 		}
 	}
-
-if(!(fromus_pricemin))
+	
+	if(!(fromus_pricemin))
 	{	// S'il n'y a eu aucun résultat...
 		fromus_pricemin = fromus_error;
 	}
+
+	if(typeof(fromus_pricemin)=='string')
+	{
+		fromus_pricemin			=	fromus_pricemin.replace(/\$/g,'').replace(',','');
+		if( /[0-9\.]{1,}/g.test(fromus_pricemin))
+		{
+			fromus_pricemin		=	parseFloat(/[0-9\.]{1,}/g.exec(fromus_pricemin)[0]);
+		}
+	}	
+	
+	// stockage du prix dans local storage
+	localStorage["regPrice"] = fromus_pricemin;	
+	
+	localStorage["fromus_moreprice"]	=	JSON.stringify(false);
+}
+
+
+///////////////////////////////////////////////////// Partie cherchant l'info /////////////////////////////////////////////////////
+
+// stockage du marchand dans local storage 
+localStorage["regStore"] = fromus_site;	
+
+if( fromus_sitelist[fromus_site])
+{	//Si le site est connu
+	//name
+	
+	
+	if(fromus_morename)
+	{
+		fromus_i = parseInt(localStorage["fromus_iname"]);
+		fromus_objectname	=	'';
+	}
+	else
+	{
+		fromus_i = 0;
+	}
+	
+	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && !(fromus_objectname) ; fromus_i++)
+	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
+		
+		var fromus_name_id = document.getElementById(fromus_sitelist[fromus_site].name_id[fromus_i]);
+		if(fromus_name_id)
+		{	//S'il y a un résultat, l'enregistrer
+			fromus_objectname = fromus_name_id.textContent;
+			localStorage["fromus_iname"] = fromus_i + 1 ;
+		}
+	}
+	
+	if(fromus_morename)
+	{
+		fromus_i = parseInt(localStorage["fromus_iname"]);
+		fromus_objectname	=	'';
+	}
+	else
+	{
+		fromus_i = 0;
+	}
+	
+	
+	if(!fromus_objectname)
+	{	//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
+		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && !(fromus_objectname) ; fromus_i++)
+		{
+			var fromus_name_class = document.getElementsByClassName(fromus_sitelist[fromus_site].name_class[fromus_i])[0];
+			if(fromus_name_class)
+			{
+				fromus_objectname = fromus_name_class.textContent;
+				localStorage["fromus_iname"] = fromus_i + 1;	
+			}
+		}
+	}
+	
+	if(!(fromus_objectname))
+	{	// S'il n'y a eu aucun résultat...
+		fromus_objectname = fromus_error;
+	}
+	
+	fromus_recupPrice();
 	
 	//img 		
 	if(fromus_moreimg)
@@ -366,20 +349,9 @@ if(fromus_desc.length > 200)
 }
 fromus_objectname			=	fromus_objectname.replace(/^[\s]{0,}/,'').replace(/\n.*/g,'').substring(0,100);
 
-if(typeof(fromus_pricemin)=='string')
-{
-	fromus_pricemin			=	fromus_pricemin.replace(/\$/g,'').replace(',','');
-	if( /[0-9\.]{1,}/g.test(fromus_pricemin))
-	{
-		fromus_pricemin		=	parseFloat(/[0-9\.]{1,}/g.exec(fromus_pricemin)[0]);
-	}
-}
 
 // stockage du nom dans local storage
 localStorage["regName"] = fromus_objectname;
-
-// stockage du prix dans local storage
-localStorage["regPrice"] = fromus_pricemin;
 
 // stockage de la description dans local storage
 localStorage["regDesc"] = fromus_desc;
@@ -394,6 +366,5 @@ localStorage["regOffer"] = /http[s]{0,1}\:\/\/(.*)/gi.exec(wwwOffre)[1];
 
 //Mise à zéro des indicateurs
 localStorage["fromus_morename"] =	JSON.stringify(false);
-localStorage["fromus_moreprice"]	=	JSON.stringify(false);
 localStorage["fromus_moreimg"]	=	JSON.stringify(false);
 localStorage["fromus_moredesc"]	=	JSON.stringify(false);
