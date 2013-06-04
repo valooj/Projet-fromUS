@@ -153,10 +153,12 @@ function sendToServer(urlSelected, jsonSelected) {
 
 			case 'C':
 				var totalPrice = datas['Prix'];
+				var livPrice = datas['Prix_liv'];
+				var taxPrice = datas['Prix_tax'];
 				if(totalPrice !== 0){
 					if(confirm('L\'estimation du prix est de $'+totalPrice+' ')) {
-						
-						var jsonPanier = {libelle: regName ,url: regOffer ,desc: regDesc, qte: qteVal ,montant: totalPrice ,categ: categVal};
+						// pour tester a changer
+						var jsonPanier = {priceTot: regtotal ,priceLiv: livPrice ,priceTax: taxPrice ,libelle: regName ,url: regOffer ,desc: regDesc, qte: qteVal ,montant: totalPrice ,categ: categVal};
 						var postDataPanier = JSON.stringify(jsonPanier);
 						var panierJSON = {panier:postDataPanier};
 						sendAjoutPanier(panierJSON);

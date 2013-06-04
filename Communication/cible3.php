@@ -19,7 +19,7 @@ INSERT INTO pts_bonus(pts_cli, pts_nb)
 		pts_nb= pts_nb + :_nb
 SQL;
 
-$sql_prepared_update_panier = <<<SQL
+$sql_prepared_update_panier_det = <<<SQL
 INSERT INTO commande_detail(cmdd_libelle, cmdd_url, cmdd_desc, cmdd_qte, cmdd_montant, cmdd_categ, cmdd_poids, cmdd_unitep, cmdd_larg, cmdd_long, cmdd_haut, cmdd_united, cmdd_proforma, cmdd_ent)
 	VALUES (:_libelle, :_url, :_desc, :_qte, :_montant, :_categ, :_poids, :_unitep, :_larg, :_long, :_haut, :_united, :_proforma, :_ent)
 	ON DUPLICATE KEY UPDATE
@@ -173,6 +173,9 @@ try
 			if ( !$get_panier )
 				throw new Exception($lng['invalid_panier']);
 
+			if( !isset($get_panier['priceTot'], $get_panier['priceLiv'], $get_panier['priceTax']) )
+				throw new Exception($lng['bad_param']);
+
 			if( !isset($get_panier['libelle'], $get_panier['qte'], $get_panier['montant'] , $get_panier['url'], $get_panier['desc'], $get_panier['categ']) )
 				throw new Exception($lng['bad_param']);
 
@@ -198,10 +201,27 @@ try
 			if(!$tokId)
 				throw new Exception($lng['invalid_token']);
 	
-			// code MAJ du produit visité
-			$req = $bdd->prepare($sql_prepared_update_panier);
+			$req = $bdd->prepare('INSERT INTO commande_ent(cmde_adrl, cmde_cli ,cmde_libelle, cmde_date, cmde_nba, cmde_total, cmde_livraison, cmde_taxes, cmde_totalm)
+					VALUES (:_adrl, :_cli, :_libelle, :_date, :_nba, :_total, :_livraison, :_taxes, :_totalm)');
+			
+            $req->bindValue('_adrl' , 	 		1,								PDO::PARAM_INT);
+            $req->bindValue('_cli' ,     		$tokId, 						PDO::PARAM_INT);
+            $req->bindValue('_libelle',    		'cmd-'.mktime().'-'.$tokId,     PDO::PARAM_STR);
+            $req->bindValue('_date' ,     		mktime(),                      	PDO::PARAM_INT);
+            $req->bindValue('_nba' ,    		 1,               				PDO::PARAM_INT); //decimal
+            $req->bindValue('_total' ,    		$get_panier['priceTot'] , 							PDO::PARAM_STR);
+            $req->bindValue('_livraison' ,    	$get_panier['priceLiv'],                        		PDO::PARAM_STR); //decimal
+            $req->bindValue('_taxes' , 	 		$get_panier['priceTax'], 							PDO::PARAM_STR);
+            $req->bindValue('_totalm' ,    		$get_panier['montant'], 							PDO::PARAM_STR); //decimal
+            $req->execute();
+			$id_ent = $bdd->lastInsertId();
+			$req->closeCursor();
 
-            $req->bindValue('_libelle' , 	$get_panier['libelle'],		PDO::PARAM_STR);
+	
+			// code MAJ du produit visité
+			$req = $bdd->prepare('INSERT INTO commande_detail(cmdd_libelle, cmdd_url, cmdd_desc, cmdd_qte, cmdd_montant, cmdd_categ, cmdd_poids, cmdd_unitep, cmdd_larg, cmdd_long, cmdd_haut, cmdd_united, cmdd_proforma, cmdd_ent)
+					VALUES (:_libelle, :_url, :_desc, :_qte, :_montant, :_categ, :_poids, :_unitep, :_larg, :_long, :_haut, :_united, :_proforma, :_ent)');
+			$req->bindValue('_libelle' , 	$get_panier['libelle'],		PDO::PARAM_STR);
             $req->bindValue('_url' ,     	$get_panier['url'], 			PDO::PARAM_STR);
             $req->bindValue('_desc' ,    	$get_panier['desc'],                			PDO::PARAM_STR);
             $req->bindValue('_qte' ,     	$get_panier['qte'],                      			PDO::PARAM_INT);
@@ -214,7 +234,7 @@ try
             $req->bindValue('_haut' ,        2,                       			PDO::PARAM_STR); //decimal
             $req->bindValue('_united' ,     'united',              		    PDO::PARAM_STR);
             $req->bindValue('_proforma' ,   'proforma', 			PDO::PARAM_STR);
-            $req->bindValue('_ent' ,     	 $tokId,                        PDO::PARAM_INT);
+            $req->bindValue('_ent' ,     	 $id_ent,                        PDO::PARAM_INT);
             $rep = $req->execute();
             $req->closeCursor();
 
@@ -342,6 +362,8 @@ try
 			
 			$response['Status'] = 'C';
 			$response['Prix'] = $prix_total;
+			$response['Prix_liv'] = $frais_liv;
+			$response['Prix_tax'] = $tax;
 	
 
 			break;
