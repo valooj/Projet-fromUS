@@ -144,9 +144,13 @@ function sendToServer(urlSelected, jsonSelected) {
 				} 
 				chrome.extension.sendMessage({method: "price_class", data: content_pclass});
 				chrome.extension.sendMessage({method: "price_id", data: content_pid});
-				
-				document.getElementById('fromus_price').value = localStorage["regPrices"] ;
 
+				chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
+				   document.getElementById('fromus_price').value = localStorage["regPrices"] ;
+
+				  });
+				
+				
 			break;
 
 			break;

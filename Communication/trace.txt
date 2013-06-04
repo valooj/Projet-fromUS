@@ -38,3 +38,297 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.siteduzero.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.siteduzero.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.siteduzero.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.siteduzero.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.siteduzero.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.siteduzero.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.siteduzero.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.siteduzero.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => en
+    [sscateg] => 168
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => de
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.siteduzero.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.siteduzero.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.siteduzero.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => 
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => 
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => 
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => 
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [log] => {"email":"s_careme@yahoo.fr","password":"s_careme@yahoo.fr"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [token] => undefined
+)
+
+===========================================

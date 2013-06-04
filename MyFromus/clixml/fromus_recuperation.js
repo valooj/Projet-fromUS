@@ -77,8 +77,19 @@ function fromus_siteObj()
 
 /////////////////////////////////////// Début de la déclaration des fonctions de récupération ///////////////////////////////////////
 
-function fromus_recupPrice()
+function fromus_recupPrice(idclass)
 {
+	if(idclass == 'id'
+	{
+		fromus_sitelist[fromus_site].price_id = request.data.split(';');
+		fromus_sitelist[fromus_site].price_class.push('');		
+	}
+	else
+	{
+		fromus_sitelist[fromus_site].price_class = request.data.split(';');
+		fromus_sitelist[fromus_site].price_id.push('');		
+	}
+	
 	if(localStorage["fromus_moreprice"])
 	{
 		fromus_moreprice = JSON.parse(localStorage["fromus_moreprice"]);
@@ -98,7 +109,7 @@ function fromus_recupPrice()
 		fromus_i = 0;
 	}
 	
-	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_id.length) && !(fromus_pricemin) ; fromus_i++)
+	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].price_id.length) && !(fromus_pricemin) ; fromus_i++)
 	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
 		var fromus_price_id = document.getElementById(fromus_sitelist[fromus_site].price_id[fromus_i]);
 		if(fromus_price_id)
@@ -120,7 +131,7 @@ function fromus_recupPrice()
 	
 	if(!(fromus_pricemin))
 	{	//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
-		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].name_class.length) && !(fromus_pricemin) ; fromus_i++)
+		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].price_class.length) && !(fromus_pricemin) ; fromus_i++)
 		{
 			var fromus_price_class = document.getElementsByClassName(fromus_sitelist[fromus_site].price_class[fromus_i])[0];
 			if(fromus_price_class)
@@ -135,7 +146,7 @@ function fromus_recupPrice()
 	{	// S'il n'y a eu aucun résultat...
 		fromus_pricemin = fromus_error;
 	}
-
+	
 	if(typeof(fromus_pricemin)=='string')
 	{
 		fromus_pricemin			=	fromus_pricemin.replace(/\$/g,'').replace(',','');
@@ -149,7 +160,15 @@ function fromus_recupPrice()
 	localStorage["regPrice"] = fromus_pricemin;	
 	
 	localStorage["fromus_moreprice"]	=	JSON.stringify(false);
+
+
+	chrome.runtime.sendMessage({
+	type: "regPrices",
+	regStore: fromus_objectname
+	});
+
 }
+
 
 
 ///////////////////////////////////////////////////// Partie cherchant l'info /////////////////////////////////////////////////////
@@ -211,8 +230,6 @@ if( fromus_sitelist[fromus_site])
 	{	// S'il n'y a eu aucun résultat...
 		fromus_objectname = fromus_error;
 	}
-	
-	fromus_recupPrice();
 	
 	//img 		
 	if(fromus_moreimg)
@@ -374,16 +391,11 @@ chrome.runtime.sendMessage({
 	regStore: fromus_site
 });
 
-chrome.runtime.sendMessage({
-	type: "regPrices",
-	regStore: fromus_objectname
-});
-
-chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
    if (request.method === "price_class") {
-     fromus_recupPrice()
+     fromus_recupPrice('class');
      }
    else if (request.method === "price_id") {
-     fromus_recupPrice()
+     fromus_recupPrice('id');
      }
   });
