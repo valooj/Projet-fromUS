@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	document.getElementById('fromus_store').value = localStorage["popup_store"] ;
 
+
 });
 
 window.onload = function() {
@@ -122,16 +123,15 @@ function sendToServer(urlSelected, jsonSelected) {
 				//alert(datas['Message']['sa_chemin']);
 				var elem = datas['Message']['sa_chemin'].split('/');
 				//alert(elem[2]);
+				var content_pclass;
+				var content_pid;
 				for(var i=0 ; i<elem.length ; i++)
 				{
 				    if(elem[i].indexOf('price_class') !== (-1)){
 				  		var sous_elem = elem[i].split('<-->');
 				  		//alert(sous_elem[0]);
 				  		//alert(sous_elem[1]);
-				  		chrome.runtime.sendMessage({
-							type: "price_class",
-							regStore: sous_elem[1]
-						});
+				  		content_pclass= sous_elem[1]+';'+content_pclass;
 				  	}
 				  	else if(elem[i].indexOf('price_id') !== (-1)){
 				  	 var sous_elem = elem[i].split('<-->');
@@ -139,31 +139,13 @@ function sendToServer(urlSelected, jsonSelected) {
 				  		//alert(sous_elem[1]);
 				  		//fromus_sitelist[localStorage["popup_store"]].price_class.push(sous_elem[1]);
 				  		//i = elem.length+1;
-				  		chrome.runtime.sendMessage({
-							type: "price_id",
-							regStore: sous_elem[1]
-						});
+				  		content_pid= sous_elem[1]+';'+content_pid;
 				  	} 
-				} /*
-				for(var i=0 ; i<elem.length ; i++)
-				{
-				  	if(elem[i].indexOf('name_class') == -1){
-				  		if(elem[i].indexOf('name_id') == -1)
-				  			document.getElementById('fromus_name').value = '?' ;
-				  		else{
-				  			var sous_elem = elem[1].split('<-->');
-				  			alert(sous_elm[1]);
-				  			//fromus_sitelist[localStorage["popup_name"]].price_id.push(sous_elem[1]);
-				  			i = elem.length + 1;
-				  		}
-				  	}
-				  	else {
-				  		var sous_elem = elem[1].split('<-->');
-				  		alert(sous_elm[1]);
-				  		//fromus_sitelist[localStorage["popup_name"]].price_class.push(sous_elem[1]);
-				  		i = elem.length + 1;
-				  	}
-				} */
+				} 
+				chrome.extension.sendMessage({method: "price_class", data: content_pclass});
+				chrome.extension.sendMessage({method: "price_id", data: content_pid});
+				
+				document.getElementById('fromus_price').value = localStorage["regPrices"] ;
 
 			break;
 

@@ -9,7 +9,7 @@
 /////	Définition des variables	/////
 
 var fromus_offre = document.location.href;		//récupération de l'adresse du l'offre
-var fromus_site = /http[s]{0,1}\:\/\/(.*\.[a-z]{2,3})\//gi.exec(fromus_offre)[1];	//stockage du site web où se trouve l'offre
+var fromus_site = 'www' + /.*(\..*\.[a-z]{2,3})\//gi.exec(fromus_offre)[1];	//stockage du site web où se trouve l'offre
 var fromus_objectname,
 fromus_objectnametmp,		// Les variables tmp sont des variables temporaires requises pour le traitement d'un nombre considérable de sites
 fromus_pricemin,					// Le "fromus_" permet d'empêcher les conflits lors de l'utilisation du code dans une application, une extension ou un plugin
@@ -35,6 +35,7 @@ else
 {
 	fromus_morename = false;
 }
+
 if(localStorage["fromus_moreprice"])
 {
 	fromus_moreprice = JSON.parse(localStorage["fromus_moreprice"]);
@@ -43,6 +44,7 @@ else
 {
 	fromus_moreprice = false;
 }
+
 if(localStorage["fromus_moreimg"])
 {
 	fromus_moreimg = JSON.parse(localStorage["fromus_moreimg"]);
@@ -51,6 +53,7 @@ else
 {
 	fromus_moreimg= false;
 }
+
 if(localStorage["fromus_moredesc"])
 {
 	fromus_moredesc = JSON.parse(localStorage["fromus_moredesc"]);
@@ -59,6 +62,7 @@ else
 {
 	fromus_moredesc = false;
 }
+
 /////////////////////////////////////// Fin de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
 
 /**********************************************************************************************/
@@ -83,42 +87,25 @@ function fromus_siteObj()
 	this.desc_class= new Array();
 }
 
-
-/////	Normalisation des sites du type quelquechose.nomdusite.com	/////	
-
-if(/(\.rakuten)/.test(fromus_site))
+if(localStorage['price_id'] || localStorage['price_class'])
 {
-	fromus_site = "www.rakuten.com";
+	fromus_sitelist['fromus_site'] = new fromus_siteObj;
 }
-else
+
+if(localStorage['price_id'])
 {
-	if(/(\.gap)/.test(fromus_site))
-	{
-		fromus_site = "www.gap.com";
-	}
-	else	
-	{
-		if(/(\.nike)/.test(fromus_site))
-		{
-			fromus_site = "www.nike.com";
-		}
-		else
-		{
-			if(/(qvc\.com)/.test(fromus_site))
-			{
-				fromus_site = "www.qvc.com";
-			}
-		}
-	}
+	fromus_sitelist[fromus_site].price_id = localStorage['price_id'].split(';');
+
+}
+if(localStorage['price_class'])
+{
+	fromus_sitelist[fromus_site].price_class = localStorage['price_class'].split(';');	
 }
 
 ///////////////////////////////////////////////////// Partie cherchant l'info /////////////////////////////////////////////////////
 
-// regex pour supprimmer www.         
-var regStore = fromus_site.replace(/www\./,'');
-
 // stockage du marchand dans local storage 
-localStorage["regStore"] = regStore;	
+localStorage["regStore"] = fromus_site;	
 
 if( fromus_sitelist[fromus_site])
 {	//Si le site est connu
@@ -406,3 +393,14 @@ chrome.runtime.sendMessage({
 	type: "popup_store",
 	regStore: fromus_site
 });
+
+chrome.runtime.sendMessage({
+	type: "regPrices",
+	regStore: fromus_objectname
+});
+
+chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
+   if (request.method === "price_class") {
+     
+     }
+  });
