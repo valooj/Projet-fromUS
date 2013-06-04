@@ -287,6 +287,9 @@ $(document).ready( function () {
   	$("img[id='lgen']").click(function() {
 		changeLng('en');
   	});
+  	$("img[id='lgde']").click(function() {
+		changeLng('de');
+  	});
 
 });
 
