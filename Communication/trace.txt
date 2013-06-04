@@ -1,0 +1,77 @@
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => code.google.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => col126.mail.live.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================

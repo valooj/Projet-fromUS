@@ -128,8 +128,10 @@ function sendToServer(urlSelected, jsonSelected) {
 				  		var sous_elem = elem[i].split('<-->');
 				  		//alert(sous_elem[0]);
 				  		//alert(sous_elem[1]);
-				  		//fromus_sitelist[localStorage["popup_store"]].price_id.push(sous_elem[1]);
-				  		//i = elem.length+1;
+				  		chrome.runtime.sendMessage({
+							type: "price_class",
+							regStore: sous_elem[1]
+						});
 				  	}
 				  	else if(elem[i].indexOf('price_id') !== (-1)){
 				  	 var sous_elem = elem[i].split('<-->');
@@ -137,6 +139,10 @@ function sendToServer(urlSelected, jsonSelected) {
 				  		//alert(sous_elem[1]);
 				  		//fromus_sitelist[localStorage["popup_store"]].price_class.push(sous_elem[1]);
 				  		//i = elem.length+1;
+				  		chrome.runtime.sendMessage({
+							type: "price_id",
+							regStore: sous_elem[1]
+						});
 				  	} 
 				} /*
 				for(var i=0 ; i<elem.length ; i++)
