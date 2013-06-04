@@ -1,3 +1,5 @@
+var fus_actprice = 1; // V ariable indiquant que l'on est à la recherche du prix
+
 var bindEvent = function(elem ,evt,cb) {
 	//vérifie si addEventListenerexiste dans l'élément
 	if ( elem.addEventListener ) {
@@ -12,99 +14,91 @@ var bindEvent = function(elem ,evt,cb) {
 	}
 }
 
-
-
-
 var inversHTML	=	function(htmlcode){
 	console.log('start, htmlcode = ' + htmlcode);
 	
-	
-    if (color.substr(0, 1) === '#') 
+    if (htmlcode.substr(0, 1) === '#') 
 	{
-        return color.substr(1,7);
+		htmlcode = htmlcode.substr(1,7);
+		htmlcode = parseInt(htmlcode,16);
+		htmlcode = htmlcode ^16777215;
+		return htmlcode;
 	}
 	else
-	{
+	{	
+		var digits = /(rgb[a]{0,1}\()(\d+), (\d+), (\d+)(.*)/.exec(htmlcode);
 		
-		
-		var digits = /(.*?)rgb[a]{0,1}\((\d+), (\d+), (\d+).*/.exec(color);
+		if(/, \d+/.test(digits[5]))
+		{
+			var alpha = parseInt(/\d+/.exec(digits[5]));
+		}
 		
 		var red = parseInt(digits[2]);
 		var green = parseInt(digits[3]);
 		var blue = parseInt(digits[4]);
 		
-		var rgb = blue | (green << 8) | (red << 16);
-		return digits[1] +''+ rgb.toString(16);
-		
-		
-		
-		
-		var fus_r	=	htmlcode.substring(0,2);
-		var fus_g	=	htmlcode.substring(2,4);
-		var fus_b	=	htmlcode.substring(4,6);	
-		
-		
 		console.log('ColorConvert,');
-		console.log('fus_r = ' + fus_r);
-		console.log('fus_g = ' + fus_g);
-		console.log('fus_b = ' + fus_b);
+		console.log('red = ' + red);
+		console.log('green = ' + green);
+		console.log('blue = ' + blue);
+		console.log('alpha = ' + alpha);
 		
-		fus_r	=	parseInt(fus_r, 16);
-		fus_g	=	parseInt(fus_g, 16);
-		fus_b	=	parseInt(fus_b, 16);
-		console.log('parseInt' );
+		red 		=	red		^	255;
+		green	=	green	^	255;
+		blue	=	blue	^	255;
 		
-		console.log('fus_r = ' + fus_r);
-		console.log('fus_g = ' + fus_g);
-		console.log('fus_b = ' + fus_b);							
+		if(alpha!=undefined)
+		{
+			alpha	=	alpha	^	255;
+		}
 		
-		fus_r 	=	fus_r	^	255;
-		fus_g	=	fus_g	^	255;
-		fus_b	=	fus_b	^	255;
 		console.log('XOR' );
 		
-		console.log('fus_r = ' + fus_r);
-		console.log('fus_g = ' + fus_g);
-		console.log('fus_b = ' + fus_b);							
+		console.log('red = ' + red);
+		console.log('green = ' + green);
+		console.log('blue = ' + blue);							
+		console.log('alpha = ' + alpha);
 		
-		fus_r 	=	fus_r.toString(16);
-		if(fus_r =='0')
+		red 	=	red.toString(10);
+		green	=	green.toString(10);
+		blue	=	blue.toString(10);
+		
+		if(alpha!=undefined)
 		{
-			fus_r = '00';
+			alpha	=	alpha.toString(10);
 		}
 		
-		fus_g	=	fus_g.toString(16);
-		if(fus_g =='0')
+		htmlcode = red+','+green+','+blue;
+		if(alpha!=undefined)
 		{
-			fus_g = '00';
+			htmlcode = htmlcode + ',' + alpha;
 		}
-		
-		fus_b	=	fus_b.toString(16);
-		if(fus_b =='0')
-		{
-			fus_b = '00';
-		}
-		
-		htmlcode = fus_r+fus_g+fus_b;
 		console.log('end après toString, htmlcode = ' + htmlcode);
 		
-		
+		htmlcode = digits[1]+htmlcode+'\)';
+		console.log('au return, htmlcode = ' + htmlcode);	
 		return htmlcode;
 	}
 }
 
 var mouser = bindEvent(document,'mouseover', function(event) 
 { var target = event.target || event.srcElement;
-	console.log('mouseover');
-	target.style.backgroundColor = inversHTML(getComputedStyle(target).backgroundColor);
+	if(fus_actprice == 1)	// Si on cherceh le prix...
+	{
+		console.log('mouseover');
+		target.style.backgroundColor = inversHTML(getComputedStyle(target).backgroundColor);	
+		// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
+	}
 });
 
 var mouset = bindEvent(document,'mouseout', function(event) 
 { var target = event.target || event.srcElement;
-	console.log('mouseout');
-	target.style.backgroundColor = '#'+inversHTML(getComputedStyle(target).backgroundColor);
+	if(fus_actprice == 1)	// Si on cherceh le prix...
+	{
+		console.log('mouseout');
+		target.style.backgroundColor = inversHTML(getComputedStyle(target).backgroundColor);
+	}
 });
-
 
 
 
@@ -115,7 +109,7 @@ bindEvent(document,'click', function(event)
 	var 	fromus_selectedText  = target.textContent;
 	var 	fromus_selectedTexttmp;
 	
-	var 	fromus_site 	=	document.location.href;		//récupération de l'adresse fromus_
+	var 	fromus_site 	=	document.location.href;		//récupération de l'adresse fromus_ site
 	fromus_site 	=	/http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_site)[1];
 	fromus_site	=	/\.[a-z0-9\-A-Z]{1,}\.com$/.exec(fromus_site)[0];
 	fromus_site	=	'www'+fromus_site;
@@ -198,7 +192,6 @@ bindEvent(document,'click', function(event)
 	console.log("Et ce qui est affiché dans la case est...");
 	console.log(fromus_selectedText);
 	localStorage["regPrice"] = fromus_selectedText;
-	mouser.removeEventListener('mouseover',arguments.calle,false);
-	mouset.removeEventListener('mouseout',arguments.calle,false);
+	fus_actprice = 0;	// On ne cherche pas le prix
 	this.removeEventListener('click',arguments.callee,false);
 });		

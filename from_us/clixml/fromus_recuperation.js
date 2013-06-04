@@ -114,11 +114,8 @@ else
 
 ///////////////////////////////////////////////////// Partie cherchant l'info /////////////////////////////////////////////////////
 
-// regex pour supprimmer www.         
-var regStore = fromus_site.replace(/www\./,'');
-
 // stockage du marchand dans local storage 
-localStorage["regStore"] = regStore;	
+localStorage["regStore"] = fromus_site;	
 
 if( fromus_sitelist[fromus_site])
 {	//Si le site est connu
