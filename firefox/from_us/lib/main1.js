@@ -61,9 +61,9 @@ function addToolbarButton() {
             self.data.url('jquery/jquery.min.js'),
         		self.data.url('jquery/jquery-ui.js'),
             self.data.url('fromus_recuperation.js'),
-            self.data.url('dialog_css.js')
+            self.data.url('dialog.js')
             ],
-            contentStyleFile: self.data.url('jquery/jquery-ui.css'),
+            //contentStyleFile: self.data.url('jquery/jquery-ui.css'),
             contentScriptWhen: 'end'
            });
 		console.log('click');
