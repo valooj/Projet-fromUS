@@ -1,4 +1,4 @@
-function fromus_recupdesc(idclass)
+function fromus_recupdDesc(idclass)
 {
 	if(idclass == 'id'
 	{
