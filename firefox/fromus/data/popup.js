@@ -11,6 +11,7 @@ var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=M
 var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&lng='+defLng+'&sscateg=';
 var _urlPts = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-pts&lng='+defLng+'&token=';
 
+console.log(fromus);
 
 
 document.addEventListener('DOMContentLoaded', function() {

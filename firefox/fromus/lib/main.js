@@ -2,6 +2,24 @@ var data = require('sdk/self').data;
 var tabs = require('sdk/tabs');
 
 
+
+var fromus_panel = require('panel').Panel({
+  width: 200,
+  height: 500,
+  //focus: false,
+  contentURL: data.url('popup.html'),
+  contentScriptFile: [
+              /*data.url('jquery/jquery.min.js'),
+            data.url('locales/en/enLng.js'),
+            data.url('locales/fr/frLng.js'),
+            data.url('langue.js'),
+            data.url('popup.js')*/
+            data.url('test.js')
+            ],
+    contentScriptWhen : "end"
+    
+});
+
 var pageMod = require("sdk/page-mod").PageMod({
   include: "*",
   contentScriptFile: [
@@ -10,10 +28,10 @@ var pageMod = require("sdk/page-mod").PageMod({
   contentScriptWhen : "end",
   attachTo: ["existing", "top"],
   onAttach: function(worker) {
-    /*fromus_panel.port.on('panel-message', function(data) {
+    worker.port.on('recuperation-to-panel', function(fromus) {
             // we emit the same message through to the page-mod
-            worker.port.emit('panel-message', data);
-        });*/
+            fromus_panel.port.emit('recuperation-to-panel', fromus);
+        });
     
   }
 });
@@ -21,25 +39,7 @@ var pageMod = require("sdk/page-mod").PageMod({
 
 
 
-var fromus_panel = require('panel').Panel({
-	width: 200,
-	height: 500,
-	//focus: false,
-	contentURL: data.url('popup.html'),
-	contentScriptFile: [
-            	data.url('jquery/jquery.min.js'),
-        		data.url('locales/en/enLng.js'),
-        		data.url('locales/fr/frLng.js'),
-        		data.url('langue.js'),
-        		data.url('popup.js')
-        		],
-    contentScriptWhen : "ready"
-    
-});
 
-pageMod.port.on("recuperation-to-panel",function(fromus){
-    fromus_panel.port.emit("recuperation-to-panel",fromus);
-});
 
 
 
