@@ -11,7 +11,7 @@ var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=M
 var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&lng='+defLng+'&sscateg=';
 var _urlPts = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-pts&lng='+defLng+'&token=';
 
-console.log(fromus);
+console.error('from popup.js : ' + fromus);
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('fu_assurance').innerHTML = i18n("InsuranceP") ;
 
 
-	//document.getElementById('fromus_store').value = fromus ;
+	document.getElementById('fromus_store').value = fromus ;
 
 });
 

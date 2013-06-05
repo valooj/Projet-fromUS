@@ -9,27 +9,27 @@ var fromus_panel = require('panel').Panel({
   //focus: false,
   contentURL: data.url('popup.html'),
   contentScriptFile: [
-              /*data.url('jquery/jquery.min.js'),
+            /*data.url('jquery/jquery.min.js'),
             data.url('locales/en/enLng.js'),
             data.url('locales/fr/frLng.js'),
             data.url('langue.js'),
+            data.url('test.js'),
             data.url('popup.js')*/
-            data.url('test.js')
             ],
-    contentScriptWhen : "end"
+    contentScriptWhen : 'end'
     
 });
 
-var pageMod = require("sdk/page-mod").PageMod({
-  include: "*",
+var pageMod = require('sdk/page-mod').PageMod({
+  include: '*',
   contentScriptFile: [
     data.url('fromus_recuperation.js')
     ],
-  contentScriptWhen : "end",
-  attachTo: ["existing", "top"],
+  contentScriptWhen : 'ready',
+  attachTo: ['existing', 'top'],
   onAttach: function(worker) {
     worker.port.on('recuperation-to-panel', function(fromus) {
-            // we emit the same message through to the page-mod
+            
             fromus_panel.port.emit('recuperation-to-panel', fromus);
         });
     
@@ -49,18 +49,19 @@ var tbb = require('toolbarbutton').ToolbarButton({
     image: data.url('img/on.png'),
     onCommand: function () {
         tabs.activeTab.attach ({
-          /*contentScriptFile: [
-            data.url('jquery/jquery.min.js'),
-            data.url('locales/en/enLng.js'),
-            data.url('locales/fr/frLng.js'),
-            data.url('langue.js'),
+          contentScriptFile: [
+            //data.url('jquery/jquery.min.js'),
+            //data.url('locales/en/enLng.js'),
+            //data.url('locales/fr/frLng.js'),
+            //data.url('langue.js'),
             data.url('fromus_recuperation.js'),
-            data.url('popup.js')
+            data.url('test.js')
+            //data.url('popup.js')
             
             
             
           ],
-            contentScriptWhen: 'end'*/
+            contentScriptWhen: 'start'
     });
 
     },

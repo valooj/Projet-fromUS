@@ -26,8 +26,8 @@ fromus_morename,
 fromus_moreimg,		// Ces variables servent à indiquer si l'utilisateur a demandé un/e autre nom, prix, description, image
 fromus_moredesc;
 
-var fromus = "test";
-self.port.emit("recuperation-to-panel",fromus);
+var fromus = 'test to panel';
+self.port.emit('recuperation-to-panel',fromus);
 //self.port.emit("msg", fromus);
 
 /////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////

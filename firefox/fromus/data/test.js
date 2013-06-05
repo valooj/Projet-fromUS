@@ -1,1 +1,1 @@
-console.log(fromus);
+console.error('from test.js : ' + fromus);
