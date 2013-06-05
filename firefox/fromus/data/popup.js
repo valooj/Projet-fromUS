@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('fu_assurance').innerHTML = i18n("InsuranceP") ;
 
 
-	document.getElementById('fromus_store').value = regStore ;
+	//document.getElementById('fromus_store').value = fromus ;
 
 });
 

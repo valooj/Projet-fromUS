@@ -26,6 +26,10 @@ fromus_morename,
 fromus_moreimg,		// Ces variables servent à indiquer si l'utilisateur a demandé un/e autre nom, prix, description, image
 fromus_moredesc;
 
+var fromus = "test";
+self.port.emit("recuperation-to-panel",fromus);
+//self.port.emit("msg", fromus);
+
 /////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
 if(localStorage["fromus_morename"])
 {
@@ -117,7 +121,7 @@ else
 // regex pour supprimmer www.         
 var regStore = fromus_site.replace(/www\./,'');
 console.log(regStore);
-document.defaultView.postMessage("Message from content script", regStore);
+
 
 
 // stockage du marchand dans local storage 
