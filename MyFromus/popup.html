@@ -18,6 +18,14 @@
     <script type="text/javascript" src="langue.js"></script>
     <script type="text/javascript" src="clixml/fromus_recuperation.js"></script>
     <script type="text/javascript" src="popup.js"></script>
+    <SCRIPT language=javascript>
+      var win=window.open("popup.html","pop","width=200,height=200");
+      function TaillePopup(largeur, hauteur) {
+         win.resizeTo(largeur, hauteur);
+         win.focus();
+      }
+    </SCRIPT>
+ 
   </head>
   <body>
   <div id="header">
@@ -25,7 +33,7 @@
       <img  src = "img/fr.png" id="lgfr"></img>
       <img  src = "img/en.png" id="lgen"></img>
       <img src = "img/de.png" id="lgde"></img>
-    </div>
+      </div>
     <FORM name="loginU" id="loginU">
      <input type="textbox" id="emailBox" placeholder="email"/><input type="password" id="passBox" placeholder="password"/>
      <INPUT TYPE="button" NAME="logB" VALUE="Login" id="connect">

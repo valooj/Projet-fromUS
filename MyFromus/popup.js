@@ -212,7 +212,7 @@ $(document).ready( function () {
         return false;
     });   
 
-	$("input[id='connect']").click(function() {
+    $("input[id='connect']").click(function() {
 		
    		var emailV = document.getElementById('emailBox').value;
 		var passwordV = document.getElementById("passBox").value;
@@ -278,6 +278,9 @@ $(document).ready( function () {
   	$("img[id='lgde']").click(function() {
 		changeLng('de');
   	});
+  	$("#size a").click(function(){
+    	resizeTO(100,100);
+    });
 
 });
 

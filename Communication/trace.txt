@@ -335,16 +335,435 @@ Array
 Array
 (
     [action] => MAJ-categorie
+<<<<<<< HEAD
+=======
+    [lng] => de
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
     [lng] => fr
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => de
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+>>>>>>> résolution du problème de css avec jquery
+    [lng] => fr
+)
+
+===========================================
+<<<<<<< HEAD
 =========
+=======
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+>>>>>>> résolution du problème de css avec jquery
 Array
 (
     [action] => MAJ-sscategorie
     [lng] => fr
+<<<<<<< HEAD
     [sscateg] => 34
+=======
+    [sscateg] => 37
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => de
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => de
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => de
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => de
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => de
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => de
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+>>>>>>> résolution du problème de css avec jquery
 )
 
 ===========================================
