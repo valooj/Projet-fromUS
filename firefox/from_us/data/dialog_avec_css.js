@@ -2,14 +2,14 @@ var token;
 var language =  window.navigator.language ;
 
 
-var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&lang='+language+'&token=';
-var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&lang='+language+'&token=';
-var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&lang='+language+'&token=';
-var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&lang='+language+'&token=';
-var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login&lang='+language;
+var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&token=';
+var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&token=';
+var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&token=';
+var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&token=';
+var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login';
 
-var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-categorie&lang='+language;
-var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&lang='+language+'&sscateg=';
+var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-categorie';
+var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&sscateg=';
 
 var qteVal;
 var categVal;
@@ -53,12 +53,15 @@ function sendToServer(urlSelected, jsonSelected) {
 	.done(function(datas) { 
 		switch(datas['Status']){
 			case 'l':
-				alert(datas['Message']);
+				document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgConnect");
+				//alert(datas['Message']);
 			break;
 
 			case 'L':
 				token = datas['Token'];
 				createCookie('token',token,21);
+				createCookie('Nick_Name',datas['Message'],21);
+				document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgWelcome")+datas['Message'];
 			break;
 
 			case 'c':
@@ -129,7 +132,6 @@ $(document).ready(function() {
 	console.log( "Variable from Content Script: "+localStorage["regName"] );
 	console.log( "Variable from Content Script: "+localStorage["regPrice"] );
 	console.log( "Variable from Content Script: "+localStorage["regDesc"] );
-	
 
 	
 	var newDialog = $('<div id="fromus_dialogBox" class="toto">' +
@@ -139,13 +141,14 @@ $(document).ready(function() {
 								'<li><a href="#fromus_tabs-1">tabBuy</a></li>' +
 								'<li><a href="#fromus_tabs-2">tabAccount</a></li>' +
 							'</ul>' +
+							'<label for="Nick_Name"></label><input type="textbox" id="Nick_Name" disabled="true"/></br>' +
 							'<div id="fromus_tabs-1">' +
 								'<h2>FormP</h2>' +
 								'<form id="fromusForm">' + 
 
 									'<label for="store">Merchant</label><input type="textbox" id="fromus_store" disabled="true"/></br>' +
-									'<label for="name">NameP</label><input type="textbox" id="fromus_name" disabled="true"/><input type="button" value="test" id="fromus_morename" /></br>' + 
-									'<label for="price">PriceP</label><input type="textbox" id="fromus_price" /></br>' +
+									'<label for="name">NameP</label><input type="textbox" id="fromus_name" disabled="true"/><input type="button" id="fromus_morename" /></br>' + 
+									'<label for="price">PriceP</label><input type="textbox" id="fromus_price" /><input type="button" id="fromus_moreprice" /></br>' +
 									'<label for="category">CategP</label>'+ 
 										'<select id="category">' +
 										'</select></br>' +
@@ -168,20 +171,17 @@ $(document).ready(function() {
 								'<label for="mdpfromus">PasswordU</label><input type="password" id="mdpfromus" /></br>' +
 
 								'<input type="button" value="login" id="log" />' +
-								'<a href="http://from-us.com/fromus" target="_blank">OubliU</a>' +
-								'<a href="http://from-us.com/fromus" target="_blank">CreateU</a>' +
+								'<a id="login" href="http://from-us.com/fromus" target="_blank">OubliU</a>' +
+								'<a id="create" href="http://from-us.com/fromus" target="_blank">CreateU</a>' +
 							'</div>' +
 						'</div>' +
 						'<a href="http://from-us.com/fromus" target=_blank><img id="logofromus" height="100" src=""/></a>' +
 					'</div>');
 
-
-
-	
-	
 	// variable qui permet de savoir si la dialog box est ouverte
 	var isOpen = $("#fromus_dialogBox").dialog("isOpen");
 	console.log("apres la trad");
+
 	
 	if (isOpen != true) {	
 
@@ -199,7 +199,7 @@ $(document).ready(function() {
 					my: "left top", 
 					at: "left top"
 				},
-			height: 380	,
+			height: 400,
 			width: 880,
 			resizable: true,
 			closeOnEscape: true,
@@ -347,7 +347,6 @@ $(document).ready(function() {
   		});
 
 		console.log("apres dialog tabs");
-
 						
 		// creation du spinner pour la quantite
 		var newSpinner = $( "#QteSpinner" ).spinner({
@@ -393,32 +392,57 @@ $(document).ready(function() {
 
 		console.log("apres ajout automatiquement");
 
+		console.log("avant d'appuyer sur le bouton : " + localStorage["regName"]);
+
 		var fromus_morename = document.getElementById('fromus_morename');
+		/*var runtimeOrExtension = chrome.runtime && chrome.runtime.sendMessage ?
+ 		'runtime' : 'extension';
 		fromus_morename.addEventListener('click', function(e){
 			console.log('morename');
+			console.log("avant d'executer le script : " + localStorage["regName"]);
+			var start = new Date().getTime();
 			localStorage["fromus_morename"] =	JSON.stringify(true);
-			chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
+			chrome[runtimeOrExtension].sendMessage({greeting: "hello"}, function(response) {
   			console.log(response.farewell);
-		});
-			//$('#fromus_name').attr('value',"you");
-			$('#fromus_name').attr('value',localStorage["regName"]);
+  		});
+			var end = new Date().getTime();
+			var time = end - start;
+			var timeafterbtn = time + 15;
+			
+			setTimeout(function () {
+	        	$('#fromus_name').attr('value',localStorage["regName"]);
+	        	console.log("apres avoir d'executer le script : " + localStorage["regName"]);
+        	}, timeafterbtn);
+			
+			
 		}, false);
 
+		var fromus_moreprice = document.getElementById('fromus_moreprice');
+		var runtimeOrExtension = chrome.runtime && chrome.runtime.sendMessage ?
+ 		'runtime' : 'extension';
+		fromus_moreprice.addEventListener('click', function(e){
+			console.log('moreprice');
+			console.log("avant d'executer le script : " + localStorage["regPrice"]);
+			var start = new Date().getTime();
+			localStorage["fromus_moreprice"] =	JSON.stringify(true);
+			chrome[runtimeOrExtension].sendMessage({greeting: "youhou"}, function(response) {
+  			console.log(response.farewell);
+  		});
+			var end = new Date().getTime();
+			var time = end - start;
+			var timeafterbtn = time + 15;
+			
+			setTimeout(function () {
+	        	$('#fromus_price').attr('value',localStorage["regPrice"]);
+	        	console.log("apres avoir d'executer le script : " + localStorage["regPrice"]);
+        	}, timeafterbtn);
+			
+			
+		}, false);
 
-		console.log("apres btn morename");
-
+		console.log("apres btn morename et moreprice");*/
 
 		
-
-		
-		
-		/*$( "#fromus_morename" ).button({
-      icons: {
-        primary: "ui-icon-locked"
-      },
-      text: false
-  		});*/
-
 
 
 		//Action sur le bouton login/logout
@@ -430,18 +454,22 @@ $(document).ready(function() {
 				var getpassword = document.getElementById("mdpfromus");
 				var emailV = getemail.value;
 				var passwordV = getpassword.value;
+				document.getElementById("idfromus").value='';
+				document.getElementById("mdpfromus").value='';
 				if (emailV && passwordV){
 					var jsonLog = {email: emailV ,password: passwordV};
 					var postLog = JSON.stringify(jsonLog);
 					var logJSON = {log:postLog};
 					sendToServer(_urlLogin, logJSON);
-					//checkLogin();
+					
 				}
 		    }
 		    else{
 		        in_out.value = "login";
 		    	sendToServer(_urlLogout+token, {});
 		    	eraseCookie('token');
+		    	eraseCookie('Nick_Name');
+		    	
 			}
 				    
 		}, false);
@@ -457,7 +485,7 @@ $(document).ready(function() {
 		    }    
 		}, false);
 
-		/*! jQuery UI - v1.10.2 - 2013-03-14
+				/*! jQuery UI - v1.10.2 - 2013-03-14
 		* http://jqueryui.com
 		* Includes: jquery.ui.core.css, jquery.ui.accordion.css, jquery.ui.autocomplete.css, jquery.ui.button.css, jquery.ui.datepicker.css, jquery.ui.dialog.css, jquery.ui.menu.css, jquery.ui.progressbar.css, jquery.ui.resizable.css, jquery.ui.selectable.css, jquery.ui.slider.css, jquery.ui.spinner.css, jquery.ui.tabs.css, jquery.ui.tooltip.css, jquery.ui.theme.css
 		* Copyright 2013 jQuery Foundation and other contributors;
@@ -955,6 +983,77 @@ $(document).ready(function() {
 
 		console.log("apres progressbar");
 
+		$(".ui-resizable").css({
+			"position":"relative"
+		});
+
+		$(".ui-resizable-handle").css({
+			"position":"absolute",
+			"font-size":"0.1px",
+			"display":"block"
+		});
+
+		$(".ui-resizable-disabled .ui-resizable-handle").css({});
+		$(".ui-resizable-autohide .ui-resizable-handle").css({
+			"display":"none"
+		});
+		$(".ui-resizable-n").css({
+			"cursor":"n-resize",
+			"height":"7px",
+			"width":"100%",
+			"top":"-5px",
+			"left":"0"
+		});
+		$(".ui-resizable-s").css({
+			"cursor":"s-resize",
+			"height":"7px",
+			"width":"100%",
+			"bottom":"-5px",
+			"left":"0"
+		});
+		$(".ui-resizable-e").css({
+			"cursor":"e-resize",
+			"width":"7px",
+			"right":"-5px",
+			"top":"0",
+			"height":"100%"
+		});
+		$(".ui-resizable-w").css({
+			"cursor":"w-resize",
+			"width":"7px",
+			"left":"-5px",
+			"top":"0",
+			"height":"100%"
+		});
+		$(".ui-resizable-se").css({
+			"cursor":"se-resize",
+			"width":"12px",
+			"height":"12px",
+			"right":"1px",
+			"bottom":"1px"
+		});
+		$(".ui-resizable-sw").css({
+			"cursor":"sw-resize",
+			"width":"9px",
+			"height":"9px",
+			"left":"-5px",
+			"bottom":"-5px"
+		});
+		$(".ui-resizable-nw").css({
+			"cursor":"nw-resize",
+			"width":"9px",
+			"height":"9px",
+			"left":"-5px",
+			"top":"-5px"
+		});
+		$(".ui-resizable-ne").css({
+			"cursor":"ne-resize",
+			"width":"9px",
+			"height":"9px",
+			"right":"-5px",
+			"top":"-5px"
+		});
+
 		$(".ui-selectable-helper").css({
 			"position":"absolute",
 			"z-index":"100",
@@ -1126,6 +1225,8 @@ $(document).ready(function() {
 		});
 
 		console.log("apres tabs vertical");
+
+
 
 		$(".ui-tabs .ui-tabs-nav li").css({
 			"list-style":"none",
@@ -1931,7 +2032,11 @@ $(document).ready(function() {
 
 		
 
-				
+
+
+		console.log("apres le css");
+
+		
 		// ouverture de la dialog box
 		newDialog.dialog("open");
 
@@ -1942,9 +2047,11 @@ $(document).ready(function() {
 		if(readCookie('token')){
 			token=readCookie('token');
 			(!token)?in_out.value = 'login' : in_out.value = 'logout';
+			document.getElementById("Nick_Name").value = "MsgWelcome"+readCookie('Nick_Name');
 		}
 		else
-			alert('Vous devez vous connecter');
+			document.getElementById("Nick_Name").value = "MsgConnect";
+			//alert('Vous devez vous connecter');
 
 				
 		// suppression des key dans le localstorage
@@ -1954,11 +2061,8 @@ $(document).ready(function() {
 		localStorage.removeItem('regStore');
 		localStorage.removeItem('regOffer');
 
-
-
-		
-
-		console.log("fin de script");			
+		console.log("fin de script");
+			
 	}
 });
 

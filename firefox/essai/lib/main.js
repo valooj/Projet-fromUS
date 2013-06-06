@@ -3,7 +3,7 @@ var tabs = require('tabs');
 
 
 
-var pageMod = require("sdk/page-mod");
+/*var pageMod = require("sdk/page-mod");
  
 pageMod.PageMod({
   include: "*",
@@ -12,4 +12,10 @@ pageMod.PageMod({
                       self.data.url('box.js')
                       ],
   contentStyleFile: self.data.url('jquery/jquery-ui.css')
+});*/
+
+var panel = require("sdk/panel").Panel({
+  contentURL: self.data.url("popup.html")
 });
+ 
+panel.show();

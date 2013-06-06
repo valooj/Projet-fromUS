@@ -32,8 +32,8 @@ var tbb = require('toolbarbutton').ToolbarButton({
             self.data.url('jquery/jquery.min.js'),
         		self.data.url('jquery/jquery-ui.js'),
             self.data.url('fromus_recuperation.js'),
-            self.data.url('dialog.js'),
-            self.data.url('css.js')
+            self.data.url('css.js'),
+            self.data.url('dialog.js')
           ],
           //contentStyleFile: self.data.url('jquery/style.css'),
           //contentStyleFile: self.data.url('jquery/jquery-ui.css'),
