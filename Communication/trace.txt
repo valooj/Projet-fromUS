@@ -781,3 +781,65 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 34
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [lng] => fr
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b0753117e29
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [lng] => fr
+    [token] => 51b0753117e29
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [lng] => fr
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b075395df7c
+)
+
+===========================================
