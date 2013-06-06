@@ -1,3 +1,4 @@
+console.log('lancement du script');
 // Code JavaScript écrit par BERGS Guillaume (Contact: guillaume.robert.bergs@gmail.com)		//
 // Dans le cadre de son stage du 15/04/13 au 24/06/13																				//
 //																																												//
@@ -25,12 +26,12 @@ fromus_morename,
 fromus_moreimg,		// Ces variables servent à indiquer si l'utilisateur a demandé un/e autre nom, prix, description, image
 fromus_moredesc;
 
-/**********************************************************************************************/
-/*																																							*/
-/*	Un site est traité comme un objet; ses attributs sont des tableaux.								*/
-/*	Il y a deux tableaux par donnée à récupérer, un pour les classes et un pour les id.	*/
-/*																																							*/
-/**********************************************************************************************/
+/************************************************************************************************/
+/*																							  	*/
+/*	Un site est traité comme un objet; ses attributs sont des tableaux.						  	*/
+/*	Il y a deux tableaux par donnée à récupérer, un pour les classes et un pour les id.			*/
+/*																								*/
+/************************************************************************************************/
 
 function fromus_siteObj() 
 {
@@ -395,7 +396,7 @@ function fromus_recupDesc(idclass)
 
 // stockage du marchand dans local storage 
 localStorage["regStore"] = fromus_site;	
-
+console.log('localStorage 1'+localStorage("regStore"));
 if( fromus_sitelist[fromus_site])
 {	//Si le site est connu
 
@@ -418,3 +419,4 @@ if(fromus_desc.length > 200)
 var wwwOffre = fromus_offre.replace(/www\./,'');
 localStorage["regOffer"] = /http[s]{0,1}\:\/\/(.*)/gi.exec(wwwOffre)[1];	
 //localStorage["regOffer"] = fromus_offre;
+console.log('localStorage 2'+localStorage("regStore"));
