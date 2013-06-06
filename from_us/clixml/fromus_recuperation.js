@@ -137,7 +137,7 @@ function fromus_recupPrice(idclass,fus_data)
 	{
 		console.log('C\'est un id');
 		fromus_sitelist[fromus_site].price_id = fus_data.split(';');
-		fromus_sitelist[fromus_site].price_class.push('');		
+		fromus_sitelist[fromus_site].price_class.push('');	
 	}
 	else
 	{
