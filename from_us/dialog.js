@@ -112,13 +112,17 @@ function sendToServer(urlSelected, jsonSelected) {
 				  		content_pid= sous_elem[1]+';'+content_pid;
 				  	} 
 				} 
-				chrome.extension.sendMessage({method: "price_class", data: content_pclass});
+				//console.log(content_pclass +'class    id'+ content_pid);
+				fromus_recupPrice("class",content_pclass);
+				regPrice = localStorage["regPrice"];
+				$('#fromus_price').attr('value',regPrice);
+				/*chrome.extension.sendMessage({method: "price_class", data: content_pclass});
 				chrome.extension.sendMessage({method: "price_id", data: content_pid});
 
 				chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 				   document.getElementById('fromus_price').value = localStorage["regPrices"] ;
 
-				  });
+				  });  */
 				
 				
 			break;
@@ -185,7 +189,7 @@ function searchInfo (){
 	var jsonUrl = {info_url:localStorage["popup_store"]};
 	var postUrl = JSON.stringify(jsonUrl);
 	var urlJSON = {url_site:postUrl};
-	sendToServer(_urlAccessIn+'&url_site='+localStorage["popup_store"], {});
+	sendToServer(_urlAccessIn+'&url_site='+regStore, {});
 }
 
 function hideLog(){
@@ -335,8 +339,8 @@ $(document).ready(function() {
 				regStore = localStorage["regStore"];
 				$('#fromus_store').attr('value',regStore);
 
-				//searchInfo();
-				}
+				searchInfo();
+			}
 	    });
 
 		var bindEvent = function(elem ,evt,cb) {
