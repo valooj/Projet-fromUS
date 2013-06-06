@@ -54,7 +54,7 @@ function sendToServer(urlSelected, jsonSelected) {
 	.done(function(datas) { 
 		switch(datas['Status']){
 			case 'l':
-				document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgConnect");
+				document.getElementById("Nick_Name").value = i18n("MsgConnect");
 				logShow();
 				
 				//alert(datas['Message']);
@@ -65,7 +65,7 @@ function sendToServer(urlSelected, jsonSelected) {
 				createCookie('tokenFU',token,21);
 				Nick_Name = datas['Message'];
 				createCookie('Nick_Name',Nick_Name,21);
-				document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgWelcome")+Nick_Name;
+				document.getElementById("Nick_Name").value = i18n("MsgWelcome")+Nick_Name;
 				logHide();
 				
 			break;
@@ -102,7 +102,7 @@ function sendToServer(urlSelected, jsonSelected) {
 	})
 	.fail(function(datas) { 
 		//alert(datas['error']);
-		alert(chrome.i18n.getMessage("MsgBD"));
+		alert(i18n("MsgBD"));
 		})
 ;}
 
@@ -118,7 +118,7 @@ function sendAjoutPanier(panierJ) {
 		})
 	.fail(function(datas) { 
 		//alert(datas['error']); 
-		alert(chrome.i18n.getMessage("MsgBD"));
+		alert(i18n("MsgBD"));
 		})
 ;}
 
@@ -134,25 +134,6 @@ function parseCat(categorieJSON, sc) {
     }
 }
 
-function logHide(){
-	$("#MsgIdPass").hide();
-	$("#idfromus").hide();
-	$("#mdpfromus").hide();
-	$("#login").hide();
-	$("#create").hide();
-	$("#msgIdfromus").hide();
-	$("#msgMdpfromus").hide();
-}
-
-function logShow(){
-	$("#MsgIdPass").show();
-	$("#idfromus").show();
-	$("#mdpfromus").show();
-	$("#login").show();
-	$("#create").show();
-	$("#msgIdfromus").show();
-	$("#msgMdpfromus").show();
-}
 
 $(document).ready(function() {
 
@@ -163,29 +144,44 @@ $(document).ready(function() {
 
 	
 	var newDialog = $('<div id="fromus_dialogBox" class="toto">' +
+						'<div id="header">'+
+							'<div id="selectLang">' +
+	      						'<img id="lgfr" src="" />'+
+							    '<img id="lgen" src="" />'+
+							    '<img id="lgde" src="" />'+
+	    					'</div>'+
+	    					'<FORM name="loginU" id="loginU">'+
+	     						'<input type="textbox" id="emailBox" placeholder="email"/><input type="password" id="passBox" placeholder="password"/>'+
+	     						'<INPUT TYPE="button" NAME="logB" VALUE="Login" id="connect">'+
+	    					'</FORM>'+
+	    					'<div id="isconnect">'+
+	      						'<input type="textbox" id="nick_name" disabled="true" style="border:none"/></br>'+
+							    '<input type="textbox" id="ptsFU" disabled="true" style="border:none"/></br>'+
+							    '<INPUT TYPE="button" NAME="dislogB" id="disconnect">'+
+					    	'</div>'+
+					    '</div>'+
 						'<div id="fromus_tabs">' +
 							'<ul>' +
 								'<li><a href="#fromus_tabs-1">'+i18n("tabAdd")+'</a></li>' +
 								'<li><a href="#fromus_tabs-1">'+i18n("tabBuy")+'</a></li>' +
-								'<li><a href="#fromus_tabs-2">'+i18n("tabAccount")+'</a></li>' +
 							'</ul>' +
 							'<label for="Nick_Name"></label><input type="textbox" id="Nick_Name" disabled="true"/></br>' +
 							'<div id="fromus_tabs-1">' +
-								'<h2>'+chrome.i18n.getMessage("FormP")+'</h2>' +
+								'<h2>'+i18n("FormP")+'</h2>' +
 								'<form id="fromusForm">' + 
 
-									'<label for="store">'+chrome.i18n.getMessage("Merchant")+'</label><input type="textbox" id="fromus_store" disabled="true"/></br>' +
-									'<label for="name">'+chrome.i18n.getMessage("NameP")+'</label><input type="textbox" id="fromus_name" disabled="true"/><input type="button" id="fromus_morename" /></br>' + 
-									'<label for="price">'+chrome.i18n.getMessage("PriceP")+'</label><input type="textbox" id="fromus_price" /><input type="button" id="fromus_moreprice" /></br>' +
-									'<label for="category">'+chrome.i18n.getMessage("CategP")+'</label>'+ 
+									'<label for="store">'+i18n("Merchant")+'</label><input type="textbox" id="fromus_store" disabled="true"/></br>' +
+									'<label for="name">'+i18n("NameP")+'</label><input type="textbox" id="fromus_name" disabled="true"/><input type="button" id="fromus_morename" /></br>' + 
+									'<label for="price">'+i18n("PriceP")+'</label><input type="textbox" id="fromus_price" /><input type="button" id="fromus_moreprice" /></br>' +
+									'<label for="category">'+i18n("CategP")+'</label>'+ 
 										'<select id="category">' +
 										'</select></br>' +
-									'<label for="sscategory">'+chrome.i18n.getMessage("SCategP")+'</label>' +
+									'<label for="sscategory">'+i18n("SCategP")+'</label>' +
 										'<select id="sscategory">' +
 
 										'</select></br>' +
-									'<label id="fromus_quantite" for="quantite">'+chrome.i18n.getMessage("QuantityP")+'</label><input id="QteSpinner" value="1"></br>' +
-									'<label id="fromus_assurance" for="assurance">'+chrome.i18n.getMessage("InsuranceP")+'</label>' +
+									'<label id="fromus_quantite" for="quantite">'+i18n("QuantityP")+'</label><input id="QteSpinner" value="1"></br>' +
+									'<label id="fromus_assurance" for="assurance">'+i18n("InsuranceP")+'</label>' +
 									'<div id="fromus_divassurance">' +
 										'<input type="checkbox" id="fromus_checkassurance" name="assurance" />' +
 									'</div>' +
@@ -194,13 +190,13 @@ $(document).ready(function() {
 							'<div id="fromus_tabs-2">' +
 								'<h2>From-us.com</h2>' +
 
-								'<p id="MsgIdPass">'+chrome.i18n.getMessage("MsgIdPass")+'</p>' +
-								'<label for="idfromus" id="msgIdfromus">'+chrome.i18n.getMessage("EmailU")+'</label><input type="textbox" id="idfromus" /></br>' +
-								'<label for="mdpfromus" id="msgMdpfromus">'+chrome.i18n.getMessage("PasswordU")+'</label><input type="password" id="mdpfromus" /></br>' +
+								'<p id="MsgIdPass">'+i18n("MsgIdPass")+'</p>' +
+								'<label for="idfromus" id="msgIdfromus">'+i18n("EmailU")+'</label><input type="textbox" id="idfromus" /></br>' +
+								'<label for="mdpfromus" id="msgMdpfromus">'+i18n("PasswordU")+'</label><input type="password" id="mdpfromus" /></br>' +
 
 								'<input type="button" value="login" id="log" />' +
-								'<a id="login" href="http://from-us.com/fromus" target="_blank">'+chrome.i18n.getMessage("OubliU")+'</a>' +
-								'<a id="create" href="http://from-us.com/fromus" target="_blank">'+chrome.i18n.getMessage("CreateU")+'</a>' +
+								'<a id="login" href="http://from-us.com/fromus" target="_blank">'+i18n("OubliU")+'</a>' +
+								'<a id="create" href="http://from-us.com/fromus" target="_blank">'+i18n("CreateU")+'</a>' +
 							'</div>' +
 						'</div>' +
 						'<a href="http://from-us.com/fromus" target=_blank><img id="logofromus" height="100" src=""/></a>' +
@@ -239,6 +235,12 @@ $(document).ready(function() {
 			open: function(ev,ui) {
 				var img = document.getElementById('logofromus');
   				img.src = chrome.extension.getURL('/img/logo.png');
+  				var imgen = document.getElementById('lgen');
+  				imgen.src = chrome.extension.getURL('/img/en.png');
+  				var imgde = document.getElementById('lgde');
+  				imgde.src = chrome.extension.getURL('/img/de.png');
+  				var imgfr = document.getElementById('lgfr');
+  				imgfr.src = chrome.extension.getURL('/img/fr.png');
   				$("#btnSubmit").hide();
   				$("#QteSpinner").hide();
 				$("#fromus_quantite").hide();
@@ -250,7 +252,7 @@ $(document).ready(function() {
 				[
 					// bouton submit qui permet de commander un produit 
 					{
-						text: chrome.i18n.getMessage("ButtonBuy"), 
+						text: i18n("ButtonBuy"), 
 						id: "btnSubmit",
 						click: function() {
 
@@ -275,7 +277,7 @@ $(document).ready(function() {
 					// bouton ajouter qui permet d'ajouter un produit dans la base de données 
 					// à ne pas confondre avec le bouton submit 
 					{ 
-						text: chrome.i18n.getMessage("ButtonAdd"), 
+						text: i18n("ButtonAdd"), 
 						id: "btnAdd",
 						click: function() {
 
@@ -295,7 +297,7 @@ $(document).ready(function() {
 					// bouton cancel, mettre destroy au lieu de close pour supprimer completement la dialog box
 					// à modifier en bouton reset
 					{
-						text: chrome.i18n.getMessage("ButtonReset"), 
+						text: i18n("ButtonReset"), 
 						id: "btnReset",
 						click: function() {
 							$(':input','#fromusForm')
@@ -321,6 +323,16 @@ $(document).ready(function() {
 				});
 			}
 		}
+
+		$("img[id='lgfr']").click(function() {
+		changeLng('fr');
+	  	});
+	  	$("img[id='lgen']").click(function() {
+			changeLng('en');
+	  	});
+	  	$("img[id='lgde']").click(function() {
+			changeLng('de');
+	  	});
 
 		
 
@@ -525,13 +537,13 @@ $(document).ready(function() {
 			(!token)?in_out.value = 'login' : in_out.value = 'logout';
 			if(readCookie('Nick_Name')){
 				var Nick_Name = readCookie('Nick_Name');
-				document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgWelcome")+Nick_Name;
+				document.getElementById("Nick_Name").value = i18n("MsgWelcome")+Nick_Name;
 			}
 			else 
-				document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgConnect");
+				document.getElementById("Nick_Name").value = i18n("MsgConnect");
 		}
 		else
-			document.getElementById("Nick_Name").value = chrome.i18n.getMessage("MsgConnect");
+			document.getElementById("Nick_Name").value = i18n("MsgConnect");
 			//alert('Vous devez vous connecter');
 
 				
