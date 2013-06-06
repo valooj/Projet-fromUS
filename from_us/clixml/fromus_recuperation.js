@@ -24,7 +24,7 @@ var fromus_error	=	'?';						// Message à afficher en absence de résultat
 var fromus_moreprice,
 fromus_morename,
 fromus_moreimg,		// Ces variables servent à indiquer si l'utilisateur a demandé un/e autre nom, prix, description, image
-fromus_moredesc;
+fromus_moredesc; 
 
 /************************************************************************************************/
 /*																							  	*/
