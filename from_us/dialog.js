@@ -12,6 +12,7 @@ var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action
 var _urlPts = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-pts&lng='+defLng+'&token=';
 var _urlAccessIn = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-accessIn';
 
+
 var qteVal;
 var categVal;
 var regStore;
@@ -20,6 +21,7 @@ var regPrice;
 var regOffer;
 var regDesc;
 var regVisu;
+
 
 //Pour stocker le cookie et le lire 
 function createCookie(name,value,days) {
@@ -146,7 +148,7 @@ function sendToServer(urlSelected, jsonSelected) {
 	})
 	.fail(function(datas) { 
 		//alert(datas['error']);
-		//document.getElementById('msgServer').value = i18n("MsgBD");
+		document.getElementById('msgServer').value = i18n("MsgBD");
 		})
 ;};
 
@@ -220,12 +222,6 @@ function loadText(){
 
 
 $(document).ready(function() {
-
-	console.log( "Variable from Content Script: "+localStorage["regStore"] );
-	console.log( "Variable from Content Script: "+localStorage["regName"] );
-	console.log( "Variable from Content Script: "+localStorage["regPrice"] );
-	console.log( "Variable from Content Script: "+localStorage["regDesc"] );
-
 	
 	var newDialog = $('<div id="fromus_dialogBox" class="toto">' +
 					    '<div id="header">'+
@@ -335,7 +331,11 @@ $(document).ready(function() {
 				}
 				else 
 					showLog();
-				searchInfo();
+
+				regStore = localStorage["regStore"];
+				$('#fromus_store').attr('value',regStore);
+
+				//searchInfo();
 				}
 	    });
 
@@ -353,75 +353,75 @@ $(document).ready(function() {
 			}
 		}
 
-	$(".content").each(function(i){
-        this.id = "#" + this.id;
-    });
+		$(".content").each(function(i){
+	        this.id = "#" + this.id;
+	    });
 
-	$(".content").not(":first").hide();
+		$(".content").not(":first").hide();
 
-	$("#menu a").click(function() {
-        var idTab = $(this).attr("href");
-        $(".content").hide();
-        $("div[id='" + idTab + "']").fadeIn();
-        return false;
-    });   
+		$("#menu a").click(function() {
+	        var idTab = $(this).attr("href");
+	        $(".content").hide();
+	        $("div[id='" + idTab + "']").fadeIn();
+	        return false;
+	    });   
 
-	$("input[id='connect']").click(function() {
-		
-   		var emailV = document.getElementById('emailBox').value;
-		var passwordV = document.getElementById("passBox").value;
-		if (emailV && passwordV){
-			var jsonLog = {email: emailV ,password: passwordV};
-			var postLog = JSON.stringify(jsonLog);
-			var logJSON = {log:postLog};
-			sendToServer(_urlLogin, logJSON);
-		}
-  	});
+		$("input[id='connect']").click(function() {
+			
+	   		var emailV = document.getElementById('emailBox').value;
+			var passwordV = document.getElementById("passBox").value;
+			if (emailV && passwordV){
+				var jsonLog = {email: emailV ,password: passwordV};
+				var postLog = JSON.stringify(jsonLog);
+				var logJSON = {log:postLog};
+				sendToServer(_urlLogin, logJSON);
+			}
+	  	});
 
-  	$("input[id='addP']").click(function() {
-		var categVal = document.getElementById("sscategory").value;
-		if(categVal){
+	  	$("input[id='addP']").click(function() {
+			var categVal = document.getElementById("sscategory").value;
+			if(categVal){
+				var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
+				var postData = JSON.stringify(jsonProduct);
+				var productJSON = {product:postData};
+				sendToServer(_urlProduct+token , productJSON);
+			}
+	  	});
+
+	  	$("input[id='buyP']").click(function() {
+			var qteSpinner = document.getElementById("QteSpinner").value;
+			var categSelect = document.getElementById("sscategory").value;
+
 			var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
 			var postData = JSON.stringify(jsonProduct);
 			var productJSON = {product:postData};
-			sendToServer(_urlProduct+token , productJSON);
+			sendToServer(_urlProduct+token,productJSON);
+
+			var jsonCalcul = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
+			var postDataCalcul = JSON.stringify(jsonCalcul);
+			var calculJSON = {calcul:postDataCalcul};
+			sendToServer(_urlCalcul+token , calculJSON);
+	  	});
+
+	  	$("input[id='disconnect']").click(function() {
+			
+	   		sendToServer(_urlLogout+token, {});
+			eraseCookie('tokenFU');
+			eraseCookie('nameFU');
+			token="";
+			Nick_Name = "";
+			showLog();
+	  	});
+
+	  	$("select[id='category']").change(function() {
+		var categV = document.getElementById("category").value;
+		if (categV)
+			sendToServer(_urlSSCategorie+categV, {});
+		else{
+		   	var $selectCat = $('select[id=sscategory]');
+		   	$selectCat.empty();
 		}
-  	});
-
-  	$("input[id='buyP']").click(function() {
-		var qteSpinner = document.getElementById("QteSpinner").value;
-		var categSelect = document.getElementById("sscategory").value;
-
-		var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
-		var postData = JSON.stringify(jsonProduct);
-		var productJSON = {product:postData};
-		sendToServer(_urlProduct+token,productJSON);
-
-		var jsonCalcul = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
-		var postDataCalcul = JSON.stringify(jsonCalcul);
-		var calculJSON = {calcul:postDataCalcul};
-		sendToServer(_urlCalcul+token , calculJSON);
-  	});
-
-  	$("input[id='disconnect']").click(function() {
-		
-   		sendToServer(_urlLogout+token, {});
-		eraseCookie('tokenFU');
-		eraseCookie('nameFU');
-		token="";
-		Nick_Name = "";
-		showLog();
-  	});
-
-  	$("select[id='category']").change(function() {
-	var categV = document.getElementById("category").value;
-	if (categV)
-		sendToServer(_urlSSCategorie+categV, {});
-	else{
-	   	var $selectCat = $('select[id=sscategory]');
-	   	$selectCat.empty();
-	}
-  	});
+	  	});
 
 		$("img[id='lgfr']").click(function() {
 			changeLng('fr');
@@ -430,19 +430,31 @@ $(document).ready(function() {
 	  	$("img[id='lgen']").click(function() {
 			changeLng('en');
 			loadText();
-	  	});
-	  	$("img[id='lgde']").click(function() {
+		});
+		$("img[id='lgde']").click(function() {
 			changeLng('de');
 			loadText();
-	  	});
+		});
 
 
-						
-		// creation du spinner pour la quantite
-		var newSpinner = $( "#QteSpinner" ).spinner({
-			min: 1
-		});	
+		
+		// ouverture de la dialog box
+		newDialog.dialog("open");
+	}
+});
 
+
+/*	// suppression des key dans le localstorage
+		localStorage.removeItem('regDesc');
+		localStorage.removeItem('regName');
+		localStorage.removeItem('regPrice');
+		localStorage.removeItem('regStore');
+		localStorage.removeItem('regOffer');   
+	*/
+			
+
+
+/*
 
 
 		// ajout du marchand automatiquement
@@ -510,22 +522,4 @@ $(document).ready(function() {
 			
 			
 		}, false);
-
-		
-		// ouverture de la dialog box
-		newDialog.dialog("open");
-				
-		// suppression des key dans le localstorage
-		localStorage.removeItem('regDesc');
-		localStorage.removeItem('regName');
-		localStorage.removeItem('regPrice');
-		localStorage.removeItem('regStore');
-		localStorage.removeItem('regOffer');
-			
-	}
-});
-
-
-
-
-
+*/

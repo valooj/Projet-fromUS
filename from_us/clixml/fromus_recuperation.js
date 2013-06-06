@@ -51,7 +51,7 @@ function fromus_siteObj()
 
 function fromus_recupName(idclass)
 {
-	if(idclass == 'id'
+	if(idclass == 'id')
 	{
 		fromus_sitelist[fromus_site].name_id = request.data.split(';');
 		fromus_sitelist[fromus_site].name_class.push('');		
@@ -131,7 +131,7 @@ function fromus_recupName(idclass)
 
 function fromus_recupPrice(idclass)
 {
-	if(idclass == 'id'
+	if(idclass == 'id')
 	{
 		fromus_sitelist[fromus_site].price_id = request.data.split(';');
 		fromus_sitelist[fromus_site].price_class.push('');		
@@ -217,7 +217,7 @@ function fromus_recupPrice(idclass)
 
 function fromus_recupImg(idclass)
 {
-	if(idclass == 'id'
+	if(idclass == 'id')
 	{
 		fromus_sitelist[fromus_site].img_id = request.data.split(';');
 		fromus_sitelist[fromus_site].img_class.push('');		
@@ -320,7 +320,7 @@ function fromus_recupImg(idclass)
 
 function fromus_recupDesc(idclass)
 {
-	if(idclass == 'id'
+	if(idclass == 'id')
 	{
 		fromus_sitelist[fromus_site].desc_id = request.data.split(';');
 		fromus_sitelist[fromus_site].desc_class.push('');		
@@ -402,7 +402,7 @@ if( fromus_sitelist[fromus_site])
 }
 else
 {	// Si le site n'est pas enregistré
-	fromus_desc=fromus_error
+	fromus_desc=fromus_error;
 	fromus_img=fromus_error;
 	fromus_objectname=fromus_error;
 	fromus_pricemin=fromus_error;
