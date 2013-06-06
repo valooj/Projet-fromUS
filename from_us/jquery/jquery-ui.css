@@ -692,7 +692,6 @@ button.Fromus-toto-ui-button::-moz-focus-inner {
 	padding: .2em;
 }
 
-<<<<<<< HEAD
 /* ajout de tab vertical 
 .ui-tabs-vertical { width: 55em; }
 .ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left;  background-color: #c11f34;}
@@ -701,16 +700,6 @@ button.Fromus-toto-ui-button::-moz-focus-inner {
 .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: 3px; background-color: #204093; }
 .ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: right; width: 40em;}
 .ui-tabs .ui-tabs-nav {
-=======
-/* ajout de tab vertical */
-.Fromus-toto-ui-tabs-vertical { width: 55em; }
-.Fromus-toto-ui-tabs-vertical .Fromus-toto-ui-tabs-nav { padding: .2em .1em .2em .2em; float: left;  background-color: #c11f34;}
-.Fromus-toto-ui-tabs-vertical .Fromus-toto-ui-tabs-nav li { clear:center; width: 80%; background-color: #203064; margin-left: 0px;}
-.Fromus-toto-ui-tabs-vertical .Fromus-toto-ui-tabs-nav li a { display:block;  color: white; width: 128px;}
-.Fromus-toto-ui-tabs-vertical .Fromus-toto-ui-tabs-nav li.Fromus-toto-ui-tabs-active { padding-bottom: 0; padding-right: 3px; background-color: #204093; }
-.Fromus-toto-ui-tabs-vertical .Fromus-toto-ui-tabs-panel { padding: 1em; float: right; width: 40em;}
-.Fromus-toto-ui-tabs .Fromus-toto-ui-tabs-nav {
->>>>>>> résolution du problème de css avec jquery
 	width: 160px;
 	margin: 5px;
 	padding: 5px;

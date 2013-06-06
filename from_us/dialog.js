@@ -212,7 +212,7 @@ function loadText(){
 	document.getElementById('buyP').value = i18n("ButtonBuy") ;
 	document.getElementById('fu_quantite').innerHTML = i18n("QuantityP") ;
 	document.getElementById('fu_assurance').innerHTML = i18n("InsuranceP") ;
-    document.getElementById('fromus_store').value = localStorage["popup_store"] ;
+   
 
 }
 
@@ -447,7 +447,7 @@ $(document).ready(function() {
 
 		// ajout du marchand automatiquement
 		regStore = localStorage["regStore"];
-		$('#fromus_store').attr('value',regStore);
+		$('#fromus_store').attr('value',fromus_site);
 
 		// ajout du nom automatiquement
 		regName = localStorage["regName"];

@@ -843,3 +843,147 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b075395df7c
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b075395df7c
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b075395df7c
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 34
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => undefined
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
