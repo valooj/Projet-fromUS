@@ -114,8 +114,8 @@ function sendToServer(urlSelected, jsonSelected) {
 				} 
 				//console.log(content_pclass +'class    id'+ content_pid);
 				fromus_recupPrice("class",content_pclass);
-				regPrice = localStorage["regPrice"];
-				$('#fromus_price').attr('value',regPrice);
+				//regPrice = localStorage["regPrice"];
+				//$('#fromus_price').attr('value',regPrice);
 				/*chrome.extension.sendMessage({method: "price_class", data: content_pclass});
 				chrome.extension.sendMessage({method: "price_id", data: content_pid});
 
