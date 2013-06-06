@@ -93,37 +93,7 @@ function sendToServer(urlSelected, jsonSelected) {
 				//alert(datas['Message']['sa_chemin']);
 				var elem = datas['Message']['sa_chemin'].split('/');
 				//alert(elem[2]);
-				var content_pclass;
-				var content_pid;
-				for(var i=0 ; i<elem.length ; i++)
-				{
-				    if(elem[i].indexOf('price_class') !== (-1)){
-				  		var sous_elem = elem[i].split('<-->');
-				  		//alert(sous_elem[0]);
-				  		//alert(sous_elem[1]);
-				  		content_pclass= sous_elem[1]+';'+content_pclass;
-				  	}
-				  	else if(elem[i].indexOf('price_id') !== (-1)){
-				  	 var sous_elem = elem[i].split('<-->');
-				  		//alert(sous_elem[0]);
-				  		//alert(sous_elem[1]);
-				  		//fromus_sitelist[localStorage["popup_store"]].price_class.push(sous_elem[1]);
-				  		//i = elem.length+1;
-				  		content_pid= sous_elem[1]+';'+content_pid;
-				  	} 
-				} 
-				//console.log(content_pclass +'class    id'+ content_pid);
-				fromus_recupPrice("class",content_pclass);
-				regPrice = localStorage["regPrice"];
-				$('#fromus_price').attr('value',regPrice);
-				/*chrome.extension.sendMessage({method: "price_class", data: content_pclass});
-				chrome.extension.sendMessage({method: "price_id", data: content_pid});
-
-				chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
-				   document.getElementById('fromus_price').value = localStorage["regPrices"] ;
-
-				  });  */
-				
+				parseInfo(elem);
 				
 			break;
 
@@ -186,10 +156,82 @@ function parseCat(categorieJSON, sc) {
 }
 
 function searchInfo (){
-	var jsonUrl = {info_url:localStorage["popup_store"]};
-	var postUrl = JSON.stringify(jsonUrl);
-	var urlJSON = {url_site:postUrl};
 	sendToServer(_urlAccessIn+'&url_site='+regStore, {});
+}
+
+function parseInfo (elem){
+	var content_pclass;
+				var content_pid;
+				var content_nclass;
+				var content_nid;
+				var content_dclass;
+				var content_did;
+				var content_iclass;
+				var content_iid;
+
+				for(var i=0 ; i<elem.length ; i++)
+				{
+				    if(elem[i].indexOf('price_class') !== (-1)){
+				  		var sous_elem = elem[i].split('<-->');
+				  		content_pclass= sous_elem[1]+';'+content_pclass;
+				  	}
+				  	else if(elem[i].indexOf('price_id') !== (-1)){
+				  	 var sous_elem = elem[i].split('<-->');
+				  		content_pid= sous_elem[1]+';'+content_pid;
+				  	}
+				  	else if(elem[i].indexOf('name_class') !== (-1)){
+				  		var sous_elem = elem[i].split('<-->');
+				  		content_nclass= sous_elem[1]+';'+content_nclass;
+				  	}
+				  	else if(elem[i].indexOf('name_id') !== (-1)){
+				  	 var sous_elem = elem[i].split('<-->');
+				  		content_nid= sous_elem[1]+';'+content_nid;
+				  	} 
+				  	else if(elem[i].indexOf('desc_class') !== (-1)){
+				  		var sous_elem = elem[i].split('<-->');
+				  		content_dclass= sous_elem[1]+';'+content_dclass;
+				  	}
+				  	else if(elem[i].indexOf('desc_id') !== (-1)){
+				  	 var sous_elem = elem[i].split('<-->');
+				  		content_did= sous_elem[1]+';'+content_did;
+				  	}
+				  	else if(elem[i].indexOf('img_class') !== (-1)){
+				  		var sous_elem = elem[i].split('<-->');
+				  		content_iclass= sous_elem[1]+';'+content_iclass;
+				  	}
+				  	else if(elem[i].indexOf('img_id') !== (-1)){
+				  	 var sous_elem = elem[i].split('<-->');
+				  		content_iid= sous_elem[1]+';'+content_iid;
+				  	} 
+				} 
+				//Test pour le prix
+				fromus_recupPrice("id",content_pid);
+				if(localStorage["regPrice"] == fromus_error) 
+					fromus_recupPrice("class",content_pclass);
+
+				//Test pour le name
+				fromus_recupName("id",content_nid);
+				if(localStorage["regName"] == fromus_error) 
+					fromus_recupName("class",content_nclass);
+
+				//Test pour la description
+				fromus_recupDesc("id",content_did);
+				if(localStorage["regName"] == fromus_error) 
+					fromus_recupDesc("class",content_dclass);
+
+				//Test pour l'image'
+				fromus_recupImg("id",content_iid);
+				if(localStorage["regName"] == fromus_error) 
+					fromus_recupImg("class",content_iclass);
+
+				regPrice = localStorage["regPrice"];
+				$('#fromus_price').attr('value',regPrice);
+				regName = localStorage["regName"];
+				$('#fromus_name').attr('value',regName);
+				regDesc = localStorage["regDesc"];
+				regVisu = localStorage["regImg"];
+
+				
 }
 
 function hideLog(){
@@ -384,8 +426,11 @@ $(document).ready(function() {
 
 	  	$("input[id='addP']").click(function() {
 			var categVal = document.getElementById("sscategory").value;
-			if(categVal){
-				var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
+			alert(categVal);
+			alert('ok');
+			if(categVal && regName && regStore && regPrice){
+				alert('okpasse');
+				var jsonProduct = {prd_libelle: regName ,prd_site: regStore, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
 				var postData = JSON.stringify(jsonProduct);
 				var productJSON = {product:postData};
 				sendToServer(_urlProduct+token , productJSON);
