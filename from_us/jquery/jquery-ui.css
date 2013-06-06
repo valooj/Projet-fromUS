@@ -692,7 +692,7 @@ button.ui-button::-moz-focus-inner {
 	padding: .2em;
 }
 
-/* ajout de tab vertical */
+/* ajout de tab vertical 
 .ui-tabs-vertical { width: 55em; }
 .ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left;  background-color: #c11f34;}
 .ui-tabs-vertical .ui-tabs-nav li { clear:center; width: 80%; background-color: #203064; margin-left: 0px;}
@@ -703,7 +703,7 @@ button.ui-button::-moz-focus-inner {
 	width: 160px;
 	margin: 5px;
 	padding: 5px;
-}
+}*/
 
 
 

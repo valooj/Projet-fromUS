@@ -54,23 +54,27 @@ function sendToServer(urlSelected, jsonSelected) {
 	.done(function(datas) { 
 		switch(datas['Status']){
 			case 'l':
-				document.getElementById("Nick_Name").value = i18n("MsgConnect");
 				logShow();
-				
-				//alert(datas['Message']);
 			break;
 
 			case 'L':
 				token = datas['Token'];
 				createCookie('tokenFU',token,21);
 				Nick_Name = datas['Message'];
-				createCookie('Nick_Name',Nick_Name,21);
-				document.getElementById("Nick_Name").value = i18n("MsgWelcome")+Nick_Name;
-				logHide();
+				createCookie('nameFU',Nick_Name,21);
+				document.getElementById("nick_name").value = i18n("MsgWelcome")+Nick_Name ;
+				hideLog();
+				sendToServer(_urlPts+token,{});
 				
 			break;
 
+			case 'p':
+				points = datas['Message'];
+				document.getElementById("ptsFU").value = points+' pts' ;
+			break;
+
 			case 'c':
+				//alert(datas['Message']);
 				parseCat(datas['Message'],'');
 			break;
 
@@ -79,15 +83,54 @@ function sendToServer(urlSelected, jsonSelected) {
 			break;
 
 			case 'A':
-				alert(datas['Message']);
+				document.getElementById('msgServer').value = datas['Message'];
+			break;
+
+			case 'a':
+				//fromus_sitelist[localStorage["popup_store"]] = new fromus_siteObj();
+				//alert(datas['Message']['sa_chemin']);
+				var elem = datas['Message']['sa_chemin'].split('/');
+				//alert(elem[2]);
+				var content_pclass;
+				var content_pid;
+				for(var i=0 ; i<elem.length ; i++)
+				{
+				    if(elem[i].indexOf('price_class') !== (-1)){
+				  		var sous_elem = elem[i].split('<-->');
+				  		//alert(sous_elem[0]);
+				  		//alert(sous_elem[1]);
+				  		content_pclass= sous_elem[1]+';'+content_pclass;
+				  	}
+				  	else if(elem[i].indexOf('price_id') !== (-1)){
+				  	 var sous_elem = elem[i].split('<-->');
+				  		//alert(sous_elem[0]);
+				  		//alert(sous_elem[1]);
+				  		//fromus_sitelist[localStorage["popup_store"]].price_class.push(sous_elem[1]);
+				  		//i = elem.length+1;
+				  		content_pid= sous_elem[1]+';'+content_pid;
+				  	} 
+				} 
+				chrome.extension.sendMessage({method: "price_class", data: content_pclass});
+				chrome.extension.sendMessage({method: "price_id", data: content_pid});
+
+				chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
+				   document.getElementById('fromus_price').value = localStorage["regPrices"] ;
+
+				  });
+				
+				
+			break;
+
 			break;
 
 			case 'C':
 				var totalPrice = datas['Prix'];
+				var livPrice = datas['Prix_liv'];
+				var taxPrice = datas['Prix_tax'];
 				if(totalPrice !== 0){
 					if(confirm('L\'estimation du prix est de $'+totalPrice+' ')) {
-						
-						var jsonPanier = {libelle: regName ,url: regOffer ,desc: regDesc, qte: qteVal ,montant: totalPrice ,categ: categVal};
+						// pour tester a changer
+						var jsonPanier = {priceTot: regtotal ,priceLiv: livPrice ,priceTax: taxPrice ,libelle: regName ,url: regOffer ,desc: regDesc, qte: qteVal ,montant: totalPrice ,categ: categVal};
 						var postDataPanier = JSON.stringify(jsonPanier);
 						var panierJSON = {panier:postDataPanier};
 						sendAjoutPanier(panierJSON);
@@ -96,15 +139,17 @@ function sendToServer(urlSelected, jsonSelected) {
 			break;
 
 			default:
-				alert(datas['error']);
+				//alert(datas['error']);
+				document.getElementById('msgServer').value = datas['error'] ;
 			break;
 		}
 	})
 	.fail(function(datas) { 
 		//alert(datas['error']);
-		alert(i18n("MsgBD"));
+		//document.getElementById('msgServer').value = i18n("MsgBD");
 		})
-;}
+;};
+
 
 
 function sendAjoutPanier(panierJ) {
@@ -134,6 +179,45 @@ function parseCat(categorieJSON, sc) {
     }
 }
 
+function searchInfo (){
+	var jsonUrl = {info_url:localStorage["popup_store"]};
+	var postUrl = JSON.stringify(jsonUrl);
+	var urlJSON = {url_site:postUrl};
+	sendToServer(_urlAccessIn+'&url_site='+localStorage["popup_store"], {});
+}
+
+function hideLog(){
+	$("#loginU").hide();
+	$("#isconnect").show();
+};
+
+function showLog(){
+	$("#loginU").show();
+	$("#isconnect").hide();
+};
+
+function loadText(){
+	document.getElementById('tabAdd').innerHTML = i18n("tabAdd") ;
+	document.getElementById('tabBuy').innerHTML = i18n("tabBuy") ;
+	document.getElementById('store').innerHTML = i18n("Merchant") ;
+	document.getElementById('nameP').innerHTML = i18n("NameP") ;
+	document.getElementById('priceP').innerHTML = i18n("PriceP") ;		
+	document.getElementById('categP').innerHTML = i18n("CategP") ;
+	document.getElementById('scategP').innerHTML = i18n("SCategP") ;
+	document.getElementById('addP').value = i18n("ButtonAdd") ;
+				
+	document.getElementById('FormP').innerHTML = i18n("FormP") ;
+	document.getElementById('disconnect').value = 'logout' ;
+
+	document.getElementById('buyP').value = i18n("ButtonBuy") ;
+	document.getElementById('fu_quantite').innerHTML = i18n("QuantityP") ;
+	document.getElementById('fu_assurance').innerHTML = i18n("InsuranceP") ;
+    document.getElementById('fromus_store').value = localStorage["popup_store"] ;
+
+}
+
+
+
 
 $(document).ready(function() {
 
@@ -144,7 +228,7 @@ $(document).ready(function() {
 
 	
 	var newDialog = $('<div id="fromus_dialogBox" class="toto">' +
-						'<div id="header">'+
+					    '<div id="header">'+
 							'<div id="selectLang">' +
 	      						'<img id="lgfr" src="" />'+
 							    '<img id="lgen" src="" />'+
@@ -160,47 +244,42 @@ $(document).ready(function() {
 							    '<INPUT TYPE="button" NAME="dislogB" id="disconnect">'+
 					    	'</div>'+
 					    '</div>'+
-						'<div id="fromus_tabs">' +
-							'<ul>' +
-								'<li><a href="#fromus_tabs-1">'+i18n("tabAdd")+'</a></li>' +
-								'<li><a href="#fromus_tabs-1">'+i18n("tabBuy")+'</a></li>' +
-							'</ul>' +
-							'<label for="Nick_Name"></label><input type="textbox" id="Nick_Name" disabled="true"/></br>' +
-							'<div id="fromus_tabs-1">' +
-								'<h2>'+i18n("FormP")+'</h2>' +
-								'<form id="fromusForm">' + 
-
-									'<label for="store">'+i18n("Merchant")+'</label><input type="textbox" id="fromus_store" disabled="true"/></br>' +
-									'<label for="name">'+i18n("NameP")+'</label><input type="textbox" id="fromus_name" disabled="true"/><input type="button" id="fromus_morename" /></br>' + 
-									'<label for="price">'+i18n("PriceP")+'</label><input type="textbox" id="fromus_price" /><input type="button" id="fromus_moreprice" /></br>' +
-									'<label for="category">'+i18n("CategP")+'</label>'+ 
-										'<select id="category">' +
-										'</select></br>' +
-									'<label for="sscategory">'+i18n("SCategP")+'</label>' +
-										'<select id="sscategory">' +
-
-										'</select></br>' +
-									'<label id="fromus_quantite" for="quantite">'+i18n("QuantityP")+'</label><input id="QteSpinner" value="1"></br>' +
-									'<label id="fromus_assurance" for="assurance">'+i18n("InsuranceP")+'</label>' +
-									'<div id="fromus_divassurance">' +
-										'<input type="checkbox" id="fromus_checkassurance" name="assurance" />' +
-									'</div>' +
-								'</form>' +
-							'</div>' +
-							'<div id="fromus_tabs-2">' +
-								'<h2>From-us.com</h2>' +
-
-								'<p id="MsgIdPass">'+i18n("MsgIdPass")+'</p>' +
-								'<label for="idfromus" id="msgIdfromus">'+i18n("EmailU")+'</label><input type="textbox" id="idfromus" /></br>' +
-								'<label for="mdpfromus" id="msgMdpfromus">'+i18n("PasswordU")+'</label><input type="password" id="mdpfromus" /></br>' +
-
-								'<input type="button" value="login" id="log" />' +
-								'<a id="login" href="http://from-us.com/fromus" target="_blank">'+i18n("OubliU")+'</a>' +
-								'<a id="create" href="http://from-us.com/fromus" target="_blank">'+i18n("CreateU")+'</a>' +
-							'</div>' +
-						'</div>' +
+							'<form id="fromusForm">' + 
+								'<div id="menu" class="element_menu">'+
+									'<ul id="onglets">'+
+									    '<li><a href="#tab1" id="tabAdd"></a></li>'+
+									    '<li><a href="#tab2" id="tabBuy"></a></li>'+
+									'</ul>'+
+								'</div></br>'+
+								'<div id="corpAdd">'+
+									      		'<input type="textbox" id="msgServer" disabled="true" style="border:none"/>'+
+									      		'<div id="fromus_tabs">'+
+									        		'<h2 id="FormP"></h2>'+
+									        		'<form id="fromusForm">'+
+									          			'<label for="store" id="store"></label></br>'+
+											            '<input type="textbox" id="fromus_store" disabled="true"/></br>'+
+											            '<label for="name" id="nameP"></label></br>'+
+											            '<input type="textbox" id="fromus_name" disabled="true"/></br>'+
+											            '<label for="price" id="priceP" ></label></br>'+
+											            '<input type="textbox" id="fromus_price" /></br>'+
+											            '<label for="category" id="categP"></label></br>'+
+											            '<select id="category">'+
+											            '</select></br>'+
+											            '<label for="sscategory" id="scategP"></label></br>'+
+											            '<select id="sscategory">'+
+											            '</select></br>'+
+									            '<div class="content" id="tab1">'+
+									            '<input type="button" id="addP">'+
+									'</div>'+
+									'<div class="content" id="tab2">'+
+									    '<label id="fu_quantite" for="quantite"></label><input id="QteSpinner" value="1"></br>'+
+									    '<label id="fu_assurance" for="assurance"></label><input type="checkbox" id="checkassur" name="assurance" /></br>'+
+									    '<input type="button" id="buyP"> '+
+									'</div>'+
+							'</form>'+
 						'<a href="http://from-us.com/fromus" target=_blank><img id="logofromus" height="100" src=""/></a>' +
-					'</div>');
+					'</div>'
+	);
 
 	// variable qui permet de savoir si la dialog box est ouverte
 	var isOpen = $("#fromus_dialogBox").dialog("isOpen");
@@ -208,7 +287,7 @@ $(document).ready(function() {
 	
 	if (isOpen != true) {	
 
-		newDialog.tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+		//newDialog.tabs().addClass( "ui-tabs-horizontal ui-helper-clearfix" );
 		newDialog.removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
 		newDialog.dialog({
 	    	modal: false,
@@ -221,8 +300,8 @@ $(document).ready(function() {
 					my: "left top", 
 					at: "left top"
 				},
-			height: 400,
-			width: 880,
+			height: 550,
+			width: 480,
 			resizable: true,
 			closeOnEscape: true,
 
@@ -241,73 +320,23 @@ $(document).ready(function() {
   				imgde.src = chrome.extension.getURL('/img/de.png');
   				var imgfr = document.getElementById('lgfr');
   				imgfr.src = chrome.extension.getURL('/img/fr.png');
-  				$("#btnSubmit").hide();
-  				$("#QteSpinner").hide();
-				$("#fromus_quantite").hide();
-				$("#fromus_assurance").hide();
-				$("#fromus_divassurance").hide();
-			},
 
-			buttons: 
-				[
-					// bouton submit qui permet de commander un produit 
-					{
-						text: i18n("ButtonBuy"), 
-						id: "btnSubmit",
-						click: function() {
-
-							var qteSpinner = document.getElementById("QteSpinner");
-							qteVal = qteSpinner.value;
-							var categSelect = document.getElementById("sscategory");
-							categVal = categSelect.value;
-
-							var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
-							var postData = JSON.stringify(jsonProduct);
-							var productJSON = {product:postData};
-							sendToServer(_urlProduct+token,productJSON);
-
-
-							var jsonCalcul = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
-							var postDataCalcul = JSON.stringify(jsonCalcul);
-							var calculJSON = {calcul:postDataCalcul};
-							sendToServer(_urlCalcul+token , calculJSON);
-						}
-					},		
-				
-					// bouton ajouter qui permet d'ajouter un produit dans la base de données 
-					// à ne pas confondre avec le bouton submit 
-					{ 
-						text: i18n("ButtonAdd"), 
-						id: "btnAdd",
-						click: function() {
-
-							var qteSpinner = document.getElementById("QteSpinner");
-							qteVal = qteSpinner.value;
-							var categSelect = document.getElementById("sscategory");
-							categVal = categSelect.value;
-
-							var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
-							var postData = JSON.stringify(jsonProduct);
-							var productJSON = {product:postData};
-							sendToServer(_urlProduct+token , productJSON);
-						}
-					},
-
-
-					// bouton cancel, mettre destroy au lieu de close pour supprimer completement la dialog box
-					// à modifier en bouton reset
-					{
-						text: i18n("ButtonReset"), 
-						id: "btnReset",
-						click: function() {
-							$(':input','#fromusForm')
-							   .not(':button, :submit, :reset, :hidden')
-							   .val('')
-							   .removeAttr('checked')
-							   .removeAttr('selected');
-						}
-					},
-				]
+  				loadText();
+  				
+  				sendToServer(_urlCategorie,{});
+				if(readCookie('tokenFU')){
+					hideLog();
+					token=readCookie('tokenFU');
+					if(readCookie('nameFU')){
+						Nick_Name = readCookie('nameFU');
+						document.getElementById("nick_name").value = i18n("MsgWelcome")+Nick_Name ;
+						sendToServer(_urlPts+token,{});
+					}
+				}
+				else 
+					showLog();
+				searchInfo();
+				}
 	    });
 
 		var bindEvent = function(elem ,evt,cb) {
@@ -324,69 +353,89 @@ $(document).ready(function() {
 			}
 		}
 
+	$(".content").each(function(i){
+        this.id = "#" + this.id;
+    });
+
+	$(".content").not(":first").hide();
+
+	$("#menu a").click(function() {
+        var idTab = $(this).attr("href");
+        $(".content").hide();
+        $("div[id='" + idTab + "']").fadeIn();
+        return false;
+    });   
+
+	$("input[id='connect']").click(function() {
+		
+   		var emailV = document.getElementById('emailBox').value;
+		var passwordV = document.getElementById("passBox").value;
+		if (emailV && passwordV){
+			var jsonLog = {email: emailV ,password: passwordV};
+			var postLog = JSON.stringify(jsonLog);
+			var logJSON = {log:postLog};
+			sendToServer(_urlLogin, logJSON);
+		}
+  	});
+
+  	$("input[id='addP']").click(function() {
+		var categVal = document.getElementById("sscategory").value;
+		if(categVal){
+			var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
+			var postData = JSON.stringify(jsonProduct);
+			var productJSON = {product:postData};
+			sendToServer(_urlProduct+token , productJSON);
+		}
+  	});
+
+  	$("input[id='buyP']").click(function() {
+		var qteSpinner = document.getElementById("QteSpinner").value;
+		var categSelect = document.getElementById("sscategory").value;
+
+		var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
+		var postData = JSON.stringify(jsonProduct);
+		var productJSON = {product:postData};
+		sendToServer(_urlProduct+token,productJSON);
+
+		var jsonCalcul = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
+		var postDataCalcul = JSON.stringify(jsonCalcul);
+		var calculJSON = {calcul:postDataCalcul};
+		sendToServer(_urlCalcul+token , calculJSON);
+  	});
+
+  	$("input[id='disconnect']").click(function() {
+		
+   		sendToServer(_urlLogout+token, {});
+		eraseCookie('tokenFU');
+		eraseCookie('nameFU');
+		token="";
+		Nick_Name = "";
+		showLog();
+  	});
+
+  	$("select[id='category']").change(function() {
+	var categV = document.getElementById("category").value;
+	if (categV)
+		sendToServer(_urlSSCategorie+categV, {});
+	else{
+	   	var $selectCat = $('select[id=sscategory]');
+	   	$selectCat.empty();
+	}
+  	});
+
 		$("img[id='lgfr']").click(function() {
-		changeLng('fr');
+			changeLng('fr');
+			loadText();
 	  	});
 	  	$("img[id='lgen']").click(function() {
 			changeLng('en');
+			loadText();
 	  	});
 	  	$("img[id='lgde']").click(function() {
 			changeLng('de');
+			loadText();
 	  	});
 
-		
-
-		newDialog.tabs({
-			active: 0,
-			activate: function(event,ui) {
-
-				bindEvent(document,'click', function(event) 
-					{ 
-						var target = event.target || event.srcElement;
-						var tabclick = target.textContent;
-					
-						// si bouton commander on affiche comander, reset, quantite et assurance
-						// et on cache le bouton ajouter
-						if (/Commander/.test(tabclick) || /Buy/.test(tabclick)) {
-							$("#btnSubmit").show();
-							$("#btnReset").show();
-							$("#btnAdd").hide();
-							$("#QteSpinner").show();
-							$("#fromus_quantite").show();
-							$("#fromus_assurance").show();
-							$("#fromus_divassurance").show();
-						}
-
-						// si bouton ajouter on affiche bouton ajouter, reset
-						// et on cache bouton commander, quantite et assurance
-						if (/Ajouter/.test(tabclick)|| /Add/.test(tabclick)) {
-							$("#btnAdd").show();
-							$("#btnReset").show();
-							$("#btnSubmit").hide();
-							$("#QteSpinner").hide();
-							$("#fromus_quantite").hide();
-							$("#fromus_assurance").hide();
-							$("#fromus_divassurance").hide();
-							
-						}
-
-						// si bouton mon compte on cache bouton ajouter, commander et reset
-						if (/Mon compte/.test(tabclick)|| /My account/.test(tabclick)) {
-							$("#btnAdd").hide();
-							$("#btnReset").hide();
-							$("#btnSubmit").hide();
-							if(token){
-								logHide();
-							}
-							else{
-								logShow();
-							}
-						}
-
-					this.removeEventListener('click',arguments.callee,false);
-					});
-			}
-  		});
 
 						
 		// creation du spinner pour la quantite
@@ -394,23 +443,6 @@ $(document).ready(function() {
 			min: 1
 		});	
 
-		/*var value;
-		var $container=$("#QteSpinner");
-		var newSpinner = $container.spinner({
-		        min: 1,
-		    }).focus(function () {
-		        value = $container.val();
-		    }).blur(function () {
-		        var value1 = $container.val();
-		        if (value1<0) {
-		           $container.val(value);
-		        }
-		        if(isNaN(value1))
-		        {
-		           $container.val(value);
-		        } 
-
-		    });*/
 
 
 		// ajout du marchand automatiquement
@@ -480,72 +512,8 @@ $(document).ready(function() {
 		}, false);
 
 		
-
-
-		//Action sur le bouton login/logout
-		var in_out = document.getElementById('log');
-		in_out.addEventListener('click', function(e){
-			if ( in_out.value == "login" ){
-		    	in_out.value = "logout";
-		    	var getemail = document.getElementById("idfromus");
-				var getpassword = document.getElementById("mdpfromus");
-				var emailV = getemail.value;
-				var passwordV = getpassword.value;
-				document.getElementById("idfromus").value='';
-				document.getElementById("mdpfromus").value='';
-				if (emailV && passwordV){
-					var jsonLog = {email: emailV ,password: passwordV};
-					var postLog = JSON.stringify(jsonLog);
-					var logJSON = {log:postLog};
-					sendToServer(_urlLogin, logJSON);
-				}
-		    }
-		    else{
-		        in_out.value = "login";
-		    	sendToServer(_urlLogout+token, {});
-		    	eraseCookie('token');
-		    	eraseCookie('Nick_Name');
-		    	token="";
-		    	
-			}
-				    
-		}, false);
-
-		//action sur le select de categorie pour la mise a jour de sscategory
-		var categ = document.getElementById('category');
-		categ.addEventListener('change', function(e){
-			var categV = categ.value;
-			if (categV){
-				sendToServer(_urlSSCategorie+categV, {});
-		    }
-		    else{
-		    	var $selectCat = $('select[id=sscategory]');
-    			$selectCat.empty();
-    		}
-		}, false);
-
-		
 		// ouverture de la dialog box
 		newDialog.dialog("open");
-
-		//Recupere la liste de catégorie
-		sendToServer(_urlCategorie,{});
-
-		//Récupere le token 
-		if(readCookie('tokenFU')){
-			token=readCookie('tokenFU');
-			(!token)?in_out.value = 'login' : in_out.value = 'logout';
-			if(readCookie('Nick_Name')){
-				var Nick_Name = readCookie('Nick_Name');
-				document.getElementById("Nick_Name").value = i18n("MsgWelcome")+Nick_Name;
-			}
-			else 
-				document.getElementById("Nick_Name").value = i18n("MsgConnect");
-		}
-		else
-			document.getElementById("Nick_Name").value = i18n("MsgConnect");
-			//alert('Vous devez vous connecter');
-
 				
 		// suppression des key dans le localstorage
 		localStorage.removeItem('regDesc');

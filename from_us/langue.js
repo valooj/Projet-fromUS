@@ -42,5 +42,4 @@ function changeLng(lng) {
 	createCookie('defLng',lng,21);
 	defLng = readCookie('defLng');
 	//document.location.assign(document.location.href);
-	document.location.reload(); 
 }
