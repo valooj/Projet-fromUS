@@ -410,10 +410,7 @@ function fromus_recupDesc(idclass,fus_data)
 
 // stockage du marchand dans local storage 
 localStorage["regStore"] = fromus_site;	
-<<<<<<< HEAD
-=======
-console.log('localStorage 1'+localStorage["regStore"]);
->>>>>>> up
+
 if( fromus_sitelist[fromus_site])
 {	//Si le site est connu
 	
@@ -438,8 +435,6 @@ else
 var wwwOffre = fromus_offre.replace(/www\./,'');
 localStorage["regOffer"] = /http[s]{0,1}\:\/\/(.*)/gi.exec(wwwOffre)[1];	
 //localStorage["regOffer"] = fromus_offre;
-<<<<<<< HEAD
-console.log('localStorage 2'+localStorage["regStore"]);
-=======
+
 console.log('localStorage 2'+localStorage["regPrice"]);
->>>>>>> up
+
