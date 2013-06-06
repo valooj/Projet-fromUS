@@ -424,14 +424,14 @@ localStorage["regStore"] = fromus_site;
 if( fromus_sitelist[fromus_site])
 {	//Si le site est connu
 	
-	
+	/*
 	//fromus_recupName()
 	fromus_recupPrice('class','mpsTotalPriceMoney');
 	if(localStorage["regPrice"]=='?')
 	{console.log('La classe n\'a rien trouvé!');
 	fromus_recupPrice('id','spanMainTotalPrice;StorePromo_PriceText');}
 	//	fromus_recupImg()
-	//	fromus_recupDesc()
+	//	fromus_recupDesc()*/
 }
 else
 {	// Si le site n'est pas enregistré
