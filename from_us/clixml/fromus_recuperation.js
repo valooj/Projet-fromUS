@@ -137,68 +137,79 @@ function fromus_recupPrice(idclass,fus_data)
 	{
 		console.log('C\'est un id');
 		fromus_sitelist[fromus_site].price_id = fus_data.split(';');
+<<<<<<< HEAD
 		fromus_sitelist[fromus_site].price_class.push('');	
+=======
+		fromus_sitelist[fromus_site].price_class.push('');		
+			console.log('price_class = ' + fromus_sitelist[fromus_site].price_class);
+	console.log('price_id = '+fromus_sitelist[fromus_site].price_id);
+>>>>>>> consolelog
 	}
 	else
 	{
 		console.log('C\'est une classe');
 		fromus_sitelist[fromus_site].price_class = fus_data.split(';');
 		fromus_sitelist[fromus_site].price_id.push('');		
+			console.log('price_class = ' + fromus_sitelist[fromus_site].price_class);
+	console.log('price_id = '+fromus_sitelist[fromus_site].price_id);
 	}
 	
-	console.log('price_class = ' + fromus_sitelist[fromus_site].price_class);
-	console.log('price_id = '+fromus_sitelist[fromus_site].price_id);
+
 	
 	/////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
 	if(localStorage["fromus_moreprice"])
-	{
+	{	console.log('il y a un moreprice');
 		fromus_moreprice = JSON.parse(localStorage["fromus_moreprice"]);
 	}
 	else
-	{
+	{console.log('pas de moreprice');
 		fromus_moreprice = false;
 	}
 	///////////////////////////////////////////////////// Partie cherchant l'info /////////////////////////////////////////////////////
 	//price			
 	if(fromus_moreprice)
-	{
+	{console.log('on initialise i à plus que 0');
 		fromus_i = parseInt(localStorage["fromus_iprice"]);
 		fromus_pricemin = '';
 	}
 	else
-	{
+	{console.log('On initialise i à 0');
 		fromus_i = 0;
 	}
 	
 	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].price_id.length) && !(fromus_pricemin) ; fromus_i++)
-	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
+	{	console.log('on est dans la boucle for des id');
+		//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
 		var fromus_price_id = document.getElementById(fromus_sitelist[fromus_site].price_id[fromus_i]);
 		if(fromus_price_id)
 		{	//S'il y a un résultat, l'enregistrer
 			fromus_pricemin = fromus_price_id.textContent;
 			localStorage["fromus_iprice"] = fromus_i + 1;
+			console.log('on a un resultat : '+fromus_pricemin);
 		}
 	}
-	
+console.log('On quitte la partie des id');	
 	if(fromus_moreprice)
-	{
+	{console.log('Il y a un moreprice');
 		fromus_i = parseInt(localStorage["fromus_iprice"]);
 		fromus_pricemin = '';
 	}
 	else
-	{
+	{console.log('Pas de moreprice');
 		fromus_i = 0;
 	}	
 	
 	if(!(fromus_pricemin))
-	{	//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
+	{	console.log('On a pas de resultat pour le prix!');
+		//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
 		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].price_class.length) && !(fromus_pricemin) ; fromus_i++)
-		{
+		{console.log('On est dans le for des classes');
 			var fromus_price_class = document.getElementsByClassName(fromus_sitelist[fromus_site].price_class[fromus_i])[0];
 			if(fromus_price_class)
 			{
 				fromus_pricemin = fromus_price_class.textContent;
 				localStorage["fromus_iprice"] = fromus_i + 1;
+				console.log('On a un resultat'+fromus_pricemin);
 			}
 		}
 	}
@@ -206,6 +217,7 @@ function fromus_recupPrice(idclass,fus_data)
 	if(!(fromus_pricemin))
 	{	// S'il n'y a eu aucun résultat...
 		fromus_pricemin = fromus_error;
+		console.log('On a eu aucun resultat!!');
 	}
 	
 	if(typeof(fromus_pricemin)=='string')
@@ -418,7 +430,8 @@ if( fromus_sitelist[fromus_site])
 	//fromus_recupName()
 	fromus_recupPrice('class','mpsTotalPriceMoney');
 	if(localStorage["regPrice"]=='?')
-	{fromus_recupPrice('id','spanMainTotalPrice;StorePromo_PriceText');}
+	{console.log('La classe n\'a rien trouvé!');
+	fromus_recupPrice('id','spanMainTotalPrice;StorePromo_PriceText');}
 	//	fromus_recupImg()
 	//	fromus_recupDesc()
 }
