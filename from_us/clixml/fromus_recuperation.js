@@ -177,8 +177,13 @@ function fromus_recupPrice(idclass,fus_data)
 	
 	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].price_id.length) && !(fromus_pricemin) ; fromus_i++)
 	{	console.log('on est dans la boucle for des id');
+	console.log('i vaut' + fromus_i);
+	
+	
 		//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
 		var fromus_price_id = document.getElementById(fromus_sitelist[fromus_site].price_id[fromus_i]);
+		console.log('fromus_price_id = '+fromus_price_id);
+	
 		if(fromus_price_id)
 		{	//S'il y a un résultat, l'enregistrer
 			fromus_pricemin = fromus_price_id.textContent;
@@ -202,7 +207,11 @@ console.log('On quitte la partie des id');
 		//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
 		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].price_class.length) && !(fromus_pricemin) ; fromus_i++)
 		{console.log('On est dans le for des classes');
+		console.log('i vaut'+fromus_i);
+	
 			var fromus_price_class = document.getElementsByClassName(fromus_sitelist[fromus_site].price_class[fromus_i])[0];
+			console.log('fromus_price_class = '+fromus_price_class);
+	
 			if(fromus_price_class)
 			{
 				fromus_pricemin = fromus_price_class.textContent;
