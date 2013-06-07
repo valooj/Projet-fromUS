@@ -10,6 +10,8 @@ pageMod.PageMod({
   			data.url('jquery/jquery.min.js'),
         	data.url('jquery/jquery-ui.js'),
             data.url('fromus_recuperation.js'),
+            data.url('getPrice.js'),
+            data.url('getName.js'),
             data.url('locales/en/enLng.js'),
             data.url('locales/fr/frLng.js'),
             data.url('langue.js'),

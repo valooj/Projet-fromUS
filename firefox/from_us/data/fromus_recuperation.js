@@ -1,3 +1,4 @@
+console.log('lancement du script');
 // Code JavaScript écrit par BERGS Guillaume (Contact: guillaume.robert.bergs@gmail.com)		//
 // Dans le cadre de son stage du 15/04/13 au 24/06/13																				//
 //																																												//
@@ -6,7 +7,7 @@
 //																																												//
 
 /////	Définition des variables	/////
-console.log('debut recup');
+
 var fromus_offre = document.location.href;		//récupération de l'adresse du l'offre
 var fromus_site = 'www'+ /.*(\..*\.[a-z]{2,3})\//gi.exec(fromus_offre)[1];	//stockage du site web où se trouve l'offre
 var fromus_objectname,
@@ -23,14 +24,14 @@ var fromus_error	=	'?';						// Message à afficher en absence de résultat
 var fromus_moreprice,
 fromus_morename,
 fromus_moreimg,		// Ces variables servent à indiquer si l'utilisateur a demandé un/e autre nom, prix, description, image
-fromus_moredesc;
+fromus_moredesc; 
 
-/**********************************************************************************************/
-/*																																							*/
-/*	Un site est traité comme un objet; ses attributs sont des tableaux.								*/
-/*	Il y a deux tableaux par donnée à récupérer, un pour les classes et un pour les id.	*/
-/*																																							*/
-/**********************************************************************************************/
+/************************************************************************************************/
+/*																							  	*/
+/*	Un site est traité comme un objet; ses attributs sont des tableaux.						  	*/
+/*	Il y a deux tableaux par donnée à récupérer, un pour les classes et un pour les id.			*/
+/*																								*/
+/************************************************************************************************/
 
 function fromus_siteObj() 
 {
@@ -48,17 +49,17 @@ function fromus_siteObj()
 }
 
 /////////////////////////////////////// Début de la déclaration des fonctions de récupération ///////////////////////////////////////
-
-function fromus_recupName(idclass)
+fromus_sitelist[fromus_site] = new fromus_siteObj();
+function fromus_recupName(idclass,fus_data)
 {
 	if(idclass == 'id')
 	{
-		fromus_sitelist[fromus_site].name_id = request.data.split(';');
+		fromus_sitelist[fromus_site].name_id = fus_data.split(';');
 		fromus_sitelist[fromus_site].name_class.push('');		
 	}
 	else
 	{
-		fromus_sitelist[fromus_site].name_class = request.data.split(';');
+		fromus_sitelist[fromus_site].name_class = fus_data.split(';');
 		fromus_sitelist[fromus_site].name_id.push('');		
 	}
 	/////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
@@ -129,68 +130,93 @@ function fromus_recupName(idclass)
 	localStorage["fromus_morename"] =	JSON.stringify(false);
 }
 
-function fromus_recupPrice(idclass)
+function fromus_recupPrice(idclass,fus_data)
 {
+	console.log('On entre dans recupPrice');
 	if(idclass == 'id')
 	{
-		fromus_sitelist[fromus_site].price_id = request.data.split(';');
+		console.log('C\'est un id');
+		fromus_sitelist[fromus_site].price_id = fus_data.split(';');
+
 		fromus_sitelist[fromus_site].price_class.push('');		
+			console.log('price_class = ' + fromus_sitelist[fromus_site].price_class);
+	console.log('price_id = '+fromus_sitelist[fromus_site].price_id);
+
 	}
 	else
 	{
-		fromus_sitelist[fromus_site].price_class = request.data.split(';');
+		console.log('C\'est une classe');
+		fromus_sitelist[fromus_site].price_class = fus_data.split(';');
 		fromus_sitelist[fromus_site].price_id.push('');		
+			console.log('price_class = ' + fromus_sitelist[fromus_site].price_class);
+	console.log('price_id = '+fromus_sitelist[fromus_site].price_id);
 	}
+	
+
+	
 	/////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
 	if(localStorage["fromus_moreprice"])
-	{
+	{	console.log('il y a un moreprice');
 		fromus_moreprice = JSON.parse(localStorage["fromus_moreprice"]);
 	}
 	else
-	{
+	{console.log('pas de moreprice');
 		fromus_moreprice = false;
 	}
 	///////////////////////////////////////////////////// Partie cherchant l'info /////////////////////////////////////////////////////
 	//price			
 	if(fromus_moreprice)
-	{
+	{console.log('on initialise i à plus que 0');
 		fromus_i = parseInt(localStorage["fromus_iprice"]);
 		fromus_pricemin = '';
 	}
 	else
-	{
+	{console.log('On initialise i à 0');
 		fromus_i = 0;
 	}
 	
 	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].price_id.length) && !(fromus_pricemin) ; fromus_i++)
-	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
+	{	console.log('on est dans la boucle for des id');
+	console.log('i vaut' + fromus_i);
+	
+	
+		//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
 		var fromus_price_id = document.getElementById(fromus_sitelist[fromus_site].price_id[fromus_i]);
+		console.log('fromus_price_id = '+fromus_price_id);
+	
 		if(fromus_price_id)
 		{	//S'il y a un résultat, l'enregistrer
 			fromus_pricemin = fromus_price_id.textContent;
 			localStorage["fromus_iprice"] = fromus_i + 1;
+			console.log('on a un resultat : '+fromus_pricemin);
 		}
 	}
-	
+console.log('On quitte la partie des id');	
 	if(fromus_moreprice)
-	{
+	{console.log('Il y a un moreprice');
 		fromus_i = parseInt(localStorage["fromus_iprice"]);
 		fromus_pricemin = '';
 	}
 	else
-	{
+	{console.log('Pas de moreprice');
 		fromus_i = 0;
 	}	
 	
 	if(!(fromus_pricemin))
-	{	//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
+	{	console.log('On a pas de resultat pour le prix!');
+		//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
 		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].price_class.length) && !(fromus_pricemin) ; fromus_i++)
-		{
+		{console.log('On est dans le for des classes');
+		console.log('i vaut'+fromus_i);
+	
 			var fromus_price_class = document.getElementsByClassName(fromus_sitelist[fromus_site].price_class[fromus_i])[0];
+			console.log('fromus_price_class = '+fromus_price_class);
+	
 			if(fromus_price_class)
 			{
 				fromus_pricemin = fromus_price_class.textContent;
 				localStorage["fromus_iprice"] = fromus_i + 1;
+				console.log('On a un resultat'+fromus_pricemin);
 			}
 		}
 	}
@@ -198,6 +224,7 @@ function fromus_recupPrice(idclass)
 	if(!(fromus_pricemin))
 	{	// S'il n'y a eu aucun résultat...
 		fromus_pricemin = fromus_error;
+		console.log('On a eu aucun resultat!!');
 	}
 	
 	if(typeof(fromus_pricemin)=='string')
@@ -215,16 +242,16 @@ function fromus_recupPrice(idclass)
 	localStorage["fromus_moreprice"]	=	JSON.stringify(false);
 }
 
-function fromus_recupImg(idclass)
+function fromus_recupImg(idclass,fus_data)
 {
 	if(idclass == 'id')
 	{
-		fromus_sitelist[fromus_site].img_id = request.data.split(';');
+		fromus_sitelist[fromus_site].img_id = fus_data.split(';');
 		fromus_sitelist[fromus_site].img_class.push('');		
 	}
 	else
 	{
-		fromus_sitelist[fromus_site].img_class = request.data.split(';');
+		fromus_sitelist[fromus_site].img_class = fus_data.split(';');
 		fromus_sitelist[fromus_site].img_id.push('');		
 	}
 	/////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
@@ -311,23 +338,23 @@ function fromus_recupImg(idclass)
 	{
 		fromus_i = 0;
 	}			
-
+	
 	// stockage du visuel dans local storage
 	localStorage["regImg"] = fromus_img;
 	//Mise à zéro des indicateurs	
 	localStorage["fromus_moreimg"]	=	JSON.stringify(false);
 }
 
-function fromus_recupDesc(idclass)
+function fromus_recupDesc(idclass,fus_data)
 {
 	if(idclass == 'id')
 	{
-		fromus_sitelist[fromus_site].desc_id = request.data.split(';');
+		fromus_sitelist[fromus_site].desc_id = fus_data.split(';');
 		fromus_sitelist[fromus_site].desc_class.push('');		
 	}
 	else
 	{
-		fromus_sitelist[fromus_site].desc_class = request.data.split(';');
+		fromus_sitelist[fromus_site].desc_class = fus_data.split(';');
 		fromus_sitelist[fromus_site].desc_id.push('');		
 	}
 	/////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
@@ -383,13 +410,20 @@ function fromus_recupDesc(idclass)
 	{//En cas d'absence de description, utiliser le nom du produit.
 		fromus_desc =	fromus_objectname;
 	}
-
+	
+	
+	//Début de la section "limitation de la longueur des données".
+	if(fromus_desc.length > 200)
+	{
+		fromus_desc					=	fromus_desc.substring(0,195)+"[...]";
+	}
+	
 	// stockage de la description dans local storage
 	localStorage["regDesc"] = fromus_desc;
 	
 	//Mise à zéro des indicateurs
 	localStorage["fromus_moredesc"]	=	JSON.stringify(false);
-
+	
 }
 ///////////////////////////////////////////////////// Partie cherchant l'info /////////////////////////////////////////////////////
 
@@ -398,7 +432,15 @@ localStorage["regStore"] = fromus_site;
 
 if( fromus_sitelist[fromus_site])
 {	//Si le site est connu
-
+	
+	/*
+	//fromus_recupName()
+	fromus_recupPrice('class','mpsTotalPriceMoney');
+	if(localStorage["regPrice"]=='?')
+	{console.log('La classe n\'a rien trouvé!');
+	fromus_recupPrice('id','spanMainTotalPrice;StorePromo_PriceText');}
+	//	fromus_recupImg()
+	//	fromus_recupDesc()*/
 }
 else
 {	// Si le site n'est pas enregistré
@@ -408,13 +450,11 @@ else
 	fromus_pricemin=fromus_error;
 }
 
-//Début de la section "limitation de la longueur des données".
-if(fromus_desc.length > 200)
-{
-	fromus_desc					=	fromus_desc.substring(0,195)+"[...]";
-}
 
 // stockage de la page du site dans local storage
 var wwwOffre = fromus_offre.replace(/www\./,'');
 localStorage["regOffer"] = /http[s]{0,1}\:\/\/(.*)/gi.exec(wwwOffre)[1];	
 //localStorage["regOffer"] = fromus_offre;
+
+console.log('localStorage 2'+localStorage["regPrice"]);
+
