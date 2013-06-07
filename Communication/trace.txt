@@ -23,8 +23,9 @@ Array
 ===========================================
 Array
 (
-    [action] => MAJ-categorie
+    [action] => MAJ-login
     [lng] => fr
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
 )
 
 ===========================================
@@ -32,14 +33,7 @@ Array
 (
     [action] => MAJ-pts
     [lng] => fr
-    [token] => 51b075395df7c
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.rakuten.com
+    [token] => 51b18a2045567
 )
 
 ===========================================
@@ -47,14 +41,6 @@ Array
 (
     [action] => MAJ-categorie
     [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-pts
-    [lng] => fr
-    [token] => 51b075395df7c
 )
 
 ===========================================
@@ -69,7 +55,70 @@ Array
 (
     [action] => MAJ-sscategorie
     [lng] => fr
-    [sscateg] => 35
+    [sscateg] => 34
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => undefined
+    [product] => {"prd_libelle":"Darksiders II (Limited Edition)","prd_site":"www.rakuten.com","prd_desc":"Product DescriptionDarksiders II follows the exploits of Death, one of the four horsemen of the Apocalypse, in a weaving tale that runs parallel to the events in the original Darksiders game. Thi[...]","prd_visu":"http://img.rakuten.com/PIC/42143469/0/1/300/42143469.jpg","prd_prix":"49.3"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [lng] => fr
+    [token] => undefined
+    [calcul] => {"libelle":"Darksiders II (Limited Edition)","montant":"49.3"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => undefined
+    [product] => {"prd_libelle":"Darksiders II (Limited Edition)","prd_site":"www.rakuten.com","prd_desc":"Product DescriptionDarksiders II follows the exploits of Death, one of the four horsemen of the Apocalypse, in a weaving tale that runs parallel to the events in the original Darksiders game. Thi[...]","prd_visu":"http://img.rakuten.com/PIC/42143469/0/1/300/42143469.jpg","prd_prix":"49.3"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [lng] => fr
+    [token] => undefined
+    [calcul] => {"libelle":"Darksiders II (Limited Edition)","montant":"49.3"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => undefined
+    [product] => {"prd_libelle":"Darksiders II (Limited Edition)","prd_site":"www.rakuten.com","prd_desc":"Product DescriptionDarksiders II follows the exploits of Death, one of the four horsemen of the Apocalypse, in a weaving tale that runs parallel to the events in the original Darksiders game. Thi[...]","prd_visu":"http://img.rakuten.com/PIC/42143469/0/1/300/42143469.jpg","prd_prix":"49.3"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [lng] => fr
+    [token] => undefined
+    [calcul] => {"libelle":"Darksiders II (Limited Edition)","montant":"49.3"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => undefined
+    [product] => {"prd_libelle":"Darksiders II (Limited Edition)","prd_site":"www.rakuten.com","prd_desc":"Product DescriptionDarksiders II follows the exploits of Death, one of the four horsemen of the Apocalypse, in a weaving tale that runs parallel to the events in the original Darksiders game. Thi[...]","prd_visu":"http://img.rakuten.com/PIC/42143469/0/1/300/42143469.jpg","prd_prix":"49.3","prd_cat":"593"}
 )
 
 ===========================================
@@ -82,9 +131,15 @@ Array
 ===========================================
 Array
 (
-    [action] => MAJ-pts
+    [action] => MAJ-accessIn
+    [url_site] => www.bebe.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
     [lng] => fr
-    [token] => 51b075395df7c
 )
 
 ===========================================
@@ -97,9 +152,9 @@ Array
 ===========================================
 Array
 (
-    [action] => MAJ-sscategorie
+    [action] => MAJ-login
     [lng] => fr
-    [sscateg] => 35
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
 )
 
 ===========================================
@@ -107,7 +162,74 @@ Array
 (
     [action] => MAJ-pts
     [lng] => fr
-    [token] => 51b075395df7c
+    [token] => 51b18b2621ce8
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [lng] => fr
+    [token] => 51b18b2621ce8
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [lng] => fr
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b18b2b4ca0f
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.bebe.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b18b2b4ca0f
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
 )
 
 ===========================================
@@ -122,6 +244,13 @@ Array
 (
     [action] => MAJ-categorie
     [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
 )
 
 ===========================================
@@ -137,92 +266,8 @@ Array
 (
     [action] => MAJ-product
     [lng] => fr
-    [token] => 51b075395df7c
-    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"www.rakuten.com","prd_desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","prd_visu":"http://img.rakuten.com/PIC/38977900/0/1/300/38977900.jpg","prd_prix":"151.99","prd_cat":"593"}
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-pts
-    [lng] => fr
-    [token] => 51b075395df7c
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.rakuten.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-sscategorie
-    [lng] => fr
-    [sscateg] => 37
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-product
-    [lng] => fr
-    [token] => 51b075395df7c
-    [product] => {"prd_libelle":"The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector's ","prd_site":"www.rakuten.com","prd_desc":"Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]","prd_visu":"http://img.rakuten.com/PIC/38977900/0/1/300/38977900.jpg","prd_prix":"151.99","prd_cat":"607"}
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.rakuten.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.rakuten.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-sscategorie
-    [lng] => fr
-    [sscateg] => 36
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-product
-    [lng] => fr
     [token] => undefined
-    [product] => {"prd_libelle":"Canon PowerShot ELPH 110 HS 16 Megapixel Digital Camera, Black","prd_site":"www.rakuten.com","prd_desc":"Style, Sophistication, and Power.Slim and curvy, the PowerShot ELPH 110 HS is a natural fit for your hand. Easy operability and reliable high-quality performance are reason enough to carry it eve[...]","prd_visu":"http://img.rakuten.com/PIC/42239239/0/1/225/42239239.jpg","prd_prix":"178","prd_cat":"604"}
+    [product] => {"prd_libelle":"Seagate Expansion STBV4000100 4TB USB 3.0 External Hard Drive","prd_site":"www.rakuten.com","prd_desc":"The easy-to-use storage solution.The Expansion external hard drive installs easily by plugging in two cords. You can start saving your digital files to this hard drive within seconds of removing [...]","prd_visu":"http://img.rakuten.com/PIC/44578783/0/1/300/44578783.jpg","prd_prix":"159.99","prd_cat":"593"}
 )
 
 ===========================================

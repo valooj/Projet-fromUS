@@ -11,6 +11,7 @@ var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=M
 var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&lng='+defLng+'&sscateg=';
 var _urlPts = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-pts&lng='+defLng+'&token=';
 var _urlAccessIn = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-accessIn';
+var _urlAccessOut = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-accessOut';
 
 
 var qteVal;
@@ -54,6 +55,7 @@ function eraseCookie(name) {
 function sendToServer(urlSelected, jsonSelected) {
 	$.post(urlSelected, jsonSelected)
 	.done(function(datas) { 
+		document.getElementById('msgServer').value = "";
 		switch(datas['Status']){
 			case 'l':
 				logShow();
@@ -426,10 +428,7 @@ $(document).ready(function() {
 
 	  	$("input[id='addP']").click(function() {
 			var categVal = document.getElementById("sscategory").value;
-			alert(categVal);
-			alert('ok');
 			if(categVal && regName && regStore && regPrice){
-				alert('okpasse');
 				var jsonProduct = {prd_libelle: regName ,prd_site: regStore, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
 				var postData = JSON.stringify(jsonProduct);
 				var productJSON = {product:postData};
@@ -441,7 +440,7 @@ $(document).ready(function() {
 			var qteSpinner = document.getElementById("QteSpinner").value;
 			var categSelect = document.getElementById("sscategory").value;
 
-			var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
+			var jsonProduct = {prd_libelle: regName ,prd_site: regStore, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
 			var postData = JSON.stringify(jsonProduct);
 			var productJSON = {product:postData};
 			sendToServer(_urlProduct+token,productJSON);
