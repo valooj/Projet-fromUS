@@ -335,10 +335,10 @@ $(document).ready(function() {
 	
 	if (isOpen != true) {	
 
-		//newDialog.tabs().addClass( "ui-tabs-horizontal ui-helper-clearfix" );
+		newDialog.tabs().addClass( "ui-tabs-horizontal ui-helper-clearfix" );
 		newDialog.removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
 		newDialog.dialog({
-	    	modal: false,
+	    	modal: true,
 			title: "From-us.com",
 			//show: 'clip',
 			//hide: 'clip',
