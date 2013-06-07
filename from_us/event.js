@@ -12,16 +12,17 @@ chrome.runtime.onInstalled.addListener(function(details) {
 chrome.browserAction.onClicked.addListener(function(tab) {
 		chrome.tabs.executeScript(null,{file:'jquery/jquery.min.js',allFrames:false,runAt:'document_end'});
 		chrome.tabs.executeScript(null,{file:'jquery/jquery-ui.js',allFrames:false,runAt:'document_end'});
-		chrome.tabs.insertCSS(null,{file:'jquery/jquery-ui.css',allFrames:false,runAt:'document_end'})
+		chrome.tabs.insertCSS(null,{file:'jquery/jquery-ui.css',allFrames:false,runAt:'document_end'});
 		chrome.tabs.executeScript(null,{file:'/clixml/fromus_recuperation.js',allFrames:false,runAt:'document_end'});
 
-		chrome.tabs.insertCSS(null,{file:'/clixml/getPrice.js',allFrames:false,runAt:'document_end'})
+		chrome.tabs.executeScript(null,{file:'/clixml/getPrice.js',allFrames:false,runAt:'document_end'});
+		//chrome.tabs.executeScript(null,{file:'/clixml/getName.js',allFrames:false,runAt:'document_end'});
 		//chrome.tabs.executeScript(null,{file:'fromus_favelet_comments.js',allFrames:false,runAt:'document_end'});
 
-			chrome.tabs.executeScript(null,{file:'locales/en/enLng.js',allFrames:false,runAt:'document_end'});
-			chrome.tabs.executeScript(null,{file:'locales/fr/frLng.js',allFrames:false,runAt:'document_end'});
-			chrome.tabs.executeScript(null,{file:'langue.js',allFrames:false,runAt:'document_end'});
-			chrome.tabs.executeScript(null,{file:'dialog.js',allFrames:false,runAt:'document_end'});
+		chrome.tabs.executeScript(null,{file:'locales/en/enLng.js',allFrames:false,runAt:'document_end'});
+		chrome.tabs.executeScript(null,{file:'locales/fr/frLng.js',allFrames:false,runAt:'document_end'});
+		chrome.tabs.executeScript(null,{file:'langue.js',allFrames:false,runAt:'document_end'});
+		chrome.tabs.executeScript(null,{file:'dialog.js',allFrames:false,runAt:'document_end'});
 
 		//chrome.tabs.executeScript(null,{file:'fromus_onglets.js',allFrames:false});
 		//chrome.tabs.executeScript(null,{file:'passlog.js',allFrames:false});

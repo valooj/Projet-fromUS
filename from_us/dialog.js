@@ -11,7 +11,7 @@ var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=M
 var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&lng='+defLng+'&sscateg=';
 var _urlPts = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-pts&lng='+defLng+'&token=';
 var _urlAccessIn = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-accessIn';
-var _urlAccessOut = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-accessOut';
+var _urlAccessOut = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-accessOut&token=';
 
 
 var qteVal;
@@ -262,7 +262,10 @@ function loadText(){
 	document.getElementById('buyP').value = i18n("ButtonBuy") ;
 	document.getElementById('fu_quantite').innerHTML = i18n("QuantityP") ;
 	document.getElementById('fu_assurance').innerHTML = i18n("InsuranceP") ;
+
 	document.getElementById('priceQ').value = "?";
+	document.getElementById('nameQ').value = "?";
+   
    
 
 }
@@ -304,7 +307,7 @@ $(document).ready(function() {
 									          			'<label for="store" id="store"></label></br>'+
 											            '<input type="textbox" id="fromus_store" disabled="true"/></br>'+
 											            '<label for="name" id="nameP"></label></br>'+
-											            '<input type="textbox" id="fromus_name" disabled="true"/></br>'+
+											            '<input type="textbox" id="fromus_name" disabled="true"/><input type="button" id="nameQ"></br>'+
 											            '<label for="price" id="priceP" ></label></br>'+
 											            '<input type="textbox" id="fromus_price" /><input type="button" id="priceQ"> </br>'+
 											            '<label for="category" id="categP"></label></br>'+
@@ -485,15 +488,48 @@ $(document).ready(function() {
 			loadText();
 		});
 
-		$("input[id='priceQ']").click(function() {
-			alert('ok');
-			getPrice();
-			alert('oki');
-			alert(localStorage['regPrice']);
-			$('#fromus_price').attr('value',localStorage['regPrice']);
-	  	});
+		var priceq = document.getElementById('priceQ');
+		var runtimeOrExtension = chrome.runtime && chrome.runtime.sendMessage ?
+ 		'runtime' : 'extension';
+		priceq.addEventListener('click', function(e){
+			console.log('debut listener priceq');
+			var start = new Date().getTime();
+			var end = new Date().getTime();
+			var time = end - start;
+			var timeafterbtn = time + 30;
+			setTimeout(function () {
+				getPrice();
+	        	
+        	}, timeafterbtn);
+			$('#fromus_price').attr('value',localStorage["regPrice"]);
+			console.log(localstorage["regGetPrice"]);
+/*
+			var jsonAccess = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
+			var postDataAccess = JSON.stringify(jsonAccess);
+			var accessJSON = {calcul:postDataAccess};
+			sendToServer(_urlAccessOut+token, accessJSON);
+*/
+		}, false); 
 
+/*
+		var nameq = document.getElementById('nameQ');
+		var runtimeOrExtension = chrome.runtime && chrome.runtime.sendMessage ?
+ 		'runtime' : 'extension';
+		nameq.addEventListener('click', function(e){
+			console.log('debut listener nameq');
+			var start = new Date().getTime();
+			var end = new Date().getTime();
+			var time = end - start;
+			var timeafterbtn = time + 30;
+			setTimeout(function () {
+				getName();
+	        	
+        	}, timeafterbtn);
+			$('#fromus_name').attr('value',localStorage["regName"]);
+			console.log(localstorage["regGetName"]);
+		}, false);
 
+*/
 		
 		// ouverture de la dialog box
 		newDialog.dialog("open");
