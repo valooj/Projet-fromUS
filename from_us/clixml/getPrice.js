@@ -147,17 +147,17 @@ function getPrice()
 				// id et class 
 				
 				fromus_selectedTexttmp	= fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
-				var fus_priceid ='fromus_sitelist[\''+fromus_site+'\'].price_id.push(\''+fromus_selectedTexttmp+'\');';
+				var fus_priceid =fromus_selectedTexttmp;
 				
 				fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);			
-				var fus_priceclass = 'fromus_sitelist[\''+fromus_site+'\'].price_class.push(\''+fromus_selectedTexttmp+'\');';
+				var fus_priceclass = fromus_selectedTexttmp;
 				
 			}
 			else
 			{
 				//id sans class
 				fromus_selectedTexttmp	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
-				var fus_priceid ='fromus_sitelist[\''+fromus_site+'\'].price_id.push(\''+fromus_selectedTexttmp+'\');';
+				var fus_priceid =fromus_selectedTexttmp;
 				
 			}
 			
@@ -174,7 +174,7 @@ function getPrice()
 			if(fromus_classmatch !=undefined)
 			{ //Class sans id
 				fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
-				var fus_priceclass = 'fromus_sitelist[\''+fromus_site+'\'].price_class.push(\''+fromus_selectedTexttmp+'\');';
+				var fus_priceclass = fromus_selectedTexttmp;
 				
 				fromus_selectedText = fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
 				
@@ -200,17 +200,19 @@ function getPrice()
 			}  
 		}
 		
+		var fus_priceresult = '';
 		if(fus_priceid)
 		{
-		
+			fus_priceresult += 'price_id<-->'+fus_priceid+'/';
 		}
 		if(fus_priceclass)
 		{
-		
+			fus_priceresult += 'price_class<-->'+fus_priceclass+'/';
 		}
 		
 		console.log("Et ce qui est affiché dans la case est...");
 		console.log(fromus_selectedText);
+		localStorage["regGetPrice"] = fus_priceresult;
 		localStorage["regPrice"] = fromus_selectedText;
 		fus_actprice = 0;	// On ne cherche plus le prix
 		target.style.backgroundColor = fus_colorprice;	
