@@ -441,15 +441,23 @@ $(document).ready(function() {
 
 	  	$("input[id='addP']").click(function() {
 			var categVal = document.getElementById("sscategory").value;
+			if(!regName)
+				regName=localStorage["regName"];
+			if(!regPrice)
+				regPrice=localStorage["regPrice"];
 
+	/*		console.log(regStore);
+			//console.log(localStorage["regGetName"]);
+			console.log(localStorage["regGetPrice"]);
 			if(localStorage["regGetName"] && localStorage["regGetPrice"] && regStore){
+				alert('ok');
 				var siteAccess = localStorage["regGetName"]+localStorage["regGetPrice"];
 				var jsonAccess = {url: regStore, access: siteAccess};
 				var postDataAccess = JSON.stringify(jsonAccess);
 				var accessJSON = {calcul:postDataAccess};
 				sendToServer(_urlAccessOut+token, accessJSON);
 			}
-
+*/
 			if(categVal && regName && regStore && regPrice){
 				var jsonProduct = {prd_libelle: regName ,prd_site: regStore, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
 				var postData = JSON.stringify(jsonProduct);
