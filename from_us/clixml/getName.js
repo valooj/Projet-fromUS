@@ -1,3 +1,6 @@
+	var fus_actprice = 1; // V ariable indiquant que l'on est à la recherche du nom
+	var fus_colorprice;	// variable contenant la couleur précédente
+
 var bindEvent = function(elem ,evt,cb) {
 	//vérifie si addEventListenerexiste dans l'élément
 	if ( elem.addEventListener ) {
@@ -11,6 +14,105 @@ var bindEvent = function(elem ,evt,cb) {
 		});
 	}
 }
+
+var inversHTML	=	function(htmlcode){
+		console.log('start, htmlcode = ' + htmlcode);
+		
+		if (htmlcode.substr(0, 1) === '#') 
+		{
+			htmlcode = htmlcode.substr(1,7);
+			htmlcode = parseInt(htmlcode,16);
+			htmlcode = htmlcode ^16777215;
+			return htmlcode;
+		}
+		else
+		{	
+			var digits = /(rgb[a]{0,1}\()(\d+), (\d+), (\d+)(.*)/.exec(htmlcode);
+			
+			if(/, \d+/.test(digits[5]))
+			{
+				var alpha = parseInt(/\d+/.exec(digits[5]));
+			}
+			
+			var red = parseInt(digits[2]);
+			var green = parseInt(digits[3]);
+			var blue = parseInt(digits[4]);
+			
+			console.log('ColorConvert,');
+			console.log('red = ' + red);
+			console.log('green = ' + green);
+			console.log('blue = ' + blue);
+			console.log('alpha = ' + alpha);
+			
+			red 		=	red		^	255;
+			green	=	green	^	255;
+			blue	=	blue	^	255;
+			
+			if(alpha!=undefined)
+			{
+				alpha	=	alpha	^	255;
+			}
+			
+			console.log('XOR' );
+			
+			console.log('red = ' + red);
+			console.log('green = ' + green);
+			console.log('blue = ' + blue);							
+			console.log('alpha = ' + alpha);
+			
+			red 	=	red.toString(10);
+			green	=	green.toString(10);
+			blue	=	blue.toString(10);
+			
+			if(alpha!=undefined)
+			{
+				alpha	=	alpha.toString(10);
+			}
+			
+			htmlcode = red+','+green+','+blue;
+			if(alpha!=undefined)
+			{
+				htmlcode = htmlcode + ',' + alpha;
+			}
+			console.log('end après toString, htmlcode = ' + htmlcode);
+			
+			htmlcode = digits[1]+htmlcode+'\)';
+			console.log('au return, htmlcode = ' + htmlcode);	
+			return htmlcode;
+		}
+	}
+	
+	
+	var mouser = bindEvent(document,'mouseover', function(event) 
+	{ var target = event.target || event.srcElement;
+		if(fus_actprice == 1)	// Si on cherceh le prix...
+		{
+			console.log('mouseover');
+			fus_colorprice = getComputedStyle(target).backgroundColor;
+			target.style.backgroundColor = inversHTML(getComputedStyle(target).backgroundColor);	
+			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
+		}
+		else
+		{
+			this.removeEventListener('mouseover',arguments.callee,false);			
+		}
+	});
+	
+	var mouset = bindEvent(document,'mouseout', function(event) 
+	{ var target = event.target || event.srcElement;
+		if(fus_actprice == 1)	// Si on cherceh le prix...
+		{
+			console.log('mouseout');
+			target.style.backgroundColor = fus_colorprice;
+			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
+		}
+		else
+		{
+			this.removeEventListener('mouseout',arguments.callee,false);			
+		}
+	});
+	
+	
 
 bindEvent(document,'click', function(event) 
 { var target = event.target || event.srcElement;

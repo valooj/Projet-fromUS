@@ -1,7 +1,7 @@
 function getPrice()
 {
 	var fus_actprice = 1; // V ariable indiquant que l'on est à la recherche du prix
-	var fus_color;	// variable contenant la couleur précédente
+	var fus_colorprice;	// variable contenant la couleur précédente
 	var bindEvent = function(elem ,evt,cb) {
 		//vérifie si addEventListenerexiste dans l'élément
 		if ( elem.addEventListener ) {
@@ -16,7 +16,7 @@ function getPrice()
 		}
 	}
 	
-	var inversHTML	=	function(htmlcode){
+	var inversHTMLprice	=	function(htmlcode){
 		console.log('start, htmlcode = ' + htmlcode);
 		
 		if (htmlcode.substr(0, 1) === '#') 
@@ -83,14 +83,13 @@ function getPrice()
 		}
 	}
 	
-	
 	var mouser = bindEvent(document,'mouseover', function(event) 
 	{ var target = event.target || event.srcElement;
 		if(fus_actprice == 1)	// Si on cherceh le prix...
 		{
 			console.log('mouseover');
-			fus_color = getComputedStyle(target).backgroundColor;
-			target.style.backgroundColor = inversHTML(getComputedStyle(target).backgroundColor);	
+			fus_colorprice = getComputedStyle(target).backgroundColor;
+			target.style.backgroundColor = inversHTMLprice(getComputedStyle(target).backgroundColor);	
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
 		else
@@ -104,7 +103,7 @@ function getPrice()
 		if(fus_actprice == 1)	// Si on cherceh le prix...
 		{
 			console.log('mouseout');
-			target.style.backgroundColor = fus_color;
+			target.style.backgroundColor = fus_colorprice;
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
 		else
@@ -148,17 +147,17 @@ function getPrice()
 				// id et class 
 				
 				fromus_selectedTexttmp	= fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
-				console.log('fromus_sitelist[\''+fromus_site+'\'].price_id.push(\''+fromus_selectedTexttmp+'\');');
+				var fus_priceid ='fromus_sitelist[\''+fromus_site+'\'].price_id.push(\''+fromus_selectedTexttmp+'\');';
 				
 				fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);			
-				console.log('fromus_sitelist[\''+fromus_site+'\'].price_class.push(\''+fromus_selectedTexttmp+'\');');
+				var fus_priceclass = 'fromus_sitelist[\''+fromus_site+'\'].price_class.push(\''+fromus_selectedTexttmp+'\');';
 				
 			}
 			else
 			{
 				//id sans class
 				fromus_selectedTexttmp	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
-				console.log('fromus_sitelist[\''+fromus_site+'\'].price_id.push(\''+fromus_selectedTexttmp+'\');');
+				var fus_priceid ='fromus_sitelist[\''+fromus_site+'\'].price_id.push(\''+fromus_selectedTexttmp+'\');';
 				
 			}
 			
@@ -175,7 +174,7 @@ function getPrice()
 			if(fromus_classmatch !=undefined)
 			{ //Class sans id
 				fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
-				console.log('fromus_sitelist[\''+fromus_site+'\'].price_class.push(\''+fromus_selectedTexttmp+'\');');
+				var fus_priceclass = 'fromus_sitelist[\''+fromus_site+'\'].price_class.push(\''+fromus_selectedTexttmp+'\');';
 				
 				fromus_selectedText = fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
 				
@@ -200,11 +199,21 @@ function getPrice()
 				}
 			}  
 		}
+		
+		if(fus_priceid)
+		{
+		
+		}
+		if(fus_priceclass)
+		{
+		
+		}
+		
 		console.log("Et ce qui est affiché dans la case est...");
 		console.log(fromus_selectedText);
 		localStorage["regPrice"] = fromus_selectedText;
 		fus_actprice = 0;	// On ne cherche plus le prix
-		target.style.backgroundColor = fus_color;	
+		target.style.backgroundColor = fus_colorprice;	
 		this.removeEventListener('click',arguments.callee,false);
 	});		
 }
