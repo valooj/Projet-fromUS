@@ -262,6 +262,7 @@ function loadText(){
 	document.getElementById('buyP').value = i18n("ButtonBuy") ;
 	document.getElementById('fu_quantite').innerHTML = i18n("QuantityP") ;
 	document.getElementById('fu_assurance').innerHTML = i18n("InsuranceP") ;
+	document.getElementById('priceQ').value = "?";
    
 
 }
@@ -305,7 +306,7 @@ $(document).ready(function() {
 											            '<label for="name" id="nameP"></label></br>'+
 											            '<input type="textbox" id="fromus_name" disabled="true"/></br>'+
 											            '<label for="price" id="priceP" ></label></br>'+
-											            '<input type="textbox" id="fromus_price" /></br>'+
+											            '<input type="textbox" id="fromus_price" /><input type="button" id="priceQ"> </br>'+
 											            '<label for="category" id="categP"></label></br>'+
 											            '<select id="category">'+
 											            '</select></br>'+
@@ -483,6 +484,10 @@ $(document).ready(function() {
 			changeLng('de');
 			loadText();
 		});
+
+		$("input[id='priceQ']").click(function() {
+			
+	  	});
 
 
 		
