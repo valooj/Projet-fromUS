@@ -7,3 +7,45 @@ http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&token=51ade
 
 
 ===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.walmart.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
