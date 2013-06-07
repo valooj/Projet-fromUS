@@ -145,12 +145,13 @@ function getPrice()
 			if(fromus_classmatch !=undefined)
 			{
 				// id et class 
+
+				fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);			
+				var fus_priceclass = fromus_selectedTexttmp;				
+				
 				
 				fromus_selectedTexttmp	= fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
 				var fus_priceid =fromus_selectedTexttmp;
-				
-				fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);			
-				var fus_priceclass = fromus_selectedTexttmp;
 				
 			}
 			else
