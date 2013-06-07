@@ -270,6 +270,15 @@ function loadText(){
 
 }
 
+function miseaJ(){
+	if(localStorage["regPrice"]){
+		document.getElementById('fromus_price').value = localStorage["regPrice"] ;
+	}
+	else if(localStorage["regName"]){
+				document.getElementById('fromus_name').value = localStorage["regName"] ;
+	}
+}
+
 
 
 
@@ -493,46 +502,37 @@ $(document).ready(function() {
  		'runtime' : 'extension';
 		priceq.addEventListener('click', function(e){
 			console.log('debut listener priceq');
-			var start = new Date().getTime();
-			var end = new Date().getTime();
-			var time = end - start;
-			var timeafterbtn = time + 30;
-			setTimeout(function () {
-				getPrice();
-	        	
-        	}, timeafterbtn);
-			$('#fromus_price').attr('value',localStorage["regPrice"]);
-			console.log(localstorage["regGetPrice"]);
-/*
-			var jsonAccess = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
-			var postDataAccess = JSON.stringify(jsonAccess);
-			var accessJSON = {calcul:postDataAccess};
-			sendToServer(_urlAccessOut+token, accessJSON);
-*/
+			document.getElementById('fromus_price').value="";
+			var settime = setTimeout("getPrice()", 1000);
+			var setinter = setInterval("miseaJ()", 600); 
+			if(document.getElementById('fromus_price').value)
+				clearInterval(setinter);
+			//document.getElementById('fromus_price').value = localStorage["regPrice"] ;
+			//clearTimeout(settime);
+        	//getPrice();
+			//$('#fromus_price').attr('value',localStorage["regPrice"]);
 		}, false); 
 
-/*
 		var nameq = document.getElementById('nameQ');
-		var runtimeOrExtension = chrome.runtime && chrome.runtime.sendMessage ?
- 		'runtime' : 'extension';
 		nameq.addEventListener('click', function(e){
 			console.log('debut listener nameq');
-			var start = new Date().getTime();
-			var end = new Date().getTime();
-			var time = end - start;
-			var timeafterbtn = time + 30;
-			setTimeout(function () {
-				getName();
-	        	
-        	}, timeafterbtn);
-			$('#fromus_name').attr('value',localStorage["regName"]);
-			console.log(localstorage["regGetName"]);
-		}, false);
-
-*/
-		
+			document.getElementById('fromus_name').value="";
+			var settime = setTimeout("getName()", 1000);
+			var setinter = setInterval("miseaJ()", 600); 
+			if(document.getElementById('fromus_name').value)
+				clearInterval(setinter);
+		}, false); 
+	
 		// ouverture de la dialog box
 		newDialog.dialog("open");
+		//suppression des key dans le localstorage
+		localStorage.removeItem('regDesc');
+		localStorage.removeItem('regName');
+		localStorage.removeItem('regPrice');
+		localStorage.removeItem('regGetName');
+		localStorage.removeItem('regGetPrice');
+		localStorage.removeItem('regStore');
+		localStorage.removeItem('regOffer'); 
 	}
 });
 
@@ -616,3 +616,8 @@ $(document).ready(function() {
 			
 		}, false);
 */
+
+/*var jsonAccess = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
+			var postDataAccess = JSON.stringify(jsonAccess);
+			var accessJSON = {calcul:postDataAccess};
+			sendToServer(_urlAccessOut+token, accessJSON); */

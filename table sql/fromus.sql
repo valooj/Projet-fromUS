@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Serveur: localhost
--- Généré le : Lun 03 Juin 2013 à 11:59
+-- Généré le : Ven 07 Juin 2013 à 12:33
 -- Version du serveur: 5.5.8
 -- Version de PHP: 5.3.5
 
@@ -320,9 +320,8 @@ CREATE TABLE IF NOT EXISTS `commande_detail` (
   `cmdd_united` varchar(5) NOT NULL,
   `cmdd_proforma` varchar(100) NOT NULL,
   `cmdd_ent` int(11) NOT NULL,
-  PRIMARY KEY (`cmdd_id`),
-  UNIQUE KEY `cmdd_url` (`cmdd_url`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1291 ;
+  PRIMARY KEY (`cmdd_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1298 ;
 
 --
 -- Contenu de la table `commande_detail`
@@ -344,7 +343,13 @@ INSERT INTO `commande_detail` (`cmdd_id`, `cmdd_libelle`, `cmdd_url`, `cmdd_desc
 (1277, 'Baby Jogger City Select Car Seat Adaptor - Others', 'rakuten.com/prod/baby-jogger-city-select-car-seat-adaptor/216544293.html', 'IJ1339: Features: -Car Seat Adaptor.-Designed to fit several popular car seat models. Collection: -City Select collection.', 2, '79.85', 6, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 6),
 (1279, 'The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector''s ', 'rakuten.com/prod/the-avengers-assembled-marvel-universe-phase-1-blu-ray-10-disc-6-movie/233577843.html', 'Synopsis: On April 2, 2013, fans will be able to immerse themselves in every aspect of Marvel’s elite Super Heroes with this limited-edition, 10-Disc “Marvel Cinematic Universe: Phase One Collect[...]', 17, '196.49', 19, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
 (1288, 'Men''s Citizen Eco-Drive Proximity Chronograph Watch AT7030-05E', 'rakuten.com/prod/men-s-citizen-eco-drive-proximity-chronograph-watch-at7030-05e/248053314.html', 'Always be in contact with this multi-functional Proximity watch from Citizen.  Built with Bluetooth technology you''ll be notified when emails and phone calls come in.  Also boasts Eco-Drive harne[...]', 9, '686.18', 45, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
-(1290, 'Canon PowerShot S100 12.1 Megapixel Compact Camera - Black - 3" LCD - 5x Optical Zoom - Optical (IS)', 'rakuten.com/loc/12-Megapixel-Camera-Canon-Nikon/65664.html', 'Canon''s PowerShot S100 Digital Camera is an advanced compact digital camera with lots of razzle-dazzle backed up by top-notch engineering. It boasts an impressive 12.1 MP CMOS sensor and a DIGIC [...]', 2, '451.31', 1260, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1);
+(1290, 'Canon PowerShot S100 12.1 Megapixel Compact Camera - Black - 3" LCD - 5x Optical Zoom - Optical (IS)', 'rakuten.com/loc/12-Megapixel-Camera-Canon-Nikon/65664.html', 'Canon''s PowerShot S100 Digital Camera is an advanced compact digital camera with lots of razzle-dazzle backed up by top-notch engineering. It boasts an impressive 12.1 MP CMOS sensor and a DIGIC [...]', 2, '451.31', 1260, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 1),
+(1291, 'libelleprod', '2efefefe', 'libelleprod', 2, '2345.00', 2, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 2),
+(1293, 'libelleprod', '2efefefe', 'libelleprod', 2, '2345.00', 2, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 2),
+(1294, 'libelleprod', '2efefefe', 'libelleprod', 2, '2345.00', 2, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 155),
+(1295, 'libelleprod', '2efefefe', 'libelleprod', 2, '2345.00', 2, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 156),
+(1296, 'libelleprod', '2efefefe', 'libelleprod', 2, '2345.00', 2, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 157),
+(1297, 'libelleprod', '2efefefe', 'libelleprod', 2, '2345.00', 2, '2.00', '2', '2.00', '2.00', '2.00', 'unite', 'proforma', 158);
 
 -- --------------------------------------------------------
 
@@ -419,7 +424,7 @@ CREATE TABLE IF NOT EXISTS `commande_ent` (
   `cmde_flag` int(1) NOT NULL,
   `cmde_paq` int(3) NOT NULL,
   PRIMARY KEY (`cmde_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=147 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=159 ;
 
 --
 -- Contenu de la table `commande_ent`
@@ -449,7 +454,8 @@ INSERT INTO `commande_ent` (`cmde_id`, `cmde_adrl`, `cmde_cli`, `cmde_libelle`, 
 (143, 1, 1, 'cmd-1366979619-1', 1366979619, 1, '100.00', '16.75', '8.17', '134.93', '', 40, 0, 0, 0, '0.00', 'ue', '', 0, 0),
 (144, 1, 1, 'cmd-1367483223-1', 1367483223, 1, '150.00', '21.55', '12.01', '198.56', '', 40, 0, 0, 0, '0.00', 'ue', '', 0, 0),
 (145, 1, 1, 'cmd-1367452800-1', 1367452800, 1, '1000.00', '16.75', '71.17', '1187.92', '', 40, 0, 0, 0, '0.00', 'e', '', 0, 0),
-(146, 1, 1, 'cmd-1367452800-1', 1367452800, 1, '1000.00', '16.75', '71.17', '1187.92', '', 40, 0, 0, 0, '0.00', 'e', '', 0, 0);
+(146, 1, 1, 'cmd-1367452800-1', 1367452800, 1, '1000.00', '16.75', '71.17', '1187.92', '', 40, 0, 0, 0, '0.00', 'e', '', 0, 0),
+(158, 1, 1, 'cmd-1370355228-1', 1370355228, 1, '232.00', '232.00', '232.00', '2345.00', '', 0, 0, 0, 0, '0.00', '', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1303,7 +1309,7 @@ CREATE TABLE IF NOT EXISTS `produits` (
   `prd_vis` int(1) NOT NULL,
   PRIMARY KEY (`prd_id`),
   UNIQUE KEY `prd_site` (`prd_site`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=370 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=375 ;
 
 --
 -- Contenu de la table `produits`
@@ -1323,7 +1329,7 @@ INSERT INTO `produits` (`prd_id`, `prd_libelle`, `prd_site`, `prd_desc`, `prd_ca
 (357, 'Men''s Citizen Eco-Drive Proximity Chronograph Watch AT7030-05E', 'rakuten.com/prod/men-s-citizen-eco-drive-proximity-chronograph-watch-at7030-05e/248053314.html', 'Always be in contact with this multi-functional Proximity watch from Citizen.  Built with Bluetooth technology you''ll be notified when emails and phone calls come in.  Also boasts Eco-Drive harne[...]', 45, 'http://img.rakuten.com/PIC/50832624/0/1/300/50832624.jpg', '495.00', 0),
 (360, 'Canon PowerShot S100 12.1 Megapixel Compact Camera - Black - 3" LCD - 5x Optical Zoom - Optical (IS)', 'rakuten.com/loc/12-Megapixel-Camera-Canon-Nikon/65664.html', 'Canon''s PowerShot S100 Digital Camera is an advanced compact digital camera with lots of razzle-dazzle backed up by top-notch engineering. It boasts an impressive 12.1 MP CMOS sensor and a DIGIC [...]', 1260, 'http://img.rakuten.com/PIC/42205432/0/1/225/42205432.jpg', '325.00', 0),
 (368, 'Samsung HMX-F80 Digital Camcorder - 2.7" LCD - CMOS- Full HD, Black', 'rakuten.com/cat/hd-camcorders/2108.html', '?', 1293, 'http://img.rakuten.com/PIC/42953428/0/1/225/42953428.jpg', '199.00', 0),
-(369, 'JVC 1080P High-Definition Everio Digital Video Camera (Black)', 'rakuten.com/prod/jvc-1080p-high-definition-everio-digital-video-camera-black/227430942.html', 'Full HD 1920x1080 RecordingCapture bright and clear Full HD images with this compact memory camcorder even in low light, thanks to the Back-illuminated CMOS Sensor. A powerful Optical 40x Zoom ge[...]', 2, 'http://img.rakuten.com/PIC/42233293/0/1/300/42233293.jpg', '129.95', 0);
+(370, 'The Avengers Assembled Marvel Universe Phase 1 (Blu-Ray/10 Disc/6 Movie Limited Edition Collector''s ', 'www.rakuten.com', 'The easy-to-use storage solution.The Expansion external hard drive installs easily by plugging in two cords. You can start saving your digital files to this hard drive within seconds of removing [...]', 593, 'http://img.rakuten.com/PIC/44578783/0/1/300/44578783.jpg', '159.99', 0);
 
 -- --------------------------------------------------------
 
@@ -20440,12 +20446,15 @@ CREATE TABLE IF NOT EXISTS `site_access` (
   `sa_valid` int(1) NOT NULL,
   PRIMARY KEY (`sa_id`),
   UNIQUE KEY `sa_site` (`sa_site`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Contenu de la table `site_access`
 --
 
+INSERT INTO `site_access` (`sa_id`, `sa_site`, `sa_chemin`, `sa_valid`) VALUES
+(1, 'www.rakuten.com', 'name_class<-->bwcProductTitle/price_class<-->mpsTotalPriceMoney/img_class<-->itemimage/desc_id<-->ctl00_TemplateContentPlaceHolder_ctlProductSummary_divDescription/name_id<-->AuthorArtistTitle_productTitle/name_id<-->StorePromo_title/img_id<-->ImageVideo_ImageRepeater_ctl00_Image/img_id<-->StorePromo_imgPromo/price_id<-->spanMainTotalPrice/price_id<-->StorePromo_PriceText/desc_id<-->divDescription/desc_id<-->StorePromo_spnDescription1', 1),
+(2, 'QFEAF', 'name_class<-->bwcProductTitle/price_class<-->mpsTotalPriceMoney/img_class<-->itemimage/desc_id<-->ctl00_TemplateContentPlaceHolder_ctlProductSummary_divDescription/name_id<-->AuthorArtistTitle_productTitle/name_id<-->StorePromo_title/img_id<-->ImageVideo_ImageRepeater_ctl00_Image/img_id<-->StorePromo_imgPromo/price_id<-->spanMainTotalPrice/price_id<-->StorePromo_PriceText/desc_id<-->divDescription/desc_id<-->StorePromo_spnDescription1', 0);
 
 -- --------------------------------------------------------
 
@@ -27066,14 +27075,14 @@ CREATE TABLE IF NOT EXISTS `token` (
   `tok_token` varchar(200) NOT NULL,
   PRIMARY KEY (`tok_id`),
   UNIQUE KEY `tok_user` (`tok_user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Contenu de la table `token`
 --
 
 INSERT INTO `token` (`tok_id`, `tok_user`, `tok_token`) VALUES
-(1, 1, '51ac773e1ab7a'),
+(1, 1, '51b18b2b4ca0f'),
 (2, 6, '');
 
 -- --------------------------------------------------------

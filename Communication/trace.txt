@@ -5,6 +5,7 @@ http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&token=51ade
 ===========================================
 http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&token=51aded24a6280&calcul={libelle:libelleprod,qte:2,montant:2345,categ:2}
 
+<<<<<<< HEAD
 ===========================================
 
 Array
@@ -727,3 +728,5 @@ Array
 )
 
 ===========================================
+=======
+>>>>>>> gestion de getname
