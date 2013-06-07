@@ -486,7 +486,11 @@ $(document).ready(function() {
 		});
 
 		$("input[id='priceQ']").click(function() {
-			
+			alert('ok');
+			getPrice();
+			alert('oki');
+			alert(localStorage['regPrice']);
+			$('#fromus_price').attr('value',localStorage['regPrice']);
 	  	});
 
 
