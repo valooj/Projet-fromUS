@@ -274,7 +274,7 @@ function miseaJ(){
 	if(localStorage["regPrice"]){
 		document.getElementById('fromus_price').value = localStorage["regPrice"] ;
 	}
-	else if(localStorage["regName"]){
+	if(localStorage["regName"]){
 				document.getElementById('fromus_name').value = localStorage["regName"] ;
 	}
 }
@@ -347,7 +347,7 @@ $(document).ready(function() {
 		newDialog.tabs().addClass( "ui-tabs-horizontal ui-helper-clearfix" );
 		newDialog.removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
 		newDialog.dialog({
-	    	modal: true,
+	    	modal: false,
 			title: "From-us.com",
 			//show: 'clip',
 			//hide: 'clip',
@@ -441,6 +441,15 @@ $(document).ready(function() {
 
 	  	$("input[id='addP']").click(function() {
 			var categVal = document.getElementById("sscategory").value;
+
+			if(localStorage["regGetName"] && localStorage["regGetPrice"] && regStore){
+				var siteAccess = localStorage["regGetName"]+localStorage["regGetPrice"];
+				var jsonAccess = {url: regStore, access: siteAccess};
+				var postDataAccess = JSON.stringify(jsonAccess);
+				var accessJSON = {calcul:postDataAccess};
+				sendToServer(_urlAccessOut+token, accessJSON);
+			}
+
 			if(categVal && regName && regStore && regPrice){
 				var jsonProduct = {prd_libelle: regName ,prd_site: regStore, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
 				var postData = JSON.stringify(jsonProduct);
@@ -507,10 +516,6 @@ $(document).ready(function() {
 			var setinter = setInterval("miseaJ()", 600); 
 			if(document.getElementById('fromus_price').value)
 				clearInterval(setinter);
-			//document.getElementById('fromus_price').value = localStorage["regPrice"] ;
-			//clearTimeout(settime);
-        	//getPrice();
-			//$('#fromus_price').attr('value',localStorage["regPrice"]);
 		}, false); 
 
 		var nameq = document.getElementById('nameQ');
@@ -521,7 +526,7 @@ $(document).ready(function() {
 			var setinter = setInterval("miseaJ()", 600); 
 			if(document.getElementById('fromus_name').value)
 				clearInterval(setinter);
-		}, false); 
+		}, false);  
 	
 		// ouverture de la dialog box
 		newDialog.dialog("open");

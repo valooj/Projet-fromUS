@@ -4,37 +4,17 @@ http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&token=51ade
 
 ===========================================
 http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&token=51aded24a6280&calcul={libelle:libelleprod,qte:2,montant:2345,categ:2}
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.bebe.com
+)
 
-<<<<<<< HEAD
 ===========================================
-
 Array
 (
     [action] => MAJ-categorie
     [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.rakuten.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-login
-    [lng] => fr
-    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-pts
-    [lng] => fr
-    [token] => 51b18a2045567
 )
 
 ===========================================
@@ -48,7 +28,63 @@ Array
 Array
 (
     [action] => MAJ-accessIn
-    [url_site] => www.rakuten.com
+    [url_site] => www.bebe.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.bebe.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.bebe.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.bebe.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.bebe.com
 )
 
 ===========================================
@@ -56,70 +92,7 @@ Array
 (
     [action] => MAJ-sscategorie
     [lng] => fr
-    [sscateg] => 34
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-product
-    [lng] => fr
-    [token] => undefined
-    [product] => {"prd_libelle":"Darksiders II (Limited Edition)","prd_site":"www.rakuten.com","prd_desc":"Product DescriptionDarksiders II follows the exploits of Death, one of the four horsemen of the Apocalypse, in a weaving tale that runs parallel to the events in the original Darksiders game. Thi[...]","prd_visu":"http://img.rakuten.com/PIC/42143469/0/1/300/42143469.jpg","prd_prix":"49.3"}
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-calcul
-    [lng] => fr
-    [token] => undefined
-    [calcul] => {"libelle":"Darksiders II (Limited Edition)","montant":"49.3"}
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-product
-    [lng] => fr
-    [token] => undefined
-    [product] => {"prd_libelle":"Darksiders II (Limited Edition)","prd_site":"www.rakuten.com","prd_desc":"Product DescriptionDarksiders II follows the exploits of Death, one of the four horsemen of the Apocalypse, in a weaving tale that runs parallel to the events in the original Darksiders game. Thi[...]","prd_visu":"http://img.rakuten.com/PIC/42143469/0/1/300/42143469.jpg","prd_prix":"49.3"}
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-calcul
-    [lng] => fr
-    [token] => undefined
-    [calcul] => {"libelle":"Darksiders II (Limited Edition)","montant":"49.3"}
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-product
-    [lng] => fr
-    [token] => undefined
-    [product] => {"prd_libelle":"Darksiders II (Limited Edition)","prd_site":"www.rakuten.com","prd_desc":"Product DescriptionDarksiders II follows the exploits of Death, one of the four horsemen of the Apocalypse, in a weaving tale that runs parallel to the events in the original Darksiders game. Thi[...]","prd_visu":"http://img.rakuten.com/PIC/42143469/0/1/300/42143469.jpg","prd_prix":"49.3"}
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-calcul
-    [lng] => fr
-    [token] => undefined
-    [calcul] => {"libelle":"Darksiders II (Limited Edition)","montant":"49.3"}
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-product
-    [lng] => fr
-    [token] => undefined
-    [product] => {"prd_libelle":"Darksiders II (Limited Edition)","prd_site":"www.rakuten.com","prd_desc":"Product DescriptionDarksiders II follows the exploits of Death, one of the four horsemen of the Apocalypse, in a weaving tale that runs parallel to the events in the original Darksiders game. Thi[...]","prd_visu":"http://img.rakuten.com/PIC/42143469/0/1/300/42143469.jpg","prd_prix":"49.3","prd_cat":"593"}
+    [sscateg] => 3
 )
 
 ===========================================
@@ -147,47 +120,7 @@ Array
 Array
 (
     [action] => MAJ-accessIn
-    [url_site] => www.rakuten.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-login
-    [lng] => fr
-    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-pts
-    [lng] => fr
-    [token] => 51b18b2621ce8
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-logout
-    [lng] => fr
-    [token] => 51b18b2621ce8
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-login
-    [lng] => fr
-    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-pts
-    [lng] => fr
-    [token] => 51b18b2b4ca0f
+    [url_site] => www.bebe.com
 )
 
 ===========================================
@@ -207,15 +140,9 @@ Array
 ===========================================
 Array
 (
-    [action] => MAJ-categorie
+    [action] => MAJ-login
     [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.rakuten.com
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
 )
 
 ===========================================
@@ -223,35 +150,7 @@ Array
 (
     [action] => MAJ-pts
     [lng] => fr
-    [token] => 51b18b2b4ca0f
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.rakuten.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.rakuten.com
+    [token] => 51b1dd738a202
 )
 
 ===========================================
@@ -259,474 +158,7 @@ Array
 (
     [action] => MAJ-sscategorie
     [lng] => fr
-    [sscateg] => 34
+    [sscateg] => 2
 )
 
 ===========================================
-Array
-(
-    [action] => MAJ-product
-    [lng] => fr
-    [token] => undefined
-    [product] => {"prd_libelle":"Seagate Expansion STBV4000100 4TB USB 3.0 External Hard Drive","prd_site":"www.rakuten.com","prd_desc":"The easy-to-use storage solution.The Expansion external hard drive installs easily by plugging in two cords. You can start saving your digital files to this hard drive within seconds of removing [...]","prd_visu":"http://img.rakuten.com/PIC/44578783/0/1/300/44578783.jpg","prd_prix":"159.99","prd_cat":"593"}
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.rakuten.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.rakuten.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-============
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.bebe.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => undefined
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => undefined
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => undefined
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => undefined
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => undefined
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => undefined
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-=======
->>>>>>> gestion de getname
