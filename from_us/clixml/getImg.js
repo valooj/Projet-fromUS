@@ -218,6 +218,8 @@ function getImg()
 		console.log(fromus_selectedText);
 		localStorage["regGetImg"] = fus_imgresult;
 		localStorage["regImg"] = fromus_selectedText;
+		fus_actimg = 0;	// On ne cherche plus l'image
+		target.style.backgroundColor = fus_colorimg;	
 		
 		this.removeEventListener('click',arguments.callee,false);
 	});

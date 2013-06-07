@@ -200,7 +200,8 @@ function getName()
 		console.log(fromus_selectedText);
 		localStorage["regGetName"] = fus_nameresult;
 		localStorage["regName"] = fromus_selectedText;
-		
+		fus_actname = 0;	// On ne cherche plus le nom
+		target.style.backgroundColor = fus_colorname;			
 		this.removeEventListener('click',arguments.callee,false);
 	});
 }

@@ -200,7 +200,8 @@ function getDesc()
 		console.log(fromus_selectedText);
 		localStorage["regGetDesc"] = fus_descresult;
 		localStorage["regDesc"] = fromus_selectedText;
-		
+		fus_actdesc = 0;	// On ne cherche plus la description
+		target.style.backgroundColor = fus_colordesc;	
 		this.removeEventListener('click',arguments.callee,false);
 	});
 }
