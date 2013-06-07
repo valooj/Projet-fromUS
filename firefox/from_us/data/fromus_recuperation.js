@@ -6,7 +6,7 @@
 //																																												//
 
 /////	Définition des variables	/////
-
+console.log('debut recup');
 var fromus_offre = document.location.href;		//récupération de l'adresse du l'offre
 var fromus_site = 'www'+ /.*(\..*\.[a-z]{2,3})\//gi.exec(fromus_offre)[1];	//stockage du site web où se trouve l'offre
 var fromus_objectname,
