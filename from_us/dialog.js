@@ -223,6 +223,7 @@ function showLog(){
 	$('#isconnect').hide();
 };
 
+
 function loadText(){
 	document.getElementById('tabAdd').innerHTML = i18n('tabAdd') ;
 	document.getElementById('tabBuy').innerHTML = i18n('tabBuy') ;
@@ -354,6 +355,8 @@ $(document).ready(function() {
   				imgde.src = chrome.extension.getURL('/img/de.png');
   				var imgfr = document.getElementById('lgfr');
   				imgfr.src = chrome.extension.getURL('/img/fr.png');
+
+  				//checkLng();
 
   				loadText();
 
