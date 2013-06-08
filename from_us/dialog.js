@@ -150,11 +150,13 @@ function parseCat(categorieJSON, sc) {
     $selectCat.empty();
     var obj = JSON.parse(categorieJSON);
     for(var i = 0; i < categorieJSON.length; i++) {
-    	if(obj[i].type==0)
-        	$selectCat.append('<option value="'+obj[i].idCat+'" disabled="true">'+obj[i].libelleCat+'</option>');
-        else 
-        	$selectCat.append('<option value="'+obj[i].idCat+'" >'+obj[i].libelleCat+'</option>');
-    }
+    	if(obj[i]){
+	    	if(obj[i].type==0)
+	        	$selectCat.append('<option value="'+obj[i].idCat+'" disabled="true">'+obj[i].libelleCat+'</option>');
+	        else 
+	        	$selectCat.append('<option value="'+obj[i].idCat+'" >'+obj[i].libelleCat+'</option>');
+	    }
+	}
 }
 
 function searchInfo (){
@@ -309,24 +311,24 @@ $(document).ready(function() {
 									'</ul>'+
 								'</div></br>'+
 								'<div id="corpAdd">'+
-									      		'<input type="textbox" id="msgServer" disabled="true" style="border:none"/>'+
-									      		'<div id="fromus_tabs">'+
-									        		'<h2 id="FormP"></h2>'+
-									        		'<form id="fromusForm">'+
-									          			'<label for="store" id="store"></label></br>'+
-											            '<input type="textbox" id="fromus_store" disabled="true"/></br>'+
-											            '<label for="name" id="nameP"></label></br>'+
-											            '<input type="textbox" id="fromus_name" disabled="true"/><input type="button" id="nameQ"></br>'+
-											            '<label for="price" id="priceP" ></label></br>'+
-											            '<input type="textbox" id="fromus_price" /><input type="button" id="priceQ"> </br>'+
-											            '<label for="category" id="categP"></label></br>'+
-											            '<select id="category">'+
-											            '</select></br>'+
-											            '<label for="sscategory" id="scategP"></label></br>'+
-											            '<select id="sscategory">'+
-											            '</select></br>'+
-									            '<div class="content" id="tab1">'+
-									            '<input type="button" id="addP">'+
+									'<input type="textbox" id="msgServer" disabled="true" style="border:none"/>'+
+									'<div id="fromus_tabs">'+
+									    '<h2 id="FormP"></h2>'+
+									    '<form id="fromusForm">'+
+									    '<label for="store" id="store"></label></br>'+
+										'<input type="textbox" id="fromus_store" disabled="true"/></br>'+
+										'<label for="name" id="nameP"></label></br>'+
+										'<input type="textbox" id="fromus_name" disabled="true"/><input type="button" id="nameQ"></br>'+
+										'<label for="price" id="priceP" ></label></br>'+
+										'<input type="textbox" id="fromus_price" /><input type="button" id="priceQ"> </br>'+
+										'<label for="category" id="categP"></label></br>'+
+										'<select id="category">'+
+										'</select></br>'+
+										'<label for="sscategory" id="scategP"></label></br>'+
+										'<select id="sscategory">'+
+										'</select></br>'+
+									'<div class="content" id="tab1">'+
+									    '<input type="button" id="addP">'+
 									'</div>'+
 									'<div class="content" id="tab2">'+
 									    '<label id="fu_quantite" for="quantite"></label><input id="QteSpinner" value="1"></br>'+
@@ -390,6 +392,7 @@ $(document).ready(function() {
 						sendToServer(_urlPts+token,{});
 					}
 				}
+			
 				else 
 					showLog();
 
@@ -413,7 +416,7 @@ $(document).ready(function() {
 				});
 			}
 		}
-
+/*      //marchep lus je sais pas pk
 		$(".content").each(function(i){
 	        this.id = "#" + this.id;
 	    });
@@ -426,6 +429,17 @@ $(document).ready(function() {
 	        $("div[id='" + idTab + "']").fadeIn();
 	        return false;
 	    });   
+*/
+	//Pour remplacer si marche pas les tab
+		$("a[id='tabAdd']").click(function() {
+			$("#tab2").hide();
+			$("#tab1").show();
+	  	});
+
+		$("a[id='tabBuy']").click(function() {
+			$("#tab1").hide();
+			$("#tab2").show();
+	  	});
 
 		$("input[id='connect']").click(function() {
 			
