@@ -24,33 +24,6 @@ var regDesc;
 var regVisu;
 
 
-//Pour stocker le cookie et le lire 
-function createCookie(name,value,days) {
-	if (days) {
-		var date = new Date();
-		date.setTime(date.getTime()+(days*24*60*60*1000));
-		var expires = '; expires='+date.toGMTString();
-	}
-	else var expires = '';
-	document.cookie = name+'='+value+expires+';path=/';
-}
-
-function readCookie(name) {
-	var nameEQ = name + '=';
-	var ca = document.cookie.split(';');
-	for(var i=0;i < ca.length;i++) {
-		var c = ca[i];
-		while (c.charAt(0)==' ') c = c.substring(1,c.length);
-		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-	}
-	return null;
-}
-
-function eraseCookie(name) {
-	createCookie(name,'',-1);
-}
-
-
 //Fonctions d'envoie de données au serveur
 function sendToServer(urlSelected, jsonSelected) {
 	$.post(urlSelected, jsonSelected)
@@ -63,9 +36,11 @@ function sendToServer(urlSelected, jsonSelected) {
 
 			case 'L':
 				token = datas['Token'];
-				createCookie('tokenFU',token,21);
+				//createCookie('tokenFU',token,21);
+				chrome.storage.local.set({'tokenFU': token});
 				Nick_Name = datas['Message'];
-				createCookie('nameFU',Nick_Name,21);
+				//createCookie('nameFU',Nick_Name,21);
+				chrome.storage.local.set({'nameFU': Nick_Name});
 				document.getElementById("nick_name").value = i18n('MsgWelcome')+Nick_Name ;
 				hideLog();
 				sendToServer(_urlPts+token,{});
@@ -386,18 +361,22 @@ $(document).ready(function() {
 				$('#tab1').show();
   				
   				sendToServer(_urlCategorie,{});
-				if(readCookie('tokenFU')){
-					hideLog();
-					token=readCookie('tokenFU');
-					if(readCookie('nameFU')){
-						Nick_Name = readCookie('nameFU');
+
+  				chrome.storage.local.get('tokenFU',function(result){
+				 	token=result.tokenFU;
+				 	if(token && token != 'undefined'){
+						hideLog();
+					}
+					else 
+					showLog();
+				});
+				chrome.storage.local.get('nameFU',function(result){
+				  Nick_Name=result.nameFU;
+				  if(Nick_Name && Nick_Name != 'undefined'){
 						document.getElementById('nick_name').value = i18n('MsgWelcome')+Nick_Name ;
 						sendToServer(_urlPts+token,{});
-					}
-				}
-			
-				else 
-					showLog();
+					}		
+				});
 
 				regStore = localStorage['regStore'];
 				$('#fromus_store').attr('value',regStore);
@@ -513,8 +492,8 @@ $(document).ready(function() {
 	  	$('input[id=disconnect]').click(function() {
 			
 	   		sendToServer(_urlLogout+token, {});
-			eraseCookie('tokenFU');
-			eraseCookie('nameFU');
+			chrome.storage.local.set({'tokenFU': ''});
+			chrome.storage.local.set({'nameFU': ''});
 			token='';
 			Nick_Name = '';
 			showLog();
@@ -577,16 +556,6 @@ $(document).ready(function() {
 		localStorage.removeItem('regOffer'); 
 	}
 });
-
-
-/*	// suppression des key dans le localstorage
-		localStorage.removeItem('regDesc');
-		localStorage.removeItem('regName');
-		localStorage.removeItem('regPrice');
-		localStorage.removeItem('regStore');
-		localStorage.removeItem('regOffer');   
-	*/
-			
 
 
 /*
