@@ -36,10 +36,8 @@ function sendToServer(urlSelected, jsonSelected) {
 
 			case 'L':
 				token = datas['Token'];
-				//createCookie('tokenFU',token,21);
 				chrome.storage.local.set({'tokenFU': token});
 				Nick_Name = datas['Message'];
-				//createCookie('nameFU',Nick_Name,21);
 				chrome.storage.local.set({'nameFU': Nick_Name});
 				document.getElementById("nick_name").value = i18n('MsgWelcome')+Nick_Name ;
 				hideLog();
@@ -53,7 +51,6 @@ function sendToServer(urlSelected, jsonSelected) {
 			break;
 
 			case 'c':
-				//alert(datas['Message']);
 				parseCat(datas['Message'],'');
 			break;
 
@@ -209,7 +206,6 @@ function parseInfo (elem){
 				$('#fromus_name').attr('value',regName);
 				regDesc = localStorage['regDesc'];
 				regVisu = localStorage['regImg'];
-
 				
 }
 
@@ -335,7 +331,7 @@ $(document).ready(function() {
 					my: 'left top', 
 					at: 'left top'
 				},
-			height: 550,
+			height: 500,
 			width: 480,
 			resizable: true,
 			closeOnEscape: true,
@@ -355,8 +351,6 @@ $(document).ready(function() {
   				imgde.src = chrome.extension.getURL('/img/de.png');
   				var imgfr = document.getElementById('lgfr');
   				imgfr.src = chrome.extension.getURL('/img/fr.png');
-
-  				//checkLng();
 
   				loadText();
 
@@ -450,9 +444,7 @@ $(document).ready(function() {
 				if(!regPrice)
 					regPrice=localStorage['regPrice'];
 
-		/*		console.log(regStore);
-				//console.log(localStorage["regGetName"]);
-				console.log(localStorage["regGetPrice"]);
+		/*		
 				if(localStorage["regGetName"] && localStorage["regGetPrice"] && regStore){
 					alert('ok');
 					var siteAccess = localStorage["regGetName"]+localStorage["regGetPrice"];
@@ -485,10 +477,14 @@ $(document).ready(function() {
 				var productJSON = {product:postData};
 				sendToServer(_urlProduct+token,productJSON);
 
-				var jsonCalcul = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
-				var postDataCalcul = JSON.stringify(jsonCalcul);
-				var calculJSON = {calcul:postDataCalcul};
-				sendToServer(_urlCalcul+token , calculJSON);
+				if(!categSelect)
+	  				document.getElementById('msgServer').value = i18n('Infocateg');
+	  			else{
+					var jsonCalcul = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
+					var postDataCalcul = JSON.stringify(jsonCalcul);
+					var calculJSON = {calcul:postDataCalcul};
+					sendToServer(_urlCalcul+token , calculJSON);
+				}
 			}
 	  	});
 
