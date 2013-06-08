@@ -306,3 +306,710 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => undefined
+    [product] => {"prd_libelle":"HCG Diet Drops with Amino Acids and Vitamin B12","prd_site":"www.rakuten.com","prd_desc":"Lose weight FAST with Homeopathic Oral HCG drops and the HCG Weight Loss Cure. Thousands of people have lost weight and kept it off by following Dr. Simeons' simple diet protocol. Cut cravings, r[...]","prd_visu":"http://img.rakuten.com/PIC/49914552/0/1/300/49914552.jpg","prd_prix":"32.95"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [lng] => fr
+    [token] => undefined
+    [calcul] => {"libelle":"HCG Diet Drops with Amino Acids and Vitamin B12","montant":"32.95"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 42
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => undefined
+    [product] => {"prd_libelle":"HCG Diet Drops with Amino Acids and Vitamin B12","prd_site":"www.rakuten.com","prd_desc":"Lose weight FAST with Homeopathic Oral HCG drops and the HCG Weight Loss Cure. Thousands of people have lost weight and kept it off by following Dr. Simeons' simple diet protocol. Cut cravings, r[...]","prd_visu":"http://img.rakuten.com/PIC/49914552/0/1/300/49914552.jpg","prd_prix":"32.95","prd_cat":"632"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 34
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 34
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 34
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [lng] => fr
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b34806d0102
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 42
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b34806d0102
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 36
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => 51b34806d0102
+    [product] => {"prd_libelle":"HCG Diet Drops with Amino Acids and Vitamin B12","prd_site":"www.rakuten.com","prd_desc":"Lose weight FAST with Homeopathic Oral HCG drops and the HCG Weight Loss Cure. Thousands of people have lost weight and kept it off by following Dr. Simeons' simple diet protocol. Cut cravings, r[...]","prd_visu":"http://img.rakuten.com/PIC/49914552/0/1/300/49914552.jpg","prd_prix":"32.95","prd_cat":"604"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b34806d0102
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b34806d0102
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b34806d0102
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => 51b34806d0102
+    [product] => {"prd_libelle":"HCG Diet Drops with Amino Acids and Vitamin B12","prd_site":"www.rakuten.com","prd_desc":"Lose weight FAST with Homeopathic Oral HCG drops and the HCG Weight Loss Cure. Thousands of people have lost weight and kept it off by following Dr. Simeons' simple diet protocol. Cut cravings, r[...]","prd_visu":"http://img.rakuten.com/PIC/49914552/0/1/300/49914552.jpg","prd_prix":"32.95","prd_cat":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b34806d0102
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => 51b34806d0102
+    [product] => {"prd_libelle":"HCG Diet Drops with Amino Acids and Vitamin B12","prd_site":"www.rakuten.com","prd_desc":"Lose weight FAST with Homeopathic Oral HCG drops and the HCG Weight Loss Cure. Thousands of people have lost weight and kept it off by following Dr. Simeons' simple diet protocol. Cut cravings, r[...]","prd_visu":"http://img.rakuten.com/PIC/49914552/0/1/300/49914552.jpg","prd_prix":"32.95","prd_cat":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b34806d0102
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => 51b34806d0102
+    [product] => {"prd_libelle":"HCG Diet Drops with Amino Acids and Vitamin B12","prd_site":"www.rakuten.com","prd_desc":"Lose weight FAST with Homeopathic Oral HCG drops and the HCG Weight Loss Cure. Thousands of people have lost weight and kept it off by following Dr. Simeons' simple diet protocol. Cut cravings, r[...]","prd_visu":"http://img.rakuten.com/PIC/49914552/0/1/300/49914552.jpg","prd_prix":"32.95","prd_cat":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b34806d0102
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b34806d0102
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b34806d0102
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 37
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => 51b34806d0102
+    [product] => {"prd_libelle":"HCG Diet Drops with Amino Acids and Vitamin B12","prd_site":"rakuten.com/prod/hcg-diet-drops-with-amino-acids-and-vitamin-b12/234632502.html","prd_desc":"Lose weight FAST with Homeopathic Oral HCG drops and the HCG Weight Loss Cure. Thousands of people have lost weight and kept it off by following Dr. Simeons' simple diet protocol. Cut cravings, r[...]","prd_visu":"http://img.rakuten.com/PIC/49914552/0/1/300/49914552.jpg","prd_prix":"32.95","prd_cat":"607"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b34806d0102
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 2
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => 51b34806d0102
+    [product] => {"prd_libelle":"HCG Diet Drops with Amino Acids and Vitamin B12","prd_site":"rakuten.com/prod/hcg-diet-drops-with-amino-acids-and-vitamin-b12/234632502.html","prd_desc":"Lose weight FAST with Homeopathic Oral HCG drops and the HCG Weight Loss Cure. Thousands of people have lost weight and kept it off by following Dr. Simeons' simple diet protocol. Cut cravings, r[...]","prd_visu":"http://img.rakuten.com/PIC/49914552/0/1/300/49914552.jpg","prd_prix":"32.95","prd_cat":"10"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b34806d0102
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 42
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [lng] => fr
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b34fc758eea
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b34fc758eea
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b34fc758eea
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b34fc758eea
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.bebe.com
+)
+
+===========================================

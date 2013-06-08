@@ -456,5 +456,5 @@ var wwwOffre = fromus_offre.replace(/www\./,'');
 localStorage["regOffer"] = /http[s]{0,1}\:\/\/(.*)/gi.exec(wwwOffre)[1];	
 //localStorage["regOffer"] = fromus_offre;
 
-console.log('localStorage 2'+localStorage["regPrice"]);
 
+localStorage['urlOffer'] = /http[s]{0,1}\:\/\/(.*)/gi.exec(wwwOffre)[1];

@@ -29,14 +29,14 @@ function createCookie(name,value,days) {
 	if (days) {
 		var date = new Date();
 		date.setTime(date.getTime()+(days*24*60*60*1000));
-		var expires = "; expires="+date.toGMTString();
+		var expires = '; expires='+date.toGMTString();
 	}
-	else var expires = "";
-	document.cookie = name+"="+value+expires+";path=";
+	else var expires = '';
+	document.cookie = name+'='+value+expires+';path=/';
 }
 
 function readCookie(name) {
-	var nameEQ = name + "=";
+	var nameEQ = name + '=';
 	var ca = document.cookie.split(';');
 	for(var i=0;i < ca.length;i++) {
 		var c = ca[i];
@@ -47,7 +47,7 @@ function readCookie(name) {
 }
 
 function eraseCookie(name) {
-	createCookie(name,"",-1);
+	createCookie(name,'',-1);
 }
 
 
@@ -55,7 +55,7 @@ function eraseCookie(name) {
 function sendToServer(urlSelected, jsonSelected) {
 	$.post(urlSelected, jsonSelected)
 	.done(function(datas) { 
-		document.getElementById('msgServer').value = "";
+		document.getElementById('msgServer').value = '';
 		switch(datas['Status']){
 			case 'l':
 				logShow();
@@ -66,7 +66,7 @@ function sendToServer(urlSelected, jsonSelected) {
 				createCookie('tokenFU',token,21);
 				Nick_Name = datas['Message'];
 				createCookie('nameFU',Nick_Name,21);
-				document.getElementById("nick_name").value = i18n("MsgWelcome")+Nick_Name ;
+				document.getElementById("nick_name").value = i18n('MsgWelcome')+Nick_Name ;
 				hideLog();
 				sendToServer(_urlPts+token,{});
 				
@@ -74,7 +74,7 @@ function sendToServer(urlSelected, jsonSelected) {
 
 			case 'p':
 				points = datas['Message'];
-				document.getElementById("ptsFU").value = points+' pts' ;
+				document.getElementById('ptsFU').value = points+' pts' ;
 			break;
 
 			case 'c':
@@ -124,7 +124,7 @@ function sendToServer(urlSelected, jsonSelected) {
 	})
 	.fail(function(datas) { 
 		//alert(datas['error']);
-		document.getElementById('msgServer').value = i18n("MsgBD");
+		document.getElementById('msgServer').value = i18n('MsgBD');
 		})
 ;};
 
@@ -141,7 +141,7 @@ function sendAjoutPanier(panierJ) {
 		})
 	.fail(function(datas) { 
 		//alert(datas['error']); 
-		alert(i18n("MsgBD"));
+		alert(i18n('MsgBD'));
 		})
 ;}
 
@@ -209,75 +209,75 @@ function parseInfo (elem){
 				  	} 
 				} 
 				//Test pour le prix
-				fromus_recupPrice("id",content_pid);
-				if(localStorage["regPrice"] == fromus_error) 
+				fromus_recupPrice('id',content_pid);
+				if(localStorage['regPrice'] == fromus_error) 
 					fromus_recupPrice("class",content_pclass);
 
 				//Test pour le name
-				fromus_recupName("id",content_nid);
-				if(localStorage["regName"] == fromus_error) 
-					fromus_recupName("class",content_nclass);
+				fromus_recupName('id',content_nid);
+				if(localStorage['regName'] == fromus_error) 
+					fromus_recupName('class',content_nclass);
 
 				//Test pour la description
-				fromus_recupDesc("id",content_did);
-				if(localStorage["regName"] == fromus_error) 
-					fromus_recupDesc("class",content_dclass);
+				fromus_recupDesc('id',content_did);
+				if(localStorage['regName'] == fromus_error) 
+					fromus_recupDesc('class',content_dclass);
 
 				//Test pour l'image'
-				fromus_recupImg("id",content_iid);
-				if(localStorage["regName"] == fromus_error) 
-					fromus_recupImg("class",content_iclass);
+				fromus_recupImg('id',content_iid);
+				if(localStorage['regName'] == fromus_error) 
+					fromus_recupImg('class',content_iclass);
 
-				regPrice = localStorage["regPrice"];
+				regPrice = localStorage['regPrice'];
 				$('#fromus_price').attr('value',regPrice);
-				regName = localStorage["regName"];
+				regName = localStorage['regName'];
 				$('#fromus_name').attr('value',regName);
-				regDesc = localStorage["regDesc"];
-				regVisu = localStorage["regImg"];
+				regDesc = localStorage['regDesc'];
+				regVisu = localStorage['regImg'];
 
 				
 }
 
 function hideLog(){
-	$("#loginU").hide();
-	$("#isconnect").show();
+	$('#loginU').hide();
+	$('#isconnect').show();
 };
 
 function showLog(){
-	$("#loginU").show();
-	$("#isconnect").hide();
+	$('#loginU').show();
+	$('#isconnect').hide();
 };
 
 function loadText(){
-	document.getElementById('tabAdd').innerHTML = i18n("tabAdd") ;
-	document.getElementById('tabBuy').innerHTML = i18n("tabBuy") ;
-	document.getElementById('store').innerHTML = i18n("Merchant") ;
-	document.getElementById('nameP').innerHTML = i18n("NameP") ;
-	document.getElementById('priceP').innerHTML = i18n("PriceP") ;		
-	document.getElementById('categP').innerHTML = i18n("CategP") ;
-	document.getElementById('scategP').innerHTML = i18n("SCategP") ;
-	document.getElementById('addP').value = i18n("ButtonAdd") ;
+	document.getElementById('tabAdd').innerHTML = i18n('tabAdd') ;
+	document.getElementById('tabBuy').innerHTML = i18n('tabBuy') ;
+	document.getElementById('store').innerHTML = i18n('Merchant') ;
+	document.getElementById('nameP').innerHTML = i18n('NameP') ;
+	document.getElementById('priceP').innerHTML = i18n('PriceP') ;		
+	document.getElementById('categP').innerHTML = i18n('CategP') ;
+	document.getElementById('scategP').innerHTML = i18n('SCategP') ;
+	document.getElementById('addP').value = i18n('ButtonAdd') ;
 				
-	document.getElementById('FormP').innerHTML = i18n("FormP") ;
+	document.getElementById('FormP').innerHTML = i18n('FormP') ;
 	document.getElementById('disconnect').value = 'logout' ;
 
-	document.getElementById('buyP').value = i18n("ButtonBuy") ;
-	document.getElementById('fu_quantite').innerHTML = i18n("QuantityP") ;
-	document.getElementById('fu_assurance').innerHTML = i18n("InsuranceP") ;
+	document.getElementById('buyP').value = i18n('ButtonBuy') ;
+	document.getElementById('fu_quantite').innerHTML = i18n('QuantityP') ;
+	document.getElementById('fu_assurance').innerHTML = i18n('InsuranceP') ;
 
-	document.getElementById('priceQ').value = "?";
-	document.getElementById('nameQ').value = "?";
+	document.getElementById('priceQ').value = '?';
+	document.getElementById('nameQ').value = '?';
    
    
 
 }
 
 function miseaJ(){
-	if(localStorage["regPrice"]){
-		document.getElementById('fromus_price').value = localStorage["regPrice"] ;
+	if(localStorage['regPrice']){
+		document.getElementById('fromus_price').value = localStorage['regPrice'] ;
 	}
-	if(localStorage["regName"]){
-				document.getElementById('fromus_name').value = localStorage["regName"] ;
+	if(localStorage['regName']){
+				document.getElementById('fromus_name').value = localStorage['regName'] ;
 	}
 }
 
@@ -341,23 +341,23 @@ $(document).ready(function() {
 	);
 
 	// variable qui permet de savoir si la dialog box est ouverte
-	var isOpen = $("#fromus_dialogBox").dialog("isOpen");
+	var isOpen = $('#fromus_dialogBox').dialog('isOpen');
 
 	
 	if (isOpen != true) {	
 
-		newDialog.tabs().addClass( "ui-tabs-horizontal ui-helper-clearfix" );
-		newDialog.removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+		newDialog.tabs().addClass( 'ui-tabs-horizontal ui-helper-clearfix' );
+		newDialog.removeClass( 'ui-corner-top' ).addClass( 'ui-corner-left' );
 		newDialog.dialog({
 	    	modal: false,
-			title: "From-us.com",
+			title: 'From-us.com',
 			//show: 'clip',
 			//hide: 'clip',
 			//autoOpen: false
 			position: 
 				{
-					my: "left top", 
-					at: "left top"
+					my: 'left top', 
+					at: 'left top'
 				},
 			height: 550,
 			width: 480,
@@ -382,8 +382,8 @@ $(document).ready(function() {
 
   				loadText();
 
-  				$("#tab2").hide();
-				$("#tab1").show();
+  				$('#tab2').hide();
+				$('#tab1').show();
   				
   				sendToServer(_urlCategorie,{});
 				if(readCookie('tokenFU')){
@@ -391,7 +391,7 @@ $(document).ready(function() {
 					token=readCookie('tokenFU');
 					if(readCookie('nameFU')){
 						Nick_Name = readCookie('nameFU');
-						document.getElementById("nick_name").value = i18n("MsgWelcome")+Nick_Name ;
+						document.getElementById('nick_name').value = i18n('MsgWelcome')+Nick_Name ;
 						sendToServer(_urlPts+token,{});
 					}
 				}
@@ -399,7 +399,7 @@ $(document).ready(function() {
 				else 
 					showLog();
 
-				regStore = localStorage["regStore"];
+				regStore = localStorage['regStore'];
 				$('#fromus_store').attr('value',regStore);
 
 				searchInfo();
@@ -434,17 +434,17 @@ $(document).ready(function() {
 	    });   
 */
 	//Pour remplacer si marche pas les tab
-		$("a[id='tabAdd']").click(function() {
-			$("#tab2").hide();
-			$("#tab1").show();
+		$('a[id=tabAdd]').click(function() {
+			$('#tab2').hide();
+			$('#tab1').show();
 	  	});
 
-		$("a[id='tabBuy']").click(function() {
-			$("#tab1").hide();
-			$("#tab2").show();
+		$('a[id=tabBuy]').click(function() {
+			$('#tab1').hide();
+			$('#tab2').show();
 	  	});
 
-		$("input[id='connect']").click(function() {
+		$('input[id=connect]').click(function() {
 			
 	   		var emailV = document.getElementById('emailBox').value;
 			var passwordV = document.getElementById("passBox").value;
@@ -456,60 +456,72 @@ $(document).ready(function() {
 			}
 	  	});
 
-	  	$("input[id='addP']").click(function() {
-			var categVal = document.getElementById("sscategory").value;
-			if(!regName)
-				regName=localStorage["regName"];
-			if(!regPrice)
-				regPrice=localStorage["regPrice"];
+	  	$('input[id=addP]').click(function() {
+	  		if(!token)
+	  			document.getElementById('msgServer').value = i18n('MsgConnect');
+	  		else{
+				var categVal = document.getElementById('sscategory').value;
 
-	/*		console.log(regStore);
-			//console.log(localStorage["regGetName"]);
-			console.log(localStorage["regGetPrice"]);
-			if(localStorage["regGetName"] && localStorage["regGetPrice"] && regStore){
-				alert('ok');
-				var siteAccess = localStorage["regGetName"]+localStorage["regGetPrice"];
-				var jsonAccess = {url: regStore, access: siteAccess};
-				var postDataAccess = JSON.stringify(jsonAccess);
-				var accessJSON = {calcul:postDataAccess};
-				sendToServer(_urlAccessOut+token, accessJSON);
+				regOffer = localStorage['urlOffer'];
+				if(!regName)
+					regName=localStorage['regName'];
+				if(!regPrice)
+					regPrice=localStorage['regPrice'];
+
+		/*		console.log(regStore);
+				//console.log(localStorage["regGetName"]);
+				console.log(localStorage["regGetPrice"]);
+				if(localStorage["regGetName"] && localStorage["regGetPrice"] && regStore){
+					alert('ok');
+					var siteAccess = localStorage["regGetName"]+localStorage["regGetPrice"];
+					var jsonAccess = {url: regStore, access: siteAccess};
+					var postDataAccess = JSON.stringify(jsonAccess);
+					var accessJSON = {calcul:postDataAccess};
+					sendToServer(_urlAccessOut+token, accessJSON);
+				}
+
+	*/
+
+				if(categVal && regName && regOffer && regPrice){
+					var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
+					var postData = JSON.stringify(jsonProduct);
+					var productJSON = {product:postData};
+					sendToServer(_urlProduct+token , productJSON);
+				}
 			}
-*/
-			if(categVal && regName && regStore && regPrice){
+	  	});
+
+	  	$('input[id=buyP]').click(function() {
+	  		if(!token)
+	  			document.getElementById('msgServer').value = i18n('MsgConnect');
+	  		else{
+				var qteSpinner = document.getElementById('QteSpinner').value;
+				var categSelect = document.getElementById('sscategory').value;
+
 				var jsonProduct = {prd_libelle: regName ,prd_site: regStore, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
 				var postData = JSON.stringify(jsonProduct);
 				var productJSON = {product:postData};
-				sendToServer(_urlProduct+token , productJSON);
+				sendToServer(_urlProduct+token,productJSON);
+
+				var jsonCalcul = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
+				var postDataCalcul = JSON.stringify(jsonCalcul);
+				var calculJSON = {calcul:postDataCalcul};
+				sendToServer(_urlCalcul+token , calculJSON);
 			}
 	  	});
 
-	  	$("input[id='buyP']").click(function() {
-			var qteSpinner = document.getElementById("QteSpinner").value;
-			var categSelect = document.getElementById("sscategory").value;
-
-			var jsonProduct = {prd_libelle: regName ,prd_site: regStore, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
-			var postData = JSON.stringify(jsonProduct);
-			var productJSON = {product:postData};
-			sendToServer(_urlProduct+token,productJSON);
-
-			var jsonCalcul = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
-			var postDataCalcul = JSON.stringify(jsonCalcul);
-			var calculJSON = {calcul:postDataCalcul};
-			sendToServer(_urlCalcul+token , calculJSON);
-	  	});
-
-	  	$("input[id='disconnect']").click(function() {
+	  	$('input[id=disconnect]').click(function() {
 			
 	   		sendToServer(_urlLogout+token, {});
 			eraseCookie('tokenFU');
 			eraseCookie('nameFU');
-			token="";
-			Nick_Name = "";
+			token='';
+			Nick_Name = '';
 			showLog();
 	  	});
 
-	  	$("select[id='category']").change(function() {
-		var categV = document.getElementById("category").value;
+	  	$('select[id=category]').change(function() {
+		var categV = document.getElementById('category').value;
 		if (categV)
 			sendToServer(_urlSSCategorie+categV, {});
 		else{
@@ -518,15 +530,15 @@ $(document).ready(function() {
 		}
 	  	});
 
-		$("img[id='lgfr']").click(function() {
+		$('img[id=lgfr]').click(function() {
 			changeLng('fr');
 			loadText();
 	  	});
-	  	$("img[id='lgen']").click(function() {
+	  	$('img[id=lgen]').click(function() {
 			changeLng('en');
 			loadText();
 		});
-		$("img[id='lgde']").click(function() {
+		$('img[id=lgde]').click(function() {
 			changeLng('de');
 			loadText();
 		});
@@ -537,8 +549,8 @@ $(document).ready(function() {
 		priceq.addEventListener('click', function(e){
 			console.log('debut listener priceq');
 			document.getElementById('fromus_price').value="";
-			var settime = setTimeout("getPrice()", 1000);
-			var setinter = setInterval("miseaJ()", 600); 
+			var settime = setTimeout('getPrice()', 1000);
+			var setinter = setInterval('miseaJ()', 600); 
 			if(document.getElementById('fromus_price').value)
 				clearInterval(setinter);
 		}, false); 
@@ -547,14 +559,14 @@ $(document).ready(function() {
 		nameq.addEventListener('click', function(e){
 			console.log('debut listener nameq');
 			document.getElementById('fromus_name').value="";
-			var settime = setTimeout("getName()", 1000);
-			var setinter = setInterval("miseaJ()", 600); 
+			var settime = setTimeout('getName()', 1000);
+			var setinter = setInterval('miseaJ()', 600); 
 			if(document.getElementById('fromus_name').value)
 				clearInterval(setinter);
 		}, false);  
 	
 		// ouverture de la dialog box
-		newDialog.dialog("open");
+		newDialog.dialog('open');
 		//suppression des key dans le localstorage
 		localStorage.removeItem('regDesc');
 		localStorage.removeItem('regName');
