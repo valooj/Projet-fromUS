@@ -381,6 +381,9 @@ $(document).ready(function() {
   				imgfr.src = chrome.extension.getURL('/img/fr.png');
 
   				loadText();
+
+  				$("#tab2").hide();
+				$("#tab1").show();
   				
   				sendToServer(_urlCategorie,{});
 				if(readCookie('tokenFU')){

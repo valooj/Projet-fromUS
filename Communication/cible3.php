@@ -71,8 +71,9 @@ try
 			$get_product = isset($_REQUEST['product']) ? json_decode($_REQUEST['product'], TRUE) : null;
 
 			// variables tests
-			if ( !$get_token )
+			if (!$get_token || $get_token == 'undefined')
 				throw new Exception($lng['invalid_token']);
+
 
 			if ( !$get_product )
 				throw new Exception($lng['invalid_product']);
@@ -136,7 +137,7 @@ try
 			$get_token = isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
 
 			// variables tests
-			if ( !$get_token )
+			if ( !$get_token || $get_token == 'undefined')
 				throw new Exception($lng['invalid_token']);
 
 			$req = $bdd->prepare('SELECT tok_user FROM token where tok_token= :_token');
@@ -167,7 +168,7 @@ try
 			$get_panier = isset($_REQUEST['panier']) ? json_decode($_REQUEST['panier'], TRUE) : null;
 
 			// variables tests
-			if ( !$get_token )
+			if ( !$get_token || $get_token == 'undefined')
 				throw new Exception($lng['invalid_token']);
 
 			if ( !$get_panier )
@@ -252,7 +253,7 @@ try
 			$get_calcul = isset($_REQUEST['calcul']) ? json_decode($_REQUEST['calcul'], TRUE) : null;
 
 			// variables tests
-			if ( !$get_token )
+			if ( !$get_token || $get_token == 'undefined')
 				throw new Exception($lng['invalid_token']);
 
 			if ( !$get_calcul )
@@ -410,7 +411,7 @@ try
 			$get_token= isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
 
 			// variables tests
-			if ( !$get_token)
+			if ( !$get_token || $get_token == 'undefined')
 				throw new Exception($lng['invalid_token']);
 
 			$req = $bdd->prepare('UPDATE token SET tok_token = :_myNull where tok_token = :_token');

@@ -52,3 +52,257 @@ Array
 ===========================================
 =======
 >>>>>>> resolution de type not defined
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.bebe.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.bebe.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 36
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => undefined
+    [product] => {"prd_libelle":"Seagate Expansion STBV4000100 4TB USB 3.0 External Hard Drive","prd_site":"www.rakuten.com","prd_desc":"The easy-to-use storage solution.The Expansion external hard drive installs easily by plugging in two cords. You can start saving your digital files to this hard drive within seconds of removing [...]","prd_visu":"http://img.rakuten.com/PIC/44578783/0/1/300/44578783.jpg","prd_prix":"159.99","prd_cat":"604"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => undefined
+    [product] => {"prd_libelle":"Seagate Expansion STBV4000100 4TB USB 3.0 External Hard Drive","prd_site":"www.rakuten.com","prd_desc":"The easy-to-use storage solution.The Expansion external hard drive installs easily by plugging in two cords. You can start saving your digital files to this hard drive within seconds of removing [...]","prd_visu":"http://img.rakuten.com/PIC/44578783/0/1/300/44578783.jpg","prd_prix":"159.99","prd_cat":"604"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 34
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => undefined
+    [product] => {"prd_libelle":"Seagate Expansion STBV4000100 4TB USB 3.0 External Hard Drive","prd_site":"www.rakuten.com","prd_desc":"The easy-to-use storage solution.The Expansion external hard drive installs easily by plugging in two cords. You can start saving your digital files to this hard drive within seconds of removing [...]","prd_visu":"http://img.rakuten.com/PIC/44578783/0/1/300/44578783.jpg","prd_prix":"159.99","prd_cat":"593"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 1
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => undefined
+    [product] => {"prd_libelle":"HCG Diet Drops with Amino Acids and Vitamin B12","prd_site":"www.rakuten.com","prd_desc":"Lose weight FAST with Homeopathic Oral HCG drops and the HCG Weight Loss Cure. Thousands of people have lost weight and kept it off by following Dr. Simeons' simple diet protocol. Cut cravings, r[...]","prd_visu":"http://img.rakuten.com/PIC/49914552/0/1/300/49914552.jpg","prd_prix":"32.95","prd_cat":"1"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 34
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => undefined
+    [product] => {"prd_libelle":"HCG Diet Drops with Amino Acids and Vitamin B12","prd_site":"www.rakuten.com","prd_desc":"Lose weight FAST with Homeopathic Oral HCG drops and the HCG Weight Loss Cure. Thousands of people have lost weight and kept it off by following Dr. Simeons' simple diet protocol. Cut cravings, r[...]","prd_visu":"http://img.rakuten.com/PIC/49914552/0/1/300/49914552.jpg","prd_prix":"32.95","prd_cat":"593"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 37
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => undefined
+    [product] => {"prd_libelle":"HCG Diet Drops with Amino Acids and Vitamin B12","prd_site":"www.rakuten.com","prd_desc":"Lose weight FAST with Homeopathic Oral HCG drops and the HCG Weight Loss Cure. Thousands of people have lost weight and kept it off by following Dr. Simeons' simple diet protocol. Cut cravings, r[...]","prd_visu":"http://img.rakuten.com/PIC/49914552/0/1/300/49914552.jpg","prd_prix":"32.95","prd_cat":"607"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 35
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => undefined
+    [product] => {"prd_libelle":"HCG Diet Drops with Amino Acids and Vitamin B12","prd_site":"www.rakuten.com","prd_desc":"Lose weight FAST with Homeopathic Oral HCG drops and the HCG Weight Loss Cure. Thousands of people have lost weight and kept it off by following Dr. Simeons' simple diet protocol. Cut cravings, r[...]","prd_visu":"http://img.rakuten.com/PIC/49914552/0/1/300/49914552.jpg","prd_prix":"32.95","prd_cat":"596"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 37
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => undefined
+    [product] => {"prd_libelle":"HCG Diet Drops with Amino Acids and Vitamin B12","prd_site":"www.rakuten.com","prd_desc":"Lose weight FAST with Homeopathic Oral HCG drops and the HCG Weight Loss Cure. Thousands of people have lost weight and kept it off by following Dr. Simeons' simple diet protocol. Cut cravings, r[...]","prd_visu":"http://img.rakuten.com/PIC/49914552/0/1/300/49914552.jpg","prd_prix":"32.95","prd_cat":"607"}
+)
+
+===========================================
