@@ -266,8 +266,10 @@ $(document).ready(function() {
 							    '<img id="lgde" src="" />'+
 	    					'</div>'+
 	    					'<FORM name="loginU" id="loginU">'+
+	    						'<hr id="hr1" style="margin-top: 15px;"/>'+
 	     						'<input type="textbox" id="emailBox" placeholder="email"/><input type="password" id="passBox" placeholder="password"/>'+
 	     						'<INPUT TYPE="button" NAME="logB" VALUE="Login" id="connect">'+
+	     						'<hr id="hr2" style="margin-top: 65px;"/>'+
 	    					'</FORM>'+
 	    					'<div id="isconnect">'+
 	      						'<input type="textbox" id="nick_name" disabled="true" style="border:none"/></br>'+
@@ -318,11 +320,11 @@ $(document).ready(function() {
 	
 	if (isOpen != true) {	
 
-		newDialog.tabs().addClass( 'ui-tabs-horizontal ui-helper-clearfix' );
-		newDialog.removeClass( 'ui-corner-top' ).addClass( 'ui-corner-left' );
+		newDialog.tabs().addClass( 'ui-toto-tabs-horizontal ui-toto-helper-clearfix' );
+		newDialog.removeClass( 'ui-corner-top' ).addClass( 'ui-toto-corner-left' );
 		newDialog.dialog({
 	    	modal: false,
-			title: 'From-us.com',
+			title: '',
 			//show: 'clip',
 			//hide: 'clip',
 			//autoOpen: false
@@ -331,8 +333,8 @@ $(document).ready(function() {
 					my: 'left top', 
 					at: 'left top'
 				},
-			height: 500,
-			width: 480,
+			height: 530,
+			width: 355,
 			resizable: true,
 			closeOnEscape: true,
 
