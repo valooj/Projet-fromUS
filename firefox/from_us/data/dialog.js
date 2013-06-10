@@ -24,38 +24,11 @@ var regDesc;
 var regVisu;
 
 
-//Pour stocker le cookie et le lire 
-function createCookie(name,value,days) {
-	if (days) {
-		var date = new Date();
-		date.setTime(date.getTime()+(days*24*60*60*1000));
-		var expires = "; expires="+date.toGMTString();
-	}
-	else var expires = "";
-	document.cookie = name+"="+value+expires+";path=";
-}
-
-function readCookie(name) {
-	var nameEQ = name + "=";
-	var ca = document.cookie.split(';');
-	for(var i=0;i < ca.length;i++) {
-		var c = ca[i];
-		while (c.charAt(0)==' ') c = c.substring(1,c.length);
-		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-	}
-	return null;
-}
-
-function eraseCookie(name) {
-	createCookie(name,"",-1);
-}
-
-
 //Fonctions d'envoie de données au serveur
 function sendToServer(urlSelected, jsonSelected) {
 	$.post(urlSelected, jsonSelected)
 	.done(function(datas) { 
-		document.getElementById('msgServer').value = "";
+		document.getElementById('msgServer').value = '';
 		switch(datas['Status']){
 			case 'l':
 				logShow();
@@ -63,10 +36,10 @@ function sendToServer(urlSelected, jsonSelected) {
 
 			case 'L':
 				token = datas['Token'];
-				createCookie('tokenFU',token,21);
+				//chrome.storage.local.set({'tokenFU': token});
 				Nick_Name = datas['Message'];
-				createCookie('nameFU',Nick_Name,21);
-				document.getElementById("nick_name").value = i18n("MsgWelcome")+Nick_Name ;
+				//chrome.storage.local.set({'nameFU': Nick_Name});
+				document.getElementById("nick_name").value = i18n('MsgWelcome')+Nick_Name ;
 				hideLog();
 				sendToServer(_urlPts+token,{});
 				
@@ -74,11 +47,10 @@ function sendToServer(urlSelected, jsonSelected) {
 
 			case 'p':
 				points = datas['Message'];
-				document.getElementById("ptsFU").value = points+' pts' ;
+				document.getElementById('ptsFU').value = points+' pts' ;
 			break;
 
 			case 'c':
-				//alert(datas['Message']);
 				parseCat(datas['Message'],'');
 			break;
 
@@ -124,7 +96,7 @@ function sendToServer(urlSelected, jsonSelected) {
 	})
 	.fail(function(datas) { 
 		//alert(datas['error']);
-		document.getElementById('msgServer').value = i18n("MsgBD");
+		document.getElementById('msgServer').value = i18n('MsgBD');
 		})
 ;};
 
@@ -141,7 +113,7 @@ function sendAjoutPanier(panierJ) {
 		})
 	.fail(function(datas) { 
 		//alert(datas['error']); 
-		alert(i18n("MsgBD"));
+		alert(i18n('MsgBD'));
 		})
 ;}
 
@@ -150,11 +122,13 @@ function parseCat(categorieJSON, sc) {
     $selectCat.empty();
     var obj = JSON.parse(categorieJSON);
     for(var i = 0; i < categorieJSON.length; i++) {
-    	if(obj[i].type==0)
-        	$selectCat.append('<option value="'+obj[i].idCat+'" disabled="true">'+obj[i].libelleCat+'</option>');
-        else 
-        	$selectCat.append('<option value="'+obj[i].idCat+'" >'+obj[i].libelleCat+'</option>');
-    }
+    	if(obj[i]){
+	    	if(obj[i].type==0)
+	        	$selectCat.append('<option value="'+obj[i].idCat+'" disabled="true">'+obj[i].libelleCat+'</option>');
+	        else 
+	        	$selectCat.append('<option value="'+obj[i].idCat+'" >'+obj[i].libelleCat+'</option>');
+	    }
+	}
 }
 
 function searchInfo (){
@@ -207,75 +181,75 @@ function parseInfo (elem){
 				  	} 
 				} 
 				//Test pour le prix
-				fromus_recupPrice("id",content_pid);
-				if(localStorage["regPrice"] == fromus_error) 
+				fromus_recupPrice('id',content_pid);
+				if(localStorage['regPrice'] == fromus_error) 
 					fromus_recupPrice("class",content_pclass);
 
 				//Test pour le name
-				fromus_recupName("id",content_nid);
-				if(localStorage["regName"] == fromus_error) 
-					fromus_recupName("class",content_nclass);
+				fromus_recupName('id',content_nid);
+				if(localStorage['regName'] == fromus_error) 
+					fromus_recupName('class',content_nclass);
 
 				//Test pour la description
-				fromus_recupDesc("id",content_did);
-				if(localStorage["regName"] == fromus_error) 
-					fromus_recupDesc("class",content_dclass);
+				fromus_recupDesc('id',content_did);
+				if(localStorage['regName'] == fromus_error) 
+					fromus_recupDesc('class',content_dclass);
 
 				//Test pour l'image'
-				fromus_recupImg("id",content_iid);
-				if(localStorage["regName"] == fromus_error) 
-					fromus_recupImg("class",content_iclass);
+				fromus_recupImg('id',content_iid);
+				if(localStorage['regName'] == fromus_error) 
+					fromus_recupImg('class',content_iclass);
 
-				regPrice = localStorage["regPrice"];
+				regPrice = localStorage['regPrice'];
 				$('#fromus_price').attr('value',regPrice);
-				regName = localStorage["regName"];
+				regName = localStorage['regName'];
 				$('#fromus_name').attr('value',regName);
-				regDesc = localStorage["regDesc"];
-				regVisu = localStorage["regImg"];
-
+				regDesc = localStorage['regDesc'];
+				regVisu = localStorage['regImg'];
 				
 }
 
 function hideLog(){
-	$("#loginU").hide();
-	$("#isconnect").show();
+	$('#loginU').hide();
+	$('#isconnect').show();
 };
 
 function showLog(){
-	$("#loginU").show();
-	$("#isconnect").hide();
+	$('#loginU').show();
+	$('#isconnect').hide();
 };
 
+
 function loadText(){
-	document.getElementById('tabAdd').innerHTML = i18n("tabAdd") ;
-	document.getElementById('tabBuy').innerHTML = i18n("tabBuy") ;
-	document.getElementById('store').innerHTML = i18n("Merchant") ;
-	document.getElementById('nameP').innerHTML = i18n("NameP") ;
-	document.getElementById('priceP').innerHTML = i18n("PriceP") ;		
-	document.getElementById('categP').innerHTML = i18n("CategP") ;
-	document.getElementById('scategP').innerHTML = i18n("SCategP") ;
-	document.getElementById('addP').value = i18n("ButtonAdd") ;
+	document.getElementById('tabAdd').innerHTML = i18n('tabAdd') ;
+	document.getElementById('tabBuy').innerHTML = i18n('tabBuy') ;
+	document.getElementById('store').innerHTML = i18n('Merchant') ;
+	document.getElementById('nameP').innerHTML = i18n('NameP') ;
+	document.getElementById('priceP').innerHTML = i18n('PriceP') ;		
+	document.getElementById('categP').innerHTML = i18n('CategP') ;
+	document.getElementById('scategP').innerHTML = i18n('SCategP') ;
+	document.getElementById('addP').value = i18n('ButtonAdd') ;
 				
-	document.getElementById('FormP').innerHTML = i18n("FormP") ;
+	document.getElementById('FormP').innerHTML = i18n('FormP') ;
 	document.getElementById('disconnect').value = 'logout' ;
 
-	document.getElementById('buyP').value = i18n("ButtonBuy") ;
-	document.getElementById('fu_quantite').innerHTML = i18n("QuantityP") ;
-	document.getElementById('fu_assurance').innerHTML = i18n("InsuranceP") ;
+	document.getElementById('buyP').value = i18n('ButtonBuy') ;
+	document.getElementById('fu_quantite').innerHTML = i18n('QuantityP') ;
+	document.getElementById('fu_assurance').innerHTML = i18n('InsuranceP') ;
 
-	document.getElementById('priceQ').value = "?";
-	document.getElementById('nameQ').value = "?";
+	document.getElementById('priceQ').value = '?';
+	document.getElementById('nameQ').value = '?';
    
    
 
 }
 
 function miseaJ(){
-	if(localStorage["regPrice"]){
-		document.getElementById('fromus_price').value = localStorage["regPrice"] ;
+	if(localStorage['regPrice']){
+		document.getElementById('fromus_price').value = localStorage['regPrice'] ;
 	}
-	if(localStorage["regName"]){
-				document.getElementById('fromus_name').value = localStorage["regName"] ;
+	if(localStorage['regName']){
+				document.getElementById('fromus_name').value = localStorage['regName'] ;
 	}
 }
 
@@ -287,78 +261,80 @@ $(document).ready(function() {
 	var newDialog = $('<div id="fromus_dialogBox" class="toto">' +
 					    '<div id="header">'+
 							'<div id="selectLang">' +
-	      						'<img id="lgfr" src="' + self.options.imgfr + '"  />'+
-							    '<img id="lgen" src="' + self.options.imgen + '"  />'+
-							    '<img id="lgde" src="' + self.options.imgde + '"  />'+
+	      						'<img id="lgfr" src="' + self.options.imgfr + '" />'+
+							    '<img id="lgen" src="' + self.options.imgen + '" />'+
+							    '<img id="lgde" src="' + self.options.imgde + '" />'+
 	    					'</div>'+
 	    					'<FORM name="loginU" id="loginU">'+
+	    						'<hr id="hr1" style="margin-top: 15px;"/>'+
 	     						'<input type="textbox" id="emailBox" placeholder="email"/><input type="password" id="passBox" placeholder="password"/>'+
 	     						'<INPUT TYPE="button" NAME="logB" VALUE="Login" id="connect">'+
+	     						'<hr id="hr2" style="margin-top: 65px;"/>'+
 	    					'</FORM>'+
 	    					'<div id="isconnect">'+
-	      						'<input type="textbox" id="nick_name" disabled="true" style="border:none"/></br>'+
-							    '<input type="textbox" id="ptsFU" disabled="true" style="border:none"/></br>'+
+	      						'<input type="textbox" id="nick_name" disabled="true" style="border:none"/><br />'+
+							    '<input type="textbox" id="ptsFU" disabled="true" style="border:none"/><br />'+
 							    '<INPUT TYPE="button" NAME="dislogB" id="disconnect">'+
 					    	'</div>'+
 					    '</div>'+
 							'<form id="fromusForm">' + 
 								'<div id="menu" class="element_menu">'+
 									'<ul id="onglets">'+
-									    '<li><a href="#tab1" id="tabAdd"></a></li>'+
-									    '<li><a href="#tab2" id="tabBuy"></a></li>'+
+									    '<li id="liAdd"><a href="#tab1" id="tabAdd"><img src="' + self.options.imgadd + '"</a></li>'+
+									    '<li id="liBuy"><a href="#tab2" id="tabBuy"></a></li>'+
 									'</ul>'+
-								'</div></br>'+
+								'</div><br />'+
 								'<div id="corpAdd">'+
-									      		'<input type="textbox" id="msgServer" disabled="true" style="border:none"/>'+
-									      		'<div id="fromus_tabs">'+
-									        		'<h2 id="FormP"></h2>'+
-									        		'<form id="fromusForm">'+
-									          			'<label for="store" id="store"></label></br>'+
-											            '<input type="textbox" id="fromus_store" disabled="true"/></br>'+
-											            '<label for="name" id="nameP"></label></br>'+
-											            '<input type="textbox" id="fromus_name" disabled="true"/><input type="button" id="nameQ"></br>'+
-											            '<label for="price" id="priceP" ></label></br>'+
-											            '<input type="textbox" id="fromus_price" disabled="true"/><input type="button" id="priceQ"> </br>'+
-											            '<label for="category" id="categP"></label></br>'+
-											            '<select id="category">'+
-											            '</select></br>'+
-											            '<label for="sscategory" id="scategP"></label></br>'+
-											            '<select id="sscategory">'+
-											            '</select></br>'+
-									            '<div class="content" id="tab1">'+
-									            '<input type="button" id="addP">'+
+									'<input type="textbox" id="msgServer" disabled="true" style="border:none"/>'+
+									'<div id="fromus_tabs">'+
+									    '<h2 id="FormP"></h2>'+
+									    '<form id="fromusForm">'+
+									    '<label for="store" id="store"></label><br />'+
+										'<input type="textbox" id="fromus_store" disabled="true"/><br />'+
+										'<label for="name" id="nameP"></label><br />'+
+										'<input type="textbox" id="fromus_name" disabled="true"/><input type="button" id="nameQ"><br />'+
+										'<label for="price" id="priceP" ></label><br />'+
+										'<input type="textbox" id="fromus_price" disabled="true"/><input type="button" id="priceQ"> <br />'+
+										'<label for="category" id="categP"></label><br />'+
+										'<select id="category">'+
+										'</select><br />'+
+										'<label for="sscategory" id="scategP"></label><br />'+
+										'<select id="sscategory">'+
+										'</select><br />'+
+									'<div class="content" id="tab1">'+
+									    '<input type="button" id="addP">'+
 									'</div>'+
 									'<div class="content" id="tab2">'+
-									    '<label id="fu_quantite" for="quantite"></label><input id="QteSpinner" value="1"></br>'+
-									    '<label id="fu_assurance" for="assurance"></label><input type="checkbox" id="checkassur" name="assurance" /></br>'+
+									    '<label id="fu_quantite" for="quantite"></label><input id="QteSpinner" value="1"><br />'+
+									    '<label id="fu_assurance" for="assurance"></label><input type="checkbox" id="checkassur" name="assurance" /><br />'+
 									    '<input type="button" id="buyP"> '+
 									'</div>'+
 							'</form>'+
-						'<a href="http://from-us.com/fromus" target=_blank><img id="logofromus" height="100" src="' + self.options.imglogo + '" /></a>' +
+						'<a href="http://from-us.com/fromus" target=_blank><img id="logofromus" height="100" src="' + self.options.img + '"/></a>' +
 					'</div>'
 	);
 
 	// variable qui permet de savoir si la dialog box est ouverte
-	var isOpen = $("#fromus_dialogBox").dialog("isOpen");
+	var isOpen = $('#fromus_dialogBox').dialog('isOpen');
 
 	
 	if (isOpen != true) {	
 
-		newDialog.tabs().addClass( "ui-tabs-horizontal ui-helper-clearfix" );
-		newDialog.removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+		//newDialog.tabs().addClass( 'ui-toto-tabs-horizontal ui-toto-helper-clearfix' );
+		//newDialog.removeClass( 'ui-corner-top' ).addClass( 'ui-toto-corner-left' );
 		newDialog.dialog({
 	    	modal: false,
-			title: "From-us.com",
+			title: '',
 			//show: 'clip',
 			//hide: 'clip',
 			//autoOpen: false
 			position: 
 				{
-					my: "left top", 
-					at: "left top"
+					my: 'left top', 
+					at: 'left top'
 				},
-			height: 550,
-			width: 480,
+			height: 530,
+			width: 365,
 			resizable: true,
 			closeOnEscape: true,
 
@@ -379,21 +355,29 @@ $(document).ready(function() {
   				imgfr.src = chrome.extension.getURL('/img/fr.png');*/
 
   				loadText();
+
+  				$('#tab2').hide();
+				$('#tab1').show();
   				
   				sendToServer(_urlCategorie,{});
-				if(readCookie('tokenFU')){
-					hideLog();
-					token=readCookie('tokenFU');
-					if(readCookie('nameFU')){
-						Nick_Name = readCookie('nameFU');
-						document.getElementById("nick_name").value = i18n("MsgWelcome")+Nick_Name ;
-						sendToServer(_urlPts+token,{});
-					}
-				}
-				else 
-					showLog();
 
-				regStore = localStorage["regStore"];
+  				/*chrome.storage.local.get('tokenFU',function(result){
+				 	token=result.tokenFU;
+				 	if(token && token != 'undefined'){
+						hideLog();
+					}
+					else 
+					showLog();
+				});*/
+				/*chrome.storage.local.get('nameFU',function(result){
+				  Nick_Name=result.nameFU;
+				  if(Nick_Name && Nick_Name != 'undefined'){
+						document.getElementById('nick_name').value = i18n('MsgWelcome')+Nick_Name ;
+						sendToServer(_urlPts+token,{});
+					}		
+				});*/
+
+				regStore = localStorage['regStore'];
 				$('#fromus_store').attr('value',regStore);
 
 				searchInfo();
@@ -413,7 +397,7 @@ $(document).ready(function() {
 				});
 			}
 		}
-
+/*      //marchep lus je sais pas pk
 		$(".content").each(function(i){
 	        this.id = "#" + this.id;
 	    });
@@ -426,8 +410,19 @@ $(document).ready(function() {
 	        $("div[id='" + idTab + "']").fadeIn();
 	        return false;
 	    });   
+*/
+	//Pour remplacer si marche pas les tab
+		$('a[id=tabAdd]').click(function() {
+			$('#tab2').hide();
+			$('#tab1').show();
+	  	});
 
-		$("input[id='connect']").click(function() {
+		$('a[id=tabBuy]').click(function() {
+			$('#tab1').hide();
+			$('#tab2').show();
+	  	});
+
+		$('input[id=connect]').click(function() {
 			
 	   		var emailV = document.getElementById('emailBox').value;
 			var passwordV = document.getElementById("passBox").value;
@@ -439,60 +434,74 @@ $(document).ready(function() {
 			}
 	  	});
 
-	  	$("input[id='addP']").click(function() {
-			var categVal = document.getElementById("sscategory").value;
-			if(!regName)
-				regName=localStorage["regName"];
-			if(!regPrice)
-				regPrice=localStorage["regPrice"];
+	  	$('input[id=addP]').click(function() {
+	  		if(!token)
+	  			document.getElementById('msgServer').value = i18n('MsgConnect');
+	  		else{
+				var categVal = document.getElementById('sscategory').value;
 
-	/*		console.log(regStore);
-			//console.log(localStorage["regGetName"]);
-			console.log(localStorage["regGetPrice"]);
-			if(localStorage["regGetName"] && localStorage["regGetPrice"] && regStore){
-				alert('ok');
-				var siteAccess = localStorage["regGetName"]+localStorage["regGetPrice"];
-				var jsonAccess = {url: regStore, access: siteAccess};
-				var postDataAccess = JSON.stringify(jsonAccess);
-				var accessJSON = {calcul:postDataAccess};
-				sendToServer(_urlAccessOut+token, accessJSON);
+				regOffer = localStorage['urlOffer'];
+				if(!regName)
+					regName=localStorage['regName'];
+				if(!regPrice)
+					regPrice=localStorage['regPrice'];
+
+		/*		
+				if(localStorage["regGetName"] && localStorage["regGetPrice"] && regStore){
+					alert('ok');
+					var siteAccess = localStorage["regGetName"]+localStorage["regGetPrice"];
+					var jsonAccess = {url: regStore, access: siteAccess};
+					var postDataAccess = JSON.stringify(jsonAccess);
+					var accessJSON = {calcul:postDataAccess};
+					sendToServer(_urlAccessOut+token, accessJSON);
+				}
+
+	*/
+
+				if(categVal && regName && regOffer && regPrice){
+					var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
+					var postData = JSON.stringify(jsonProduct);
+					var productJSON = {product:postData};
+					sendToServer(_urlProduct+token , productJSON);
+				}
 			}
-*/
-			if(categVal && regName && regStore && regPrice){
+	  	});
+
+	  	$('input[id=buyP]').click(function() {
+	  		if(!token)
+	  			document.getElementById('msgServer').value = i18n('MsgConnect');
+	  		else{
+				var qteSpinner = document.getElementById('QteSpinner').value;
+				var categSelect = document.getElementById('sscategory').value;
+
 				var jsonProduct = {prd_libelle: regName ,prd_site: regStore, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
 				var postData = JSON.stringify(jsonProduct);
 				var productJSON = {product:postData};
-				sendToServer(_urlProduct+token , productJSON);
+				sendToServer(_urlProduct+token,productJSON);
+
+				if(!categSelect)
+	  				document.getElementById('msgServer').value = i18n('Infocateg');
+	  			else{
+					var jsonCalcul = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
+					var postDataCalcul = JSON.stringify(jsonCalcul);
+					var calculJSON = {calcul:postDataCalcul};
+					sendToServer(_urlCalcul+token , calculJSON);
+				}
 			}
 	  	});
 
-	  	$("input[id='buyP']").click(function() {
-			var qteSpinner = document.getElementById("QteSpinner").value;
-			var categSelect = document.getElementById("sscategory").value;
-
-			var jsonProduct = {prd_libelle: regName ,prd_site: regStore, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
-			var postData = JSON.stringify(jsonProduct);
-			var productJSON = {product:postData};
-			sendToServer(_urlProduct+token,productJSON);
-
-			var jsonCalcul = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
-			var postDataCalcul = JSON.stringify(jsonCalcul);
-			var calculJSON = {calcul:postDataCalcul};
-			sendToServer(_urlCalcul+token , calculJSON);
-	  	});
-
-	  	$("input[id='disconnect']").click(function() {
+	  	$('input[id=disconnect]').click(function() {
 			
 	   		sendToServer(_urlLogout+token, {});
-			eraseCookie('tokenFU');
-			eraseCookie('nameFU');
-			token="";
-			Nick_Name = "";
+			//chrome.storage.local.set({'tokenFU': ''});
+			//chrome.storage.local.set({'nameFU': ''});
+			token='';
+			Nick_Name = '';
 			showLog();
 	  	});
 
-	  	$("select[id='category']").change(function() {
-		var categV = document.getElementById("category").value;
+	  	$('select[id=category]').change(function() {
+		var categV = document.getElementById('category').value;
 		if (categV)
 			sendToServer(_urlSSCategorie+categV, {});
 		else{
@@ -501,15 +510,15 @@ $(document).ready(function() {
 		}
 	  	});
 
-		$("img[id='lgfr']").click(function() {
+		$('img[id=lgfr]').click(function() {
 			changeLng('fr');
 			loadText();
 	  	});
-	  	$("img[id='lgen']").click(function() {
+	  	$('img[id=lgen]').click(function() {
 			changeLng('en');
 			loadText();
 		});
-		$("img[id='lgde']").click(function() {
+		$('img[id=lgde]').click(function() {
 			changeLng('de');
 			loadText();
 		});
@@ -521,27 +530,23 @@ $(document).ready(function() {
 			console.log('debut listener priceq');
 			document.getElementById('fromus_price').value="";
 			var settime = setTimeout(function() {getPrice()}, 1000);
-			console.log('apres get price');
 			var setinter = setInterval(function() {miseaJ()}, 600); 
-				if(document.getElementById('fromus_price').value)
-					{clearInterval(setinter);}
-			}, false); 
+			if(document.getElementById('fromus_price').value)
+				clearInterval(setinter);
+		}, false); 
 
 		var nameq = document.getElementById('nameQ');
 		nameq.addEventListener('click', function(e){
 			console.log('debut listener nameq');
 			document.getElementById('fromus_name').value="";
 			var settime = setTimeout(function() {getName()}, 1000);
-			console.log('apres get name');
 			var setinter = setInterval(function() {miseaJ()}, 600); 
 			if(document.getElementById('fromus_name').value)
-				{clearInterval(setinter);}
-		}, false);
-
-
+				clearInterval(setinter);
+		}, false);  
 	
 		// ouverture de la dialog box
-		newDialog.dialog("open");
+		newDialog.dialog('open');
 		//suppression des key dans le localstorage
 		localStorage.removeItem('regDesc');
 		localStorage.removeItem('regName');
@@ -552,16 +557,6 @@ $(document).ready(function() {
 		localStorage.removeItem('regOffer'); 
 	}
 });
-
-
-/*	// suppression des key dans le localstorage
-		localStorage.removeItem('regDesc');
-		localStorage.removeItem('regName');
-		localStorage.removeItem('regPrice');
-		localStorage.removeItem('regStore');
-		localStorage.removeItem('regOffer');   
-	*/
-			
 
 
 /*

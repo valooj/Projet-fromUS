@@ -23,6 +23,8 @@ pageMod.PageMod({
       imgfr: data.url('img/fr.png'),
       imgen: data.url('img/en.png'),
       imgde: data.url('img/de.png'),
+      imgadd: data.url('img/bouton_ajouter.png'),
+      imgbuy: data.url('img/bouton_commander.png'),
       imglogo: data.url('img/logo.png')
     }
 });

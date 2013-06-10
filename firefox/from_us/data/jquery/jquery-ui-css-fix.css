@@ -29,29 +29,104 @@ input#connect {
 }
 ul#onglets{
 	background-color: white;
+	border: none;
 }
+li#liAdd{
+	display: inline-block;
+	float: left;
+	margin: 0px;
 
+}
+li#liBuy{
+	display: inline-block;
+	float: left;
+	margin: 0px;
+}
+a#tabAdd{
+	display: inline-block;
+	float: left;
+	background-image: url("img/bouton_ajouter.png");
+	margin: 0;
+	height:31px;
+	width:111px;
+	text-indent: 10px;
+	line-height: 31px;
+
+}
+a#tabBuy{
+	display: inline-block;
+	float: right;
+	background-image: url("img/bouton_commander.png");
+	margin: 0px;
+	height:31px;
+	width:111px;
+	text-indent: 10px;
+	line-height: 31px;
+}
+h2#FormP {
+	color: black;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+#fromus_tabs label {
+	display: inline-block;
+	float: left;
+	width: 130px;
+	margin-left: 5px;
+	margin-top: 3px;
+	text-align: left;
+	font-size: 1em;
+}
+#fromus_tabs input[type="textbox"] {
+	display: inline-block;
+	float: left;
+	width: 280px;
+	margin-left: 5px;
+	margin-right: 0;
+	padding: 0px;
+}
+select#category{
+	display: inline-block;
+	float: ;
+	width: 282px;
+	margin-left: 5px;
+	padding: 0px;
+}
+select#sscategory{
+	display: inline-block;
+	float: left;
+	width: 282px;
+	margin-left: 5px;
+	padding: 0px;
+}
+input#nameQ {
+	display: inline-block;
+	float: left;
+	width: 25px;
+	height: 25px;
+	padding: 0px;
+	margin-left: 0px;
+}
+input#priceQ {
+	display: inline-block;
+	float: left;
+	width: 25px;
+	height: 25px;
+	padding: 0px;
+	margin-left: 0px;
+}
+input#addP {
+	display: inline-block;
+	float: left;
+	margin-left: 30px;
+	padding: 3px;
+}
 
 
 /*Fin*/
 
- .ui-toto-dialog-titlebar{
-	background-color: white;
-	text-align: left;
-}
-#ui-toto-id-4 {
-	width: 858px;
-}
- .ui-toto-widget-header{
-	background-color: #203064;
-}
- label {
-	display: inline-block;
-	width: 130px;
-	text-align: right;
-	margin-left: 90px;
-	margin-top: 3px;
-}
+
  #login{
 	font-size: small;
 	color: grey;  
@@ -88,40 +163,8 @@ ul#onglets{
 	font-size: small;
 	border: none;
 }
- h2{
-	margin-bottom: 20px;
-	text-align: center;
-	font-size: x-large;
-	text-decoration: underline;
-	color: #203064;
-}
- #fromusForm {
-}
- #FromusFrom label{
-	float: left;
-	text-align: right;
-	width: 200px;
-}
- #fromusForm input[type="textbox"] {
-	width: 280px;
-	margin: 0px;
-	margin-bottom: 5px;
-	padding: 0px;
-}
- select#category{
-	width: 282px;
-	margin-top: 0px;
-	margin-bottom: 5px;
-	padding: 0px;
-	height: 20px;
-}
- select#sscategory{
-	width: 282px;
-	margin-bottom: 5px;
-	margin-top: 0px;
-	padding: 0px;
-	height: 20px;
-}
+
+
  input#QteSpinner{
 	width: 50px;
 	height: 20px;
@@ -430,7 +473,7 @@ button.ui-toto-button::-moz-focus-inner {
 	/*margin: .5em .4em .5em 0;*/
 	cursor: pointer;
 }
-.ui-toto-dialog .ui-toto-resizable-se {
+.ui-toto-dialog .ui-resizable-se {
 	width: 12px;
 	height: 12px;
 	right: -5px;
@@ -528,70 +571,70 @@ button.ui-toto-button::-moz-focus-inner {
 	background-image: none;
 }
 
-.ui-toto-resizable {
+.ui-resizable {
 	position: relative;
 }
 
-.ui-toto-resizable-handle {
+.ui-resizable-handle {
 	position: absolute;
 	font-size: 0.1px;
 	display: block;
 }
 
-.ui-toto-resizable-disabled .ui-toto-resizable-handle,
-.ui-toto-resizable-autohide .ui-toto-resizable-handle {
+.ui-resizable-disabled .ui-resizable-handle,
+.ui-resizable-autohide .ui-resizable-handle {
 	display: none;
 }
-.ui-toto-resizable-n {
+.ui-resizable-n {
 	cursor: n-resize;
 	height: 7px;
 	width: 100%;
 	top: -5px;
 	left: 0;
 }
-.ui-toto-resizable-s {
+.ui-resizable-s {
 	cursor: s-resize;
 	height: 7px;
 	width: 100%;
 	bottom: -5px;
 	left: 0;
 }
-.ui-toto-resizable-e {
+.ui-resizable-e {
 	cursor: e-resize;
 	width: 7px;
 	right: -5px;
 	top: 0;
 	height: 100%;
 }
-.ui-toto-resizable-w {
+.ui-resizable-w {
 	cursor: w-resize;
 	width: 7px;
 	left: -5px;
 	top: 0;
 	height: 100%;
 }
-.ui-toto-resizable-se {
+.ui-resizable-se {
 	cursor: se-resize;
 	width: 12px;
 	height: 12px;
 	right: 1px;
 	bottom: 1px;
 }
-.ui-toto-resizable-sw {
+.ui-resizable-sw {
 	cursor: sw-resize;
 	width: 9px;
 	height: 9px;
 	left: -5px;
 	bottom: -5px;
 }
-.ui-toto-resizable-nw {
+.ui-resizable-nw {
 	cursor: nw-resize;
 	width: 9px;
 	height: 9px;
 	left: -5px;
 	top: -5px;
 }
-.ui-toto-resizable-ne {
+.ui-resizable-ne {
 	cursor: ne-resize;
 	width: 9px;
 	height: 9px;
@@ -734,12 +777,11 @@ button.ui-toto-button::-moz-focus-inner {
 /* ajout de tab vertical */
 .ui-toto-tabs-vertical { width: 55em; }
 .ui-toto-tabs-vertical .ui-toto-tabs-nav { padding: .2em .1em .2em .2em; float: left;  background-color: #c11f34;}
-.ui-toto-tabs-vertical .ui-toto-tabs-nav li { clear:center; width: 80%; background-color: #203064; margin-left: 0px;}
-.ui-toto-tabs-vertical .ui-toto-tabs-nav li a { display:block;  color: white; width: 128px;}
-.ui-toto-tabs-vertical .ui-toto-tabs-nav li.ui-toto-tabs-active { padding-bottom: 0; padding-right: 3px; background-color: #204093; }
+.ui-toto-tabs-vertical .ui-toto-tabs-nav li { clear:center; margin-left: 0px;}
+.ui-toto-tabs-vertical .ui-toto-tabs-nav li a { display:block; }
+.ui-toto-tabs-vertical .ui-toto-tabs-nav li.ui-toto-tabs-active { padding-bottom: 0; padding-right: 3px; }
 .ui-toto-tabs-vertical .ui-toto-tabs-panel { padding: 1em; float: right; width: 40em;}
 .ui-toto-tabs .ui-toto-tabs-nav {
-	width: 160px;
 	margin: 5px;
 	padding: 5px;
 }
