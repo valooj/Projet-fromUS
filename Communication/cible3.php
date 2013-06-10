@@ -39,12 +39,8 @@ function getLng(){
 }
 
 function getPreferedLang(){
-	file_put_contents('./trace.txt', print_r($_GET['lng'], 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
 	$prefL = isset($_GET['lng']) ? htmlspecialchars($_GET['lng']) : getLng();
-	file_put_contents('./trace.txt', print_r($prefL, 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
-
 	$nouvLang = ($prefL == 'fr') ? 'fr' : 'en';
-
 	return $nouvLang;
 }
 
