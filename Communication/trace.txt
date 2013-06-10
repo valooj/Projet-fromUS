@@ -9,6 +9,7 @@ http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&token=51ade
 
 ===========================================
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 Array
 (
@@ -17,6 +18,8 @@ Array
 )
 
 ===========================================
+=======
+>>>>>>> commit trace
 Array
 (
     [action] => MAJ-accessIn
@@ -26,6 +29,7 @@ Array
 ===========================================
 Array
 (
+<<<<<<< HEAD
     [action] => MAJ-pts
     [lng] => fr
     [token] => 51b37b3ea435f
@@ -42,6 +46,8 @@ Array
 ===========================================
 Array
 (
+=======
+>>>>>>> commit trace
     [action] => MAJ-categorie
     [lng] => fr
 )
@@ -49,6 +55,7 @@ Array
 ===========================================
 Array
 (
+<<<<<<< HEAD
     [action] => MAJ-accessIn
     [url_site] => www.rakuten.com
 )
@@ -56,6 +63,8 @@ Array
 ===========================================
 Array
 (
+=======
+>>>>>>> commit trace
     [action] => MAJ-pts
     [lng] => fr
     [token] => 51b37b3ea435f
@@ -64,6 +73,7 @@ Array
 ===========================================
 Array
 (
+<<<<<<< HEAD
     [action] => MAJ-calcul
     [lng] => fr
     [token] => 51b37b3ea435f
@@ -222,6 +232,8 @@ Array
 ===========================================
 Array
 (
+=======
+>>>>>>> commit trace
     [action] => MAJ-categorie
     [lng] => fr
 )
@@ -229,6 +241,145 @@ Array
 ===========================================
 Array
 (
+    [action] => MAJ-accessIn
+<<<<<<< HEAD
+    [url_site] => www.walmart.com
+=======
+    [url_site] => www.rakuten.com
+>>>>>>> commit trace
+)
+
+===========================================
+Array
+(
+<<<<<<< HEAD
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.walmart.com
+=======
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b37b3ea435f
+>>>>>>> commit trace
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+<<<<<<< HEAD
+    [url_site] => www.walmart.com
+=======
+    [url_site] => www.bebe.com
+>>>>>>> commit trace
+)
+
+===========================================
+Array
+(
+<<<<<<< HEAD
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.walmart.com
+=======
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b37b3ea435f
+>>>>>>> commit trace
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+<<<<<<< HEAD
+    [url_site] => www.walmart.com
+=======
+    [url_site] => www.bebe.com
+>>>>>>> commit trace
+)
+
+===========================================
+Array
+(
+<<<<<<< HEAD
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.walmart.com
+=======
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b37b3ea435f
+>>>>>>> commit trace
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+<<<<<<< HEAD
+    [url_site] => www.walmart.com
+=======
+    [url_site] => www.rakuten.com
+>>>>>>> commit trace
+)
+
+===========================================
+Array
+(
+<<<<<<< HEAD
+    [action] => MAJ-categorie
+    [lng] => fr
+=======
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b37b3ea435f
+>>>>>>> commit trace
+)
+
+===========================================
+Array
+(
+<<<<<<< HEAD
     [action] => MAJ-accessIn
     [url_site] => www.walmart.com
 )
@@ -245,6 +396,11 @@ Array
 (
     [action] => MAJ-accessIn
     [url_site] => www.walmart.com
+=======
+    [action] => MAJ-logout
+    [lng] => fr
+    [token] => 51b37b3ea435f
+>>>>>>> commit trace
 )
 
 ===========================================
@@ -257,6 +413,107 @@ Array
 ===========================================
 Array
 (
+    [action] => MAJ-accessIn
+<<<<<<< HEAD
+    [url_site] => www.walmart.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.walmart.com
+=======
+    [url_site] => www.bebe.com
+>>>>>>> commit trace
+)
+
+===========================================
+Array
+(
+<<<<<<< HEAD
+    [action] => MAJ-categorie
+    [lng] => fr
+=======
+    [action] => MAJ-login
+    [lng] => fr
+    [log] => {"email":"s_careme@yahoo.fr","password":"c324a15d3ee5363c2f52d5d5d5d4566d"}
+>>>>>>> commit trace
+)
+
+===========================================
+Array
+(
+<<<<<<< HEAD
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.walmart.com
+=======
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b597d0a4547
+>>>>>>> commit trace
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+<<<<<<< HEAD
+    [url_site] => www.walmart.com
+=======
+    [url_site] => www.rakuten.com
+>>>>>>> commit trace
+)
+
+===========================================
+Array
+(
+<<<<<<< HEAD
+    [action] => MAJ-categorie
+    [lng] => fr
+=======
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b597d0a4547
+>>>>>>> commit trace
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+<<<<<<< HEAD
+    [url_site] => www.walmart.com
+=======
+    [url_site] => www.ietf.org
+>>>>>>> commit trace
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+<<<<<<< HEAD
     [action] => MAJ-accessIn
     [url_site] => www.walmart.com
 )
@@ -273,6 +530,11 @@ Array
 (
     [action] => MAJ-accessIn
     [url_site] => www.walmart.com
+=======
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b597d0a4547
+>>>>>>> commit trace
 )
 
 ===========================================
@@ -286,180 +548,17 @@ Array
 Array
 (
     [action] => MAJ-accessIn
+<<<<<<< HEAD
     [url_site] => www.walmart.com
+=======
+    [url_site] => www.ietf.org
+>>>>>>> commit trace
 )
 
 ===========================================
 Array
 (
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.walmart.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.walmart.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.walmart.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.walmart.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.walmart.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.walmart.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.walmart.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.walmart.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.walmart.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.walmart.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.walmart.com
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-categorie
-    [lng] => fr
-)
-
-===========================================
-Array
-(
-    [action] => MAJ-accessIn
-    [url_site] => www.walmart.com
-)
-
-===========================================
-Array
-(
+<<<<<<< HEAD
     [action] => MAJ-categorie
     [lng] => fr
 )
@@ -951,3 +1050,11 @@ Array
 
 ===========================================
 >>>>>>> update css
+=======
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b597d0a4547
+)
+
+===========================================
+>>>>>>> commit trace
