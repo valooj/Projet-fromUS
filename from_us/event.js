@@ -21,6 +21,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 
 		chrome.tabs.executeScript(null,{file:'locales/en/enLng.js',allFrames:false,runAt:'document_end'});
 		chrome.tabs.executeScript(null,{file:'locales/fr/frLng.js',allFrames:false,runAt:'document_end'});
+		chrome.tabs.executeScript(null,{file:'locales/de/deLng.js',allFrames:false,runAt:'document_end'});
 		chrome.tabs.executeScript(null,{file:'langue.js',allFrames:false,runAt:'document_end'});
 		chrome.tabs.executeScript(null,{file:'dialog.js',allFrames:false,runAt:'document_end'});
 

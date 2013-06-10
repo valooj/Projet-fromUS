@@ -266,7 +266,7 @@ $(document).ready(function() {
 							    '<img id="lgde" src="" />'+
 	    					'</div>'+
 	    					'<FORM name="loginU" id="loginU">'+
-	    						'<hr id="hr1" style="margin-top: 15px;"/>'+
+	    						'<hr id="hr1" style="margin-top: 20px;"/>'+
 	     						'<input type="textbox" id="emailBox" placeholder="email"/><input type="password" id="passBox" placeholder="password"/>'+
 	     						'<INPUT TYPE="button" NAME="logB" VALUE="Login" id="connect">'+
 	     						'<hr id="hr2" style="margin-top: 65px;"/>'+
@@ -324,7 +324,7 @@ $(document).ready(function() {
 		//newDialog.removeClass( 'ui-corner-top' ).addClass( 'ui-toto-corner-left' );
 		newDialog.dialog({
 	    	modal: false,
-			title: '',
+			title: 'from-us',
 			//show: 'clip',
 			//hide: 'clip',
 			//autoOpen: false
@@ -333,8 +333,8 @@ $(document).ready(function() {
 					my: 'left top', 
 					at: 'left top'
 				},
-			height: 530,
-			width: 365,
+			height: 600,
+			width: 335,
 			resizable: true,
 			closeOnEscape: true,
 

@@ -18,8 +18,8 @@
 	$lng['invalid_categ'] = 'Error :: Category not specified';
 	$lng['invalid_action'] = ' Error :: No action specified';
 	$lng['invalid_bd'] = ' Error :: connection to the server could not';
-	$lng['choix_categ'] = ' Choose a category';
-	$lng['choix_scateg'] = ' Choose a sub-category';
+	$lng['choix_categ'] = ' wählen Sie eine Kategorie aus';
+	$lng['choix_scateg'] = ' wählen Sie eine Unter-Kategorie aus';
 
 
 ?>
