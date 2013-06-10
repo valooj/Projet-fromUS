@@ -11,6 +11,7 @@
 
 	$lng['product_insert'] = 'Votre produit est insere';
 	$lng['invalid_calcul'] = 'Erreur ::Calcul non specifie';
+	$lng['invalid_access'] = 'Erreur ::Access non specifie';
 	$lng['invalid_country'] = 'Erreur :: Pays invalide';
 	$lng['invalid_log'] ='Erreur :: log non specifie';
 	$lng['invalid_email'] = 'Erreur :: Email non valide';

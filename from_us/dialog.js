@@ -7,8 +7,8 @@ var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-
 var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&lng='+defLng+'&token=';
 var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&lng='+defLng+'&token=';
 var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login&lng='+defLng;
-var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-categorie&lng='+defLng;
-var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&lng='+defLng+'&sscateg=';
+var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-categorie&lng=';
+var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&lng=';
 var _urlPts = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-pts&lng='+defLng+'&token=';
 var _urlAccessIn = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-accessIn';
 var _urlAccessOut = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-accessOut&token=';
@@ -24,7 +24,8 @@ var regDesc;
 var regVisu;
 
 
-//Fonctions d'envoie de données au serveur
+//Fonction d'envoie de données au serveur
+//et de récupération selon le cas
 function sendToServer(urlSelected, jsonSelected) {
 	$.post(urlSelected, jsonSelected)
 	.done(function(datas) { 
@@ -62,6 +63,10 @@ function sendToServer(urlSelected, jsonSelected) {
 				document.getElementById('msgServer').value = datas['Message'];
 			break;
 
+			case 'o':
+				document.getElementById('msgServer').value = datas['Message'];
+			break;
+
 			case 'a':
 				//fromus_sitelist[localStorage["popup_store"]] = new fromus_siteObj();
 				//alert(datas['Message']['sa_chemin']);
@@ -74,13 +79,16 @@ function sendToServer(urlSelected, jsonSelected) {
 			break;
 
 			case 'C':
+
 				var totalPrice = datas['Prix'];
 				var livPrice = datas['Prix_liv'];
 				var taxPrice = datas['Prix_tax'];
+				qteVal = document.getElementById('QteSpinner').value;
+				categVal = document.getElementById('sscategory').value;
+
 				if(totalPrice !== 0){
 					if(confirm('L\'estimation du prix est de $'+totalPrice+' ')) {
-						// pour tester a changer
-						var jsonPanier = {priceTot: regtotal ,priceLiv: livPrice ,priceTax: taxPrice ,libelle: regName ,url: regOffer ,desc: regDesc, qte: qteVal ,montant: totalPrice ,categ: categVal};
+						var jsonPanier = {priceTot: totalPrice ,priceLiv: livPrice ,priceTax: taxPrice ,libelle: regName ,url: regOffer ,desc: regDesc, qte: qteVal ,montant: totalPrice ,categ: categVal};
 						var postDataPanier = JSON.stringify(jsonPanier);
 						var panierJSON = {panier:postDataPanier};
 						sendAjoutPanier(panierJSON);
@@ -95,13 +103,13 @@ function sendToServer(urlSelected, jsonSelected) {
 		}
 	})
 	.fail(function(datas) { 
-		//alert(datas['error']);
-		document.getElementById('msgServer').value = i18n('MsgBD');
+		alert(datas['error']);
+		//document.getElementById('msgServer').value = i18n('MsgBD');
 		})
 ;};
 
 
-
+//Foncton d'envoi de donnée au serveur pour panier
 function sendAjoutPanier(panierJ) {
 	$.post(_urlPanier+token, panierJ)
 	.done(function(datas) { 
@@ -117,6 +125,7 @@ function sendAjoutPanier(panierJ) {
 		})
 ;}
 
+//Permet de remplir les zone de selection et de sous selection
 function parseCat(categorieJSON, sc) {
     var $selectCat = $('select[id="'+sc+'category"]');
     $selectCat.empty();
@@ -131,10 +140,12 @@ function parseCat(categorieJSON, sc) {
 	}
 }
 
+//Fontion pour rechercher les chemin d'access dans la base de donnée
 function searchInfo (){
 	sendToServer(_urlAccessIn+'&url_site='+regStore, {});
 }
 
+//fonction pour récuper les chemin d'access d'un utilisateur
 function parseInfo (elem){
 	var content_pclass;
 				var content_pid;
@@ -209,17 +220,22 @@ function parseInfo (elem){
 				
 }
 
+//fonction pour cacher la div de login
+//et montrer la div de deconnection
 function hideLog(){
 	$('#loginU').hide();
 	$('#isconnect').show();
 };
 
+
+//fonction pour cacher la div de logout
+//et montrer la div de login
 function showLog(){
 	$('#loginU').show();
 	$('#isconnect').hide();
 };
 
-
+//fonction pour charger tt les text au lancement de l'ext
 function loadText(){
 	document.getElementById('tabAdd').innerHTML = i18n('tabAdd') ;
 	document.getElementById('tabBuy').innerHTML = i18n('tabBuy') ;
@@ -239,11 +255,12 @@ function loadText(){
 
 	document.getElementById('priceQ').value = '?';
 	document.getElementById('nameQ').value = '?';
-   
-   
+
+   	sendToServer(_urlCategorie+defLng,{});
 
 }
 
+//Fonction pour mettre a jour les zone de texte apres sélection du client
 function miseaJ(){
 	if(localStorage['regPrice']){
 		document.getElementById('fromus_price').value = localStorage['regPrice'] ;
@@ -359,7 +376,7 @@ $(document).ready(function() {
   				$('#tab2').hide();
 				$('#tab1').show();
   				
-  				sendToServer(_urlCategorie,{});
+  				//sendToServer(_urlCategorie,{});
 
   				chrome.storage.local.get('tokenFU',function(result){
 				 	token=result.tokenFU;
@@ -397,26 +414,14 @@ $(document).ready(function() {
 				});
 			}
 		}
-/*      //marchep lus je sais pas pk
-		$(".content").each(function(i){
-	        this.id = "#" + this.id;
-	    });
 
-		$(".content").not(":first").hide();
-
-		$("#menu a").click(function() {
-	        var idTab = $(this).attr("href");
-	        $(".content").hide();
-	        $("div[id='" + idTab + "']").fadeIn();
-	        return false;
-	    });   
-*/
-	//Pour remplacer si marche pas les tab
+	    //Pour montrer que l'onglet add
 		$('a[id=tabAdd]').click(function() {
 			$('#tab2').hide();
 			$('#tab1').show();
 	  	});
 
+		//Pour montrer que l'onglet buy
 		$('a[id=tabBuy]').click(function() {
 			$('#tab1').hide();
 			$('#tab2').show();
@@ -446,19 +451,24 @@ $(document).ready(function() {
 				if(!regPrice)
 					regPrice=localStorage['regPrice'];
 
-		/*		
-				if(localStorage["regGetName"] && localStorage["regGetPrice"] && regStore){
-					alert('ok');
-					var siteAccess = localStorage["regGetName"]+localStorage["regGetPrice"];
+				
+				if((localStorage["regGetName"] || localStorage["regGetPrice"] )&& regStore){
+					var siteAccess='';
+					if(localStorage["regGetName"])
+						siteAccess = siteAccess + localStorage["regGetName"];
+					if(localStorage["regGetPrice"])
+						siteAccess = siteAccess + localStorage["regGetPrice"];
+
 					var jsonAccess = {url: regStore, access: siteAccess};
 					var postDataAccess = JSON.stringify(jsonAccess);
-					var accessJSON = {calcul:postDataAccess};
+					var accessJSON = {access:postDataAccess};
 					sendToServer(_urlAccessOut+token, accessJSON);
 				}
 
-	*/
+				if(!categVal)
+					categVal=0;
 
-				if(categVal && regName && regOffer && regPrice){
+				if(regName && regOffer && regPrice){
 					var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
 					var postData = JSON.stringify(jsonProduct);
 					var productJSON = {product:postData};
@@ -471,15 +481,43 @@ $(document).ready(function() {
 	  		if(!token)
 	  			document.getElementById('msgServer').value = i18n('MsgConnect');
 	  		else{
-				var qteSpinner = document.getElementById('QteSpinner').value;
-				var categSelect = document.getElementById('sscategory').value;
+				var qteVal = document.getElementById('QteSpinner').value;
+				var categVal = document.getElementById('sscategory').value;
 
-				var jsonProduct = {prd_libelle: regName ,prd_site: regStore, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
-				var postData = JSON.stringify(jsonProduct);
-				var productJSON = {product:postData};
-				sendToServer(_urlProduct+token,productJSON);
+				
+				regOffer = localStorage['urlOffer'];
+				if(!regName)
+					regName=localStorage['regName'];
+				if(!regPrice)
+					regPrice=localStorage['regPrice'];
 
-				if(!categSelect)
+				
+				if((localStorage["regGetName"] || localStorage["regGetPrice"] )&& regStore){
+					var siteAccess='';
+					if(localStorage["regGetName"])
+						siteAccess = siteAccess + localStorage["regGetName"];
+					if(localStorage["regGetPrice"])
+						siteAccess = siteAccess + localStorage["regGetPrice"];
+
+					var jsonAccess = {url: regStore, access: siteAccess};
+					var postDataAccess = JSON.stringify(jsonAccess);
+					var accessJSON = {access:postDataAccess};
+					sendToServer(_urlAccessOut+token, accessJSON);
+				}
+
+				if(!categVal)
+					categVal=0;
+
+				if(regName && regOffer && regPrice){
+					var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
+					var postData = JSON.stringify(jsonProduct);
+					var productJSON = {product:postData};
+					sendToServer(_urlProduct+token , productJSON);
+				}
+
+				categVal = document.getElementById('sscategory').value;
+
+				if(!categVal)
 	  				document.getElementById('msgServer').value = i18n('Infocateg');
 	  			else{
 					var jsonCalcul = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
@@ -503,13 +541,14 @@ $(document).ready(function() {
 	  	$('select[id=category]').change(function() {
 		var categV = document.getElementById('category').value;
 		if (categV)
-			sendToServer(_urlSSCategorie+categV, {});
+			sendToServer(_urlSSCategorie+defLng+'&sscateg='+categV, {});
 		else{
 		   	var $selectCat = $('select[id=sscategory]');
 		   	$selectCat.empty();
 		}
 	  	});
 
+	  	//Pour le changement de langue
 		$('img[id=lgfr]').click(function() {
 			changeLng('fr');
 			loadText();

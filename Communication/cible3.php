@@ -9,14 +9,7 @@ $sql_prepared_update_product = <<<SQL
 INSERT INTO produits(prd_libelle, prd_site, prd_desc, prd_cat, prd_visu, prd_prix, prd_vis)
 	VALUES (:_libelle, :_site, :_desc, :_cat, :_visu, :_prix, :_vis)
 	ON DUPLICATE KEY UPDATE
-		prd_desc= :_desc, prd_visu= :_visu, prd_prix= :_prix, prd_vis= :_vis
-SQL;
-
-$sql_prepared_update_bonus = <<<SQL
-INSERT INTO pts_bonus(pts_cli, pts_nb)
-	VALUES (:_client, :_nb)
-	ON DUPLICATE KEY UPDATE
-		pts_nb= pts_nb + :_nb
+		prd_desc= :_desc, prd_visu= 2, prd_prix= :_prix, prd_vis= :_vis
 SQL;
 
 $sql_prepared_update_panier_det = <<<SQL
@@ -33,14 +26,25 @@ INSERT INTO token(tok_user, tok_token)
 		tok_token = :_token_user
 SQL;
 
+$sql_prepared_update_access = <<<SQL
+INSERT INTO site_access (sa_site,sa_chemin,sa_valid) VALUES (:_site, :_chemin, :_valid)
+	ON DUPLICATE KEY UPDATE
+		sa_chemin = CONCAT(sa_chemin , :_chemin), sa_valid = 2
+SQL;
+
+
 function getLng(){
 	$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 	return $lang;
 }
 
 function getPreferedLang(){
+	file_put_contents('./trace.txt', print_r($_GET['lng'], 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
 	$prefL = isset($_GET['lng']) ? htmlspecialchars($_GET['lng']) : getLng();
+	file_put_contents('./trace.txt', print_r($prefL, 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
+
 	$nouvLang = ($prefL == 'fr') ? 'fr' : 'en';
+
 	return $nouvLang;
 }
 
@@ -68,17 +72,16 @@ try
 
 			// variables
 			$get_token = isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
-			$get_product = isset($_REQUEST['product']) ? json_decode($_REQUEST['product'], TRUE) : null;
+			$get_product = isset($_POST['product']) ? json_decode($_POST['product'], TRUE) : null;
 
 			// variables tests
 			if (!$get_token || $get_token == 'undefined')
 				throw new Exception($lng['invalid_token']);
 
-
 			if ( !$get_product )
 				throw new Exception($lng['invalid_product']);
 
-			if( !isset($get_product['prd_prix'], $get_product['prd_libelle'], $get_product['prd_site'], $get_product['prd_cat'], $get_product['prd_desc'], $get_product['prd_cat']) )
+			if( !isset($get_product['prd_prix'], $get_product['prd_libelle'], $get_product['prd_site'], $get_product['prd_desc']) )
 				throw new Exception($lng['bad_param']);
 
 			$get_product['prd_prix'] = str_replace('$', null, $get_product['prd_prix']);
@@ -88,7 +91,7 @@ try
 
 			if ( !is_numeric($get_product['prd_cat']) )
 				throw new Exception($lng['invalid_categ']);
-/*
+
 			//Recupere l'id a partir du token
 			$req = $bdd->prepare('SELECT tok_user FROM token where tok_token= :_token');
 			$req->execute(array('_token' =>$get_token));
@@ -96,37 +99,36 @@ try
 			$tokId = $tokId[0];
 			$req->closeCursor();
 
+			//Si pas de id, on renvoie une erreur
 			if(!$tokId)
 				throw new Exception($lng['invalid_token']);
-*/
-					
-			// code MAJ du produit visité
+		
+			// Insertion ou mise a jour du produit dans la base
 			$req = $bdd->prepare($sql_prepared_update_product);
             $req->bindValue('_libelle' , $get_product['prd_libelle'],   PDO::PARAM_STR);
             $req->bindValue('_site' ,    $get_product['prd_site'], 		PDO::PARAM_STR);
             $req->bindValue('_desc' ,    $get_product['prd_desc'],  	PDO::PARAM_STR);
             $req->bindValue('_cat' ,     $get_product['prd_cat'], 		PDO::PARAM_INT);
-            $req->bindValue('_visu' ,    $get_product['prd_visu'],  		PDO::PARAM_STR);
+            $req->bindValue('_visu' ,    $get_product['prd_visu'],  	PDO::PARAM_STR);
             $req->bindValue('_prix' ,    $get_product['prd_prix'], 		PDO::PARAM_STR);
             $req->bindValue('_vis' ,     0,                        		PDO::PARAM_INT);
             $rep = $req->execute();
-            
-            if(!$rep)
-            	throw new Exception($lng['invalid_insert']);
-/*
-			$bonus = ($req->rowCount() == 1) ? 100 : ( ($req->rowCount() == 0) ? 0 : 50 );
-			$req->closeCursor(); 
-
-            // code MAJ ajout bonus
-			$req = $bdd->prepare($sql_prepared_update_bonus);
-            $req->bindValue('_client' ,  $tokId,     PDO::PARAM_INT);
-            $req->bindValue('_nb'     ,  $bonus,         PDO::PARAM_INT);
-            $rep = $req->execute();
+            $lastId = $bdd->lastInsertId();
             $req->closeCursor();
 
-            $response['Status'] = 'A';
-	        $response['Message'] = $lng['win'].$bonus.' pts';
-*/
+            if(!$rep)
+            	throw new Exception($lng['invalid_insert']);
+
+            //Insertion de l'id de user et l'id du produit dans la base
+            $req = $bdd->prepare('INSERT INTO `fromus`.`tampon_prod_user` (`tamp_id`, `tamp_user`, `tamp_prod`, `tamp_date`, `tamp_valid`) 
+            	VALUES (NULL, :_user, :_prod, :_date, :_valid)');
+            $req->bindValue('_user' , 	 		$tokId,						PDO::PARAM_INT);
+            $req->bindValue('_prod' ,     		$lastId, 				    PDO::PARAM_INT);
+            $req->bindValue('_date',    		mktime(),                   PDO::PARAM_INT);
+            $req->bindValue('_valid' ,     		0,                      	PDO::PARAM_INT);
+            $req->execute();
+			$req->closeCursor();
+
 	        $response['Status'] = 'A';
 	        $response['Message'] =  $lng['participation'];
 			break;
@@ -140,6 +142,7 @@ try
 			if ( !$get_token || $get_token == 'undefined')
 				throw new Exception($lng['invalid_token']);
 
+			//Récupere l'id de user a partir du token
 			$req = $bdd->prepare('SELECT tok_user FROM token where tok_token= :_token');
 			$req->execute(array('_token' =>$get_token));
 			$tokId = $req->fetch();
@@ -149,13 +152,13 @@ try
 			if(!$tokId)
 				throw new Exception($lng['invalid_token']);
 
+			//Recupere le nombre de pts a partir de l'id user
 			$req = $bdd->prepare('SELECT pts_nb FROM pts_bonus where pts_cli= :_cli');
 			$req->execute(array('_cli' =>$tokId));
 			$pts = $req->fetch();
 			$pts = $pts[0];
 			$req->closeCursor();
 
-			
 	        $response['Status'] = 'p';
 	        $response['Message'] = $pts;
 			break;
@@ -174,10 +177,10 @@ try
 			if ( !$get_panier )
 				throw new Exception($lng['invalid_panier']);
 
-			if( !isset($get_panier['priceTot'], $get_panier['priceLiv'], $get_panier['priceTax']) )
+			if( !($get_panier['priceTot'] || $get_panier['priceLiv'] || $get_panier['priceTax']) )
 				throw new Exception($lng['bad_param']);
 
-			if( !isset($get_panier['libelle'], $get_panier['qte'], $get_panier['montant'] , $get_panier['url'], $get_panier['desc'], $get_panier['categ']) )
+			if( !($get_panier['libelle'] || $get_panier['qte'] || $get_panier['montant'] || $get_panier['url'] || $get_panier['desc'] || $get_panier['categ']) )
 				throw new Exception($lng['bad_param']);
 
 			if( $get_panier['qte'] <= 0)
@@ -217,7 +220,6 @@ try
             $req->execute();
 			$id_ent = $bdd->lastInsertId();
 			$req->closeCursor();
-
 	
 			// code MAJ du produit visité
 			$req = $bdd->prepare('INSERT INTO commande_detail(cmdd_libelle, cmdd_url, cmdd_desc, cmdd_qte, cmdd_montant, cmdd_categ, cmdd_poids, cmdd_unitep, cmdd_larg, cmdd_long, cmdd_haut, cmdd_united, cmdd_proforma, cmdd_ent)
@@ -365,7 +367,6 @@ try
 			$response['Prix'] = $prix_total;
 			$response['Prix_liv'] = $frais_liv;
 			$response['Prix_tax'] = $tax;
-	
 
 			break;
 
@@ -503,10 +504,11 @@ try
 			if ( !$get_url )
 				throw new Exception($lng['invalid_url']);
 
-			$req = $bdd->prepare('SELECT sa_chemin FROM site_access where sa_site= :_url and sa_valid= :_valid');
+			//Recupere le chemin ds la bd
+			$req = $bdd->prepare('SELECT sa_chemin FROM site_access where sa_site= :_url and sa_valid > :_valid');
 			$req->execute(array(
 			    '_url' => $get_url,
-			    '_valid' => 1));
+			    '_valid' => 0));
 			$chemin = $req->fetch();
 			$req->closeCursor();
 
@@ -519,20 +521,28 @@ try
 
 		case 'MAJ-accessOut':
 			// variables
-			$get_access= isset($_REQUEST['access']) ? htmlspecialchars($_REQUEST['access']) : null;
+			$get_token= isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
+			$get_access = isset($_REQUEST['access']) ? json_decode($_REQUEST['access'], TRUE) : null;
+
+			// variables tests
+			if ( !$get_token || $get_token == 'undefined')
+				throw new Exception($lng['invalid_token']);
 
 			// variables tests
 			if ( !$get_access )
+				throw new Exception($lng['invalid_access']);
+
+			if ( !$get_access['url'] )
 				throw new Exception($lng['invalid_url']);
 
-			$req = $bdd->prepare('INSERT INTO site_access (sa_site,sa_chemin,sa_valid) VALUES (:_site, :_chemin, :_valid)');
-			$req->execute(array(
-			    '_site' => $get_url,
-			    '_chemin' => $get_url,
-			    '_valid' => 0));
-			$req->fetch();
+			//Ajoute a la bd, si url existe, mis a 2, sinon 0
+			$req = $bdd->prepare($sql_prepared_update_access);
+			$req->bindParam(':_site', $get_access['url'], PDO::PARAM_STR);
+			$req->bindValue(':_chemin', $get_access['access'], PDO::PARAM_STR);
+			$req->bindValue(':_valid', 0, PDO::PARAM_INT);
+			$req->execute();
 			$req->closeCursor();
-			
+	
 	        $response['Status'] = 'o';
 	        $response['Message'] = $lng['participation'];
 			break;

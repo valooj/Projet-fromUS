@@ -189,17 +189,18 @@ function getName()
 		var fus_nameresult = '';
 		if(fus_nameid)
 		{
-			fus_nameresult += 'name_id<-->'+fus_nameid+'/';
+			fus_nameresult += '%name_id<-->'+fus_nameid+'/';
 		}
 		if(fus_nameclass)
 		{
-			fus_nameresult += 'name_class<-->'+fus_nameclass+'/';
+			fus_nameresult += '%name_class<-->'+fus_nameclass+'/';
 		}	
 		
 		console.log("Et ce qui est affiché dans la case est...");
 		console.log(fromus_selectedText);
 		localStorage["regGetName"] = fus_nameresult;
 		localStorage["regName"] = fromus_selectedText;
+		console.log(fus_nameresult);
 		fus_actname = 0;	// On ne cherche plus le nom
 		target.style.backgroundColor = fus_colorname;			
 		this.removeEventListener('click',arguments.callee,false);

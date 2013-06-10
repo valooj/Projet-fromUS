@@ -204,17 +204,18 @@ function getPrice()
 		var fus_priceresult = '';
 		if(fus_priceid)
 		{
-			fus_priceresult += 'price_id<-->'+fus_priceid+'/';
+			fus_priceresult += '%price_id<-->'+fus_priceid+'/';
 		}
 		if(fus_priceclass)
 		{
-			fus_priceresult += 'price_class<-->'+fus_priceclass+'/';
+			fus_priceresult += '%price_class<-->'+fus_priceclass+'/';
 		}
 		
 		console.log("Et ce qui est affiché dans la case est...");
 		console.log(fromus_selectedText);
 		localStorage["regGetPrice"] = fus_priceresult;
 		localStorage["regPrice"] = fromus_selectedText;
+		console.log(fus_priceresult);
 		fus_actprice = 0;	// On ne cherche plus le prix
 		target.style.backgroundColor = fus_colorprice;	
 		this.removeEventListener('click',arguments.callee,false);
