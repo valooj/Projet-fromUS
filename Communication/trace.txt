@@ -1058,3 +1058,47 @@ Array
 
 ===========================================
 >>>>>>> commit trace
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b597d0a4547
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.bebe.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b597d0a4547
+)
+
+===========================================
