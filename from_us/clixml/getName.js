@@ -2,7 +2,7 @@ function getName()
 {
 	var fus_actname = 1; // V ariable indiquant que l'on est à la recherche du nom
 	var fus_colorname;	// variable contenant la couleur précédente
-	
+	var fus_bordername;	// variable contenant la bordure précédente	
 	var bindEvent = function(elem ,evt,cb) {
 		//vérifie si addEventListenerexiste dans l'élément
 		if ( elem.addEventListener ) {
@@ -18,7 +18,7 @@ function getName()
 	}
 	
 	var inversHTMLname	=	function(htmlcode){
-		console.log('start, htmlcode = ' + htmlcode);
+		
 		
 		if (htmlcode.substr(0, 1) === '#') 
 		{
@@ -39,13 +39,7 @@ function getName()
 			var red = parseInt(digits[2]);
 			var green = parseInt(digits[3]);
 			var blue = parseInt(digits[4]);
-			
-			console.log('ColorConvert,');
-			console.log('red = ' + red);
-			console.log('green = ' + green);
-			console.log('blue = ' + blue);
-			console.log('alpha = ' + alpha);
-			
+
 			red 		=	red		^	255;
 			green	=	green	^	255;
 			blue	=	blue	^	255;
@@ -54,14 +48,7 @@ function getName()
 			{
 				alpha	=	alpha	^	255;
 			}
-			
-			console.log('XOR' );
-			
-			console.log('red = ' + red);
-			console.log('green = ' + green);
-			console.log('blue = ' + blue);							
-			console.log('alpha = ' + alpha);
-			
+
 			red 	=	red.toString(10);
 			green	=	green.toString(10);
 			blue	=	blue.toString(10);
@@ -76,22 +63,22 @@ function getName()
 			{
 				htmlcode = htmlcode + ',' + alpha;
 			}
-			console.log('end après toString, htmlcode = ' + htmlcode);
+			
 			
 			htmlcode = digits[1]+htmlcode+'\)';
-			console.log('au return, htmlcode = ' + htmlcode);	
+			
 			return htmlcode;
 		}
 	}
-	
-	
+
 	var mouser = bindEvent(document,'mouseover', function(event) 
 	{ var target = event.target || event.srcElement;
 		if(fus_actname == 1)	// Si on cherceh le prix...
-		{
-			console.log('mouseover');
+		{	
 			fus_colorname = getComputedStyle(target).backgroundColor;
-			target.style.backgroundColor = inversHTMLname(getComputedStyle(target).backgroundColor);	
+			fus bordername = getComputedStyle(target).border;
+			target.style.backgroundColor = inversHTMLname(getComputedStyle(target).backgroundColor);
+			target.style.border = '5px dotted black';
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
 		else
@@ -104,8 +91,9 @@ function getName()
 	{ var target = event.target || event.srcElement;
 		if(fus_actname == 1)	// Si on cherceh le prix...
 		{
-			console.log('mouseout');
+			
 			target.style.backgroundColor = fus_colorname;
+			target.style.border = bordername;
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
 		else
@@ -113,36 +101,30 @@ function getName()
 			this.removeEventListener('mouseout',arguments.callee,false);			
 		}
 	});
-	
-	
-	
+
 	bindEvent(document,'click', function(event) 
 	{ var target = event.target || event.srcElement;
 		
 		var 	fromus_txt    = target.innerHTML;
 		var 	fromus_selectedText  = target.textContent;
 		var 	fromus_selectedTexttmp;
-		
 		var 	fromus_site 	=	document.location.href;		//récupération de l'adresse fromus_
 		fromus_site 	=	/http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_site)[1];
 		fromus_site	=	/\.[a-z0-9\-A-Z]{1,}\.com$/.exec(fromus_site)[0];
 		fromus_site	=	'www'+fromus_site;
 		
 		fromus_txt        = fromus_txt.replace(/\n/g,'');
-		console.log(target.textContent);
 		
 		if(/id=\"/.test(fromus_txt))
 		{
 			var fromus_idmatch    = fromus_txt.match(/id=(\"[^\"]{1,}\")/mgi);
-			console.log(fromus_idmatch);
+			
 		}
 		if(/class=\"/.test(fromus_txt))
 		{
 			var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  
-			console.log(fromus_classmatch);
+			
 		}
-		
-		console.log("Ce qui est ajouté à la base de données est...");
 		
 		if(fromus_idmatch !=undefined)
 		{
@@ -155,7 +137,6 @@ function getName()
 				
 				fromus_selectedTexttmp	= fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
 				var fus_nameid = fromus_selectedTexttmp;
-
 			}
 			else
 			{
@@ -163,9 +144,7 @@ function getName()
 				fromus_selectedTexttmp	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
 				var fus_nameid = fromus_selectedTexttmp;
 			}
-			
 			fromus_selectedText = fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);
-			
 		}
 		else
 		{
@@ -177,15 +156,12 @@ function getName()
 				fromus_selectedText = fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
 				
 				fromus_selectedText	=	document.getElementsByClassName(fromus_selectedText)[0].textContent;
-				console.log(fromus_selectedText);
 			}
 			else
 			{
 				//ni class ni id
-				console.log('Rien.')
 			}  
 		}
-		
 		var fus_nameresult = '';
 		if(fus_nameid)
 		{
@@ -196,11 +172,16 @@ function getName()
 			fus_nameresult += '%name_class<-->'+fus_nameclass+'/';
 		}	
 		
+<<<<<<< HEAD
 		console.log("Et ce qui est affiché dans la case est...");
 		console.log(fromus_selectedText);
 		localStorage["regGetName"] = fus_nameresult;
 		localStorage["regName"] = fromus_selectedText;
 		console.log(fus_nameresult);
+=======
+		localStorage['regGetName'] = fus_nameresult;
+		localStorage['regName'] = fromus_selectedText;
+>>>>>>> Nettoyage de code
 		fus_actname = 0;	// On ne cherche plus le nom
 		target.style.backgroundColor = fus_colorname;			
 		this.removeEventListener('click',arguments.callee,false);

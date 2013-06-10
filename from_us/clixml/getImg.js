@@ -18,7 +18,6 @@ function getImg()
 	}
 	
 	var inversHTMLimg	=	function(htmlcode){
-		console.log('start, htmlcode = ' + htmlcode);
 		
 		if (htmlcode.substr(0, 1) === '#') 
 		{
@@ -40,12 +39,6 @@ function getImg()
 			var green = parseInt(digits[3]);
 			var blue = parseInt(digits[4]);
 			
-			console.log('ColorConvert,');
-			console.log('red = ' + red);
-			console.log('green = ' + green);
-			console.log('blue = ' + blue);
-			console.log('alpha = ' + alpha);
-			
 			red 		=	red		^	255;
 			green	=	green	^	255;
 			blue	=	blue	^	255;
@@ -54,13 +47,6 @@ function getImg()
 			{
 				alpha	=	alpha	^	255;
 			}
-			
-			console.log('XOR' );
-			
-			console.log('red = ' + red);
-			console.log('green = ' + green);
-			console.log('blue = ' + blue);							
-			console.log('alpha = ' + alpha);
 			
 			red 	=	red.toString(10);
 			green	=	green.toString(10);
@@ -76,20 +62,18 @@ function getImg()
 			{
 				htmlcode = htmlcode + ',' + alpha;
 			}
-			console.log('end après toString, htmlcode = ' + htmlcode);
 			
 			htmlcode = digits[1]+htmlcode+'\)';
-			console.log('au return, htmlcode = ' + htmlcode);	
+			
 			return htmlcode;
 		}
 	}
-	
 	
 	var mouser = bindEvent(document,'mouseover', function(event) 
 	{ var target = event.target || event.srcElement;
 		if(fus_actimg == 1)	// Si on cherceh le prix...
 		{
-			console.log('mouseover');
+			
 			fus_colorimg = getComputedStyle(target).backgroundColor;
 			target.style.backgroundColor = inversHTMLimg(getComputedStyle(target).backgroundColor);	
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
@@ -104,7 +88,6 @@ function getImg()
 	{ var target = event.target || event.srcElement;
 		if(fus_actimg == 1)	// Si on cherceh le prix...
 		{
-			console.log('mouseout');
 			target.style.backgroundColor = fus_colorimg;
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
@@ -114,35 +97,29 @@ function getImg()
 		}
 	});
 	
-	
-	
 	bindEvent(document,'click', function(event) 
 	{ var target = event.target || event.srcElement;
 		
 		var 	fromus_txt    = target.innerHTML;
 		var 	fromus_selectedText  = target.textContent;
 		var 	fromus_selectedTexttmp;
-		
 		var 	fromus_site 	=	document.location.href;		//récupération de l'adresse fromus_
 		fromus_site 	=	/http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_site)[1];
 		fromus_site	=	/\.[a-z0-9\-A-Z]{1,}\.com$/.exec(fromus_site)[0];
 		fromus_site	=	'www'+fromus_site;
 		
 		fromus_txt        = fromus_txt.replace(/\n/g,'');
-		console.log(target.textContent);
 		
 		if(/id=\"/.test(fromus_txt))
 		{
 			var fromus_idmatch    = fromus_txt.match(/id=(\"[^\"]{1,}\")/mgi);
-			console.log(fromus_idmatch);
+			
 		}
 		if(/class=\"/.test(fromus_txt))
 		{
 			var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  
-			console.log(fromus_classmatch);
+			
 		}
-		
-		console.log("Ce qui est ajouté à la base de données est...");
 		
 		if(fromus_idmatch !=undefined)
 		{
@@ -155,7 +132,6 @@ function getImg()
 				
 				fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);			
 				var fus_imgclass =fromus_selectedTexttmp;
-				
 			}
 			else
 			{
@@ -163,7 +139,6 @@ function getImg()
 				
 				if
 				fromus_selectedTexttmp	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
-				
 				
 				var fus_imgid = fromus_selectedTexttmp;
 			}
@@ -194,13 +169,11 @@ function getImg()
 				else if(fromus_selectedText.src)
 				{
 					fromus_selectedText.src;
-				}
-				console.log(fromus_selectedText);
+				}	
 			}
 			else
 			{
 				//ni class ni id
-				console.log('Rien.')
 			}  
 		}
 		
@@ -214,10 +187,8 @@ function getImg()
 			fus_imgresult += 'img_class<-->'+fus_imgclass+'/';
 		}	
 		
-		console.log("Et ce qui est affiché dans la case est...");
-		console.log(fromus_selectedText);
-		localStorage["regGetImg"] = fus_imgresult;
-		localStorage["regImg"] = fromus_selectedText;
+		localStorage['regGetImg'] = fus_imgresult;
+		localStorage['regImg'] = fromus_selectedText;
 		fus_actimg = 0;	// On ne cherche plus l'image
 		target.style.backgroundColor = fus_colorimg;	
 		
