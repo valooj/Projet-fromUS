@@ -272,41 +272,41 @@ $(document).ready(function() {
 	     						'<hr id="hr2" style="margin-top: 65px;"/>'+
 	    					'</FORM>'+
 	    					'<div id="isconnect">'+
-	      						'<input type="textbox" id="nick_name" disabled="true" style="border:none"/></br>'+
-							    '<input type="textbox" id="ptsFU" disabled="true" style="border:none"/></br>'+
+	      						'<input type="textbox" id="nick_name" disabled="true" style="border:none"/><br />'+
+							    '<input type="textbox" id="ptsFU" disabled="true" style="border:none"/><br />'+
 							    '<INPUT TYPE="button" NAME="dislogB" id="disconnect">'+
 					    	'</div>'+
 					    '</div>'+
 							'<form id="fromusForm">' + 
 								'<div id="menu" class="element_menu">'+
 									'<ul id="onglets">'+
-									    '<li><a href="#tab1" id="tabAdd"></a></li>'+
-									    '<li><a href="#tab2" id="tabBuy"></a></li>'+
+									    '<li id="liAdd"><a href="#tab1" id="tabAdd"></a></li>'+
+									    '<li id="liBuy"><a href="#tab2" id="tabBuy"></a></li>'+
 									'</ul>'+
-								'</div></br>'+
+								'</div><br />'+
 								'<div id="corpAdd">'+
 									'<input type="textbox" id="msgServer" disabled="true" style="border:none"/>'+
 									'<div id="fromus_tabs">'+
 									    '<h2 id="FormP"></h2>'+
 									    '<form id="fromusForm">'+
-									    '<label for="store" id="store"></label></br>'+
-										'<input type="textbox" id="fromus_store" disabled="true"/></br>'+
-										'<label for="name" id="nameP"></label></br>'+
-										'<input type="textbox" id="fromus_name" disabled="true"/><input type="button" id="nameQ"></br>'+
-										'<label for="price" id="priceP" ></label></br>'+
-										'<input type="textbox" id="fromus_price" /><input type="button" id="priceQ"> </br>'+
-										'<label for="category" id="categP"></label></br>'+
+									    '<label for="store" id="store"></label><br />'+
+										'<input type="textbox" id="fromus_store" disabled="true"/><br />'+
+										'<label for="name" id="nameP"></label><br />'+
+										'<input type="textbox" id="fromus_name" disabled="true"/><input type="button" id="nameQ"><br />'+
+										'<label for="price" id="priceP" ></label><br />'+
+										'<input type="textbox" id="fromus_price" /><input type="button" id="priceQ"> <br />'+
+										'<label for="category" id="categP"></label><br />'+
 										'<select id="category">'+
-										'</select></br>'+
-										'<label for="sscategory" id="scategP"></label></br>'+
+										'</select><br />'+
+										'<label for="sscategory" id="scategP"></label><br />'+
 										'<select id="sscategory">'+
-										'</select></br>'+
+										'</select><br />'+
 									'<div class="content" id="tab1">'+
 									    '<input type="button" id="addP">'+
 									'</div>'+
 									'<div class="content" id="tab2">'+
-									    '<label id="fu_quantite" for="quantite"></label><input id="QteSpinner" value="1"></br>'+
-									    '<label id="fu_assurance" for="assurance"></label><input type="checkbox" id="checkassur" name="assurance" /></br>'+
+									    '<label id="fu_quantite" for="quantite"></label><input id="QteSpinner" value="1"><br />'+
+									    '<label id="fu_assurance" for="assurance"></label><input type="checkbox" id="checkassur" name="assurance" /><br />'+
 									    '<input type="button" id="buyP"> '+
 									'</div>'+
 							'</form>'+
@@ -320,8 +320,8 @@ $(document).ready(function() {
 	
 	if (isOpen != true) {	
 
-		newDialog.tabs().addClass( 'ui-toto-tabs-horizontal ui-toto-helper-clearfix' );
-		newDialog.removeClass( 'ui-corner-top' ).addClass( 'ui-toto-corner-left' );
+		//newDialog.tabs().addClass( 'ui-toto-tabs-horizontal ui-toto-helper-clearfix' );
+		//newDialog.removeClass( 'ui-corner-top' ).addClass( 'ui-toto-corner-left' );
 		newDialog.dialog({
 	    	modal: false,
 			title: '',
@@ -334,7 +334,7 @@ $(document).ready(function() {
 					at: 'left top'
 				},
 			height: 530,
-			width: 355,
+			width: 365,
 			resizable: true,
 			closeOnEscape: true,
 

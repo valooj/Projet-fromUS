@@ -1048,7 +1048,7 @@ $.widget("ui.draggable", $.ui.mouse, {
 		var o = this.options;
 
 		// among others, prevent a drag on a resizable-handle
-		if (this.helper || o.disabled || $(event.target).closest(".ui-toto-resizable-handle").length > 0) {
+		if (this.helper || o.disabled || $(event.target).closest(".ui-resizable-handle").length > 0) {
 			return false;
 		}
 
@@ -2304,14 +2304,14 @@ $.widget("ui.resizable", $.ui.mouse, {
 		var n, i, handle, axis, hname,
 			that = this,
 			o = this.options;
-		this.element.addClass("ui-toto-resizable");
+		this.element.addClass("ui-resizable");
 
 		$.extend(this, {
 			_aspectRatio: !!(o.aspectRatio),
 			aspectRatio: o.aspectRatio,
 			originalElement: this.element,
 			_proportionallyResizeElements: [],
-			_helper: o.helper || o.ghost || o.animate ? o.helper || "ui-toto-resizable-helper" : null
+			_helper: o.helper || o.ghost || o.animate ? o.helper || "ui-resizable-helper" : null
 		});
 
 		//Wrap the element if it cannot hold child nodes
@@ -2330,7 +2330,7 @@ $.widget("ui.resizable", $.ui.mouse, {
 
 			//Overwrite the original this.element
 			this.element = this.element.parent().data(
-				"ui-toto-resizable", this.element.data("ui-toto-resizable")
+				"ui-resizable", this.element.data("ui-resizable")
 			);
 
 			this.elementIsWrapper = true;
@@ -2354,7 +2354,7 @@ $.widget("ui.resizable", $.ui.mouse, {
 
 		}
 
-		this.handles = o.handles || (!$(".ui-toto-resizable-handle", this.element).length ? "e,s,se" : { n: ".ui-toto-resizable-n", e: ".ui-toto-resizable-e", s: ".ui-toto-resizable-s", w: ".ui-toto-resizable-w", se: ".ui-toto-resizable-se", sw: ".ui-toto-resizable-sw", ne: ".ui-toto-resizable-ne", nw: ".ui-toto-resizable-nw" });
+		this.handles = o.handles || (!$(".ui-resizable-handle", this.element).length ? "e,s,se" : { n: ".ui-resizable-n", e: ".ui-resizable-e", s: ".ui-resizable-s", w: ".ui-resizable-w", se: ".ui-resizable-se", sw: ".ui-resizable-sw", ne: ".ui-resizable-ne", nw: ".ui-resizable-nw" });
 		if(this.handles.constructor === String) {
 
 			if ( this.handles === "all") {
@@ -2367,8 +2367,8 @@ $.widget("ui.resizable", $.ui.mouse, {
 			for(i = 0; i < n.length; i++) {
 
 				handle = $.trim(n[i]);
-				hname = "ui-toto-resizable-"+handle;
-				axis = $("<div class='ui-toto-resizable-handle " + hname + "'></div>");
+				hname = "ui-resizable-"+handle;
+				axis = $("<div class='ui-resizable-handle " + hname + "'></div>");
 
 				// Apply zIndex to all handles - see #7960
 				axis.css({ zIndex: o.zIndex });
@@ -2379,7 +2379,7 @@ $.widget("ui.resizable", $.ui.mouse, {
 				}
 
 				//Insert into internal handles object and append to element
-				this.handles[handle] = ".ui-toto-resizable-"+handle;
+				this.handles[handle] = ".ui-resizable-"+handle;
 				this.element.append(axis);
 			}
 
@@ -2427,14 +2427,14 @@ $.widget("ui.resizable", $.ui.mouse, {
 		//TODO: make renderAxis a prototype function
 		this._renderAxis(this.element);
 
-		this._handles = $(".ui-toto-resizable-handle", this.element)
+		this._handles = $(".ui-resizable-handle", this.element)
 			.disableSelection();
 
 		//Matching axis name
 		this._handles.mouseover(function() {
 			if (!that.resizing) {
 				if (this.className) {
-					axis = this.className.match(/ui-toto-resizable-(se|sw|ne|nw|n|e|s|w)/i);
+					axis = this.className.match(/ui-resizable-(se|sw|ne|nw|n|e|s|w)/i);
 				}
 				//Axis, default = se
 				that.axis = axis && axis[1] ? axis[1] : "se";
@@ -2445,12 +2445,12 @@ $.widget("ui.resizable", $.ui.mouse, {
 		if (o.autoHide) {
 			this._handles.hide();
 			$(this.element)
-				.addClass("ui-toto-resizable-autohide")
+				.addClass("ui-resizable-autohide")
 				.mouseenter(function() {
 					if (o.disabled) {
 						return;
 					}
-					$(this).removeClass("ui-toto-resizable-autohide");
+					$(this).removeClass("ui-resizable-autohide");
 					that._handles.show();
 				})
 				.mouseleave(function(){
@@ -2458,7 +2458,7 @@ $.widget("ui.resizable", $.ui.mouse, {
 						return;
 					}
 					if (!that.resizing) {
-						$(this).addClass("ui-toto-resizable-autohide");
+						$(this).addClass("ui-resizable-autohide");
 						that._handles.hide();
 					}
 				});
@@ -2475,8 +2475,8 @@ $.widget("ui.resizable", $.ui.mouse, {
 
 		var wrapper,
 			_destroy = function(exp) {
-				$(exp).removeClass("ui-toto-resizable ui-toto-resizable-disabled ui-toto-resizable-resizing")
-					.removeData("resizable").removeData("ui-toto-resizable").unbind(".resizable").find(".ui-toto-resizable-handle").remove();
+				$(exp).removeClass("ui-resizable ui-resizable-disabled ui-resizable-resizing")
+					.removeData("resizable").removeData("ui-resizable").unbind(".resizable").find(".ui-resizable-handle").remove();
 			};
 
 		//TODO: Unwrap at same DOM position
@@ -2551,10 +2551,10 @@ $.widget("ui.resizable", $.ui.mouse, {
 		//Aspect Ratio
 		this.aspectRatio = (typeof o.aspectRatio === "number") ? o.aspectRatio : ((this.originalSize.width / this.originalSize.height) || 1);
 
-		cursor = $(".ui-toto-resizable-" + this.axis).css("cursor");
+		cursor = $(".ui-resizable-" + this.axis).css("cursor");
 		$("body").css("cursor", cursor === "auto" ? this.axis + "-resize" : cursor);
 
-		el.addClass("ui-toto-resizable-resizing");
+		el.addClass("ui-resizable-resizing");
 		this._propagate("start", event);
 		return true;
 	},
@@ -2651,7 +2651,7 @@ $.widget("ui.resizable", $.ui.mouse, {
 
 		$("body").css("cursor", "auto");
 
-		this.element.removeClass("ui-toto-resizable-resizing");
+		this.element.removeClass("ui-resizable-resizing");
 
 		this._propagate("stop", event);
 
@@ -2900,7 +2900,7 @@ $.widget("ui.resizable", $.ui.mouse, {
 $.ui.plugin.add("resizable", "animate", {
 
 	stop: function( event ) {
-		var that = $(this).data("ui-toto-resizable"),
+		var that = $(this).data("ui-resizable"),
 			o = that.options,
 			pr = that._proportionallyResizeElements,
 			ista = pr.length && (/textarea/i).test(pr[0].nodeName),
@@ -2942,7 +2942,7 @@ $.ui.plugin.add("resizable", "containment", {
 
 	start: function() {
 		var element, p, co, ch, cw, width, height,
-			that = $(this).data("ui-toto-resizable"),
+			that = $(this).data("ui-resizable"),
 			o = that.options,
 			el = that.element,
 			oc = o.containment,
@@ -2988,7 +2988,7 @@ $.ui.plugin.add("resizable", "containment", {
 
 	resize: function( event ) {
 		var woset, hoset, isParent, isOffsetRelative,
-			that = $(this).data("ui-toto-resizable"),
+			that = $(this).data("ui-resizable"),
 			o = that.options,
 			co = that.containerOffset, cp = that.position,
 			pRatio = that._aspectRatio || event.shiftKey,
@@ -3043,7 +3043,7 @@ $.ui.plugin.add("resizable", "containment", {
 	},
 
 	stop: function(){
-		var that = $(this).data("ui-toto-resizable"),
+		var that = $(this).data("ui-resizable"),
 			o = that.options,
 			co = that.containerOffset,
 			cop = that.containerPosition,
@@ -3067,12 +3067,12 @@ $.ui.plugin.add("resizable", "containment", {
 $.ui.plugin.add("resizable", "alsoResize", {
 
 	start: function () {
-		var that = $(this).data("ui-toto-resizable"),
+		var that = $(this).data("ui-resizable"),
 			o = that.options,
 			_store = function (exp) {
 				$(exp).each(function() {
 					var el = $(this);
-					el.data("ui-toto-resizable-alsoresize", {
+					el.data("ui-resizable-alsoresize", {
 						width: parseInt(el.width(), 10), height: parseInt(el.height(), 10),
 						left: parseInt(el.css("left"), 10), top: parseInt(el.css("top"), 10)
 					});
@@ -3088,7 +3088,7 @@ $.ui.plugin.add("resizable", "alsoResize", {
 	},
 
 	resize: function (event, ui) {
-		var that = $(this).data("ui-toto-resizable"),
+		var that = $(this).data("ui-resizable"),
 			o = that.options,
 			os = that.originalSize,
 			op = that.originalPosition,
@@ -3099,7 +3099,7 @@ $.ui.plugin.add("resizable", "alsoResize", {
 
 			_alsoResize = function (exp, c) {
 				$(exp).each(function() {
-					var el = $(this), start = $(this).data("ui-toto-resizable-alsoresize"), style = {},
+					var el = $(this), start = $(this).data("ui-resizable-alsoresize"), style = {},
 						css = c && c.length ? c : el.parents(ui.originalElement[0]).length ? ["width", "height"] : ["width", "height", "top", "left"];
 
 					$.each(css, function (i, prop) {
@@ -3129,12 +3129,12 @@ $.ui.plugin.add("resizable", "ghost", {
 
 	start: function() {
 
-		var that = $(this).data("ui-toto-resizable"), o = that.options, cs = that.size;
+		var that = $(this).data("ui-resizable"), o = that.options, cs = that.size;
 
 		that.ghost = that.originalElement.clone();
 		that.ghost
 			.css({ opacity: 0.25, display: "block", position: "relative", height: cs.height, width: cs.width, margin: 0, left: 0, top: 0 })
-			.addClass("ui-toto-resizable-ghost")
+			.addClass("ui-resizable-ghost")
 			.addClass(typeof o.ghost === "string" ? o.ghost : "");
 
 		that.ghost.appendTo(that.helper);
@@ -3142,14 +3142,14 @@ $.ui.plugin.add("resizable", "ghost", {
 	},
 
 	resize: function(){
-		var that = $(this).data("ui-toto-resizable");
+		var that = $(this).data("ui-resizable");
 		if (that.ghost) {
 			that.ghost.css({ position: "relative", height: that.size.height, width: that.size.width });
 		}
 	},
 
 	stop: function() {
-		var that = $(this).data("ui-toto-resizable");
+		var that = $(this).data("ui-resizable");
 		if (that.ghost && that.helper) {
 			that.helper.get(0).removeChild(that.ghost.get(0));
 		}
@@ -3160,7 +3160,7 @@ $.ui.plugin.add("resizable", "ghost", {
 $.ui.plugin.add("resizable", "grid", {
 
 	resize: function() {
-		var that = $(this).data("ui-toto-resizable"),
+		var that = $(this).data("ui-resizable"),
 			o = that.options,
 			cs = that.size,
 			os = that.originalSize,
@@ -9650,7 +9650,7 @@ $.widget( "ui.dialog", {
 		autoOpen: true,
 		buttons: [],
 		closeOnEscape: true,
-		closeText: "close",
+		closeText: "x",
 		dialogClass: "",
 		draggable: true,
 		hide: null,
@@ -10072,7 +10072,7 @@ $.widget( "ui.dialog", {
 		var that = this,
 			options = this.options,
 			handles = options.resizable,
-			// .ui-toto-resizable has position: relative defined in the stylesheet
+			// .ui-resizable has position: relative defined in the stylesheet
 			// but dialogs have to use absolute or fixed positioning
 			position = this.uiDialog.css("position"),
 			resizeHandles = typeof handles === "string" ?
@@ -10156,7 +10156,7 @@ $.widget( "ui.dialog", {
 			this._size();
 			this._position();
 		}
-		if ( this.uiDialog.is(":data(ui-toto-resizable)") ) {
+		if ( this.uiDialog.is(":data(ui-resizable)") ) {
 			this.uiDialog.resizable( "option", resizableOptions );
 		}
 	},
@@ -10210,7 +10210,7 @@ $.widget( "ui.dialog", {
 
 		if ( key === "resizable" ) {
 			// currently resizable, becoming non-resizable
-			isResizable = uiDialog.is(":data(ui-toto-resizable)");
+			isResizable = uiDialog.is(":data(ui-resizable)");
 			if ( isResizable && !value ) {
 				uiDialog.resizable("destroy");
 			}
@@ -10271,7 +10271,7 @@ $.widget( "ui.dialog", {
 			this.element.height( Math.max( 0, options.height - nonContentHeight ) );
 		}
 
-		if (this.uiDialog.is(":data(ui-toto-resizable)") ) {
+		if (this.uiDialog.is(":data(ui-resizable)") ) {
 			this.uiDialog.resizable( "option", "minHeight", this._minHeight() );
 		}
 	},
