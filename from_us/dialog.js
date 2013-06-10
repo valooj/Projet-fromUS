@@ -529,8 +529,8 @@ $(document).ready(function() {
 		priceq.addEventListener('click', function(e){
 			console.log('debut listener priceq');
 			document.getElementById('fromus_price').value="";
-			var settime = setTimeout('getPrice()', 1000);
-			var setinter = setInterval('miseaJ()', 600); 
+			var settime = setTimeout(function() {getPrice()}, 1000);
+			var setinter = setInterval(function() {miseaJ()}, 600); 
 			if(document.getElementById('fromus_price').value)
 				clearInterval(setinter);
 		}, false); 
@@ -539,8 +539,8 @@ $(document).ready(function() {
 		nameq.addEventListener('click', function(e){
 			console.log('debut listener nameq');
 			document.getElementById('fromus_name').value="";
-			var settime = setTimeout('getName()', 1000);
-			var setinter = setInterval('miseaJ()', 600); 
+			var settime = setTimeout(function() {getName()}, 1000);
+			var setinter = setInterval(function() {miseaJ()}, 600); 
 			if(document.getElementById('fromus_name').value)
 				clearInterval(setinter);
 		}, false);  
