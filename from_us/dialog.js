@@ -30,8 +30,8 @@ function reloadUrl(){
 	 _urlPanier = UrlBase + 'action=MAJ-panier&lng='+defLng+'&token=';
 	 _urlLogout = UrlBase + 'action=MAJ-logout&lng='+defLng+'&token=';
 	 _urlLogin = UrlBase + 'action=MAJ-login&lng='+defLng;
-	 _urlCategorie = UrlBase + 'action=MAJ-categorie&lng='+defLng;
-	 _urlSSCategorie = UrlBase + 'action=MAJ-sscategorie&lng='+defLng+'&sscateg=';
+	 _urlCategorie = UrlBase + 'action=MAJ-categorie&lng=';
+	 _urlSSCategorie = UrlBase + 'action=MAJ-sscategorie&lng=';
 	 _urlPts = UrlBase + 'action=MAJ-pts&lng='+defLng+'&token=';
 	 _urlAccessIn = UrlBase + 'action=MAJ-accessIn';
 	 _urlAccessOut = UrlBase + 'action=MAJ-accessOut&token=';
@@ -229,6 +229,8 @@ function parseInfo (elem){
 				regName = localStorage['regName'];
 				$('#fromus_name').attr('value',regName);
 				regDesc = localStorage['regDesc'];
+				$('#fromus_desc').attr('value',regDesc);
+				document.getElementById('fromus_desc').value = regDesc ;
 				regVisu = localStorage['regImg'];
 				
 }
@@ -268,8 +270,11 @@ function loadText(){
 
 	document.getElementById('priceQ').value = '?';
 	document.getElementById('nameQ').value = '?';
+	document.getElementById('descQ').value = '?';
 
-   	sendToServer(_urlCategorie,{});
+	document.getElementById('descP').innerHTML = i18n('Description') ;
+
+   	sendToServer(_urlCategorie+defLng,{});
 
 }
 
@@ -280,6 +285,9 @@ function miseaJ(){
 	}
 	if(localStorage['regName']){
 				document.getElementById('fromus_name').value = localStorage['regName'] ;
+	}
+	if(localStorage['regDesc']){
+				document.getElementById('fromus_desc').value = localStorage['regDesc'] ;
 	}
 }
 
@@ -324,7 +332,9 @@ $(document).ready(function() {
 										'<label for="name" id="nameP"></label><br />'+
 										'<input type="textbox" id="fromus_name" disabled="true"/><input type="button" id="nameQ"><br />'+
 										'<label for="price" id="priceP" ></label><br />'+
-										'<input type="textbox" id="fromus_price" /><input type="button" id="priceQ"> <br />'+
+										'<input type="textbox" id="fromus_price" disabled="true"/><input type="button" id="priceQ"> <br />'+
+										'<label for="description" id="descP" ></label><br />'+
+										'<textarea id="fromus_desc" disabled="true" rows="2" cols="32"></textarea><input type="button" id="descQ"> <br />'+
 										'<label for="category" id="categP"></label><br />'+
 										'<select id="category">'+
 										'</select><br />'+
@@ -558,7 +568,7 @@ $(document).ready(function() {
 	  	$('select[id=category]').change(function() {
 		var categV = document.getElementById('category').value;
 		if (categV)
-			sendToServer(_urlSSCategorie+categV, {});
+			sendToServer(_urlSSCategorie+defLng+'&sscateg='+categV, {});
 		else{
 		   	var $selectCat = $('select[id=sscategory]');
 		   	$selectCat.empty();
@@ -602,7 +612,17 @@ $(document).ready(function() {
 			var setinter = setInterval(function() {miseaJ()}, 600); 
 			if(document.getElementById('fromus_name').value)
 				clearInterval(setinter);
-		}, false);  
+		}, false);
+
+		var descq = document.getElementById('descQ');
+		descq.addEventListener('click', function(e){
+			console.log('debut listener descq');
+			document.getElementById('fromus_desc').value="";
+			var settime = setTimeout(function() {getDesc()}, 1000);
+			var setinter = setInterval(function() {miseaJ()}, 600); 
+			if(document.getElementById('fromus_desc').value)
+				clearInterval(setinter);
+		}, false);    
 	
 		// ouverture de la dialog box
 		newDialog.dialog('open');

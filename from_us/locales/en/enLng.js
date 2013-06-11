@@ -22,3 +22,7 @@ _lng['en']['MsgWelcome'] = 'Welcome ';
 _lng['en']['MsgConnect'] = 'You must login';
 _lng['en']['MsgBD'] = 'Error :: connection to the server could not';
 _lng['en']['ButtonReset'] = 'Reset';
+
+_lng['en']['Infocateg'] = 'Please choose a category';
+
+_lng['en']['Description'] = 'Description';

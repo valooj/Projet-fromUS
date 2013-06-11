@@ -23,3 +23,5 @@ _lng['fr']['MsgConnect'] = 'Vous devez vous connecter';
 _lng['fr']['MsgBD'] = 'Erreur :: Connection au serveur impossible';
 _lng['fr']['ButtonReset'] = 'Annuler';
 _lng['fr']['Infocateg'] = 'Vous devez choisir une categorie';
+
+_lng['fr']['Description'] = 'Description';
