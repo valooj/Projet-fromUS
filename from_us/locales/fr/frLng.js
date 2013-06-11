@@ -25,3 +25,4 @@ _lng['fr']['ButtonReset'] = 'Annuler';
 _lng['fr']['Infocateg'] = 'Vous devez choisir une categorie';
 
 _lng['fr']['Description'] = 'Description';
+_lng['fr']['Image'] = 'Picture';

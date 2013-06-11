@@ -26,3 +26,4 @@ _lng['en']['ButtonReset'] = 'Reset';
 _lng['en']['Infocateg'] = 'Please choose a category';
 
 _lng['en']['Description'] = 'Description';
+_lng['en']['Image'] = 'Picture';

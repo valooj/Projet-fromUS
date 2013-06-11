@@ -232,6 +232,7 @@ function parseInfo (elem){
 				$('#fromus_desc').attr('value',regDesc);
 				document.getElementById('fromus_desc').value = regDesc ;
 				regVisu = localStorage['regImg'];
+				$('#fromus_image').attr('value',regVisu);
 				
 }
 
@@ -271,8 +272,10 @@ function loadText(){
 	document.getElementById('priceQ').value = '?';
 	document.getElementById('nameQ').value = '?';
 	document.getElementById('descQ').value = '?';
+	document.getElementById('imgQ').value = '?';
 
 	document.getElementById('descP').innerHTML = i18n('Description') ;
+	document.getElementById('imgP').innerHTML = i18n('Image') ;
 
    	sendToServer(_urlCategorie+defLng,{});
 
@@ -288,6 +291,9 @@ function miseaJ(){
 	}
 	if(localStorage['regDesc']){
 				document.getElementById('fromus_desc').value = localStorage['regDesc'] ;
+	}
+	if(localStorage['regImg']){
+				document.getElementById('fromus_image').value = localStorage['regImg'] ;
 	}
 }
 
@@ -335,6 +341,8 @@ $(document).ready(function() {
 										'<input type="textbox" id="fromus_price" disabled="true"/><input type="button" id="priceQ"> <br />'+
 										'<label for="description" id="descP" ></label><br />'+
 										'<textarea id="fromus_desc" disabled="true" rows="2" cols="32"></textarea><input type="button" id="descQ"> <br />'+
+										'<label for="image" id="imgP" ></label><br />'+
+										'<input type="textbox" id="fromus_image" disabled="true"/><input type="button" id="imgQ"> <br />'+
 										'<label for="category" id="categP"></label><br />'+
 										'<select id="category">'+
 										'</select><br />'+
@@ -622,7 +630,17 @@ $(document).ready(function() {
 			var setinter = setInterval(function() {miseaJ()}, 600); 
 			if(document.getElementById('fromus_desc').value)
 				clearInterval(setinter);
-		}, false);    
+		}, false);  
+
+		var imgq = document.getElementById('imgQ');
+		imgq.addEventListener('click', function(e){
+			console.log('debut listener imgq');
+			document.getElementById('fromus_image').value="";
+			var settime = setTimeout(function() {getImg()}, 1000);
+			var setinter = setInterval(function() {miseaJ()}, 600); 
+			if(document.getElementById('fromus_image').value)
+				clearInterval(setinter);
+		}, false);      
 	
 		// ouverture de la dialog box
 		newDialog.dialog('open');

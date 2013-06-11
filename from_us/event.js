@@ -18,6 +18,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 		chrome.tabs.executeScript(null,{file:'/clixml/getPrice.js',allFrames:false,runAt:'document_end'});
 		chrome.tabs.executeScript(null,{file:'/clixml/getName.js',allFrames:false,runAt:'document_end'});
 		chrome.tabs.executeScript(null,{file:'/clixml/getDesc.js',allFrames:false,runAt:'document_end'});
+		chrome.tabs.executeScript(null,{file:'/clixml/getImg.js',allFrames:false,runAt:'document_end'});
 		//chrome.tabs.executeScript(null,{file:'fromus_favelet_comments.js',allFrames:false,runAt:'document_end'});
 
 		chrome.tabs.executeScript(null,{file:'locales/en/enLng.js',allFrames:false,runAt:'document_end'});
