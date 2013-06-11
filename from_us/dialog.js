@@ -201,6 +201,7 @@ function parseInfo (elem){
 				  		content_iid= sous_elem[1]+';'+content_iid;
 				  	} 
 				} 
+
 				//Test pour le prix
 				fromus_recupPrice('id',content_pid);
 				if(localStorage['regPrice'] == fromus_error) 
@@ -226,7 +227,8 @@ function parseInfo (elem){
 				regName = localStorage['regName'];
 				$('#fromus_name').attr('value',regName);
 				regDesc = localStorage['regDesc'];
-				$('#fromus_desc').attr('value',regDesc);
+				//$('#fromus_desc').attr('value',regDesc);
+				document.getElementById('fromus_desc').value = regDesc ;
 				regVisu = localStorage['regImg'];
 				$('#fromus_image').attr('value',regVisu);
 				
