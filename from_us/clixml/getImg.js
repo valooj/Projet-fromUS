@@ -145,7 +145,7 @@ function getImg()
 			{
 				//id sans class
 				
-				if
+
 				fromus_selectedTexttmp	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
 				
 				var fus_imgid = fromus_selectedTexttmp;
