@@ -301,10 +301,12 @@ function miseaJ(){
 	}
 }
 
-//Montre une image en grand dans une popup
-
-
-
+$(document).on('change, keyup, mouseover', 'input', function() {
+	if(regVisu != 'undefined'){
+	    $('#img-view').css('background-image', 'url('+regVisu+')');
+	    $('#img-view').width( $(this).width()+2 );
+	}
+});
 
 $(document).ready(function() {
 	
@@ -348,7 +350,11 @@ $(document).ready(function() {
 										'<label for="description" id="descP" ></label><br />'+
 										'<textarea id="fromus_desc" disabled="true" rows="2" cols="32"></textarea><input type="button" title="" id="descQ"> <br />'+
 										'<label for="image" id="imgP" ></label><br />'+
-										'<input type="textbox" id="fromus_image" /><input type="button" title="" id="imgQ"> <br />'+
+										'<div id="image">'+
+											'<input type="textbox" id="fromus_image" disabled="true"/>'+
+									     	'<span id="img-view"></span>'+
+									    '</div>'+
+									    '<input type="button" title="" id="imgQ"> <br />'+
 										'<label for="category" id="categP"></label><br />'+
 										'<select id="category">'+
 										'</select><br />'+
@@ -605,13 +611,16 @@ $(document).ready(function() {
 			loadText();
 			reloadUrl();
 		});
-
-
-		//Pour le survol des elements
+/*
+		//Pour le survol de l'image
 		$('#fromus_image').mouseover(function() {
-			console.log('img');
-			//this.src="http://img.rakuten.com/PIC/38922351/0/1/300/38922351.jpg"
+			console.log(regVisu);
+			if(regVisu && regVisu !='undefined'){
+				$('#img-view').css('background-image', 'url('+regVisu+')');
+	    		$('#img-view').width( $(this).width()+2 );
+	    	}
 		});
+*/
 		//Pour la recuperation de la part de lutilisateur
 		var priceq = document.getElementById('priceQ');
 		var runtimeOrExtension = chrome.runtime && chrome.runtime.sendMessage ?

@@ -2,6 +2,20 @@
 * http://jqueryui.com
 * Includes: jquery.ui.core.css, jquery.ui.accordion.css, jquery.ui.autocomplete.css, jquery.ui.button.css, jquery.ui.datepicker.css, jquery.ui.dialog.css, jquery.ui.menu.css, jquery.ui.progressbar.css, jquery.ui.resizable.css, jquery.ui.selectable.css, jquery.ui.slider.css, jquery.ui.spinner.css, jquery.ui.tabs.css, jquery.ui.tooltip.css, jquery.ui.theme.css
 * Copyright 2013 jQuery Foundation and other contributors; Licensed MIT */
+
+/*Permet laffichage de l'image */
+span#img-view {
+        display: none; border: 2px solid black;
+        height: 300px; width: 300px; /* H/W */
+        overflow: hidden; /* cache ce qui dépasse */
+        background-size: 100% auto;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+span#img-view img { max-height: 550px; max-width: 550px; }
+div#image:hover span#img-view { display: block; position: absolute; }
+
+/*Pour l'affichage des img de langue */
 #selectLang {
 	height: 1px;
 }
@@ -10,6 +24,7 @@
 	float: right;
 	margin: 3px 2px 3px 1px; 
 }
+
 input#passBox {
 	width: 155px;
 	margin: 2px;
