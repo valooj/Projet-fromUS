@@ -45,7 +45,7 @@ li#liBuy{
 a#tabAdd{
 	display: inline-block;
 	float: left;
-	background-image: url("img/bouton_ajouter.png");
+	background-image: url('../img/bouton_ajouter.png');
 	margin: 0;
 	height:31px;
 	width:111px;
@@ -56,7 +56,7 @@ a#tabAdd{
 a#tabBuy{
 	display: inline-block;
 	float: right;
-	background-image: url("img/bouton_commander.png");
+	/*background-image: url("img/bouton_commander.png");*/
 	margin: 0px;
 	height:31px;
 	width:111px;

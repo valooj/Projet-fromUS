@@ -36,7 +36,7 @@ function sendToServer(urlSelected, jsonSelected) {
 
 			case 'L':
 				token = datas['Token'];
-				//chrome.storage.local.set({'tokenFU': token});
+				//ss.storage.myObject({tokenFU: 'token'});
 				Nick_Name = datas['Message'];
 				//chrome.storage.local.set({'nameFU': Nick_Name});
 				document.getElementById("nick_name").value = i18n('MsgWelcome')+Nick_Name ;
@@ -256,6 +256,7 @@ function miseaJ(){
 
 
 
+
 $(document).ready(function() {
 	
 	var newDialog = $('<div id="fromus_dialogBox" class="toto">' +
@@ -264,7 +265,7 @@ $(document).ready(function() {
 	      						'<img id="lgfr" src="' + self.options.imgfr + '" />'+
 							    '<img id="lgen" src="' + self.options.imgen + '" />'+
 							    '<img id="lgde" src="' + self.options.imgde + '" />'+
-	    					'</div>'+
+							'</div>'+
 	    					'<FORM name="loginU" id="loginU">'+
 	    						'<hr id="hr1" style="margin-top: 15px;"/>'+
 	     						'<input type="textbox" id="emailBox" placeholder="email"/><input type="password" id="passBox" placeholder="password"/>'+
@@ -280,7 +281,7 @@ $(document).ready(function() {
 							'<form id="fromusForm">' + 
 								'<div id="menu" class="element_menu">'+
 									'<ul id="onglets">'+
-									    '<li id="liAdd"><a href="#tab1" id="tabAdd"><img src="' + self.options.imgadd + '"</a></li>'+
+									    '<li id="liAdd"><a href="#tab1" id="tabAdd"></a></li>'+
 									    '<li id="liBuy"><a href="#tab2" id="tabBuy"></a></li>'+
 									'</ul>'+
 								'</div><br />'+
@@ -310,7 +311,7 @@ $(document).ready(function() {
 									    '<input type="button" id="buyP"> '+
 									'</div>'+
 							'</form>'+
-						'<a href="http://from-us.com/fromus" target=_blank><img id="logofromus" height="100" src="' + self.options.img + '"/></a>' +
+						'<a href="http://from-us.com/fromus" target=_blank><img id="logofromus" height="100" src="' + self.options.imglogo + '"/></a>' +
 					'</div>'
 	);
 
@@ -355,13 +356,15 @@ $(document).ready(function() {
   				imgfr.src = chrome.extension.getURL('/img/fr.png');*/
 
   				loadText();
+  				ajoutCSS();
 
   				$('#tab2').hide();
 				$('#tab1').show();
   				
   				sendToServer(_urlCategorie,{});
 
-  				/*chrome.storage.local.get('tokenFU',function(result){
+  				console.log('avant storage tokenfu');
+  				/*ss.storage.myObject('tokenFU',function(result){
 				 	token=result.tokenFU;
 				 	if(token && token != 'undefined'){
 						hideLog();
@@ -369,6 +372,8 @@ $(document).ready(function() {
 					else 
 					showLog();
 				});*/
+
+				console.log('apres storage tokenfu');
 				/*chrome.storage.local.get('nameFU',function(result){
 				  Nick_Name=result.nameFU;
 				  if(Nick_Name && Nick_Name != 'undefined'){
