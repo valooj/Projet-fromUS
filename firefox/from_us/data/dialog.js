@@ -358,6 +358,7 @@ $(document).ready(function() {
   				loadText();
   				ajoutCSS();
 
+
   				$('#tab2').hide();
 				$('#tab1').show();
   				

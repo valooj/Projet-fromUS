@@ -4,6 +4,15 @@ var pageMod = require('page-mod');
 var ss = require('sdk/simple-storage');
 console.log('debut pageMod');
 
+
+if (ss.storage.name) {
+  console.log (ss.storage.name);
+}
+else {
+  console.log ("Storing!");
+  ss.storage.name = "ryan";
+}
+
 /*if (!ss.storage.pages)
   ss.storage.pages = [];
 */
@@ -70,4 +79,5 @@ var tbb = require('toolbarbutton').ToolbarButton({
     }
    });
   }
+  
 });
