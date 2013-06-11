@@ -93,7 +93,7 @@ function sendToServer(urlSelected, jsonSelected) {
 			break;
 
 			case 'C':
-
+				document.getElementById('msgServer').value = '' ;
 				var totalPrice = datas['Prix'];
 				var livPrice = datas['Prix_liv'];
 				var taxPrice = datas['Prix_tax'];
@@ -128,14 +128,13 @@ function sendAjoutPanier(panierJ) {
 	$.post(_urlPanier+token, panierJ)
 	.done(function(datas) { 
 		if(datas['Message'] !== undefined)
-			alert(datas['Message']);
+			document.getElementById('msgServer').value = datas['Message'] ;
 
 		if(datas['error'] !== undefined)
-			alert(datas['error']);  
+			document.getElementById('msgServer').value = datas['error'];
 		})
 	.fail(function(datas) { 
-		//alert(datas['error']); 
-		alert(i18n('MsgBD'));
+		document.getElementById('msgServer').value = i18n('MsgBD');
 		})
 ;}
 
@@ -530,16 +529,19 @@ $(document).ready(function() {
 					sendToServer(_urlProduct+token , productJSON);
 				}
 
-				categVal = document.getElementById('sscategory').value;
+				setTimeout(function() {
+					categVal = document.getElementById('sscategory').value;
 
-				if(!categVal)
-	  				document.getElementById('msgServer').value = i18n('Infocateg');
-	  			else{
-					var jsonCalcul = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
-					var postDataCalcul = JSON.stringify(jsonCalcul);
-					var calculJSON = {calcul:postDataCalcul};
-					sendToServer(_urlCalcul+token , calculJSON);
-				}
+					if(!categVal ){
+						document.getElementById('msgServer').value = i18n('Infocateg');
+					}
+		  			else{
+						var jsonCalcul = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
+						var postDataCalcul = JSON.stringify(jsonCalcul);
+						var calculJSON = {calcul:postDataCalcul};
+						sendToServer(_urlCalcul+token , calculJSON);
+					}
+				}, 20);
 			}
 	  	});
 
