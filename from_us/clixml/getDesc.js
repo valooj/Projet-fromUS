@@ -2,7 +2,8 @@ function getDesc()
 {
 	var fus_actdesc = 1; // V ariable indiquant que l'on est à la recherche du nom
 	var fus_colordesc;	// variable contenant la couleur précédente
-	
+	var fus_borderdesc;	// variable contenant la bordure précédente	
+	var fus_cursordesc;	// variable contenant le curseur précédent		
 	var bindEvent = function(elem ,evt,cb) {
 		//vérifie si addEventListenerexiste dans l'élément
 		if ( elem.addEventListener ) {
@@ -75,7 +76,11 @@ function getDesc()
 		{
 			
 			fus_colordesc = getComputedStyle(target).backgroundColor;
-			target.style.backgroundColor = inversHTMLdesc(getComputedStyle(target).backgroundColor);	
+			fus_borderdesc = getComputedStyle(target).border;
+			fus_cursordesc = getComputedStyle(target).cursor;			
+		//	target.style.backgroundColor = inversHTMLname(getComputedStyle(target).backgroundColor);
+			target.style.border = '3px dotted black';
+			target.style.cursor = 'crosshair';	
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
 		else
@@ -89,6 +94,9 @@ function getDesc()
 		if(fus_actdesc == 1)	// Si on cherceh le prix...
 		{
 			target.style.backgroundColor = fus_colordesc;
+			target.style.cursor = fus_cursordesc;
+			target.style.border = fus_borderdesc;
+			
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
 		else
@@ -167,7 +175,10 @@ function getDesc()
 		localStorage['regGetDesc'] = fus_descresult;
 		localStorage['regDesc'] = fromus_selectedText;
 		fus_actdesc = 0;	// On ne cherche plus la description
-		target.style.backgroundColor = fus_colordesc;	
+		target.style.backgroundColor = fus_colordesc;
+		target.style.cursor = fus_cursordesc;
+		target.style.border = fus_borderdesc;
+		
 		this.removeEventListener('click',arguments.callee,false);
 	});
 }

@@ -2,7 +2,8 @@ function getImg()
 {
 	var fus_actimg = 1; // V ariable indiquant que l'on est à la recherche du nom
 	var fus_colorimg;	// variable contenant la couleur précédente
-	
+	var fus_borderimg;	// variable contenant la bordure précédente	
+	var fus_cursorimg;	// variable contenant le curseur précédent		
 	var bindEvent = function(elem ,evt,cb) {
 		//vérifie si addEventListenerexiste dans l'élément
 		if ( elem.addEventListener ) {
@@ -75,7 +76,11 @@ function getImg()
 		{
 			
 			fus_colorimg = getComputedStyle(target).backgroundColor;
-			target.style.backgroundColor = inversHTMLimg(getComputedStyle(target).backgroundColor);	
+			fus_borderimg = getComputedStyle(target).border;
+			fus_cursorimg = getComputedStyle(target).cursor;			
+		//	target.style.backgroundColor = inversHTMLname(getComputedStyle(target).backgroundColor);
+			target.style.border = '3px dotted black';
+			target.style.cursor = 'crosshair';	
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
 		else
@@ -89,6 +94,9 @@ function getImg()
 		if(fus_actimg == 1)	// Si on cherceh le prix...
 		{
 			target.style.backgroundColor = fus_colorimg;
+			target.style.cursor = fus_cursorimg;
+			target.style.border = fus_borderimg;
+			
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
 		else
@@ -190,7 +198,9 @@ function getImg()
 		localStorage['regGetImg'] = fus_imgresult;
 		localStorage['regImg'] = fromus_selectedText;
 		fus_actimg = 0;	// On ne cherche plus l'image
-		target.style.backgroundColor = fus_colorimg;	
+		target.style.backgroundColor = fus_colorimg;
+		target.style.cursor = fus_cursorimg;
+		target.style.border = fus_borderimg;	
 		
 		this.removeEventListener('click',arguments.callee,false);
 	});

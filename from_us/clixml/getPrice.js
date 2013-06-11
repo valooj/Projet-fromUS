@@ -3,6 +3,7 @@ function getPrice()
 	var fus_actprice = 1; // V ariable indiquant que l'on est à la recherche du prix
 	var fus_colorprice;	// variable contenant la couleur précédente
 	var fus_borderprice;	// variable contenant la bordure précédente
+	var fus_cursorprice;	// variable contenant le curseur précédent
 	var bindEvent = function(elem ,evt,cb) {
 		//vérifie si addEventListenerexiste dans l'élément
 		if ( elem.addEventListener ) {
@@ -74,9 +75,12 @@ function getPrice()
 		if(fus_actprice == 1)	// Si on cherceh le prix...
 		{
 			fus_colorprice = getComputedStyle(target).backgroundColor;
-			fus borderprice = getComputedStyle(target).border;
-			target.style.backgroundColor = inversHTMLprice(getComputedStyle(target).backgroundColor);
-			target.style.border = '5px dotted black';
+			fus_borderprice = getComputedStyle(target).border;
+			fus_cursorprice = getComputedStyle(target).cursor;
+			
+		//	target.style.backgroundColor = inversHTMLprice(getComputedStyle(target).backgroundColor);
+			target.style.border	= '3px dotted black';
+			target.style.cursor = 'crosshair';
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
 		else
@@ -87,10 +91,12 @@ function getPrice()
 	
 	var mouset = bindEvent(document,'mouseout', function(event) 
 	{ var target = event.target || event.srcElement;
-		if(fus_actprice == 1)	// Si on cherceh le prix...
+		if(fus_actprice == 1)	// Si on cherche le prix...
 		{
 			target.style.backgroundColor = fus_colorprice;
-			target.style.border = borderprice;
+			target.style.border = fus_borderprice;
+			target.style.cursor = fus_cursorprice;
+			
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
 		else
@@ -190,6 +196,8 @@ function getPrice()
 
 		fus_actprice = 0;	// On ne cherche plus le prix
 		target.style.backgroundColor = fus_colorprice;	
+		target.style.border = fus_borderprice;
+		target.style.cursor = fus_cursorprice;		
 		this.removeEventListener('click',arguments.callee,false);
 	});		
 }

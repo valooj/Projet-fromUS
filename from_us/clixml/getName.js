@@ -3,6 +3,7 @@ function getName()
 	var fus_actname = 1; // V ariable indiquant que l'on est à la recherche du nom
 	var fus_colorname;	// variable contenant la couleur précédente
 	var fus_bordername;	// variable contenant la bordure précédente	
+	var fus_cursorname;	// variable contenant le curseur précédent	
 	var bindEvent = function(elem ,evt,cb) {
 		//vérifie si addEventListenerexiste dans l'élément
 		if ( elem.addEventListener ) {
@@ -76,9 +77,11 @@ function getName()
 		if(fus_actname == 1)	// Si on cherceh le prix...
 		{	
 			fus_colorname = getComputedStyle(target).backgroundColor;
-			fus bordername = getComputedStyle(target).border;
-			target.style.backgroundColor = inversHTMLname(getComputedStyle(target).backgroundColor);
-			target.style.border = '5px dotted black';
+			fus_bordername = getComputedStyle(target).border;
+			fus_cursorname = getComputedStyle(target).cursor;			
+		//	target.style.backgroundColor = inversHTMLname(getComputedStyle(target).backgroundColor);
+			target.style.border = '3px dotted black';
+			target.style.cursor = 'crosshair';			
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
 		else
@@ -91,9 +94,10 @@ function getName()
 	{ var target = event.target || event.srcElement;
 		if(fus_actname == 1)	// Si on cherceh le prix...
 		{
+			target.style.backgroundColor = fus_colorname;			
+			target.style.cursor = fus_cursorname;
+			target.style.border = fus_bordername;
 			
-			target.style.backgroundColor = fus_colorname;
-			target.style.border = bordername;
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
 		else
@@ -118,12 +122,10 @@ function getName()
 		if(/id=\"/.test(fromus_txt))
 		{
 			var fromus_idmatch    = fromus_txt.match(/id=(\"[^\"]{1,}\")/mgi);
-			
 		}
 		if(/class=\"/.test(fromus_txt))
 		{
-			var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  
-			
+			var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  	
 		}
 		
 		if(fromus_idmatch !=undefined)
@@ -176,7 +178,9 @@ function getName()
 		localStorage['regName'] = fromus_selectedText;
 
 		fus_actname = 0;	// On ne cherche plus le nom
-		target.style.backgroundColor = fus_colorname;			
+		target.style.backgroundColor = fus_colorname;	
+		target.style.border = fus_bordername;
+		target.style.cursor = fus_cursorname;	
 		this.removeEventListener('click',arguments.callee,false);
 	});
 }
