@@ -19,25 +19,15 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 		chrome.tabs.executeScript(null,{file:'/clixml/getName.js',allFrames:false,runAt:'document_end'});
 		chrome.tabs.executeScript(null,{file:'/clixml/getDesc.js',allFrames:false,runAt:'document_end'});
 		chrome.tabs.executeScript(null,{file:'/clixml/getImg.js',allFrames:false,runAt:'document_end'});
-		//chrome.tabs.executeScript(null,{file:'fromus_favelet_comments.js',allFrames:false,runAt:'document_end'});
 
 		chrome.tabs.executeScript(null,{file:'locales/en/enLng.js',allFrames:false,runAt:'document_end'});
 		chrome.tabs.executeScript(null,{file:'locales/fr/frLng.js',allFrames:false,runAt:'document_end'});
 		chrome.tabs.executeScript(null,{file:'locales/de/deLng.js',allFrames:false,runAt:'document_end'});
 		chrome.tabs.executeScript(null,{file:'langue.js',allFrames:false,runAt:'document_end'});
 		chrome.tabs.executeScript(null,{file:'dialog.js',allFrames:false,runAt:'document_end'});
-
-		//chrome.tabs.executeScript(null,{file:'fromus_onglets.js',allFrames:false});
-		//chrome.tabs.executeScript(null,{file:'passlog.js',allFrames:false});
 	});
 
 
-/*chrome.tabs.getSelected(null, function(tab) {
-  chrome.tabs.sendMessage(tab.id, {greeting: "hello"}, function(response) {
-    console.log(response.farewell);
-
-  });
-});*/
 
 var runtimeOrExtension = chrome.runtime && chrome.runtime.sendMessage ?
 'runtime' : 'extension';
@@ -65,24 +55,6 @@ chrome[runtimeOrExtension].onMessage.addListener(
 			}
 		  }
 );
-/*
-chrome.runtime.onConnect.addListener(function(port) {
-  console.assert(port.name == "knockknock");
-  port.onMessage.addListener(function(msg) {
-    if (msg.joke == "Knock knock")
-      {port.postMessage({question: "Who's there?"});
-  		console.log('who');
-  	chrome.tabs.executeScript(null,{file:'/clixml/fromus_recuperation.js',allFrames:false,runAt:'document_end'});}
-    else if (msg.answer == "Madame")
-      {port.postMessage({question: "Madame who?"});
-  		console.log('madame who');}
-    else if (msg.answer == "Madame... Bovary")
-      {port.postMessage({question: "I don't get it."});
-  		console.log('don\'t get it');}
-  });
-});
-*/
-
 
 
 

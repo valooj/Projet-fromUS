@@ -82,10 +82,7 @@ function sendToServer(urlSelected, jsonSelected) {
 			break;
 
 			case 'a':
-				//fromus_sitelist[localStorage["popup_store"]] = new fromus_siteObj();
-				//alert(datas['Message']['sa_chemin']);
 				var elem = datas['Message']['sa_chemin'].split('/');
-				//alert(elem[2]);
 				parseInfo(elem);
 				
 			break;
@@ -117,8 +114,8 @@ function sendToServer(urlSelected, jsonSelected) {
 		}
 	})
 	.fail(function(datas) { 
-		alert(datas['error']);
-		//document.getElementById('msgServer').value = i18n('MsgBD');
+		//alert(datas['error']);
+		document.getElementById('msgServer').value = i18n('MsgBD');
 		})
 ;};
 
@@ -230,7 +227,6 @@ function parseInfo (elem){
 				$('#fromus_name').attr('value',regName);
 				regDesc = localStorage['regDesc'];
 				$('#fromus_desc').attr('value',regDesc);
-				document.getElementById('fromus_desc').value = regDesc ;
 				regVisu = localStorage['regImg'];
 				$('#fromus_image').attr('value',regVisu);
 				
@@ -380,14 +376,9 @@ $(document).ready(function() {
 	
 	if (isOpen != true) {	
 
-		//newDialog.tabs().addClass( 'ui-toto-tabs-horizontal ui-toto-helper-clearfix' );
-		//newDialog.removeClass( 'ui-corner-top' ).addClass( 'ui-toto-corner-left' );
 		newDialog.dialog({
 	    	modal: false,
 			title: 'from-us',
-			//show: 'clip',
-			//hide: 'clip',
-			//autoOpen: false
 			position: 
 				{
 					my: 'left top', 
@@ -419,8 +410,6 @@ $(document).ready(function() {
 
   				$('#tab2').hide();
 				$('#tab1').show();
-  				
-  				//sendToServer(_urlCategorie,{});
 
   				chrome.storage.local.get('tokenFU',function(result){
 				 	token=result.tokenFU;
@@ -611,16 +600,7 @@ $(document).ready(function() {
 			loadText();
 			reloadUrl();
 		});
-/*
-		//Pour le survol de l'image
-		$('#fromus_image').mouseover(function() {
-			console.log(regVisu);
-			if(regVisu && regVisu !='undefined'){
-				$('#img-view').css('background-image', 'url('+regVisu+')');
-	    		$('#img-view').width( $(this).width()+2 );
-	    	}
-		});
-*/
+
 		//Pour la recuperation de la part de lutilisateur
 		var priceq = document.getElementById('priceQ');
 		var runtimeOrExtension = chrome.runtime && chrome.runtime.sendMessage ?
@@ -677,78 +657,3 @@ $(document).ready(function() {
 	}
 });
 
-
-/*
-
-
-		// ajout du marchand automatiquement
-		regStore = localStorage["regStore"];
-		$('#fromus_store').attr('value',fromus_site);
-
-		// ajout du nom automatiquement
-		regName = localStorage["regName"];
-		$('#fromus_name').attr('value',regName);
-
-		// ajout du prix automatiquement
-		regPrice = localStorage["regPrice"];
-		$('#fromus_price').attr('value',regPrice);
-
-		regOffer = localStorage["regOffer"];
-
-		regDesc = localStorage["regDesc"];
-
-		regVisu = localStorage["regImg"];
-
-		console.log("avant d'appuyer sur le bouton : " + localStorage["regName"]);
-
-		var fromus_morename = document.getElementById('fromus_morename');
-		var runtimeOrExtension = chrome.runtime && chrome.runtime.sendMessage ?
- 		'runtime' : 'extension';
-		fromus_morename.addEventListener('click', function(e){
-			console.log('morename');
-			console.log("avant d'executer le script : " + localStorage["regName"]);
-			var start = new Date().getTime();
-			localStorage["fromus_morename"] =	JSON.stringify(true);
-			chrome[runtimeOrExtension].sendMessage({greeting: "hello"}, function(response) {
-  			console.log(response.farewell);
-  		});
-			var end = new Date().getTime();
-			var time = end - start;
-			var timeafterbtn = time + 15;
-			
-			setTimeout(function () {
-	        	$('#fromus_name').attr('value',localStorage["regName"]);
-	        	console.log("apres avoir d'executer le script : " + localStorage["regName"]);
-        	}, timeafterbtn);
-			
-			
-		}, false);
-
-		var fromus_moreprice = document.getElementById('fromus_moreprice');
-		var runtimeOrExtension = chrome.runtime && chrome.runtime.sendMessage ?
- 		'runtime' : 'extension';
-		fromus_moreprice.addEventListener('click', function(e){
-			console.log('moreprice');
-			console.log("avant d'executer le script : " + localStorage["regPrice"]);
-			var start = new Date().getTime();
-			localStorage["fromus_moreprice"] =	JSON.stringify(true);
-			chrome[runtimeOrExtension].sendMessage({greeting: "youhou"}, function(response) {
-  			console.log(response.farewell);
-  		});
-			var end = new Date().getTime();
-			var time = end - start;
-			var timeafterbtn = time + 15;
-			
-			setTimeout(function () {
-	        	$('#fromus_price').attr('value',localStorage["regPrice"]);
-	        	console.log("apres avoir d'executer le script : " + localStorage["regPrice"]);
-        	}, timeafterbtn);
-			
-			
-		}, false);
-*/
-
-/*var jsonAccess = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
-			var postDataAccess = JSON.stringify(jsonAccess);
-			var accessJSON = {calcul:postDataAccess};
-			sendToServer(_urlAccessOut+token, accessJSON); */
