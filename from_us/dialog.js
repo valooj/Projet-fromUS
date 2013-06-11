@@ -270,9 +270,13 @@ function loadText(){
 	document.getElementById('fu_assurance').innerHTML = i18n('InsuranceP') ;
 
 	document.getElementById('priceQ').value = '?';
+	document.getElementById('priceQ').title = i18n('BullePrice') ;
 	document.getElementById('nameQ').value = '?';
+	document.getElementById('nameQ').title = i18n('BulleName') ;
 	document.getElementById('descQ').value = '?';
+	document.getElementById('descQ').title = i18n('BulleDesc') ;
 	document.getElementById('imgQ').value = '?';
+	document.getElementById('imgQ').title = i18n('BulleImg') ;
 
 	document.getElementById('descP').innerHTML = i18n('Description') ;
 	document.getElementById('imgP').innerHTML = i18n('Image') ;
@@ -296,6 +300,8 @@ function miseaJ(){
 				document.getElementById('fromus_image').value = localStorage['regImg'] ;
 	}
 }
+
+//Montre une image en grand dans une popup
 
 
 
@@ -336,13 +342,13 @@ $(document).ready(function() {
 									    '<label for="store" id="store"></label><br />'+
 										'<input type="textbox" id="fromus_store" disabled="true"/><br />'+
 										'<label for="name" id="nameP"></label><br />'+
-										'<input type="textbox" id="fromus_name" disabled="true"/><input type="button" id="nameQ"><br />'+
+										'<input type="textbox" id="fromus_name" disabled="true"/><input title="" type="button" id="nameQ"><br />'+
 										'<label for="price" id="priceP" ></label><br />'+
-										'<input type="textbox" id="fromus_price" disabled="true"/><input type="button" id="priceQ"> <br />'+
+										'<input type="textbox" id="fromus_price" disabled="true"/><input title="" type="button" id="priceQ"> <br />'+
 										'<label for="description" id="descP" ></label><br />'+
-										'<textarea id="fromus_desc" disabled="true" rows="2" cols="32"></textarea><input type="button" id="descQ"> <br />'+
+										'<textarea id="fromus_desc" disabled="true" rows="2" cols="32"></textarea><input type="button" title="" id="descQ"> <br />'+
 										'<label for="image" id="imgP" ></label><br />'+
-										'<input type="textbox" id="fromus_image" disabled="true"/><input type="button" id="imgQ"> <br />'+
+										'<input type="textbox" id="fromus_image" /><input type="button" title="" id="imgQ"> <br />'+
 										'<label for="category" id="categP"></label><br />'+
 										'<select id="category">'+
 										'</select><br />'+
@@ -600,6 +606,13 @@ $(document).ready(function() {
 			reloadUrl();
 		});
 
+
+		//Pour le survol des elements
+		$('#fromus_image').mouseover(function() {
+			console.log('img');
+			//this.src="http://img.rakuten.com/PIC/38922351/0/1/300/38922351.jpg"
+		});
+		//Pour la recuperation de la part de lutilisateur
 		var priceq = document.getElementById('priceQ');
 		var runtimeOrExtension = chrome.runtime && chrome.runtime.sendMessage ?
  		'runtime' : 'extension';

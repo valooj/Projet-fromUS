@@ -27,3 +27,9 @@ _lng['en']['Infocateg'] = 'Please choose a category';
 
 _lng['en']['Description'] = 'Description';
 _lng['en']['Image'] = 'Picture';
+
+
+_lng['en']['BulleName'] = 'If name has not been found, please click here, then select the name on the page';
+_lng['en']['BullePrice'] = 'If price has not been found, please click here, then select the price on the page';
+_lng['en']['BulleDesc'] = 'If description has not been found, please click here, then select the description on the page';
+_lng['en']['BulleImg'] = 'If picture has not been found, please click here, then select the picture on the page';
