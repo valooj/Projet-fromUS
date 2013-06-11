@@ -184,18 +184,10 @@ function getPrice()
 		{
 			fus_priceresult += '%price_class<-->'+fus_priceclass+'/';
 		}
-<<<<<<< HEAD
-		
-		console.log("Et ce qui est affiché dans la case est...");
-		console.log(fromus_selectedText);
-		localStorage["regGetPrice"] = fus_priceresult;
-		localStorage["regPrice"] = fromus_selectedText;
-		console.log(fus_priceresult);
-=======
 
 		localStorage['regGetPrice'] = fus_priceresult;
 		localStorage['regPrice'] = fromus_selectedText;
->>>>>>> Nettoyage de code
+
 		fus_actprice = 0;	// On ne cherche plus le prix
 		target.style.backgroundColor = fus_colorprice;	
 		this.removeEventListener('click',arguments.callee,false);

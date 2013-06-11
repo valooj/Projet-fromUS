@@ -172,16 +172,9 @@ function getName()
 			fus_nameresult += '%name_class<-->'+fus_nameclass+'/';
 		}	
 		
-<<<<<<< HEAD
-		console.log("Et ce qui est affiché dans la case est...");
-		console.log(fromus_selectedText);
-		localStorage["regGetName"] = fus_nameresult;
-		localStorage["regName"] = fromus_selectedText;
-		console.log(fus_nameresult);
-=======
 		localStorage['regGetName'] = fus_nameresult;
 		localStorage['regName'] = fromus_selectedText;
->>>>>>> Nettoyage de code
+
 		fus_actname = 0;	// On ne cherche plus le nom
 		target.style.backgroundColor = fus_colorname;			
 		this.removeEventListener('click',arguments.callee,false);
