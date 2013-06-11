@@ -287,14 +287,20 @@ function miseaJ(){
 		document.getElementById('fromus_price').value = localStorage['regPrice'] ;
 	}
 	if(localStorage['regName']){
-				document.getElementById('fromus_name').value = localStorage['regName'] ;
+		document.getElementById('fromus_name').value = localStorage['regName'] ;
 	}
 	if(localStorage['regDesc']){
-				document.getElementById('fromus_desc').value = localStorage['regDesc'] ;
+		document.getElementById('fromus_desc').value = localStorage['regDesc'] ;
 	}
-	if(localStorage['regImg']){
-				document.getElementById('fromus_image').value = localStorage['regImg'] ;
+	if(localStorage['regImg'] && isUrl(localStorage['regImg'])) {
+		document.getElementById('fromus_image').value = localStorage['regImg'] ;
 	}
+}
+
+//Permet de savoir si c'est une url
+function isUrl(s) {
+	var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
+	return regexp.test(s);
 }
 
 $(document).on('change, keyup, mouseover', 'input', function() {
