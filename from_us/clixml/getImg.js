@@ -145,20 +145,19 @@ function getImg()
 			{
 				//id sans class
 				
-
 				fromus_selectedTexttmp	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
 				
 				var fus_imgid = fromus_selectedTexttmp;
 			}
 			
-			fromus_selectedText = getElementById(fus_imgid);
+			fromus_selectedText = document.getElementById(fus_imgid);
 			if(fromus_selectedText.href)
 			{
 				fromus_selectedText = fromus_selectedText.href;
 			}
 			else if(fromus_selectedText.src)
 			{
-				fromus_selectedText.src;
+				fromus_selectedText = fromus_selectedText.src;
 			}
 		}
 		else
@@ -168,7 +167,7 @@ function getImg()
 				fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
 				var fus_imgclass =fromus_selectedTexttmp;
 				
-				fromus_selectedText = getElementsByClassName(fus_imgclass)[0];
+				fromus_selectedText = document.getElementsByClassName(fus_imgclass)[0];
 				
 				if(fromus_selectedText.href)
 				{
@@ -176,7 +175,7 @@ function getImg()
 				}
 				else if(fromus_selectedText.src)
 				{
-					fromus_selectedText.src;
+					fromus_selectedText = fromus_selectedText.src;
 				}	
 			}
 			else
