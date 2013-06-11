@@ -21,5 +21,7 @@
 	$lng['choix_categ'] = ' Choose a category';
 	$lng['choix_scateg'] = ' Choose a sub-category';
 
+	$lng['participation'] = 'Think you for your participation';
+
 
 ?>

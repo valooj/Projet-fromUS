@@ -2,17 +2,17 @@ var token;
 var Nick_Name;
 var points;
 
-var _urlProduct = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-product&lng='+defLng+'&token=';
-var _urlCalcul = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&lng='+defLng+'&token=';
-var _urlPanier = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&lng='+defLng+'&token=';
-var _urlLogout = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-logout&lng='+defLng+'&token=';
-var _urlLogin = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-login&lng='+defLng;
-var _urlCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-categorie&lng=';
-var _urlSSCategorie = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-sscategorie&lng=';
-var _urlPts = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-pts&lng='+defLng+'&token=';
-var _urlAccessIn = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-accessIn';
-var _urlAccessOut = 'http://localhost/projetFU/Communication/cible3.php?action=MAJ-accessOut&token=';
-
+var UrlBase= 'http://localhost/projetFU/Communication/cible3.php?';
+var _urlProduct;
+var _urlCalcul;
+var _urlPanier;
+var _urlLogout;
+var _urlLogin;
+var _urlCategorie;
+var _urlSSCategorie;
+var _urlPts;
+var _urlAccessIn;
+var _urlAccessOut;
 
 var qteVal;
 var categVal;
@@ -22,6 +22,20 @@ var regPrice;
 var regOffer;
 var regDesc;
 var regVisu;
+
+//Generation des url avec la bonne langue
+function reloadUrl(){
+	 _urlProduct = UrlBase +'action=MAJ-product&lng='+defLng+'&token=';
+	 _urlCalcul = UrlBase + 'action=MAJ-calcul&lng='+defLng+'&token=';
+	 _urlPanier = UrlBase + 'action=MAJ-panier&lng='+defLng+'&token=';
+	 _urlLogout = UrlBase + 'action=MAJ-logout&lng='+defLng+'&token=';
+	 _urlLogin = UrlBase + 'action=MAJ-login&lng='+defLng;
+	 _urlCategorie = UrlBase + 'action=MAJ-categorie&lng='+defLng;
+	 _urlSSCategorie = UrlBase + 'action=MAJ-sscategorie&lng='+defLng+'&sscateg=';
+	 _urlPts = UrlBase + 'action=MAJ-pts&lng='+defLng+'&token=';
+	 _urlAccessIn = UrlBase + 'action=MAJ-accessIn';
+	 _urlAccessOut = UrlBase + 'action=MAJ-accessOut&token=';
+}
 
 
 //Fonction d'envoie de données au serveur
@@ -256,7 +270,7 @@ function loadText(){
 	document.getElementById('priceQ').value = '?';
 	document.getElementById('nameQ').value = '?';
 
-   	sendToServer(_urlCategorie+defLng,{});
+   	sendToServer(_urlCategorie,{});
 
 }
 
@@ -371,6 +385,7 @@ $(document).ready(function() {
   				var imgfr = document.getElementById('lgfr');
   				imgfr.src = chrome.extension.getURL('/img/fr.png');
 
+  				reloadUrl();
   				loadText();
 
   				$('#tab2').hide();
@@ -541,7 +556,7 @@ $(document).ready(function() {
 	  	$('select[id=category]').change(function() {
 		var categV = document.getElementById('category').value;
 		if (categV)
-			sendToServer(_urlSSCategorie+defLng+'&sscateg='+categV, {});
+			sendToServer(_urlSSCategorie+categV, {});
 		else{
 		   	var $selectCat = $('select[id=sscategory]');
 		   	$selectCat.empty();
@@ -552,14 +567,17 @@ $(document).ready(function() {
 		$('img[id=lgfr]').click(function() {
 			changeLng('fr');
 			loadText();
+			reloadUrl();
 	  	});
 	  	$('img[id=lgen]').click(function() {
 			changeLng('en');
 			loadText();
+			reloadUrl();
 		});
 		$('img[id=lgde]').click(function() {
 			changeLng('de');
 			loadText();
+			reloadUrl();
 		});
 
 		var priceq = document.getElementById('priceQ');

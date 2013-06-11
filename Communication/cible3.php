@@ -164,7 +164,7 @@ try
 
 			// variables
 			$get_token = isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
-			$get_panier = isset($_REQUEST['panier']) ? json_decode($_REQUEST['panier'], TRUE) : null;
+			$get_panier = isset($_POST['panier']) ? json_decode($_POST['panier'], TRUE) : null;
 
 			// variables tests
 			if ( !$get_token || $get_token == 'undefined')
@@ -248,7 +248,7 @@ try
 		case 'MAJ-calcul':
 
 			$get_token = isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
-			$get_calcul = isset($_REQUEST['calcul']) ? json_decode($_REQUEST['calcul'], TRUE) : null;
+			$get_calcul = isset($_POST['calcul']) ? json_decode($_POST['calcul'], TRUE) : null;
 
 			// variables tests
 			if ( !$get_token || $get_token == 'undefined')
@@ -367,7 +367,7 @@ try
 			break;
 
 		case 'MAJ-login':
-			$get_log = isset($_REQUEST['log']) ? json_decode($_REQUEST['log'], TRUE) : null;
+			$get_log = isset($_POST['log']) ? json_decode($_POST['log'], TRUE) : null;
 
 			// variables tests
 			if ( !$get_log )
@@ -494,7 +494,7 @@ try
 
 		case 'MAJ-accessIn':
 			// variables
-			$get_url = isset($_REQUEST['url_site']) ? htmlspecialchars($_REQUEST['url_site']) : null;
+			$get_url = isset($_GET['url_site']) ? htmlspecialchars($_GET['url_site']) : null;
 
 			// variables tests
 			if ( !$get_url )
@@ -518,7 +518,7 @@ try
 		case 'MAJ-accessOut':
 			// variables
 			$get_token= isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
-			$get_access = isset($_REQUEST['access']) ? json_decode($_REQUEST['access'], TRUE) : null;
+			$get_access = isset($_POST['access']) ? json_decode($_POST['access'], TRUE) : null;
 
 			// variables tests
 			if ( !$get_token || $get_token == 'undefined')
