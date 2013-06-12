@@ -44,6 +44,7 @@ function ajoutCSS() {
 	$('input#connect').css({
 		width: '55px',
 		margin: '2px',
+		padding: '2px',
 		display: 'inline-block',
 		'float': 'left'
 	});
@@ -81,7 +82,10 @@ function ajoutCSS() {
 		'line-height': '31px',
 		'text-indent': '28px',
 		'text-align': 'left',
-		'font-size': '0.8em'
+		'text-decoration': 'none',
+ 		'font-size': '0.8em',
+		color: '#000000'
+
 
 	});
 	$('a#tabBuy').css({
@@ -95,8 +99,16 @@ function ajoutCSS() {
 		'line-height': '31px',
 		'text-indent': '28px',
 		'font-size': '0.8em',
-		'text-align': 'left'
+		'text-align': 'left',
+		'text-decoration': 'none',
+		color: '#000000'
 	});
+	$('input#msgServer').css({
+		width: '300px',
+		color: '#c11f34',
+		'text-align': 'center'
+	});
+
 
 	$('h2#FormP').css({
 	color: 'black',
@@ -138,6 +150,56 @@ function ajoutCSS() {
 		padding: '0px',
 		'margin-left': '0px'
 	});
+	$('textarea#fromus_desc').css({
+		display: 'inline-block',
+		'float': 'left',
+		width: '280px',
+		margin: '1px 0 5px 5px', 
+		padding: '0px'
+	});
+	$('input#descQ').css({
+		display: 'inline-block',
+		'float': 'left',
+		width: '25px',
+		height: '25px',
+		padding: '0px',
+		'margin-left': '0px'	
+	});
+	$('span#img-view').css({
+	    display: 'none', 
+	    border: '2px solid black',
+	    height: '300px', 
+	    width: '300px', /* H/W */
+	    overflow: 'hidden', /* cache ce qui dépasse */
+	    'background-size': '100% auto',
+	    'background-position': 'center center',
+	    'background-repeat': 'no-repeat',
+	    border: 'none'
+	});
+	$('span#img-view img').css({ 
+		'max-height': '550px', 
+		'max-width': '550px'
+	});
+	$('div#image:hover span#img-view').css({ 
+		display: 'block',
+		position: 'absolute'
+	});
+	$('input#fromus_image').css({
+		display: 'inline-block',
+		'float': 'left',
+		width: '280px',
+		margin: '1px 0 5px 5px', 
+		padding: '0px'
+	});
+	$('input#imgQ').css({
+		display: 'inline-block',
+		'float': 'left',
+		width: '25px',
+		height: '25px',
+		padding: '0px',
+		'margin-left': '0px'
+	});
+
 	$('select#category').css({
 		display: 'inline-block',
 		'float': 'left',
@@ -155,7 +217,7 @@ function ajoutCSS() {
 	$('label#fu_quantite').css({
 		display: 'inline-block',
 		'float': 'left',
-		width: '130px',
+		width: '75px',
 		margin: '3px 0 0 5px',
 		'text-align': 'left',
 		'font-size': '1em'
@@ -301,6 +363,7 @@ function ajoutCSS() {
 
 	$('.ui-toto-front').css({
 		'z-index': '100'
+		
 	});
 
 
@@ -483,11 +546,10 @@ function ajoutCSS() {
 	});
 	$('.ui-toto-dialog').css({
 		position: 'absolute',
-		top: '0',
-		left: '0',
+		
 		
 		outline: '0',
-		'z-index': '999999999',
+		'z-index': '999999999'
 
 	});
 	$('.ui-toto-dialog .ui-toto-dialog-titlebar').css({
@@ -495,6 +557,7 @@ function ajoutCSS() {
 		position: 'relative',
 		'background-color': '#203064',
 		color: ' white'
+
 	});
 	$('.ui-toto-dialog .ui-toto-dialog-title').css({
 		'float': 'left',
@@ -521,7 +584,7 @@ function ajoutCSS() {
 	$('.ui-toto-dialog .ui-toto-dialog-content').css({
 		position: 'relative',
 		border: '0',
-		
+		width: '350px', //ici pour le problème de taille de la popup
 		background: 'none',
 		overflow: 'auto'
 	});
@@ -548,6 +611,7 @@ function ajoutCSS() {
 	});
 	$('.ui-draggable .ui-toto-dialog-titlebar').css({
 		cursor: 'move'
+
 	});
 
 	$('.ui-toto-menu').css({
@@ -892,7 +956,7 @@ function ajoutCSS() {
 	----------------------------------*/
 	$('.ui-toto-widget').css({
 		'font-family': 'Verdana,Arial,sans-serif', 
-		
+		//left: '70%', //ici pour mettre à droite la popup
 		'font-size': '15px'
 	});
 	$('.ui-toto-widget .ui-toto-widget').css({

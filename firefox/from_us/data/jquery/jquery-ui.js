@@ -9,7 +9,7 @@
 (function( $, undefined ) {
 
 var uuid = 0,
-	runiqueId = /^ui-id-\d+$/;
+	runiqueId = /^ui-toto-id-\d+$/;
 
 // $.ui might exist from components with no dependencies, e.g., $.ui.position
 $.ui = $.ui || {};
@@ -108,7 +108,7 @@ $.fn.extend({
 	uniqueId: function() {
 		return this.each(function() {
 			if ( !this.id ) {
-				this.id = "ui-id-" + (++uuid);
+				this.id = "ui-toto-id-" + (++uuid);
 			}
 		});
 	},
@@ -254,13 +254,13 @@ $.support.selectstart = "onselectstart" in document.createElement( "div" );
 $.fn.extend({
 	disableSelection: function() {
 		return this.bind( ( $.support.selectstart ? "selectstart" : "mousedown" ) +
-			".ui-disableSelection", function( event ) {
+			".ui-toto-disableSelection", function( event ) {
 				event.preventDefault();
 			});
 	},
 
 	enableSelection: function() {
-		return this.unbind( ".ui-disableSelection" );
+		return this.unbind( ".ui-toto-disableSelection" );
 	}
 });
 
@@ -588,12 +588,12 @@ $.Widget.prototype = {
 			.removeAttr( "aria-disabled" )
 			.removeClass(
 				this.widgetFullName + "-disabled " +
-				"ui-state-disabled" );
+				"ui-toto-state-disabled" );
 
 		// clean up events and states
 		this.bindings.unbind( this.eventNamespace );
-		this.hoverable.removeClass( "ui-state-hover" );
-		this.focusable.removeClass( "ui-state-focus" );
+		this.hoverable.removeClass( "ui-toto-state-hover" );
+		this.focusable.removeClass( "ui-toto-state-focus" );
 	},
 	_destroy: $.noop,
 
@@ -654,10 +654,10 @@ $.Widget.prototype = {
 
 		if ( key === "disabled" ) {
 			this.widget()
-				.toggleClass( this.widgetFullName + "-disabled ui-state-disabled", !!value )
+				.toggleClass( this.widgetFullName + "-disabled ui-toto-state-disabled", !!value )
 				.attr( "aria-disabled", value );
-			this.hoverable.removeClass( "ui-state-hover" );
-			this.focusable.removeClass( "ui-state-focus" );
+			this.hoverable.removeClass( "ui-toto-state-hover" );
+			this.focusable.removeClass( "ui-toto-state-focus" );
 		}
 
 		return this;
@@ -699,7 +699,7 @@ $.Widget.prototype = {
 				// - disabled class as method for disabling individual parts
 				if ( !suppressDisabledCheck &&
 						( instance.options.disabled === true ||
-							$( this ).hasClass( "ui-state-disabled" ) ) ) {
+							$( this ).hasClass( "ui-toto-state-disabled" ) ) ) {
 					return;
 				}
 				return ( typeof handler === "string" ? instance[ handler ] : handler )
@@ -741,10 +741,10 @@ $.Widget.prototype = {
 		this.hoverable = this.hoverable.add( element );
 		this._on( element, {
 			mouseenter: function( event ) {
-				$( event.currentTarget ).addClass( "ui-state-hover" );
+				$( event.currentTarget ).addClass( "ui-toto-state-hover" );
 			},
 			mouseleave: function( event ) {
-				$( event.currentTarget ).removeClass( "ui-state-hover" );
+				$( event.currentTarget ).removeClass( "ui-toto-state-hover" );
 			}
 		});
 	},
@@ -753,10 +753,10 @@ $.Widget.prototype = {
 		this.focusable = this.focusable.add( element );
 		this._on( element, {
 			focusin: function( event ) {
-				$( event.currentTarget ).addClass( "ui-state-focus" );
+				$( event.currentTarget ).addClass( "ui-toto-state-focus" );
 			},
 			focusout: function( event ) {
-				$( event.currentTarget ).removeClass( "ui-state-focus" );
+				$( event.currentTarget ).removeClass( "ui-toto-state-focus" );
 			}
 		});
 	},
@@ -1535,7 +1535,7 @@ $.ui.plugin.add("draggable", "connectToSortable", {
 			uiSortable = $.extend({}, ui, { item: inst.element });
 		inst.sortables = [];
 		$(o.connectToSortable).each(function() {
-			var sortable = $.data(this, "ui-sortable");
+			var sortable = $.data(this, "ui-toto-sortable");
 			if (sortable && !sortable.options.disabled) {
 				inst.sortables.push({
 					instance: sortable,
@@ -1623,7 +1623,7 @@ $.ui.plugin.add("draggable", "connectToSortable", {
 					//Now we fake the start of dragging for the sortable instance,
 					//by cloning the list group item, appending it to the sortable and using it as inst.currentItem
 					//We can then fire the start event of the sortable with our passed browser event, and our own helper (so it doesn't create a new one)
-					this.instance.currentItem = $(that).clone().removeAttr("id").appendTo(this.instance.element).data("ui-sortable-item", true);
+					this.instance.currentItem = $(that).clone().removeAttr("id").appendTo(this.instance.element).data("ui-toto-sortable-item", true);
 					this.instance.options._helper = this.instance.options.helper; //Store helper option to later restore it
 					this.instance.options.helper = function() { return ui.helper[0]; };
 
@@ -1949,7 +1949,7 @@ $.widget("ui.droppable", {
 		$.ui.ddmanager.droppables[o.scope] = $.ui.ddmanager.droppables[o.scope] || [];
 		$.ui.ddmanager.droppables[o.scope].push(this);
 
-		(o.addClasses && this.element.addClass("ui-droppable"));
+		(o.addClasses && this.element.addClass("ui-toto-droppable"));
 
 	},
 
@@ -1963,7 +1963,7 @@ $.widget("ui.droppable", {
 			}
 		}
 
-		this.element.removeClass("ui-droppable ui-droppable-disabled");
+		this.element.removeClass("ui-toto-droppable ui-toto-droppable-disabled");
 	},
 
 	_setOption: function(key, value) {
@@ -2042,8 +2042,8 @@ $.widget("ui.droppable", {
 			return false;
 		}
 
-		this.element.find(":data(ui-droppable)").not(".ui-draggable-dragging").each(function() {
-			var inst = $.data(this, "ui-droppable");
+		this.element.find(":data(ui-toto-droppable)").not(".ui-draggable-dragging").each(function() {
+			var inst = $.data(this, "ui-toto-droppable");
 			if(
 				inst.options.greedy &&
 				!inst.options.disabled &&
@@ -2133,7 +2133,7 @@ $.ui.ddmanager = {
 		var i, j,
 			m = $.ui.ddmanager.droppables[t.options.scope] || [],
 			type = event ? event.type : null, // workaround for #2317
-			list = (t.currentItem || t.element).find(":data(ui-droppable)").addBack();
+			list = (t.currentItem || t.element).find(":data(ui-toto-droppable)").addBack();
 
 		droppablesLoop: for (i = 0; i < m.length; i++) {
 
@@ -2221,12 +2221,12 @@ $.ui.ddmanager = {
 			if (this.options.greedy) {
 				// find droppable parents with same scope
 				scope = this.options.scope;
-				parent = this.element.parents(":data(ui-droppable)").filter(function () {
-					return $.data(this, "ui-droppable").options.scope === scope;
+				parent = this.element.parents(":data(ui-toto-droppable)").filter(function () {
+					return $.data(this, "ui-toto-droppable").options.scope === scope;
 				});
 
 				if (parent.length) {
-					parentInstance = $.data(parent[0], "ui-droppable");
+					parentInstance = $.data(parent[0], "ui-toto-droppable");
 					parentInstance.greedyChild = (c === "isover");
 				}
 			}
@@ -2319,7 +2319,7 @@ $.widget("ui.resizable", $.ui.mouse, {
 
 			//Create a wrapper element and set the wrapper to the new current internal element
 			this.element.wrap(
-				$("<div class='ui-wrapper' style='overflow: hidden;'></div>").css({
+				$("<div class='ui-toto-wrapper' style='overflow: hidden;'></div>").css({
 					position: this.element.css("position"),
 					width: this.element.outerWidth(),
 					height: this.element.outerHeight(),
@@ -2375,7 +2375,7 @@ $.widget("ui.resizable", $.ui.mouse, {
 
 				//TODO : What's going on here?
 				if ("se" === handle) {
-					axis.addClass("ui-icon ui-icon-gripsmall-diagonal-se");
+					axis.addClass("ui-toto-icon ui-toto-icon-gripsmall-diagonal-se");
 				}
 
 				//Insert into internal handles object and append to element
@@ -3239,14 +3239,14 @@ $.widget("ui.selectable", $.ui.mouse, {
 		var selectees,
 			that = this;
 
-		this.element.addClass("ui-selectable");
+		this.element.addClass("ui-toto-selectable");
 
 		this.dragged = false;
 
 		// cache selectee children based on filter
 		this.refresh = function() {
 			selectees = $(that.options.filter, that.element[0]);
-			selectees.addClass("ui-selectee");
+			selectees.addClass("ui-toto-selectee");
 			selectees.each(function() {
 				var $this = $(this),
 					pos = $this.offset();
@@ -3258,27 +3258,27 @@ $.widget("ui.selectable", $.ui.mouse, {
 					right: pos.left + $this.outerWidth(),
 					bottom: pos.top + $this.outerHeight(),
 					startselected: false,
-					selected: $this.hasClass("ui-selected"),
-					selecting: $this.hasClass("ui-selecting"),
-					unselecting: $this.hasClass("ui-unselecting")
+					selected: $this.hasClass("ui-toto-selected"),
+					selecting: $this.hasClass("ui-toto-selecting"),
+					unselecting: $this.hasClass("ui-toto-unselecting")
 				});
 			});
 		};
 		this.refresh();
 
-		this.selectees = selectees.addClass("ui-selectee");
+		this.selectees = selectees.addClass("ui-toto-selectee");
 
 		this._mouseInit();
 
-		this.helper = $("<div class='ui-selectable-helper'></div>");
+		this.helper = $("<div class='ui-toto-selectable-helper'></div>");
 	},
 
 	_destroy: function() {
 		this.selectees
-			.removeClass("ui-selectee")
+			.removeClass("ui-toto-selectee")
 			.removeData("selectable-item");
 		this.element
-			.removeClass("ui-selectable ui-selectable-disabled");
+			.removeClass("ui-toto-selectable ui-toto-selectable-disabled");
 		this._mouseDestroy();
 	},
 
@@ -3309,13 +3309,13 @@ $.widget("ui.selectable", $.ui.mouse, {
 			this.refresh();
 		}
 
-		this.selectees.filter(".ui-selected").each(function() {
+		this.selectees.filter(".ui-toto-selected").each(function() {
 			var selectee = $.data(this, "selectable-item");
 			selectee.startselected = true;
 			if (!event.metaKey && !event.ctrlKey) {
-				selectee.$element.removeClass("ui-selected");
+				selectee.$element.removeClass("ui-toto-selected");
 				selectee.selected = false;
-				selectee.$element.addClass("ui-unselecting");
+				selectee.$element.addClass("ui-toto-unselecting");
 				selectee.unselecting = true;
 				// selectable UNSELECTING callback
 				that._trigger("unselecting", event, {
@@ -3328,10 +3328,10 @@ $.widget("ui.selectable", $.ui.mouse, {
 			var doSelect,
 				selectee = $.data(this, "selectable-item");
 			if (selectee) {
-				doSelect = (!event.metaKey && !event.ctrlKey) || !selectee.$element.hasClass("ui-selected");
+				doSelect = (!event.metaKey && !event.ctrlKey) || !selectee.$element.hasClass("ui-toto-selected");
 				selectee.$element
-					.removeClass(doSelect ? "ui-unselecting" : "ui-selected")
-					.addClass(doSelect ? "ui-selecting" : "ui-unselecting");
+					.removeClass(doSelect ? "ui-toto-unselecting" : "ui-toto-selected")
+					.addClass(doSelect ? "ui-toto-selecting" : "ui-toto-unselecting");
 				selectee.unselecting = !doSelect;
 				selectee.selecting = doSelect;
 				selectee.selected = doSelect;
@@ -3389,15 +3389,15 @@ $.widget("ui.selectable", $.ui.mouse, {
 			if (hit) {
 				// SELECT
 				if (selectee.selected) {
-					selectee.$element.removeClass("ui-selected");
+					selectee.$element.removeClass("ui-toto-selected");
 					selectee.selected = false;
 				}
 				if (selectee.unselecting) {
-					selectee.$element.removeClass("ui-unselecting");
+					selectee.$element.removeClass("ui-toto-unselecting");
 					selectee.unselecting = false;
 				}
 				if (!selectee.selecting) {
-					selectee.$element.addClass("ui-selecting");
+					selectee.$element.addClass("ui-toto-selecting");
 					selectee.selecting = true;
 					// selectable SELECTING callback
 					that._trigger("selecting", event, {
@@ -3408,15 +3408,15 @@ $.widget("ui.selectable", $.ui.mouse, {
 				// UNSELECT
 				if (selectee.selecting) {
 					if ((event.metaKey || event.ctrlKey) && selectee.startselected) {
-						selectee.$element.removeClass("ui-selecting");
+						selectee.$element.removeClass("ui-toto-selecting");
 						selectee.selecting = false;
-						selectee.$element.addClass("ui-selected");
+						selectee.$element.addClass("ui-toto-selected");
 						selectee.selected = true;
 					} else {
-						selectee.$element.removeClass("ui-selecting");
+						selectee.$element.removeClass("ui-toto-selecting");
 						selectee.selecting = false;
 						if (selectee.startselected) {
-							selectee.$element.addClass("ui-unselecting");
+							selectee.$element.addClass("ui-toto-unselecting");
 							selectee.unselecting = true;
 						}
 						// selectable UNSELECTING callback
@@ -3427,10 +3427,10 @@ $.widget("ui.selectable", $.ui.mouse, {
 				}
 				if (selectee.selected) {
 					if (!event.metaKey && !event.ctrlKey && !selectee.startselected) {
-						selectee.$element.removeClass("ui-selected");
+						selectee.$element.removeClass("ui-toto-selected");
 						selectee.selected = false;
 
-						selectee.$element.addClass("ui-unselecting");
+						selectee.$element.addClass("ui-toto-unselecting");
 						selectee.unselecting = true;
 						// selectable UNSELECTING callback
 						that._trigger("unselecting", event, {
@@ -3449,18 +3449,18 @@ $.widget("ui.selectable", $.ui.mouse, {
 
 		this.dragged = false;
 
-		$(".ui-unselecting", this.element[0]).each(function() {
+		$(".ui-toto-unselecting", this.element[0]).each(function() {
 			var selectee = $.data(this, "selectable-item");
-			selectee.$element.removeClass("ui-unselecting");
+			selectee.$element.removeClass("ui-toto-unselecting");
 			selectee.unselecting = false;
 			selectee.startselected = false;
 			that._trigger("unselected", event, {
 				unselected: selectee.element
 			});
 		});
-		$(".ui-selecting", this.element[0]).each(function() {
+		$(".ui-toto-selecting", this.element[0]).each(function() {
 			var selectee = $.data(this, "selectable-item");
-			selectee.$element.removeClass("ui-selecting").addClass("ui-selected");
+			selectee.$element.removeClass("ui-toto-selecting").addClass("ui-toto-selected");
 			selectee.selecting = false;
 			selectee.selected = true;
 			selectee.startselected = true;
@@ -3537,7 +3537,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 
 		var o = this.options;
 		this.containerCache = {};
-		this.element.addClass("ui-sortable");
+		this.element.addClass("ui-toto-sortable");
 
 		//Get the items
 		this.refresh();
@@ -3558,7 +3558,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 
 	_destroy: function() {
 		this.element
-			.removeClass("ui-sortable ui-sortable-disabled");
+			.removeClass("ui-toto-sortable ui-toto-sortable-disabled");
 		this._mouseDestroy();
 
 		for ( var i = this.items.length - 1; i >= 0; i-- ) {
@@ -3572,9 +3572,9 @@ $.widget("ui.sortable", $.ui.mouse, {
 		if ( key === "disabled" ) {
 			this.options[ key ] = value;
 
-			this.widget().toggleClass( "ui-sortable-disabled", !!value );
+			this.widget().toggleClass( "ui-toto-sortable-disabled", !!value );
 		} else {
-			// Don't call widget base _setOption for disable as it adds ui-state-disabled class
+			// Don't call widget base _setOption for disable as it adds ui-toto-state-disabled class
 			$.Widget.prototype._setOption.apply(this, arguments);
 		}
 	},
@@ -3754,7 +3754,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 
 		this.dragging = true;
 
-		this.helper.addClass("ui-sortable-helper");
+		this.helper.addClass("ui-toto-sortable-helper");
 		this._mouseDrag(event); //Execute the drag once - this causes the helper not to be visible before getting its correct position
 		return true;
 
@@ -3923,7 +3923,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 			this._mouseUp({ target: null });
 
 			if(this.options.helper === "original") {
-				this.currentItem.css(this._storedCSS).removeClass("ui-sortable-helper");
+				this.currentItem.css(this._storedCSS).removeClass("ui-toto-sortable-helper");
 			} else {
 				this.currentItem.show();
 			}
@@ -4096,13 +4096,13 @@ $.widget("ui.sortable", $.ui.mouse, {
 				for ( j = cur.length - 1; j >= 0; j--){
 					inst = $.data(cur[j], this.widgetFullName);
 					if(inst && inst !== this && !inst.options.disabled) {
-						queries.push([$.isFunction(inst.options.items) ? inst.options.items.call(inst.element) : $(inst.options.items, inst.element).not(".ui-sortable-helper").not(".ui-sortable-placeholder"), inst]);
+						queries.push([$.isFunction(inst.options.items) ? inst.options.items.call(inst.element) : $(inst.options.items, inst.element).not(".ui-toto-sortable-helper").not(".ui-toto-sortable-placeholder"), inst]);
 					}
 				}
 			}
 		}
 
-		queries.push([$.isFunction(this.options.items) ? this.options.items.call(this.element, null, { options: this.options, item: this.currentItem }) : $(this.options.items, this.element).not(".ui-sortable-helper").not(".ui-sortable-placeholder"), this]);
+		queries.push([$.isFunction(this.options.items) ? this.options.items.call(this.element, null, { options: this.options, item: this.currentItem }) : $(this.options.items, this.element).not(".ui-toto-sortable-helper").not(".ui-toto-sortable-placeholder"), this]);
 
 		for (i = queries.length - 1; i >= 0; i--){
 			queries[i][0].each(function() {
@@ -4228,8 +4228,8 @@ $.widget("ui.sortable", $.ui.mouse, {
 
 					var nodeName = that.currentItem[0].nodeName.toLowerCase(),
 						element = $( that.document[0].createElement( nodeName ) )
-							.addClass(className || that.currentItem[0].className+" ui-sortable-placeholder")
-							.removeClass("ui-sortable-helper");
+							.addClass(className || that.currentItem[0].className+" ui-toto-sortable-placeholder")
+							.removeClass("ui-toto-sortable-helper");
 
 					if ( nodeName === "tr" ) {
 						// Use a high colspan to force the td to expand the full
@@ -4640,7 +4640,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 					this._storedCSS[i] = "";
 				}
 			}
-			this.currentItem.css(this._storedCSS).removeClass("ui-sortable-helper");
+			this.currentItem.css(this._storedCSS).removeClass("ui-toto-sortable-helper");
 		} else {
 			this.currentItem.show();
 		}
@@ -4648,7 +4648,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 		if(this.fromOutside && !noPropagation) {
 			delayedTriggers.push(function(event) { this._trigger("receive", event, this._uiHash(this.fromOutside)); });
 		}
-		if((this.fromOutside || this.domPosition.prev !== this.currentItem.prev().not(".ui-sortable-helper")[0] || this.domPosition.parent !== this.currentItem.parent()[0]) && !noPropagation) {
+		if((this.fromOutside || this.domPosition.prev !== this.currentItem.prev().not(".ui-toto-sortable-helper")[0] || this.domPosition.parent !== this.currentItem.parent()[0]) && !noPropagation) {
 			delayedTriggers.push(function(event) { this._trigger("update", event, this._uiHash()); }); //Trigger update callback if the DOM position has changed
 		}
 
@@ -4749,7 +4749,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 
 (function($, undefined) {
 
-var dataSpace = "ui-effects-";
+var dataSpace = "ui-toto-effects-";
 
 $.effects = {
 	effect: {}
@@ -5695,7 +5695,7 @@ $.extend( $.effects, {
 	createWrapper: function( element ) {
 
 		// if the element is already wrapped, return it
-		if ( element.parent().is( ".ui-effects-wrapper" )) {
+		if ( element.parent().is( ".ui-toto-effects-wrapper" )) {
 			return element.parent();
 		}
 
@@ -5706,7 +5706,7 @@ $.extend( $.effects, {
 				"float": element.css( "float" )
 			},
 			wrapper = $( "<div></div>" )
-				.addClass( "ui-effects-wrapper" )
+				.addClass( "ui-toto-effects-wrapper" )
 				.css({
 					fontSize: "100%",
 					background: "transparent",
@@ -5770,7 +5770,7 @@ $.extend( $.effects, {
 	removeWrapper: function( element ) {
 		var active = document.activeElement;
 
-		if ( element.parent().is( ".ui-effects-wrapper" ) ) {
+		if ( element.parent().is( ".ui-toto-effects-wrapper" ) ) {
 			element.parent().replaceWith( element );
 
 			// Fixes #7595 - Elements lose focus when wrapped.
@@ -6048,8 +6048,8 @@ $.widget( "ui.accordion", {
 		header: "> li > :first-child,> :not(li):even",
 		heightStyle: "auto",
 		icons: {
-			activeHeader: "ui-icon-triangle-1-s",
-			header: "ui-icon-triangle-1-e"
+			activeHeader: "ui-toto-icon-triangle-1-s",
+			header: "ui-toto-icon-triangle-1-e"
 		},
 
 		// callbacks
@@ -6060,7 +6060,7 @@ $.widget( "ui.accordion", {
 	_create: function() {
 		var options = this.options;
 		this.prevShow = this.prevHide = $();
-		this.element.addClass( "ui-accordion ui-widget ui-helper-reset" )
+		this.element.addClass( "ui-toto-accordion ui-toto-widget ui-toto-helper-reset" )
 			// ARIA
 			.attr( "role", "tablist" );
 
@@ -6089,19 +6089,19 @@ $.widget( "ui.accordion", {
 		var icons = this.options.icons;
 		if ( icons ) {
 			$( "<span>" )
-				.addClass( "ui-accordion-header-icon ui-icon " + icons.header )
+				.addClass( "ui-toto-accordion-header-icon ui-toto-icon " + icons.header )
 				.prependTo( this.headers );
-			this.active.children( ".ui-accordion-header-icon" )
+			this.active.children( ".ui-toto-accordion-header-icon" )
 				.removeClass( icons.header )
 				.addClass( icons.activeHeader );
-			this.headers.addClass( "ui-accordion-icons" );
+			this.headers.addClass( "ui-toto-accordion-icons" );
 		}
 	},
 
 	_destroyIcons: function() {
 		this.headers
-			.removeClass( "ui-accordion-icons" )
-			.children( ".ui-accordion-header-icon" )
+			.removeClass( "ui-toto-accordion-icons" )
+			.children( ".ui-toto-accordion-header-icon" )
 				.remove();
 	},
 
@@ -6110,18 +6110,18 @@ $.widget( "ui.accordion", {
 
 		// clean up main element
 		this.element
-			.removeClass( "ui-accordion ui-widget ui-helper-reset" )
+			.removeClass( "ui-toto-accordion ui-toto-widget ui-toto-helper-reset" )
 			.removeAttr( "role" );
 
 		// clean up headers
 		this.headers
-			.removeClass( "ui-accordion-header ui-accordion-header-active ui-helper-reset ui-state-default ui-corner-all ui-state-active ui-state-disabled ui-corner-top" )
+			.removeClass( "ui-toto-accordion-header ui-toto-accordion-header-active ui-toto-helper-reset ui-toto-state-default ui-toto-corner-all ui-toto-state-active ui-toto-state-disabled ui-toto-corner-top" )
 			.removeAttr( "role" )
 			.removeAttr( "aria-selected" )
 			.removeAttr( "aria-controls" )
 			.removeAttr( "tabIndex" )
 			.each(function() {
-				if ( /^ui-accordion/.test( this.id ) ) {
+				if ( /^ui-toto-accordion/.test( this.id ) ) {
 					this.removeAttribute( "id" );
 				}
 			});
@@ -6134,9 +6134,9 @@ $.widget( "ui.accordion", {
 			.removeAttr( "aria-expanded" )
 			.removeAttr( "aria-hidden" )
 			.removeAttr( "aria-labelledby" )
-			.removeClass( "ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content ui-accordion-content-active ui-state-disabled" )
+			.removeClass( "ui-toto-helper-reset ui-toto-widget-content ui-toto-corner-bottom ui-toto-accordion-content ui-toto-accordion-content-active ui-toto-state-disabled" )
 			.each(function() {
-				if ( /^ui-accordion/.test( this.id ) ) {
+				if ( /^ui-toto-accordion/.test( this.id ) ) {
 					this.removeAttribute( "id" );
 				}
 			});
@@ -6177,7 +6177,7 @@ $.widget( "ui.accordion", {
 		// so we need to add the disabled class to the headers and panels
 		if ( key === "disabled" ) {
 			this.headers.add( this.headers.next() )
-				.toggleClass( "ui-state-disabled", !!value );
+				.toggleClass( "ui-toto-state-disabled", !!value );
 		}
 	},
 
@@ -6241,7 +6241,7 @@ $.widget( "ui.accordion", {
 		// was active, but active panel is gone
 		} else if ( this.active.length && !$.contains( this.element[ 0 ], this.active[ 0 ] ) ) {
 			// all remaining panel are disabled
-			if ( this.headers.length === this.headers.find(".ui-state-disabled").length ) {
+			if ( this.headers.length === this.headers.find(".ui-toto-state-disabled").length ) {
 				options.active = false;
 				this.active = $();
 			// activate previous panel
@@ -6261,11 +6261,11 @@ $.widget( "ui.accordion", {
 
 	_processPanels: function() {
 		this.headers = this.element.find( this.options.header )
-			.addClass( "ui-accordion-header ui-helper-reset ui-state-default ui-corner-all" );
+			.addClass( "ui-toto-accordion-header ui-toto-helper-reset ui-toto-state-default ui-toto-corner-all" );
 
 		this.headers.next()
-			.addClass( "ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" )
-			.filter(":not(.ui-accordion-content-active)")
+			.addClass( "ui-toto-accordion-content ui-toto-helper-reset ui-toto-widget-content ui-toto-corner-bottom" )
+			.filter(":not(.ui-toto-accordion-content-active)")
 			.hide();
 	},
 
@@ -6274,14 +6274,14 @@ $.widget( "ui.accordion", {
 			options = this.options,
 			heightStyle = options.heightStyle,
 			parent = this.element.parent(),
-			accordionId = this.accordionId = "ui-accordion-" +
+			accordionId = this.accordionId = "ui-toto-accordion-" +
 				(this.element.attr( "id" ) || ++uid);
 
 		this.active = this._findActive( options.active )
-			.addClass( "ui-accordion-header-active ui-state-active ui-corner-top" )
-			.removeClass( "ui-corner-all" );
+			.addClass( "ui-toto-accordion-header-active ui-toto-state-active ui-toto-corner-top" )
+			.removeClass( "ui-toto-corner-all" );
 		this.active.next()
-			.addClass( "ui-accordion-content-active" )
+			.addClass( "ui-toto-accordion-content-active" )
 			.show();
 
 		this.headers
@@ -6442,26 +6442,26 @@ $.widget( "ui.accordion", {
 
 		// switch classes
 		// corner classes on the previously active header stay after the animation
-		active.removeClass( "ui-accordion-header-active ui-state-active" );
+		active.removeClass( "ui-toto-accordion-header-active ui-toto-state-active" );
 		if ( options.icons ) {
-			active.children( ".ui-accordion-header-icon" )
+			active.children( ".ui-toto-accordion-header-icon" )
 				.removeClass( options.icons.activeHeader )
 				.addClass( options.icons.header );
 		}
 
 		if ( !clickedIsActive ) {
 			clicked
-				.removeClass( "ui-corner-all" )
-				.addClass( "ui-accordion-header-active ui-state-active ui-corner-top" );
+				.removeClass( "ui-toto-corner-all" )
+				.addClass( "ui-toto-accordion-header-active ui-toto-state-active ui-toto-corner-top" );
 			if ( options.icons ) {
-				clicked.children( ".ui-accordion-header-icon" )
+				clicked.children( ".ui-toto-accordion-header-icon" )
 					.removeClass( options.icons.header )
 					.addClass( options.icons.activeHeader );
 			}
 
 			clicked
 				.next()
-				.addClass( "ui-accordion-content-active" );
+				.addClass( "ui-toto-accordion-content-active" );
 		}
 	},
 
@@ -6570,10 +6570,10 @@ $.widget( "ui.accordion", {
 		var toHide = data.oldPanel;
 
 		toHide
-			.removeClass( "ui-accordion-content-active" )
+			.removeClass( "ui-toto-accordion-content-active" )
 			.prev()
-				.removeClass( "ui-corner-top" )
-				.addClass( "ui-corner-all" );
+				.removeClass( "ui-toto-corner-top" )
+				.addClass( "ui-toto-corner-all" );
 
 		// Work around for rendering bug in IE (#5421)
 		if ( toHide.length ) {
@@ -6644,7 +6644,7 @@ $.widget( "ui.autocomplete", {
 		this.isNewMenu = true;
 
 		this.element
-			.addClass( "ui-autocomplete-input" )
+			.addClass( "ui-toto-autocomplete-input" )
 			.attr( "autocomplete", "off" );
 
 		this._on( this.element, {
@@ -6764,7 +6764,7 @@ $.widget( "ui.autocomplete", {
 
 		this._initSource();
 		this.menu = $( "<ul>" )
-			.addClass( "ui-autocomplete ui-front" )
+			.addClass( "ui-toto-autocomplete ui-toto-front" )
 			.appendTo( this._appendTo() )
 			.menu({
 				// custom key handling for now
@@ -6773,7 +6773,7 @@ $.widget( "ui.autocomplete", {
 				role: null
 			})
 			.hide()
-			.data( "ui-menu" );
+			.data( "ui-toto-menu" );
 
 		this._on( this.menu.element, {
 			mousedown: function( event ) {
@@ -6792,7 +6792,7 @@ $.widget( "ui.autocomplete", {
 				// so we have to track the next mousedown and close the menu if
 				// the user clicks somewhere outside of the autocomplete
 				var menuElement = this.menu.element[ 0 ];
-				if ( !$( event.target ).closest( ".ui-menu-item" ).length ) {
+				if ( !$( event.target ).closest( ".ui-toto-menu-item" ).length ) {
 					this._delay(function() {
 						var that = this;
 						this.document.one( "mousedown", function( event ) {
@@ -6821,7 +6821,7 @@ $.widget( "ui.autocomplete", {
 					}
 				}
 
-				var item = ui.item.data( "ui-autocomplete-item" );
+				var item = ui.item.data( "ui-toto-autocomplete-item" );
 				if ( false !== this._trigger( "focus", event, { item: item } ) ) {
 					// use value to match what will end up in the input, if it was a key event
 					if ( event.originalEvent && /^key/.test( event.originalEvent.type ) ) {
@@ -6837,7 +6837,7 @@ $.widget( "ui.autocomplete", {
 				}
 			},
 			menuselect: function( event, ui ) {
-				var item = ui.item.data( "ui-autocomplete-item" ),
+				var item = ui.item.data( "ui-toto-autocomplete-item" ),
 					previous = this.previous;
 
 				// only trigger when focus was lost (click on menu)
@@ -6869,7 +6869,7 @@ $.widget( "ui.autocomplete", {
 				role: "status",
 				"aria-live": "polite"
 			})
-			.addClass( "ui-helper-hidden-accessible" )
+			.addClass( "ui-toto-helper-hidden-accessible" )
 			.insertAfter( this.element );
 
 		// turning off autocomplete prevents the browser from remembering the
@@ -6885,7 +6885,7 @@ $.widget( "ui.autocomplete", {
 	_destroy: function() {
 		clearTimeout( this.searching );
 		this.element
-			.removeClass( "ui-autocomplete-input" )
+			.removeClass( "ui-toto-autocomplete-input" )
 			.removeAttr( "autocomplete" );
 		this.menu.element.remove();
 		this.liveRegion.remove();
@@ -6914,7 +6914,7 @@ $.widget( "ui.autocomplete", {
 		}
 
 		if ( !element ) {
-			element = this.element.closest( ".ui-front" );
+			element = this.element.closest( ".ui-toto-front" );
 		}
 
 		if ( !element.length ) {
@@ -6985,7 +6985,7 @@ $.widget( "ui.autocomplete", {
 
 	_search: function( value ) {
 		this.pending++;
-		this.element.addClass( "ui-autocomplete-loading" );
+		this.element.addClass( "ui-toto-autocomplete-loading" );
 		this.cancelSearch = false;
 
 		this.source( { term: value }, this._response() );
@@ -7002,7 +7002,7 @@ $.widget( "ui.autocomplete", {
 
 			that.pending--;
 			if ( !that.pending ) {
-				that.element.removeClass( "ui-autocomplete-loading" );
+				that.element.removeClass( "ui-toto-autocomplete-loading" );
 			}
 		};
 	},
@@ -7031,7 +7031,7 @@ $.widget( "ui.autocomplete", {
 			this.menu.element.hide();
 			this.menu.blur();
 			this.isNewMenu = true;
-			this._trigger( "close", event );
+			this._trigger( "x", event );
 		}
 	},
 
@@ -7096,7 +7096,7 @@ $.widget( "ui.autocomplete", {
 	},
 
 	_renderItemData: function( ul, item ) {
-		return this._renderItem( ul, item ).data( "ui-autocomplete-item", item );
+		return this._renderItem( ul, item ).data( "ui-toto-autocomplete-item", item );
 	},
 
 	_renderItem: function( ul, item ) {
@@ -7184,11 +7184,11 @@ $.widget( "ui.autocomplete", $.ui.autocomplete, {
 (function( $, undefined ) {
 
 var lastActive, startXPos, startYPos, clickDragged,
-	baseClasses = "ui-button ui-widget ui-state-default ui-corner-all",
-	stateClasses = "ui-state-hover ui-state-active ",
-	typeClasses = "ui-button-icons-only ui-button-icon-only ui-button-text-icons ui-button-text-icon-primary ui-button-text-icon-secondary ui-button-text-only",
+	baseClasses = "ui-toto-button ui-toto-widget ui-toto-state-default ui-toto-corner-all",
+	stateClasses = "ui-toto-state-hover ui-toto-state-active ",
+	typeClasses = "ui-toto-button-icons-only ui-toto-button-icon-only ui-toto-button-text-icons ui-toto-button-text-icon-primary ui-toto-button-text-icon-secondary ui-toto-button-text-only",
 	formResetHandler = function() {
-		var buttons = $( this ).find( ":ui-button" );
+		var buttons = $( this ).find( ":ui-toto-button" );
 		setTimeout(function() {
 			buttons.button( "refresh" );
 		}, 1 );
@@ -7240,8 +7240,8 @@ $.widget( "ui.button", {
 		var that = this,
 			options = this.options,
 			toggleButton = this.type === "checkbox" || this.type === "radio",
-			activeClass = !toggleButton ? "ui-state-active" : "",
-			focusClass = "ui-state-focus";
+			activeClass = !toggleButton ? "ui-toto-state-active" : "",
+			focusClass = "ui-toto-state-focus";
 
 		if ( options.label === null ) {
 			options.label = (this.type === "input" ? this.buttonElement.val() : this.buttonElement.html());
@@ -7257,7 +7257,7 @@ $.widget( "ui.button", {
 					return;
 				}
 				if ( this === lastActive ) {
-					$( this ).addClass( "ui-state-active" );
+					$( this ).addClass( "ui-toto-state-active" );
 				}
 			})
 			.bind( "mouseleave" + this.eventNamespace, function() {
@@ -7322,7 +7322,7 @@ $.widget( "ui.button", {
 				if ( options.disabled || clickDragged ) {
 					return false;
 				}
-				$( this ).addClass( "ui-state-active" );
+				$( this ).addClass( "ui-toto-state-active" );
 				that.buttonElement.attr( "aria-pressed", "true" );
 
 				var radio = that.element[ 0 ];
@@ -7331,7 +7331,7 @@ $.widget( "ui.button", {
 					.map(function() {
 						return $( this ).button( "widget" )[ 0 ];
 					})
-					.removeClass( "ui-state-active" )
+					.removeClass( "ui-toto-state-active" )
 					.attr( "aria-pressed", "false" );
 			});
 		} else {
@@ -7340,7 +7340,7 @@ $.widget( "ui.button", {
 					if ( options.disabled ) {
 						return false;
 					}
-					$( this ).addClass( "ui-state-active" );
+					$( this ).addClass( "ui-toto-state-active" );
 					lastActive = this;
 					that.document.one( "mouseup", function() {
 						lastActive = null;
@@ -7350,20 +7350,20 @@ $.widget( "ui.button", {
 					if ( options.disabled ) {
 						return false;
 					}
-					$( this ).removeClass( "ui-state-active" );
+					$( this ).removeClass( "ui-toto-state-active" );
 				})
 				.bind( "keydown" + this.eventNamespace, function(event) {
 					if ( options.disabled ) {
 						return false;
 					}
 					if ( event.keyCode === $.ui.keyCode.SPACE || event.keyCode === $.ui.keyCode.ENTER ) {
-						$( this ).addClass( "ui-state-active" );
+						$( this ).addClass( "ui-toto-state-active" );
 					}
 				})
 				// see #8559, we bind to blur here in case the button element loses
 				// focus between keydown and keyup, it would be left in an "active" state
 				.bind( "keyup" + this.eventNamespace + " blur" + this.eventNamespace, function() {
-					$( this ).removeClass( "ui-state-active" );
+					$( this ).removeClass( "ui-toto-state-active" );
 				});
 
 			if ( this.buttonElement.is("a") ) {
@@ -7409,11 +7409,11 @@ $.widget( "ui.button", {
 					this.buttonElement = ancestor.find( labelSelector );
 				}
 			}
-			this.element.addClass( "ui-helper-hidden-accessible" );
+			this.element.addClass( "ui-toto-helper-hidden-accessible" );
 
 			checked = this.element.is( ":checked" );
 			if ( checked ) {
-				this.buttonElement.addClass( "ui-state-active" );
+				this.buttonElement.addClass( "ui-toto-state-active" );
 			}
 			this.buttonElement.prop( "aria-pressed", checked );
 		} else {
@@ -7427,12 +7427,12 @@ $.widget( "ui.button", {
 
 	_destroy: function() {
 		this.element
-			.removeClass( "ui-helper-hidden-accessible" );
+			.removeClass( "ui-toto-helper-hidden-accessible" );
 		this.buttonElement
 			.removeClass( baseClasses + " " + stateClasses + " " + typeClasses )
 			.removeAttr( "role" )
 			.removeAttr( "aria-pressed" )
-			.html( this.buttonElement.find(".ui-button-text").html() );
+			.html( this.buttonElement.find(".ui-toto-button-text").html() );
 
 		if ( !this.hasTitle ) {
 			this.buttonElement.removeAttr( "title" );
@@ -7454,7 +7454,7 @@ $.widget( "ui.button", {
 
 	refresh: function() {
 		//See #8237 & #8828
-		var isDisabled = this.element.is( "input, button" ) ? this.element.is( ":disabled" ) : this.element.hasClass( "ui-button-disabled" );
+		var isDisabled = this.element.is( "input, button" ) ? this.element.is( ":disabled" ) : this.element.hasClass( "ui-toto-button-disabled" );
 
 		if ( isDisabled !== this.options.disabled ) {
 			this._setOption( "disabled", isDisabled );
@@ -7463,22 +7463,22 @@ $.widget( "ui.button", {
 			radioGroup( this.element[0] ).each(function() {
 				if ( $( this ).is( ":checked" ) ) {
 					$( this ).button( "widget" )
-						.addClass( "ui-state-active" )
+						.addClass( "ui-toto-state-active" )
 						.attr( "aria-pressed", "true" );
 				} else {
 					$( this ).button( "widget" )
-						.removeClass( "ui-state-active" )
+						.removeClass( "ui-toto-state-active" )
 						.attr( "aria-pressed", "false" );
 				}
 			});
 		} else if ( this.type === "checkbox" ) {
 			if ( this.element.is( ":checked" ) ) {
 				this.buttonElement
-					.addClass( "ui-state-active" )
+					.addClass( "ui-toto-state-active" )
 					.attr( "aria-pressed", "true" );
 			} else {
 				this.buttonElement
-					.removeClass( "ui-state-active" )
+					.removeClass( "ui-toto-state-active" )
 					.attr( "aria-pressed", "false" );
 			}
 		}
@@ -7493,7 +7493,7 @@ $.widget( "ui.button", {
 		}
 		var buttonElement = this.buttonElement.removeClass( typeClasses ),
 			buttonText = $( "<span></span>", this.document[0] )
-				.addClass( "ui-button-text" )
+				.addClass( "ui-toto-button-text" )
 				.html( this.options.label )
 				.appendTo( buttonElement.empty() )
 				.text(),
@@ -7503,26 +7503,26 @@ $.widget( "ui.button", {
 
 		if ( icons.primary || icons.secondary ) {
 			if ( this.options.text ) {
-				buttonClasses.push( "ui-button-text-icon" + ( multipleIcons ? "s" : ( icons.primary ? "-primary" : "-secondary" ) ) );
+				buttonClasses.push( "ui-toto-button-text-icon" + ( multipleIcons ? "s" : ( icons.primary ? "-primary" : "-secondary" ) ) );
 			}
 
 			if ( icons.primary ) {
-				buttonElement.prepend( "<span class='ui-button-icon-primary ui-icon " + icons.primary + "'></span>" );
+				buttonElement.prepend( "<span class='ui-toto-button-icon-primary ui-toto-icon " + icons.primary + "'></span>" );
 			}
 
 			if ( icons.secondary ) {
-				buttonElement.append( "<span class='ui-button-icon-secondary ui-icon " + icons.secondary + "'></span>" );
+				buttonElement.append( "<span class='ui-toto-button-icon-secondary ui-toto-icon " + icons.secondary + "'></span>" );
 			}
 
 			if ( !this.options.text ) {
-				buttonClasses.push( multipleIcons ? "ui-button-icons-only" : "ui-button-icon-only" );
+				buttonClasses.push( multipleIcons ? "ui-toto-button-icons-only" : "ui-toto-button-icon-only" );
 
 				if ( !this.hasTitle ) {
 					buttonElement.attr( "title", $.trim( buttonText ) );
 				}
 			}
 		} else {
-			buttonClasses.push( "ui-button-text-only" );
+			buttonClasses.push( "ui-toto-button-text-only" );
 		}
 		buttonElement.addClass( buttonClasses.join( " " ) );
 	}
@@ -7531,11 +7531,11 @@ $.widget( "ui.button", {
 $.widget( "ui.buttonset", {
 	version: "1.10.2",
 	options: {
-		items: "button, input[type=button], input[type=submit], input[type=reset], input[type=checkbox], input[type=radio], a, :data(ui-button)"
+		items: "button, input[type=button], input[type=submit], input[type=reset], input[type=checkbox], input[type=radio], a, :data(ui-toto-button)"
 	},
 
 	_create: function() {
-		this.element.addClass( "ui-buttonset" );
+		this.element.addClass( "ui-toto-buttonset" );
 	},
 
 	_init: function() {
@@ -7554,32 +7554,32 @@ $.widget( "ui.buttonset", {
 		var rtl = this.element.css( "direction" ) === "rtl";
 
 		this.buttons = this.element.find( this.options.items )
-			.filter( ":ui-button" )
+			.filter( ":ui-toto-button" )
 				.button( "refresh" )
 			.end()
-			.not( ":ui-button" )
+			.not( ":ui-toto-button" )
 				.button()
 			.end()
 			.map(function() {
 				return $( this ).button( "widget" )[ 0 ];
 			})
-				.removeClass( "ui-corner-all ui-corner-left ui-corner-right" )
+				.removeClass( "ui-toto-corner-all ui-toto-corner-left ui-toto-corner-right" )
 				.filter( ":first" )
-					.addClass( rtl ? "ui-corner-right" : "ui-corner-left" )
+					.addClass( rtl ? "ui-toto-corner-right" : "ui-toto-corner-left" )
 				.end()
 				.filter( ":last" )
-					.addClass( rtl ? "ui-corner-left" : "ui-corner-right" )
+					.addClass( rtl ? "ui-toto-corner-left" : "ui-toto-corner-right" )
 				.end()
 			.end();
 	},
 
 	_destroy: function() {
-		this.element.removeClass( "ui-buttonset" );
+		this.element.removeClass( "ui-toto-buttonset" );
 		this.buttons
 			.map(function() {
 				return $( this ).button( "widget" )[ 0 ];
 			})
-				.removeClass( "ui-corner-left ui-corner-right" )
+				.removeClass( "ui-toto-corner-left ui-toto-corner-right" )
 			.end()
 			.button( "destroy" );
 	}
@@ -7606,15 +7606,15 @@ function Datepicker() {
 	this._disabledInputs = []; // List of date picker inputs that have been disabled
 	this._datepickerShowing = false; // True if the popup picker is showing , false if not
 	this._inDialog = false; // True if showing within a "dialog", false if not
-	this._mainDivId = "ui-datepicker-div"; // The ID of the main datepicker division
-	this._inlineClass = "ui-datepicker-inline"; // The name of the inline marker class
-	this._appendClass = "ui-datepicker-append"; // The name of the append marker class
-	this._triggerClass = "ui-datepicker-trigger"; // The name of the trigger marker class
-	this._dialogClass = "ui-datepicker-dialog"; // The name of the dialog marker class
-	this._disableClass = "ui-datepicker-disabled"; // The name of the disabled covering marker class
-	this._unselectableClass = "ui-datepicker-unselectable"; // The name of the unselectable cell marker class
-	this._currentClass = "ui-datepicker-current-day"; // The name of the current day marker class
-	this._dayOverClass = "ui-datepicker-days-cell-over"; // The name of the day hover marker class
+	this._mainDivId = "ui-toto-datepicker-div"; // The ID of the main datepicker division
+	this._inlineClass = "ui-toto-datepicker-inline"; // The name of the inline marker class
+	this._appendClass = "ui-toto-datepicker-append"; // The name of the append marker class
+	this._triggerClass = "ui-toto-datepicker-trigger"; // The name of the trigger marker class
+	this._dialogClass = "ui-toto-datepicker-dialog"; // The name of the dialog marker class
+	this._disableClass = "ui-toto-datepicker-disabled"; // The name of the disabled covering marker class
+	this._unselectableClass = "ui-toto-datepicker-unselectable"; // The name of the unselectable cell marker class
+	this._currentClass = "ui-toto-datepicker-current-day"; // The name of the current day marker class
+	this._dayOverClass = "ui-toto-datepicker-days-cell-over"; // The name of the day hover marker class
 	this.regional = []; // Available regional settings, indexed by language code
 	this.regional[""] = { // Default regional settings
 		closeText: "Done", // Display text for close link
@@ -7685,7 +7685,7 @@ function Datepicker() {
 		disabled: false // The initial disabled state
 	};
 	$.extend(this._defaults, this.regional[""]);
-	this.dpDiv = bindHover($("<div id='" + this._mainDivId + "' class='ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all'></div>"));
+	this.dpDiv = bindHover($("<div id='" + this._mainDivId + "' class='ui-toto-datepicker ui-toto-widget ui-toto-widget-content ui-toto-helper-clearfix ui-toto-corner-all'></div>"));
 }
 
 $.extend(Datepicker.prototype, {
@@ -7738,7 +7738,7 @@ $.extend(Datepicker.prototype, {
 			drawMonth: 0, drawYear: 0, // month being drawn
 			inline: inline, // is datepicker inline or not
 			dpDiv: (!inline ? this.dpDiv : // presentation div
-			bindHover($("<div class='" + this._inlineClass + " ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all'></div>")))};
+			bindHover($("<div class='" + this._inlineClass + " ui-toto-datepicker ui-toto-widget ui-toto-widget-content ui-toto-helper-clearfix ui-toto-corner-all'></div>")))};
 	},
 
 	/* Attach the date picker to an input field. */
@@ -7955,8 +7955,8 @@ $.extend(Datepicker.prototype, {
 				filter("img").css({opacity: "1.0", cursor: ""});
 		} else if (nodeName === "div" || nodeName === "span") {
 			inline = $target.children("." + this._inlineClass);
-			inline.children().removeClass("ui-state-disabled");
-			inline.find("select.ui-datepicker-month, select.ui-datepicker-year").
+			inline.children().removeClass("ui-toto-state-disabled");
+			inline.find("select.ui-toto-datepicker-month, select.ui-toto-datepicker-year").
 				prop("disabled", false);
 		}
 		this._disabledInputs = $.map(this._disabledInputs,
@@ -7983,8 +7983,8 @@ $.extend(Datepicker.prototype, {
 				filter("img").css({opacity: "0.5", cursor: "default"});
 		} else if (nodeName === "div" || nodeName === "span") {
 			inline = $target.children("." + this._inlineClass);
-			inline.children().addClass("ui-state-disabled");
-			inline.find("select.ui-datepicker-month, select.ui-datepicker-year").
+			inline.children().addClass("ui-toto-state-disabled");
+			inline.find("select.ui-toto-datepicker-month, select.ui-toto-datepicker-year").
 				prop("disabled", true);
 		}
 		this._disabledInputs = $.map(this._disabledInputs,
@@ -8124,7 +8124,7 @@ $.extend(Datepicker.prototype, {
 		var onSelect, dateStr, sel,
 			inst = $.datepicker._getInst(event.target),
 			handled = true,
-			isRTL = inst.dpDiv.is(".ui-datepicker-rtl");
+			isRTL = inst.dpDiv.is(".ui-toto-datepicker-rtl");
 
 		inst._keyEvent = true;
 		if ($.datepicker._datepickerShowing) {
@@ -8349,14 +8349,14 @@ $.extend(Datepicker.prototype, {
 			cols = numMonths[1],
 			width = 17;
 
-		inst.dpDiv.removeClass("ui-datepicker-multi-2 ui-datepicker-multi-3 ui-datepicker-multi-4").width("");
+		inst.dpDiv.removeClass("ui-toto-datepicker-multi-2 ui-toto-datepicker-multi-3 ui-toto-datepicker-multi-4").width("");
 		if (cols > 1) {
-			inst.dpDiv.addClass("ui-datepicker-multi-" + cols).css("width", (width * cols) + "em");
+			inst.dpDiv.addClass("ui-toto-datepicker-multi-" + cols).css("width", (width * cols) + "em");
 		}
 		inst.dpDiv[(numMonths[0] !== 1 || numMonths[1] !== 1 ? "add" : "remove") +
-			"Class"]("ui-datepicker-multi");
+			"Class"]("ui-toto-datepicker-multi");
 		inst.dpDiv[(this._get(inst, "isRTL") ? "add" : "remove") +
-			"Class"]("ui-datepicker-rtl");
+			"Class"]("ui-toto-datepicker-rtl");
 
 		// #6694 - don't focus the input if it's already focused
 		// this breaks the change event in IE
@@ -8371,7 +8371,7 @@ $.extend(Datepicker.prototype, {
 			setTimeout(function(){
 				//assure that inst.yearshtml didn't change.
 				if( origyearshtml === inst.yearshtml && inst.yearshtml ){
-					inst.dpDiv.find("select.ui-datepicker-year:first").replaceWith(inst.yearshtml);
+					inst.dpDiv.find("select.ui-toto-datepicker-year:first").replaceWith(inst.yearshtml);
 				}
 				origyearshtml = inst.yearshtml = null;
 			}, 0);
@@ -8476,7 +8476,7 @@ $.extend(Datepicker.prototype, {
 
 	/* Tidy up after a dialog display. */
 	_tidyDialog: function(inst) {
-		inst.dpDiv.removeClass(this._dialogClass).unbind(".ui-datepicker-calendar");
+		inst.dpDiv.removeClass(this._dialogClass).unbind(".ui-toto-datepicker-calendar");
 	},
 
 	/* Close date picker if clicked elsewhere. */
@@ -9213,9 +9213,9 @@ $.extend(Datepicker.prototype, {
 			this._getFormatConfig(inst)));
 
 		prev = (this._canAdjustMonth(inst, -1, drawYear, drawMonth) ?
-			"<a class='ui-datepicker-prev ui-corner-all' data-handler='prev' data-event='click'" +
-			" title='" + prevText + "'><span class='ui-icon ui-icon-circle-triangle-" + ( isRTL ? "e" : "w") + "'>" + prevText + "</span></a>" :
-			(hideIfNoPrevNext ? "" : "<a class='ui-datepicker-prev ui-corner-all ui-state-disabled' title='"+ prevText +"'><span class='ui-icon ui-icon-circle-triangle-" + ( isRTL ? "e" : "w") + "'>" + prevText + "</span></a>"));
+			"<a class='ui-toto-datepicker-prev ui-toto-corner-all' data-handler='prev' data-event='click'" +
+			" title='" + prevText + "'><span class='ui-toto-icon ui-toto-icon-circle-triangle-" + ( isRTL ? "e" : "w") + "'>" + prevText + "</span></a>" :
+			(hideIfNoPrevNext ? "" : "<a class='ui-toto-datepicker-prev ui-toto-corner-all ui-toto-state-disabled' title='"+ prevText +"'><span class='ui-toto-icon ui-toto-icon-circle-triangle-" + ( isRTL ? "e" : "w") + "'>" + prevText + "</span></a>"));
 
 		nextText = this._get(inst, "nextText");
 		nextText = (!navigationAsDateFormat ? nextText : this.formatDate(nextText,
@@ -9223,20 +9223,20 @@ $.extend(Datepicker.prototype, {
 			this._getFormatConfig(inst)));
 
 		next = (this._canAdjustMonth(inst, +1, drawYear, drawMonth) ?
-			"<a class='ui-datepicker-next ui-corner-all' data-handler='next' data-event='click'" +
-			" title='" + nextText + "'><span class='ui-icon ui-icon-circle-triangle-" + ( isRTL ? "w" : "e") + "'>" + nextText + "</span></a>" :
-			(hideIfNoPrevNext ? "" : "<a class='ui-datepicker-next ui-corner-all ui-state-disabled' title='"+ nextText + "'><span class='ui-icon ui-icon-circle-triangle-" + ( isRTL ? "w" : "e") + "'>" + nextText + "</span></a>"));
+			"<a class='ui-toto-datepicker-next ui-toto-corner-all' data-handler='next' data-event='click'" +
+			" title='" + nextText + "'><span class='ui-toto-icon ui-toto-icon-circle-triangle-" + ( isRTL ? "w" : "e") + "'>" + nextText + "</span></a>" :
+			(hideIfNoPrevNext ? "" : "<a class='ui-toto-datepicker-next ui-toto-corner-all ui-toto-state-disabled' title='"+ nextText + "'><span class='ui-toto-icon ui-toto-icon-circle-triangle-" + ( isRTL ? "w" : "e") + "'>" + nextText + "</span></a>"));
 
 		currentText = this._get(inst, "currentText");
 		gotoDate = (this._get(inst, "gotoCurrent") && inst.currentDay ? currentDate : today);
 		currentText = (!navigationAsDateFormat ? currentText :
 			this.formatDate(currentText, gotoDate, this._getFormatConfig(inst)));
 
-		controls = (!inst.inline ? "<button type='button' class='ui-datepicker-close ui-state-default ui-priority-primary ui-corner-all' data-handler='hide' data-event='click'>" +
+		controls = (!inst.inline ? "<button type='button' class='ui-toto-datepicker-close ui-toto-state-default ui-toto-priority-primary ui-toto-corner-all' data-handler='hide' data-event='click'>" +
 			this._get(inst, "closeText") + "</button>" : "");
 
-		buttonPanel = (showButtonPanel) ? "<div class='ui-datepicker-buttonpane ui-widget-content'>" + (isRTL ? controls : "") +
-			(this._isInRange(inst, gotoDate) ? "<button type='button' class='ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all' data-handler='today' data-event='click'" +
+		buttonPanel = (showButtonPanel) ? "<div class='ui-toto-datepicker-buttonpane ui-toto-widget-content'>" + (isRTL ? controls : "") +
+			(this._isInRange(inst, gotoDate) ? "<button type='button' class='ui-toto-datepicker-current ui-toto-state-default ui-toto-priority-secondary ui-toto-corner-all' data-handler='today' data-event='click'" +
 			">" + currentText + "</button>" : "") + (isRTL ? "" : controls) + "</div>" : "";
 
 		firstDay = parseInt(this._get(inst, "firstDay"),10);
@@ -9258,32 +9258,32 @@ $.extend(Datepicker.prototype, {
 			this.maxRows = 4;
 			for (col = 0; col < numMonths[1]; col++) {
 				selectedDate = this._daylightSavingAdjust(new Date(drawYear, drawMonth, inst.selectedDay));
-				cornerClass = " ui-corner-all";
+				cornerClass = " ui-toto-corner-all";
 				calender = "";
 				if (isMultiMonth) {
-					calender += "<div class='ui-datepicker-group";
+					calender += "<div class='ui-toto-datepicker-group";
 					if (numMonths[1] > 1) {
 						switch (col) {
-							case 0: calender += " ui-datepicker-group-first";
-								cornerClass = " ui-corner-" + (isRTL ? "right" : "left"); break;
-							case numMonths[1]-1: calender += " ui-datepicker-group-last";
-								cornerClass = " ui-corner-" + (isRTL ? "left" : "right"); break;
-							default: calender += " ui-datepicker-group-middle"; cornerClass = ""; break;
+							case 0: calender += " ui-toto-datepicker-group-first";
+								cornerClass = " ui-toto-corner-" + (isRTL ? "right" : "left"); break;
+							case numMonths[1]-1: calender += " ui-toto-datepicker-group-last";
+								cornerClass = " ui-toto-corner-" + (isRTL ? "left" : "right"); break;
+							default: calender += " ui-toto-datepicker-group-middle"; cornerClass = ""; break;
 						}
 					}
 					calender += "'>";
 				}
-				calender += "<div class='ui-datepicker-header ui-widget-header ui-helper-clearfix" + cornerClass + "'>" +
+				calender += "<div class='ui-toto-datepicker-header ui-toto-widget-header ui-toto-helper-clearfix" + cornerClass + "'>" +
 					(/all|left/.test(cornerClass) && row === 0 ? (isRTL ? next : prev) : "") +
 					(/all|right/.test(cornerClass) && row === 0 ? (isRTL ? prev : next) : "") +
 					this._generateMonthYearHeader(inst, drawMonth, drawYear, minDate, maxDate,
 					row > 0 || col > 0, monthNames, monthNamesShort) + // draw month headers
-					"</div><table class='ui-datepicker-calendar'><thead>" +
+					"</div><table class='ui-toto-datepicker-calendar'><thead>" +
 					"<tr>";
-				thead = (showWeek ? "<th class='ui-datepicker-week-col'>" + this._get(inst, "weekHeader") + "</th>" : "");
+				thead = (showWeek ? "<th class='ui-toto-datepicker-week-col'>" + this._get(inst, "weekHeader") + "</th>" : "");
 				for (dow = 0; dow < 7; dow++) { // days of the week
 					day = (dow + firstDay) % 7;
-					thead += "<th" + ((dow + firstDay + 6) % 7 >= 5 ? " class='ui-datepicker-week-end'" : "") + ">" +
+					thead += "<th" + ((dow + firstDay + 6) % 7 >= 5 ? " class='ui-toto-datepicker-week-end'" : "") + ">" +
 						"<span title='" + dayNames[day] + "'>" + dayNamesMin[day] + "</span></th>";
 				}
 				calender += thead + "</tr></thead><tbody>";
@@ -9298,7 +9298,7 @@ $.extend(Datepicker.prototype, {
 				printDate = this._daylightSavingAdjust(new Date(drawYear, drawMonth, 1 - leadDays));
 				for (dRow = 0; dRow < numRows; dRow++) { // create date picker rows
 					calender += "<tr>";
-					tbody = (!showWeek ? "" : "<td class='ui-datepicker-week-col'>" +
+					tbody = (!showWeek ? "" : "<td class='ui-toto-datepicker-week-col'>" +
 						this._get(inst, "calculateWeek")(printDate) + "</td>");
 					for (dow = 0; dow < 7; dow++) { // create date picker days
 						daySettings = (beforeShowDay ?
@@ -9307,23 +9307,23 @@ $.extend(Datepicker.prototype, {
 						unselectable = (otherMonth && !selectOtherMonths) || !daySettings[0] ||
 							(minDate && printDate < minDate) || (maxDate && printDate > maxDate);
 						tbody += "<td class='" +
-							((dow + firstDay + 6) % 7 >= 5 ? " ui-datepicker-week-end" : "") + // highlight weekends
-							(otherMonth ? " ui-datepicker-other-month" : "") + // highlight days from other months
+							((dow + firstDay + 6) % 7 >= 5 ? " ui-toto-datepicker-week-end" : "") + // highlight weekends
+							(otherMonth ? " ui-toto-datepicker-other-month" : "") + // highlight days from other months
 							((printDate.getTime() === selectedDate.getTime() && drawMonth === inst.selectedMonth && inst._keyEvent) || // user pressed key
 							(defaultDate.getTime() === printDate.getTime() && defaultDate.getTime() === selectedDate.getTime()) ?
 							// or defaultDate is current printedDate and defaultDate is selectedDate
 							" " + this._dayOverClass : "") + // highlight selected day
-							(unselectable ? " " + this._unselectableClass + " ui-state-disabled": "") +  // highlight unselectable days
+							(unselectable ? " " + this._unselectableClass + " ui-toto-state-disabled": "") +  // highlight unselectable days
 							(otherMonth && !showOtherMonths ? "" : " " + daySettings[1] + // highlight custom dates
 							(printDate.getTime() === currentDate.getTime() ? " " + this._currentClass : "") + // highlight selected day
-							(printDate.getTime() === today.getTime() ? " ui-datepicker-today" : "")) + "'" + // highlight today (if different)
+							(printDate.getTime() === today.getTime() ? " ui-toto-datepicker-today" : "")) + "'" + // highlight today (if different)
 							((!otherMonth || showOtherMonths) && daySettings[2] ? " title='" + daySettings[2].replace(/'/g, "&#39;") + "'" : "") + // cell title
 							(unselectable ? "" : " data-handler='selectDay' data-event='click' data-month='" + printDate.getMonth() + "' data-year='" + printDate.getFullYear() + "'") + ">" + // actions
 							(otherMonth && !showOtherMonths ? "&#xa0;" : // display for other months
-							(unselectable ? "<span class='ui-state-default'>" + printDate.getDate() + "</span>" : "<a class='ui-state-default" +
-							(printDate.getTime() === today.getTime() ? " ui-state-highlight" : "") +
-							(printDate.getTime() === currentDate.getTime() ? " ui-state-active" : "") + // highlight selected day
-							(otherMonth ? " ui-priority-secondary" : "") + // distinguish dates from other months
+							(unselectable ? "<span class='ui-toto-state-default'>" + printDate.getDate() + "</span>" : "<a class='ui-toto-state-default" +
+							(printDate.getTime() === today.getTime() ? " ui-toto-state-highlight" : "") +
+							(printDate.getTime() === currentDate.getTime() ? " ui-toto-state-active" : "") + // highlight selected day
+							(otherMonth ? " ui-toto-priority-secondary" : "") + // distinguish dates from other months
 							"' href='#'>" + printDate.getDate() + "</a>")) + "</td>"; // display selectable date
 						printDate.setDate(printDate.getDate() + 1);
 						printDate = this._daylightSavingAdjust(printDate);
@@ -9336,7 +9336,7 @@ $.extend(Datepicker.prototype, {
 					drawYear++;
 				}
 				calender += "</tbody></table>" + (isMultiMonth ? "</div>" +
-							((numMonths[0] > 0 && col === numMonths[1]-1) ? "<div class='ui-datepicker-row-break'></div>" : "") : "");
+							((numMonths[0] > 0 && col === numMonths[1]-1) ? "<div class='ui-toto-datepicker-row-break'></div>" : "") : "");
 				group += calender;
 			}
 			html += group;
@@ -9354,16 +9354,16 @@ $.extend(Datepicker.prototype, {
 			changeMonth = this._get(inst, "changeMonth"),
 			changeYear = this._get(inst, "changeYear"),
 			showMonthAfterYear = this._get(inst, "showMonthAfterYear"),
-			html = "<div class='ui-datepicker-title'>",
+			html = "<div class='ui-toto-datepicker-title'>",
 			monthHtml = "";
 
 		// month selection
 		if (secondary || !changeMonth) {
-			monthHtml += "<span class='ui-datepicker-month'>" + monthNames[drawMonth] + "</span>";
+			monthHtml += "<span class='ui-toto-datepicker-month'>" + monthNames[drawMonth] + "</span>";
 		} else {
 			inMinYear = (minDate && minDate.getFullYear() === drawYear);
 			inMaxYear = (maxDate && maxDate.getFullYear() === drawYear);
-			monthHtml += "<select class='ui-datepicker-month' data-handler='selectMonth' data-event='change'>";
+			monthHtml += "<select class='ui-toto-datepicker-month' data-handler='selectMonth' data-event='change'>";
 			for ( month = 0; month < 12; month++) {
 				if ((!inMinYear || month >= minDate.getMonth()) && (!inMaxYear || month <= maxDate.getMonth())) {
 					monthHtml += "<option value='" + month + "'" +
@@ -9382,7 +9382,7 @@ $.extend(Datepicker.prototype, {
 		if ( !inst.yearshtml ) {
 			inst.yearshtml = "";
 			if (secondary || !changeYear) {
-				html += "<span class='ui-datepicker-year'>" + drawYear + "</span>";
+				html += "<span class='ui-toto-datepicker-year'>" + drawYear + "</span>";
 			} else {
 				// determine range of years to display
 				years = this._get(inst, "yearRange").split(":");
@@ -9397,7 +9397,7 @@ $.extend(Datepicker.prototype, {
 				endYear = Math.max(year, determineYear(years[1] || ""));
 				year = (minDate ? Math.max(year, minDate.getFullYear()) : year);
 				endYear = (maxDate ? Math.min(endYear, maxDate.getFullYear()) : endYear);
-				inst.yearshtml += "<select class='ui-datepicker-year' data-handler='selectYear' data-event='change'>";
+				inst.yearshtml += "<select class='ui-toto-datepicker-year' data-handler='selectYear' data-event='change'>";
 				for (; year <= endYear; year++) {
 					inst.yearshtml += "<option value='" + year + "'" +
 						(year === drawYear ? " selected='selected'" : "") +
@@ -9540,25 +9540,25 @@ $.extend(Datepicker.prototype, {
  * Global instActive, set by _updateDatepicker allows the handlers to find their way back to the active picker.
  */
 function bindHover(dpDiv) {
-	var selector = "button, .ui-datepicker-prev, .ui-datepicker-next, .ui-datepicker-calendar td a";
+	var selector = "button, .ui-toto-datepicker-prev, .ui-toto-datepicker-next, .ui-toto-datepicker-calendar td a";
 	return dpDiv.delegate(selector, "mouseout", function() {
-			$(this).removeClass("ui-state-hover");
-			if (this.className.indexOf("ui-datepicker-prev") !== -1) {
-				$(this).removeClass("ui-datepicker-prev-hover");
+			$(this).removeClass("ui-toto-state-hover");
+			if (this.className.indexOf("ui-toto-datepicker-prev") !== -1) {
+				$(this).removeClass("ui-toto-datepicker-prev-hover");
 			}
-			if (this.className.indexOf("ui-datepicker-next") !== -1) {
-				$(this).removeClass("ui-datepicker-next-hover");
+			if (this.className.indexOf("ui-toto-datepicker-next") !== -1) {
+				$(this).removeClass("ui-toto-datepicker-next-hover");
 			}
 		})
 		.delegate(selector, "mouseover", function(){
 			if (!$.datepicker._isDisabledDatepicker( instActive.inline ? dpDiv.parent()[0] : instActive.input[0])) {
-				$(this).parents(".ui-datepicker-calendar").find("a").removeClass("ui-state-hover");
-				$(this).addClass("ui-state-hover");
-				if (this.className.indexOf("ui-datepicker-prev") !== -1) {
-					$(this).addClass("ui-datepicker-prev-hover");
+				$(this).parents(".ui-toto-datepicker-calendar").find("a").removeClass("ui-toto-state-hover");
+				$(this).addClass("ui-toto-state-hover");
+				if (this.className.indexOf("ui-toto-datepicker-prev") !== -1) {
+					$(this).addClass("ui-toto-datepicker-prev-hover");
 				}
-				if (this.className.indexOf("ui-datepicker-next") !== -1) {
-					$(this).addClass("ui-datepicker-next-hover");
+				if (this.className.indexOf("ui-toto-datepicker-next") !== -1) {
+					$(this).addClass("ui-toto-datepicker-next-hover");
 				}
 			}
 		});
@@ -9650,7 +9650,7 @@ $.widget( "ui.dialog", {
 		autoOpen: true,
 		buttons: [],
 		closeOnEscape: true,
-		closeText: "close",
+		closeText: "x",
 		dialogClass: "",
 		draggable: true,
 		hide: null,
@@ -9711,7 +9711,7 @@ $.widget( "ui.dialog", {
 		this.element
 			.show()
 			.removeAttr("title")
-			.addClass("ui-dialog-content ui-widget-content")
+			.addClass("ui-toto-dialog-content ui-toto-widget-content")
 			.appendTo( this.uiDialog );
 
 		this._createTitlebar();
@@ -9749,7 +9749,7 @@ $.widget( "ui.dialog", {
 
 		this.element
 			.removeUniqueId()
-			.removeClass("ui-dialog-content ui-widget-content")
+			.removeClass("ui-toto-dialog-content ui-toto-widget-content")
 			.css( this.originalCss )
 			// Without detaching first, the following becomes really slow
 			.detach();
@@ -9880,7 +9880,7 @@ $.widget( "ui.dialog", {
 
 	_createWrapper: function() {
 		this.uiDialog = $("<div>")
-			.addClass( "ui-dialog ui-widget ui-widget-content ui-corner-all ui-front " +
+			.addClass( "ui-toto-dialog ui-toto-widget ui-toto-widget-content ui-toto-corner-all ui-toto-front " +
 				this.options.dialogClass )
 			.hide()
 			.attr({
@@ -9936,29 +9936,27 @@ $.widget( "ui.dialog", {
 		var uiDialogTitle;
 
 		this.uiDialogTitlebar = $("<div>")
-			.addClass("ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix")
+			.addClass("ui-toto-dialog-titlebar ui-toto-widget-header ui-toto-corner-all ui-toto-helper-clearfix")
 			.prependTo( this.uiDialog );
 		this._on( this.uiDialogTitlebar, {
 			mousedown: function( event ) {
 				// Don't prevent click on close button (#8838)
 				// Focusing a dialog that is partially scrolled out of view
 				// causes the browser to scroll it into view, preventing the click event
-				if ( !$( event.target ).closest(".ui-dialog-titlebar-close") ) {
+				if ( !$( event.target ).closest(".ui-toto-dialog-titlebar-close") ) {
 					// Dialog isn't getting focus when dragging (#8063)
 					this.uiDialog.focus();
 				}
 			}
 		});
 
-		this.uiDialogTitlebarClose = $("<button></button>")
+		this.uiDialogTitlebarClose = $("<button> X </button>")
 			.button({
 				label: this.options.closeText,
-				icons: {
-					primary: "ui-icon-closethick"
-				},
-				text: false
+				icons: false,
+				text: true
 			})
-			.addClass("ui-dialog-titlebar-close")
+			.addClass("ui-toto-dialog-titlebar-close")
 			.appendTo( this.uiDialogTitlebar );
 		this._on( this.uiDialogTitlebarClose, {
 			click: function( event ) {
@@ -9969,7 +9967,7 @@ $.widget( "ui.dialog", {
 
 		uiDialogTitle = $("<span>")
 			.uniqueId()
-			.addClass("ui-dialog-title")
+			.addClass("ui-toto-dialog-title")
 			.prependTo( this.uiDialogTitlebar );
 		this._title( uiDialogTitle );
 
@@ -9987,10 +9985,10 @@ $.widget( "ui.dialog", {
 
 	_createButtonPane: function() {
 		this.uiDialogButtonPane = $("<div>")
-			.addClass("ui-dialog-buttonpane ui-widget-content ui-helper-clearfix");
+			.addClass("ui-toto-dialog-buttonpane ui-toto-widget-content ui-toto-helper-clearfix");
 
 		this.uiButtonSet = $("<div>")
-			.addClass("ui-dialog-buttonset")
+			.addClass("ui-toto-dialog-buttonset")
 			.appendTo( this.uiDialogButtonPane );
 
 		this._createButtons();
@@ -10005,7 +10003,7 @@ $.widget( "ui.dialog", {
 		this.uiButtonSet.empty();
 
 		if ( $.isEmptyObject( buttons ) || ($.isArray( buttons ) && !buttons.length) ) {
-			this.uiDialog.removeClass("ui-dialog-buttons");
+			this.uiDialog.removeClass("ui-toto-dialog-buttons");
 			return;
 		}
 
@@ -10031,7 +10029,7 @@ $.widget( "ui.dialog", {
 				.button( buttonOptions )
 				.appendTo( that.uiButtonSet );
 		});
-		this.uiDialog.addClass("ui-dialog-buttons");
+		this.uiDialog.addClass("ui-toto-dialog-buttons");
 		this.uiDialogButtonPane.appendTo( this.uiDialog );
 	},
 
@@ -10047,11 +10045,11 @@ $.widget( "ui.dialog", {
 		}
 
 		this.uiDialog.draggable({
-			cancel: ".ui-dialog-content, .ui-dialog-titlebar-close",
-			handle: ".ui-dialog-titlebar",
+			cancel: ".ui-toto-dialog-content, .ui-toto-dialog-titlebar-close",
+			handle: ".ui-toto-dialog-titlebar",
 			containment: "document",
 			start: function( event, ui ) {
-				$( this ).addClass("ui-dialog-dragging");
+				$( this ).addClass("ui-toto-dialog-dragging");
 				that._blockFrames();
 				that._trigger( "dragStart", event, filteredUi( ui ) );
 			},
@@ -10063,7 +10061,7 @@ $.widget( "ui.dialog", {
 					ui.position.left - that.document.scrollLeft(),
 					ui.position.top - that.document.scrollTop()
 				];
-				$( this ).removeClass("ui-dialog-dragging");
+				$( this ).removeClass("ui-toto-dialog-dragging");
 				that._unblockFrames();
 				that._trigger( "dragStop", event, filteredUi( ui ) );
 			}
@@ -10091,7 +10089,7 @@ $.widget( "ui.dialog", {
 		}
 
 		this.uiDialog.resizable({
-			cancel: ".ui-dialog-content",
+			cancel: ".ui-toto-dialog-content",
 			containment: "document",
 			alsoResize: this.element,
 			maxWidth: options.maxWidth,
@@ -10100,7 +10098,7 @@ $.widget( "ui.dialog", {
 			minHeight: this._minHeight(),
 			handles: resizeHandles,
 			start: function( event, ui ) {
-				$( this ).addClass("ui-dialog-resizing");
+				$( this ).addClass("ui-toto-dialog-resizing");
 				that._blockFrames();
 				that._trigger( "resizeStart", event, filteredUi( ui ) );
 			},
@@ -10110,7 +10108,7 @@ $.widget( "ui.dialog", {
 			stop: function( event, ui ) {
 				options.height = $( this ).height();
 				options.width = $( this ).width();
-				$( this ).removeClass("ui-dialog-resizing");
+				$( this ).removeClass("ui-toto-dialog-resizing");
 				that._unblockFrames();
 				that._trigger( "resizeStop", event, filteredUi( ui ) );
 			}
@@ -10229,12 +10227,12 @@ $.widget( "ui.dialog", {
 		}
 
 		if ( key === "title" ) {
-			this._title( this.uiDialogTitlebar.find(".ui-dialog-title") );
+			this._title( this.uiDialogTitlebar.find(".ui-toto-dialog-title") );
 		}
 	},
 
 	_size: function() {
-		// If the user has resized the dialog, the .ui-dialog and .ui-dialog-content
+		// If the user has resized the dialog, the .ui-toto-dialog and .ui-toto-dialog-content
 		// divs will both have width and height set, so we need to reset them
 		var nonContentHeight, minContentHeight, maxContentHeight,
 			options = this.options;
@@ -10301,13 +10299,13 @@ $.widget( "ui.dialog", {
 	},
 
 	_allowInteraction: function( event ) {
-		if ( $( event.target ).closest(".ui-dialog").length ) {
+		if ( $( event.target ).closest(".ui-toto-dialog").length ) {
 			return true;
 		}
 
 		// TODO: Remove hack when datepicker implements
-		// the .ui-front logic (#8989)
-		return !!$( event.target ).closest(".ui-datepicker").length;
+		// the .ui-toto-front logic (#8989)
+		return !!$( event.target ).closest(".ui-toto-datepicker").length;
 	},
 
 	_createOverlay: function() {
@@ -10327,7 +10325,7 @@ $.widget( "ui.dialog", {
 					this.document.bind( "focusin.dialog", function( event ) {
 						if ( !that._allowInteraction( event ) ) {
 							event.preventDefault();
-							$(".ui-dialog:visible:last .ui-dialog-content")
+							$(".ui-toto-dialog:visible:last .ui-toto-dialog-content")
 								.data( widgetFullName )._focusTabbable();
 						}
 					});
@@ -10336,7 +10334,7 @@ $.widget( "ui.dialog", {
 		}
 
 		this.overlay = $("<div>")
-			.addClass("ui-widget-overlay ui-front")
+			.addClass("ui-toto-widget-overlay ui-toto-front")
 			.appendTo( this._appendTo() );
 		this._on( this.overlay, {
 			mousedown: "_keepFocus"
@@ -10435,7 +10433,7 @@ $.effects.effect.blind = function( o, done ) {
 		wrapper, distance, margin;
 
 	// if already wrapped, the wrapper's properties are my property. #6245
-	if ( el.parent().is( ".ui-effects-wrapper" ) ) {
+	if ( el.parent().is( ".ui-toto-effects-wrapper" ) ) {
 		$.effects.save( el.parent(), props );
 	} else {
 		$.effects.save( el, props );
@@ -10748,7 +10746,7 @@ $.effects.effect.explode = function( o, done ) {
 			// select the wrapper - make it overflow: hidden and absolute positioned based on
 			// where the original was located +left and +top equal to the size of pieces
 				.parent()
-				.addClass( "ui-effects-explode" )
+				.addClass( "ui-toto-effects-explode" )
 				.css({
 					position: "absolute",
 					overflow: "hidden",
@@ -11387,7 +11385,7 @@ $.effects.effect.transfer = function( o, done ) {
 			width: target.innerWidth()
 		},
 		startPosition = elem.offset(),
-		transfer = $( "<div class='ui-effects-transfer'></div>" )
+		transfer = $( "<div class='ui-toto-effects-transfer'></div>" )
 			.appendTo( document.body )
 			.addClass( o.className )
 			.css({
@@ -11413,7 +11411,7 @@ $.widget( "ui.menu", {
 	delay: 300,
 	options: {
 		icons: {
-			submenu: "ui-icon-carat-1-e"
+			submenu: "ui-toto-icon-carat-1-e"
 		},
 		menus: "ul",
 		position: {
@@ -11435,8 +11433,8 @@ $.widget( "ui.menu", {
 		this.mouseHandled = false;
 		this.element
 			.uniqueId()
-			.addClass( "ui-menu ui-widget ui-widget-content ui-corner-all" )
-			.toggleClass( "ui-menu-icons", !!this.element.find( ".ui-icon" ).length )
+			.addClass( "ui-toto-menu ui-toto-widget ui-toto-widget-content ui-toto-corner-all" )
+			.toggleClass( "ui-toto-menu-icons", !!this.element.find( ".ui-toto-icon" ).length )
 			.attr({
 				role: this.options.role,
 				tabIndex: 0
@@ -11451,27 +11449,27 @@ $.widget( "ui.menu", {
 
 		if ( this.options.disabled ) {
 			this.element
-				.addClass( "ui-state-disabled" )
+				.addClass( "ui-toto-state-disabled" )
 				.attr( "aria-disabled", "true" );
 		}
 
 		this._on({
 			// Prevent focus from sticking to links inside menu after clicking
 			// them (focus should always stay on UL during navigation).
-			"mousedown .ui-menu-item > a": function( event ) {
+			"mousedown .ui-toto-menu-item > a": function( event ) {
 				event.preventDefault();
 			},
-			"click .ui-state-disabled > a": function( event ) {
+			"click .ui-toto-state-disabled > a": function( event ) {
 				event.preventDefault();
 			},
-			"click .ui-menu-item:has(a)": function( event ) {
-				var target = $( event.target ).closest( ".ui-menu-item" );
-				if ( !this.mouseHandled && target.not( ".ui-state-disabled" ).length ) {
+			"click .ui-toto-menu-item:has(a)": function( event ) {
+				var target = $( event.target ).closest( ".ui-toto-menu-item" );
+				if ( !this.mouseHandled && target.not( ".ui-toto-state-disabled" ).length ) {
 					this.mouseHandled = true;
 
 					this.select( event );
 					// Open submenu on click
-					if ( target.has( ".ui-menu" ).length ) {
+					if ( target.has( ".ui-toto-menu" ).length ) {
 						this.expand( event );
 					} else if ( !this.element.is( ":focus" ) ) {
 						// Redirect focus to the menu
@@ -11479,25 +11477,25 @@ $.widget( "ui.menu", {
 
 						// If the active item is on the top level, let it stay active.
 						// Otherwise, blur the active item since it is no longer visible.
-						if ( this.active && this.active.parents( ".ui-menu" ).length === 1 ) {
+						if ( this.active && this.active.parents( ".ui-toto-menu" ).length === 1 ) {
 							clearTimeout( this.timer );
 						}
 					}
 				}
 			},
-			"mouseenter .ui-menu-item": function( event ) {
+			"mouseenter .ui-toto-menu-item": function( event ) {
 				var target = $( event.currentTarget );
-				// Remove ui-state-active class from siblings of the newly focused menu item
+				// Remove ui-toto-state-active class from siblings of the newly focused menu item
 				// to avoid a jump caused by adjacent elements both having a class with a border
-				target.siblings().children( ".ui-state-active" ).removeClass( "ui-state-active" );
+				target.siblings().children( ".ui-toto-state-active" ).removeClass( "ui-toto-state-active" );
 				this.focus( event, target );
 			},
 			mouseleave: "collapseAll",
-			"mouseleave .ui-menu": "collapseAll",
+			"mouseleave .ui-toto-menu": "collapseAll",
 			focus: function( event, keepActiveItem ) {
 				// If there's already an active item, keep it active
 				// If not, activate the first item
-				var item = this.active || this.element.children( ".ui-menu-item" ).eq( 0 );
+				var item = this.active || this.element.children( ".ui-toto-menu-item" ).eq( 0 );
 
 				if ( !keepActiveItem ) {
 					this.focus( event, item );
@@ -11518,7 +11516,7 @@ $.widget( "ui.menu", {
 		// Clicks outside of a menu collapse any open menus
 		this._on( this.document, {
 			click: function( event ) {
-				if ( !$( event.target ).closest( ".ui-menu" ).length ) {
+				if ( !$( event.target ).closest( ".ui-toto-menu" ).length ) {
 					this.collapseAll( event );
 				}
 
@@ -11532,8 +11530,8 @@ $.widget( "ui.menu", {
 		// Destroy (sub)menus
 		this.element
 			.removeAttr( "aria-activedescendant" )
-			.find( ".ui-menu" ).addBack()
-				.removeClass( "ui-menu ui-widget ui-widget-content ui-corner-all ui-menu-icons" )
+			.find( ".ui-toto-menu" ).addBack()
+				.removeClass( "ui-toto-menu ui-toto-widget ui-toto-widget-content ui-toto-corner-all ui-toto-menu-icons" )
 				.removeAttr( "role" )
 				.removeAttr( "tabIndex" )
 				.removeAttr( "aria-labelledby" )
@@ -11544,25 +11542,25 @@ $.widget( "ui.menu", {
 				.show();
 
 		// Destroy menu items
-		this.element.find( ".ui-menu-item" )
-			.removeClass( "ui-menu-item" )
+		this.element.find( ".ui-toto-menu-item" )
+			.removeClass( "ui-toto-menu-item" )
 			.removeAttr( "role" )
 			.removeAttr( "aria-disabled" )
 			.children( "a" )
 				.removeUniqueId()
-				.removeClass( "ui-corner-all ui-state-hover" )
+				.removeClass( "ui-toto-corner-all ui-toto-state-hover" )
 				.removeAttr( "tabIndex" )
 				.removeAttr( "role" )
 				.removeAttr( "aria-haspopup" )
 				.children().each( function() {
 					var elem = $( this );
-					if ( elem.data( "ui-menu-submenu-carat" ) ) {
+					if ( elem.data( "ui-toto-menu-submenu-carat" ) ) {
 						elem.remove();
 					}
 				});
 
 		// Destroy menu dividers
-		this.element.find( ".ui-menu-divider" ).removeClass( "ui-menu-divider ui-widget-content" );
+		this.element.find( ".ui-toto-menu-divider" ).removeClass( "ui-toto-menu-divider ui-toto-widget-content" );
 	},
 
 	_keydown: function( event ) {
@@ -11597,7 +11595,7 @@ $.widget( "ui.menu", {
 			this.collapse( event );
 			break;
 		case $.ui.keyCode.RIGHT:
-			if ( this.active && !this.active.is( ".ui-state-disabled" ) ) {
+			if ( this.active && !this.active.is( ".ui-toto-state-disabled" ) ) {
 				this.expand( event );
 			}
 			break;
@@ -11623,11 +11621,11 @@ $.widget( "ui.menu", {
 			}
 
 			regex = new RegExp( "^" + escape( character ), "i" );
-			match = this.activeMenu.children( ".ui-menu-item" ).filter(function() {
+			match = this.activeMenu.children( ".ui-toto-menu-item" ).filter(function() {
 				return regex.test( $( this ).children( "a" ).text() );
 			});
 			match = skip && match.index( this.active.next() ) !== -1 ?
-				this.active.nextAll( ".ui-menu-item" ) :
+				this.active.nextAll( ".ui-toto-menu-item" ) :
 				match;
 
 			// If no matches on the current filter, reset to the last character pressed
@@ -11635,7 +11633,7 @@ $.widget( "ui.menu", {
 			if ( !match.length ) {
 				character = String.fromCharCode( event.keyCode );
 				regex = new RegExp( "^" + escape( character ), "i" );
-				match = this.activeMenu.children( ".ui-menu-item" ).filter(function() {
+				match = this.activeMenu.children( ".ui-toto-menu-item" ).filter(function() {
 					return regex.test( $( this ).children( "a" ).text() );
 				});
 			}
@@ -11661,7 +11659,7 @@ $.widget( "ui.menu", {
 	},
 
 	_activate: function( event ) {
-		if ( !this.active.is( ".ui-state-disabled" ) ) {
+		if ( !this.active.is( ".ui-toto-state-disabled" ) ) {
 			if ( this.active.children( "a[aria-haspopup='true']" ).length ) {
 				this.expand( event );
 			} else {
@@ -11676,8 +11674,8 @@ $.widget( "ui.menu", {
 			submenus = this.element.find( this.options.menus );
 
 		// Initialize nested menus
-		submenus.filter( ":not(.ui-menu)" )
-			.addClass( "ui-menu ui-widget ui-widget-content ui-corner-all" )
+		submenus.filter( ":not(.ui-toto-menu)" )
+			.addClass( "ui-toto-menu ui-toto-widget ui-toto-widget-content ui-toto-corner-all" )
 			.hide()
 			.attr({
 				role: this.options.role,
@@ -11688,8 +11686,8 @@ $.widget( "ui.menu", {
 				var menu = $( this ),
 					item = menu.prev( "a" ),
 					submenuCarat = $( "<span>" )
-						.addClass( "ui-menu-icon ui-icon " + icon )
-						.data( "ui-menu-submenu-carat", true );
+						.addClass( "ui-toto-menu-icon ui-toto-icon " + icon )
+						.data( "ui-toto-menu-submenu-carat", true );
 
 				item
 					.attr( "aria-haspopup", "true" )
@@ -11700,28 +11698,28 @@ $.widget( "ui.menu", {
 		menus = submenus.add( this.element );
 
 		// Don't refresh list items that are already adapted
-		menus.children( ":not(.ui-menu-item):has(a)" )
-			.addClass( "ui-menu-item" )
+		menus.children( ":not(.ui-toto-menu-item):has(a)" )
+			.addClass( "ui-toto-menu-item" )
 			.attr( "role", "presentation" )
 			.children( "a" )
 				.uniqueId()
-				.addClass( "ui-corner-all" )
+				.addClass( "ui-toto-corner-all" )
 				.attr({
 					tabIndex: -1,
 					role: this._itemRole()
 				});
 
 		// Initialize unlinked menu-items containing spaces and/or dashes only as dividers
-		menus.children( ":not(.ui-menu-item)" ).each(function() {
+		menus.children( ":not(.ui-toto-menu-item)" ).each(function() {
 			var item = $( this );
 			// hyphen, em dash, en dash
 			if ( !/[^\-\u2014\u2013\s]/.test( item.text() ) ) {
-				item.addClass( "ui-widget-content ui-menu-divider" );
+				item.addClass( "ui-toto-widget-content ui-toto-menu-divider" );
 			}
 		});
 
 		// Add aria-disabled attribute to any disabled menu item
-		menus.children( ".ui-state-disabled" ).attr( "aria-disabled", "true" );
+		menus.children( ".ui-toto-state-disabled" ).attr( "aria-disabled", "true" );
 
 		// If the active item has been removed, blur the menu
 		if ( this.active && !$.contains( this.element[ 0 ], this.active[ 0 ] ) ) {
@@ -11738,7 +11736,7 @@ $.widget( "ui.menu", {
 
 	_setOption: function( key, value ) {
 		if ( key === "icons" ) {
-			this.element.find( ".ui-menu-icon" )
+			this.element.find( ".ui-toto-menu-icon" )
 				.removeClass( this.options.icons.submenu )
 				.addClass( value.submenu );
 		}
@@ -11752,7 +11750,7 @@ $.widget( "ui.menu", {
 		this._scrollIntoView( item );
 
 		this.active = item.first();
-		focused = this.active.children( "a" ).addClass( "ui-state-focus" );
+		focused = this.active.children( "a" ).addClass( "ui-toto-state-focus" );
 		// Only update aria-activedescendant if there's a role
 		// otherwise we assume focus is managed elsewhere
 		if ( this.options.role ) {
@@ -11762,9 +11760,9 @@ $.widget( "ui.menu", {
 		// Highlight active parent menu item, if any
 		this.active
 			.parent()
-			.closest( ".ui-menu-item" )
+			.closest( ".ui-toto-menu-item" )
 			.children( "a:first" )
-			.addClass( "ui-state-active" );
+			.addClass( "ui-toto-state-active" );
 
 		if ( event && event.type === "keydown" ) {
 			this._close();
@@ -11774,7 +11772,7 @@ $.widget( "ui.menu", {
 			}, this.delay );
 		}
 
-		nested = item.children( ".ui-menu" );
+		nested = item.children( ".ui-toto-menu" );
 		if ( nested.length && ( /^mouse/.test( event.type ) ) ) {
 			this._startOpening(nested);
 		}
@@ -11810,7 +11808,7 @@ $.widget( "ui.menu", {
 			return;
 		}
 
-		this.active.children( "a" ).removeClass( "ui-state-focus" );
+		this.active.children( "a" ).removeClass( "ui-toto-state-focus" );
 		this.active = null;
 
 		this._trigger( "blur", event, { item: this.active } );
@@ -11837,7 +11835,7 @@ $.widget( "ui.menu", {
 		}, this.options.position );
 
 		clearTimeout( this.timer );
-		this.element.find( ".ui-menu" ).not( submenu.parents( ".ui-menu" ) )
+		this.element.find( ".ui-toto-menu" ).not( submenu.parents( ".ui-toto-menu" ) )
 			.hide()
 			.attr( "aria-hidden", "true" );
 
@@ -11853,7 +11851,7 @@ $.widget( "ui.menu", {
 		this.timer = this._delay(function() {
 			// If we were passed an event, look for the submenu that contains the event
 			var currentMenu = all ? this.element :
-				$( event && event.target ).closest( this.element.find( ".ui-menu" ) );
+				$( event && event.target ).closest( this.element.find( ".ui-toto-menu" ) );
 
 			// If we found no valid submenu ancestor, use the main menu to close all sub menus anyway
 			if ( !currentMenu.length ) {
@@ -11875,18 +11873,18 @@ $.widget( "ui.menu", {
 		}
 
 		startMenu
-			.find( ".ui-menu" )
+			.find( ".ui-toto-menu" )
 				.hide()
 				.attr( "aria-hidden", "true" )
 				.attr( "aria-expanded", "false" )
 			.end()
-			.find( "a.ui-state-active" )
-				.removeClass( "ui-state-active" );
+			.find( "a.ui-toto-state-active" )
+				.removeClass( "ui-toto-state-active" );
 	},
 
 	collapse: function( event ) {
 		var newItem = this.active &&
-			this.active.parent().closest( ".ui-menu-item", this.element );
+			this.active.parent().closest( ".ui-toto-menu-item", this.element );
 		if ( newItem && newItem.length ) {
 			this._close();
 			this.focus( event, newItem );
@@ -11896,8 +11894,8 @@ $.widget( "ui.menu", {
 	expand: function( event ) {
 		var newItem = this.active &&
 			this.active
-				.children( ".ui-menu " )
-				.children( ".ui-menu-item" )
+				.children( ".ui-toto-menu " )
+				.children( ".ui-toto-menu-item" )
 				.first();
 
 		if ( newItem && newItem.length ) {
@@ -11919,11 +11917,11 @@ $.widget( "ui.menu", {
 	},
 
 	isFirstItem: function() {
-		return this.active && !this.active.prevAll( ".ui-menu-item" ).length;
+		return this.active && !this.active.prevAll( ".ui-toto-menu-item" ).length;
 	},
 
 	isLastItem: function() {
-		return this.active && !this.active.nextAll( ".ui-menu-item" ).length;
+		return this.active && !this.active.nextAll( ".ui-toto-menu-item" ).length;
 	},
 
 	_move: function( direction, filter, event ) {
@@ -11931,16 +11929,16 @@ $.widget( "ui.menu", {
 		if ( this.active ) {
 			if ( direction === "first" || direction === "last" ) {
 				next = this.active
-					[ direction === "first" ? "prevAll" : "nextAll" ]( ".ui-menu-item" )
+					[ direction === "first" ? "prevAll" : "nextAll" ]( ".ui-toto-menu-item" )
 					.eq( -1 );
 			} else {
 				next = this.active
-					[ direction + "All" ]( ".ui-menu-item" )
+					[ direction + "All" ]( ".ui-toto-menu-item" )
 					.eq( 0 );
 			}
 		}
 		if ( !next || !next.length || !this.active ) {
-			next = this.activeMenu.children( ".ui-menu-item" )[ filter ]();
+			next = this.activeMenu.children( ".ui-toto-menu-item" )[ filter ]();
 		}
 
 		this.focus( event, next );
@@ -11959,14 +11957,14 @@ $.widget( "ui.menu", {
 		if ( this._hasScroll() ) {
 			base = this.active.offset().top;
 			height = this.element.height();
-			this.active.nextAll( ".ui-menu-item" ).each(function() {
+			this.active.nextAll( ".ui-toto-menu-item" ).each(function() {
 				item = $( this );
 				return item.offset().top - base - height < 0;
 			});
 
 			this.focus( event, item );
 		} else {
-			this.focus( event, this.activeMenu.children( ".ui-menu-item" )
+			this.focus( event, this.activeMenu.children( ".ui-toto-menu-item" )
 				[ !this.active ? "first" : "last" ]() );
 		}
 	},
@@ -11983,14 +11981,14 @@ $.widget( "ui.menu", {
 		if ( this._hasScroll() ) {
 			base = this.active.offset().top;
 			height = this.element.height();
-			this.active.prevAll( ".ui-menu-item" ).each(function() {
+			this.active.prevAll( ".ui-toto-menu-item" ).each(function() {
 				item = $( this );
 				return item.offset().top - base + height > 0;
 			});
 
 			this.focus( event, item );
 		} else {
-			this.focus( event, this.activeMenu.children( ".ui-menu-item" ).first() );
+			this.focus( event, this.activeMenu.children( ".ui-toto-menu-item" ).first() );
 		}
 	},
 
@@ -12001,9 +11999,9 @@ $.widget( "ui.menu", {
 	select: function( event ) {
 		// TODO: It should never be possible to not have an active item at this
 		// point, but the tests don't trigger mouseenter before click.
-		this.active = this.active || $( event.target ).closest( ".ui-menu-item" );
+		this.active = this.active || $( event.target ).closest( ".ui-toto-menu-item" );
 		var ui = { item: this.active };
-		if ( !this.active.has( ".ui-menu" ).length ) {
+		if ( !this.active.has( ".ui-toto-menu" ).length ) {
 			this.collapseAll( event, true );
 		}
 		this._trigger( "select", event, ui );
@@ -12519,7 +12517,7 @@ $.widget( "ui.progressbar", {
 		this.oldValue = this.options.value = this._constrainedValue();
 
 		this.element
-			.addClass( "ui-progressbar ui-widget ui-widget-content ui-corner-all" )
+			.addClass( "ui-toto-progressbar ui-toto-widget ui-toto-widget-content ui-toto-corner-all" )
 			.attr({
 				// Only set static values, aria-valuenow and aria-valuemax are
 				// set inside _refreshValue()
@@ -12527,7 +12525,7 @@ $.widget( "ui.progressbar", {
 				"aria-valuemin": this.min
 			});
 
-		this.valueDiv = $( "<div class='ui-progressbar-value ui-widget-header ui-corner-left'></div>" )
+		this.valueDiv = $( "<div class='ui-toto-progressbar-value ui-toto-widget-header ui-toto-corner-left'></div>" )
 			.appendTo( this.element );
 
 		this._refreshValue();
@@ -12535,7 +12533,7 @@ $.widget( "ui.progressbar", {
 
 	_destroy: function() {
 		this.element
-			.removeClass( "ui-progressbar ui-widget ui-widget-content ui-corner-all" )
+			.removeClass( "ui-toto-progressbar ui-toto-widget ui-toto-widget-content ui-toto-corner-all" )
 			.removeAttr( "role" )
 			.removeAttr( "aria-valuemin" )
 			.removeAttr( "aria-valuemax" )
@@ -12599,15 +12597,15 @@ $.widget( "ui.progressbar", {
 
 		this.valueDiv
 			.toggle( this.indeterminate || value > this.min )
-			.toggleClass( "ui-corner-right", value === this.options.max )
+			.toggleClass( "ui-toto-corner-right", value === this.options.max )
 			.width( percentage.toFixed(0) + "%" );
 
-		this.element.toggleClass( "ui-progressbar-indeterminate", this.indeterminate );
+		this.element.toggleClass( "ui-toto-progressbar-indeterminate", this.indeterminate );
 
 		if ( this.indeterminate ) {
 			this.element.removeAttr( "aria-valuenow" );
 			if ( !this.overlayDiv ) {
-				this.overlayDiv = $( "<div class='ui-progressbar-overlay'></div>" ).appendTo( this.valueDiv );
+				this.overlayDiv = $( "<div class='ui-toto-progressbar-overlay'></div>" ).appendTo( this.valueDiv );
 			}
 		} else {
 			this.element.attr({
@@ -12669,11 +12667,11 @@ $.widget( "ui.slider", $.ui.mouse, {
 		this._mouseInit();
 
 		this.element
-			.addClass( "ui-slider" +
-				" ui-slider-" + this.orientation +
-				" ui-widget" +
-				" ui-widget-content" +
-				" ui-corner-all");
+			.addClass( "ui-toto-slider" +
+				" ui-toto-slider-" + this.orientation +
+				" ui-toto-widget" +
+				" ui-toto-widget-content" +
+				" ui-toto-corner-all");
 
 		this._refresh();
 		this._setOption( "disabled", this.options.disabled );
@@ -12691,8 +12689,8 @@ $.widget( "ui.slider", $.ui.mouse, {
 	_createHandles: function() {
 		var i, handleCount,
 			options = this.options,
-			existingHandles = this.element.find( ".ui-slider-handle" ).addClass( "ui-state-default ui-corner-all" ),
-			handle = "<a class='ui-slider-handle ui-state-default ui-corner-all' href='#'></a>",
+			existingHandles = this.element.find( ".ui-toto-slider-handle" ).addClass( "ui-toto-state-default ui-toto-corner-all" ),
+			handle = "<a class='ui-toto-slider-handle ui-toto-state-default ui-toto-corner-all' href='#'></a>",
 			handles = [];
 
 		handleCount = ( options.values && options.values.length ) || 1;
@@ -12711,7 +12709,7 @@ $.widget( "ui.slider", $.ui.mouse, {
 		this.handle = this.handles.eq( 0 );
 
 		this.handles.each(function( i ) {
-			$( this ).data( "ui-slider-handle-index", i );
+			$( this ).data( "ui-toto-slider-handle-index", i );
 		});
 	},
 
@@ -12734,12 +12732,12 @@ $.widget( "ui.slider", $.ui.mouse, {
 				this.range = $( "<div></div>" )
 					.appendTo( this.element );
 
-				classes = "ui-slider-range" +
+				classes = "ui-toto-slider-range" +
 				// note: this isn't the most fittingly semantic framework class for this element,
 				// but worked best visually with a variety of themes
-				" ui-widget-header ui-corner-all";
+				" ui-toto-widget-header ui-toto-corner-all";
 			} else {
-				this.range.removeClass( "ui-slider-range-min ui-slider-range-max" )
+				this.range.removeClass( "ui-toto-slider-range-min ui-toto-slider-range-max" )
 					// Handle range switching from true to min/max
 					.css({
 						"left": "",
@@ -12748,7 +12746,7 @@ $.widget( "ui.slider", $.ui.mouse, {
 			}
 
 			this.range.addClass( classes +
-				( ( options.range === "min" || options.range === "max" ) ? " ui-slider-range-" + options.range : "" ) );
+				( ( options.range === "min" || options.range === "max" ) ? " ui-toto-slider-range-" + options.range : "" ) );
 		} else {
 			this.range = $([]);
 		}
@@ -12767,12 +12765,12 @@ $.widget( "ui.slider", $.ui.mouse, {
 		this.range.remove();
 
 		this.element
-			.removeClass( "ui-slider" +
-				" ui-slider-horizontal" +
-				" ui-slider-vertical" +
-				" ui-widget" +
-				" ui-widget-content" +
-				" ui-corner-all" );
+			.removeClass( "ui-toto-slider" +
+				" ui-toto-slider-horizontal" +
+				" ui-toto-slider-vertical" +
+				" ui-toto-widget" +
+				" ui-toto-widget-content" +
+				" ui-toto-corner-all" );
 
 		this._mouseDestroy();
 	},
@@ -12815,11 +12813,11 @@ $.widget( "ui.slider", $.ui.mouse, {
 		this._handleIndex = index;
 
 		closestHandle
-			.addClass( "ui-state-active" )
+			.addClass( "ui-toto-state-active" )
 			.focus();
 
 		offset = closestHandle.offset();
-		mouseOverHandle = !$( event.target ).parents().addBack().is( ".ui-slider-handle" );
+		mouseOverHandle = !$( event.target ).parents().addBack().is( ".ui-toto-slider-handle" );
 		this._clickOffset = mouseOverHandle ? { left: 0, top: 0 } : {
 			left: event.pageX - offset.left - ( closestHandle.width() / 2 ),
 			top: event.pageY - offset.top -
@@ -12829,7 +12827,7 @@ $.widget( "ui.slider", $.ui.mouse, {
 				( parseInt( closestHandle.css("marginTop"), 10 ) || 0)
 		};
 
-		if ( !this.handles.hasClass( "ui-state-hover" ) ) {
+		if ( !this.handles.hasClass( "ui-toto-state-hover" ) ) {
 			this._slide( event, index, normValue );
 		}
 		this._animateOff = true;
@@ -12850,7 +12848,7 @@ $.widget( "ui.slider", $.ui.mouse, {
 	},
 
 	_mouseStop: function( event ) {
-		this.handles.removeClass( "ui-state-active" );
+		this.handles.removeClass( "ui-toto-state-active" );
 		this._mouseSliding = false;
 
 		this._stop( event, this._handleIndex );
@@ -13052,8 +13050,8 @@ $.widget( "ui.slider", $.ui.mouse, {
 			case "orientation":
 				this._detectOrientation();
 				this.element
-					.removeClass( "ui-slider-horizontal ui-slider-vertical" )
-					.addClass( "ui-slider-" + this.orientation );
+					.removeClass( "ui-toto-slider-horizontal ui-toto-slider-vertical" )
+					.addClass( "ui-toto-slider-" + this.orientation );
 				this._refreshValue();
 				break;
 			case "value":
@@ -13210,7 +13208,7 @@ $.widget( "ui.slider", $.ui.mouse, {
 		keydown: function( event ) {
 			/*jshint maxcomplexity:25*/
 			var allowed, curVal, newVal, step,
-				index = $( event.target ).data( "ui-slider-handle-index" );
+				index = $( event.target ).data( "ui-toto-slider-handle-index" );
 
 			switch ( event.keyCode ) {
 				case $.ui.keyCode.HOME:
@@ -13224,7 +13222,7 @@ $.widget( "ui.slider", $.ui.mouse, {
 					event.preventDefault();
 					if ( !this._keySliding ) {
 						this._keySliding = true;
-						$( event.target ).addClass( "ui-state-active" );
+						$( event.target ).addClass( "ui-toto-state-active" );
 						allowed = this._start( event, index );
 						if ( allowed === false ) {
 							return;
@@ -13275,13 +13273,13 @@ $.widget( "ui.slider", $.ui.mouse, {
 			event.preventDefault();
 		},
 		keyup: function( event ) {
-			var index = $( event.target ).data( "ui-slider-handle-index" );
+			var index = $( event.target ).data( "ui-toto-slider-handle-index" );
 
 			if ( this._keySliding ) {
 				this._keySliding = false;
 				this._stop( event, index );
 				this._change( event, index );
-				$( event.target ).removeClass( "ui-state-active" );
+				$( event.target ).removeClass( "ui-toto-state-active" );
 			}
 		}
 	}
@@ -13310,8 +13308,8 @@ $.widget( "ui.spinner", {
 	options: {
 		culture: null,
 		icons: {
-			down: "ui-icon-triangle-1-s",
-			up: "ui-icon-triangle-1-n"
+			down: "ui-toto-icon-triangle-1-s",
+			up: "ui-toto-icon-triangle-1-n"
 		},
 		incremental: true,
 		max: null,
@@ -13402,7 +13400,7 @@ $.widget( "ui.spinner", {
 			}, 100 );
 			event.preventDefault();
 		},
-		"mousedown .ui-spinner-button": function( event ) {
+		"mousedown .ui-toto-spinner-button": function( event ) {
 			var previous;
 
 			// We never want the buttons to have focus; whenever the user is
@@ -13444,29 +13442,29 @@ $.widget( "ui.spinner", {
 				return;
 			}
 
-			this._repeat( null, $( event.currentTarget ).hasClass( "ui-spinner-up" ) ? 1 : -1, event );
+			this._repeat( null, $( event.currentTarget ).hasClass( "ui-toto-spinner-up" ) ? 1 : -1, event );
 		},
-		"mouseup .ui-spinner-button": "_stop",
-		"mouseenter .ui-spinner-button": function( event ) {
-			// button will add ui-state-active if mouse was down while mouseleave and kept down
-			if ( !$( event.currentTarget ).hasClass( "ui-state-active" ) ) {
+		"mouseup .ui-toto-spinner-button": "_stop",
+		"mouseenter .ui-toto-spinner-button": function( event ) {
+			// button will add ui-toto-state-active if mouse was down while mouseleave and kept down
+			if ( !$( event.currentTarget ).hasClass( "ui-toto-state-active" ) ) {
 				return;
 			}
 
 			if ( this._start( event ) === false ) {
 				return false;
 			}
-			this._repeat( null, $( event.currentTarget ).hasClass( "ui-spinner-up" ) ? 1 : -1, event );
+			this._repeat( null, $( event.currentTarget ).hasClass( "ui-toto-spinner-up" ) ? 1 : -1, event );
 		},
 		// TODO: do we really want to consider this a stop?
 		// shouldn't we just stop the repeater and wait until mouseup before
 		// we trigger the stop event?
-		"mouseleave .ui-spinner-button": "_stop"
+		"mouseleave .ui-toto-spinner-button": "_stop"
 	},
 
 	_draw: function() {
 		var uiSpinner = this.uiSpinner = this.element
-			.addClass( "ui-spinner-input" )
+			.addClass( "ui-toto-spinner-input" )
 			.attr( "autocomplete", "off" )
 			.wrap( this._uiSpinnerHtml() )
 			.parent()
@@ -13476,10 +13474,10 @@ $.widget( "ui.spinner", {
 		this.element.attr( "role", "spinbutton" );
 
 		// button bindings
-		this.buttons = uiSpinner.find( ".ui-spinner-button" )
+		this.buttons = uiSpinner.find( ".ui-toto-spinner-button" )
 			.attr( "tabIndex", -1 )
 			.button()
-			.removeClass( "ui-corner-all" );
+			.removeClass( "ui-toto-corner-all" );
 
 		// IE 6 doesn't understand height: 50% for the buttons
 		// unless the wrapper has an explicit height
@@ -13517,16 +13515,16 @@ $.widget( "ui.spinner", {
 	},
 
 	_uiSpinnerHtml: function() {
-		return "<span class='ui-spinner ui-widget ui-widget-content ui-corner-all'></span>";
+		return "<span class='ui-toto-spinner ui-toto-widget ui-toto-widget-content ui-toto-corner-all'></span>";
 	},
 
 	_buttonHtml: function() {
 		return "" +
-			"<a class='ui-spinner-button ui-spinner-up ui-corner-tr'>" +
-				"<span class='ui-icon " + this.options.icons.up + "'>&#9650;</span>" +
+			"<a class='ui-toto-spinner-button ui-toto-spinner-up ui-toto-corner-tr'>" +
+				"<span class='ui-toto-icon " + this.options.icons.up + "'>&#9650;</span>" +
 			"</a>" +
-			"<a class='ui-spinner-button ui-spinner-down ui-corner-br'>" +
-				"<span class='ui-icon " + this.options.icons.down + "'>&#9660;</span>" +
+			"<a class='ui-toto-spinner-button ui-toto-spinner-down ui-toto-corner-br'>" +
+				"<span class='ui-toto-icon " + this.options.icons.down + "'>&#9660;</span>" +
 			"</a>";
 	},
 
@@ -13647,10 +13645,10 @@ $.widget( "ui.spinner", {
 			}
 		}
 		if ( key === "icons" ) {
-			this.buttons.first().find( ".ui-icon" )
+			this.buttons.first().find( ".ui-toto-icon" )
 				.removeClass( this.options.icons.up )
 				.addClass( value.up );
-			this.buttons.last().find( ".ui-icon" )
+			this.buttons.last().find( ".ui-toto-icon" )
 				.removeClass( this.options.icons.down )
 				.addClass( value.down );
 		}
@@ -13717,7 +13715,7 @@ $.widget( "ui.spinner", {
 
 	_destroy: function() {
 		this.element
-			.removeClass( "ui-spinner-input" )
+			.removeClass( "ui-toto-spinner-input" )
 			.prop( "disabled", false )
 			.removeAttr( "autocomplete" )
 			.removeAttr( "role" )
@@ -13809,11 +13807,11 @@ $.widget( "ui.tabs", {
 		this.running = false;
 
 		this.element
-			.addClass( "ui-tabs ui-widget ui-widget-content ui-corner-all" )
-			.toggleClass( "ui-tabs-collapsible", options.collapsible )
+			.addClass( "ui-toto-tabs ui-toto-widget ui-toto-widget-content ui-toto-corner-all" )
+			.toggleClass( "ui-toto-tabs-collapsible", options.collapsible )
 			// Prevent users from focusing disabled tabs via click
-			.delegate( ".ui-tabs-nav > li", "mousedown" + this.eventNamespace, function( event ) {
-				if ( $( this ).is( ".ui-state-disabled" ) ) {
+			.delegate( ".ui-toto-tabs-nav > li", "mousedown" + this.eventNamespace, function( event ) {
+				if ( $( this ).is( ".ui-toto-state-disabled" ) ) {
 					event.preventDefault();
 				}
 			})
@@ -13823,8 +13821,8 @@ $.widget( "ui.tabs", {
 			// We don't have to worry about focusing the previously focused
 			// element since clicking on a non-focusable element should focus
 			// the body anyway.
-			.delegate( ".ui-tabs-anchor", "focus" + this.eventNamespace, function() {
-				if ( $( this ).closest( "li" ).is( ".ui-state-disabled" ) ) {
+			.delegate( ".ui-toto-tabs-anchor", "focus" + this.eventNamespace, function() {
+				if ( $( this ).closest( "li" ).is( ".ui-toto-state-disabled" ) ) {
 					this.blur();
 				}
 			});
@@ -13836,7 +13834,7 @@ $.widget( "ui.tabs", {
 		// into account and update option properly.
 		if ( $.isArray( options.disabled ) ) {
 			options.disabled = $.unique( options.disabled.concat(
-				$.map( this.tabs.filter( ".ui-state-disabled" ), function( li ) {
+				$.map( this.tabs.filter( ".ui-toto-state-disabled" ), function( li ) {
 					return that.tabs.index( li );
 				})
 			) ).sort();
@@ -13874,7 +13872,7 @@ $.widget( "ui.tabs", {
 
 			// check for a tab marked active via a class
 			if ( active === null ) {
-				active = this.tabs.index( this.tabs.filter( ".ui-tabs-active" ) );
+				active = this.tabs.index( this.tabs.filter( ".ui-toto-tabs-active" ) );
 			}
 
 			// no active tab, set to false
@@ -14034,7 +14032,7 @@ $.widget( "ui.tabs", {
 		this._super( key, value);
 
 		if ( key === "collapsible" ) {
-			this.element.toggleClass( "ui-tabs-collapsible", value );
+			this.element.toggleClass( "ui-toto-tabs-collapsible", value );
 			// Setting collapsible: false while collapsed; open first panel
 			if ( !value && this.options.active === false ) {
 				this._activate( 0 );
@@ -14051,7 +14049,7 @@ $.widget( "ui.tabs", {
 	},
 
 	_tabId: function( tab ) {
-		return tab.attr( "aria-controls" ) || "ui-tabs-" + getNextTabId();
+		return tab.attr( "aria-controls" ) || "ui-toto-tabs-" + getNextTabId();
 	},
 
 	_sanitizeSelector: function( hash ) {
@@ -14064,7 +14062,7 @@ $.widget( "ui.tabs", {
 
 		// get disabled tabs from class attribute from HTML
 		// this will get converted to a boolean if needed in _refresh()
-		options.disabled = $.map( lis.filter( ".ui-state-disabled" ), function( tab ) {
+		options.disabled = $.map( lis.filter( ".ui-toto-state-disabled" ), function( tab ) {
 			return lis.index( tab );
 		});
 
@@ -14114,7 +14112,7 @@ $.widget( "ui.tabs", {
 			this.tabs.eq( 0 ).attr( "tabIndex", 0 );
 		} else {
 			this.active
-				.addClass( "ui-tabs-active ui-state-active" )
+				.addClass( "ui-toto-tabs-active ui-toto-state-active" )
 				.attr({
 					"aria-selected": "true",
 					tabIndex: 0
@@ -14132,11 +14130,11 @@ $.widget( "ui.tabs", {
 		var that = this;
 
 		this.tablist = this._getList()
-			.addClass( "ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" )
+			.addClass( "ui-toto-tabs-nav ui-toto-helper-reset ui-toto-helper-clearfix ui-toto-widget-header ui-toto-corner-all" )
 			.attr( "role", "tablist" );
 
 		this.tabs = this.tablist.find( "> li:has(a[href])" )
-			.addClass( "ui-state-default ui-corner-top" )
+			.addClass( "ui-toto-state-default ui-toto-corner-top" )
 			.attr({
 				role: "tab",
 				tabIndex: -1
@@ -14145,7 +14143,7 @@ $.widget( "ui.tabs", {
 		this.anchors = this.tabs.map(function() {
 				return $( "a", this )[ 0 ];
 			})
-			.addClass( "ui-tabs-anchor" )
+			.addClass( "ui-toto-tabs-anchor" )
 			.attr({
 				role: "presentation",
 				tabIndex: -1
@@ -14179,7 +14177,7 @@ $.widget( "ui.tabs", {
 				that.panels = that.panels.add( panel );
 			}
 			if ( originalAriaControls ) {
-				tab.data( "ui-tabs-aria-controls", originalAriaControls );
+				tab.data( "ui-toto-tabs-aria-controls", originalAriaControls );
 			}
 			tab.attr({
 				"aria-controls": selector.substring( 1 ),
@@ -14189,7 +14187,7 @@ $.widget( "ui.tabs", {
 		});
 
 		this.panels
-			.addClass( "ui-tabs-panel ui-widget-content ui-corner-bottom" )
+			.addClass( "ui-toto-tabs-panel ui-toto-widget-content ui-toto-corner-bottom" )
 			.attr( "role", "tabpanel" );
 	},
 
@@ -14201,8 +14199,8 @@ $.widget( "ui.tabs", {
 	_createPanel: function( id ) {
 		return $( "<div>" )
 			.attr( "id", id )
-			.addClass( "ui-tabs-panel ui-widget-content ui-corner-bottom" )
-			.data( "ui-tabs-destroy", true );
+			.addClass( "ui-toto-tabs-panel ui-toto-widget-content ui-toto-corner-bottom" )
+			.data( "ui-toto-tabs-destroy", true );
 	},
 
 	_setupDisabled: function( disabled ) {
@@ -14218,11 +14216,11 @@ $.widget( "ui.tabs", {
 		for ( var i = 0, li; ( li = this.tabs[ i ] ); i++ ) {
 			if ( disabled === true || $.inArray( i, disabled ) !== -1 ) {
 				$( li )
-					.addClass( "ui-state-disabled" )
+					.addClass( "ui-toto-state-disabled" )
 					.attr( "aria-disabled", "true" );
 			} else {
 				$( li )
-					.removeClass( "ui-state-disabled" )
+					.removeClass( "ui-toto-state-disabled" )
 					.removeAttr( "aria-disabled" );
 			}
 		}
@@ -14304,9 +14302,9 @@ $.widget( "ui.tabs", {
 
 		event.preventDefault();
 
-		if ( tab.hasClass( "ui-state-disabled" ) ||
+		if ( tab.hasClass( "ui-toto-state-disabled" ) ||
 				// tab is already loading
-				tab.hasClass( "ui-tabs-loading" ) ||
+				tab.hasClass( "ui-toto-tabs-loading" ) ||
 				// can't switch durning an animation
 				this.running ||
 				// click on active header, but not collapsible
@@ -14347,7 +14345,7 @@ $.widget( "ui.tabs", {
 		}
 
 		function show() {
-			eventData.newTab.closest( "li" ).addClass( "ui-tabs-active ui-state-active" );
+			eventData.newTab.closest( "li" ).addClass( "ui-toto-tabs-active ui-toto-state-active" );
 
 			if ( toShow.length && that.options.show ) {
 				that._show( toShow, that.options.show, complete );
@@ -14360,11 +14358,11 @@ $.widget( "ui.tabs", {
 		// start out by hiding, then showing, then completing
 		if ( toHide.length && this.options.hide ) {
 			this._hide( toHide, this.options.hide, function() {
-				eventData.oldTab.closest( "li" ).removeClass( "ui-tabs-active ui-state-active" );
+				eventData.oldTab.closest( "li" ).removeClass( "ui-toto-tabs-active ui-toto-state-active" );
 				show();
 			});
 		} else {
-			eventData.oldTab.closest( "li" ).removeClass( "ui-tabs-active ui-state-active" );
+			eventData.oldTab.closest( "li" ).removeClass( "ui-toto-tabs-active ui-toto-state-active" );
 			toHide.hide();
 			show();
 		}
@@ -14410,7 +14408,7 @@ $.widget( "ui.tabs", {
 			active = this.active;
 		}
 
-		anchor = active.find( ".ui-tabs-anchor" )[ 0 ];
+		anchor = active.find( ".ui-toto-tabs-anchor" )[ 0 ];
 		this._eventHandler({
 			target: anchor,
 			currentTarget: anchor,
@@ -14436,25 +14434,25 @@ $.widget( "ui.tabs", {
 			this.xhr.abort();
 		}
 
-		this.element.removeClass( "ui-tabs ui-widget ui-widget-content ui-corner-all ui-tabs-collapsible" );
+		this.element.removeClass( "ui-toto-tabs ui-toto-widget ui-toto-widget-content ui-toto-corner-all ui-toto-tabs-collapsible" );
 
 		this.tablist
-			.removeClass( "ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" )
+			.removeClass( "ui-toto-tabs-nav ui-toto-helper-reset ui-toto-helper-clearfix ui-toto-widget-header ui-toto-corner-all" )
 			.removeAttr( "role" );
 
 		this.anchors
-			.removeClass( "ui-tabs-anchor" )
+			.removeClass( "ui-toto-tabs-anchor" )
 			.removeAttr( "role" )
 			.removeAttr( "tabIndex" )
 			.removeUniqueId();
 
 		this.tabs.add( this.panels ).each(function() {
-			if ( $.data( this, "ui-tabs-destroy" ) ) {
+			if ( $.data( this, "ui-toto-tabs-destroy" ) ) {
 				$( this ).remove();
 			} else {
 				$( this )
-					.removeClass( "ui-state-default ui-state-active ui-state-disabled " +
-						"ui-corner-top ui-corner-bottom ui-widget-content ui-tabs-active ui-tabs-panel" )
+					.removeClass( "ui-toto-state-default ui-toto-state-active ui-toto-state-disabled " +
+						"ui-toto-corner-top ui-toto-corner-bottom ui-toto-widget-content ui-toto-tabs-active ui-toto-tabs-panel" )
 					.removeAttr( "tabIndex" )
 					.removeAttr( "aria-live" )
 					.removeAttr( "aria-busy" )
@@ -14468,11 +14466,11 @@ $.widget( "ui.tabs", {
 
 		this.tabs.each(function() {
 			var li = $( this ),
-				prev = li.data( "ui-tabs-aria-controls" );
+				prev = li.data( "ui-toto-tabs-aria-controls" );
 			if ( prev ) {
 				li
 					.attr( "aria-controls", prev )
-					.removeData( "ui-tabs-aria-controls" );
+					.removeData( "ui-toto-tabs-aria-controls" );
 			} else {
 				li.removeAttr( "aria-controls" );
 			}
@@ -14534,7 +14532,7 @@ $.widget( "ui.tabs", {
 		index = this._getIndex( index );
 		var that = this,
 			tab = this.tabs.eq( index ),
-			anchor = tab.find( ".ui-tabs-anchor" ),
+			anchor = tab.find( ".ui-toto-tabs-anchor" ),
 			panel = this._getPanelForTab( tab ),
 			eventData = {
 				tab: tab,
@@ -14552,7 +14550,7 @@ $.widget( "ui.tabs", {
 		// jQuery <1.8 returns false if the request is canceled in beforeSend,
 		// but as of 1.8, $.ajax() always returns a jqXHR object.
 		if ( this.xhr && this.xhr.statusText !== "canceled" ) {
-			tab.addClass( "ui-tabs-loading" );
+			tab.addClass( "ui-toto-tabs-loading" );
 			panel.attr( "aria-busy", "true" );
 
 			this.xhr
@@ -14572,7 +14570,7 @@ $.widget( "ui.tabs", {
 							that.panels.stop( false, true );
 						}
 
-						tab.removeClass( "ui-tabs-loading" );
+						tab.removeClass( "ui-toto-tabs-loading" );
 						panel.removeAttr( "aria-busy" );
 
 						if ( jqXHR === that.xhr ) {
@@ -14610,19 +14608,19 @@ function addDescribedBy( elem, id ) {
 	var describedby = (elem.attr( "aria-describedby" ) || "").split( /\s+/ );
 	describedby.push( id );
 	elem
-		.data( "ui-tooltip-id", id )
+		.data( "ui-toto-tooltip-id", id )
 		.attr( "aria-describedby", $.trim( describedby.join( " " ) ) );
 }
 
 function removeDescribedBy( elem ) {
-	var id = elem.data( "ui-tooltip-id" ),
+	var id = elem.data( "ui-toto-tooltip-id" ),
 		describedby = (elem.attr( "aria-describedby" ) || "").split( /\s+/ ),
 		index = $.inArray( id, describedby );
 	if ( index !== -1 ) {
 		describedby.splice( index, 1 );
 	}
 
-	elem.removeData( "ui-tooltip-id" );
+	elem.removeData( "ui-toto-tooltip-id" );
 	describedby = $.trim( describedby.join( " " ) );
 	if ( describedby ) {
 		elem.attr( "aria-describedby", describedby );
@@ -14708,7 +14706,7 @@ $.widget( "ui.tooltip", {
 			var element = $( this );
 			if ( element.is( "[title]" ) ) {
 				element
-					.data( "ui-tooltip-title", element.attr( "title" ) )
+					.data( "ui-toto-tooltip-title", element.attr( "title" ) )
 					.attr( "title", "" );
 			}
 		});
@@ -14718,8 +14716,8 @@ $.widget( "ui.tooltip", {
 		// restore title attributes
 		this.element.find( this.options.items ).addBack().each(function() {
 			var element = $( this );
-			if ( element.data( "ui-tooltip-title" ) ) {
-				element.attr( "title", element.data( "ui-tooltip-title" ) );
+			if ( element.data( "ui-toto-tooltip-title" ) ) {
+				element.attr( "title", element.data( "ui-toto-tooltip-title" ) );
 			}
 		});
 	},
@@ -14732,22 +14730,22 @@ $.widget( "ui.tooltip", {
 				.closest( this.options.items );
 
 		// No element to show a tooltip for or the tooltip is already open
-		if ( !target.length || target.data( "ui-tooltip-id" ) ) {
+		if ( !target.length || target.data( "ui-toto-tooltip-id" ) ) {
 			return;
 		}
 
 		if ( target.attr( "title" ) ) {
-			target.data( "ui-tooltip-title", target.attr( "title" ) );
+			target.data( "ui-toto-tooltip-title", target.attr( "title" ) );
 		}
 
-		target.data( "ui-tooltip-open", true );
+		target.data( "ui-toto-tooltip-open", true );
 
 		// kill parent tooltips, custom or native, for hover
 		if ( event && event.type === "mouseover" ) {
 			target.parents().each(function() {
 				var parent = $( this ),
 					blurEvent;
-				if ( parent.data( "ui-tooltip-open" ) ) {
+				if ( parent.data( "ui-toto-tooltip-open" ) ) {
 					blurEvent = $.Event( "blur" );
 					blurEvent.target = blurEvent.currentTarget = this;
 					that.close( blurEvent, true );
@@ -14778,7 +14776,7 @@ $.widget( "ui.tooltip", {
 
 		content = contentOption.call( target[0], function( response ) {
 			// ignore async response if tooltip was closed already
-			if ( !target.data( "ui-tooltip-open" ) ) {
+			if ( !target.data( "ui-toto-tooltip-open" ) ) {
 				return;
 			}
 			// IE may instantly serve a cached response for ajax requests
@@ -14812,7 +14810,7 @@ $.widget( "ui.tooltip", {
 		// exists, then just update the content and bail.
 		tooltip = this._find( target );
 		if ( tooltip.length ) {
-			tooltip.find( ".ui-tooltip-content" ).html( content );
+			tooltip.find( ".ui-toto-tooltip-content" ).html( content );
 			return;
 		}
 
@@ -14833,7 +14831,7 @@ $.widget( "ui.tooltip", {
 
 		tooltip = this._tooltip( target );
 		addDescribedBy( target, tooltip.attr( "id" ) );
-		tooltip.find( ".ui-tooltip-content" ).html( content );
+		tooltip.find( ".ui-toto-tooltip-content" ).html( content );
 
 		function position( event ) {
 			positionOption.of = event;
@@ -14907,8 +14905,8 @@ $.widget( "ui.tooltip", {
 		clearInterval( this.delayedShow );
 
 		// only set title if we had one before (see comment in _open())
-		if ( target.data( "ui-tooltip-title" ) ) {
-			target.attr( "title", target.data( "ui-tooltip-title" ) );
+		if ( target.data( "ui-toto-tooltip-title" ) ) {
+			target.attr( "title", target.data( "ui-toto-tooltip-title" ) );
 		}
 
 		removeDescribedBy( target );
@@ -14918,7 +14916,7 @@ $.widget( "ui.tooltip", {
 			that._removeTooltip( $( this ) );
 		});
 
-		target.removeData( "ui-tooltip-open" );
+		target.removeData( "ui-toto-tooltip-open" );
 		this._off( target, "mouseleave focusout keyup" );
 		// Remove 'remove' binding only on delegated targets
 		if ( target[0] !== this.element[0] ) {
@@ -14939,16 +14937,16 @@ $.widget( "ui.tooltip", {
 	},
 
 	_tooltip: function( element ) {
-		var id = "ui-tooltip-" + increments++,
+		var id = "ui-toto-tooltip-" + increments++,
 			tooltip = $( "<div>" )
 				.attr({
 					id: id,
 					role: "tooltip"
 				})
-				.addClass( "ui-tooltip ui-widget ui-corner-all ui-widget-content " +
+				.addClass( "ui-toto-tooltip ui-toto-widget ui-toto-corner-all ui-toto-widget-content " +
 					( this.options.tooltipClass || "" ) );
 		$( "<div>" )
-			.addClass( "ui-tooltip-content" )
+			.addClass( "ui-toto-tooltip-content" )
 			.appendTo( tooltip );
 		tooltip.appendTo( this.document[0].body );
 		this.tooltips[ id ] = element;
@@ -14956,7 +14954,7 @@ $.widget( "ui.tooltip", {
 	},
 
 	_find: function( target ) {
-		var id = target.data( "ui-tooltip-id" );
+		var id = target.data( "ui-toto-tooltip-id" );
 		return id ? $( "#" + id ) : $();
 	},
 
@@ -14980,9 +14978,9 @@ $.widget( "ui.tooltip", {
 			$( "#" + id ).remove();
 
 			// Restore the title
-			if ( element.data( "ui-tooltip-title" ) ) {
-				element.attr( "title", element.data( "ui-tooltip-title" ) );
-				element.removeData( "ui-tooltip-title" );
+			if ( element.data( "ui-toto-tooltip-title" ) ) {
+				element.attr( "title", element.data( "ui-toto-tooltip-title" ) );
+				element.removeData( "ui-toto-tooltip-title" );
 			}
 		});
 	}
