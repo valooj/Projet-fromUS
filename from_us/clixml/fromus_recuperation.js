@@ -314,7 +314,7 @@ function fromus_recupImg(idclass,fus_data)
 				if(fromus_img_class.href)
 				{
 				getimgtag(fromus_img_class);
-				getimgtag('fromus_iimg'] = fromus_i + 1;
+				getimgtag('fromus_iimg') = fromus_i + 1;
 				}
 				if(fromus_img_class.src)
 				{
