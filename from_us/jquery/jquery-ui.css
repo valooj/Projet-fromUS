@@ -17,23 +17,27 @@
 }
 
 input#passBox {
-	width: 155px;
-	margin: 2px;
+	width: 150px;
+	margin: 2px 10px 2px 2px;
 	display: inline-block;
 	float: left;
+	border: 1px solid rgb(170, 170, 170);
+	border-radius: 3px;
 }
 input#emailBox {
-	width: 155px;
+	width: 150px;
 	margin: 2px;
 	display: inline-block;
 	float: left;
+	border-radius: 3px;
+	border: 1px solid rgb(170, 170, 170);
 }
 input#connect {
 	width: 55px;
 	margin: 2px;
 	padding: 2px;
 	display: inline-block;
-	float: left;
+	float: right;
 }
 input#nick_name {
 	width: 300px;
@@ -168,14 +172,14 @@ input#descQ {
 }
 span#img-view {
     display: none; border: 2px solid black;
-    height: 60px; width: 60px; /* H/W */
+    height: 100px; width: 100px; /* H/W */
     overflow: hidden; /* cache ce qui dépasse */
-    background-size: 60px 60px;
+    background-size: 100px 100px;
     background-position: center center;
     background-repeat: no-repeat;
     border: none;
 }
-span#img-view img { max-height: 60px; max-width: 60px; }
+span#img-view img { max-height: 100px; max-width: 100px; }
 div#image:hover span#img-view { display: block; position: absolute; }
 input#fromus_image {
 	display: inline-block;

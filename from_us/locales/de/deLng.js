@@ -1,7 +1,7 @@
 
 _lng['de'] = {};
-_lng['de']['tabAdd'] = ' In den Warenkorb';
-_lng['de']['tabBuy'] = 'Bestellen';
+_lng['de']['tabAdd'] = 'Add ';
+_lng['de']['tabBuy'] = 'Buy';
 _lng['de']['tabAccount'] = 'Mein Konto';
 _lng['de']['Merchant'] = 'Verkäufer : ';
 _lng['de']['NameP'] = 'Name des artikels :';
