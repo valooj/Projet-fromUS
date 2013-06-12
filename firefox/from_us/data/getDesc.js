@@ -1,9 +1,9 @@
-function getName()
+function getDesc()
 {
-	var fus_actname = 1; // V ariable indiquant que l'on est à la recherche du nom
-	var fus_colorname;	// variable contenant la couleur précédente
-	var fus_bordername;	// variable contenant la bordure précédente	
-	var fus_cursorname;	// variable contenant le curseur précédent	
+	var fus_actdesc = 1; // V ariable indiquant que l'on est à la recherche du nom
+	var fus_colordesc;	// variable contenant la couleur précédente
+	var fus_borderdesc;	// variable contenant la bordure précédente	
+	var fus_cursordesc;	// variable contenant le curseur précédent		
 	var bindEvent = function(elem ,evt,cb) {
 		//vérifie si addEventListenerexiste dans l'élément
 		if ( elem.addEventListener ) {
@@ -18,8 +18,7 @@ function getName()
 		}
 	}
 	
-	var inversHTMLname	=	function(htmlcode){
-		
+	var inversHTMLdesc	=	function(htmlcode){
 		
 		if (htmlcode.substr(0, 1) === '#') 
 		{
@@ -40,7 +39,7 @@ function getName()
 			var red = parseInt(digits[2]);
 			var green = parseInt(digits[3]);
 			var blue = parseInt(digits[4]);
-
+			
 			red 		=	red		^	255;
 			green	=	green	^	255;
 			blue	=	blue	^	255;
@@ -49,7 +48,7 @@ function getName()
 			{
 				alpha	=	alpha	^	255;
 			}
-
+			
 			red 	=	red.toString(10);
 			green	=	green.toString(10);
 			blue	=	blue.toString(10);
@@ -65,23 +64,23 @@ function getName()
 				htmlcode = htmlcode + ',' + alpha;
 			}
 			
-			
 			htmlcode = digits[1]+htmlcode+'\)';
 			
 			return htmlcode;
 		}
 	}
-
+	
 	var mouser = bindEvent(document,'mouseover', function(event) 
 	{ var target = event.target || event.srcElement;
-		if(fus_actname == 1)	// Si on cherceh le prix...
-		{	
-			fus_colorname = getComputedStyle(target).backgroundColor;
-			fus_bordername = getComputedStyle(target).border;
-			fus_cursorname = getComputedStyle(target).cursor;			
+		if(fus_actdesc == 1)	// Si on cherceh le prix...
+		{
+			
+			fus_colordesc = getComputedStyle(target).backgroundColor;
+			fus_borderdesc = getComputedStyle(target).border;
+			fus_cursordesc = getComputedStyle(target).cursor;			
 		//	target.style.backgroundColor = inversHTMLname(getComputedStyle(target).backgroundColor);
 			target.style.border = '3px dotted black';
-			target.style.cursor = 'crosshair';			
+			target.style.cursor = 'crosshair';	
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
 		else
@@ -92,11 +91,11 @@ function getName()
 	
 	var mouset = bindEvent(document,'mouseout', function(event) 
 	{ var target = event.target || event.srcElement;
-		if(fus_actname == 1)	// Si on cherceh le prix...
+		if(fus_actdesc == 1)	// Si on cherceh le prix...
 		{
-			target.style.backgroundColor = fus_colorname;			
-			target.style.cursor = fus_cursorname;
-			target.style.border = fus_bordername;
+			target.style.backgroundColor = fus_colordesc;
+			target.style.cursor = fus_cursordesc;
+			target.style.border = fus_borderdesc;
 			
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
@@ -105,7 +104,7 @@ function getName()
 			this.removeEventListener('mouseout',arguments.callee,false);			
 		}
 	});
-
+	
 	bindEvent(document,'click', function(event) 
 	{ var target = event.target || event.srcElement;
 		
@@ -125,7 +124,7 @@ function getName()
 		}
 		if(/class=\"/.test(fromus_txt))
 		{
-			var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  	
+			var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  
 		}
 		
 		if(fromus_idmatch !=undefined)
@@ -133,18 +132,17 @@ function getName()
 			if(fromus_classmatch !=undefined)
 			{
 				// id et class 
-				
 				fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);			
-				var fus_nameclass =fromus_selectedTexttmp;
-				
+				var fus_descclass =fromus_selectedTexttmp;
+								
 				fromus_selectedTexttmp	= fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
-				var fus_nameid = fromus_selectedTexttmp;
+				var fus_descid = fromus_selectedTexttmp;
 			}
 			else
 			{
 				//id sans class
 				fromus_selectedTexttmp	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
-				var fus_nameid = fromus_selectedTexttmp;
+				var fus_descid = fromus_selectedTexttmp;
 			}
 			fromus_selectedText = fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);
 		}
@@ -153,34 +151,34 @@ function getName()
 			if(fromus_classmatch !=undefined)
 			{ //Class sans id
 				fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
-				var fus_nameclass =fromus_selectedTexttmp;
+				var fus_descclass =fromus_selectedTexttmp;
 				
 				fromus_selectedText = fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
 				
-				fromus_selectedText	=	document.getElementsByClassName(fromus_selectedText)[0].textContent;
+				fromus_selectedText	=	document.getElementsByClassDesc(fromus_selectedText)[0].textContent;
 			}
 			else
 			{
 				//ni class ni id
 			}  
 		}
-		var fus_nameresult = '';
-		if(fus_nameid)
+		var fus_descresult = '';
+		if(fus_descid)
 		{
-			fus_nameresult += '%name_id<-->'+fus_nameid+'/';
+			fus_descresult += 'desc_id<-->'+fus_descid+'/';
 		}
-		if(fus_nameclass)
+		if(fus_descclass)
 		{
-			fus_nameresult += '%name_class<-->'+fus_nameclass+'/';
+			fus_descresult += 'desc_class<-->'+fus_descclass+'/';
 		}	
 		
-		localStorage['regGetName'] = fus_nameresult;
-		localStorage['regName'] = fromus_selectedText;
-
-		fus_actname = 0;	// On ne cherche plus le nom
-		target.style.backgroundColor = fus_colorname;	
-		target.style.border = fus_bordername;
-		target.style.cursor = fus_cursorname;	
+		localStorage['regGetDesc'] = fus_descresult;
+		localStorage['regDesc'] = fromus_selectedText;
+		fus_actdesc = 0;	// On ne cherche plus la description
+		target.style.backgroundColor = fus_colordesc;
+		target.style.cursor = fus_cursordesc;
+		target.style.border = fus_borderdesc;
+		
 		this.removeEventListener('click',arguments.callee,false);
 	});
 }

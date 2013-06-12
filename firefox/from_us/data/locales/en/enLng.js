@@ -22,3 +22,14 @@ _lng['en']['MsgWelcome'] = 'Welcome ';
 _lng['en']['MsgConnect'] = 'You must login';
 _lng['en']['MsgBD'] = 'Error :: connection to the server could not';
 _lng['en']['ButtonReset'] = 'Reset';
+
+_lng['en']['Infocateg'] = 'Please choose a category';
+
+_lng['en']['Description'] = 'Description';
+_lng['en']['Image'] = 'Picture';
+
+
+_lng['en']['BulleName'] = 'If name has not been found, please click here, then select the name on the page';
+_lng['en']['BullePrice'] = 'If price has not been found, please click here, then select the price on the page';
+_lng['en']['BulleDesc'] = 'If description has not been found, please click here, then select the description on the page';
+_lng['en']['BulleImg'] = 'If picture has not been found, please click here, then select the picture on the page';

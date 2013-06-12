@@ -1,4 +1,26 @@
 function ajoutCSS() {
+
+		/*Permet laffichage de l'image */
+	$('span#img-view').css({
+	        display: 'none', 
+	        border: '2px solid black',
+	        height: '300px', 
+	        width: '300px', /* H/W */
+	        overflow: 'hidden', /* cache ce qui dépasse */
+	        'background-size': '100% auto',
+	        'background-position': 'center center',
+	        'background-repeat': 'no-repeat'
+	});
+	$('span#img-view img').css({ 
+		'max-height': '550px', 
+		'max-width': '550px' 
+	});
+	$('div#image:hover span#img-view').css({ 
+		display: 'block',
+		position: 'absolute'
+	});
+
+	/*Pour l'affichage des img de langue */
 	$('#selectLang').css({
 		height: '1px'
 	});

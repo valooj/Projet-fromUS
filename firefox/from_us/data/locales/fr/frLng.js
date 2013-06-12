@@ -22,3 +22,12 @@ _lng['fr']['MsgWelcome'] = 'Bienvenue ';
 _lng['fr']['MsgConnect'] = 'Vous devez vous connecter';
 _lng['fr']['MsgBD'] = 'Erreur :: Connection au serveur impossible';
 _lng['fr']['ButtonReset'] = 'Annuler';
+_lng['fr']['Infocateg'] = 'Vous devez choisir une categorie';
+
+_lng['fr']['Description'] = 'Description';
+_lng['fr']['Image'] = 'Picture';
+
+_lng['fr']['BulleName'] = 'Si le nom n\' est pas trouv\351, cliquer sur ce bouton et s\351lectionn\351 le';
+_lng['fr']['BullePrice'] = 'Si le prix n\' est pas trouv\351, cliquer sur ce bouton et s\351lectionn\351 le';
+_lng['fr']['BulleDesc'] = 'Si la description n\' est pas trouv\351, cliquer sur ce bouton et s\351lectionn\351 le';
+_lng['fr']['BulleImg'] = 'Si l\'image n\' est pas trouv\351, cliquer sur ce bouton et s\351lectionn\351 le';

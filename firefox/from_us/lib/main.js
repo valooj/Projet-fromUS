@@ -4,6 +4,13 @@ var pageMod = require('page-mod');
 var ss = require('sdk/simple-storage');
 console.log('debut pageMod');
 
+/*var { startServerAsync } = require("sdk/test/httpd");
+var srv = startServerAsync(80, '/localhost/projetFU/Communication/cible3.php?');
+require("sdk/system/unload").when(function cleanup() {
+  srv.stop(function() { // you should continue execution from this point.
+  })
+});*/
+
 
 if (ss.storage.name) {
   console.log (ss.storage.name);
@@ -23,33 +30,35 @@ else {
   	contentScriptFile: 
   		[
   			data.url('jquery/jquery.min.js'),
-        	data.url('jquery/jquery-ui-css-fix.js'),
+        	data.url('jquery/jquery-ui.js'),
             data.url('fromus_recuperation.js'),
             data.url('getPrice.js'),
             data.url('getName.js'),
+            data.url('getDesc.js'),
+            data.url('getImg.js'),
             data.url('locales/en/enLng.js'),
             data.url('locales/fr/frLng.js'),
+            data.url('locales/de/deLng.js'),
             data.url('langue.js'),
-            data.url('dialog.js')
+            data.url('ajoutCSS.js'),
+            data.url('dialog2.js')
         ],
-    contentStyleFile: data.url('jquery/jquery-ui-css-fix.css'),
-    onAttach: function (worker) {
-    console.log(ss.storage.pages);
-  },
+    //contentStyleFile: data.url('jquery/jquery-ui-css-fix.css'),
     contentScriptOptions: {
       imgfr: data.url('img/fr.png'),
       imgen: data.url('img/en.png'),
       imgde: data.url('img/de.png'),
       imgadd: data.url('img/bouton_ajouter.png'),
       imgbuy: data.url('img/bouton_commander.png'),
+      imgplugin: data.url('img/plugin_vide.png'),
       imglogo: data.url('img/logo.png')
     }
 });*/
 
 
 var tbb = require('toolbarbutton').ToolbarButton({
-  id: 'button',
-  label: 'us-button',
+  id: 'fromus_button',
+  label: 'from_us',
   image: data.url('img/on.png'),
   onCommand: function () {
 
@@ -61,12 +70,14 @@ var tbb = require('toolbarbutton').ToolbarButton({
             data.url('fromus_recuperation.js'),
             data.url('getPrice.js'),
             data.url('getName.js'),
+            data.url('getDesc.js'),
+            data.url('getImg.js'),
             data.url('locales/en/enLng.js'),
             data.url('locales/fr/frLng.js'),
             data.url('locales/de/deLng.js'),
             data.url('langue.js'),
             data.url('ajoutCSS.js'),
-            data.url('dialog.js')
+            data.url('dialog2.js')
       ],
       contentScriptOptions: {
       imgfr: data.url('img/fr.png'),
