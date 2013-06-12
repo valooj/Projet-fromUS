@@ -1,5 +1,7 @@
 function getImg()
 {
+	var fus_border = '1px dashed red';
+	var fus_cursor = 'crosshair';
 	var fus_actimg = 1; // V ariable indiquant que l'on est à la recherche du nom
 	var fus_colorimg;	// variable contenant la couleur précédente
 	var fus_borderimg;	// variable contenant la bordure précédente	
@@ -99,8 +101,8 @@ function getImg()
 			fus_borderimg = getComputedStyle(target).border;
 			fus_cursorimg = getComputedStyle(target).cursor;			
 			//	target.style.backgroundColor = inversHTMLname(getComputedStyle(target).backgroundColor);
-			target.style.border = '3px dotted black';
-			target.style.cursor = 'crosshair';	
+			target.style.border = fus_border;
+			target.style.cursor = fus_cursor;	
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
 		else
