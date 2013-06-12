@@ -389,11 +389,11 @@ $(document).ready(function() {
 			title: 'from-us',
 			position: 
 				{
-					my: 'left top', 
-					at: 'left top'
+					my: 'right top', 
+					at: 'right top'
 				},
-			height: 600,
-			width: 335,
+			height: 667,
+			width: 345,
 			resizable: true,
 			closeOnEscape: true,
 
