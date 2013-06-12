@@ -4,16 +4,7 @@
 * Copyright 2013 jQuery Foundation and other contributors; Licensed MIT */
 
 /*Permet laffichage de l'image */
-span#img-view {
-        display: none; border: 2px solid black;
-        height: 300px; width: 300px; /* H/W */
-        overflow: hidden; /* cache ce qui dépasse */
-        background-size: 100% auto;
-        background-position: center center;
-        background-repeat: no-repeat;
-      }
-span#img-view img { max-height: 550px; max-width: 550px; }
-div#image:hover span#img-view { display: block; position: absolute; }
+
 
 /*Pour l'affichage des img de langue */
 #selectLang {
@@ -40,8 +31,24 @@ input#emailBox {
 input#connect {
 	width: 55px;
 	margin: 2px;
+	padding: 2px;
 	display: inline-block;
 	float: left;
+}
+input#nick_name {
+	width: 300px;
+	text-align: left;
+}
+input#ptsFU {
+	width: 300px;
+	text-align: center;
+}
+input#disconnect {
+	width: 55px;
+	margin: 2px;
+	padding: 2px;
+	display: inline-block;
+	float: left;	
 }
 ul#onglets{
 	background-color: white;
@@ -77,7 +84,9 @@ a#tabAdd{
 	line-height: 31px;
 	text-indent: 28px;
 	text-align: left;
+	text-decoration: none;
 	font-size: 0.8em;
+	color: #000000;
 
 }
 a#tabBuy{
@@ -92,6 +101,13 @@ a#tabBuy{
 	text-indent: 28px;
 	font-size: 0.8em;
 	text-align: left;
+	text-decoration: none;
+	color: #000000;
+}
+input#msgServer {
+	width: 300px;
+	color: #c11f34;
+	text-align: center;
 }
 h2#FormP {
 	color: black;
@@ -104,7 +120,7 @@ h2#FormP {
 #fromus_tabs label {
 	display: inline-block;
 	float: left;
-	width: 130px;
+	width: 250px;
 	margin: 3px 0 0 5px;
 	text-align: left;
 	font-size: 1em;
@@ -133,6 +149,47 @@ input#nameQ {
 	padding: 0px;
 	margin-left: 0px;
 }
+textarea#fromus_desc {
+	display: inline-block;
+	float: left;
+	width: 280px;
+	margin: 1px 0 5px 5px; 
+	padding: 0px;
+}
+input#descQ {
+	display: inline-block;
+	float: left;
+	width: 25px;
+	height: 25px;
+	padding: 0px;
+	margin-left: 0px;	
+}
+span#img-view {
+    display: none; border: 2px solid black;
+    height: 300px; width: 300px; /* H/W */
+    overflow: hidden; /* cache ce qui dépasse */
+    background-size: 100% auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: none;
+}
+span#img-view img { max-height: 550px; max-width: 550px; }
+div#image:hover span#img-view { display: block; position: absolute; }
+input#fromus_image {
+	display: inline-block;
+	float: left;
+	width: 280px;
+	margin: 1px 0 5px 5px; 
+	padding: 0px;
+}
+input#imgQ {
+	display: inline-block;
+	float: left;
+	width: 25px;
+	height: 25px;
+	padding: 0px;
+	margin-left: 0px;
+}
 select#category{
 	display: inline-block;
 	float: left;
@@ -150,7 +207,7 @@ select#sscategory{
 label#fu_quantite {
 	display: inline-block;
 	float: left;
-	width: 130px;
+	width: 75px;
 	margin: 3px 0 0 5px;
 	text-align: left;
 	font-size: 1em;
@@ -158,11 +215,15 @@ label#fu_quantite {
 input#QteSpinner {
 	display: inline-block;
 	float: left;
+	width: 40px;
+	text-align: right;
+	border-radius: 4px;
+	margin: 3px 120px 0 5px;
 }
 label#fu_assurance {
 	display: inline-block;
 	float: left;
-	width: 130px;
+	width: 110px;
 	margin: 3px 0 0 5px;
 	text-align: left;
 	font-size: 1em;
@@ -170,72 +231,29 @@ label#fu_assurance {
 input#checkassur {
 	display: inline-block;
 	float: left;
+	margin: 7px 100px 0 5px;
 }
 
 input#addP {
 	display: inline-block;
-	float: left;
-	margin-left: 30px;
+	float: right;
+	margin: 3px 5px 0 0;
+	padding: 3px;
+}
+input#buyP {
+	display: inline-block;
+	float: right;
+	margin: 3px 5px 0 0;
 	padding: 3px;
 }
 /*Fin*/
 
 
- #login{
-	font-size: small;
-	color: grey;  
-	display: inline-block;
-	margin-left: 200px;
-}
- #create {
-	font-size: small;
-	color: grey;  
-	display: inline-block;
-	margin-left: 255px;
-}
-
- #log{
-	display: inline-block;
-	float: center;
-	margin-left: 280px;
-}
 /*
  * {
 	border: 1px solid red;
 }*/
- #fromus_tabs-1 {
-	border: 2px double #203064;
-	border-radius: 5px;
-	margin: 10px;
-	
-}
- input#Nick_Name {
-	width: 600px;
-	float: right;
-	margin-top: 0px;
-	text-align: right;
-	font-size: small;
-	border: none;
-}
 
-
- input#QteSpinner{
-	width: 50px;
-	height: 20px;
-	border: none;
-}
- .ui-toto-spinner{
-	height: 18px;
-	margin-top: 0px;
-	margin-bottom: 5px;
-	border: none;
-}
- #fromus_divassurance	{
-	width: 50px;
-	display: inline-block;
-	margin-top: -4px;
-	margin-bottom: 5px;
-}
  #logofromus{
 	float: left;
 	margin-left: 50px;

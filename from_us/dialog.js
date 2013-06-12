@@ -328,9 +328,11 @@ $(document).ready(function() {
 	     						'<hr id="hr2" style="margin-top: 65px;"/>'+
 	    					'</FORM>'+
 	    					'<div id="isconnect">'+
+	    						'<hr id="hr1" style="margin-top: 20px;"/>'+
 	      						'<input type="textbox" id="nick_name" disabled="true" style="border:none"/><br />'+
 							    '<input type="textbox" id="ptsFU" disabled="true" style="border:none"/><br />'+
 							    '<INPUT TYPE="button" NAME="dislogB" id="disconnect">'+
+							    '<hr id="hr2" style="margin-top: 35px;"/>'+
 					    	'</div>'+
 					    '</div>'+
 							'<form id="fromusForm">' + 
@@ -389,11 +391,11 @@ $(document).ready(function() {
 			title: 'from-us',
 			position: 
 				{
-					my: 'left top', 
-					at: 'left top'
+					my: 'right top', 
+					at: 'right top'
 				},
-			height: 600,
-			width: 335,
+			height: 667,
+			width: 345,
 			resizable: true,
 			closeOnEscape: true,
 
