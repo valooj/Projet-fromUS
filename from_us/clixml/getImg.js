@@ -18,6 +18,26 @@ function getImg()
 		}
 	}
 	
+	function getimgtag(elem) //Permet de récupérer le noeud img à partir d'un div parent et le stocke dans localStorage['fus_imgtag']
+	{
+		for(var i=0;elem.getElementsByTagName('div')[i];i++)
+		{
+			getimgtag(elem.getElementsByTagName('div')[i]);
+		}
+		if((elem.getElementsByTagName('img')[0])&&(!localStorage['regImg']))
+		{
+			if(elem.getElementsByTagName('img')[0].src!=undefined)
+			{
+				localStorage['regImg'] = elem.getElementsByTagName('img')[0].src;
+
+			}else if(elem.getElementsByTagName('img')[0].href!=undefined)
+			{
+				localStorage['regImg'] = elem.getElementsByTagName('img')[0].href;
+				
+				}
+		}
+	}
+	
 	var inversHTMLimg	=	function(htmlcode){
 		
 		if (htmlcode.substr(0, 1) === '#') 
@@ -78,7 +98,7 @@ function getImg()
 			fus_colorimg = getComputedStyle(target).backgroundColor;
 			fus_borderimg = getComputedStyle(target).border;
 			fus_cursorimg = getComputedStyle(target).cursor;			
-		//	target.style.backgroundColor = inversHTMLname(getComputedStyle(target).backgroundColor);
+			//	target.style.backgroundColor = inversHTMLname(getComputedStyle(target).backgroundColor);
 			target.style.border = '3px dotted black';
 			target.style.cursor = 'crosshair';	
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
@@ -108,6 +128,10 @@ function getImg()
 	bindEvent(document,'click', function(event) 
 	{ var target = event.target || event.srcElement;
 		
+		getimgtag(target);
+		var origtarget = target;
+
+		
 		var 	fromus_txt    = target.innerHTML;
 		var 	fromus_selectedText  = target.textContent;
 		var 	fromus_selectedTexttmp;
@@ -116,7 +140,7 @@ function getImg()
 		fromus_site	=	/\.[a-z0-9\-A-Z]{1,}\.com$/.exec(fromus_site)[0];
 		fromus_site	=	'www'+fromus_site;
 		
-		fromus_txt        = fromus_txt.replace(/\n/g,'');
+		
 		
 		if(/id=\"/.test(fromus_txt))
 		{
@@ -195,12 +219,12 @@ function getImg()
 		}	
 		
 		localStorage['regGetImg'] = fus_imgresult;
-		localStorage['regImg'] = fromus_selectedText;
+
 		fus_actimg = 0;	// On ne cherche plus l'image
-		target.style.backgroundColor = fus_colorimg;
-		target.style.cursor = fus_cursorimg;
-		target.style.border = fus_borderimg;	
+		//target.style.backgroundColor = fus_colorimg;
+		origtarget.style.cursor = fus_cursorimg;
+		origtarget.style.border = fus_borderimg;	
 		
 		this.removeEventListener('click',arguments.callee,false);
 	});
-}
+}	

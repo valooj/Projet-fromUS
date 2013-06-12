@@ -223,6 +223,28 @@ function fromus_recupPrice(idclass,fus_data)
 
 function fromus_recupImg(idclass,fus_data)
 {
+	
+	function getimgtag(elem) //Permet de récupérer le noeud img à partir d'un div parent
+	{
+		for(var i=0;elem.getElementsByTagName('div')[i];i++)
+		{
+			getimgtag(elem.getElementsByTagName('div')[i]);
+		}
+		if((elem.getElementsByTagName('img')[0])&&(!localStorage['regImg']))
+		{
+			if(elem.getElementsByTagName('img')[0].src!=undefined)
+			{
+				localStorage['regImg'] = elem.getElementsByTagName('img')[0].src;
+
+			}else if(elem.getElementsByTagName('img')[0].href!=undefined)
+			{
+				localStorage['regImg'] = elem.getElementsByTagName('img')[0].href;
+				
+				}
+		}
+	}
+	
+	
 	if(idclass == 'id')
 	{
 		fromus_sitelist[fromus_site].img_id = fus_data.split(';');
@@ -261,12 +283,12 @@ function fromus_recupImg(idclass,fus_data)
 		{	//S'il y a un résultat, vérifier s'il a un src ou un href et l'enregistrer le cas échéant
 			if(fromus_img_id.href!=undefined)
 			{
-				fromus_img	=	fromus_img_id.href;
+				getimgtag(fromus_img_id);
 				localStorage['fromus_iimg'] = fromus_i + 1;
 			}
 			if(fromus_img_id.src!=undefined)
 			{
-				fromus_img	=	fromus_img_id.src;
+				getimgtag(fromus_img_id);
 				localStorage['fromus_iimg'] = fromus_i + 1;
 			}
 		}
@@ -291,12 +313,12 @@ function fromus_recupImg(idclass,fus_data)
 			{
 				if(fromus_img_class.href)
 				{
-					fromus_img = fromus_img_class.href;
-					localStorage['fromus_iimg'] = fromus_i + 1;
+				getimgtag(fromus_img_class);
+				getimgtag('fromus_iimg'] = fromus_i + 1;
 				}
 				if(fromus_img_class.src)
 				{
-					fromus_img = fromus_img_class.src;
+				getimgtag(fromus_img_class);
 					localStorage['fromus_iimg'] = fromus_i + 1;
 				}
 			}
@@ -305,13 +327,13 @@ function fromus_recupImg(idclass,fus_data)
 	
 	if(!(fromus_img))
 	{	// S'il n'y a eu aucun résultat...
-		fromus_img = fromus_error;
+		localStorage['fromus_iimg'] = fromus_error;
 	}
 	
-	if(fromus_moredesc)
+	if(fromus_moreimg)
 	{
-		fromus_i = parseInt(localStorage['fromus_idesc']);
-		fromus_desc	=	'';
+		fromus_i = parseInt(localStorage['fromus_iimg']);
+		fromus_img=	'';
 	}
 	else
 	{
@@ -319,7 +341,7 @@ function fromus_recupImg(idclass,fus_data)
 	}			
 	
 	// stockage du visuel dans local storage
-	localStorage['regImg'] = fromus_img;
+
 	//Mise à zéro des indicateurs	
 	localStorage['fromus_moreimg']	=	JSON.stringify(false);
 }
