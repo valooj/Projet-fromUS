@@ -1,7 +1,6 @@
 <?php
 header('Content-type: application/json');
-
-file_put_contents('./trace.txt', print_r($_REQUEST, 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
+//file_put_contents('./trace.txt', print_r($_REQUEST, 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
 
 // Requete insert to .... on duplicate key
 //Permet d'insérer un element , si il existe déja, il est mit à jour. 
@@ -9,7 +8,7 @@ $sql_prepared_update_product = <<<SQL
 INSERT INTO produits(prd_libelle, prd_site, prd_desc, prd_cat, prd_visu, prd_prix, prd_vis)
 	VALUES (:_libelle, :_site, :_desc, :_cat, :_visu, :_prix, :_vis)
 	ON DUPLICATE KEY UPDATE
-		prd_desc= :_desc, prd_visu= 2, prd_prix= :_prix, prd_vis= :_vis
+		prd_desc= :_desc, prd_visu= :_visu, prd_prix= :_prix, prd_vis= 2
 SQL;
 
 $sql_prepared_update_panier_det = <<<SQL
@@ -32,6 +31,7 @@ INSERT INTO site_access (sa_site,sa_chemin,sa_valid) VALUES (:_site, :_chemin, :
 		sa_chemin = CONCAT(sa_chemin , :_chemin), sa_valid = 2
 SQL;
 
+include 'function.php';
 
 function getLng(){
 	$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
@@ -46,13 +46,27 @@ function getPreferedLang(){
 
 try
 {
-	// connection a la bd
+/*	// connection a la bd
     $options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
     $options[PDO::MYSQL_ATTR_INIT_COMMAND] = 'SET NAMES UTF8;';
     $bdd = new PDO('mysql:host=localhost;dbname=fromus', 'root', '', $options);
+*/
+    //connection vraie bd
+    $host_db = "localhost:/tmp/mysql5.sock"; // nom de votre serveur
+	$user_db = "dbo424427993"; // nom d'utilisateur de connexion à votre bdd
+	$password_db = "fromus68"; // mot de passe de connexion à votre bdd
+	$bdd_db = "db424427993"; // nom de votre bdd
+
+	$options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
+    $options[PDO::MYSQL_ATTR_INIT_COMMAND] = 'SET NAMES UTF8;';
+    //$bdd = new PDO('mysql:host='.$host_db.';dbname='.$bdd_db.','.$user_db.','.$password_db.','. $options);
+    //$bdd = new PDO('mysql:dbname=db424427993;host=localhost:/tmp/mysql5.sock','dbo424427993','fromus68',$options);
+    $bdd = new PDO ("mysql:host=localhost;unix_socket=/tmp/mysql5.sock;dbname=db424427993", 'dbo424427993', 'fromus68');
 
 	// externals datas
+	
 	$get_action = isset($_GET['action']) ? htmlspecialchars($_GET['action']) : null;
+	
 
 	//Pour le choix de la langue
 	$prefered_lng = isset($_GET['lng']) ? htmlspecialchars($_GET['lng']) : getLng();
@@ -169,24 +183,20 @@ try
 			// variables tests
 			if ( !$get_token || $get_token == 'undefined')
 				throw new Exception($lng['invalid_token']);
-
 			if ( !$get_panier )
 				throw new Exception($lng['invalid_panier']);
 
-			if( !($get_panier['priceTot'] || $get_panier['priceLiv'] || $get_panier['priceTax']) )
+			if( !$get_panier['priceTot'] )
 				throw new Exception($lng['bad_param']);
 
-			if( !($get_panier['libelle'] || $get_panier['qte'] || $get_panier['montant'] || $get_panier['url'] || $get_panier['desc'] || $get_panier['categ']) )
+			if( !($get_panier['libelle'] || $get_panier['qte']  || $get_panier['url'] || $get_panier['desc'] || $get_panier['categ']) )
 				throw new Exception($lng['bad_param']);
 
 			if( $get_panier['qte'] <= 0)
 				throw new Exception($lng['invalid_qte']);
 
 			if ( !is_numeric($get_panier['qte']) )
-				throw new Exception($lng['invalid_categ']);
-
-			if ( !is_numeric($get_panier['montant']) )
-				throw new Exception($lng['invalid_price']);
+				throw new Exception($lng['invalid_qte']);
 
 			if ( !is_numeric($get_panier['categ']) )
 				throw new Exception($lng['invalid_categ']);
@@ -200,40 +210,51 @@ try
 
 			if(!$tokId)
 				throw new Exception($lng['invalid_token']);
+
+			//Recupere l'addrl a partir de id
+			$req = $bdd->prepare('SELECT ulivr_id FROM users_adr_livr where ulivr_users= :_users AND ulivr_defo=\'1\'');
+			$req->execute(array('_users' =>$tokId));
+			$idAddr = $req->fetch();
+			$idAddr = $idAddr[0];
+			$req->closeCursor();
+
+			if(!$idAddr)
+				throw new Exception($lng['invalid_token']);
 	
-			$req = $bdd->prepare('INSERT INTO commande_ent(cmde_adrl, cmde_cli ,cmde_libelle, cmde_date, cmde_nba, cmde_total, cmde_livraison, cmde_taxes, cmde_totalm)
-					VALUES (:_adrl, :_cli, :_libelle, :_date, :_nba, :_total, :_livraison, :_taxes, :_totalm)');
+			$req = $bdd->prepare('INSERT INTO commande_ent(cmde_adrl, cmde_cli ,cmde_libelle, cmde_date, cmde_nba, cmde_total, cmde_livraison, cmde_taxes, cmde_totalm, cmde_statut)
+					VALUES (:_adrl, :_cli, :_libelle, :_date, :_nba, :_total, :_livraison, :_taxes, :_totalm, :_statut)');
 			
-            $req->bindValue('_adrl' , 	 		1,								PDO::PARAM_INT);
+            $req->bindValue('_adrl' , 	 		$idAddr,								PDO::PARAM_INT);
             $req->bindValue('_cli' ,     		$tokId, 						PDO::PARAM_INT);
             $req->bindValue('_libelle',    		'cmd-'.mktime().'-'.$tokId,     PDO::PARAM_STR);
             $req->bindValue('_date' ,     		mktime(),                      	PDO::PARAM_INT);
             $req->bindValue('_nba' ,    		 1,               				PDO::PARAM_INT); //decimal
             $req->bindValue('_total' ,    		$get_panier['priceTot'] , 							PDO::PARAM_STR);
-            $req->bindValue('_livraison' ,    	$get_panier['priceLiv'],                        		PDO::PARAM_STR); //decimal
-            $req->bindValue('_taxes' , 	 		$get_panier['priceTax'], 							PDO::PARAM_STR);
-            $req->bindValue('_totalm' ,    		$get_panier['montant'], 							PDO::PARAM_STR); //decimal
+            $req->bindValue('_livraison' ,    	0,                        		PDO::PARAM_STR); //decimal
+            $req->bindValue('_taxes' , 	 		0, 							PDO::PARAM_STR);
+            $req->bindValue('_totalm' ,    		$get_panier['priceTot'], 							PDO::PARAM_STR); //decimal
+            $req->bindValue('_statut' ,    		10, 							PDO::PARAM_INT); 
             $req->execute();
 			$id_ent = $bdd->lastInsertId();
 			$req->closeCursor();
-	
-			// code MAJ du produit visité
-			$req = $bdd->prepare('INSERT INTO commande_detail(cmdd_libelle, cmdd_url, cmdd_desc, cmdd_qte, cmdd_montant, cmdd_categ, cmdd_poids, cmdd_unitep, cmdd_larg, cmdd_long, cmdd_haut, cmdd_united, cmdd_proforma, cmdd_ent)
-					VALUES (:_libelle, :_url, :_desc, :_qte, :_montant, :_categ, :_poids, :_unitep, :_larg, :_long, :_haut, :_united, :_proforma, :_ent)');
+
+			// 
+			$req = $bdd->prepare('INSERT INTO commande_detail(cmdd_libelle, cmdd_url, cmdd_desc, cmdd_qte, cmdd_montant, cmdd_categ, cmdd_poids, cmdd_unitep, cmdd_larg, cmdd_long, cmdd_haut, cmdd_united, cmdd_ent)
+					VALUES (:_libelle, :_url, :_desc, :_qte, :_montant, :_categ, :_poids, :_unitep, :_larg, :_long, :_haut, :_united, :_ent)');
 			$req->bindValue('_libelle' , 	$get_panier['libelle'],		PDO::PARAM_STR);
             $req->bindValue('_url' ,     	$get_panier['url'], 			PDO::PARAM_STR);
             $req->bindValue('_desc' ,    	$get_panier['desc'],                			PDO::PARAM_STR);
             $req->bindValue('_qte' ,     	$get_panier['qte'],                      			PDO::PARAM_INT);
-            $req->bindValue('_montant' ,    $get_panier['montant'],               			PDO::PARAM_STR); //decimal
+            $req->bindValue('_montant' ,    $get_panier['priceTot'],               			PDO::PARAM_STR); //decimal
             $req->bindValue('_categ' ,    	$get_panier['categ']   , 			PDO::PARAM_INT);
-            $req->bindValue('_poids' ,    	 2,                        			PDO::PARAM_STR); //decimal
-            $req->bindValue('_unitep' , 	 2, 		PDO::PARAM_STR);
-            $req->bindValue('_larg' ,    	 2, 			PDO::PARAM_STR); //decimal
-            $req->bindValue('_long' ,    	 2,                			PDO::PARAM_STR); //decimal
-            $req->bindValue('_haut' ,        2,                       			PDO::PARAM_STR); //decimal
-            $req->bindValue('_united' ,     'united',              		    PDO::PARAM_STR);
-            $req->bindValue('_proforma' ,   'proforma', 			PDO::PARAM_STR);
+            $req->bindValue('_poids' ,    	 0,                        			PDO::PARAM_STR); //decimal
+            $req->bindValue('_unitep' , 	 0, 		PDO::PARAM_STR);
+            $req->bindValue('_larg' ,    	 0, 			PDO::PARAM_STR); //decimal
+            $req->bindValue('_long' ,    	 0,                			PDO::PARAM_STR); //decimal
+            $req->bindValue('_haut' ,        0,                       			PDO::PARAM_STR); //decimal
+            $req->bindValue('_united' ,     'kg',              		    PDO::PARAM_STR);
             $req->bindValue('_ent' ,     	 $id_ent,                        PDO::PARAM_INT);
+
             $rep = $req->execute();
             $req->closeCursor();
 
@@ -244,7 +265,7 @@ try
 			$response['Message'] = $lng['product_insert'];
 			
 			break;
-
+/*
 		case 'MAJ-calcul':
 
 			$get_token = isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
@@ -300,16 +321,16 @@ try
 	
 			$code_pays = $array[$arr['user_pays']];
 
-			//$url .= "&to=".$code_pays;
-			$url .= "&to=bel";
+			$url .= "&to=".$code_pays;
+			//$url .= "&to=bel";
 			$url .= "&classify_by=cat";
 			
 			$url .= "&cat[0]=".$get_calcul['categ']."&desc[0]=".$get_calcul['libelle']."&qty[0]=".$get_calcul['qte']."&value[0]=".$get_calcul['montant'];
 			
 			//code a mettre pour le ship si le poidt supérireur a 70,5, $ship=250
 			$ship = 0;
-			
-			$url .= "&shipping=".$ship."&insurance=0";
+			$insur = 0.05* $get_calcul['montant'];
+			$url .= "&shipping=".$ship."&insurance=".$insur;
 			$url .= htmlentities("&currency");
 			$url .="=usd&output_currency=usd";
 			
@@ -365,9 +386,9 @@ try
 			$response['Prix_tax'] = $tax;
 
 			break;
-
+*/
 		case 'MAJ-login':
-			$get_log = isset($_POST['log']) ? json_decode($_POST['log'], TRUE) : null;
+			$get_log = isset($_REQUEST['log']) ? json_decode($_REQUEST['log'], TRUE) : null;
 
 			// variables tests
 			if ( !$get_log )
@@ -378,12 +399,13 @@ try
 
 			if (!filter_var($get_log['email'], FILTER_VALIDATE_EMAIL) )
 				throw new Exception('Error :: Email not valid');
+			$hash = create_hash($get_log['password']);
 
 			//selection de l'id a partir de l'email et du password
 			$req = $bdd->prepare('SELECT user_id, user_prenom, user_nom FROM users where user_email= :_email and user_mdp = :_password ');
 			$req->execute(array(
 			    '_email' => $get_log['email'],
-			    '_password' => $get_log['password']));
+			    '_password' => $hash));
 			$arr = $req->fetch();
 			$req->closeCursor();
 
@@ -475,7 +497,7 @@ try
 			//$cat = array();
 			
 			//selection de la sous sous categorie
-			$req = $bdd->prepare('SELECT sscat_liee , sscat_libelle FROM sscategorie where sscat_scat= :_scat and sscat_lang= :_lang ORDER BY sscat_libelle ASC');
+			$req = $bdd->prepare('SELECT sscat_code , sscat_libelle FROM sscategorie where sscat_scat= :_scat and sscat_lang= :_lang ORDER BY sscat_libelle ASC');
 			$req->execute(array(
 			    '_scat' => $get_sscateg,
 			    '_lang' => getPreferedLang()));

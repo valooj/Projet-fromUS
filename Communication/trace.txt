@@ -1,55 +1,11 @@
-
-===========================================
-http://localhost/projetFU/Communication/cible3.php?action=MAJ-panier&token=51aded24a6280&panier={libelle:libelleprod,qte:2,montant:2345,url:2efefefe,desc:libelleprod,categ:2}
-
-===========================================
-http://localhost/projetFU/Communication/cible3.php?action=MAJ-calcul&token=51aded24a6280&calcul={libelle:libelleprod,qte:2,montant:2345,categ:2}
-
-
-===========================================
-<!DOCTYPE html5>
-<html>
-  <head>
-    <meta charset="utf-8156" />
-    <style>
-      span#img-view {
-        display: none; border: 200px solid red;
-        heigiht: 50px; width: 100px; /* H/W */
-        overflow: hidden; /* cache ce qui dépasse */
-        background-size: 100% auto;
-        background-position: center center;
-        background-repeat: no-repe at;
-      }
-      span#img-view img { max-height: 50px; max-width: 100px; }
-      div#image:hover span#img-view { display: block; position: absolute; }
-    </style>
-  </head>
-  <body>
-    <div id="image">
-      <input type="text" name="" id="img-form" size="100" />
-      <span id="img-view"></span>
-    </div>
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script>
-$('#id').val('a');
-$('.class').val();
-
-$('#e').html('<span></span>');
-
-        $(document).on('change, keyup', 'input', function() {
-          $('#img-view').css('background-image', 'url("bug ?' + $(this).val() + '")');
-          $('#img-view').wdth( $(this).width()+2 );
-        });
-    </script>
-  </body> 
-</html>Array
-
-
-===========================================Array
+Array
 (
     [action] => MAJ-categorie
     [lng] => fr
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
 )
 
 ===========================================
@@ -57,6 +13,10 @@ Array
 (
     [action] => MAJ-accessIn
     [url_site] => www.rakuten.com
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
 )
 
 ===========================================
@@ -64,7 +24,11 @@ Array
 (
     [action] => MAJ-pts
     [lng] => fr
-    [token] => 51b5c2f3882ad
+    [token] => 51b86137e5fab
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
 )
 
 ===========================================
@@ -73,6 +37,10 @@ Array
     [action] => MAJ-sscategorie
     [lng] => fr
     [sscateg] => 3
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
 )
 
 ===========================================
@@ -80,15 +48,263 @@ Array
 (
     [action] => MAJ-product
     [lng] => fr
-    [token] => 51b5c2f3882ad
-    [product] => {"prd_libelle":"Darksiders II (Limited Edition)","prd_site":"rakuten.com/prod/darksiders-ii-limited-edition/222393651.html","prd_desc":"Product DescriptionDarksiders II follows the exploits of Death, one of the four horsemen of the Apocalypse, in a weaving tale that runs parallel to the events in the original Darksiders game. Thi[...]","prd_visu":"http://img.rakuten.com/PIC/42143469/0/1/300/42143469.jpg","prd_prix":"49.3","prd_cat":"19"}
+    [token] => 51b86137e5fab
+    [product] => {"prd_libelle":"Oz The Great and Powerful (DVD + Digital Copy)","prd_site":"rakuten.com/prod/oz-the-great-and-powerful-dvd-digital-copy/249092925.html#tab2","prd_desc":"?","prd_visu":"http://img.rakuten.com/PIC/49649114/0/1/300/49649114.jpg","prd_prix":"20.95","prd_cat":"19"}
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [lng] => fr
+    [token] => 51b86137e5fab
+    [panier] => {"priceTot":"20.95","libelle":"Oz The Great and Powerful (DVD + Digital Copy)","url":"rakuten.com/prod/oz-the-great-and-powerful-dvd-digital-copy/249092925.html#tab2","desc":"?","qte":"1","categ":"19"}
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
 )
 
 ===========================================
 Array
 (
     [action] => MAJ-categorie
-    [lng] => en
+    [lng] => fr
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b86137e5fab
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 4
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => 51b86137e5fab
+    [product] => {"prd_libelle":"Oz The Great and Powerful (DVD + Digital Copy)","prd_site":"rakuten.com/prod/oz-the-great-and-powerful-dvd-digital-copy/249092925.html#tab2","prd_desc":"?","prd_visu":"http://img.rakuten.com/PIC/49649114/0/1/300/49649114.jpg","prd_prix":"20.95","prd_cat":"29"}
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [lng] => fr
+    [token] => 51b86137e5fab
+    [panier] => {"priceTot":"20.95","libelle":"Oz The Great and Powerful (DVD + Digital Copy)","url":"rakuten.com/prod/oz-the-great-and-powerful-dvd-digital-copy/249092925.html#tab2","desc":"?","qte":"1","categ":"29"}
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+)
+
+===========================================
+Array
+(
+    [priceTot] => 20.95
+    [libelle] => Oz The Great and Powerful (DVD + Digital Copy)
+    [url] => rakuten.com/prod/oz-the-great-and-powerful-dvd-digital-copy/249092925.html#tab2
+    [desc] => ?
+    [qte] => 1
+    [categ] => 29
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b86137e5fab
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 3
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => 51b86137e5fab
+    [product] => {"prd_libelle":"Oz The Great and Powerful (DVD + Digital Copy)","prd_site":"rakuten.com/prod/oz-the-great-and-powerful-dvd-digital-copy/249092925.html#tab2","prd_desc":"?","prd_visu":"http://img.rakuten.com/PIC/49649114/0/1/300/49649114.jpg","prd_prix":"20.95","prd_cat":"19"}
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [lng] => fr
+    [token] => 51b86137e5fab
+    [panier] => {"priceTot":"20.95","libelle":"Oz The Great and Powerful (DVD + Digital Copy)","url":"rakuten.com/prod/oz-the-great-and-powerful-dvd-digital-copy/249092925.html#tab2","desc":"?","qte":"1","categ":"19"}
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b86137e5fab
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 4
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => 51b86137e5fab
+    [product] => {"prd_libelle":"Oz The Great and Powerful (DVD + Digital Copy)","prd_site":"rakuten.com/prod/oz-the-great-and-powerful-dvd-digital-copy/249092925.html#tab2","prd_desc":"?","prd_visu":"http://img.rakuten.com/PIC/49649114/0/1/300/49649114.jpg","prd_prix":"20.95","prd_cat":"29"}
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [lng] => fr
+    [token] => 51b86137e5fab
+    [panier] => {"priceTot":"20.95","libelle":"Oz The Great and Powerful (DVD + Digital Copy)","url":"rakuten.com/prod/oz-the-great-and-powerful-dvd-digital-copy/249092925.html#tab2","desc":"?","qte":"1","categ":"29"}
+    [SITE_INCLUDE] => e02f689d54f6fbedd85662398136b050
+    [__utma] => 138194151.212340622.1371023504.1371023504.1371028708.2
+    [__utmc] => 138194151
+    [__utmz] => 138194151.1371023504.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+)
+
+===========================================
+1
+===========================================
+42
+===========================================
+PDOStatement Object
+(
+    [queryString] => INSERT INTO commande_detail(cmdd_libelle, cmdd_url, cmdd_desc, cmdd_qte, cmdd_montant, cmdd_categ, cmdd_poids, cmdd_unitep, cmdd_larg, cmdd_long, cmdd_haut, cmdd_united, cmdd_ent)
+					VALUES (:_libelle, :_url, :_desc, :_qte, :_montant, :_categ, :_poids, :_unitep, :_larg, :_long, :_haut, :_united, :_ent)
 )
 
 ===========================================

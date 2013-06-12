@@ -2,7 +2,7 @@ var token;
 var Nick_Name;
 var points;
 
-var UrlBase= 'http://localhost/projetFU/Communication/cible3.php?';
+var UrlBase= 'http://www.from-us.com/extension/cible3.php?';
 var _urlProduct;
 var _urlCalcul;
 var _urlPanier;
@@ -86,9 +86,7 @@ function sendToServer(urlSelected, jsonSelected) {
 				parseInfo(elem);
 				
 			break;
-
-			break;
-
+/*
 			case 'C':
 				document.getElementById('msgServer').value = '' ;
 				var totalPrice = datas['Prix'];
@@ -106,7 +104,7 @@ function sendToServer(urlSelected, jsonSelected) {
 					}
 				}
 			break;
-
+*/
 			default:
 				//alert(datas['error']);
 				document.getElementById('msgServer').value = datas['error'] ;
@@ -228,7 +226,10 @@ function parseInfo (elem){
 				$('#fromus_name').attr('value',regName);
 				regDesc = localStorage['regDesc'];
 				//$('#fromus_desc').attr('value',regDesc);
-				document.getElementById('fromus_desc').value = regDesc ;
+				if(regDesc == '?')
+					document.getElementById('fromus_desc').value = '...' ;
+				else
+					document.getElementById('fromus_desc').value = regDesc ;
 				regVisu = localStorage['regImg'];
 				$('#fromus_image').attr('value',regVisu);
 				
@@ -487,7 +488,6 @@ $(document).ready(function() {
 	  			document.getElementById('msgServer').value = i18n('MsgConnect');
 	  		else{
 				var categVal = document.getElementById('sscategory').value;
-
 				regOffer = localStorage['urlOffer'];
 				if(!regName)
 					regName=localStorage['regName'];
@@ -510,7 +510,6 @@ $(document).ready(function() {
 
 				if(!categVal)
 					categVal=0;
-
 				if(regName && regOffer && regPrice){
 					var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
 					var postData = JSON.stringify(jsonProduct);
@@ -560,17 +559,28 @@ $(document).ready(function() {
 
 				setTimeout(function() {
 					categVal = document.getElementById('sscategory').value;
-
+					
 					if(!categVal ){
 						document.getElementById('msgServer').value = i18n('Infocateg');
 					}
 		  			else{
+						/*
 						var jsonCalcul = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
 						var postDataCalcul = JSON.stringify(jsonCalcul);
 						var calculJSON = {calcul:postDataCalcul};
 						sendToServer(_urlCalcul+token , calculJSON);
+						*/
+						document.getElementById('msgServer').value = '' ;
+						qteVal = document.getElementById('QteSpinner').value;
+						categVal = document.getElementById('sscategory').value;
+						
+						var jsonPanier = {priceTot: regPrice ,libelle: regName ,url: regOffer ,desc: regDesc, qte: qteVal ,categ: categVal};
+						var postDataPanier = JSON.stringify(jsonPanier);
+						var panierJSON = {panier:postDataPanier};
+						console.log(panierJSON);
+						sendAjoutPanier(panierJSON);
 					}
-				}, 20);
+				}, 1000);
 			}
 	  	});
 
