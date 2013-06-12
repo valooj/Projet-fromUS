@@ -349,7 +349,7 @@ function ajoutCSS() {
 		clear: 'both'
 	});
 	$('.ui-toto-helper-clearfix').css({
-		'min-height': '0', 
+		'min-height': '0' 
 	});
 	$('.ui-toto-helper-zfix').css({
 		width: '100%',
@@ -556,12 +556,12 @@ function ajoutCSS() {
 		
 		position: 'relative',
 		'background-color': '#203064',
-		color: ' white'
+		color: 'white'
 
 	});
 	$('.ui-toto-dialog .ui-toto-dialog-title').css({
 		'float': 'left',
-		
+		'background-color': '#203064',
 		'white-space': 'nowrap',
 
 		width: '90%',
@@ -578,7 +578,8 @@ function ajoutCSS() {
 		padding: '1px',
 		height: '20px',
 		border: 'none',
-		'background-color': 'white',
+		'background-color': 'white'
+
 
 	});
 	$('.ui-toto-dialog .ui-toto-dialog-content').css({
