@@ -35,6 +35,21 @@ input#connect {
 	display: inline-block;
 	float: left;
 }
+input#nick_name {
+	width: 300px;
+	text-align: left;
+}
+input#ptsFU {
+	width: 300px;
+	text-align: center;
+}
+input#disconnect {
+	width: 55px;
+	margin: 2px;
+	padding: 2px;
+	display: inline-block;
+	float: left;	
+}
 ul#onglets{
 	background-color: white;
 	border: none;

@@ -328,9 +328,11 @@ $(document).ready(function() {
 	     						'<hr id="hr2" style="margin-top: 65px;"/>'+
 	    					'</FORM>'+
 	    					'<div id="isconnect">'+
+	    						'<hr id="hr1" style="margin-top: 20px;"/>'+
 	      						'<input type="textbox" id="nick_name" disabled="true" style="border:none"/><br />'+
 							    '<input type="textbox" id="ptsFU" disabled="true" style="border:none"/><br />'+
 							    '<INPUT TYPE="button" NAME="dislogB" id="disconnect">'+
+							    '<hr id="hr2" style="margin-top: 35px;"/>'+
 					    	'</div>'+
 					    '</div>'+
 							'<form id="fromusForm">' + 

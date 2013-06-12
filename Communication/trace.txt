@@ -674,3 +674,147 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-login
+    [lng] => fr
+    [log] => {"email":"yakala82@yahoo.fr","password":"81dc9bdb52d04dc20036dbd8313ed055"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b82f324ce66
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.walmart.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b82f324ce66
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.walmart.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b82f324ce66
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [lng] => fr
+    [token] => 51b82f324ce66
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [lng] => fr
+    [log] => {"email":"yakala82@yahoo.fr","password":"81dc9bdb52d04dc20036dbd8313ed055"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b832153dd09
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.walmart.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b832153dd09
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [lng] => fr
+    [log] => {"email":"yakala82@yahoo.fr","password":"81dc9bdb52d04dc20036dbd8313ed055"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b832848c66e
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.bebe.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b832848c66e
+)
+
+===========================================
