@@ -1150,3 +1150,767 @@ Array
 )
 
 ===========================================
+Array
+(
+    [action] => MAJ-logout
+    [lng] => de
+    [token] => 51b832848c66e
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => en
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.walmart.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => de
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.walmart.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => de
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.walmart.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => de
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-login
+    [lng] => fr
+    [log] => {"email":"yakala82@yahoo.fr","password":"81dc9bdb52d04dc20036dbd8313ed055"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 73
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => 51b87a9f2b878
+    [product] => {"prd_libelle":"Apple 2GB iPod shuffle, Orange","prd_site":"rakuten.com/prod/apple-2gb-ipod-shuffle-orange/217203068.html","prd_desc":"Box Content - iPod shuffle, Apple Earphones, iPod shuffle USB Cable, Quick Start Guide & other important product informationFeatures : Small and wearable : Polished anodized aluminum design : Bui[...]","prd_visu":"http://img.rakuten.com/PIC/36980209/0/1/300/36980209.jpg","prd_prix":"40.95","prd_cat":"1201"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => 51b87a9f2b878
+    [product] => {"prd_libelle":"Apple 2GB iPod shuffle, Orange","prd_site":"rakuten.com/prod/apple-2gb-ipod-shuffle-orange/217203068.html","prd_desc":"Box Content - iPod shuffle, Apple Earphones, iPod shuffle USB Cable, Quick Start Guide & other important product informationFeatures : Small and wearable : Polished anodized aluminum design : Bui[...]","prd_visu":"http://img.rakuten.com/PIC/36980209/0/1/300/36980209.jpg","prd_prix":"40.95","prd_cat":"1201"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-calcul
+    [lng] => fr
+    [token] => 51b87a9f2b878
+    [calcul] => {"libelle":"Apple 2GB iPod shuffle, Orange","qte":"1","montant":"40.95","categ":"1201"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-panier
+    [lng] => fr
+    [token] => 51b87a9f2b878
+    [panier] => {"priceTot":53.645,"priceLiv":0,"priceTax":8.6,"libelle":"Apple 2GB iPod shuffle, Orange","url":"rakuten.com/prod/apple-2gb-ipod-shuffle-orange/217203068.html","desc":"Box Content - iPod shuffle, Apple Earphones, iPod shuffle USB Cable, Quick Start Guide & other important product informationFeatures : Small and wearable : Polished anodized aluminum design : Bui[...]","qte":"1","montant":53.645,"categ":"1201"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => de
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.bebe.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.saksfifthavenue.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-sscategorie
+    [lng] => fr
+    [sscateg] => 144
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => 51b87a9f2b878
+    [product] => {"prd_libelle":"Rossella Suede Platform Pumps","prd_site":"saksfifthavenue.com/main/ProductDetail.jsp?FOLDER%3C%3Efolder_id=2534374306418049&PRODUCT%3C%3Eprd_id=845524446564132&R=8054721006027&P_name=Salvatore+Ferragamo&N=4294912431+306418049&bmUID=jXy.25d","prd_prix":"\n\t\t\t\t\t         \tEUR €519.37     \n\t\t\t\t\t        ","prd_cat":"2584"}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.saksfifthavenue.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.rakuten.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.saksfifthavenue.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.bestbuy.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-product
+    [lng] => fr
+    [token] => 51b87a9f2b878
+    [product] => {"prd_libelle":"\nOffice for Mac Home and Student 2011-\nMac","prd_site":"bestbuy.com/site/Office-for-Mac-Home-and-Student-2011---Mac/7016136.p?id=1218824951308&skuId=7016136","prd_prix":"$139.99","prd_cat":0}
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-categorie
+    [lng] => fr
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-accessIn
+    [url_site] => www.target.com
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-pts
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================
+Array
+(
+    [action] => MAJ-logout
+    [lng] => fr
+    [token] => 51b87a9f2b878
+)
+
+===========================================

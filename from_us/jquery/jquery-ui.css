@@ -84,6 +84,7 @@ a#tabAdd{
 	line-height: 31px;
 	text-indent: 28px;
 	text-align: left;
+	font-family: Arial, Verdana;
 	text-decoration: none;
 	font-size: 0.8em;
 	color: #000000;
@@ -100,6 +101,7 @@ a#tabBuy{
 	line-height: 31px;
 	text-indent: 28px;
 	font-size: 0.8em;
+	font-family: Arial, Verdana;
 	text-align: left;
 	text-decoration: none;
 	color: #000000;
@@ -166,14 +168,14 @@ input#descQ {
 }
 span#img-view {
     display: none; border: 2px solid black;
-    height: 300px; width: 300px; /* H/W */
+    height: 60px; width: 60px; /* H/W */
     overflow: hidden; /* cache ce qui dépasse */
-    background-size: 100% auto;
+    background-size: 60px 60px;
     background-position: center center;
     background-repeat: no-repeat;
     border: none;
 }
-span#img-view img { max-height: 550px; max-width: 550px; }
+span#img-view img { max-height: 60px; max-width: 60px; }
 div#image:hover span#img-view { display: block; position: absolute; }
 input#fromus_image {
 	display: inline-block;
@@ -495,6 +497,8 @@ button.ui-toto-button::-moz-focus-inner {
 	/*padding: .2em;*/
 	outline: 0;
 	z-index: 999999999;
+	font-family: Arial, Verdana;
+	font-size: 1em;	
 
 }
 .ui-toto-dialog .ui-toto-dialog-titlebar {

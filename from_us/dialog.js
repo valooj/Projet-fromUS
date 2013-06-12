@@ -96,7 +96,7 @@ function sendToServer(urlSelected, jsonSelected) {
 				categVal = document.getElementById('sscategory').value;
 
 				if(totalPrice !== 0){
-					if(confirm('L\'estimation du prix est de $'+totalPrice+' ')) {
+					if(confirm('Pour voir votre devis et valider la commande rendez-vous dans la rublrique "visualiser mes commandes" sur le site from_us.com')) {
 						var jsonPanier = {priceTot: totalPrice ,priceLiv: livPrice ,priceTax: taxPrice ,libelle: regName ,url: regOffer ,desc: regDesc, qte: qteVal ,montant: totalPrice ,categ: categVal};
 						var postDataPanier = JSON.stringify(jsonPanier);
 						var panierJSON = {panier:postDataPanier};
@@ -266,7 +266,7 @@ function loadText(){
 
 	document.getElementById('buyP').value = i18n('ButtonBuy') ;
 	document.getElementById('fu_quantite').innerHTML = i18n('QuantityP') ;
-	document.getElementById('fu_assurance').innerHTML = i18n('InsuranceP') ;
+	//document.getElementById('fu_assurance').innerHTML = i18n('InsuranceP') ;
 
 	document.getElementById('priceQ').value = '?';
 	document.getElementById('priceQ').title = i18n('BullePrice') ;
@@ -324,7 +324,7 @@ $(document).ready(function() {
 	    					'</div>'+
 	    					'<FORM name="loginU" id="loginU">'+
 	    						'<hr id="hr1" style="margin-top: 20px;"/>'+
-	     						'<input type="textbox" id="emailBox" placeholder="email"/><input type="password" id="passBox" placeholder="password"/>'+
+	     						'<input type="textbox" id="emailBox" placeholder="email"/><input type="password" id="passBox" placeholder="password"/><br/>'+
 	     						'<INPUT TYPE="button" NAME="logB" VALUE="Login" id="connect">'+
 	     						'<hr id="hr2" style="margin-top: 65px;"/>'+
 	    					'</FORM>'+
@@ -339,8 +339,8 @@ $(document).ready(function() {
 							'<form id="fromusForm">' + 
 								'<div id="menu" class="element_menu">'+
 									'<ul id="onglets">'+
-									    '<li id="liAdd"><a href="#tab1" id="tabAdd"></a></li>'+
-									    '<li id="liBuy"><a href="#tab2" id="tabBuy"></a></li>'+
+									    '<li id="liAdd"><a href="#" id="tabAdd"></a></li>'+
+									    '<li id="liBuy"><a href="#" id="tabBuy"></a></li>'+
 									'</ul>'+
 								'</div><br />'+
 								'<div id="corpAdd">'+
@@ -373,7 +373,7 @@ $(document).ready(function() {
 									'</div>'+
 									'<div class="content" id="tab2">'+
 									    '<label id="fu_quantite" for="quantite"></label><input id="QteSpinner" value="1"><br />'+
-									    '<label id="fu_assurance" for="assurance"></label><input type="checkbox" id="checkassur" name="assurance" /><br />'+
+									    //'<label id="fu_assurance" for="assurance"></label><input type="checkbox" id="checkassur" name="assurance" /><br />'+
 									    '<input type="button" id="buyP"> '+
 									'</div>'+
 							'</form>'+
