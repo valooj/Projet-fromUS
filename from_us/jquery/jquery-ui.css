@@ -120,7 +120,7 @@ h2#FormP {
 #fromus_tabs label {
 	display: inline-block;
 	float: left;
-	width: 130px;
+	width: 250px;
 	margin: 3px 0 0 5px;
 	text-align: left;
 	font-size: 1em;
@@ -223,7 +223,7 @@ input#QteSpinner {
 label#fu_assurance {
 	display: inline-block;
 	float: left;
-	width: 90px;
+	width: 110px;
 	margin: 3px 0 0 5px;
 	text-align: left;
 	font-size: 1em;

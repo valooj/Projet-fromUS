@@ -22,4 +22,12 @@ _lng['de']['MsgWelcome'] = 'Willkommen ';
 _lng['de']['MsgConnect'] = 'Sie müssen sich einloggen';
 _lng['de']['MsgBD'] = ' Error :: Einloggen nicht möglich';
 _lng['de']['ButtonReset'] = 'löschen';
-_lng['de']['Infocateg'] = 'Vous devez choisir une categorie';
+_lng['de']['Infocateg'] = 'Sie müssen wählen Sie eine Kategorie aus';
+
+_lng['de']['Description'] = 'Kurzbeschreibung';
+_lng['de']['Image'] = 'Das Abbild';
+
+_lng['de']['BulleName'] = 'Si le nom n\' est pas trouv\351, cliquer sur ce bouton et s\351lectionner le nom de l\'article sur le site';
+_lng['de']['BullePrice'] = 'Si le prix n\' est pas trouv\351, cliquer sur ce bouton et s\351lectionner le prix de l\'article sur le site';
+_lng['de']['BulleDesc'] = 'Si la description n\' est pas trouv\351e, cliquer sur ce bouton et s\351lectionner la description de l\'article sur le site';
+_lng['de']['BulleImg'] = 'Si l\'image n\' est pas trouv\351e, cliquer sur ce bouton et s\351lectionner l\'image de l\'article sur le site';
