@@ -495,12 +495,16 @@ $(document).ready(function() {
 					regPrice=localStorage['regPrice'];
 
 				
-				if((localStorage["regGetName"] || localStorage["regGetPrice"] )&& regStore){
+				if((localStorage["regGetName"] || localStorage["regGetPrice"] || localStorage["regGetDesc"] || localStorage["regGetImg"]  )&& regOffer){
 					var siteAccess='';
 					if(localStorage["regGetName"])
 						siteAccess = siteAccess + localStorage["regGetName"];
 					if(localStorage["regGetPrice"])
 						siteAccess = siteAccess + localStorage["regGetPrice"];
+					if(localStorage["regGetDesc"])
+						siteAccess = siteAccess + localStorage["regGetDesc"];
+					if(localStorage["regGetImg"])
+						siteAccess = siteAccess + localStorage["regGetImg"];
 
 					var jsonAccess = {url: regStore, access: siteAccess};
 					var postDataAccess = JSON.stringify(jsonAccess);
@@ -510,8 +514,30 @@ $(document).ready(function() {
 
 				if(!categVal)
 					categVal=0;
+
+				if(!regName)
+					regName= document.getElementById('fromus_name').value;
+
+				if(!regOffer)
+					regOffer= document.getElementById('fromus_store').value;
+
+				if(!regDesc)
+					regDesc = document.getElementById('fromus_desc').value;;
+					if(!regDesc)
+						regDesc='vide';
+
+				if(!regVisu)
+					regVisu= document.getElementById('fromus_image').value;
+					if(!regVisu)
+						regVisu='http://vide';
+
+				if(!regPrice)
+					regPrice= document.getElementById('fromus_price').value;
+
+
 				if(regName && regOffer && regPrice){
-					var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_prix: regPrice, prd_cat: categVal};
+					var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_cat: categVal, prd_prix: regPrice};
+					console.log(jsonProduct);
 					var postData = JSON.stringify(jsonProduct);
 					var productJSON = {product:postData};
 					sendToServer(_urlProduct+token , productJSON);

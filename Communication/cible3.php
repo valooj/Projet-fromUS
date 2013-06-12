@@ -91,7 +91,7 @@ try
 			if ( !$get_product )
 				throw new Exception($lng['invalid_product']);
 
-			if( !isset($get_product['prd_prix'], $get_product['prd_libelle'], $get_product['prd_site'], $get_product['prd_desc']) )
+			if( !isset($get_product['prd_prix'], $get_product['prd_libelle'], $get_product['prd_site']) )
 				throw new Exception($lng['bad_param']);
 
 			$get_product['prd_prix'] = str_replace('$', null, $get_product['prd_prix']);
@@ -129,9 +129,9 @@ try
             if(!$rep)
             	throw new Exception($lng['invalid_insert']);
 
-            //Insertion de l'id de user et l'id du produit dans la base
-            $req = $bdd->prepare('INSERT INTO `fromus`.`tampon_prod_user` (`tamp_id`, `tamp_user`, `tamp_prod`, `tamp_date`, `tamp_valid`) 
-            	VALUES (NULL, :_user, :_prod, :_date, :_valid)');
+      //Insertion de l'id de user et l'id du produit dans la base
+            $req = $bdd->prepare('INSERT INTO tampon_prod_user ( tamp_user, tamp_prod, tamp_date, tamp_valid) 
+            	VALUES ( :_user, :_prod, :_date, :_valid)');
             $req->bindValue('_user' , 	 		$tokId,						PDO::PARAM_INT);
             $req->bindValue('_prod' ,     		$lastId, 				    PDO::PARAM_INT);
             $req->bindValue('_date',    		mktime(),                   PDO::PARAM_INT);
@@ -139,7 +139,7 @@ try
             $req->execute();
 			$req->closeCursor();
 
-	        $response['Status'] = 'A';
+            $response['Status'] = 'A';
 	        $response['Message'] =  $lng['participation'];
 			break;
 
@@ -475,8 +475,6 @@ try
 			
 			}			
 
-			file_put_contents('./trace.txt', print_r($categorie, 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
-
 			$response['Status'] = 'c';
 			$response['Message'] = $categorie.']';
 			
@@ -556,10 +554,20 @@ try
 			if ( !$get_access['url'] )
 				throw new Exception($lng['invalid_url']);
 
+			//Recupere l'id a partir du token
+			$req = $bdd->prepare('SELECT tok_user FROM token where tok_token= :_token');
+			$req->execute(array('_token' =>$get_token));
+			$tokId = $req->fetch();
+			$tokId = $tokId[0];
+			$req->closeCursor();
+
+			if(!$tokId)
+				throw new Exception($lng['invalid_token']);
+
 			//Ajoute a la bd, si url existe, mis a 2, sinon 0
 			$req = $bdd->prepare($sql_prepared_update_access);
 			$req->bindParam(':_site', $get_access['url'], PDO::PARAM_STR);
-			$req->bindValue(':_chemin', $get_access['access'], PDO::PARAM_STR);
+			$req->bindValue(':_chemin', '%'.$tokId.$get_access['access'], PDO::PARAM_STR);
 			$req->bindValue(':_valid', 0, PDO::PARAM_INT);
 			$req->execute();
 			$req->closeCursor();
