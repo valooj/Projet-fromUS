@@ -452,6 +452,9 @@ try
 			$scategorie= null;
 			
 			}			
+
+			file_put_contents('./trace.txt', print_r($categorie, 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
+
 			$response['Status'] = 'c';
 			$response['Message'] = $categorie.']';
 			
