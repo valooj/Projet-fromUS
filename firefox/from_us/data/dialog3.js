@@ -2,6 +2,19 @@ var token;
 var Nick_Name;
 var points;
 
+console.log('avant msg');
+self.port.on('main-to-content', function handleMyMessage(token_fus) {
+  console.log('pass ok');
+  console.log(token_fus);
+});
+
+
+/*self.on('main-to-content', function() {
+  
+    console.log('pass ok');
+});*/
+
+
 var UrlBase= 'http://localhost/projetFU/Communication/cible3.php?';
 var _urlProduct;
 var _urlCalcul;

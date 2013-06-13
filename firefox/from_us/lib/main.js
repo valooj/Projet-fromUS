@@ -4,14 +4,6 @@ var pageMod = require('page-mod');
 var ss = require('sdk/simple-storage');
 console.log('debut pageMod');
 
-/*var { startServerAsync } = require("sdk/test/httpd");
-var srv = startServerAsync(80, '/localhost/projetFU/Communication/cible3.php?');
-require("sdk/system/unload").when(function cleanup() {
-  srv.stop(function() { // you should continue execution from this point.
-  })
-});*/
-
-
 if (ss.storage.name) {
   console.log (ss.storage.name);
 }
@@ -20,9 +12,12 @@ else {
   ss.storage.name = "ryan";
 }
 
-/*if (!ss.storage.pages)
-  ss.storage.pages = [];
-*/
+var prefSet = require("simple-prefs");
+var token_fus = prefSet.prefs.tokenFU;
+
+
+token_fus = 'token';
+
 
 /*pageMod.PageMod({
   	include: '*',
@@ -41,7 +36,7 @@ else {
             data.url('locales/de/deLng.js'),
             data.url('langue.js'),
             data.url('ajoutCSS.js'),
-            data.url('dialog2.js')
+            data.url('dialog3.js')
         ],
     //contentStyleFile: data.url('jquery/jquery-ui-css-fix.css'),
     contentScriptOptions: {
@@ -52,7 +47,11 @@ else {
       imgbuy: data.url('img/bouton_commander.png'),
       imgplugin: data.url('img/plugin_vide.png'),
       imglogo: data.url('img/logo.png')
-    }
+    },
+    onAttach: function(worker) {
+    
+    worker.port.emit('main-to-content', token_fus);
+  }
 });*/
 
 
@@ -62,7 +61,7 @@ var tbb = require('toolbarbutton').ToolbarButton({
   image: data.url('img/on.png'),
   onCommand: function () {
 
-    tabs.activeTab.attach ({
+    var worker = tabs.activeTab.attach ({
 
         contentScriptFile: [
             data.url('jquery/jquery.min.js'),
@@ -89,6 +88,13 @@ var tbb = require('toolbarbutton').ToolbarButton({
       imglogo: data.url('img/logo.png')
     }
    });
+    worker.port.emit('main-to-content', token_fus);
+
   }
   
+  
+  
+  
 });
+
+
