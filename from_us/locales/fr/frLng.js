@@ -27,7 +27,7 @@ _lng['fr']['Infocateg'] = 'Vous devez choisir une categorie';
 _lng['fr']['InfoPrice'] = 'Merci d\'entrer un prix valide';
 
 _lng['fr']['Description'] = 'Description';
-_lng['fr']['Image'] = 'Picture';
+_lng['fr']['Image'] = 'Image';
 
 _lng['fr']['BulleName'] = 'Si le nom n\' est pas trouv\351, cliquez sur ce bouton et s\351lectionnez le nom de l\'article sur le site';
 _lng['fr']['BullePrice'] = 'Si le prix n\' est pas trouv\351, cliquez sur ce bouton et s\351lectionnez le prix de l\'article sur le site';

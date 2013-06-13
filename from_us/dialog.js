@@ -549,7 +549,7 @@ $(document).ready(function() {
 					regPrice = localStorage['regPrice'];
 
 				if(isNaN(regPrice))
-	  				document.getElementById('msgServer').value = document.getElementById('msgServer').value = i18n('InfoPrice');
+	  				document.getElementById('msgServer').value = i18n('InfoPrice');
 
 				else if(regName && regOffer && regPrice){
 					var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_cat: categVal, prd_prix: regPrice};
@@ -636,11 +636,15 @@ $(document).ready(function() {
 					if(!regVisu)
 						regVisu='http://vide';
 
+				regPrice= document.getElementById('fromus_price').value;	
 				if(!regPrice)
-					regPrice= document.getElementById('fromus_price').value;
+					regPrice = localStorage['regPrice'];
+
+				if(isNaN(regPrice))
+					document.getElementById('msgServer').value = i18n('InfoPrice');
 
 
-				if(regName && regOffer && regPrice){
+				else if(regName && regOffer && regPrice){
 					var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_cat: categVal, prd_prix: regPrice};
 					console.log(jsonProduct);
 					var postData = JSON.stringify(jsonProduct);
@@ -654,6 +658,8 @@ $(document).ready(function() {
 					if(!categVal ){
 						document.getElementById('msgServer').value = i18n('Infocateg');
 					}
+					else if(isNaN(regPrice))
+	  					document.getElementById('msgServer').value = i18n('InfoPrice');
 		  			else{
 						/*
 						var jsonCalcul = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
