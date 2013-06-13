@@ -482,6 +482,18 @@ $(document).ready(function() {
 				sendToServer(_urlLogin, logJSON);
 			}
 	  	});
+	  	$('input[id=passBox]').keyup(function() {
+			if(event.keyCode==13){
+		   		var emailV = document.getElementById('emailBox').value;
+				var passwordV = document.getElementById("passBox").value;
+				if (emailV && passwordV){
+					var jsonLog = {email: emailV ,password: passwordV};
+					var postLog = JSON.stringify(jsonLog);
+					var logJSON = {log:postLog};
+					sendToServer(_urlLogin, logJSON);
+				}
+			}
+	  	});
 
 	  	$('input[id=addP]').click(function() {
 	  		if(!token)
