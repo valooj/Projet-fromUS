@@ -172,14 +172,14 @@ input#descQ {
 }
 span#img-view {
     display: none; border: 2px solid black;
-    height: 100px; width: 100px; /* H/W */
+    height: 70px; width: 70px; /* H/W */
     overflow: hidden; /* cache ce qui dépasse */
-    background-size: 100px 100px;
+    background-size: 70px 70px;
     background-position: center center;
     background-repeat: no-repeat;
     border: none;
 }
-span#img-view img { max-height: 100px; max-width: 100px; }
+span#img-view img { max-height: 70px; max-width: 70px; }
 div#image:hover span#img-view { display: block; position: absolute; }
 input#fromus_image {
 	display: inline-block;
