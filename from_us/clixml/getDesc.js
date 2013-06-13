@@ -167,11 +167,11 @@ function getDesc()
 		var fus_descresult = '';
 		if(fus_descid)
 		{
-			fus_descresult += '%desc_id<-->'+fus_descid+'§§';
+			fus_descresult += '%desc_id<-->'+fus_descid+'*~*';
 		}
 		if(fus_descclass)
 		{
-			fus_descresult += '%desc_class<-->'+fus_descclass+'§§';
+			fus_descresult += '%desc_class<-->'+fus_descclass+'*~*';
 		}	
 		
 		localStorage['regGetDesc'] = fus_descresult;

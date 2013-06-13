@@ -54,12 +54,12 @@ function fromus_recupName(idclass,fus_data)
 {
 	if(idclass == 'id')
 	{
-		fromus_sitelist[fromus_site].name_id = fus_data.split('§#§');
+		fromus_sitelist[fromus_site].name_id = fus_data.split('*#*');
 		fromus_sitelist[fromus_site].name_class.push('');		
 	}
 	else
 	{
-		fromus_sitelist[fromus_site].name_class = fus_data.split('§#§');
+		fromus_sitelist[fromus_site].name_class = fus_data.split('*#*');
 		fromus_sitelist[fromus_site].name_id.push('');		
 	}
 	/////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
@@ -133,13 +133,13 @@ function fromus_recupPrice(idclass,fus_data)
 {
 	if(idclass == 'id')
 	{
-		fromus_sitelist[fromus_site].price_id = fus_data.split('§#§');
+		fromus_sitelist[fromus_site].price_id = fus_data.split('*#*');
 
 		fromus_sitelist[fromus_site].price_class.push('');		
 	}
 	else
 	{
-		fromus_sitelist[fromus_site].price_class = fus_data.split('§#§');
+		fromus_sitelist[fromus_site].price_class = fus_data.split('*#*');
 		fromus_sitelist[fromus_site].price_id.push('');		
 	}
 	
@@ -247,12 +247,12 @@ function fromus_recupImg(idclass,fus_data)
 	
 	if(idclass == 'id')
 	{
-		fromus_sitelist[fromus_site].img_id = fus_data.split('§#§');
+		fromus_sitelist[fromus_site].img_id = fus_data.split('*#*');
 		fromus_sitelist[fromus_site].img_class.push('');		
 	}
 	else
 	{
-		fromus_sitelist[fromus_site].img_class = fus_data.split('§#§');
+		fromus_sitelist[fromus_site].img_class = fus_data.split('*#*');
 		fromus_sitelist[fromus_site].img_id.push('');		
 	}
 	/////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////
@@ -350,12 +350,12 @@ function fromus_recupDesc(idclass,fus_data)
 {
 	if(idclass == 'id')
 	{
-		fromus_sitelist[fromus_site].desc_id = fus_data.split('§#§');
+		fromus_sitelist[fromus_site].desc_id = fus_data.split('*#*');
 		fromus_sitelist[fromus_site].desc_class.push('');		
 	}
 	else
 	{
-		fromus_sitelist[fromus_site].desc_class = fus_data.split('§#§');
+		fromus_sitelist[fromus_site].desc_class = fus_data.split('*#*');
 		fromus_sitelist[fromus_site].desc_id.push('');		
 	}
 	/////////////////////////////////////// Début de l'attribution des valeurs aux indicateurs ///////////////////////////////////////

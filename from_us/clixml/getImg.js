@@ -213,11 +213,11 @@ function getImg()
 		var fus_imgresult = '';
 		if(fus_imgid)
 		{
-			fus_imgresult += '%img_id<-->'+fus_imgid+'§§';
+			fus_imgresult += '%img_id<-->'+fus_imgid+'*~*';
 		}
 		if(fus_imgclass)
 		{
-			fus_imgresult += '%img_class<-->'+fus_imgclass+'§§';
+			fus_imgresult += '%img_class<-->'+fus_imgclass+'*~*';
 		}	
 		
 		localStorage['regGetImg'] = fus_imgresult;
