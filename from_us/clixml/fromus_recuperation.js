@@ -241,8 +241,6 @@ function fromus_recupImg(idclass,fus_data)
 		else
 		{
 			
-			
-			
 			for(var i=0;elem.getElementsByTagName('div')[i];i++)
 			{
 				getimgtag(elem.getElementsByTagName('div')[i]);
