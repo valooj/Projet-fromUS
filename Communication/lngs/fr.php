@@ -1,27 +1,27 @@
 <?php
 
-	$lng['invalid_token'] = 'Erreur :: Token invalide';
-	$lng['invalid_product'] = 'Erreur :: Produit invalide';
-	$lng['bad_param'] ='Erreur :: Mauvais parametres ';
-	$lng['invalid_price'] = 'Erreur :: Prix invalide';
-	$lng['invalid_insert'] = 'Erreur :: Insertion invalide';
-	$lng['win'] = 'Vous avez gagné ';
-	$lng['invalid_panier'] ='Erreur :: Panier non valide';
-	$lng['invalid_qte'] = 'Erreur :: Mauvais parametre de quantite';
+	$lng['invalid_token'] = 'Une erreur est survenue: Reconnectez-vous !';
+	$lng['invalid_product'] = 'Une erreur est survenue: le produit est invalide';
+	$lng['bad_param'] ='Une erreur est survenue: votre panier contient de mauvais paramètres ';
+	$lng['invalid_price'] = 'Une erreur est survenue : le prix est invalide';
+	$lng['invalid_insert'] = 'Une erreur est survenue : l’insertion a échoué';
+	$lng['win'] = 'Vous avez gagné XX points !';
+	$lng['invalid_panier'] ='Une erreur est survenue : le prix est invalide';
+	$lng['invalid_qte'] = 'Une erreur est survenue : mauvais paramètre de quantité';
 
-	$lng['product_insert'] = 'Votre produit est insere';
-	$lng['invalid_calcul'] = 'Erreur ::Calcul non specifie';
-	$lng['invalid_access'] = 'Erreur ::Access non specifie';
-	$lng['invalid_country'] = 'Erreur :: Pays invalide';
-	$lng['invalid_log'] ='Erreur :: log non specifie';
-	$lng['invalid_email'] = 'Erreur :: Email non valide';
+	$lng['product_insert'] = 'Votre commande est en cours de validation par nos services. Une fois validée, vous recevrez un email qui vous permettra de poursuivre les étapes afin de réceptionner votre commande.';
+	$lng ['invalid_calcul'] = 'Une erreur est survenue Calcul non spécifié';
+	$long['invalid_access'] = 'Une erreur est survenue Access non spécifié';
+	$lng['invalid_country'] = 'Une erreur est survenue Pays invalide';
+	$lng['invalid_log'] ='Une erreur est survenue: vérifier votre Email et votre mot de passe';
+	$lng['invalid_email'] = 'Une erreur est survenue: vérifier votre Email';
 	$lng['logout'] = 'Au revoir';
-	$lng['invalid_categ'] = 'Erreur :: Categorie non specifie';
-	$lng['invalid_action'] = ' Erreur :: Action non specifie';
-	$lng['invalid_bd'] = ' Erreur :: Connection au serveur impossible';
+	$lng['invalid_categ'] = 'Vous devez choisir une catégorie';
+	$lng['invalid_action'] = ' Une erreur est survenue Action non spécifié';
+	$lng['invalid_bd'] = ' Une erreur est survenue : la connexion au serveur est impossible';
 	$lng['choix_categ'] = ' Choisissez une catégorie ';
 	$lng['choix_scateg'] = ' Choisissez une sous-catégorie';
 
-	$lng['invalid_url'] = 'Erreur :: Url non valide';
-	$lng['participation'] = 'Merci de votre contribution au site';
+	$lng['invalid_url'] = 'ce site n’est pas connu dans notre répertoire. Merci de l’ajouter';
+	$lng['participation'] = 'Merci de nous avoir aidé. Vous recevrez prochainement un email récapitulant vos points.';
 ?>

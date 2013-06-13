@@ -24,6 +24,8 @@ _lng['fr']['MsgBD'] = 'Erreur :: Connection au serveur impossible';
 _lng['fr']['ButtonReset'] = 'Annuler';
 _lng['fr']['Infocateg'] = 'Vous devez choisir une categorie';
 
+_lng['fr']['InfoPrice'] = 'Merci d\'entrer un prix valide';
+
 _lng['fr']['Description'] = 'Description';
 _lng['fr']['Image'] = 'Picture';
 

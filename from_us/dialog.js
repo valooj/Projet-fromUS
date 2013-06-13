@@ -354,7 +354,7 @@ $(document).ready(function() {
 										'<label for="name" id="nameP"></label><br />'+
 										'<input type="textbox" id="fromus_name" disabled="true"/><input title="" type="button" id="nameQ"><br />'+
 										'<label for="price" id="priceP" ></label><br />'+
-										'<input type="textbox" id="fromus_price" disabled="true"/><input title="" type="button" id="priceQ"> <br />'+
+										'<input type="textbox" id="fromus_price" /><input title="" type="button" id="priceQ"> <br />'+
 										'<label for="description" id="descP" ></label><br />'+
 										'<textarea id="fromus_desc" disabled="true" rows="2" cols="32"></textarea><input type="button" title="" id="descQ"> <br />'+
 										'<label for="image" id="imgP" ></label><br />'+
@@ -544,11 +544,14 @@ $(document).ready(function() {
 					if(!regVisu)
 						regVisu='http://vide';
 
+				regPrice= document.getElementById('fromus_price').value;	
 				if(!regPrice)
-					regPrice= document.getElementById('fromus_price').value;
+					regPrice = localStorage['regPrice'];
 
+				if(isNaN(regPrice))
+	  				document.getElementById('msgServer').value = document.getElementById('msgServer').value = i18n('InfoPrice');
 
-				if(regName && regOffer && regPrice){
+				else if(regName && regOffer && regPrice){
 					var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_cat: categVal, prd_prix: regPrice};
 					console.log(jsonProduct);
 					var postData = JSON.stringify(jsonProduct);
