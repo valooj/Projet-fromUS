@@ -1,5 +1,7 @@
 function getPrice()
 {
+	var fus_border = '1px dashed red';
+	var fus_cursor = 'crosshair';
 	var fus_actprice = 1; // V ariable indiquant que l'on est à la recherche du prix
 	var fus_colorprice;	// variable contenant la couleur précédente
 	var fus_borderprice;	// variable contenant la bordure précédente
@@ -79,8 +81,8 @@ function getPrice()
 			fus_cursorprice = getComputedStyle(target).cursor;
 			
 		//	target.style.backgroundColor = inversHTMLprice(getComputedStyle(target).backgroundColor);
-			target.style.border	= '3px dotted black';
-			target.style.cursor = 'crosshair';
+			target.style.border	= fus_border;
+			target.style.cursor = fus_cursor;
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
 		}
 		else

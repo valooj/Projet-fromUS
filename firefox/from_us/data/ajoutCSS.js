@@ -1,47 +1,46 @@
 function ajoutCSS() {
 
-		/*Permet laffichage de l'image */
-	$('span#img-view').css({
-	        display: 'none', 
-	        border: '2px solid black',
-	        height: '300px', 
-	        width: '300px', /* H/W */
-	        overflow: 'hidden', /* cache ce qui dépasse */
-	        'background-size': '100% auto',
-	        'background-position': 'center center',
-	        'background-repeat': 'no-repeat'
-	});
-	$('span#img-view img').css({ 
-		'max-height': '550px', 
-		'max-width': '550px' 
-	});
-	$('div#image:hover span#img-view').css({ 
-		display: 'block',
-		position: 'absolute'
-	});
-
-	/*Pour l'affichage des img de langue */
 	$('#selectLang').css({
-		height: '1px'
+	height: '1px'
 	});
 	$('#selectLang img').css({
 		display: 'inline-block',
 		'float': 'right',
-		margin: '3px 2px 3px 1px' 
+		margin: '3px 2px 3px 1px'
 	});
+
 	$('input#passBox').css({
-		width: '155px',
-		margin: '2px',
+		width: '150px',
+		margin: '2px 10px 2px 2px',
 		display: 'inline-block',
-		'float': 'left'
+		'float': 'left',
+		border: '1px solid rgb(170, 170, 170)',
+		'border-radius': '3px'
 	});
 	$('input#emailBox').css({
-		width: '155px',
+		width: '150px',
 		margin: '2px',
 		display: 'inline-block',
-		'float': 'left'
+		'float': 'left',
+		'border-radius': '3px',
+		border: '1px solid rgb(170, 170, 170)'
 	});
 	$('input#connect').css({
+		width: '55px',
+		margin: '2px',
+		padding: '2px',
+		display: 'inline-block',
+		'float': 'right'
+	});
+	$('input#nick_name').css({
+		width: '300px',
+		'text-align': 'left'
+	});
+	$('input#ptsFU').css({
+		width: '300px',
+		'text-align': 'center'
+	});
+	$('input#disconnect').css({
 		width: '55px',
 		margin: '2px',
 		padding: '2px',
@@ -56,18 +55,17 @@ function ajoutCSS() {
 		display: 'inline-block',
 		'float': 'left',
 		margin: '0 0 0 50px',
-		height: '31px',
-		width: '111px',
+		height:'31px',
+		width:'111px',
 		'text-indent': '10px',
 		'line-height': '31px'
-
 	});
 	$('li#liBuy').css({
 		display: 'inline-block',
 		'float': 'left',
 		margin: '0',
-		height: '31px',
-		width: '111px',
+		height:'31px',
+		width:'111px',
 		'text-indent': '10px',
 		'line-height': '31px'
 	});
@@ -76,29 +74,29 @@ function ajoutCSS() {
 		'float': 'left',
 		'background-image': 'url('+self.options.imgadd+')',
 		margin: '0',
-		height: '31px',
-		width: '111px',
+		height:'31px',
+		width:'111px',
 		'text-indent': '10px',
 		'line-height': '31px',
 		'text-indent': '28px',
 		'text-align': 'left',
+		'font-family': 'Arial, Verdana',
 		'text-decoration': 'none',
- 		'font-size': '0.8em',
+		'font-size': '0.8em',
 		color: '#000000'
-
-
 	});
 	$('a#tabBuy').css({
 		display: 'inline-block',
 		'float': 'right',
 		'background-image': 'url('+self.options.imgbuy+')',
 		margin: '0px',
-		height: '31px',
-		width: '111px',
+		height:'31px',
+		width:'111px',
 		'text-indent': '10px',
 		'line-height': '31px',
 		'text-indent': '28px',
 		'font-size': '0.8em',
+		'font-family': 'Arial, Verdana',
 		'text-align': 'left',
 		'text-decoration': 'none',
 		color: '#000000'
@@ -108,20 +106,18 @@ function ajoutCSS() {
 		color: '#c11f34',
 		'text-align': 'center'
 	});
-
-
 	$('h2#FormP').css({
-	color: 'black',
-	'text-decoration': 'none',
-	'text-transform': 'uppercase',
-	'font-weight': 'bold',
-	'text-align': 'center',
-	'margin-bottom': '10px'
+		color: 'black',
+		'text-decoration': 'none',
+		'text-transform': 'uppercase',
+		'font-weight': 'bold',
+		'text-align': 'center',
+		'margin-bottom': '10px'
 	});
 	$('#fromus_tabs label').css({
 		display: 'inline-block',
 		'float': 'left',
-		width: '130px',
+		width: '250px',
 		margin: '3px 0 0 5px',
 		'text-align': 'left',
 		'font-size': '1em'
@@ -163,22 +159,22 @@ function ajoutCSS() {
 		width: '25px',
 		height: '25px',
 		padding: '0px',
-		'margin-left': '0px'	
+		'margin-left': '0px'
 	});
 	$('span#img-view').css({
 	    display: 'none', 
 	    border: '2px solid black',
-	    height: '300px', 
-	    width: '300px', /* H/W */
+	    height: '70px', 
+	    width: '70px', /* H/W */
 	    overflow: 'hidden', /* cache ce qui dépasse */
-	    'background-size': '100% auto',
+	    'background-size': '70px 70px',
 	    'background-position': 'center center',
 	    'background-repeat': 'no-repeat',
 	    border: 'none'
 	});
 	$('span#img-view img').css({ 
-		'max-height': '550px', 
-		'max-width': '550px'
+		'max-height': '70px',
+		'max-width': '70px'
 	});
 	$('div#image:hover span#img-view').css({ 
 		display: 'block',
@@ -199,7 +195,6 @@ function ajoutCSS() {
 		padding: '0px',
 		'margin-left': '0px'
 	});
-
 	$('select#category').css({
 		display: 'inline-block',
 		'float': 'left',
@@ -224,86 +219,44 @@ function ajoutCSS() {
 	});
 	$('input#QteSpinner').css({
 		display: 'inline-block',
-		'float': 'left'
+		'float': 'left',
+		width: '40px',
+		'text-align': 'right',
+		'border-radius': '4px',
+		margin: '3px 120px 0 5px'
 	});
 	$('label#fu_assurance').css({
 		display: 'inline-block',
 		'float': 'left',
-		width: '130px',
+		width: '110px',
 		margin: '3px 0 0 5px',
 		'text-align': 'left',
 		'font-size': '1em'
 	});
 	$('input#checkassur').css({
 		display: 'inline-block',
-		'float': 'left'
+		'float': 'left',
+		margin: '7px 100px 0 5px'
 	});
 
 	$('input#addP').css({
 		display: 'inline-block',
-		'float': 'left',
-		'margin-left': '30px',
+		'float': 'right',
+		margin: '3px 5px 0 0',
 		padding: '3px'
 	});
-	/*Fin*/
-
-
-	$('#login').css({
-		'font-size': 'small',
-		color: 'grey',  
+	$('input#buyP').css({
 		display: 'inline-block',
-		'margin-left': '200px'
-	});
-	$('#create').css({
-		'font-size': 'small',
-		color: 'grey',  
-		display: 'inline-block',
-		'margin-left': '255px'
-	});
-
-	$('#log').css({
-		display: 'inline-block',
-		'float': 'center',
-		'margin-left': '280px'
-	});
-
-	$('#fromus_tabs-1').css({
-		border: '2px double #203064',
-		'border-radius': '5px',
-		margin: '10px'
-		
-	});
-	$('input#Nick_Name').css({
-		width: '600px',
 		'float': 'right',
-		'margin-top': '0px',
-		'text-align': 'right',
-		'font-size': 'small',
-		border: 'none'
-	});
-
-
-	$('input#QteSpinner').css({
-		width: '50px',
-		height: '20px',
-		border: 'none'
-	});
-	$('.ui-toto-spinner').css({
-		height: '18px',
-		'margin-top': '0px',
-		'margin-bottom': '5px',
-		border: 'none'
-	});
-	$('#fromus_divassurance').css({
-		width: '50px',
-		display: 'inline-block',
-		'margin-top': '-4px',
-		'margin-bottom': '5px'
+		margin: '3px 5px 0 0',
+		padding: '3px'
 	});
 	$('#logofromus').css({
 		'float': 'left',
 		'margin-left': '50px'
 	});
+
+	/*Fin*/
 
 	$('#fromus_tabs').css({
 		'background-image' : 'url('+self.options.imgplugin+')'

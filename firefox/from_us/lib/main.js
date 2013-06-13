@@ -77,7 +77,7 @@ var tbb = require('toolbarbutton').ToolbarButton({
             data.url('locales/de/deLng.js'),
             data.url('langue.js'),
             data.url('ajoutCSS.js'),
-            data.url('dialog2.js')
+            data.url('dialog3.js')
       ],
       contentScriptOptions: {
       imgfr: data.url('img/fr.png'),
