@@ -134,7 +134,7 @@ function fromus_recupPrice(idclass,fus_data)
 	if(idclass == 'id')
 	{
 		fromus_sitelist[fromus_site].price_id = fus_data.split('*#*');
-
+		
 		fromus_sitelist[fromus_site].price_class.push('');		
 	}
 	else
@@ -175,7 +175,7 @@ function fromus_recupPrice(idclass,fus_data)
 			localStorage['fromus_iprice'] = fromus_i + 1;
 		}
 	}
-
+	
 	if(fromus_moreprice)
 	{
 		fromus_i = parseInt(localStorage['fromus_iprice']);
@@ -226,21 +226,40 @@ function fromus_recupImg(idclass,fus_data)
 	
 	function getimgtag(elem) //Permet de récupérer le noeud img à partir d'un div parent
 	{
-		for(var i=0;elem.getElementsByTagName('div')[i];i++)
+		if(elem.src||elem.href)
 		{
-			getimgtag(elem.getElementsByTagName('div')[i]);
-		}
-		if((elem.getElementsByTagName('img')[0])&&(!localStorage['regImg']))
-		{
-			if(elem.getElementsByTagName('img')[0].src!=undefined)
+			if(elem.src!=undefined)
 			{
-				localStorage['regImg'] = elem.getElementsByTagName('img')[0].src;
-
-			}else if(elem.getElementsByTagName('img')[0].href!=undefined)
-			{
-				localStorage['regImg'] = elem.getElementsByTagName('img')[0].href;
+				localStorage['regImg'] = elem.src;
 				
+			}else
+			{
+				localStorage['regImg'] = elem.href;
+				
+			}
+		}
+		else
+		{
+			
+			
+			
+			for(var i=0;elem.getElementsByTagName('div')[i];i++)
+			{
+				getimgtag(elem.getElementsByTagName('div')[i]);
+			}
+			if((elem.getElementsByTagName('img')[0])&&(!localStorage['regImg']))
+			{
+				if(elem.getElementsByTagName('img')[0].src!=undefined)
+				{
+					localStorage['regImg'] = elem.getElementsByTagName('img')[0].src;
+					
+				}else if(elem.getElementsByTagName('img')[0].href!=undefined)
+				{
+					localStorage['regImg'] = elem.getElementsByTagName('img')[0].href;
+					
 				}
+			}
+			
 		}
 	}
 	
@@ -269,14 +288,14 @@ function fromus_recupImg(idclass,fus_data)
 	if(fromus_moreimg)
 	{
 		fromus_i = parseInt(localStorage['fromus_iimg']);
-		fromus_img = '';
+		localStorage['regImg'] = '';
 	}
 	else
 	{
 		fromus_i = 0;
 	}		
 	
-	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].img_id.length) && !(fromus_img) ; fromus_i++)
+	for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].img_id.length) && !(localStorage['regImg']) ; fromus_i++)
 	{	//Boucle parcourant les id connus du site pour voir si l'un d'eux est présent sur la page.
 		var fromus_img_id = document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i]);
 		if(fromus_img_id)
@@ -297,35 +316,35 @@ function fromus_recupImg(idclass,fus_data)
 	if(fromus_moreimg)
 	{
 		fromus_i = parseInt(localStorage['fromus_iimg']);
-		fromus_img = '';
+		localStorage['regImg'] = '';
 	}
 	else
 	{
 		fromus_i = 0;
 	}			
 	
-	if(!(fromus_img))
+	if(!(localStorage['regImg']))
 	{//S'il n'y a pas eu de résultat, faire la recherche dans le tableau contenant les classes
-		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].img_class.length) && !(fromus_img) ; fromus_i++)
+		for(fromus_i ; (fromus_i < fromus_sitelist[fromus_site].img_class.length) && !(localStorage['regImg']) ; fromus_i++)
 		{
 			var fromus_img_class = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0];
 			if(fromus_img_class)
 			{
-				if(fromus_img_class.href)
+				if(fromus_img_class.href!=undefined)
 				{
-				getimgtag(fromus_img_class);
-				getimgtag('fromus_iimg') = fromus_i + 1;
+					getimgtag(fromus_img_class);
+					getimgtag('fromus_iimg') = fromus_i + 1;
 				}
-				if(fromus_img_class.src)
+				if(fromus_img_class.src!=undefined)
 				{
-				getimgtag(fromus_img_class);
+					getimgtag(fromus_img_class);
 					localStorage['fromus_iimg'] = fromus_i + 1;
 				}
 			}
 		}
 	}
 	
-	if(!(fromus_img))
+	if(!(localStorage['regImg']))
 	{	// S'il n'y a eu aucun résultat...
 		localStorage['fromus_iimg'] = fromus_error;
 	}
@@ -333,7 +352,7 @@ function fromus_recupImg(idclass,fus_data)
 	if(fromus_moreimg)
 	{
 		fromus_i = parseInt(localStorage['fromus_iimg']);
-		fromus_img=	'';
+		localStorage['regImg']=	'';
 	}
 	else
 	{
@@ -341,7 +360,7 @@ function fromus_recupImg(idclass,fus_data)
 	}			
 	
 	// stockage du visuel dans local storage
-
+	
 	//Mise à zéro des indicateurs	
 	localStorage['fromus_moreimg']	=	JSON.stringify(false);
 }
