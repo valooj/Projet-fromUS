@@ -549,7 +549,7 @@ $(document).ready(function() {
 					regPrice = localStorage['regPrice'];
 
 				if(isNaN(regPrice))
-	  				document.getElementById('msgServer').value = document.getElementById('msgServer').value = i18n('InfoPrice');;
+	  				document.getElementById('msgServer').value = document.getElementById('msgServer').value = i18n('InfoPrice');
 
 				else if(regName && regOffer && regPrice){
 					var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_cat: categVal, prd_prix: regPrice};
