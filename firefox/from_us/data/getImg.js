@@ -31,12 +31,12 @@ function getImg()
 			if(elem.getElementsByTagName('img')[0].src!=undefined)
 			{
 				localStorage['regImg'] = elem.getElementsByTagName('img')[0].src;
-
+				
 			}else if(elem.getElementsByTagName('img')[0].href!=undefined)
 			{
 				localStorage['regImg'] = elem.getElementsByTagName('img')[0].href;
 				
-				}
+			}
 		}
 	}
 	
@@ -127,12 +127,25 @@ function getImg()
 		}
 	});
 	
+	document.addEventListener('contextmenu', function(event) 
+	{ event.preventDefault();
+		var target = event.target || event.srcElement;
+		
+		fus_actimg = 0;	// On ne cherche plus le prix
+		target.style.backgroundColor = fus_colorimg;	
+		target.style.border = fus_borderimg;
+		target.style.cursor = fus_cursorimg;		
+		this.removeEventListener('click',arguments.callee,false);
+		
+		
+	return false; }, false);
+	
 	bindEvent(document,'click', function(event) 
 	{ var target = event.target || event.srcElement;
 		
 		getimgtag(target);
 		var origtarget = target;
-
+		
 		
 		var 	fromus_txt    = target.innerHTML;
 		var 	fromus_selectedText  = target.textContent;
@@ -213,15 +226,15 @@ function getImg()
 		var fus_imgresult = '';
 		if(fus_imgid)
 		{
-			fus_imgresult += 'img_id<-->'+fus_imgid+'/';
+			fus_imgresult += '%img_id<-->'+fus_imgid+'*~*';
 		}
 		if(fus_imgclass)
 		{
-			fus_imgresult += 'img_class<-->'+fus_imgclass+'/';
+			fus_imgresult += '%img_class<-->'+fus_imgclass+'*~*';
 		}	
 		
 		localStorage['regGetImg'] = fus_imgresult;
-
+		
 		fus_actimg = 0;	// On ne cherche plus l'image
 		//target.style.backgroundColor = fus_colorimg;
 		origtarget.style.cursor = fus_cursorimg;

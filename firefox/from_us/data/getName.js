@@ -42,7 +42,7 @@ function getName()
 			var red = parseInt(digits[2]);
 			var green = parseInt(digits[3]);
 			var blue = parseInt(digits[4]);
-
+			
 			red 		=	red		^	255;
 			green	=	green	^	255;
 			blue	=	blue	^	255;
@@ -51,7 +51,7 @@ function getName()
 			{
 				alpha	=	alpha	^	255;
 			}
-
+			
 			red 	=	red.toString(10);
 			green	=	green.toString(10);
 			blue	=	blue.toString(10);
@@ -73,7 +73,7 @@ function getName()
 			return htmlcode;
 		}
 	}
-
+	
 	var mouser = bindEvent(document,'mouseover', function(event) 
 	{ var target = event.target || event.srcElement;
 		if(fus_actname == 1)	// Si on cherceh le prix...
@@ -81,7 +81,7 @@ function getName()
 			fus_colorname = getComputedStyle(target).backgroundColor;
 			fus_bordername = getComputedStyle(target).border;
 			fus_cursorname = getComputedStyle(target).cursor;			
-		//	target.style.backgroundColor = inversHTMLname(getComputedStyle(target).backgroundColor);
+			//	target.style.backgroundColor = inversHTMLname(getComputedStyle(target).backgroundColor);
 			target.style.border = fus_border;
 			target.style.cursor = fus_cursor;			
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
@@ -107,7 +107,20 @@ function getName()
 			this.removeEventListener('mouseout',arguments.callee,false);			
 		}
 	});
-
+	
+	document.addEventListener('contextmenu', function(event) 
+	{ event.preventDefault();
+		var target = event.target || event.srcElement;
+		
+		fus_actname = 0;	// On ne cherche plus le prix
+		target.style.backgroundColor = fus_colorname;	
+		target.style.border = fus_bordername;
+		target.style.cursor = fus_cursorname;		
+		this.removeEventListener('click',arguments.callee,false);
+		
+		
+	return false; }, false);
+	
 	bindEvent(document,'click', function(event) 
 	{ var target = event.target || event.srcElement;
 		
@@ -169,16 +182,16 @@ function getName()
 		var fus_nameresult = '';
 		if(fus_nameid)
 		{
-			fus_nameresult += '%name_id<-->'+fus_nameid+'/';
+			fus_nameresult += '%name_id<-->'+fus_nameid+'*~*';
 		}
 		if(fus_nameclass)
 		{
-			fus_nameresult += '%name_class<-->'+fus_nameclass+'/';
+			fus_nameresult += '%name_class<-->'+fus_nameclass+'*~*';
 		}	
 		
 		localStorage['regGetName'] = fus_nameresult;
 		localStorage['regName'] = fromus_selectedText;
-
+		
 		fus_actname = 0;	// On ne cherche plus le nom
 		target.style.backgroundColor = fus_colorname;	
 		target.style.border = fus_bordername;

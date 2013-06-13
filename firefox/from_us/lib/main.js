@@ -12,11 +12,14 @@ else {
   ss.storage.name = "ryan";
 }
 
+ss.storage.tokenFU = '';
+var tokenFU = ss.storage.tokenFU;
+console.log(tokenFU);
 var prefSet = require("simple-prefs");
-var token_fus = prefSet.prefs.tokenFU;
+var tokenFU = prefSet.prefs.tokenFU;
 
 
-token_fus = 'token';
+//tokenFU = 'token';
 
 
 /*pageMod.PageMod({
@@ -88,7 +91,7 @@ var tbb = require('toolbarbutton').ToolbarButton({
       imglogo: data.url('img/logo.png')
     }
    });
-    worker.port.emit('main-to-content', token_fus);
+    worker.port.emit('main-to-content', tokenFU);
 
   }
   

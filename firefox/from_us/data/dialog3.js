@@ -1,12 +1,14 @@
+console.log('avant msg');
+self.port.on('main-to-content', function handleMyMessage(tokenFU) {
+  console.log('pass ok');
+  console.log(tokenFU);
+});
+
 var token;
 var Nick_Name;
 var points;
 
-console.log('avant msg');
-self.port.on('main-to-content', function handleMyMessage(token_fus) {
-  console.log('pass ok');
-  console.log(token_fus);
-});
+
 
 
 /*self.on('main-to-content', function() {
@@ -444,8 +446,8 @@ $(document).ready(function() {
 					}
 					else 
 					showLog();
-				});
-				chrome.storage.local.get('nameFU',function(result){
+				});*/
+				/*chrome.storage.local.get('nameFU',function(result){
 				  Nick_Name=result.nameFU;
 				  if(Nick_Name && Nick_Name != 'undefined'){
 						document.getElementById('nick_name').value = i18n('MsgWelcome')+Nick_Name ;
@@ -777,4 +779,3 @@ $(document).ready(function() {
 		localStorage.removeItem('regOffer'); 
 	}
 });
-
