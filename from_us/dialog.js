@@ -82,7 +82,7 @@ function sendToServer(urlSelected, jsonSelected) {
 			break;
 
 			case 'a':
-				var elem = datas['Message']['sa_chemin'].split('§§');
+				var elem = datas['Message']['sa_chemin'].split('*~*');
 				parseInfo(elem);
 				
 			break;
@@ -168,35 +168,35 @@ function parseInfo (elem){
 				{
 				    if(elem[i].indexOf('price_class') !== (-1)){
 				  		var sous_elem = elem[i].split('<-->');
-				  		content_pclass= sous_elem[1]+'§#§'+content_pclass;
+				  		content_pclass= sous_elem[1]+'*#*'+content_pclass;
 				  	}
 				  	else if(elem[i].indexOf('price_id') !== (-1)){
 				  	 var sous_elem = elem[i].split('<-->');
-				  		content_pid= sous_elem[1]+'§#§'+content_pid;
+				  		content_pid= sous_elem[1]+'*#*'+content_pid;
 				  	}
 				  	else if(elem[i].indexOf('name_class') !== (-1)){
 				  		var sous_elem = elem[i].split('<-->');
-				  		content_nclass= sous_elem[1]+'§#§'+content_nclass;
+				  		content_nclass= sous_elem[1]+'*#*'+content_nclass;
 				  	}
 				  	else if(elem[i].indexOf('name_id') !== (-1)){
 				  	 var sous_elem = elem[i].split('<-->');
-				  		content_nid= sous_elem[1]+'§#§'+content_nid;
+				  		content_nid= sous_elem[1]+'*#*'+content_nid;
 				  	} 
 				  	else if(elem[i].indexOf('desc_class') !== (-1)){
 				  		var sous_elem = elem[i].split('<-->');
-				  		content_dclass= sous_elem[1]+'§#§'+content_dclass;
+				  		content_dclass= sous_elem[1]+'*#*'+content_dclass;
 				  	}
 				  	else if(elem[i].indexOf('desc_id') !== (-1)){
 				  	 var sous_elem = elem[i].split('<-->');
-				  		content_did= sous_elem[1]+'§#§'+content_did;
+				  		content_did= sous_elem[1]+'*#*'+content_did;
 				  	}
 				  	else if(elem[i].indexOf('img_class') !== (-1)){
 				  		var sous_elem = elem[i].split('<-->');
-				  		content_iclass= sous_elem[1]+'§#§'+content_iclass;
+				  		content_iclass= sous_elem[1]+'*#*'+content_iclass;
 				  	}
 				  	else if(elem[i].indexOf('img_id') !== (-1)){
 				  	 var sous_elem = elem[i].split('<-->');
-				  		content_iid= sous_elem[1]+'§#§'+content_iid;
+				  		content_iid= sous_elem[1]+'*#*'+content_iid;
 				  	} 
 				} 
 
