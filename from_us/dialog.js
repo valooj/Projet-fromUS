@@ -370,12 +370,12 @@ $(document).ready(function() {
 										'<select id="sscategory">'+
 										'</select><br />'+
 									'<div class="content" id="tab1">'+
-									    '<input type="button" id="addP">'+
+									    '<input type="button" id="addP" onclick="window.location.hash=\'msgServer\';">'+
 									'</div>'+
 									'<div class="content" id="tab2">'+
 									    '<label id="fu_quantite" for="quantite"></label><input id="QteSpinner" value="1"><br />'+
 									    //'<label id="fu_assurance" for="assurance"></label><input type="checkbox" id="checkassur" name="assurance" /><br />'+
-									    '<input type="button" id="buyP"> '+
+									    '<input type="button" id="buyP" onclick="window.location.hash=\'msgServer\';"> '+
 									'</div>'+
 							'</form>'+
 						'<a href="http://from-us.com/fromus" target=_blank><img id="logofromus" height="100" src=""/></a>' +
