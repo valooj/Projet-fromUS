@@ -9,7 +9,7 @@
 	$lng['invalid_panier'] ='Une erreur est survenue : le prix est invalide';
 	$lng['invalid_qte'] = 'Une erreur est survenue : mauvais paramètre de quantité';
 
-	$lng['product_insert'] = 'Votre commande est en cours de validation par nos services. Une fois validée, vous recevrez un email qui vous permettra de poursuivre les étapes afin de réceptionner votre commande.';
+	$lng['product_insert'] = 'Votre commande est en cours de validation par nos services.';
 	$lng ['invalid_calcul'] = 'Une erreur est survenue Calcul non spécifié';
 	$long['invalid_access'] = 'Une erreur est survenue Access non spécifié';
 	$lng['invalid_country'] = 'Une erreur est survenue Pays invalide';
@@ -23,5 +23,5 @@
 	$lng['choix_scateg'] = ' Choisissez une sous-catégorie';
 
 	$lng['invalid_url'] = 'ce site n’est pas connu dans notre répertoire. Merci de l’ajouter';
-	$lng['participation'] = 'Merci de nous avoir aidé. Vous recevrez prochainement un email récapitulant vos points.';
+	$lng['participation'] = 'Merci de nous avoir aidé à amélioré notre site ! ';
 ?>

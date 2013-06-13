@@ -1,27 +1,27 @@
 <?php
 
-	$lng['invalid_token'] = 'Error :: Token not specified or invalid';
-	$lng['invalid_product'] = 'Error :: Product not specified';
-	$lng['bad_param'] ='Error :: Bad parameters ';
+	$lng['invalid_token'] = 'Error :: Try to reconnect !';
+	$lng['invalid_product'] = 'Error :: Invalid product';
+	$lng['bad_param'] ='Error :: Your basket\'s informations are invalid ! ';
 	$lng['invalid_price'] = 'Error :: Price invalid';
-	$lng['invalid_insert'] = 'Error :: Insert invalid';
-	$lng['win'] = 'You win ';
-	$lng['invalid_panier'] ='Error :: Panier not specified';
+	$lng['invalid_insert'] = 'Error :: Insertion failed';
+	$lng['win'] = 'You won XX points';
+	$lng['invalid_panier'] ='Error :: Basket not specified';
 	$lng['invalid_qte'] = 'Error :: Bad Quantity parameter';
 
-	$lng['product_insert'] = 'Your product is inserted';
+	$lng['product_insert'] = 'Your order is being confirmed by our services';
 	$lng['invalid_calcul'] = 'Error ::Calcul not specified';
 	$lng['invalid_country'] = 'Error :: Country invalid';
 	$lng['invalid_log'] ='Error :: log not specified';
-	$lng['invalid_email'] = 'Error :: Email not valid';
+	$lng['invalid_email'] = 'Error :: invalid email';
 	$lng['logout'] = 'Bye';
 	$lng['invalid_categ'] = 'Error :: Category not specified';
 	$lng['invalid_action'] = ' Error :: No action specified';
-	$lng['invalid_bd'] = ' Error :: connection to the server could not';
+	$lng['invalid_bd'] = ' Error ::  Connection to the server impossible';
 	$lng['choix_categ'] = ' Choose a category';
 	$lng['choix_scateg'] = ' Choose a sub-category';
 
-	$lng['participation'] = 'Think you for your participation';
+	$lng['participation'] = 'Thank you for your participation';
 
 
 ?>
