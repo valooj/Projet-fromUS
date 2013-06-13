@@ -19,7 +19,7 @@
       "/img/bouton_commander.png",
       "/img/bouton_ajouter.png",
       "jquery/images/ui-bg_flat_0_aaaaaa_40x100.png",
-      "jquery/images/ui-bg_flat_75_ffffff_40x100.png",
+      "jquery/images/ui-toto-bg_flat_75_ffffff_40x100.png",
       "jquery/images/ui-bg_glass_55_fbf9ee_1x400.png",
       "jquery/images/ui-bg_glass_65_ffffff_1x400.png",
       "jquery/images/ui-bg_glass_75_dadada_1x400.png",
@@ -30,7 +30,7 @@
       "jquery/images/ui-icons_222222_256x240.png",
       "jquery/images/ui-icons_454545_256x240.png",
       "jquery/images/ui-icons_888888_256x240.png",
-      "jquery/images/ui-icons_cd0a0a_256x240.png"
+      "jquery/images/ui-toto-icons_cd0a0a_256x240.png"
   ],
   
   "background": {
