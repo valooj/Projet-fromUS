@@ -82,6 +82,7 @@ function sendToServer(urlSelected, jsonSelected) {
 			break;
 
 			case 'a':
+				console.log(datas['Message']['sa_chemin']);
 				var elem = datas['Message']['sa_chemin'].split('*~*');
 				parseInfo(elem);
 				
@@ -200,24 +201,29 @@ function parseInfo (elem){
 				  	} 
 				} 
 
+
 				//Test pour le prix
-				fromus_recupPrice('id',content_pid);
-				if(localStorage['regPrice'] == fromus_error) 
+				if(content_pid)
+					fromus_recupPrice('id',content_pid);
+				if(localStorage['regPrice'] == fromus_error || (content_pclass && (localStorage['regPrice']=='undefined' || !localStorage['regPrice']) )) 
 					fromus_recupPrice("class",content_pclass);
 
 				//Test pour le name
-				fromus_recupName('id',content_nid);
-				if(localStorage['regName'] == fromus_error) 
+				if(content_nid)
+					fromus_recupName('id',content_nid);
+				if(localStorage['regName'] == fromus_error || (content_nclass && (localStorage['regName']=='undefined'|| !localStorage['regName']) ) )
 					fromus_recupName('class',content_nclass);
 
 				//Test pour la description
-				fromus_recupDesc('id',content_did);
-				if(localStorage['regName'] == fromus_error) 
+				if(content_did)
+					fromus_recupDesc('id',content_did);
+				if(localStorage['regDesc'] == fromus_error || (content_dclass && (localStorage['regDesc']=='undefined' || !localStorage['regDesc'])) )
 					fromus_recupDesc('class',content_dclass);
 
 				//Test pour l'image'
-				fromus_recupImg('id',content_iid);
-				if(localStorage['regName'] == fromus_error) 
+				if(content_iid)
+					fromus_recupImg('id',content_iid);
+				if(localStorage['regImg'] == fromus_error || (content_iclass && (localStorage['regImg']=='undefined'|| !localStorage['regImg']))) 
 					fromus_recupImg('class',content_iclass);
 
 				regPrice = localStorage['regPrice'];
@@ -494,6 +500,9 @@ $(document).ready(function() {
 					sendToServer(_urlLogin, logJSON);
 				}
 			}
+	  	});
+	  	$('input[id=priceBox]').click(function() {
+		   	var emailV = document.getElementById('priceBox').value=' ';
 	  	});
 
 	  	$('input[id=addP]').click(function() {

@@ -1,14 +1,2 @@
-Array
-(
-    [sa_chemin] => name_class<-->bwcProductTitle§§price_class<-->mpsTotalPriceMoney§§img_class<-->itemimage§§desc_id<-->ctl00_TemplateContentPlaceHolder_ctlProductSummary_divDescription§§name_id<-->AuthorArtistTitle_productTitle§§name_id<-->StorePromo_title§§img_id<-->ImageVideo_ImageRepeater_ctl00_Image§§img_id<-->StorePromo_imgPromo§§price_id<-->spanMainTotalPrice§§price_id<-->StorePromo_PriceText§§desc_id<-->divDescription§§desc_id<-->StorePromo_spnDescription1
-    [0] => name_class<-->bwcProductTitle§§price_class<-->mpsTotalPriceMoney§§img_class<-->itemimage§§desc_id<-->ctl00_TemplateContentPlaceHolder_ctlProductSummary_divDescription§§name_id<-->AuthorArtistTitle_productTitle§§name_id<-->StorePromo_title§§img_id<-->ImageVideo_ImageRepeater_ctl00_Image§§img_id<-->StorePromo_imgPromo§§price_id<-->spanMainTotalPrice§§price_id<-->StorePromo_PriceText§§desc_id<-->divDescription§§desc_id<-->StorePromo_spnDescription1
-)
 
-===========================================
-Array
-(
-    [sa_chemin] => name_class<-->bwcProductTitle§§price_class<-->mpsTotalPriceMoney§§img_class<-->itemimage§§desc_id<-->ctl00_TemplateContentPlaceHolder_ctlProductSummary_divDescription§§name_id<-->AuthorArtistTitle_productTitle§§name_id<-->StorePromo_title§§img_id<-->ImageVideo_ImageRepeater_ctl00_Image§§img_id<-->StorePromo_imgPromo§§price_id<-->spanMainTotalPrice§§price_id<-->StorePromo_PriceText§§desc_id<-->divDescription§§desc_id<-->StorePromo_spnDescription1
-    [0] => name_class<-->bwcProductTitle§§price_class<-->mpsTotalPriceMoney§§img_class<-->itemimage§§desc_id<-->ctl00_TemplateContentPlaceHolder_ctlProductSummary_divDescription§§name_id<-->AuthorArtistTitle_productTitle§§name_id<-->StorePromo_title§§img_id<-->ImageVideo_ImageRepeater_ctl00_Image§§img_id<-->StorePromo_imgPromo§§price_id<-->spanMainTotalPrice§§price_id<-->StorePromo_PriceText§§desc_id<-->divDescription§§desc_id<-->StorePromo_spnDescription1
-)
-
-===========================================
+name_class<-->pTitle*~*name_id<-->product-title*~*price_class<-->pPrice*~*price_id<-->product-price*~*img_class<-->bigimage*~*img_id<-->product-image*~*desc_id<-->productDesc*~*
