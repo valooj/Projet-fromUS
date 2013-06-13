@@ -231,7 +231,6 @@ function parseInfo (elem){
 				else
 					document.getElementById('fromus_desc').value = regDesc ;
 				regVisu = localStorage['regImg'];
-				console.log(regVisu);
 				$('#fromus_image').attr('value',regVisu);
 				
 }
@@ -307,6 +306,7 @@ function isUrl(s) {
 	return regexp.test(s);
 }
 
+//Permet laffichage de limage lorsque on passe sur lurl
 $(document).on('change, keyup, mouseover', 'input', function() {
 	if(regVisu != 'undefined'){
 	    $('#img-view').css('background-image', 'url('+regVisu+')');
@@ -553,7 +553,6 @@ $(document).ready(function() {
 
 				else if(regName && regOffer && regPrice){
 					var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_cat: categVal, prd_prix: regPrice};
-					console.log(jsonProduct);
 					var postData = JSON.stringify(jsonProduct);
 					var productJSON = {product:postData};
 					sendToServer(_urlProduct+token , productJSON);
@@ -646,7 +645,6 @@ $(document).ready(function() {
 
 				else if(regName && regOffer && regPrice){
 					var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_cat: categVal, prd_prix: regPrice};
-					console.log(jsonProduct);
 					var postData = JSON.stringify(jsonProduct);
 					var productJSON = {product:postData};
 					sendToServer(_urlProduct+token , productJSON);
@@ -674,7 +672,6 @@ $(document).ready(function() {
 						var jsonPanier = {priceTot: regPrice ,libelle: regName ,url: regOffer ,desc: regDesc, qte: qteVal ,categ: categVal};
 						var postDataPanier = JSON.stringify(jsonPanier);
 						var panierJSON = {panier:postDataPanier};
-						console.log(panierJSON);
 						sendAjoutPanier(panierJSON);
 					}
 				}, 1000);
@@ -723,7 +720,6 @@ $(document).ready(function() {
 		var runtimeOrExtension = chrome.runtime && chrome.runtime.sendMessage ?
  		'runtime' : 'extension';
 		priceq.addEventListener('click', function(e){
-			console.log('debut listener priceq');
 			document.getElementById('fromus_price').value="";
 			var settime = setTimeout(function() {getPrice()}, 1000);
 			var setinter = setInterval(function() {miseaJ()}, 600); 
@@ -733,7 +729,6 @@ $(document).ready(function() {
 
 		var nameq = document.getElementById('nameQ');
 		nameq.addEventListener('click', function(e){
-			console.log('debut listener nameq');
 			document.getElementById('fromus_name').value="";
 			var settime = setTimeout(function() {getName()}, 1000);
 			var setinter = setInterval(function() {miseaJ()}, 600); 
@@ -743,7 +738,6 @@ $(document).ready(function() {
 
 		var descq = document.getElementById('descQ');
 		descq.addEventListener('click', function(e){
-			console.log('debut listener descq');
 			document.getElementById('fromus_desc').value="";
 			var settime = setTimeout(function() {getDesc()}, 1000);
 			var setinter = setInterval(function() {miseaJ()}, 600); 
@@ -753,7 +747,6 @@ $(document).ready(function() {
 
 		var imgq = document.getElementById('imgQ');
 		imgq.addEventListener('click', function(e){
-			console.log('debut listener imgq');
 			document.getElementById('fromus_image').value="";
 			var settime = setTimeout(function() {getImg()}, 1000);
 			var setinter = setInterval(function() {miseaJ()}, 600); 
