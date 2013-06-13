@@ -536,10 +536,8 @@ try
 
 	        $response['Status'] = 'a';
 	        $response['Message'] = $chemin;
-file_put_contents('./trace.txt', print_r( $chemin, 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
 
-file_put_contents('./trace.txt', print_r( $response['Message'], 1) . PHP_EOL . '===========================================' . PHP_EOL, FILE_APPEND);
-			break;
+	        break;
 
 		case 'MAJ-accessOut':
 			// variables
