@@ -186,11 +186,11 @@ function getPrice()
 		var fus_priceresult = '';
 		if(fus_priceid)
 		{
-			fus_priceresult += '%price_id<-->'+fus_priceid+'/';
+			fus_priceresult += '%price_id<-->'+fus_priceid+'§§';
 		}
 		if(fus_priceclass)
 		{
-			fus_priceresult += '%price_class<-->'+fus_priceclass+'/';
+			fus_priceresult += '%price_class<-->'+fus_priceclass+'§§';
 		}
 
 		localStorage['regGetPrice'] = fus_priceresult;

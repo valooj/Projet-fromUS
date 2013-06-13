@@ -169,11 +169,11 @@ function getName()
 		var fus_nameresult = '';
 		if(fus_nameid)
 		{
-			fus_nameresult += '%name_id<-->'+fus_nameid+'/';
+			fus_nameresult += '%name_id<-->'+fus_nameid+'§§';
 		}
 		if(fus_nameclass)
 		{
-			fus_nameresult += '%name_class<-->'+fus_nameclass+'/';
+			fus_nameresult += '%name_class<-->'+fus_nameclass+'§§';
 		}	
 		
 		localStorage['regGetName'] = fus_nameresult;
