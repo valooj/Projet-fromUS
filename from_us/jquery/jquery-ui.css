@@ -15,7 +15,7 @@
 	float: right;
 	margin: 3px 2px 3px 1px; 
 }
-
+/* pour l'affichage du champs mot de  passe */
 input#passBox {
 	width: 150px;
 	margin: 2px 10px 2px 2px;
@@ -24,6 +24,7 @@ input#passBox {
 	border: 1px solid rgb(170, 170, 170);
 	border-radius: 3px;
 }
+/* pour l'affichage du champs email */
 input#emailBox {
 	width: 150px;
 	margin: 2px;
@@ -113,7 +114,8 @@ a#tabBuy{
 input#msgServer {
 	width: 300px;
 	color: #c11f34;
-	text-align: center;
+	text-align: left;
+	font-size: 0.7em;
 }
 h2#FormP {
 	color: black;
