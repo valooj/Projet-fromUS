@@ -2,6 +2,7 @@ var data = require('self').data;
 var tabs = require('tabs');
 var pageMod = require('page-mod');
 var ss = require('sdk/simple-storage');
+var Request = require('request').Request;
 console.log('debut pageMod');
 
 if (ss.storage.name) {
@@ -12,11 +13,11 @@ else {
   ss.storage.name = "ryan";
 }
 
-ss.storage.tokenFU = '';
+/*ss.storage.tokenFU = '';
 var tokenFU = ss.storage.tokenFU;
 console.log(tokenFU);
 var prefSet = require("simple-prefs");
-var tokenFU = prefSet.prefs.tokenFU;
+var tokenFU = prefSet.prefs.tokenFU;*/
 
 
 //tokenFU = 'token';
@@ -57,6 +58,14 @@ var tokenFU = prefSet.prefs.tokenFU;
   }
 });*/
 
+Request({
+      url: "http://localhost/projetFU/Communication/cible3.php?",
+      content: {q: "test"},
+      onComplete: function (response) {
+        console.log(response.text);
+      }
+}).get();
+
 
 var tbb = require('toolbarbutton').ToolbarButton({
   id: 'fromus_button',
@@ -64,7 +73,7 @@ var tbb = require('toolbarbutton').ToolbarButton({
   image: data.url('img/on.png'),
   onCommand: function () {
 
-    var worker = tabs.activeTab.attach ({
+    let worker = tabs.activeTab.attach ({
 
         contentScriptFile: [
             data.url('jquery/jquery.min.js'),
@@ -88,16 +97,32 @@ var tbb = require('toolbarbutton').ToolbarButton({
       imgadd: data.url('img/bouton_ajouter.png'),
       imgbuy: data.url('img/bouton_commander.png'),
       imgplugin: data.url('img/plugin_vide.png'),
-      imglogo: data.url('img/logo.png')
+      imglogo: data.url('img/logo.png'),
+      imglogotop: data.url('img/logo_small.png')
     }
    });
-    worker.port.emit('main-to-content', tokenFU);
+    //worker.port.emit('main-to-content', tokenFU);
+    /*worker.port.on('simple-storage', function(tokenFU,nameFU) {
+  ss.storage.tokenFU = tokenFU;
+  ss.storage.nameFU = nameFU;
+  console.log(ss.storage.tokenFU);
+  console.log(ss.storage.nameFU);
+});*/
+
+    worker.port.emit("message", function (url) {
+      Request({
+        url : "http://localhost/projetFU/Communication/cible3.php?",
+        onComplete: function (response) {
+        console.log(response.text);
+      }
+}).get();
+
+        
+
+    });
 
   }
-  
-  
-  
-  
+ 
 });
 
 

@@ -1,8 +1,12 @@
 console.log('avant msg');
-self.port.on('main-to-content', function handleMyMessage(tokenFU) {
+/*self.port.on('main-to-content', function handleMyMessage(tokenFU) {
   console.log('pass ok');
   console.log(tokenFU);
-});
+});*/
+/*var newData = 'test';
+var fudata = 'fus';
+self.port.emit('simple-storage', newData = fudata);*/
+
 
 var token;
 var Nick_Name;
@@ -67,8 +71,10 @@ function sendToServer(urlSelected, jsonSelected) {
 			case 'L':
 				token = datas['Token'];
 				//chrome.storage.local.set({'tokenFU': token});
+				self.port.emit('simple-storage', tokenFU = token);
 				Nick_Name = datas['Message'];
 				//chrome.storage.local.set({'nameFU': Nick_Name});
+				self.port.emit('simple-storage', nameFU = Nick_Name);
 				document.getElementById("nick_name").value = i18n('MsgWelcome')+Nick_Name ;
 				hideLog();
 				sendToServer(_urlPts+token,{});
@@ -267,6 +273,8 @@ function showLog(){
 
 //fonction pour charger tt les text au lancement de l'ext
 function loadText(){
+	document.getElementById('fromus_help').innerHTML = i18n('fromus_help') ;
+
 	document.getElementById('tabAdd').innerHTML = i18n('tabAdd') ;
 	document.getElementById('tabBuy').innerHTML = i18n('tabBuy') ;
 	document.getElementById('store').innerHTML = i18n('Merchant') ;
@@ -332,6 +340,7 @@ $(document).ready(function() {
 	
 	var newDialog = $('<div id="fromus_dialogBox" class="toto">' +
 					    '<div id="header">'+
+					    '<a href="http://from-us.com/fromus" target=_blank><img id="logofromustop" src="' + self.options.imglogotop + '"/></a>' +
 							'<div id="selectLang">' +
 	      						'<img id="lgfr" src="' + self.options.imgfr + '" />'+
 							    '<img id="lgen" src="' + self.options.imgen + '" />'+
@@ -360,6 +369,7 @@ $(document).ready(function() {
 								'</div><br />'+
 								'<div id="corpAdd">'+
 									'<input type="textbox" id="msgServer" disabled="true" style="border:none"/>'+
+									'<p id=fromus_help></p>' +
 									'<div id="fromus_tabs">'+
 									    '<h2 id="FormP"></h2>'+
 									    '<form id="fromusForm">'+
@@ -438,6 +448,7 @@ $(document).ready(function() {
 
   				$('#tab2').hide();
 				$('#tab1').show();
+				$('#emailBox').focus();
 
   				/*chrome.storage.local.get('tokenFU',function(result){
 				 	token=result.tokenFU;
@@ -447,6 +458,19 @@ $(document).ready(function() {
 					else 
 					showLog();
 				});*/
+
+				/*function opentoken(result) {
+					token=result.tokenFU;
+				 	if(token && token != 'undefined'){
+						hideLog();
+					}
+					else 
+					showLog();
+				}
+				ss.on('tokenFU', opentoken);*/
+
+
+				
 				/*chrome.storage.local.get('nameFU',function(result){
 				  Nick_Name=result.nameFU;
 				  if(Nick_Name && Nick_Name != 'undefined'){

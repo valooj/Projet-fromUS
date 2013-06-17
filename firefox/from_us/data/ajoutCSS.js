@@ -1,5 +1,9 @@
 function ajoutCSS() {
 
+	$('#fromus_help').css({
+	'font-size': '0.7em'
+    });
+
 	$('#selectLang').css({
 	height: '1px'
 	});
