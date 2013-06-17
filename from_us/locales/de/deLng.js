@@ -1,5 +1,6 @@
 
 _lng['de'] = {};
+_lng['de']['fromus_help'] = 'Um ein Objekt auszuwählen, klicken Sie auf die Schaltfläche ?';
 _lng['de']['tabAdd'] = 'Add ';
 _lng['de']['tabBuy'] = 'Buy';
 _lng['de']['tabAccount'] = 'Mein Konto';

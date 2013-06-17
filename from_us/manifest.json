@@ -3,7 +3,7 @@
   "version": "1.1",
   
   "permissions": [
-    "tabs", "http://*/*", "storage", "cookies"
+    "tabs", "http://*/*", "storage"
   ],
   
   "browser_action": {
@@ -13,6 +13,7 @@
 
   "web_accessible_resources": [
       "img/logo.png",
+      "img/logo_small.png",
       "/img/fr.png",
       "/img/en.png",
       "/img/de.png",

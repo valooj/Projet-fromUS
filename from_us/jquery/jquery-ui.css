@@ -6,6 +6,10 @@
 /*Permet laffichage de l'image */
 
 
+#fromus_help {
+	font-size: 0.7em;
+}
+
 /*Pour l'affichage des img de langue */
 #selectLang {
 	height: 1px;

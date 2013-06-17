@@ -23,6 +23,7 @@ var regOffer;
 var regDesc;
 var regVisu;
 
+//var j = jQuery.noConflict();
 //Generation des url avec la bonne langue
 function reloadUrl(){
 	 _urlProduct = UrlBase +'action=MAJ-product&lng='+defLng+'&token=';
@@ -258,6 +259,8 @@ function showLog(){
 
 //fonction pour charger tt les text au lancement de l'ext
 function loadText(){
+	document.getElementById('fromus_help').innerHTML = i18n('fromus_help') ;
+
 	document.getElementById('tabAdd').innerHTML = i18n('tabAdd') ;
 	document.getElementById('tabBuy').innerHTML = i18n('tabBuy') ;
 	document.getElementById('store').innerHTML = i18n('Merchant') ;
@@ -324,6 +327,7 @@ $(document).ready(function() {
 	
 	var newDialog = $('<div id="fromus_dialogBox" class="toto">' +
 					    '<div id="header">'+
+					    	'<a href="http://from-us.com/fromus" target=_blank><img id="logofromustop" src=""/></a>' +
 							'<div id="selectLang">' +
 	      						'<img id="lgfr" src="" />'+
 							    '<img id="lgen" src="" />'+
@@ -334,7 +338,7 @@ $(document).ready(function() {
 	     						'<input type="textbox" id="emailBox" placeholder="email"/><input type="password" id="passBox" placeholder="password"/><br/>'+
 	     						'<INPUT TYPE="button" NAME="logB" VALUE="Login" id="connect">'+
 	     						'<hr id="hr2" style="margin-top: 65px;"/>'+
-	    					'</FORM>'+
+	     					'</FORM>'+
 	    					'<div id="isconnect">'+
 	    						'<hr id="hr1" style="margin-top: 20px;"/>'+
 	      						'<input type="textbox" id="nick_name" disabled="true" style="border:none"/><br />'+
@@ -352,6 +356,7 @@ $(document).ready(function() {
 								'</div><br />'+
 								'<div id="corpAdd">'+
 									'<input type="textbox" id="msgServer" disabled="true" style="border:none"/>'+
+									'<p id=fromus_help></p>' +
 									'<div id="fromus_tabs">'+
 									    '<h2 id="FormP"></h2>'+
 									    '<form id="fromusForm">'+
@@ -395,7 +400,7 @@ $(document).ready(function() {
 	if (isOpen != true) {	
 
 		newDialog.dialog({
-	    	modal: false,
+		   	modal: false,
 			title: 'from-us',
 			position: 
 				{
@@ -412,10 +417,13 @@ $(document).ready(function() {
 				$(this).remove();
 			},
 
+
 			// au demarrage on cache le bouton commander, la quantité et l'assurance
 			open: function(ev,ui) {
 				var img = document.getElementById('logofromus');
   				img.src = chrome.extension.getURL('/img/logo.png');
+  				var imglogotop = document.getElementById('logofromustop');
+  				imglogotop.src = chrome.extension.getURL('/img/logo_small.png');
   				var imgen = document.getElementById('lgen');
   				imgen.src = chrome.extension.getURL('/img/en.png');
   				var imgde = document.getElementById('lgde');
@@ -428,6 +436,7 @@ $(document).ready(function() {
 
   				$('#tab2').hide();
 				$('#tab1').show();
+				$('#emailBox').focus();
 
   				chrome.storage.local.get('tokenFU',function(result){
 				 	token=result.tokenFU;
@@ -450,6 +459,7 @@ $(document).ready(function() {
 
 				searchInfo();
 			}
+
 	    });
 
 		var bindEvent = function(elem ,evt,cb) {
