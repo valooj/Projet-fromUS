@@ -3,6 +3,7 @@ var Nick_Name;
 var points;
 
 var UrlBase= 'http://www.from-us.com/extension/cible3.php?';
+//var UrlBase= 'http://localhost/projetFU/Communication/cible3.php?';
 var _urlProduct;
 var _urlCalcul;
 var _urlPanier;
