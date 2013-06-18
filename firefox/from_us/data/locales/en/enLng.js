@@ -1,6 +1,6 @@
 var _lng= {};
 _lng['en'] = {};
-_lng['en']['fromus_help'] = 'To select an object, click on the "?" button';
+_lng['en']['fromus_help'] = 'If an information has not been found, please click on its "?" button and then select it. Right click to cancel.';
 _lng['en']['tabAdd'] = 'Add';
 _lng['en']['tabBuy'] = 'Buy';
 _lng['en']['tabAccount'] = 'My account';
@@ -30,7 +30,7 @@ _lng['en']['Description'] = 'Description';
 _lng['en']['Image'] = 'Picture';
 
 
-_lng['en']['BulleName'] = 'If name has not been found, please click here, then select the name on the page';
-_lng['en']['BullePrice'] = 'If price has not been found, please click here, then select the price on the page';
-_lng['en']['BulleDesc'] = 'If description has not been found, please click here, then select the description on the page';
-_lng['en']['BulleImg'] = 'If picture has not been found, please click here, then select the picture on the page';
+_lng['en']['BulleName'] = 'If name has not been found, please click here, then select the name on the page. Right click to cancel.';
+_lng['en']['BullePrice'] = 'If price has not been found, please click here, then select the price on the page. Right click to cancel.';
+_lng['en']['BulleDesc'] = 'If description has not been found, please click here, then select the description on the page. Right click to cancel.';
+_lng['en']['BulleImg'] = 'If picture has not been found, please click here, then select the picture on the page. Right click to cancel.';

@@ -1,6 +1,6 @@
 
 _lng['fr'] = {};
-_lng['fr']['fromus_help'] = 'Pour sélectionner un objet, cliquez sur le bouton ?';
+_lng['fr']['fromus_help'] = 'Si une information n\' est pas trouv\351e, cliquez sur le bouton "?" et s\351lectionnez-la. Clic droit pour annuler.';
 _lng['fr']['tabAdd'] = 'Ajouter';
 _lng['fr']['tabBuy'] = 'Commander';
 _lng['fr']['tabAccount'] = 'Mon compte';
@@ -30,7 +30,7 @@ _lng['fr']['InfoPrice'] = 'Merci d\'entrer un prix valide';
 _lng['fr']['Description'] = 'Description';
 _lng['fr']['Image'] = 'Image';
 
-_lng['fr']['BulleName'] = 'Si le nom n\' est pas trouv\351, cliquez sur ce bouton et s\351lectionnez le nom de l\'article sur le site';
-_lng['fr']['BullePrice'] = 'Si le prix n\' est pas trouv\351, cliquez sur ce bouton et s\351lectionnez le prix de l\'article sur le site';
-_lng['fr']['BulleDesc'] = 'Si la description n\' est pas trouv\351e, cliquez sur ce bouton et s\351lectionnez la description de l\'article sur le site';
-_lng['fr']['BulleImg'] = 'Si l\'image n\' est pas trouv\351e, cliquez sur ce bouton et s\351lectionnez l\'image de l\'article sur le site';
+_lng['fr']['BulleName'] = 'Si le nom n\'est pas trouv\351, cliquez sur ce bouton et s\351lectionnez le nom de l\'article sur le site. Clic droit pour annuler.';
+_lng['fr']['BullePrice'] = 'Si le prix n\'est pas trouv\351, cliquez sur ce bouton et s\351lectionnez le prix de l\'article sur le site. Clic droit pour annuler.';
+_lng['fr']['BulleDesc'] = 'Si la description n\'est pas trouv\351e, cliquez sur ce bouton et s\351lectionnez la description de l\'article sur le site. Clic droit pour annuler.';
+_lng['fr']['BulleImg'] = 'Si l\'image n\'est pas trouv\351e, cliquez sur ce bouton et s\351lectionnez l\'image de l\'article sur le site. Clic droit pour annuler.';

@@ -1,6 +1,6 @@
 
 _lng['de'] = {};
-_lng['de']['fromus_help'] = 'Um ein Objekt auszuwählen, klicken Sie auf die Schaltfläche ?';
+_lng['de']['fromus_help'] = 'Wenn Informationen nicht gefunden wird, klicken Sie auf das "?" und wählen Sie. Mit der rechten Maustaste klicken, um abzubrechen.';
 _lng['de']['tabAdd'] = 'Add ';
 _lng['de']['tabBuy'] = 'Buy';
 _lng['de']['tabAccount'] = 'Mein Konto';
@@ -26,9 +26,9 @@ _lng['de']['ButtonReset'] = 'löschen';
 _lng['de']['Infocateg'] = 'Sie müssen wählen Sie eine Kategorie aus';
 
 _lng['de']['Description'] = 'Kurzbeschreibung';
-_lng['de']['Image'] = 'Das Abbild';
+_lng['de']['Image'] = 'Bild';
 
-_lng['de']['BulleName'] = 'Si le nom n\' est pas trouv\351, cliquez sur ce bouton et s\351lectionnez le nom de l\'article sur le site';
-_lng['de']['BullePrice'] = 'Si le prix n\' est pas trouv\351, cliquez sur ce bouton et s\351lectionnez le prix de l\'article sur le site';
-_lng['de']['BulleDesc'] = 'Si la description n\' est pas trouv\351e, cliquez sur ce bouton et s\351lectionnez la description de l\'article sur le site';
-_lng['de']['BulleImg'] = 'Si l\'image n\' est pas trouv\351e, cliquez sur ce bouton et s\351lectionnez l\'image de l\'article sur le site';
+_lng['de']['BulleName'] = 'Wenn der Name nicht gefunden wird, klicken Sie auf diese Schaltfläche und wählen Sie den Namen der Artikel auf der Website. Mit der rechten Maustaste klicken, um abzubrechen.';
+_lng['de']['BullePrice'] = 'Wenn der Preis nicht gefunden wird, klicken Sie auf diese Schaltfläche, und wählen Sie den Preis des Artikels auf der Website. Mit der rechten Maustaste klicken, um abzubrechen.';
+_lng['de']['BulleDesc'] = 'Wenn die Beschreibung nicht gefunden wird, klicken Sie auf diese Schaltfläche und wählen Sie die Artikelbeschreibung auf der Website. Mit der rechten Maustaste klicken, um abzubrechen.';
+_lng['de']['BulleImg'] = 'Wenn das Bild nicht gefunden wird, klicken Sie auf diese Schaltfläche und wählen Sie das Bild des Artikels auf der Website. Mit der rechten Maustaste klicken, um abzubrechen.';
