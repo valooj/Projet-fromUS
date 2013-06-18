@@ -108,7 +108,7 @@ function getName()
 		}
 	});
 	
-	document.addEventListener('contextmenu', function(event) 
+	/*document.addEventListener('contextmenu', function(event) 
 	{ event.preventDefault();
 		var target = event.target || event.srcElement;
 		
@@ -119,7 +119,7 @@ function getName()
 		this.removeEventListener('click',arguments.callee,false);
 		
 		
-	return false; }, false);
+	return false; }, false);*/
 	
 	bindEvent(document,'click', function(event) 
 	{ var target = event.target || event.srcElement;

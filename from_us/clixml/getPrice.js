@@ -124,12 +124,6 @@ function getPrice()
 	{ var target = event.target || event.srcElement;
 		
 		
-			if (window.event.button==2 )
-			{
-    alert('right click');
-   }
-
-		
 		if(fus_actprice == 1)	// Si on cherceh le prix...
 		{
 			
