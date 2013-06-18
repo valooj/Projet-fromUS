@@ -123,7 +123,7 @@ function getPrice()
 	bindEvent(document,'mousedown', function(event) 
 	{ var target = event.target || event.srcElement;
 		
-		if ( (window.event.button===2)||(window.event.button===3) )
+		if ( (target.button===2)||(target.button===3) )
 		{
 
 				localStorage['regPrice'] = 'right click';
