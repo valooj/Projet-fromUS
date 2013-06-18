@@ -135,7 +135,7 @@ function getImg()
 		target.style.backgroundColor = fus_colorimg;	
 		target.style.border = fus_borderimg;
 		target.style.cursor = fus_cursorimg;		
-		this.removeEventListener('click',arguments.callee,false);
+		this.removeEventListener('contextmenu',arguments.callee,false);
 		
 		
 	return false; }, false);
