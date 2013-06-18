@@ -123,105 +123,109 @@ function getPrice()
 	bindEvent(document,'click', function(event) 
 	{ var target = event.target || event.srcElement;
 		
-				if (window.event.button==2 )
-				{
-        alert('right click');
-    }
-		
-		if(fus_actprice == 1)	// Si on cherceh le prix...
+		if (window.event.button==2 )
+		{
+			alert('right click');
+		}
+		else
 		{
 			
-			var 	fromus_txt    = target.innerHTML;
-			var 	fromus_selectedText  = target.textContent;
-			var 	fromus_selectedTexttmp;
-			var fromus_offre = document.location.href;		//récupération de l'adresse du l'offre
-			var fromus_site = /.*(\..*\.[a-z]{2,3})\//gi.exec(fromus_offre)[1];	//stockage du site web où se trouve l'offre
-			fromus_site	=	'www'+fromus_site;
-			
-			fromus_txt        = fromus_txt.replace(/\n/g,'');
-			
-			if(/id=\"/.test(fromus_txt))
+			if(fus_actprice == 1)	// Si on cherceh le prix...
 			{
-				var fromus_idmatch    = fromus_txt.match(/id=(\"[^\"]{1,}\")/mgi);	
-			}
-			if(/class=\"/.test(fromus_txt))
-			{
-				var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  	
-			}
-			
-			if(fromus_idmatch !=undefined)
-			{
-				if(fromus_classmatch !=undefined)
+				
+				var 	fromus_txt    = target.innerHTML;
+				var 	fromus_selectedText  = target.textContent;
+				var 	fromus_selectedTexttmp;
+				var fromus_offre = document.location.href;		//récupération de l'adresse du l'offre
+				var fromus_site = /.*(\..*\.[a-z]{2,3})\//gi.exec(fromus_offre)[1];	//stockage du site web où se trouve l'offre
+				fromus_site	=	'www'+fromus_site;
+				
+				fromus_txt        = fromus_txt.replace(/\n/g,'');
+				
+				if(/id=\"/.test(fromus_txt))
 				{
-					// id et class 
-					fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);			
-					var fus_priceclass = fromus_selectedTexttmp;						
-					fromus_selectedTexttmp	= fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
-					var fus_priceid =fromus_selectedTexttmp;		
+					var fromus_idmatch    = fromus_txt.match(/id=(\"[^\"]{1,}\")/mgi);	
 				}
-				else
+				if(/class=\"/.test(fromus_txt))
 				{
-					//id sans class
-					fromus_selectedTexttmp	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
-					var fus_priceid =fromus_selectedTexttmp;
+					var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  	
 				}
 				
-				fromus_selectedText	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);
-				fromus_selectedText	=	document.getElementById(fromus_selectedText).textContent;
-				if(/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.test(fromus_selectedText))
+				if(fromus_idmatch !=undefined)
 				{
-					fromus_selectedText	=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
-				}			
-			}
-			else
-			{
-				if(fromus_classmatch !=undefined)
-				{ //Class sans id
-					fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
-					var fus_priceclass = fromus_selectedTexttmp;
-					
-					fromus_selectedText = fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
-					
-					fromus_selectedText	=	document.getElementsByClassName(fromus_selectedText)[0].textContent;
-					
-					if(/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.test(fromus_selectedText))
+					if(fromus_classmatch !=undefined)
 					{
-						fromus_selectedText	=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
+						// id et class 
+						fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);			
+						var fus_priceclass = fromus_selectedTexttmp;						
+						fromus_selectedTexttmp	= fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
+						var fus_priceid =fromus_selectedTexttmp;		
 					}
 					else
 					{
-						fromus_selectedText	=	'';
+						//id sans class
+						fromus_selectedTexttmp	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
+						var fus_priceid =fromus_selectedTexttmp;
 					}
-				}
-				else
-				{
-					//ni class ni id
 					
+					fromus_selectedText	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);
+					fromus_selectedText	=	document.getElementById(fromus_selectedText).textContent;
 					if(/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.test(fromus_selectedText))
 					{
 						fromus_selectedText	=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
+					}			
+				}
+				else
+				{
+					if(fromus_classmatch !=undefined)
+					{ //Class sans id
+						fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
+						var fus_priceclass = fromus_selectedTexttmp;
+						
+						fromus_selectedText = fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
+						
+						fromus_selectedText	=	document.getElementsByClassName(fromus_selectedText)[0].textContent;
+						
+						if(/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.test(fromus_selectedText))
+						{
+							fromus_selectedText	=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
+						}
+						else
+						{
+							fromus_selectedText	=	'';
+						}
 					}
-				}  
+					else
+					{
+						//ni class ni id
+						
+						if(/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.test(fromus_selectedText))
+						{
+							fromus_selectedText	=	/(\$[0-9\,]{0,}[\.0-9]{0,3})/g.exec(fromus_selectedText)[0];
+						}
+					}  
+				}
+				
+				var fus_priceresult = '';
+				if(fus_priceid)
+				{
+					fus_priceresult += '%price_id<-->'+fus_priceid+'*~*';
+				}
+				if(fus_priceclass)
+				{
+					fus_priceresult += '%price_class<-->'+fus_priceclass+'*~*';
+				}
+				
+				localStorage['regGetPrice'] = fus_priceresult;
+				localStorage['regPrice'] = fromus_selectedText;
+				
+				fus_actprice = 0;	// On ne cherche plus le prix
+				target.style.backgroundColor = fus_colorprice;	
+				target.style.border = fus_borderprice;
+				target.style.cursor = fus_cursorprice;		
+				this.removeEventListener('click',arguments.callee,false);
+				
 			}
-			
-			var fus_priceresult = '';
-			if(fus_priceid)
-			{
-				fus_priceresult += '%price_id<-->'+fus_priceid+'*~*';
-			}
-			if(fus_priceclass)
-			{
-				fus_priceresult += '%price_class<-->'+fus_priceclass+'*~*';
-			}
-			
-			localStorage['regGetPrice'] = fus_priceresult;
-			localStorage['regPrice'] = fromus_selectedText;
-			
-			fus_actprice = 0;	// On ne cherche plus le prix
-			target.style.backgroundColor = fus_colorprice;	
-			target.style.border = fus_borderprice;
-			target.style.cursor = fus_cursorprice;		
-			this.removeEventListener('click',arguments.callee,false);
 			
 		}
 		else
