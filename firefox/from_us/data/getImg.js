@@ -100,7 +100,7 @@ function getImg()
 			fus_colorimg = getComputedStyle(target).backgroundColor;
 			fus_borderimg = getComputedStyle(target).border;
 			fus_cursorimg = getComputedStyle(target).cursor;			
-			//	target.style.backgroundColor = inversHTMLname(getComputedStyle(target).backgroundColor);
+			//	target.style.backgroundColor = inversHTMLimg(getComputedStyle(target).backgroundColor);
 			target.style.border = fus_border;
 			target.style.cursor = fus_cursor;	
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
@@ -126,7 +126,22 @@ function getImg()
 			this.removeEventListener('mouseout',arguments.callee,false);			
 		}
 	});
+
+
 	
+	document.addEventListener('contextmenu', function(event) 
+	{ event.preventDefault();
+		var target = event.target || event.srcElement;
+		
+		fus_actimg = 0;	// On ne cherche plus le prix
+		target.style.backgroundColor = fus_colorimg;	
+		target.style.border = fus_borderimg;
+		target.style.cursor = fus_cursorimg;		
+		this.removeEventListener('contextmenu',arguments.callee,false);
+		
+		
+	return false; }, false);
+		
 	bindEvent(document,'mousedown', function(event) 
 	{ var target = event.target || event.srcElement;
 		var button = event.button;

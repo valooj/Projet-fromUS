@@ -80,7 +80,7 @@ function getDesc()
 			fus_colordesc = getComputedStyle(target).backgroundColor;
 			fus_borderdesc = getComputedStyle(target).border;
 			fus_cursordesc = getComputedStyle(target).cursor;			
-			//	target.style.backgroundColor = inversHTMLname(getComputedStyle(target).backgroundColor);
+			//	target.style.backgroundColor = inversHTMLdesc(getComputedStyle(target).backgroundColor);
 			target.style.border = fus_border;
 			target.style.cursor = fus_cursor;	
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
@@ -106,7 +106,21 @@ function getDesc()
 			this.removeEventListener('mouseout',arguments.callee,false);			
 		}
 	});
+
 	
+	document.addEventListener('contextmenu', function(event) 
+	{ event.preventDefault();
+		var target = event.target || event.srcElement;
+		
+		fus_actdesc = 0;	// On ne cherche plus le prix
+		target.style.backgroundColor = fus_colordesc;	
+		target.style.border = fus_borderdesc;
+		target.style.cursor = fus_cursordesc;		
+		this.removeEventListener('contextmenu',arguments.callee,false);
+		
+		
+	return false; }, false);
+		
 	bindEvent(document,'mousedown', function(event) 
 	{ var target = event.target || event.srcElement;
 		var button = event.button;

@@ -100,7 +100,7 @@ function getImg()
 			fus_colorimg = getComputedStyle(target).backgroundColor;
 			fus_borderimg = getComputedStyle(target).border;
 			fus_cursorimg = getComputedStyle(target).cursor;			
-			//	target.style.backgroundColor = inversHTMLname(getComputedStyle(target).backgroundColor);
+			//	target.style.backgroundColor = inversHTMLimg(getComputedStyle(target).backgroundColor);
 			target.style.border = fus_border;
 			target.style.cursor = fus_cursor;	
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
@@ -126,6 +126,8 @@ function getImg()
 			this.removeEventListener('mouseout',arguments.callee,false);			
 		}
 	});
+
+
 	
 	document.addEventListener('contextmenu', function(event) 
 	{ event.preventDefault();
@@ -139,75 +141,70 @@ function getImg()
 		
 		
 	return false; }, false);
-	
-	bindEvent(document,'click', function(event) 
+		
+	bindEvent(document,'mousedown', function(event) 
 	{ var target = event.target || event.srcElement;
+		var button = event.button;
 		
-		getimgtag(target);
-		var origtarget = target;
-		
-		
-		var 	fromus_txt    = target.innerHTML;
-		var 	fromus_selectedText  = target.textContent;
-		var 	fromus_selectedTexttmp;
-		var 	fromus_site 	=	document.location.href;		//récupération de l'adresse fromus_
-		fromus_site 	=	/http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_site)[1];
-		fromus_site	=	/\.[a-z0-9\-A-Z]{1,}\.com$/.exec(fromus_site)[0];
-		fromus_site	=	'www'+fromus_site;
-		
-		
-		
-		if(/id=\"/.test(fromus_txt))
+		if ( (button===2)||(button===3) )
 		{
-			var fromus_idmatch    = fromus_txt.match(/id=(\"[^\"]{1,}\")/mgi);
 			
-		}
-		if(/class=\"/.test(fromus_txt))
-		{
-			var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  
-			
-		}
-		
-		if(fromus_idmatch !=undefined)
-		{
-			if(fromus_classmatch !=undefined)
-			{
-				// id et class 
-				
-				fromus_selectedTexttmp	= fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
-				var fus_imgid = fromus_selectedTexttmp;
-				
-				fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);			
-				var fus_imgclass =fromus_selectedTexttmp;
-			}
-			else
-			{
-				//id sans class
-				
-				fromus_selectedTexttmp	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
-				
-				var fus_imgid = fromus_selectedTexttmp;
-			}
-			
-			fromus_selectedText = document.getElementById(fus_imgid);
-			if(fromus_selectedText.href)
-			{
-				fromus_selectedText = fromus_selectedText.href;
-			}
-			else if(fromus_selectedText.src)
-			{
-				fromus_selectedText = fromus_selectedText.src;
-			}
+			fus_actimg = 0;	// On ne cherche plus le prix
+			target.style.backgroundColor = fus_colorimg;	
+			target.style.border = fus_borderimg;
+			target.style.cursor = fus_cursorimg;		
+			this.removeEventListener('mousedown',arguments.callee,false);
 		}
 		else
 		{
-			if(fromus_classmatch !=undefined)
-			{ //Class sans id
-				fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
-				var fus_imgclass =fromus_selectedTexttmp;
+			
+			getimgtag(target);
+			var origtarget = target;
+			
+			
+			var 	fromus_txt    = target.innerHTML;
+			var 	fromus_selectedText  = target.textContent;
+			var 	fromus_selectedTexttmp;
+			var 	fromus_site 	=	document.location.href;		//récupération de l'adresse fromus_
+			fromus_site 	=	/http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_site)[1];
+			fromus_site	=	/\.[a-z0-9\-A-Z]{1,}\.com$/.exec(fromus_site)[0];
+			fromus_site	=	'www'+fromus_site;
+			
+			
+			
+			if(/id=\"/.test(fromus_txt))
+			{
+				var fromus_idmatch    = fromus_txt.match(/id=(\"[^\"]{1,}\")/mgi);
 				
-				fromus_selectedText = document.getElementsByClassName(fus_imgclass)[0];
+			}
+			if(/class=\"/.test(fromus_txt))
+			{
+				var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  
 				
+			}
+			
+			if(fromus_idmatch !=undefined)
+			{
+				if(fromus_classmatch !=undefined)
+				{
+					// id et class 
+					
+					fromus_selectedTexttmp	= fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
+					var fus_imgid = fromus_selectedTexttmp;
+					
+					fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);			
+					var fus_imgclass =fromus_selectedTexttmp;
+				}
+				else
+				{
+					//id sans class
+					
+					fromus_selectedTexttmp	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
+					
+					var fus_imgid = fromus_selectedTexttmp;
+				}
+				
+				fromus_selectedText = document.getElementById(fus_imgid);
 				if(fromus_selectedText.href)
 				{
 					fromus_selectedText = fromus_selectedText.href;
@@ -215,31 +212,50 @@ function getImg()
 				else if(fromus_selectedText.src)
 				{
 					fromus_selectedText = fromus_selectedText.src;
-				}	
+				}
 			}
 			else
 			{
-				//ni class ni id
-			}  
+				if(fromus_classmatch !=undefined)
+				{ //Class sans id
+					fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
+					var fus_imgclass =fromus_selectedTexttmp;
+					
+					fromus_selectedText = document.getElementsByClassName(fus_imgclass)[0];
+					
+					if(fromus_selectedText.href)
+					{
+						fromus_selectedText = fromus_selectedText.href;
+					}
+					else if(fromus_selectedText.src)
+					{
+						fromus_selectedText = fromus_selectedText.src;
+					}	
+				}
+				else
+				{
+					//ni class ni id
+				}  
+			}
+			
+			var fus_imgresult = '';
+			if(fus_imgid)
+			{
+				fus_imgresult += '%img_id<-->'+fus_imgid+'*~*';
+			}
+			if(fus_imgclass)
+			{
+				fus_imgresult += '%img_class<-->'+fus_imgclass+'*~*';
+			}	
+			
+			localStorage['regGetImg'] = fus_imgresult;
+			
+			fus_actimg = 0;	// On ne cherche plus l'image
+			//target.style.backgroundColor = fus_colorimg;
+			origtarget.style.cursor = fus_cursorimg;
+			origtarget.style.border = fus_borderimg;	
+			
+			this.removeEventListener('click',arguments.callee,false);
 		}
-		
-		var fus_imgresult = '';
-		if(fus_imgid)
-		{
-			fus_imgresult += '%img_id<-->'+fus_imgid+'*~*';
-		}
-		if(fus_imgclass)
-		{
-			fus_imgresult += '%img_class<-->'+fus_imgclass+'*~*';
-		}	
-		
-		localStorage['regGetImg'] = fus_imgresult;
-		
-		fus_actimg = 0;	// On ne cherche plus l'image
-		//target.style.backgroundColor = fus_colorimg;
-		origtarget.style.cursor = fus_cursorimg;
-		origtarget.style.border = fus_borderimg;	
-		
-		this.removeEventListener('click',arguments.callee,false);
 	});
 }	

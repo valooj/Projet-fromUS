@@ -80,7 +80,7 @@ function getDesc()
 			fus_colordesc = getComputedStyle(target).backgroundColor;
 			fus_borderdesc = getComputedStyle(target).border;
 			fus_cursordesc = getComputedStyle(target).cursor;			
-			//	target.style.backgroundColor = inversHTMLname(getComputedStyle(target).backgroundColor);
+			//	target.style.backgroundColor = inversHTMLdesc(getComputedStyle(target).backgroundColor);
 			target.style.border = fus_border;
 			target.style.cursor = fus_cursor;	
 			// !!WARNING!! getComputedStyle n'est pas compatible avec IE, utiliser currentStyle à la place !!WARNING!! //
@@ -106,6 +106,7 @@ function getDesc()
 			this.removeEventListener('mouseout',arguments.callee,false);			
 		}
 	});
+
 	
 	document.addEventListener('contextmenu', function(event) 
 	{ event.preventDefault();
@@ -119,81 +120,95 @@ function getDesc()
 		
 		
 	return false; }, false);
-	
-	bindEvent(document,'click', function(event) 
+		
+	bindEvent(document,'mousedown', function(event) 
 	{ var target = event.target || event.srcElement;
+		var button = event.button;
 		
-		var 	fromus_txt    = target.innerHTML;
-		var 	fromus_selectedText  = target.textContent;
-		var 	fromus_selectedTexttmp;
-		var 	fromus_site 	=	document.location.href;		//récupération de l'adresse fromus_
-		fromus_site 	=	/http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_site)[1];
-		fromus_site	=	/\.[a-z0-9\-A-Z]{1,}\.com$/.exec(fromus_site)[0];
-		fromus_site	=	'www'+fromus_site;
-		
-		fromus_txt        = fromus_txt.replace(/\n/g,'');
-		
-		if(/id=\"/.test(fromus_txt))
+		if ( (button===2)||(button===3) )
 		{
-			var fromus_idmatch    = fromus_txt.match(/id=(\"[^\"]{1,}\")/mgi);
-		}
-		if(/class=\"/.test(fromus_txt))
-		{
-			var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  
-		}
-		
-		if(fromus_idmatch !=undefined)
-		{
-			if(fromus_classmatch !=undefined)
-			{
-				// id et class 
-				fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);			
-				var fus_descclass =fromus_selectedTexttmp;
-				
-				fromus_selectedTexttmp	= fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
-				var fus_descid = fromus_selectedTexttmp;
-			}
-			else
-			{
-				//id sans class
-				fromus_selectedTexttmp	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
-				var fus_descid = fromus_selectedTexttmp;
-			}
-			fromus_selectedText = fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);
+			
+			fus_actdesc = 0;	// On ne cherche plus le prix
+			target.style.backgroundColor = fus_colordesc;	
+			target.style.border = fus_borderdesc;
+			target.style.cursor = fus_cursordesc;		
+			this.removeEventListener('mousedown',arguments.callee,false);
 		}
 		else
 		{
-			if(fromus_classmatch !=undefined)
-			{ //Class sans id
-				fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
-				var fus_descclass =fromus_selectedTexttmp;
-				
-				fromus_selectedText = fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
-				
-				fromus_selectedText	=	document.getElementsByClassDesc(fromus_selectedText)[0].textContent;
+			
+			var 	fromus_txt    = target.innerHTML;
+			var 	fromus_selectedText  = target.textContent;
+			var 	fromus_selectedTexttmp;
+			var 	fromus_site 	=	document.location.href;		//récupération de l'adresse fromus_
+			fromus_site 	=	/http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_site)[1];
+			fromus_site	=	/\.[a-z0-9\-A-Z]{1,}\.com$/.exec(fromus_site)[0];
+			fromus_site	=	'www'+fromus_site;
+			
+			fromus_txt        = fromus_txt.replace(/\n/g,'');
+			
+			if(/id=\"/.test(fromus_txt))
+			{
+				var fromus_idmatch    = fromus_txt.match(/id=(\"[^\"]{1,}\")/mgi);
+			}
+			if(/class=\"/.test(fromus_txt))
+			{
+				var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  
+			}
+			
+			if(fromus_idmatch !=undefined)
+			{
+				if(fromus_classmatch !=undefined)
+				{
+					// id et class 
+					fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);			
+					var fus_descclass =fromus_selectedTexttmp;
+					
+					fromus_selectedTexttmp	= fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
+					var fus_descid = fromus_selectedTexttmp;
+				}
+				else
+				{
+					//id sans class
+					fromus_selectedTexttmp	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
+					var fus_descid = fromus_selectedTexttmp;
+				}
+				fromus_selectedText = fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);
 			}
 			else
 			{
-				//ni class ni id
-			}  
+				if(fromus_classmatch !=undefined)
+				{ //Class sans id
+					fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
+					var fus_descclass =fromus_selectedTexttmp;
+					
+					fromus_selectedText = fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
+					
+					fromus_selectedText	=	document.getElementsByClassDesc(fromus_selectedText)[0].textContent;
+				}
+				else
+				{
+					//ni class ni id
+				}  
+			}
+			var fus_descresult = '';
+			if(fus_descid)
+			{
+				fus_descresult += '%desc_id<-->'+fus_descid+'*~*';
+			}
+			if(fus_descclass)
+			{
+				fus_descresult += '%desc_class<-->'+fus_descclass+'*~*';
+			}	
+			
+			localStorage['regGetDesc'] = fus_descresult;
+			localStorage['regDesc'] = fromus_selectedText;
+			fus_actdesc = 0;	// On ne cherche plus la description
+			target.style.backgroundColor = fus_colordesc;
+			target.style.cursor = fus_cursordesc;
+			target.style.border = fus_borderdesc;
+			
+			this.removeEventListener('click',arguments.callee,false);
 		}
-		var fus_descresult = '';
-		if(fus_descid)
-		{
-			fus_descresult += '%desc_id<-->'+fus_descid+'*~*';
-		}
-		if(fus_descclass)
-		{
-			fus_descresult += '%desc_class<-->'+fus_descclass+'*~*';
-		}	
-		
-		localStorage['regGetDesc'] = fus_descresult;
-		localStorage['regDesc'] = fromus_selectedText;
-		fus_actdesc = 0;	// On ne cherche plus la description
-		target.style.backgroundColor = fus_colordesc;
-		target.style.cursor = fus_cursordesc;
-		target.style.border = fus_borderdesc;
-		
-		this.removeEventListener('click',arguments.callee,false);
 	});
 }
