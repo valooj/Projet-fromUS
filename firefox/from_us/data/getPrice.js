@@ -106,19 +106,7 @@ function getPrice()
 			this.removeEventListener('mouseout',arguments.callee,false);			
 		}
 	});
-	/*
-	document.addEventListener('contextmenu', function(event) 
-	{ event.preventDefault();
-		var target = event.target || event.srcElement;
-		
-		fus_actprice = 0;	// On ne cherche plus le prix
-		target.style.backgroundColor = fus_colorprice;	
-		target.style.border = fus_borderprice;
-		target.style.cursor = fus_cursorprice;		
-		this.removeEventListener('click',arguments.callee,false);
-		
-		
-	return false; }, false);*/
+
 	
 	bindEvent(document,'mousedown', function(event) 
 	{ var target = event.target || event.srcElement;
@@ -126,8 +114,6 @@ function getPrice()
 		
 		if ( (button===2)||(button===3) )
 		{
-
-				localStorage['regPrice'] = 'right click';
 				
 				fus_actprice = 0;	// On ne cherche plus le prix
 				target.style.backgroundColor = fus_colorprice;	
