@@ -123,7 +123,7 @@ function getPrice()
 	bindEvent(document,'click', function(event) 
 	{ var target = event.target || event.srcElement;
 		
-		if (window.event.button==2 )
+		if ( (window.event.button===2)||(window.event.button===3) )
 		{
 			alert('right click');
 		}
