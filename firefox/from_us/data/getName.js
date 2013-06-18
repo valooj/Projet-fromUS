@@ -121,81 +121,97 @@ function getName()
 		
 	return false; }, false);
 	
-	bindEvent(document,'click', function(event) 
+	bindEvent(document,'mousedown', function(event) 
 	{ var target = event.target || event.srcElement;
 		
-		var 	fromus_txt    = target.innerHTML;
-		var 	fromus_selectedText  = target.textContent;
-		var 	fromus_selectedTexttmp;
-		var 	fromus_site 	=	document.location.href;		//récupération de l'adresse fromus_
-		fromus_site 	=	/http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_site)[1];
-		fromus_site	=	/\.[a-z0-9\-A-Z]{1,}\.com$/.exec(fromus_site)[0];
-		fromus_site	=	'www'+fromus_site;
+		var button = event.button;
 		
-		fromus_txt        = fromus_txt.replace(/\n/g,'');
-		
-		if(/id=\"/.test(fromus_txt))
+		if ( (button===2)||(button===3) )
 		{
-			var fromus_idmatch    = fromus_txt.match(/id=(\"[^\"]{1,}\")/mgi);
-		}
-		if(/class=\"/.test(fromus_txt))
-		{
-			var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  	
-		}
-		
-		if(fromus_idmatch !=undefined)
-		{
-			if(fromus_classmatch !=undefined)
-			{
-				// id et class 
-				
-				fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);			
-				var fus_nameclass =fromus_selectedTexttmp;
-				
-				fromus_selectedTexttmp	= fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
-				var fus_nameid = fromus_selectedTexttmp;
-			}
-			else
-			{
-				//id sans class
-				fromus_selectedTexttmp	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
-				var fus_nameid = fromus_selectedTexttmp;
-			}
-			fromus_selectedText = fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);
+			
+			fus_actname = 0;	// On ne cherche plus le prix
+			target.style.backgroundColor = fus_colorname;	
+			target.style.border = fus_bordername;
+			target.style.cursor = fus_cursorname;		
+			this.removeEventListener('mousedown',arguments.callee,false);
 		}
 		else
 		{
-			if(fromus_classmatch !=undefined)
-			{ //Class sans id
-				fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
-				var fus_nameclass =fromus_selectedTexttmp;
-				
-				fromus_selectedText = fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
-				
-				fromus_selectedText	=	document.getElementsByClassName(fromus_selectedText)[0].textContent;
+			
+			
+			var 	fromus_txt    = target.innerHTML;
+			var 	fromus_selectedText  = target.textContent;
+			var 	fromus_selectedTexttmp;
+			var 	fromus_site 	=	document.location.href;		//récupération de l'adresse fromus_
+			fromus_site 	=	/http[s]{0,1}\:\/\/(.*\.com)/gi.exec(fromus_site)[1];
+			fromus_site	=	/\.[a-z0-9\-A-Z]{1,}\.com$/.exec(fromus_site)[0];
+			fromus_site	=	'www'+fromus_site;
+			
+			fromus_txt        = fromus_txt.replace(/\n/g,'');
+			
+			if(/id=\"/.test(fromus_txt))
+			{
+				var fromus_idmatch    = fromus_txt.match(/id=(\"[^\"]{1,}\")/mgi);
+			}
+			if(/class=\"/.test(fromus_txt))
+			{
+				var fromus_classmatch = fromus_txt.match(/class=(\"[^\"]{1,}\")/mgi);  	
+			}
+			
+			if(fromus_idmatch !=undefined)
+			{
+				if(fromus_classmatch !=undefined)
+				{
+					// id et class 
+					
+					fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);			
+					var fus_nameclass =fromus_selectedTexttmp;
+					
+					fromus_selectedTexttmp	= fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
+					var fus_nameid = fromus_selectedTexttmp;
+				}
+				else
+				{
+					//id sans class
+					fromus_selectedTexttmp	=	fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);			
+					var fus_nameid = fromus_selectedTexttmp;
+				}
+				fromus_selectedText = fromus_idmatch[0].substring(4,fromus_idmatch[0].length-1);
 			}
 			else
 			{
-				//ni class ni id
-			}  
+				if(fromus_classmatch !=undefined)
+				{ //Class sans id
+					fromus_selectedTexttmp	=	fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
+					var fus_nameclass =fromus_selectedTexttmp;
+					
+					fromus_selectedText = fromus_classmatch[0].substring(7,fromus_classmatch[0].length-1);
+					
+					fromus_selectedText	=	document.getElementsByClassName(fromus_selectedText)[0].textContent;
+				}
+				else
+				{
+					//ni class ni id
+				}  
+			}
+			var fus_nameresult = '';
+			if(fus_nameid)
+			{
+				fus_nameresult += '%name_id<-->'+fus_nameid+'*~*';
+			}
+			if(fus_nameclass)
+			{
+				fus_nameresult += '%name_class<-->'+fus_nameclass+'*~*';
+			}	
+			
+			localStorage['regGetName'] = fus_nameresult;
+			localStorage['regName'] = fromus_selectedText;
+			
+			fus_actname = 0;	// On ne cherche plus le nom
+			target.style.backgroundColor = fus_colorname;	
+			target.style.border = fus_bordername;
+			target.style.cursor = fus_cursorname;	
+			this.removeEventListener('click',arguments.callee,false);
 		}
-		var fus_nameresult = '';
-		if(fus_nameid)
-		{
-			fus_nameresult += '%name_id<-->'+fus_nameid+'*~*';
-		}
-		if(fus_nameclass)
-		{
-			fus_nameresult += '%name_class<-->'+fus_nameclass+'*~*';
-		}	
-		
-		localStorage['regGetName'] = fus_nameresult;
-		localStorage['regName'] = fromus_selectedText;
-		
-		fus_actname = 0;	// On ne cherche plus le nom
-		target.style.backgroundColor = fus_colorname;	
-		target.style.border = fus_bordername;
-		target.style.cursor = fus_cursorname;	
-		this.removeEventListener('click',arguments.callee,false);
 	});
 }

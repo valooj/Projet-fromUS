@@ -107,17 +107,17 @@ function getDesc()
 		}
 	});
 	
-	bindEvent(document,'click', function(event) 
+	bindEvent(document,'mousedown', function(event) 
 	{ var target = event.target || event.srcElement;
 		var button = event.button;
 		
 		if ( (button===2)||(button===3) )
 		{
 			
-			fus_actprice = 0;	// On ne cherche plus le prix
-			target.style.backgroundColor = fus_colorprice;	
-			target.style.border = fus_borderprice;
-			target.style.cursor = fus_cursorprice;		
+			fus_actdesc = 0;	// On ne cherche plus le prix
+			target.style.backgroundColor = fus_colordesc;	
+			target.style.border = fus_borderdesc;
+			target.style.cursor = fus_cursordesc;		
 			this.removeEventListener('mousedown',arguments.callee,false);
 		}
 		else
