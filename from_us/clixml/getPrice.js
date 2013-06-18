@@ -115,7 +115,7 @@ function getPrice()
 		target.style.backgroundColor = fus_colorprice;	
 		target.style.border = fus_borderprice;
 		target.style.cursor = fus_cursorprice;		
-		this.removeEventListener('click',arguments.callee,false);
+		this.removeEventListener('contextmenu',arguments.callee,false);
 		
 		
 	return false; }, false);

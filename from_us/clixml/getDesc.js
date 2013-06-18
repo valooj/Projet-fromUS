@@ -115,7 +115,7 @@ function getDesc()
 		target.style.backgroundColor = fus_colordesc;	
 		target.style.border = fus_borderdesc;
 		target.style.cursor = fus_cursordesc;		
-		this.removeEventListener('click',arguments.callee,false);
+		this.removeEventListener('contextmenu',arguments.callee,false);
 		
 		
 	return false; }, false);

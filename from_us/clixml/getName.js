@@ -116,7 +116,7 @@ function getName()
 		target.style.backgroundColor = fus_colorname;	
 		target.style.border = fus_bordername;
 		target.style.cursor = fus_cursorname;		
-		this.removeEventListener('click',arguments.callee,false);
+		this.removeEventListener('contextmenu',arguments.callee,false);
 		
 		
 	return false; }, false);
