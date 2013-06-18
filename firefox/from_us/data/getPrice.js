@@ -226,11 +226,11 @@ function getPrice()
 				this.removeEventListener('click',arguments.callee,false);
 				
 			}
-			
+			else
+			{
+				this.removeEventListener('click',arguments.callee,false);			
+			}
 		}
-		else
-		{
-			this.removeEventListener('click',arguments.callee,false);			
-		}
+		
 	});		
 }
