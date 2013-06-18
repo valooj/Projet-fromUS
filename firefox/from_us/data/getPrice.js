@@ -106,7 +106,7 @@ function getPrice()
 			this.removeEventListener('mouseout',arguments.callee,false);			
 		}
 	});
-	
+	/*
 	document.addEventListener('contextmenu', function(event) 
 	{ event.preventDefault();
 		var target = event.target || event.srcElement;
@@ -118,7 +118,7 @@ function getPrice()
 		this.removeEventListener('click',arguments.callee,false);
 		
 		
-	return false; }, false);
+	return false; }, false);*/
 	
 	bindEvent(document,'mousedown', function(event) 
 	{ var target = event.target || event.srcElement;
