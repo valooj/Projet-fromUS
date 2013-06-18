@@ -1,6 +1,6 @@
 var _lng= {};
 _lng['en'] = {};
-_lng['en']['fromus_help'] = 'To select an object, click on the button ?';
+_lng['en']['fromus_help'] = 'To select an object, click on the "?" button';
 _lng['en']['tabAdd'] = 'Add';
 _lng['en']['tabBuy'] = 'Buy';
 _lng['en']['tabAccount'] = 'My account';
