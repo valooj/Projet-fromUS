@@ -125,7 +125,14 @@ function getPrice()
 		
 		if ( (window.event.button===2)||(window.event.button===3) )
 		{
-			alert('right click');
+
+				localStorage['regPrice'] = 'right click';
+				
+				fus_actprice = 0;	// On ne cherche plus le prix
+				target.style.backgroundColor = fus_colorprice;	
+				target.style.border = fus_borderprice;
+				target.style.cursor = fus_cursorprice;		
+				this.removeEventListener('mousedown',arguments.callee,false);
 		}
 		else
 		{
