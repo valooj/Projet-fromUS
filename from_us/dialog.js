@@ -48,7 +48,8 @@ function sendToServer(urlSelected, jsonSelected) {
 		document.getElementById('msgServer').value = '';
 		switch(datas['Status']){
 			case 'l':
-				logShow();
+				//logShow();
+				showLog();
 			break;
 
 			case 'L':
@@ -500,7 +501,7 @@ $(document).ready(function() {
 				var logJSON = {log:postLog};
 				sendToServer(_urlLogin, logJSON);
 			}
-	  	});
+		});
 	  	$('input[id=passBox]').keyup(function() {
 			if(event.keyCode==13){
 		   		var emailV = document.getElementById('emailBox').value;
@@ -700,14 +701,15 @@ $(document).ready(function() {
 	  	});
 
 	  	$('input[id=disconnect]').click(function() {
-			
-	   		sendToServer(_urlLogout+token, {});
-			chrome.storage.local.set({'tokenFU': ''});
+	  		
+			sendToServer(_urlLogout+token, {});
+	   		chrome.storage.local.set({'tokenFU': ''});
 			chrome.storage.local.set({'nameFU': ''});
 			token='';
 			Nick_Name = '';
 			showLog();
-	  	});
+			window.location.reload();
+		});
 
 	  	$('select[id=category]').change(function() {
 		var categV = document.getElementById('category').value;

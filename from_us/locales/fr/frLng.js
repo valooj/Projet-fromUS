@@ -1,6 +1,6 @@
 
 _lng['fr'] = {};
-_lng['fr']['fromus_help'] = 'Si une information n\' est pas trouv\351e, cliquez sur le bouton "?" et s\351lectionnez-la. Clic droit pour annuler.';
+_lng['fr']['fromus_help'] = 'Si une information n\'est pas trouv\351e, cliquez sur le bouton "?" et s\351lectionnez-la. Clic droit pour annuler.';
 _lng['fr']['tabAdd'] = 'Ajouter';
 _lng['fr']['tabBuy'] = 'Commander';
 _lng['fr']['tabAccount'] = 'Mon compte';
