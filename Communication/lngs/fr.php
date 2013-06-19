@@ -22,6 +22,6 @@
 	$lng['choix_categ'] = ' Choisissez une catégorie ';
 	$lng['choix_scateg'] = ' Choisissez une sous-catégorie';
 
-	$lng['invalid_url'] = 'ce site n’est pas connu dans notre répertoire.';
+	$lng['invalid_url'] = 'Ce site n’est pas connu dans notre répertoire.';
 	$lng['participation'] = 'Merci de nous avoir aidé à amélioré notre site ! ';
 ?>

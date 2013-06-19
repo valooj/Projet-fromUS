@@ -21,6 +21,7 @@
 	$lng['choix_categ'] = ' Choose a category';
 	$lng['choix_scateg'] = ' Choose a sub-category';
 
+	$lng['invalid_url'] = 'This website is not in our database.';
 	$lng['participation'] = 'Thank you for your participation';
 
 

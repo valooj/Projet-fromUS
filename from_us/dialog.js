@@ -318,7 +318,8 @@ function isUrl(s) {
 
 //Permet laffichage de limage lorsque on passe sur lurl
 $(document).on('change, keyup, mouseover', 'input', function() {
-	if(regVisu != 'undefined'){
+	var fus_image = document.getElementById('fromus_image').value;
+	if(regVisu != 'undefined' && fus_image != ''){
 	    $('#img-view').css('background-image', 'url('+regVisu+')');
 	    $('#img-view').width( $(this).width()+2 );
 	}
@@ -773,7 +774,8 @@ $(document).ready(function() {
 			if(document.getElementById('fromus_image').value)
 				clearInterval(setinter);
 		}, false);      
-	
+
+		
 		// ouverture de la dialog box
 		newDialog.dialog('open');
 		//suppression des key dans le localstorage
