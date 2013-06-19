@@ -300,13 +300,20 @@ function fromus_recupImg(idclass,fus_data)
 		{	//S'il y a un résultat, vérifier s'il a un src ou un href et l'enregistrer le cas échéant
 			if(fromus_img_id.href!=undefined)
 			{
-				getimgtag(fromus_img_id);
-				localStorage['fromus_iimg'] = fromus_i + 1;
+				if(/.*[^j][^s]$/.test(fromus_img_id.href))
+				{
+					getimgtag(fromus_img_id);
+					localStorage['fromus_iimg'] = fromus_i + 1;
+				}
 			}
 			if(fromus_img_id.src!=undefined)
 			{
-				getimgtag(fromus_img_id);
-				localStorage['fromus_iimg'] = fromus_i + 1;
+				if(/.*[^j][^s]$/.test(fromus_img_id.src))
+				{
+					getimgtag(fromus_img_id);
+					localStorage['fromus_iimg'] = fromus_i + 1;
+					
+				}
 			}
 		}
 	}
@@ -328,15 +335,21 @@ function fromus_recupImg(idclass,fus_data)
 			var fromus_img_class = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0];
 			if(fromus_img_class)
 			{
-				if(fromus_img_class.href!=undefined)
+				if(fromus_img_id.href!=undefined)
 				{
-					getimgtag(fromus_img_class);
-					getimgtag('fromus_iimg') = fromus_i + 1;
+					if(/.*[^j][^s]$/.test(fromus_img_id.href))
+					{
+						getimgtag(fromus_img_id);
+						localStorage['fromus_iimg'] = fromus_i + 1;
+					}
 				}
-				if(fromus_img_class.src!=undefined)
+				if(fromus_img_id.src!=undefined)
 				{
-					getimgtag(fromus_img_class);
-					localStorage['fromus_iimg'] = fromus_i + 1;
+					if(/.*[^j][^s]$/.test(fromus_img_id.src))
+					{
+						getimgtag(fromus_img_id);
+						localStorage['fromus_iimg'] = fromus_i + 1;
+					}
 				}
 			}
 		}
