@@ -298,7 +298,7 @@ function fromus_recupImg(idclass,fus_data)
 		var fromus_img_id = document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i]);
 		if(fromus_img_id)
 		{	//S'il y a un résultat, vérifier s'il a un src ou un href et l'enregistrer le cas échéant
-			if(fromus_img_id.href!=undefined)
+			if( (fromus_img_id.href!=undefined) && (fromus_img_id.href!=null) )
 			{
 				if(/.*[^j][^s]$/.test(fromus_img_id.href))
 				{
@@ -306,7 +306,7 @@ function fromus_recupImg(idclass,fus_data)
 					localStorage['fromus_iimg'] = fromus_i + 1;
 				}
 			}
-			if(fromus_img_id.src!=undefined)
+			if((fromus_img_id.src!=undefined)&&(fromus_img_id.src!=null))
 			{
 				if(/.*[^j][^s]$/.test(fromus_img_id.src))
 				{
@@ -335,7 +335,7 @@ function fromus_recupImg(idclass,fus_data)
 			var fromus_img_class = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0];
 			if(fromus_img_class)
 			{
-				if(fromus_img_id.href!=undefined)
+				if( (fromus_img_id.href!=undefined) && (fromus_img_id.href!=null) )
 				{
 					if(/.*[^j][^s]$/.test(fromus_img_id.href))
 					{
@@ -343,7 +343,7 @@ function fromus_recupImg(idclass,fus_data)
 						localStorage['fromus_iimg'] = fromus_i + 1;
 					}
 				}
-				if(fromus_img_id.src!=undefined)
+				if((fromus_img_id.src!=undefined)&&(fromus_img_id.src!=null))
 				{
 					if(/.*[^j][^s]$/.test(fromus_img_id.src))
 					{
