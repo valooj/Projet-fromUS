@@ -298,21 +298,27 @@ function fromus_recupImg(idclass,fus_data)
 		var fromus_img_id = document.getElementById(fromus_sitelist[fromus_site].img_id[fromus_i]);
 		if(fromus_img_id)
 		{	//S'il y a un résultat, vérifier s'il a un src ou un href et l'enregistrer le cas échéant
-			if( (fromus_img_id.href!=undefined) && (fromus_img_id.href!=null) )
+			if( fromus_img_id.href!==undefined) 
 			{
-				if(/.*[^j][^s]$/.test(fromus_img_id.href))
+				if( fromus_img_id.href) 
 				{
-					getimgtag(fromus_img_id);
-					localStorage['fromus_iimg'] = fromus_i + 1;
+					if(/.*[^j][^s]$/.test(fromus_img=_id.href))
+					{
+						getimgtag(fromus_img_id);
+						localStorage['fromus_iimg'] = fromus_i + 1;
+					}
 				}
 			}
-			if((fromus_img_id.src!=undefined)&&(fromus_img_id.src!=null))
+			if(fromus_img_id.src!==undefined)
 			{
-				if(/.*[^j][^s]$/.test(fromus_img_id.src))
+				if(fromus_img_id.src)
 				{
-					getimgtag(fromus_img_id);
-					localStorage['fromus_iimg'] = fromus_i + 1;
-					
+					if(/.*[^j][^s]$/.test(fromus_img_id.src))
+					{
+						getimgtag(fromus_img_id);
+						localStorage['fromus_iimg'] = fromus_i + 1;
+						
+					}
 				}
 			}
 		}
@@ -335,20 +341,27 @@ function fromus_recupImg(idclass,fus_data)
 			var fromus_img_class = document.getElementsByClassName(fromus_sitelist[fromus_site].img_class[fromus_i])[0];
 			if(fromus_img_class)
 			{
-				if( (fromus_img_id.href!=undefined) && (fromus_img_id.href!=null) )
+				if( fromus_img_class.href!==undefined) 
 				{
-					if(/.*[^j][^s]$/.test(fromus_img_id.href))
+					if( fromus_img_class.href) 
 					{
-						getimgtag(fromus_img_id);
-						localStorage['fromus_iimg'] = fromus_i + 1;
+						if(/.*[^j][^s]$/.test(fromus_img_class.href))
+						{
+							getimgtag(fromus_img_class);
+							localStorage['fromus_iimg'] = fromus_i + 1;
+						}
 					}
 				}
-				if((fromus_img_id.src!=undefined)&&(fromus_img_id.src!=null))
+				if(fromus_img_class.src!==undefined)
 				{
-					if(/.*[^j][^s]$/.test(fromus_img_id.src))
+					if(fromus_img_class.src)
 					{
-						getimgtag(fromus_img_id);
-						localStorage['fromus_iimg'] = fromus_i + 1;
+						if(/.*[^j][^s]$/.test(fromus_img_class.src))
+						{
+							getimgtag(fromus_img_class);
+							localStorage['fromus_iimg'] = fromus_i + 1;
+							
+						}
 					}
 				}
 			}
