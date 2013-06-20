@@ -7,6 +7,14 @@ console.log('avant msg');
 var fudata = 'fus';
 self.port.emit('simple-storage', newData = fudata);*/
 
+/*
+self.port.on("message", function (urltest) {
+  console.log('ok');
+  console.log(urltest);
+  
+
+});*/
+
 
 var token;
 var Nick_Name;
@@ -71,10 +79,8 @@ function sendToServer(urlSelected, jsonSelected) {
 			case 'L':
 				token = datas['Token'];
 				//chrome.storage.local.set({'tokenFU': token});
-				self.port.emit('simple-storage', tokenFU = token);
 				Nick_Name = datas['Message'];
 				//chrome.storage.local.set({'nameFU': Nick_Name});
-				self.port.emit('simple-storage', nameFU = Nick_Name);
 				document.getElementById("nick_name").value = i18n('MsgWelcome')+Nick_Name ;
 				hideLog();
 				sendToServer(_urlPts+token,{});
@@ -432,18 +438,10 @@ $(document).ready(function() {
 
 			// au demarrage on cache le bouton commander, la quantité et l'assurance
 			open: function(ev,ui) {
-				/*var img = document.getElementById('logofromus');
-  				img.src = chrome.extension.getURL('/img/logo.png');
-  				var imgen = document.getElementById('lgen');
-  				imgen.src = chrome.extension.getURL('/img/en.png');
-  				var imgde = document.getElementById('lgde');
-  				imgde.src = chrome.extension.getURL('/img/de.png');
-  				var imgfr = document.getElementById('lgfr');
-  				imgfr.src = chrome.extension.getURL('/img/fr.png');*/
-
+				
   				reloadUrl();
   				loadText();
-  				ajoutCSS();
+  				
 
 
   				$('#tab2').hide();
@@ -459,18 +457,7 @@ $(document).ready(function() {
 					showLog();
 				});*/
 
-				/*function opentoken(result) {
-					token=result.tokenFU;
-				 	if(token && token != 'undefined'){
-						hideLog();
-					}
-					else 
-					showLog();
-				}
-				ss.on('tokenFU', opentoken);*/
-
-
-				
+							
 				/*chrome.storage.local.get('nameFU',function(result){
 				  Nick_Name=result.nameFU;
 				  if(Nick_Name && Nick_Name != 'undefined'){
@@ -486,20 +473,7 @@ $(document).ready(function() {
 			}
 	    });
 
-		var bindEvent = function(elem ,evt,cb) {
-			//vérifie si addEventListenerexiste dans l'élément
-			if ( elem.addEventListener ) {
-				elem.addEventListener(evt,cb,false);
-		        //si addEventListener n'est pas présent, vérifie si le navigateur est une version  d'IE
-		        } else if ( elem.attachEvent ) {
-				//ajoute le préfixe "on" à l'event
-				elem.attachEvent('on' + evt, function(){
-					// Simule addEventListener ; s'assure que le callback obtient l'élément pour "this" et s'assure que le premier élément de la fonction est un event
-					cb.call(event.srcElement,event);
-				});
-			}
-		}
-
+		
 	    //Pour montrer que l'onglet add
 		$('a[id=tabAdd]').click(function() {
 			$('#tab2').hide();
@@ -803,3 +777,5 @@ $(document).ready(function() {
 		localStorage.removeItem('regOffer'); 
 	}
 });
+
+console.log('fin de script');

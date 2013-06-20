@@ -46,13 +46,13 @@ function getPreferedLang(){
 
 try
 {
-/*	// connection a la bd
+	// connection a la bd
     $options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
     $options[PDO::MYSQL_ATTR_INIT_COMMAND] = 'SET NAMES UTF8;';
     $bdd = new PDO('mysql:host=localhost;dbname=fromus', 'root', '', $options);
-*/
+
     //connection vraie bd
-    $host_db = "localhost:/tmp/mysql5.sock"; // nom de votre serveur
+/*    $host_db = "localhost:/tmp/mysql5.sock"; // nom de votre serveur
 	$user_db = "dbo424427993"; // nom d'utilisateur de connexion à votre bdd
 	$password_db = "fromus68"; // mot de passe de connexion à votre bdd
 	$bdd_db = "db424427993"; // nom de votre bdd
@@ -62,7 +62,7 @@ try
     //$bdd = new PDO('mysql:host='.$host_db.';dbname='.$bdd_db.','.$user_db.','.$password_db.','. $options);
     //$bdd = new PDO('mysql:dbname=db424427993;host=localhost:/tmp/mysql5.sock','dbo424427993','fromus68',$options);
     $bdd = new PDO ("mysql:host=localhost;unix_socket=/tmp/mysql5.sock;dbname=db424427993", 'dbo424427993', 'fromus68');
-
+*/
 	// externals datas
 	
 	$get_action = isset($_GET['action']) ? htmlspecialchars($_GET['action']) : null;
@@ -521,7 +521,7 @@ file_put_contents('./trace.txt', print_r($_REQUEST, 1) . PHP_EOL . '============
 			$get_url = isset($_GET['url_site']) ? htmlspecialchars($_GET['url_site']) : null;
 
 			// variables tests
-			if ( !$get_url )
+			if (!$get_url)
 				throw new Exception($lng['invalid_url']);
 
 			//Recupere le chemin ds la bd
@@ -553,7 +553,7 @@ file_put_contents('./trace.txt', print_r($_REQUEST, 1) . PHP_EOL . '============
 			if ( !$get_access )
 				throw new Exception($lng['invalid_access']);
 
-			if ( !$get_access['url'] )
+			if (!$get_access['url'])
 				throw new Exception($lng['invalid_url']);
 
 			//Recupere l'id a partir du token

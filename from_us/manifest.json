@@ -1,5 +1,5 @@
 {
-  "name": "from-us.com",
+  "name": "From-US.com",
   "version": "1.2.6",
   
   "permissions": [
@@ -7,7 +7,7 @@
   ],
   
   "browser_action": {
-      "name": "from-us.com",
+      "name": "From-US.com",
 	    "default_icon": "img/on.png"
   },
 
@@ -20,11 +20,11 @@
   "web_accessible_resources": [
       "img/logo.png",
       "img/logo_small.png",
-      "/img/fr.png",
-      "/img/en.png",
-      "/img/de.png",
-      "/img/bouton_commander.png",
-      "/img/bouton_ajouter.png",
+      "img/fr.png",
+      "img/en.png",
+      "img/de.png",
+      "img/bouton_commander.png",
+      "img/bouton_ajouter.png",
       "jquery/images/ui-bg_flat_0_aaaaaa_40x100.png",
       "jquery/images/ui-toto-bg_flat_75_ffffff_40x100.png",
       "jquery/images/ui-bg_glass_55_fbf9ee_1x400.png",
