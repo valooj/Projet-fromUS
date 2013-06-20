@@ -24,7 +24,6 @@ var regOffer;
 var regDesc;
 var regVisu;
 
-//var j = jQuery.noConflict();
 //Generation des url avec la bonne langue
 function reloadUrl(){
 	 _urlProduct = UrlBase +'action=MAJ-product&lng='+defLng+'&token=';
@@ -740,8 +739,6 @@ $(document).ready(function() {
 
 		//Pour la recuperation de la part de lutilisateur
 		var priceq = document.getElementById('priceQ');
-		var runtimeOrExtension = chrome.runtime && chrome.runtime.sendMessage ?
- 		'runtime' : 'extension';
 		priceq.addEventListener('click', function(e){
 			document.getElementById('fromus_price').value="";
 			var settime = setTimeout(function() {getPrice()}, 1000);
@@ -780,6 +777,7 @@ $(document).ready(function() {
 		
 		// ouverture de la dialog box
 		newDialog.dialog('open');
+
 		//suppression des key dans le localstorage
 		localStorage.removeItem('regDesc');
 		localStorage.removeItem('regName');
@@ -791,7 +789,16 @@ $(document).ready(function() {
 		localStorage.removeItem('regGetDesc');
 		localStorage.removeItem('regGetImg');
 		localStorage.removeItem('regStore');
-		localStorage.removeItem('regOffer'); 
+		localStorage.removeItem('regOffer');
+		localStorage.removeItem('urlOffer'); 
+		localStorage.removeItem('fromus_idesc');
+		localStorage.removeItem('fromus_iimg');
+		localStorage.removeItem('fromus_iname');
+		localStorage.removeItem('fromus_iprice');
+		localStorage.removeItem('fromus_moredesc');
+		localStorage.removeItem('fromus_moreprice');
+		localStorage.removeItem('fromus_morename');
+		localStorage.removeItem('fromus_moreimg');
 	}
 });
 
