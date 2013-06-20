@@ -1,10 +1,23 @@
 
 // au premier lancement de l'extension, on ouvre la page fromus
 chrome.runtime.onInstalled.addListener(function(details) {
-	if(details.reason == "install"){
+	if(details.reason == 'install'){
         chrome.tabs.create({url: "http://www.from-us.com/fromus/"});
     }
+    if(details.reason == 'update' && details.previousVersion != chrome.app.getDetails().version){
+    	var notification = window.webkitNotifications.createNotification(
+	    'img/logo_small.png',                      // The image.
+	    'From-US.com', // The title.
+	    'Une nouvelle version est disponible.'      // The body.
+	  	);
+
+		notification.show();
+		setTimeout(function(){
+		notification.cancel();
+		},5000);
+	}
 });
+
 
 
 

@@ -1,9 +1,9 @@
 {
   "name": "from-us.com",
-  "version": "1.2.2",
+  "version": "1.2.3",
   
   "permissions": [
-    "tabs", "http://*/*", "storage"
+    "tabs", "http://*/*", "storage", "notifications"
   ],
   
   "browser_action": {
