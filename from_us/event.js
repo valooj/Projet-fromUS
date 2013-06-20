@@ -8,7 +8,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
     	var notification = window.webkitNotifications.createNotification(
 	    'img/logo_small.png',                      // The image.
 	    'From-US.com', // The title.
-	    'Une nouvelle version est disponible.'      // The body.
+	    'From-US.com : extension v'+ chrome.app.getDetails().version     // The body.
 	  	);
 
 		notification.show();
