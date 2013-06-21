@@ -1,7 +1,8 @@
 function ajoutCSS() {
 
 	$('#fromus_help').css({
-	'font-size': '0.7em'
+	'font-size': '0.7em',
+	'float': 'left'
     });
 
 	$('#selectLang').css({

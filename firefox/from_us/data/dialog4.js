@@ -1,34 +1,8 @@
-console.log('avant msg');
-/*self.port.on('main-to-content', function handleMyMessage(tokenFU) {
-  console.log('pass ok');
-  console.log(tokenFU);
-});*/
-/*var newData = 'test';
-var fudata = 'fus';
-self.port.emit('simple-storage', newData = fudata);*/
-
-/*
-self.port.on("message", function (urltest) {
-  console.log('ok');
-  console.log(urltest);
-  
-
-});*/
-
-
 var token;
 var Nick_Name;
 var points;
 
-
-
-
-/*self.on('main-to-content', function() {
-  
-    console.log('pass ok');
-});*/
-
-
+//var UrlBase= 'http://www.from-us.com/extension/cible3.php?';
 var UrlBase= 'http://localhost/projetFU/Communication/cible3.php?';
 var _urlProduct;
 var _urlCalcul;
@@ -73,7 +47,8 @@ function sendToServer(urlSelected, jsonSelected) {
 		document.getElementById('msgServer').value = '';
 		switch(datas['Status']){
 			case 'l':
-				logShow();
+				//logShow();
+				showLog();
 			break;
 
 			case 'L':
@@ -109,7 +84,8 @@ function sendToServer(urlSelected, jsonSelected) {
 			break;
 
 			case 'a':
-				var elem = datas['Message']['sa_chemin'].split('/');
+				console.log(datas['Message']['sa_chemin']);
+				var elem = datas['Message']['sa_chemin'].split('*~*');
 				parseInfo(elem);
 				
 			break;
@@ -195,56 +171,61 @@ function parseInfo (elem){
 				{
 				    if(elem[i].indexOf('price_class') !== (-1)){
 				  		var sous_elem = elem[i].split('<-->');
-				  		content_pclass= sous_elem[1]+';'+content_pclass;
+				  		content_pclass= sous_elem[1]+'*#*'+content_pclass;
 				  	}
 				  	else if(elem[i].indexOf('price_id') !== (-1)){
 				  	 var sous_elem = elem[i].split('<-->');
-				  		content_pid= sous_elem[1]+';'+content_pid;
+				  		content_pid= sous_elem[1]+'*#*'+content_pid;
 				  	}
 				  	else if(elem[i].indexOf('name_class') !== (-1)){
 				  		var sous_elem = elem[i].split('<-->');
-				  		content_nclass= sous_elem[1]+';'+content_nclass;
+				  		content_nclass= sous_elem[1]+'*#*'+content_nclass;
 				  	}
 				  	else if(elem[i].indexOf('name_id') !== (-1)){
 				  	 var sous_elem = elem[i].split('<-->');
-				  		content_nid= sous_elem[1]+';'+content_nid;
+				  		content_nid= sous_elem[1]+'*#*'+content_nid;
 				  	} 
 				  	else if(elem[i].indexOf('desc_class') !== (-1)){
 				  		var sous_elem = elem[i].split('<-->');
-				  		content_dclass= sous_elem[1]+';'+content_dclass;
+				  		content_dclass= sous_elem[1]+'*#*'+content_dclass;
 				  	}
 				  	else if(elem[i].indexOf('desc_id') !== (-1)){
 				  	 var sous_elem = elem[i].split('<-->');
-				  		content_did= sous_elem[1]+';'+content_did;
+				  		content_did= sous_elem[1]+'*#*'+content_did;
 				  	}
 				  	else if(elem[i].indexOf('img_class') !== (-1)){
 				  		var sous_elem = elem[i].split('<-->');
-				  		content_iclass= sous_elem[1]+';'+content_iclass;
+				  		content_iclass= sous_elem[1]+'*#*'+content_iclass;
 				  	}
 				  	else if(elem[i].indexOf('img_id') !== (-1)){
 				  	 var sous_elem = elem[i].split('<-->');
-				  		content_iid= sous_elem[1]+';'+content_iid;
+				  		content_iid= sous_elem[1]+'*#*'+content_iid;
 				  	} 
 				} 
 
+
 				//Test pour le prix
-				fromus_recupPrice('id',content_pid);
-				if(localStorage['regPrice'] == fromus_error) 
+				if(content_pid)
+					fromus_recupPrice('id',content_pid);
+				if(localStorage['regPrice'] == fromus_error || (content_pclass && (localStorage['regPrice']=='undefined' || !localStorage['regPrice']) )) 
 					fromus_recupPrice("class",content_pclass);
 
 				//Test pour le name
-				fromus_recupName('id',content_nid);
-				if(localStorage['regName'] == fromus_error) 
+				if(content_nid)
+					fromus_recupName('id',content_nid);
+				if(localStorage['regName'] == fromus_error || (content_nclass && (localStorage['regName']=='undefined'|| !localStorage['regName']) ) )
 					fromus_recupName('class',content_nclass);
 
 				//Test pour la description
-				fromus_recupDesc('id',content_did);
-				if(localStorage['regName'] == fromus_error) 
+				if(content_did)
+					fromus_recupDesc('id',content_did);
+				if(localStorage['regDesc'] == fromus_error || (content_dclass && (localStorage['regDesc']=='undefined' || !localStorage['regDesc'])) )
 					fromus_recupDesc('class',content_dclass);
 
 				//Test pour l'image'
-				fromus_recupImg('id',content_iid);
-				if(localStorage['regName'] == fromus_error) 
+				if(content_iid)
+					fromus_recupImg('id',content_iid);
+				if(localStorage['regImg'] == fromus_error || (content_iclass && (localStorage['regImg']=='undefined'|| !localStorage['regImg']))) 
 					fromus_recupImg('class',content_iclass);
 
 				regPrice = localStorage['regPrice'];
@@ -335,8 +316,10 @@ function isUrl(s) {
 	return regexp.test(s);
 }
 
+//Permet laffichage de limage lorsque on passe sur lurl
 $(document).on('change, keyup, mouseover', 'input', function() {
-	if(regVisu != 'undefined'){
+	var fus_image = document.getElementById('fromus_image').value;
+	if(regVisu != 'undefined' && fus_image != ''){
 	    $('#img-view').css('background-image', 'url('+regVisu+')');
 	    $('#img-view').width( $(this).width()+2 );
 	}
@@ -346,7 +329,7 @@ $(document).ready(function() {
 	
 	var newDialog = $('<div id="fromus_dialogBox" class="toto">' +
 					    '<div id="header">'+
-					    '<a href="http://from-us.com/fromus" target=_blank><img id="logofromustop" src="' + self.options.imglogotop + '"/></a>' +
+					    	'<a href="http://from-us.com/fromus" target=_blank><img id="logofromustop" src="' + self.options.imglogotop + '" /></a>' +
 							'<div id="selectLang">' +
 	      						'<img id="lgfr" src="' + self.options.imgfr + '" />'+
 							    '<img id="lgen" src="' + self.options.imgen + '" />'+
@@ -357,7 +340,7 @@ $(document).ready(function() {
 	     						'<input type="textbox" id="emailBox" placeholder="email"/><input type="password" id="passBox" placeholder="password"/><br/>'+
 	     						'<INPUT TYPE="button" NAME="logB" VALUE="Login" id="connect">'+
 	     						'<hr id="hr2" style="margin-top: 65px;"/>'+
-	    					'</FORM>'+
+	     					'</FORM>'+
 	    					'<div id="isconnect">'+
 	    						'<hr id="hr1" style="margin-top: 20px;"/>'+
 	      						'<input type="textbox" id="nick_name" disabled="true" style="border:none"/><br />'+
@@ -384,7 +367,7 @@ $(document).ready(function() {
 										'<label for="name" id="nameP"></label><br />'+
 										'<input type="textbox" id="fromus_name" disabled="true"/><input title="" type="button" id="nameQ"><br />'+
 										'<label for="price" id="priceP" ></label><br />'+
-										'<input type="textbox" id="fromus_price" disabled="true"/><input title="" type="button" id="priceQ"> <br />'+
+										'<input type="textbox" id="fromus_price" /><input title="" type="button" id="priceQ"> <br />'+
 										'<label for="description" id="descP" ></label><br />'+
 										'<textarea id="fromus_desc" disabled="true" rows="2" cols="32"></textarea><input type="button" title="" id="descQ"> <br />'+
 										'<label for="image" id="imgP" ></label><br />'+
@@ -400,12 +383,12 @@ $(document).ready(function() {
 										'<select id="sscategory">'+
 										'</select><br />'+
 									'<div class="content" id="tab1">'+
-									    '<input type="button" id="addP">'+
+									    '<input type="button" id="addP" onclick="window.location.hash=\'msgServer\';">'+
 									'</div>'+
 									'<div class="content" id="tab2">'+
 									    '<label id="fu_quantite" for="quantite"></label><input id="QteSpinner" value="1"><br />'+
 									    //'<label id="fu_assurance" for="assurance"></label><input type="checkbox" id="checkassur" name="assurance" /><br />'+
-									    '<input type="button" id="buyP"> '+
+									    '<input type="button" id="buyP" onclick="window.location.hash=\'msgServer\';"> '+
 									'</div>'+
 							'</form>'+
 						'<a href="http://from-us.com/fromus" target=_blank><img id="logofromus" height="100" src="' + self.options.imglogo + '"/></a>' +
@@ -419,7 +402,7 @@ $(document).ready(function() {
 	if (isOpen != true) {	
 
 		newDialog.dialog({
-	    	modal: false,
+		   	modal: false,
 			title: 'from-us',
 			position: 
 				{
@@ -436,13 +419,13 @@ $(document).ready(function() {
 				$(this).remove();
 			},
 
+
 			// au demarrage on cache le bouton commander, la quantité et l'assurance
 			open: function(ev,ui) {
 				
   				reloadUrl();
   				loadText();
   				ajoutCSS();
-
 
   				$('#tab2').hide();
 				$('#tab1').show();
@@ -455,10 +438,8 @@ $(document).ready(function() {
 					}
 					else 
 					showLog();
-				});*/
-
-							
-				/*chrome.storage.local.get('nameFU',function(result){
+				});
+				chrome.storage.local.get('nameFU',function(result){
 				  Nick_Name=result.nameFU;
 				  if(Nick_Name && Nick_Name != 'undefined'){
 						document.getElementById('nick_name').value = i18n('MsgWelcome')+Nick_Name ;
@@ -471,6 +452,7 @@ $(document).ready(function() {
 
 				searchInfo();
 			}
+
 	    });
 
 		
@@ -496,8 +478,7 @@ $(document).ready(function() {
 				var logJSON = {log:postLog};
 				sendToServer(_urlLogin, logJSON);
 			}
-	  	});
-
+		});
 	  	$('input[id=passBox]').keyup(function() {
 			if(event.keyCode==13){
 		   		var emailV = document.getElementById('emailBox').value;
@@ -509,6 +490,9 @@ $(document).ready(function() {
 					sendToServer(_urlLogin, logJSON);
 				}
 			}
+	  	});
+	  	$('input[id=priceBox]').click(function() {
+		   	var emailV = document.getElementById('priceBox').value=' ';
 	  	});
 
 	  	$('input[id=addP]').click(function() {
@@ -559,13 +543,15 @@ $(document).ready(function() {
 					if(!regVisu)
 						regVisu='http://vide';
 
+				regPrice= document.getElementById('fromus_price').value;	
 				if(!regPrice)
-					regPrice= document.getElementById('fromus_price').value;
+					regPrice = localStorage['regPrice'];
 
+				if(isNaN(regPrice))
+	  				document.getElementById('msgServer').value = i18n('InfoPrice');
 
-				if(regName && regOffer && regPrice){
+				else if(regName && regOffer && regPrice){
 					var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_cat: categVal, prd_prix: regPrice};
-					console.log(jsonProduct);
 					var postData = JSON.stringify(jsonProduct);
 					var productJSON = {product:postData};
 					sendToServer(_urlProduct+token , productJSON);
@@ -648,13 +634,16 @@ $(document).ready(function() {
 					if(!regVisu)
 						regVisu='http://vide';
 
+				regPrice= document.getElementById('fromus_price').value;	
 				if(!regPrice)
-					regPrice= document.getElementById('fromus_price').value;
+					regPrice = localStorage['regPrice'];
+
+				if(isNaN(regPrice))
+					document.getElementById('msgServer').value = i18n('InfoPrice');
 
 
-				if(regName && regOffer && regPrice){
+				else if(regName && regOffer && regPrice){
 					var jsonProduct = {prd_libelle: regName ,prd_site: regOffer, prd_desc: regDesc, prd_visu: regVisu, prd_cat: categVal, prd_prix: regPrice};
-					console.log(jsonProduct);
 					var postData = JSON.stringify(jsonProduct);
 					var productJSON = {product:postData};
 					sendToServer(_urlProduct+token , productJSON);
@@ -666,6 +655,8 @@ $(document).ready(function() {
 					if(!categVal ){
 						document.getElementById('msgServer').value = i18n('Infocateg');
 					}
+					else if(isNaN(regPrice))
+	  					document.getElementById('msgServer').value = i18n('InfoPrice');
 		  			else{
 						/*
 						var jsonCalcul = {libelle: regName, qte: qteVal ,montant: regPrice ,categ: categVal};
@@ -680,7 +671,6 @@ $(document).ready(function() {
 						var jsonPanier = {priceTot: regPrice ,libelle: regName ,url: regOffer ,desc: regDesc, qte: qteVal ,categ: categVal};
 						var postDataPanier = JSON.stringify(jsonPanier);
 						var panierJSON = {panier:postDataPanier};
-						console.log(panierJSON);
 						sendAjoutPanier(panierJSON);
 					}
 				}, 1000);
@@ -688,14 +678,15 @@ $(document).ready(function() {
 	  	});
 
 	  	$('input[id=disconnect]').click(function() {
-			
-	   		sendToServer(_urlLogout+token, {});
-			/*chrome.storage.local.set({'tokenFU': ''});
-			chrome.storage.local.set({'nameFU': ''});*/
+	  		
+			sendToServer(_urlLogout+token, {});
+	   		//chrome.storage.local.set({'tokenFU': ''});
+			//chrome.storage.local.set({'nameFU': ''});
 			token='';
 			Nick_Name = '';
 			showLog();
-	  	});
+			//window.location.reload();
+		});
 
 	  	$('select[id=category]').change(function() {
 		var categV = document.getElementById('category').value;
@@ -727,7 +718,6 @@ $(document).ready(function() {
 		//Pour la recuperation de la part de lutilisateur
 		var priceq = document.getElementById('priceQ');
 		priceq.addEventListener('click', function(e){
-			console.log('debut listener priceq');
 			document.getElementById('fromus_price').value="";
 			var settime = setTimeout(function() {getPrice()}, 1000);
 			var setinter = setInterval(function() {miseaJ()}, 600); 
@@ -737,7 +727,6 @@ $(document).ready(function() {
 
 		var nameq = document.getElementById('nameQ');
 		nameq.addEventListener('click', function(e){
-			console.log('debut listener nameq');
 			document.getElementById('fromus_name').value="";
 			var settime = setTimeout(function() {getName()}, 1000);
 			var setinter = setInterval(function() {miseaJ()}, 600); 
@@ -747,7 +736,6 @@ $(document).ready(function() {
 
 		var descq = document.getElementById('descQ');
 		descq.addEventListener('click', function(e){
-			console.log('debut listener descq');
 			document.getElementById('fromus_desc').value="";
 			var settime = setTimeout(function() {getDesc()}, 1000);
 			var setinter = setInterval(function() {miseaJ()}, 600); 
@@ -757,25 +745,38 @@ $(document).ready(function() {
 
 		var imgq = document.getElementById('imgQ');
 		imgq.addEventListener('click', function(e){
-			console.log('debut listener imgq');
 			document.getElementById('fromus_image').value="";
 			var settime = setTimeout(function() {getImg()}, 1000);
 			var setinter = setInterval(function() {miseaJ()}, 600); 
 			if(document.getElementById('fromus_image').value)
 				clearInterval(setinter);
 		}, false);      
-	
+
+		
 		// ouverture de la dialog box
 		newDialog.dialog('open');
+
 		//suppression des key dans le localstorage
 		localStorage.removeItem('regDesc');
 		localStorage.removeItem('regName');
+		localStorage.removeItem('regVisu');
+		localStorage.removeItem('regImg');
 		localStorage.removeItem('regPrice');
 		localStorage.removeItem('regGetName');
 		localStorage.removeItem('regGetPrice');
+		localStorage.removeItem('regGetDesc');
+		localStorage.removeItem('regGetImg');
 		localStorage.removeItem('regStore');
-		localStorage.removeItem('regOffer'); 
+		localStorage.removeItem('regOffer');
+		localStorage.removeItem('urlOffer'); 
+		localStorage.removeItem('fromus_idesc');
+		localStorage.removeItem('fromus_iimg');
+		localStorage.removeItem('fromus_iname');
+		localStorage.removeItem('fromus_iprice');
+		localStorage.removeItem('fromus_moredesc');
+		localStorage.removeItem('fromus_moreprice');
+		localStorage.removeItem('fromus_morename');
+		localStorage.removeItem('fromus_moreimg');
 	}
 });
 
-console.log('fin de script');
