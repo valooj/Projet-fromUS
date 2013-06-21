@@ -420,7 +420,7 @@ $(document).ready(function() {
 			},
 
 
-			// au demarrage on cache le bouton commander, la quantité et l'assurance
+			// au demarrage 
 			open: function(ev,ui) {
 				var img = document.getElementById('logofromus');
   				img.src = chrome.extension.getURL('/img/logo.png');
@@ -464,20 +464,7 @@ $(document).ready(function() {
 
 	    });
 
-		var bindEvent = function(elem ,evt,cb) {
-			//vérifie si addEventListenerexiste dans l'élément
-			if ( elem.addEventListener ) {
-				elem.addEventListener(evt,cb,false);
-		        //si addEventListener n'est pas présent, vérifie si le navigateur est une version  d'IE
-		        } else if ( elem.attachEvent ) {
-				//ajoute le préfixe "on" à l'event
-				elem.attachEvent('on' + evt, function(){
-					// Simule addEventListener ; s'assure que le callback obtient l'élément pour "this" et s'assure que le premier élément de la fonction est un event
-					cb.call(event.srcElement,event);
-				});
-			}
-		}
-
+		
 	    //Pour montrer que l'onglet add
 		$('a[id=tabAdd]').click(function() {
 			$('#tab2').hide();

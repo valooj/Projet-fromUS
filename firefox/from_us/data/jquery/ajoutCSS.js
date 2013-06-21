@@ -935,7 +935,7 @@ function ajoutCSS() {
 	});
 	$('.ui-toto-widget-content').css({
 		border: '1px solid #aaaaaa',
-		background: 'white url(jquery/images/ui-toto-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x',
+		background: 'white url('+self.options.imgbgflat+') 50% 50% repeat-x',
 		color: '#222222'
 	});
 	$('.ui-toto-widget-content a').css({
@@ -1067,29 +1067,29 @@ function ajoutCSS() {
 	});
 	$('.ui-toto-icon').css({});
 	$('.ui-toto-widget-content .ui-toto-icon').css({
-		'background-image': 'url(jquery/images/ui-toto-icons_cd0a0a_256x240.png)'
+		//'background-image': 'url('+self.options.imgicons+')'
 	});
 	$('.ui-toto-widget-header .ui-toto-icon').css({
-		'background-image': 'url(jquery/images/ui-toto-icons_cd0a0a_256x240.png)'
+		//'background-image': 'url('+self.options.imgicons+')'
 	});
 	$('.ui-toto-state-default .ui-toto-icon').css({
-		'background-image': 'url(jquery/images/ui-toto-icons_cd0a0a_256x240.png)',
+		//'background-image': 'url('+self.options.imgicons+')',
 		'float':'right',
 		'margin-right': '0px !important'
 	});
 	$('.ui-toto-state-hover .ui-toto-icon').css({});
 	$('.ui-toto-state-focus .ui-toto-icon').css({
-		'background-image': 'url(jquery/images/ui-toto-icons_cd0a0a_256x240.png)'
+		//'background-image': 'url('+self.options.imgicons+')'
 	});
 	$('.ui-toto-state-active .ui-toto-icon').css({
-		'background-image': 'url(jquery/images/ui-toto-icons_cd0a0a_256x240.png)'
+		//'background-image': 'url('+self.options.imgicons+')'
 	});
 	$('.ui-toto-state-highlight .ui-toto-icon').css({
-		'background-image': 'url(jquery/images/ui-toto-icons_cd0a0a_256x240.png)'
+		//'background-image': 'url('+self.options.imgicons+')'
 	});
 	$('.ui-toto-state-error .ui-toto-icon').css({});
 	$('.ui-toto-state-error-text .ui-toto-icon').css({
-		'background-image': 'url(jquery/images/ui-toto-icons_cd0a0a_256x240.png)'
+		//'background-image': 'url('+self.options.imgicons+')'
 	});
 
 	/* positioning */
